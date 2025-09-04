@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { FVOStatus } from '@/types';
 
 interface FilterBarProps {
   selectedFVOStatus: string;

@@ -18,8 +18,6 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
   doctorName,
   selectedVOs
 }) => {
-  if (!isOpen) return null;
-
   // Helper function to format current date as DD.MM.YYYY
   const getCurrentDate = (): string => {
     const now = new Date();
@@ -47,6 +45,9 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
     });
     return groups;
   }, [selectedVOs]);
+
+  // Early return after all hooks
+  if (!isOpen) return null;
 
   // Template for Initial Order Form
   const renderInitialOrderForm = (facility: string, vos: CRMVORecord[]) => {

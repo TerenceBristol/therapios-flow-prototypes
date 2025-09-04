@@ -55,7 +55,7 @@ const VOCard: React.FC<VOCardProps> = ({ vo, onClick }) => {
         
         <div className="vo-card-field">
           <span className="vo-card-label">Bestelt Datum:</span>
-          <span className="vo-card-value">{formatDate(vo.besteltDate)}</span>
+          <span className="vo-card-value">{vo.besteltDate ? formatDate(vo.besteltDate) : '-'}</span>
         </div>
       </div>
     </div>

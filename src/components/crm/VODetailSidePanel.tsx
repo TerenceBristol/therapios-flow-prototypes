@@ -95,7 +95,7 @@ const VODetailSidePanel: React.FC<VODetailSidePanelProps> = ({ vo, isOpen, onClo
               </div>
               <div className="detail-item">
                 <span className="detail-label">Bestelt Date:</span>
-                <span className="detail-value">{formatDate(vo.besteltDate)}</span>
+                <span className="detail-value">{vo.besteltDate ? formatDate(vo.besteltDate) : '-'}</span>
               </div>
               <div className="detail-item">
                 <span className="detail-label">Beh Status:</span>

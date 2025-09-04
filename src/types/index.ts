@@ -59,7 +59,7 @@ export type CRMColumn = 'Bestellen' | 'Bestelt' | '>7 days Bestelt' | '1st Follo
 export interface CRMVORecord extends VORecord {
   doctorInfo: DoctorInfo;
   patientInfo: PatientInfo;
-  besteltDate: string; // Date when F.VO was marked as ordered (DD.MM.YYYY format) - used as "Bestelt Date"
+  besteltDate?: string; // Date when F.VO was marked as ordered (DD.MM.YYYY format) - used as "Bestelt Date"
   bestellenDate?: string; // Date when F.VO was marked as "Bestellen" (DD.MM.YYYY format)
   firstFollowUpDate?: string; // Date when F.VO was marked as "1st Follow Up" (DD.MM.YYYY format)
   secondFollowUpDate?: string; // Date when F.VO was marked as "2nd Follow Up" (DD.MM.YYYY format)
