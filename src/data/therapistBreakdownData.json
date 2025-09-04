@@ -1,0 +1,110 @@
+[
+  {
+    "id": "th001",
+    "name": "Katharina Müller",
+    "er": ["ER München", "ER Augsburg"],
+    "fertigVOCount": 10
+  },
+  {
+    "id": "th002", 
+    "name": "Thomas Weber",
+    "er": ["ER Berlin"],
+    "fertigVOCount": 7
+  },
+  {
+    "id": "th003",
+    "name": "Sarah Fischer",
+    "er": ["ER Hamburg", "ER Lübeck", "ER Kiel"],
+    "fertigVOCount": 14
+  },
+  {
+    "id": "th004",
+    "name": "Marcus Schmidt",
+    "er": ["ER Köln"],
+    "fertigVOCount": 5
+  },
+  {
+    "id": "th005",
+    "name": "Andrea Wagner",
+    "er": ["ER Frankfurt", "ER Darmstadt"],
+    "fertigVOCount": 12
+  },
+  {
+    "id": "th006",
+    "name": "Julia Hoffmann",
+    "er": ["ER Stuttgart"],
+    "fertigVOCount": 3
+  },
+  {
+    "id": "th007",
+    "name": "Michael Braun",
+    "er": ["ER Dresden", "ER Leipzig"],
+    "fertigVOCount": 8
+  },
+  {
+    "id": "th008",
+    "name": "Lisa Zimmermann",
+    "er": ["ER Hannover"],
+    "fertigVOCount": 6
+  },
+  {
+    "id": "th009",
+    "name": "Robert Klein",
+    "er": ["ER Düsseldorf", "ER Essen"],
+    "fertigVOCount": 9
+  },
+  {
+    "id": "th010",
+    "name": "Anna Meyer",
+    "er": ["ER Bremen"],
+    "fertigVOCount": 2
+  },
+  {
+    "id": "th011",
+    "name": "Stefan Lange",
+    "er": ["ER Nürnberg", "ER Erlangen", "ER Fürth"],
+    "fertigVOCount": 15
+  },
+  {
+    "id": "th012",
+    "name": "Christina Wolf",
+    "er": ["ER Karlsruhe"],
+    "fertigVOCount": 4
+  },
+  {
+    "id": "th013",
+    "name": "Peter Neumann",
+    "er": ["ER Mannheim", "ER Heidelberg"],
+    "fertigVOCount": 11
+  },
+  {
+    "id": "th014",
+    "name": "Sabine Roth",
+    "er": ["ER Rostock"],
+    "fertigVOCount": 1
+  },
+  {
+    "id": "th015",
+    "name": "Jan Hartmann",
+    "er": ["ER Magdeburg", "ER Halle"],
+    "fertigVOCount": 13
+  },
+  {
+    "id": "th016",
+    "name": "Petra Fischer",
+    "er": ["ER Wiesbaden"],
+    "fertigVOCount": 0
+  },
+  {
+    "id": "th017",
+    "name": "Michael Bauer",
+    "er": ["ER Münster", "ER Osnabrück"],
+    "fertigVOCount": 0
+  },
+  {
+    "id": "th018",
+    "name": "Sandra Schneider",
+    "er": ["ER Würzburg", "ER Bamberg", "ER Bayreuth"],
+    "fertigVOCount": 0
+  }
+]

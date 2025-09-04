@@ -1,0 +1,35 @@
+{
+  "final": [],
+  "draft": [
+    {
+      "id": "fvo-ordering-dashboard-v2",
+      "title": "F.VO Ordering Dashboard v2",
+      "description": "CRM-style dashboard for managing Follow-up VO (Verordnung) ordering workflow. Track prescription orders through different stages from initial order to completion with drag-and-drop functionality.",
+      "category": "draft",
+      "slug": "fvo-ordering-dashboard-v2",
+      "createdAt": "2025-01-28T10:00:00Z",
+      "lastModified": "2025-01-28T10:00:00Z",
+      "tags": ["CRM", "VO Management", "Workflow", "Healthcare"]
+    },
+    {
+      "id": "fvo-ordering-dashboard-v3",
+      "title": "F.VO Ordering Dashboard v3",
+      "description": "CRM-style dashboard for managing Follow-up VO (Verordnung) ordering workflow. Track prescription orders through different stages from initial order to completion with drag-and-drop functionality.",
+      "category": "draft",
+      "slug": "fvo-ordering-dashboard-v3",
+      "createdAt": "2025-01-30T18:00:00Z",
+      "lastModified": "2025-01-30T18:00:00Z",
+      "tags": ["CRM", "VO Management", "Workflow", "Healthcare"]
+    },
+    {
+      "id": "fertig-vo-breakdown",
+      "title": "Per Therapist Breakdown of Completed VOs",
+      "description": "Dashboard showing breakdown of completed VOs per therapist to help operations team identify which therapists have VOs ready for pickup and billing. Displays therapist name, ER assignments, and count of Fertig VOs.",
+      "category": "draft",
+      "slug": "fertig-vo-breakdown",
+      "createdAt": "2025-01-28T15:00:00Z",
+      "lastModified": "2025-01-28T15:00:00Z",
+      "tags": ["CRM", "VO Management", "Operations", "Healthcare", "Billing"]
+    }
+  ]
+}
