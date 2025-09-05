@@ -24,7 +24,7 @@ const StatusDropdown: React.FC<StatusDropdownProps> = ({ currentStatus, onStatus
   const statusOptions: FVOStatus[] = [
     'Bestelt',
     '1st Follow up',
-    '2nd Follow up'
+    'Anrufen'
   ];
 
   useEffect(() => {
@@ -57,10 +57,8 @@ const StatusDropdown: React.FC<StatusDropdownProps> = ({ currentStatus, onStatus
         return 'status-badge status-followup';
       case '> 7 days after 1st follow up':
         return 'status-badge status-followup-overdue';
-      case '2nd Follow up':
-        return 'status-badge status-followup-2nd';
-      case '>7 days 2nd follow up':
-        return 'status-badge status-2nd-followup-overdue';
+      case 'Anrufen':
+        return 'status-badge status-anrufen';
       case 'Erhalten':
         return 'status-badge status-received';
       case 'Keine Folge-VO':
@@ -154,8 +152,7 @@ const VOTable: React.FC<VOTableProps> = ({
       case '1st Follow up':
       case '> 7 days after 1st follow up':
         return { showBestellen: true, showBestelt: true, showFirst: true, showSecond: false };
-      case '2nd Follow up':
-      case '>7 days 2nd follow up':
+      case 'Anrufen':
         return { showBestellen: true, showBestelt: true, showFirst: true, showSecond: true };
       case 'Erhalten':
         return { showBestellen: true, showBestelt: true, showFirst: true, showSecond: true };
@@ -189,15 +186,14 @@ const VOTable: React.FC<VOTableProps> = ({
               <th className="vo-table-header">Therapeut</th>
               <th className="vo-table-header">VO Nr.</th>
               <th className="vo-table-header">Ausst. Datum</th>
-              <th className="vo-table-header">Beh. Status (#/#)</th>
+              <th className="vo-table-header">VO Status</th>
               <th className="vo-table-header">Arzt</th>
               <th className="vo-table-header">F-VO Status</th>
               <th className="vo-table-header">Bestellen Date</th>
               <th className="vo-table-header">Bestelt Date</th>
               <th className="vo-table-header">1st FUP Date</th>
-              <th className="vo-table-header">2nd FUP Date</th>
-              <th className="vo-table-header">F.-VO</th>
-              <th className="vo-table-header">Beh. Status (#/#)</th>
+              <th className="vo-table-header">Anrufen Date</th>
+              <th className="vo-table-header">VO Status</th>
             </tr>
           </thead>
           <tbody>
@@ -269,9 +265,6 @@ const VOTable: React.FC<VOTableProps> = ({
                     const visibleDates = getVisibleDates(vo.fvoStatus);
                     return visibleDates.showSecond ? (vo.secondFollowUpDate || '-') : '-';
                   })()}
-                </td>
-                <td className="vo-table-cell">
-                  {vo.fvoNumber ? `[${vo.fvoNumber}]` : '-'}
                 </td>
                 <td className="vo-table-cell">
                   {vo.voStatus}
