@@ -1,6 +1,6 @@
 /* CRM Dashboard Styles */
 .crm-dashboard {
-  padding: 1rem;
+  padding: 1rem 0 1rem 1rem;
   min-height: 100vh;
   background-color: var(--background);
   color: var(--foreground);
@@ -49,6 +49,43 @@
 
 .tab-content-placeholder {
   margin: 2rem 0;
+}
+
+/* NEW: Workflow Tab System - Below subtitle */
+.workflow-tabs {
+  margin: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.workflow-tab-list {
+  display: flex;
+  gap: 0;
+}
+
+.workflow-tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border-radius: 4px 4px 0 0;
+}
+
+.workflow-tab:hover {
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.workflow-tab-active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+  background-color: #fff;
+  font-weight: 600;
 }
 
 /* VO Table Styles - Clean borderless design */
@@ -164,9 +201,10 @@
   color: #6c5910;
 }
 
-.status-2nd-followup-overdue {
-  background-color: #d6a2e8;
-  color: #6f2887;
+.status-anrufen {
+  background-color: #ff9999;
+  color: #800000;
+  font-weight: 600;
 }
 
 .status-received {
@@ -636,7 +674,7 @@
 
 @media (max-width: 768px) {
   .crm-dashboard {
-    padding: 0.5rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
   }
   
   .crm-column {
@@ -679,8 +717,9 @@
 .filter-section {
   margin: 1rem 0;
   display: flex;
-  justify-content: flex-start;
-  padding: 0 1rem;
+  justify-content: stretch;
+  padding: 0;
+  width: 100%;
 }
 
 /* New Filter Bar Styles */
@@ -732,8 +771,25 @@
 .filter-bar-with-actions {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   width: 100%;
+  padding-left: 1rem;
+}
+
+/* NEW: Left/Right Filter Layout */
+.filter-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
 .static-filter {
@@ -941,13 +997,30 @@
 }
 
 .clear-btn {
-  background-color: var(--secondary);
-  color: var(--secondary-foreground);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--background);
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
 }
 
 .clear-btn:hover {
-  background-color: var(--accent);
+  background-color: var(--muted);
+  color: var(--foreground);
   border-color: var(--ring);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.clear-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Modal Styles */
