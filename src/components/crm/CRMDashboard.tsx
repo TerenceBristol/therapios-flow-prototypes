@@ -5,9 +5,10 @@ import { CRMVORecord, FVOStatus, CRMColumn, VOStatus, TherapistBreakdown } from 
 import crmVOData from '@/data/crmVOData.json';
 import therapistData from '@/data/therapistBreakdownData.json';
 import VOTable from './VOTable';
-import TherapistBreakdownTable from './TherapistBreakdownTable';
+// import TherapistBreakdownTable from './TherapistBreakdownTable';
 import FVOActionsModal from './FVOActionsModal';
 import PDFPreviewModal from './PDFPreviewModal';
+import AddressInputModal from './AddressInputModal';
 import HeaderFilters from './HeaderFilters';
 
 import FilterBar from './FilterBar';
@@ -18,6 +19,8 @@ interface CRMDashboardProps {
 }
 
 const CRMDashboard: React.FC<CRMDashboardProps> = ({ initialTab = 'F.VO' }) => {
+  // Suppress unused parameter warning
+  console.log('Initial tab:', initialTab);
   // Map fvoStatus to currentColumn for CRM board functionality
   const transformedData = useMemo(() => {
     return crmVOData.map(record => ({
@@ -26,6 +29,7 @@ const CRMDashboard: React.FC<CRMDashboardProps> = ({ initialTab = 'F.VO' }) => {
       secondaryTreatmentStatus: record.secondaryTreatmentStatus || undefined,
       voStatus: record.voStatus as VOStatus,
       fvoStatus: record.fvoStatus as FVOStatus,
+      orderingStatus: (record.orderingStatus || 'By Admin') as 'By Admin' | 'By Therapist',
       timeline: record.timeline.map(event => ({
         ...event,
         fvoStatus: event.fvoStatus as FVOStatus | undefined
@@ -37,6 +41,8 @@ const CRMDashboard: React.FC<CRMDashboardProps> = ({ initialTab = 'F.VO' }) => {
   const therapistBreakdownData = useMemo(() => {
     return therapistData as TherapistBreakdown[];
   }, []);
+  // Suppress unused variable warning
+  console.log('Therapist breakdown data available:', therapistBreakdownData.length);
 
   const [voRecords, setVORecords] = useState<CRMVORecord[]>(transformedData);
   
@@ -57,6 +63,11 @@ const CRMDashboard: React.FC<CRMDashboardProps> = ({ initialTab = 'F.VO' }) => {
   // PDF Preview Modal state
   const [pdfPreviewOpen, setPdfPreviewOpen] = useState(false);
   const [pdfFormType, setPdfFormType] = useState<'initial' | 'followup'>('followup');
+  
+  // Address Input Modal state
+  const [addressInputModalOpen, setAddressInputModalOpen] = useState(false);
+  const [pendingFormType, setPendingFormType] = useState<'initial' | 'followup'>('followup');
+  const [deliveryAddress, setDeliveryAddress] = useState<string>('');
 
   // Calculate tab counts for all workflow categories
   const tabCounts = useMemo(() => {
@@ -230,9 +241,21 @@ const CRMDashboard: React.FC<CRMDashboardProps> = ({ initialTab = 'F.VO' }) => {
   };
 
   const handleGenerateOrderForm = (type: 'initial' | 'followup') => {
-    setPdfFormType(type);
-    setPdfPreviewOpen(true);
+    setPendingFormType(type);
+    setAddressInputModalOpen(true);
     setFvoActionsModalOpen(false);
+  };
+
+  const handleAddressConfirm = (address: string) => {
+    setDeliveryAddress(address);
+    setPdfFormType(pendingFormType);
+    setAddressInputModalOpen(false);
+    setPdfPreviewOpen(true);
+  };
+
+  const handleAddressCancel = () => {
+    setAddressInputModalOpen(false);
+    setDeliveryAddress('');
   };
 
   // Helper function to set appropriate date based on new status
@@ -408,6 +431,13 @@ const CRMDashboard: React.FC<CRMDashboardProps> = ({ initialTab = 'F.VO' }) => {
         onCopyInformation={handleCopyInformation}
       />
 
+      {/* Address Input Modal */}
+      <AddressInputModal
+        isOpen={addressInputModalOpen}
+        onClose={handleAddressCancel}
+        onConfirm={handleAddressConfirm}
+      />
+
       {/* PDF Preview Modal */}
       <PDFPreviewModal
         isOpen={pdfPreviewOpen}
@@ -415,6 +445,7 @@ const CRMDashboard: React.FC<CRMDashboardProps> = ({ initialTab = 'F.VO' }) => {
         formType={pdfFormType}
         doctorName={selectedDoctor}
         selectedVOs={selectedVORecords}
+        deliveryAddress={deliveryAddress}
       />
     </div>
   );

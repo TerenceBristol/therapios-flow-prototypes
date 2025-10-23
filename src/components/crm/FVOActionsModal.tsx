@@ -8,6 +8,7 @@ interface FVOActionsModalProps {
   onClose: () => void;
   selectedVOs: CRMVORecord[];
   doctorName: string;
+  currentWorkflowTab: 'Bestellen' | 'Bestelt' | 'Follow Up' | 'Call';
   onGenerateOrderForm: (type: 'initial' | 'followup') => void;
   onChangeStatus: (status: string) => void;
   onCopyInformation: () => void;
@@ -18,6 +19,7 @@ const FVOActionsModal: React.FC<FVOActionsModalProps> = ({
   onClose,
   selectedVOs,
   doctorName,
+  currentWorkflowTab,
   onGenerateOrderForm,
   onChangeStatus,
   onCopyInformation
@@ -28,6 +30,23 @@ const FVOActionsModal: React.FC<FVOActionsModalProps> = ({
     const parts = treatmentStatus.split('/');
     return parts.length > 1 ? parts[1] : treatmentStatus;
   };
+
+  // Dynamic button logic based on workflow tab
+  const getOrderFormButtonInfo = () => {
+    if (currentWorkflowTab === 'Bestellen') {
+      return {
+        buttonText: 'Generate Initial Order Form',
+        formType: 'initial' as const
+      };
+    } else {
+      return {
+        buttonText: 'Generate FUP Order Form',
+        formType: 'followup' as const
+      };
+    }
+  };
+
+  const orderFormButton = getOrderFormButtonInfo();
 
   // Helper function to get the next status button info
   const getNextStatusButton = () => {
@@ -43,9 +62,13 @@ const FVOActionsModal: React.FC<FVOActionsModalProps> = ({
         return { label: 'Save VOs as First Follow Up', nextStatus: '1st Follow up' };
       case '1st Follow up':
       case '> 7 days after 1st follow up':
-        return { label: 'Save VOs as Second Follow Up', nextStatus: '2nd Follow up' };
-      case '2nd Follow up':
-      case '>7 days 2nd follow up':
+        // If in Follow Up workflow tab, show "Anrufen" button instead of "Second Follow Up"
+        if (currentWorkflowTab === 'Follow Up') {
+          return { label: 'Save VOs as Anrufen', nextStatus: 'Anrufen' };
+        } else {
+          return { label: 'Save VOs as Second Follow Up', nextStatus: 'Anrufen' };
+        }
+      case 'Anrufen':
         return null; // Button should not appear for final status
       default:
         return null;
@@ -99,7 +122,12 @@ const FVOActionsModal: React.FC<FVOActionsModalProps> = ({
 
           {/* Action Buttons */}
           <div className="modal-actions">
-            <GenerateOrderDropdown onSelect={onGenerateOrderForm} />
+            <button 
+              className="action-btn primary"
+              onClick={() => onGenerateOrderForm(orderFormButton.formType)}
+            >
+              {orderFormButton.buttonText}
+            </button>
             {nextStatusButton && (
               <button 
                 className="action-btn primary" 
@@ -121,93 +149,6 @@ const FVOActionsModal: React.FC<FVOActionsModalProps> = ({
   );
 };
 
-// Generate Order Form Dropdown Component
-const GenerateOrderDropdown: React.FC<{ onSelect: (type: 'initial' | 'followup') => void }> = ({ onSelect }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [dropdownStyle, setDropdownStyle] = React.useState<React.CSSProperties>({});
-  const buttonRef = React.useRef<HTMLButtonElement>(null);
-  const dropdownRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node) &&
-          buttonRef.current && !buttonRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen]);
-
-  const handleToggle = () => {
-    if (!isOpen && buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const dropdownHeight = 120; // Approximate height of dropdown with 2 options
-      
-      const spaceBelow = viewportHeight - rect.bottom;
-      const spaceAbove = rect.top;
-      
-      let top: number;
-      if (spaceBelow >= dropdownHeight || spaceBelow > spaceAbove) {
-        // Position below button
-        top = rect.bottom + 4;
-      } else {
-        // Position above button
-        top = rect.top - dropdownHeight - 4;
-      }
-      
-      setDropdownStyle({
-        position: 'fixed',
-        top: `${top}px`,
-        left: `${rect.left}px`,
-        width: `${rect.width}px`,
-        zIndex: 1100
-      });
-    }
-    setIsOpen(!isOpen);
-  };
-
-  const handleSelect = (type: 'initial' | 'followup') => {
-    onSelect(type);
-    setIsOpen(false);
-  };
-
-  return (
-    <div className="dropdown-container">
-      <button 
-        ref={buttonRef}
-        className="action-btn primary dropdown-btn"
-        onClick={handleToggle}
-      >
-        Generate Order Form ▼
-      </button>
-      
-      {isOpen && (
-        <div ref={dropdownRef} className="action-dropdown-menu" style={dropdownStyle}>
-          <button 
-            className="action-dropdown-option"
-            onClick={() => handleSelect('initial')}
-          >
-            Initial Order Form
-          </button>
-          <button 
-            className="action-dropdown-option"
-            onClick={() => handleSelect('followup')}
-          >
-            Follow-up Order Form
-          </button>
-        </div>
-      )}
-    </div>
-  );
-};
 
 
 

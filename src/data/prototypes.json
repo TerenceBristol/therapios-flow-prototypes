@@ -30,6 +30,66 @@
       "createdAt": "2025-01-28T15:00:00Z",
       "lastModified": "2025-01-28T15:00:00Z",
       "tags": ["CRM", "VO Management", "Operations", "Healthcare", "Billing"]
+    },
+    {
+      "id": "validation-dashboard",
+      "title": "VO Validation",
+      "description": "Comprehensive validation dashboard for managing healthcare prescription orders and validation status. Filter by VO Status, Einrichtung (facility), and Therapeut with full table view of all validation-related data including treatment progress, dates, status tracking, and VO slip management.",
+      "category": "draft",
+      "slug": "validation",
+      "createdAt": "2025-01-30T19:00:00Z",
+      "lastModified": "2025-01-30T19:00:00Z",
+      "tags": ["Validation", "VO Management", "Healthcare", "Dashboard", "Filtering", "VO Slips"]
+    },
+    {
+      "id": "therapist-fvo-ordering-admin",
+      "title": "Therapist F.VO Ordering - Admin",
+      "description": "",
+      "category": "draft",
+      "slug": "therapist-fvo-ordering-admin",
+      "createdAt": "2025-10-06T10:00:00Z",
+      "lastModified": "2025-10-06T10:00:00Z",
+      "tags": ["F.VO", "Therapist", "Ordering", "Admin", "Healthcare"]
+    },
+    {
+      "id": "therapist-fvo-ordering-therapist",
+      "title": "Therapist F.VO Ordering - Therapist",
+      "description": "",
+      "category": "draft",
+      "slug": "therapist-fvo-ordering-therapist",
+      "createdAt": "2025-10-06T10:00:00Z",
+      "lastModified": "2025-10-06T10:00:00Z",
+      "tags": ["F.VO", "Therapist", "Ordering", "Healthcare"]
+    },
+    {
+      "id": "therapist-fvo-ordering-therapist-v2",
+      "title": "V2 - Therapist F.VO Ordering - Therapist",
+      "description": "",
+      "category": "draft",
+      "slug": "therapist-fvo-ordering-therapist-v2",
+      "createdAt": "2025-10-11T10:00:00Z",
+      "lastModified": "2025-10-11T10:00:00Z",
+      "tags": ["F.VO", "Therapist", "Ordering", "Healthcare", "V2"]
+    },
+    {
+      "id": "validation-billing",
+      "title": "VO Validation + Billing",
+      "description": "Comprehensive validation and billing dashboard for managing healthcare prescription orders. Complete validation checks, manage treatment history, upload VO slips, and process billing information all in one integrated workflow.",
+      "category": "draft",
+      "slug": "validation-billing",
+      "createdAt": "2025-10-09T10:00:00Z",
+      "lastModified": "2025-10-09T10:00:00Z",
+      "tags": ["Validation", "Billing", "VO Management", "Healthcare", "Workflow"]
+    },
+    {
+      "id": "activity-to-treatment",
+      "title": "Activity to Treatment",
+      "description": "Therapist calendar with workflow to convert activity cards into treatment cards by selecting from assigned VOs. Features weekly calendar view, activity management, and seamless conversion from generic activities (Pause, Doku, Other) to patient-specific treatments.",
+      "category": "draft",
+      "slug": "activity-to-treatment",
+      "createdAt": "2025-10-21T10:00:00Z",
+      "lastModified": "2025-10-21T10:00:00Z",
+      "tags": ["Calendar", "Therapist", "Treatment", "Workflow", "Healthcare"]
     }
   ]
 }

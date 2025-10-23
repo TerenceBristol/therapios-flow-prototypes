@@ -21,3 +21,171 @@ h1, h2, h3, h4, h5, h6 {
     @apply bg-background text-foreground;
   }
 }
+
+/* Validation Checks Section Styles */
+.validation-checks-section {
+  margin-bottom: 2rem;
+}
+
+.validation-checks-section .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.validation-checks-section .section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.validation-checks-section .progress-indicator {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.validation-checks-section .progress-complete {
+  color: #155724;
+  background-color: #d4edda;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+}
+
+.validation-checks-section .progress-incomplete {
+  color: #856404;
+  background-color: #fff3cd;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+}
+
+.validation-checks-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.checks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.check-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.check-item.checked.system {
+  background-color: #e3f2fd;
+}
+
+.check-item.checked.admin {
+  background-color: #e8f5e9;
+}
+
+.check-item.unchecked {
+  background-color: #f8f9fa;
+}
+
+.check-item:hover {
+  background-color: #f0f0f0;
+}
+
+.check-item.checked.system:hover {
+  background-color: #d1e7fd;
+}
+
+.check-item.checked.admin:hover {
+  background-color: #d4edd6;
+}
+
+.check-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.check-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.check-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.check-label {
+  font-size: 0.9375rem;
+  color: var(--foreground);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 500;
+}
+
+.check-status {
+  display: flex;
+  align-items: center;
+}
+
+.validation-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.validation-badge.system {
+  background-color: #bbdefb;
+  color: #0d47a1;
+}
+
+.validation-badge.admin {
+  background-color: #c8e6c9;
+  color: #1b5e20;
+}
+
+.validation-badge.not-validated {
+  background-color: #e0e0e0;
+  color: #616161;
+}
+
+/* Validation Actions - Update button styling */
+.validation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-btn.primary:disabled {
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.action-btn .button-progress {
+  font-size: 0.75rem;
+  font-weight: normal;
+  margin-left: 0.5rem;
+  opacity: 0.8;
+}

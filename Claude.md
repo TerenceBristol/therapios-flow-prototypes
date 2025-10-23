@@ -144,6 +144,30 @@ npm run dev  # Start development server
 - Import aliases: `@/` maps to `src/`
 - Always verify file paths before operations
 
+### Deployment & Production
+
+#### Public URL Requirement
+**CRITICAL:** Always ensure deployments use the public accessible URL:
+- **Public URL:** `https://flow-prototypes.vercel.app/`
+- **Not account-specific URLs:** `https://flow-prototypes-xyz-account.vercel.app/`
+
+#### Why This Matters
+- Stakeholders need access without Vercel account login
+- Clean, shareable URL for presentations and reviews
+- Consistent URL for bookmarking and sharing
+
+#### Vercel Deployment Process
+1. **Commit changes:** Always commit before deploying
+2. **Build locally:** Run `npm run build` to test for errors
+3. **Deploy to production:** `vercel --prod`
+4. **Verify public URL:** Confirm `https://flow-prototypes.vercel.app/` reflects latest changes
+5. **Share public URL:** Always use the clean public URL with stakeholders
+
+#### Domain Configuration
+- Project has alias configured: deployment URLs → `flow-prototypes.vercel.app`
+- Deployment command creates account-specific URLs but they auto-alias to public URL
+- Always reference and share the public URL for stakeholder access
+
 ### Quality Standards
 - **Mobile-responsive** design required
 - **Accessibility** considerations (proper contrast, semantic HTML)

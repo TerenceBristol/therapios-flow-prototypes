@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "mitarbeiterId": "SA001",
+    "firstName": "Super",
+    "lastName": "Admin",
+    "email": "admin.thera@therapios.com",
+    "phone": "+639000000000",
+    "role": "ROLE_SUPER_ADMIN",
+    "status": true,
+    "allowFVOOrdering": null
+  },
+  {
+    "id": 2,
+    "mitarbeiterId": "AD001",
+    "firstName": "Admin",
+    "lastName": "Admin",
+    "email": "admin@therapios.com",
+    "phone": "+639000000001",
+    "role": "ROLE_ADMIN",
+    "status": true,
+    "allowFVOOrdering": null
+  },
+  {
+    "id": 3,
+    "mitarbeiterId": "TH001",
+    "firstName": "Therapist",
+    "lastName": "Therapists",
+    "email": "therapist@therapios.com",
+    "phone": "+639000000002",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 39,
+    "mitarbeiterId": "TH039",
+    "firstName": "Marion",
+    "lastName": "Frieß-Weisbacher",
+    "email": "marion.frieß-weisbacher.39@therapios.com",
+    "phone": "+4915789530088",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 66,
+    "mitarbeiterId": "TH066",
+    "firstName": "Sandra",
+    "lastName": "Zeibig",
+    "email": "sandra.zeibig.66@therapios.com",
+    "phone": "+491766161497",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": true
+  },
+  {
+    "id": 67,
+    "mitarbeiterId": "TH067",
+    "firstName": "Andreas",
+    "lastName": "Rosky",
+    "email": "andreas.rosky.67@therapios.com",
+    "phone": "+491789795773",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 95,
+    "mitarbeiterId": "TH095",
+    "firstName": "Pape-Kirchner",
+    "lastName": "Sandra",
+    "email": "sandra.pape-kirchner.95@therapios.com",
+    "phone": "",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 45,
+    "mitarbeiterId": "TH045",
+    "firstName": "Dominique",
+    "lastName": "Strüver",
+    "email": "dominique.strüver.45@therapios.com",
+    "phone": "+491763269533",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": true
+  },
+  {
+    "id": 79,
+    "mitarbeiterId": "TH079",
+    "firstName": "Jessika",
+    "lastName": "Scheffler",
+    "email": "jessika.scheffler.79@therapios.com",
+    "phone": "",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 88,
+    "mitarbeiterId": "TH088",
+    "firstName": "Laura",
+    "lastName": "Müller",
+    "email": "laura.mueller.88@therapios.com",
+    "phone": "+491234567890",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 92,
+    "mitarbeiterId": "TH092",
+    "firstName": "Thomas",
+    "lastName": "Schmidt",
+    "email": "thomas.schmidt.92@therapios.com",
+    "phone": "+491765432109",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": true
+  },
+  {
+    "id": 101,
+    "mitarbeiterId": "TH101",
+    "firstName": "Julia",
+    "lastName": "Weber",
+    "email": "julia.weber.101@therapios.com",
+    "phone": "+491567890123",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 105,
+    "mitarbeiterId": "TH105",
+    "firstName": "Michael",
+    "lastName": "Fischer",
+    "email": "michael.fischer.105@therapios.com",
+    "phone": "+491698765432",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 112,
+    "mitarbeiterId": "TH112",
+    "firstName": "Anna",
+    "lastName": "Wagner",
+    "email": "anna.wagner.112@therapios.com",
+    "phone": "",
+    "role": "ROLE_THERAPIST",
+    "status": true,
+    "allowFVOOrdering": false
+  },
+  {
+    "id": 118,
+    "mitarbeiterId": "TH118",
+    "firstName": "Markus",
+    "lastName": "Becker",
+    "email": "markus.becker.118@therapios.com",
+    "phone": "+491756789012",
+    "role": "ROLE_THERAPIST",
+    "status": false,
+    "allowFVOOrdering": false
+  }
+]

@@ -3,11 +3,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 interface FilterBarProps {
-  selectedFVOStatus: string;
-  selectedDoctor: string;
-  doctorOptions: string[];
-  onFVOStatusChange: (status: string) => void;
-  onDoctorChange: (doctor: string) => void;
+  // ER filter (primary)
+  selectedER: string;
+  erOptions: string[];
+  onERChange: (er: string) => void;
+  // Actions
   showHelperText: boolean;
   showFVOActionsButton: boolean;
   fvoActionsEnabled: boolean;
@@ -15,45 +15,24 @@ interface FilterBarProps {
 }
 
 const FilterBar: React.FC<FilterBarProps> = ({
-  selectedFVOStatus,
-  selectedDoctor,
-  doctorOptions,
-  onFVOStatusChange,
-  onDoctorChange,
+  selectedER,
+  erOptions,
+  onERChange,
   showHelperText,
   showFVOActionsButton,
   fvoActionsEnabled,
   onFVOActionsClick
 }) => {
-  const [isFVODropdownOpen, setIsFVODropdownOpen] = useState(false);
-  const [isDoctorDropdownOpen, setIsDoctorDropdownOpen] = useState(false);
-  const [fvoSearchTerm, setFvoSearchTerm] = useState('');
-  const [doctorSearchTerm, setDoctorSearchTerm] = useState('');
+  const [isERDropdownOpen, setIsERDropdownOpen] = useState(false);
+  const [erSearchTerm, setErSearchTerm] = useState('');
   
-  const fvoDropdownRef = useRef<HTMLDivElement>(null);
-  const doctorDropdownRef = useRef<HTMLDivElement>(null);
-
-  const fvoStatusOptions = [
-    'All F.VO Status',
-    'Bestellen',
-    'Bestelt',
-    '>7 days Bestelt',
-    '1st Follow up',
-    '> 7 days after 1st follow up',
-    '2nd Follow up',
-    '>7 days 2nd follow up',
-    'Erhalten',
-    'Keine Folge-VO'
-  ];
+  const erDropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (fvoDropdownRef.current && !fvoDropdownRef.current.contains(event.target as Node)) {
-        setIsFVODropdownOpen(false);
-      }
-      if (doctorDropdownRef.current && !doctorDropdownRef.current.contains(event.target as Node)) {
-        setIsDoctorDropdownOpen(false);
+      if (erDropdownRef.current && !erDropdownRef.current.contains(event.target as Node)) {
+        setIsERDropdownOpen(false);
       }
     };
 
@@ -63,30 +42,21 @@ const FilterBar: React.FC<FilterBarProps> = ({
     };
   }, []);
 
-  const handleFVOStatusSelect = (status: string) => {
-    onFVOStatusChange(status);
-    setIsFVODropdownOpen(false);
-    setFvoSearchTerm('');
+  const handleERSelect = (er: string) => {
+    onERChange(er);
+    setIsERDropdownOpen(false);
+    setErSearchTerm('');
   };
 
-  const handleDoctorSelect = (doctor: string) => {
-    onDoctorChange(doctor);
-    setIsDoctorDropdownOpen(false);
-    setDoctorSearchTerm('');
-  };
-
-  const filteredFVOStatuses = fvoStatusOptions.filter(status =>
-    status.toLowerCase().includes(fvoSearchTerm.toLowerCase())
-  );
-
-  const filteredDoctors = doctorOptions.filter(doctor =>
-    doctor.toLowerCase().includes(doctorSearchTerm.toLowerCase())
+  const filteredERs = erOptions.filter(er =>
+    er.toLowerCase().includes(erSearchTerm.toLowerCase())
   );
 
   return (
     <div>
       <div className="filter-bar-with-actions">
-        <div className="new-filter-bar">
+        {/* Left Side Filters */}
+        <div className="filter-bar-left">
           {/* Spalten anzeigen - Static Filter */}
           <div className="filter-group">
             <div className="dropdown-container">
@@ -100,80 +70,40 @@ const FilterBar: React.FC<FilterBarProps> = ({
             </div>
           </div>
 
-          {/* F.VO Status Dropdown */}
-          <div className="filter-group" ref={fvoDropdownRef}>
+          {/* ER Dropdown (Primary Filter) */}
+          <div className="filter-group" ref={erDropdownRef}>
             <div className="dropdown-container">
               <button
                 className="dropdown-button"
-                onClick={() => setIsFVODropdownOpen(!isFVODropdownOpen)}
-                type="button"
-              >
-                <span className="dropdown-text">{selectedFVOStatus}</span>
-                <span className="dropdown-arrow">▼</span>
-              </button>
-              
-              {isFVODropdownOpen && (
-                <div className="dropdown-menu">
-                  <input
-                    type="text"
-                    className="dropdown-search"
-                    placeholder="Search F.VO status..."
-                    value={fvoSearchTerm}
-                    onChange={(e) => setFvoSearchTerm(e.target.value)}
-                    onClick={(e) => e.stopPropagation()}
-                  />
-                  
-                  <div className="dropdown-options">
-                    {filteredFVOStatuses.map((status) => (
-                      <button
-                        key={status}
-                        className={`dropdown-option ${status === selectedFVOStatus ? 'selected' : ''}`}
-                        onClick={() => handleFVOStatusSelect(status)}
-                        type="button"
-                      >
-                        {status}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Arzt (Auswählen) - Interactive Dropdown */}
-          <div className="filter-group" ref={doctorDropdownRef}>
-            <div className="dropdown-container">
-              <button
-                className="dropdown-button"
-                onClick={() => setIsDoctorDropdownOpen(!isDoctorDropdownOpen)}
+                onClick={() => setIsERDropdownOpen(!isERDropdownOpen)}
                 type="button"
               >
                 <span className="dropdown-text">
-                  {selectedDoctor === 'All Doctors' ? 'Arzt (Auswählen)' : selectedDoctor}
+                  {selectedER === 'All ERs' ? 'ER (Auswählen)' : selectedER}
                 </span>
                 <span className="dropdown-arrow">▼</span>
               </button>
               
-              {isDoctorDropdownOpen && (
+              {isERDropdownOpen && (
                 <div className="dropdown-menu">
                   <input
                     type="text"
                     className="dropdown-search"
-                    placeholder="Search doctors..."
-                    value={doctorSearchTerm}
-                    onChange={(e) => setDoctorSearchTerm(e.target.value)}
+                    placeholder="Search ERs..."
+                    value={erSearchTerm}
+                    onChange={(e) => setErSearchTerm(e.target.value)}
                     onClick={(e) => e.stopPropagation()}
                   />
                   
                   <div className="dropdown-options">
-                    {filteredDoctors.map((doctor) => (
+                    {filteredERs.map((er) => (
                       <button
-                        key={doctor}
-                        className={`dropdown-option ${doctor === selectedDoctor ? 'selected' : ''}`}
-                        onClick={() => handleDoctorSelect(doctor)}
+                        key={er}
+                        className={`dropdown-option ${er === selectedER ? 'selected' : ''}`}
+                        onClick={() => handleERSelect(er)}
                         type="button"
                       >
-                        {doctor === 'All Doctors' ? 'Arzt (Auswählen)' : doctor}
+                        {er === 'All ERs' ? 'ER (Auswählen)' : er}
                       </button>
                     ))}
                   </div>
@@ -183,23 +113,26 @@ const FilterBar: React.FC<FilterBarProps> = ({
           </div>
         </div>
 
-        {/* F.VO Actions Button */}
-        {showFVOActionsButton && (
-          <button
-            className="fvo-actions-button"
-            onClick={onFVOActionsClick}
-            disabled={!fvoActionsEnabled}
-            type="button"
-          >
-            F.VO Actions
-          </button>
-        )}
+        {/* Right Side - F.VO Actions Button */}
+        <div className="filter-bar-right">
+          {/* F.VO Actions Button */}
+          {showFVOActionsButton && (
+            <button
+              className="fvo-actions-button"
+              onClick={onFVOActionsClick}
+              disabled={!fvoActionsEnabled}
+              type="button"
+            >
+              F.VO Actions
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Helper Text */}
       {showHelperText && (
         <div className="filter-helper-text">
-          Please Select a F.VO Status and Arzt to do F.VO Actions
+          Please Select an ER and check at least one VO to do F.VO Actions
         </div>
       )}
     </div>

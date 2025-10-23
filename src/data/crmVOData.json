@@ -34,19 +34,23 @@
       "specialty": "Orthopädie",
       "practice": "Physiotherapie Zentrum Berlin"
     },
-    "notes": ["Patient responding well to treatment", "Requested follow-up VO for continued therapy"],
+    "notes": [
+      "Patient responding well to treatment",
+      "Requested follow-up VO for continued therapy"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-25T09:30:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-002",
     "patientName": "Hans Weber",
-    "treatmentType": "PHYSIO", 
+    "treatmentType": "PHYSIO",
     "heilmittelCode": "MLD45H",
     "facility": "Rehazentrum Hamburg",
     "therapist": "L. Fischer",
@@ -78,7 +82,10 @@
       "specialty": "Neurologie",
       "practice": "Rehazentrum Hamburg"
     },
-    "notes": ["Patient needs continued manual therapy", "Doctor has not responded for 9 days"],
+    "notes": [
+      "Patient needs continued manual therapy",
+      "Doctor has not responded for 9 days"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -90,14 +97,15 @@
         "timestamp": "2025-01-26T14:15:00Z",
         "fvoStatus": ">7 days Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-003",
     "patientName": "Anna Hoffmann",
     "treatmentType": "LOGO",
     "heilmittelCode": "L-E45H",
-    "facility": "Logopädie Praxis München",
+    "facility": "Therapie-Zentrum München",
     "therapist": "M. Becker",
     "voNumber": "6003-2",
     "issueDate": "03.01.2025",
@@ -126,9 +134,12 @@
       "phone": "+49 89 77788899",
       "email": "t.schneider@logo-muenchen.de",
       "specialty": "HNO",
-      "practice": "Logopädie Praxis München"
+      "practice": "Therapie-Zentrum München"
     },
-    "notes": ["First follow-up sent via email", "Patient making good progress with speech therapy"],
+    "notes": [
+      "First follow-up sent via email",
+      "Patient making good progress with speech therapy"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -145,14 +156,15 @@
         "timestamp": "2025-01-23T11:45:00Z",
         "fvoStatus": "1st Follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-004",
     "patientName": "Peter Braun",
     "treatmentType": "ERGO",
     "heilmittelCode": "NOB-E-HB",
-    "facility": "Ergotherapie Köln",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "K. Richter",
     "voNumber": "7004-5",
     "issueDate": "01.01.2025",
@@ -181,9 +193,13 @@
       "phone": "+49 221 99887766",
       "email": "l.zimmermann@ergo-koeln.de",
       "specialty": "Rehabilitation",
-      "practice": "Ergotherapie Köln"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["First follow-up sent 12 days ago", "Patient urgently needs continuation", "Doctor not responding to calls or emails"],
+    "notes": [
+      "First follow-up sent 12 days ago",
+      "Patient urgently needs continuation",
+      "Doctor not responding to calls or emails"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -205,14 +221,15 @@
         "timestamp": "2025-01-22T16:20:00Z",
         "fvoStatus": "> 7 days after 1st follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-005",
     "patientName": "Sabine Klein",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "BO-E-H",
-    "facility": "Physiotherapie Dresden",
+    "facility": "Reha-Zentrum Dresden",
     "therapist": "R. Schuster",
     "voNumber": "8005-9",
     "issueDate": "04.01.2025",
@@ -224,7 +241,7 @@
     "type": "Physiotherapy",
     "tb": false,
     "voStatus": "Aktiv",
-    "fvoStatus": "2nd Follow up",
+    "fvoStatus": "Anrufen",
     "fvoNumber": "8005-10",
     "doubletreatment": false,
     "secondaryTreatmentStatus": null,
@@ -242,9 +259,13 @@
       "phone": "+49 351 22334455",
       "email": "m.franz@physio-dresden.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Dresden"
+      "practice": "Reha-Zentrum Dresden"
     },
-    "notes": ["Second follow-up sent via registered mail", "Patient requires urgent treatment continuation", "Previous follow-ups ignored"],
+    "notes": [
+      "Second follow-up sent via registered mail",
+      "Patient requires urgent treatment continuation",
+      "Previous follow-ups ignored"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -269,9 +290,10 @@
       {
         "action": "Second follow-up sent",
         "timestamp": "2025-01-20T10:15:00Z",
-        "fvoStatus": "2nd Follow up"
+        "fvoStatus": "Anrufen"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-006",
@@ -310,7 +332,10 @@
       "specialty": "Sportmedizin",
       "practice": "Rehazentrum Stuttgart"
     },
-    "notes": ["VO successfully received", "Treatment can continue as planned"],
+    "notes": [
+      "VO successfully received",
+      "Treatment can continue as planned"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -322,14 +347,15 @@
         "timestamp": "2025-01-26T15:45:00Z",
         "fvoStatus": "Erhalten"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-007",
     "patientName": "Ingrid Fischer",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physiotherapie Frankfurt",
+    "facility": "Therapie-Zentrum Frankfurt",
     "therapist": "T. Wolf",
     "voNumber": "1007-8",
     "issueDate": "12.01.2025",
@@ -357,23 +383,27 @@
       "phone": "+49 69 55443322",
       "email": "a.stein@physio-ffm.de",
       "specialty": "Allgemeinmedizin",
-      "practice": "Physiotherapie Frankfurt"
+      "practice": "Therapie-Zentrum Frankfurt"
     },
-    "notes": ["Home visit treatments required", "Recently ordered, waiting for response"],
+    "notes": [
+      "Home visit treatments required",
+      "Recently ordered, waiting for response"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-26T08:15:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-008",
     "patientName": "Klaus Hartmann",
     "treatmentType": "ERGO",
     "heilmittelCode": "PFB-E-HB",
-    "facility": "Ergotherapie Düsseldorf",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "S. Neumann",
     "voNumber": "2008-4",
     "issueDate": "05.01.2025",
@@ -401,9 +431,12 @@
       "phone": "+49 211 33445566",
       "email": "e.brenner@ergo-duesseldorf.de",
       "specialty": "Geriatrie",
-      "practice": "Ergotherapie Düsseldorf"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["Patient with mobility issues", "Doctor overdue with response"],
+    "notes": [
+      "Patient with mobility issues",
+      "Doctor overdue with response"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -415,14 +448,15 @@
         "timestamp": "2025-01-28T10:30:00Z",
         "fvoStatus": ">7 days Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-009",
     "patientName": "Sabine Mueller",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physiotherapie Zentrum Hannover",
+    "facility": "Reha-Zentrum Nord",
     "therapist": "D. Roth",
     "voNumber": "3009-6",
     "issueDate": "15.01.2025",
@@ -451,9 +485,12 @@
       "phone": "+49 511 55667788",
       "email": "p.hoffmann@physio-hannover.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Zentrum Hannover"
+      "practice": "Reha-Zentrum Nord"
     },
-    "notes": ["First follow-up sent via phone", "Patient recovering well"],
+    "notes": [
+      "First follow-up sent via phone",
+      "Patient recovering well"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -465,14 +502,15 @@
         "timestamp": "2025-01-24T09:10:00Z",
         "fvoStatus": "1st Follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-010",
     "patientName": "Thomas Becker",
-    "treatmentType": "LOGO", 
+    "treatmentType": "LOGO",
     "heilmittelCode": "L-G2-45",
-    "facility": "Logopädie Praxis Bremen",
+    "facility": "Reha-Zentrum Nord",
     "therapist": "K. Wagner",
     "voNumber": "4010-8",
     "issueDate": "08.01.2025",
@@ -502,9 +540,12 @@
       "phone": "+49 421 33445566",
       "email": "n.richter@logo-bremen.de",
       "specialty": "HNO",
-      "practice": "Logopädie Praxis Bremen"
+      "practice": "Reha-Zentrum Nord"
     },
-    "notes": ["VO received successfully", "Continuing speech therapy"],
+    "notes": [
+      "VO received successfully",
+      "Continuing speech therapy"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -516,14 +557,15 @@
         "timestamp": "2025-01-27T11:30:00Z",
         "fvoStatus": "Erhalten"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-011",
     "patientName": "Andrea Schulz",
     "treatmentType": "ERGO",
     "heilmittelCode": "PFB-E-HB",
-    "facility": "Ergotherapie Leipzig",
+    "facility": "Reha-Zentrum Dresden",
     "therapist": "M. Klein",
     "voNumber": "5011-3",
     "issueDate": "12.01.2025",
@@ -551,9 +593,12 @@
       "phone": "+49 341 77665544",
       "email": "f.weber@ergo-leipzig.de",
       "specialty": "Neurologie",
-      "practice": "Ergotherapie Leipzig"
+      "practice": "Reha-Zentrum Dresden"
     },
-    "notes": ["No follow-up VO needed", "Treatment plan complete"],
+    "notes": [
+      "No follow-up VO needed",
+      "Treatment plan complete"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -565,14 +610,15 @@
         "timestamp": "2025-01-26T14:15:00Z",
         "fvoStatus": "Keine Folge-VO"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-012",
     "patientName": "Martin Fischer",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Reha-Center Nürnberg",
+    "facility": "Therapie-Zentrum München",
     "therapist": "S. Wolf",
     "voNumber": "6012-1",
     "issueDate": "20.01.2025",
@@ -599,23 +645,27 @@
       "phone": "+49 911 66778899",
       "email": "c.berg@reha-nuernberg.de",
       "specialty": "Orthopädie",
-      "practice": "Reha-Center Nürnberg"
+      "practice": "Therapie-Zentrum München"
     },
-    "notes": ["Recently ordered", "Awaiting doctor response"],
+    "notes": [
+      "Recently ordered",
+      "Awaiting doctor response"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-26T16:45:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-013",
     "patientName": "Petra Lange",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physiotherapie Dortmund",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "R. Koch",
     "voNumber": "7013-4",
     "issueDate": "06.01.2025",
@@ -644,9 +694,12 @@
       "phone": "+49 231 88990011",
       "email": "j.stein@physio-dortmund.de",
       "specialty": "Geriatrie",
-      "practice": "Physiotherapie Dortmund"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["First follow-up overdue", "Urgent response needed"],
+    "notes": [
+      "First follow-up overdue",
+      "Urgent response needed"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -663,14 +716,15 @@
         "timestamp": "2025-01-20T10:20:00Z",
         "fvoStatus": "> 7 days after 1st follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-014",
     "patientName": "Jürgen Neumann",
-    "treatmentType": "LOGO", 
+    "treatmentType": "LOGO",
     "heilmittelCode": "L-G2-45",
-    "facility": "Sprachtherapie Essen",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "L. Braun",
     "voNumber": "8014-7",
     "issueDate": "14.01.2025",
@@ -682,7 +736,7 @@
     "type": "Logopadie",
     "tb": true,
     "voStatus": "Aktiv",
-    "fvoStatus": "2nd Follow up",
+    "fvoStatus": "Anrufen",
     "fvoNumber": "8014-8",
     "doubletreatment": false,
     "secondaryTreatmentStatus": null,
@@ -700,9 +754,12 @@
       "phone": "+49 201 55443322",
       "email": "u.franz@sprach-essen.de",
       "specialty": "HNO",
-      "practice": "Sprachtherapie Essen"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["Second follow-up required", "Complex speech therapy case"],
+    "notes": [
+      "Second follow-up required",
+      "Complex speech therapy case"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -717,16 +774,17 @@
       {
         "action": "Second follow-up sent",
         "timestamp": "2025-01-25T13:00:00Z",
-        "fvoStatus": "2nd Follow up"
+        "fvoStatus": "Anrufen"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-015",
     "patientName": "Monika Zimmermann",
     "treatmentType": "ERGO",
     "heilmittelCode": "PFB-E-HB",
-    "facility": "Ergotherapie Wiesbaden",
+    "facility": "Therapie-Zentrum Frankfurt",
     "therapist": "A. Herrmann",
     "voNumber": "9015-2",
     "issueDate": "09.01.2025",
@@ -754,9 +812,12 @@
       "phone": "+49 611 99887766",
       "email": "s.mueller@ergo-wiesbaden.de",
       "specialty": "Rehabilitation",
-      "practice": "Ergotherapie Wiesbaden"
+      "practice": "Therapie-Zentrum Frankfurt"
     },
-    "notes": ["Doctor overdue with response", "Patient needs continuation"],
+    "notes": [
+      "Doctor overdue with response",
+      "Patient needs continuation"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -768,14 +829,15 @@
         "timestamp": "2025-01-23T12:15:00Z",
         "fvoStatus": ">7 days Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-016",
     "patientName": "Ralf Schubert",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physiotherapie Augsburg",
+    "facility": "Therapie-Zentrum München",
     "therapist": "C. Vogt",
     "voNumber": "1016-5",
     "issueDate": "17.01.2025",
@@ -805,9 +867,12 @@
       "phone": "+49 821 22334455",
       "email": "m.scholz@physio-augsburg.de",
       "specialty": "Sportmedizin",
-      "practice": "Physiotherapie Augsburg"
+      "practice": "Therapie-Zentrum München"
     },
-    "notes": ["VO received on time", "Good cooperation with doctor"],
+    "notes": [
+      "VO received on time",
+      "Good cooperation with doctor"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -819,14 +884,15 @@
         "timestamp": "2025-01-28T15:30:00Z",
         "fvoStatus": "Erhalten"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-017",
     "patientName": "Birgit Krause",
-    "treatmentType": "LOGO", 
+    "treatmentType": "LOGO",
     "heilmittelCode": "L-G2-45",
-    "facility": "Logopädie Praxis Mannheim",
+    "facility": "Reha-Zentrum Stuttgart",
     "therapist": "E. Lorenz",
     "voNumber": "2017-9",
     "issueDate": "11.01.2025",
@@ -855,9 +921,12 @@
       "phone": "+49 621 88990011",
       "email": "a.koenig@logo-mannheim.de",
       "specialty": "HNO",
-      "practice": "Logopädie Praxis Mannheim"
+      "practice": "Reha-Zentrum Stuttgart"
     },
-    "notes": ["Follow-up in progress", "Patient showing improvement"],
+    "notes": [
+      "Follow-up in progress",
+      "Patient showing improvement"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -869,14 +938,15 @@
         "timestamp": "2025-01-22T09:45:00Z",
         "fvoStatus": "1st Follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-018",
     "patientName": "Helmut Gross",
     "treatmentType": "ERGO",
     "heilmittelCode": "PFB-E-HB",
-    "facility": "Ergotherapie Karlsruhe",
+    "facility": "Reha-Zentrum Stuttgart",
     "therapist": "P. Jung",
     "voNumber": "3018-1",
     "issueDate": "13.01.2025",
@@ -888,7 +958,7 @@
     "type": "Ergotherapy",
     "tb": true,
     "voStatus": "Aktiv",
-    "fvoStatus": ">7 days 2nd follow up",
+    "fvoStatus": "Anrufen",
     "fvoNumber": "3018-2",
     "doubletreatment": false,
     "secondaryTreatmentStatus": null,
@@ -906,23 +976,27 @@
       "phone": "+49 721 77889900",
       "email": "g.winter@ergo-karlsruhe.de",
       "specialty": "Geriatrie",
-      "practice": "Ergotherapie Karlsruhe"
+      "practice": "Reha-Zentrum Stuttgart"
     },
-    "notes": ["Awaiting response", "Elderly patient with mobility issues"],
+    "notes": [
+      "Awaiting response",
+      "Elderly patient with mobility issues"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-20T11:20:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-019",
     "patientName": "Ursula Huber",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physiotherapie Kiel",
+    "facility": "Reha-Zentrum Nord",
     "therapist": "H. Sommer",
     "voNumber": "4019-3",
     "issueDate": "07.01.2025",
@@ -934,7 +1008,7 @@
     "type": "Physiotherapy",
     "tb": false,
     "voStatus": "Aktiv",
-    "fvoStatus": "2nd Follow up",
+    "fvoStatus": "Anrufen",
     "fvoNumber": "4019-4",
     "doubletreatment": false,
     "secondaryTreatmentStatus": null,
@@ -952,9 +1026,12 @@
       "phone": "+49 431 66778899",
       "email": "b.engel@physio-kiel.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Kiel"
+      "practice": "Reha-Zentrum Nord"
     },
-    "notes": ["Multiple follow-ups required", "Complex case"],
+    "notes": [
+      "Multiple follow-ups required",
+      "Complex case"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -969,16 +1046,17 @@
       {
         "action": "Second follow-up sent",
         "timestamp": "2025-01-27T14:10:00Z",
-        "fvoStatus": "2nd Follow up"
+        "fvoStatus": "Anrufen"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-020",
     "patientName": "Gerhard Meyer",
-    "treatmentType": "LOGO", 
+    "treatmentType": "LOGO",
     "heilmittelCode": "L-G2-45",
-    "facility": "Sprachtherapie Rostock",
+    "facility": "Reha-Zentrum Nord",
     "therapist": "I. Fischer",
     "voNumber": "5020-6",
     "issueDate": "18.01.2025",
@@ -1005,23 +1083,27 @@
       "phone": "+49 381 33445566",
       "email": "i.lehmann@sprach-rostock.de",
       "specialty": "HNO",
-      "practice": "Sprachtherapie Rostock"
+      "practice": "Reha-Zentrum Nord"
     },
-    "notes": ["Recently started treatment", "Just ordered follow-up"],
+    "notes": [
+      "Recently started treatment",
+      "Just ordered follow-up"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-25T08:30:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-021",
     "patientName": "Christine Ludwig",
     "treatmentType": "ERGO",
     "heilmittelCode": "PFB-E-HB",
-    "facility": "Ergotherapie Freiburg",
+    "facility": "Reha-Zentrum Stuttgart",
     "therapist": "T. Hartmann",
     "voNumber": "6021-8",
     "issueDate": "10.01.2025",
@@ -1049,9 +1131,12 @@
       "phone": "+49 761 77665544",
       "email": "r.baumann@ergo-freiburg.de",
       "specialty": "Neurologie",
-      "practice": "Ergotherapie Freiburg"
+      "practice": "Reha-Zentrum Stuttgart"
     },
-    "notes": ["Treatment goals achieved", "No further VO needed"],
+    "notes": [
+      "Treatment goals achieved",
+      "No further VO needed"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1063,14 +1148,15 @@
         "timestamp": "2025-01-21T16:00:00Z",
         "fvoStatus": "Keine Folge-VO"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-022",
     "patientName": "Roland Weiss",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physiotherapie Münster",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "J. Richter",
     "voNumber": "7022-4",
     "issueDate": "16.01.2025",
@@ -1098,9 +1184,12 @@
       "phone": "+49 251 22334455",
       "email": "k.seidel@physio-muenster.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Münster"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["Doctor overdue", "Follow-up needed soon"],
+    "notes": [
+      "Doctor overdue",
+      "Follow-up needed soon"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1112,14 +1201,15 @@
         "timestamp": "2025-01-28T10:45:00Z",
         "fvoStatus": ">7 days Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-023",
     "patientName": "Sigrid Hoffmann",
-    "treatmentType": "LOGO", 
+    "treatmentType": "LOGO",
     "heilmittelCode": "L-G2-45",
-    "facility": "Logopädie Praxis Heidelberg",
+    "facility": "Reha-Zentrum Stuttgart",
     "therapist": "G. Bauer",
     "voNumber": "8023-7",
     "issueDate": "19.01.2025",
@@ -1147,23 +1237,27 @@
       "phone": "+49 6221 99887766",
       "email": "w.krueger@logo-heidelberg.de",
       "specialty": "HNO",
-      "practice": "Logopädie Praxis Heidelberg"
+      "practice": "Reha-Zentrum Stuttgart"
     },
-    "notes": ["Recently ordered", "Patient making progress"],
+    "notes": [
+      "Recently ordered",
+      "Patient making progress"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-26T13:20:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-024",
     "patientName": "Franz Keller",
     "treatmentType": "ERGO",
     "heilmittelCode": "PFB-E-HB",
-    "facility": "Ergotherapie Würzburg",
+    "facility": "Therapie-Zentrum München",
     "therapist": "B. Schmitt",
     "voNumber": "9024-2",
     "issueDate": "05.01.2025",
@@ -1193,9 +1287,12 @@
       "phone": "+49 931 55443322",
       "email": "s.graf@ergo-wuerzburg.de",
       "specialty": "Rehabilitation",
-      "practice": "Ergotherapie Würzburg"
+      "practice": "Therapie-Zentrum München"
     },
-    "notes": ["VO received successfully", "Treatment nearly complete"],
+    "notes": [
+      "VO received successfully",
+      "Treatment nearly complete"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1207,14 +1304,15 @@
         "timestamp": "2025-01-25T12:00:00Z",
         "fvoStatus": "Erhalten"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-025",
     "patientName": "Gisela Bergmann",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physiotherapie Lübeck",
+    "facility": "Reha-Zentrum Nord",
     "therapist": "V. Peters",
     "voNumber": "1025-9",
     "issueDate": "21.01.2025",
@@ -1242,23 +1340,27 @@
       "phone": "+49 451 66778899",
       "email": "d.vogel@physio-luebeck.de",
       "specialty": "Geriatrie",
-      "practice": "Physiotherapie Lübeck"
+      "practice": "Reha-Zentrum Nord"
     },
-    "notes": ["New patient", "Just started treatment"],
+    "notes": [
+      "New patient",
+      "Just started treatment"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-27T15:15:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-026",
     "patientName": "Robert Klein",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H-BV",
-    "facility": "Reha-Zentrum München",
+    "facility": "Therapie-Zentrum München",
     "therapist": "M. Fischer",
     "voNumber": "2026-1",
     "issueDate": "09.01.2025",
@@ -1288,21 +1390,25 @@
       "specialty": "Orthopädie",
       "practice": "Physiotherapie Zentrum Berlin"
     },
-    "notes": ["Second patient for Dr. Mueller", "Different ER for bulk testing"],
+    "notes": [
+      "Second patient for Dr. Mueller",
+      "Different ER for bulk testing"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-26T10:15:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-027",
     "patientName": "Ingrid Weber",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physiotherapie Hamburg Nord",
+    "facility": "Rehazentrum Hamburg",
     "therapist": "S. Becker",
     "voNumber": "3027-4",
     "issueDate": "07.01.2025",
@@ -1332,14 +1438,18 @@
       "specialty": "Orthopädie",
       "practice": "Physiotherapie Zentrum Berlin"
     },
-    "notes": ["Third patient for Dr. Mueller", "Hamburg facility for variety"],
+    "notes": [
+      "Third patient for Dr. Mueller",
+      "Hamburg facility for variety"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-25T14:30:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-028",
@@ -1376,7 +1486,10 @@
       "specialty": "Neurologie",
       "practice": "Rehazentrum Hamburg"
     },
-    "notes": ["Second overdue patient for Dr. Wagner", "Different ER location"],
+    "notes": [
+      "Second overdue patient for Dr. Wagner",
+      "Different ER location"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1388,14 +1501,15 @@
         "timestamp": "2025-01-22T11:20:00Z",
         "fvoStatus": ">7 days Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-029",
     "patientName": "Petra Hoffmann",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Physio-Praxis Düsseldorf",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "R. Schmidt",
     "voNumber": "5029-3",
     "issueDate": "04.01.2025",
@@ -1425,7 +1539,10 @@
       "specialty": "Neurologie",
       "practice": "Rehazentrum Hamburg"
     },
-    "notes": ["Third overdue patient for Dr. Wagner", "Düsseldorf facility"],
+    "notes": [
+      "Third overdue patient for Dr. Wagner",
+      "Düsseldorf facility"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1437,14 +1554,15 @@
         "timestamp": "2025-01-25T16:45:00Z",
         "fvoStatus": ">7 days Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-030",
     "patientName": "Friedrich Bauer",
     "treatmentType": "LOGO",
     "heilmittelCode": "L-E45H",
-    "facility": "Logo-Zentrum Frankfurt",
+    "facility": "Therapie-Zentrum Frankfurt",
     "therapist": "K. Weber",
     "voNumber": "6030-8",
     "issueDate": "05.01.2025",
@@ -1473,9 +1591,12 @@
       "phone": "+49 89 77788899",
       "email": "t.schneider@logo-muenchen.de",
       "specialty": "HNO",
-      "practice": "Logopädie Praxis München"
+      "practice": "Therapie-Zentrum München"
     },
-    "notes": ["Second 1st Follow up patient for Dr. Schneider", "Frankfurt location"],
+    "notes": [
+      "Second 1st Follow up patient for Dr. Schneider",
+      "Frankfurt location"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1487,14 +1608,15 @@
         "timestamp": "2025-01-21T13:45:00Z",
         "fvoStatus": "1st Follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-031",
     "patientName": "Marlene Fischer",
     "treatmentType": "LOGO",
     "heilmittelCode": "L-G2-45",
-    "facility": "Sprach-Therapie Augsburg",
+    "facility": "Therapie-Zentrum München",
     "therapist": "N. Braun",
     "voNumber": "7031-2",
     "issueDate": "08.01.2025",
@@ -1523,9 +1645,12 @@
       "phone": "+49 89 77788899",
       "email": "t.schneider@logo-muenchen.de",
       "specialty": "HNO",
-      "practice": "Logopädie Praxis München"
+      "practice": "Therapie-Zentrum München"
     },
-    "notes": ["Third 1st Follow up patient for Dr. Schneider", "Augsburg facility"],
+    "notes": [
+      "Third 1st Follow up patient for Dr. Schneider",
+      "Augsburg facility"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1537,14 +1662,15 @@
         "timestamp": "2025-01-24T10:30:00Z",
         "fvoStatus": "1st Follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-032",
     "patientName": "Werner Schulze",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "BO-E-H",
-    "facility": "Reha-Center Leipzig",
+    "facility": "Reha-Zentrum Dresden",
     "therapist": "D. Koch",
     "voNumber": "8032-5",
     "issueDate": "06.01.2025",
@@ -1556,7 +1682,7 @@
     "type": "Physiotherapy",
     "tb": false,
     "voStatus": "Aktiv",
-    "fvoStatus": "2nd Follow up",
+    "fvoStatus": "Anrufen",
     "fvoNumber": "8032-6",
     "doubletreatment": false,
     "secondaryTreatmentStatus": null,
@@ -1574,9 +1700,12 @@
       "phone": "+49 351 22334455",
       "email": "m.franz@physio-dresden.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Dresden"
+      "practice": "Reha-Zentrum Dresden"
     },
-    "notes": ["Second 2nd Follow up patient for Dr. Franz", "Leipzig facility"],
+    "notes": [
+      "Second 2nd Follow up patient for Dr. Franz",
+      "Leipzig facility"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1591,16 +1720,17 @@
       {
         "action": "Second follow-up sent",
         "timestamp": "2025-01-26T11:15:00Z",
-        "fvoStatus": "2nd Follow up"
+        "fvoStatus": "Anrufen"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-033",
     "patientName": "Gabriele Richter",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Sports-Reha Hannover",
+    "facility": "Reha-Zentrum Nord",
     "therapist": "L. Müller",
     "voNumber": "9033-1",
     "issueDate": "17.01.2025",
@@ -1632,7 +1762,10 @@
       "specialty": "Sportmedizin",
       "practice": "Rehazentrum Stuttgart"
     },
-    "notes": ["Second Erhalten patient for Dr. Berg", "Hannover sports facility"],
+    "notes": [
+      "Second Erhalten patient for Dr. Berg",
+      "Hannover sports facility"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1644,14 +1777,15 @@
         "timestamp": "2025-01-28T14:20:00Z",
         "fvoStatus": "Erhalten"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-034",
     "patientName": "Helmut Wagner",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "BO-E-H",
-    "facility": "Bewegungs-Therapie Bremen",
+    "facility": "Reha-Zentrum Nord",
     "therapist": "T. Schmidt",
     "voNumber": "1034-6",
     "issueDate": "19.01.2025",
@@ -1681,7 +1815,10 @@
       "specialty": "Sportmedizin",
       "practice": "Rehazentrum Stuttgart"
     },
-    "notes": ["Third Erhalten patient for Dr. Berg", "Bremen movement therapy"],
+    "notes": [
+      "Third Erhalten patient for Dr. Berg",
+      "Bremen movement therapy"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1693,14 +1830,15 @@
         "timestamp": "2025-01-27T12:45:00Z",
         "fvoStatus": "Erhalten"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-035",
     "patientName": "Manfred Keller",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H-BV",
-    "facility": "Physiotherapie Zentrum Essen",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "H. Bauer",
     "voNumber": "2035-4",
     "issueDate": "11.01.2025",
@@ -1728,23 +1866,27 @@
       "phone": "+49 201 88990011",
       "email": "k.weber@physio-essen.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Zentrum Essen"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["New doctor with multiple Bestelt patients", "First of three"],
+    "notes": [
+      "New doctor with multiple Bestelt patients",
+      "First of three"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-27T09:30:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-036",
     "patientName": "Doris Neumann",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H",
-    "facility": "Reha-Praxis Bochum",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "P. Fischer",
     "voNumber": "3036-2",
     "issueDate": "13.01.2025",
@@ -1772,23 +1914,27 @@
       "phone": "+49 201 88990011",
       "email": "k.weber@physio-essen.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Zentrum Essen"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["Second Bestelt patient for Dr. Weber", "Bochum facility"],
+    "notes": [
+      "Second Bestelt patient for Dr. Weber",
+      "Bochum facility"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-28T11:15:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-037",
     "patientName": "Erich Hoffmann",
     "treatmentType": "ERGO",
     "heilmittelCode": "PFB-E-HB",
-    "facility": "Ergotherapie Gelsenkirchen",
+    "facility": "Therapie-Zentrum Köln",
     "therapist": "I. Klein",
     "voNumber": "4037-9",
     "issueDate": "16.01.2025",
@@ -1816,23 +1962,27 @@
       "phone": "+49 201 88990011",
       "email": "k.weber@physio-essen.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Zentrum Essen"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["Third Bestelt patient for Dr. Weber", "Gelsenkirchen ergotherapy"],
+    "notes": [
+      "Third Bestelt patient for Dr. Weber",
+      "Gelsenkirchen ergotherapy"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
         "timestamp": "2025-01-29T14:50:00Z",
         "fvoStatus": "Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-038",
     "patientName": "Renate Schulz",
     "treatmentType": "LOGO",
     "heilmittelCode": "L-G2-45",
-    "facility": "Logopädie-Zentrum Magdeburg",
+    "facility": "Reha-Zentrum Dresden",
     "therapist": "F. Wagner",
     "voNumber": "5038-1",
     "issueDate": "12.01.2025",
@@ -1861,9 +2011,12 @@
       "phone": "+49 391 77889900",
       "email": "m.hoffmann@logo-magdeburg.de",
       "specialty": "HNO",
-      "practice": "Logopädie-Zentrum Magdeburg"
+      "practice": "Reha-Zentrum Dresden"
     },
-    "notes": ["New doctor with 1st Follow up patients", "First of two"],
+    "notes": [
+      "New doctor with 1st Follow up patients",
+      "First of two"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1875,14 +2028,15 @@
         "timestamp": "2025-01-27T16:30:00Z",
         "fvoStatus": "1st Follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-039",
     "patientName": "Wolfgang Krause",
     "treatmentType": "LOGO",
     "heilmittelCode": "L-E45H",
-    "facility": "Sprach-Praxis Erfurt",
+    "facility": "Reha-Zentrum Dresden",
     "therapist": "A. Richter",
     "voNumber": "6039-7",
     "issueDate": "14.01.2025",
@@ -1911,9 +2065,12 @@
       "phone": "+49 391 77889900",
       "email": "m.hoffmann@logo-magdeburg.de",
       "specialty": "HNO",
-      "practice": "Logopädie-Zentrum Magdeburg"
+      "practice": "Reha-Zentrum Dresden"
     },
-    "notes": ["Second 1st Follow up patient for Dr. Hoffmann", "Erfurt location"],
+    "notes": [
+      "Second 1st Follow up patient for Dr. Hoffmann",
+      "Erfurt location"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1925,14 +2082,15 @@
         "timestamp": "2025-01-29T10:20:00Z",
         "fvoStatus": "1st Follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-040",
     "patientName": "Ingeborg Müller",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "MLD45H",
-    "facility": "Therapie-Center Potsdam",
+    "facility": "Physiotherapie Zentrum Berlin",
     "therapist": "G. Becker",
     "voNumber": "7040-5",
     "issueDate": "03.01.2025",
@@ -1960,9 +2118,12 @@
       "phone": "+49 331 22334455",
       "email": "s.mueller@therapie-potsdam.de",
       "specialty": "Neurologie",
-      "practice": "Therapie-Center Potsdam"
+      "practice": "Physiotherapie Zentrum Berlin"
     },
-    "notes": ["New doctor with overdue patients", "First of two"],
+    "notes": [
+      "New doctor with overdue patients",
+      "First of two"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -1974,14 +2135,15 @@
         "timestamp": "2025-01-24T13:40:00Z",
         "fvoStatus": ">7 days Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-041",
     "patientName": "Horst Zimmermann",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "KG-H-BV",
-    "facility": "Reha-Zentrum Cottbus",
+    "facility": "Physiotherapie Zentrum Berlin",
     "therapist": "U. Lehmann",
     "voNumber": "8041-3",
     "issueDate": "05.01.2025",
@@ -2009,9 +2171,12 @@
       "phone": "+49 331 22334455",
       "email": "s.mueller@therapie-potsdam.de",
       "specialty": "Neurologie",
-      "practice": "Therapie-Center Potsdam"
+      "practice": "Physiotherapie Zentrum Berlin"
     },
-    "notes": ["Second overdue patient for Dr. Stefan Mueller", "Cottbus facility"],
+    "notes": [
+      "Second overdue patient for Dr. Stefan Mueller",
+      "Cottbus facility"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -2023,14 +2188,15 @@
         "timestamp": "2025-01-26T12:10:00Z",
         "fvoStatus": ">7 days Bestelt"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-042",
     "patientName": "Elfriede Braun",
     "treatmentType": "ERGO",
     "heilmittelCode": "NOB-E-HB",
-    "facility": "Ergotherapie Brandenburg",
+    "facility": "Physiotherapie Zentrum Berlin",
     "therapist": "J. Sommer",
     "voNumber": "9042-6",
     "issueDate": "09.01.2025",
@@ -2059,9 +2225,12 @@
       "phone": "+49 221 99887766",
       "email": "l.zimmermann@ergo-koeln.de",
       "specialty": "Rehabilitation",
-      "practice": "Ergotherapie Köln"
+      "practice": "Therapie-Zentrum Köln"
     },
-    "notes": ["Mixed status for Dr. Zimmermann", "Brandenburg ergotherapy"],
+    "notes": [
+      "Mixed status for Dr. Zimmermann",
+      "Brandenburg ergotherapy"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -2073,14 +2242,15 @@
         "timestamp": "2025-01-30T09:15:00Z",
         "fvoStatus": "1st Follow up"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   },
   {
     "id": "crm-vo-043",
     "patientName": "Günther Wolf",
     "treatmentType": "PHYSIO",
     "heilmittelCode": "BO-E-H",
-    "facility": "Physio-Zentrum Erfurt",
+    "facility": "Reha-Zentrum Dresden",
     "therapist": "B. König",
     "voNumber": "1043-8",
     "issueDate": "18.01.2025",
@@ -2091,7 +2261,7 @@
     "type": "Physiotherapy",
     "tb": true,
     "voStatus": "Aktiv",
-    "fvoStatus": "2nd Follow up",
+    "fvoStatus": "Anrufen",
     "fvoNumber": "1043-9",
     "doubletreatment": false,
     "secondaryTreatmentStatus": null,
@@ -2109,9 +2279,12 @@
       "phone": "+49 351 22334455",
       "email": "m.franz@physio-dresden.de",
       "specialty": "Orthopädie",
-      "practice": "Physiotherapie Dresden"
+      "practice": "Reha-Zentrum Dresden"
     },
-    "notes": ["Third 2nd Follow up patient for Dr. Franz", "Erfurt physio center"],
+    "notes": [
+      "Third 2nd Follow up patient for Dr. Franz",
+      "Erfurt physio center"
+    ],
     "timeline": [
       {
         "action": "VO ordered from doctor",
@@ -2126,8 +2299,9 @@
       {
         "action": "Second follow-up sent",
         "timestamp": "2025-01-30T15:25:00Z",
-        "fvoStatus": "2nd Follow up"
+        "fvoStatus": "Anrufen"
       }
-    ]
+    ],
+    "orderingStatus": "By Admin"
   }
 ]

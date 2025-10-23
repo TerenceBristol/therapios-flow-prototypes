@@ -14,7 +14,8 @@
     "fvoStatus": "Keine Folge-VO",
     "fvoNumber": null,
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-002",
@@ -31,7 +32,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "2155-7",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-003",
@@ -48,7 +50,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "2155-8",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-004",
@@ -65,7 +68,8 @@
     "fvoStatus": "Keine Folge-VO",
     "fvoNumber": null,
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-005",
@@ -82,7 +86,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "3464-2",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-006",
@@ -99,7 +104,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "3464-3",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-007",
@@ -116,7 +122,8 @@
     "fvoStatus": "Keine Folge-VO",
     "fvoNumber": null,
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-008",
@@ -133,7 +140,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "2584-5",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-009",
@@ -150,7 +158,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "2584-6",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-010",
@@ -167,7 +176,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "2584-7",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-011",
@@ -184,7 +194,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "2584-8",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-012",
@@ -201,7 +212,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "708-13",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-013",
@@ -218,7 +230,8 @@
     "fvoStatus": "Bestellen",
     "fvoNumber": null,
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-014",
@@ -235,7 +248,8 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "1966-18",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-015",
@@ -252,7 +266,8 @@
     "fvoStatus": "Bestellen",
     "fvoNumber": null,
     "doubletreatment": true,
-    "secondaryTreatmentStatus": "2/6"
+    "secondaryTreatmentStatus": "2/6",
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-016",
@@ -269,7 +284,8 @@
     "fvoStatus": "Keine Folge-VO",
     "fvoNumber": null,
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-017",
@@ -286,7 +302,8 @@
     "fvoStatus": "Bestelt",
     "fvoNumber": "9988-4",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   },
   {
     "id": "vo-018",
@@ -303,6 +320,7 @@
     "fvoStatus": "Erhalten",
     "fvoNumber": "1122-8",
     "doubletreatment": false,
-    "secondaryTreatmentStatus": null
+    "secondaryTreatmentStatus": null,
+    "orderingStatus": "By Admin"
   }
 ]

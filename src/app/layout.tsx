@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import StageWiseToolbar from "@/components/StageWiseToolbar";
+import { VOStatusProvider } from "@/contexts/VOStatusContext";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -29,8 +30,10 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <StageWiseToolbar />
-        {children}
+        <VOStatusProvider>
+          <StageWiseToolbar />
+          {children}
+        </VOStatusProvider>
       </body>
     </html>
   );

@@ -1,6 +1,9 @@
 // VO (Verordnung/Prescription) Status Types
-export type VOStatus = 'Bereit' | 'Aktiv' | 'Abgebrochen' | 'Fertig Behandelt' | 'Abgerechnet' | 'Abgelaufen';
-export type FVOStatus = 'Bestellen' | 'Bestelt' | '>7 days Bestelt' | '1st Follow up' | '> 7 days after 1st follow up' | '2nd Follow up' | '>7 days 2nd follow up' | 'Erhalten' | 'Keine Folge-VO';
+export type VOStatus = 'Aktiv' | 'Abgebrochen' | 'Fertig Behandelt' | 'Abgerechnet' | 'Abgelaufen';
+export type BillingStatusInsurance = '' | 'Ready to Send' | 'For Fixing' | 'Sent' | 'Paid';
+export type BillingStatusCopayment = '' | 'Paid' | 'For Refund';
+export type FVOStatus = '' | 'Bestellen' | 'Bestelt' | '>7 days Bestelt' | '1st Follow up' | '> 7 days after 1st follow up' | 'Anrufen' | 'Erhalten' | 'Keine Folge-VO';
+export type OrderingStatus = 'By Admin' | 'By Therapist';
 
 // VO Record Interface
 export interface VORecord {
@@ -17,9 +20,11 @@ export interface VORecord {
   tb: boolean; // TB column 
   voStatus: VOStatus;
   fvoStatus: FVOStatus;
+  orderingStatus: OrderingStatus; // Who is responsible for ordering
   fvoNumber?: string; // "F-VO"
   doubletreatment: boolean; // "Doppel-Beh."
   secondaryTreatmentStatus?: string; // Second "Beh. Status" column
+  daysSinceLastBeh?: number; // Days since last treatment
 }
 
 // Prototype Metadata Interface
@@ -54,7 +59,7 @@ export interface PatientInfo {
 }
 
 // CRM Column type for Kanban board
-export type CRMColumn = 'Bestellen' | 'Bestelt' | '>7 days Bestelt' | '1st Follow up' | '> 7 days after 1st follow up' | '2nd Follow up' | '>7 days 2nd follow up' | 'Erhalten' | 'Keine Folge-VO';
+export type CRMColumn = 'Bestellen' | 'Bestelt' | '>7 days Bestelt' | '1st Follow up' | '> 7 days after 1st follow up' | 'Anrufen' | 'Erhalten' | 'Keine Folge-VO';
 
 export interface CRMVORecord extends VORecord {
   doctorInfo: DoctorInfo;
@@ -92,4 +97,90 @@ export interface TherapistBreakdown {
   name: string;
   er: string[];
   fertigVOCount: number;
+}
+
+// Validation Record Types (for Billing Dashboard)
+export interface ValidationRecord {
+  id: string;
+  name: string;
+  voNr: string;
+  heilmittel: string;
+  einrichtung: string;
+  therapeut: string;
+  ausstDatum: string;
+  transferStatus: string;
+  behStatus: string;
+  arzt: string;
+  tb: string;
+  fvoStatus: string;
+  bestelltDatum: string;
+  fvo: string;
+  voStatus: VOStatus;
+  billingStatusInsurance: BillingStatusInsurance;
+  billingStatusCopayment: BillingStatusCopayment;
+  icdCode?: string;
+  zzBefreiung?: string;
+  ikNumber?: string;
+  amountPerTreatment?: string;
+  treatmentHistory?: Array<{
+    date: string;
+    session: number;
+    notes: string;
+    therapeut: string;
+  }>;
+  voSlip?: {
+    fileName: string;
+    uploadDate: string;
+    fileType: string;
+    fileSize: number;
+  };
+  copaymentInfo?: {
+    invoiceNumber: string;
+    generatedDate: string;
+    copaymentAmount: string;
+    documentGenerated: boolean;
+    refundGenerated: boolean;
+    refundAmount: string | null;
+    refundDate: string | null;
+    refundInvoiceNumber: string | null;
+  };
+  patientAddress?: {
+    nachname: string;
+    vorname: string;
+    strasse: string;
+    plz: string;
+    ort: string;
+    land: string;
+  };
+}
+
+// Calendar Activity Types
+export type ActivityType = 'Pause' | 'Doku' | 'Other';
+
+export interface Activity {
+  id: string;
+  type: ActivityType;
+  date: string; // ISO date string YYYY-MM-DD
+  duration: number; // in minutes
+  position: number;
+  therapist: string;
+}
+
+// Calendar Treatment Types
+export type BehandlungsArt = 'Durchgeführt' | 'Geplant';
+
+export interface CalendarTreatment {
+  id: string;
+  type: 'treatment';
+  patientName: string;
+  voNumber: string;
+  voId: string; // reference to VO in therapistVOData
+  date: string; // ISO date string YYYY-MM-DD
+  duration: number; // in minutes
+  notes: string;
+  behandlungsart: BehandlungsArt;
+  patientRejected: boolean;
+  position: number;
+  therapist: string;
+  behStatus: string; // e.g., "4/20" from the VO
 }

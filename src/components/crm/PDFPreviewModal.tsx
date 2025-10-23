@@ -9,6 +9,7 @@ interface PDFPreviewModalProps {
   formType: 'initial' | 'followup';
   doctorName: string;
   selectedVOs: CRMVORecord[];
+  deliveryAddress?: string;
 }
 
 const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
@@ -16,8 +17,11 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
   onClose,
   formType,
   doctorName,
-  selectedVOs
+  selectedVOs,
+  deliveryAddress
 }) => {
+  // Suppress unused parameter warning
+  console.log('Doctor name:', doctorName);
   // Helper function to format current date as DD.MM.YYYY
   const getCurrentDate = (): string => {
     const now = new Date();
@@ -34,14 +38,15 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
     return `${count} ${vo.heilmittelCode} im Hausbesuch`;
   };
 
-  // Group VOs by facility (ER)
-  const facilityGroups = React.useMemo(() => {
-    const groups: { [facility: string]: CRMVORecord[] } = {};
+  // Group VOs by doctor
+  const doctorGroups = React.useMemo(() => {
+    const groups: { [doctorName: string]: CRMVORecord[] } = {};
     selectedVOs.forEach(vo => {
-      if (!groups[vo.facility]) {
-        groups[vo.facility] = [];
+      const doctorName = vo.doctorInfo.name;
+      if (!groups[doctorName]) {
+        groups[doctorName] = [];
       }
-      groups[vo.facility].push(vo);
+      groups[doctorName].push(vo);
     });
     return groups;
   }, [selectedVOs]);
@@ -50,7 +55,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
   if (!isOpen) return null;
 
   // Template for Initial Order Form
-  const renderInitialOrderForm = (facility: string, vos: CRMVORecord[]) => {
+  const renderInitialOrderForm = (doctorName: string, vos: CRMVORecord[]) => {
     return (
       <div style={{
         marginBottom: '2rem',
@@ -69,7 +74,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
         <div style={{ clear: 'both' }}></div>
 
         <div style={{ marginBottom: '1rem' }}>
-          Sehr geehrte Damen und Herren,
+          Sehr geehrte Damen und Herren {doctorName},
         </div>
 
         <div style={{ marginBottom: '1rem' }}>
@@ -77,7 +82,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
         </div>
 
         <div style={{ marginBottom: '1rem', fontWeight: 'bold' }}>
-          <strong>ER:</strong> {facility}
+          <strong>ER:</strong> {vos[0]?.facility || ''}
         </div>
 
         <table style={{
@@ -87,6 +92,19 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
           marginBottom: '1rem',
           fontSize: '0.8rem'
         }}>
+          <thead>
+            <tr>
+              <th style={{ border: '1px solid #000', padding: '0.5rem', backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>
+                Patient Name
+              </th>
+              <th style={{ border: '1px solid #000', padding: '0.5rem', backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>
+                Geb. Datum
+              </th>
+              <th style={{ border: '1px solid #000', padding: '0.5rem', backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>
+                Details
+              </th>
+            </tr>
+          </thead>
           <tbody>
             {vos.map((vo, index) => (
               <tr key={index}>
@@ -103,6 +121,21 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
             ))}
           </tbody>
         </table>
+
+        {deliveryAddress && (
+          <div style={{ 
+            padding: '1rem', 
+            marginBottom: '1rem',
+            backgroundColor: '#fff'
+          }}>
+            <div style={{ marginBottom: '0.5rem' }}>
+              Bitte senden Sie Ihr Rezept nach Möglichkeit an diese Adresse:
+            </div>
+            <div style={{ fontWeight: 'bold', whiteSpace: 'pre-line' }}>
+              {deliveryAddress}
+            </div>
+          </div>
+        )}
 
         <div style={{ marginBottom: '1rem' }}>
           Wenn möglich, bitten wir um Zusendung der Heilmittelverordnung an unsere <strong>Büroadresse</strong>:
@@ -142,7 +175,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
   };
 
   // Template for Follow-up Order Form
-  const renderFollowupOrderForm = (facility: string, vos: CRMVORecord[]) => {
+  const renderFollowupOrderForm = (doctorName: string, vos: CRMVORecord[]) => {
     return (
       <div style={{
         marginBottom: '2rem',
@@ -161,7 +194,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
         <div style={{ clear: 'both' }}></div>
 
         <div style={{ marginBottom: '1rem' }}>
-          Sehr geehrtes Praxisteam,
+          Sehr geehrtes Praxisteam {doctorName},
         </div>
 
         <div style={{ marginBottom: '1rem' }}>
@@ -173,7 +206,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
         </div>
 
         <div style={{ marginBottom: '1rem', fontWeight: 'bold' }}>
-          <strong>ER:</strong> {facility}
+          <strong>ER:</strong> {vos[0]?.facility || ''}
         </div>
 
         <table style={{
@@ -183,6 +216,22 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
           marginBottom: '1rem',
           fontSize: '0.8rem'
         }}>
+          <thead>
+            <tr>
+              <th style={{ border: '1px solid #000', padding: '0.5rem', backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>
+                Patient Name
+              </th>
+              <th style={{ border: '1px solid #000', padding: '0.5rem', backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>
+                Geb. Datum
+              </th>
+              <th style={{ border: '1px solid #000', padding: '0.5rem', backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>
+                Details
+              </th>
+              <th style={{ border: '1px solid #000', padding: '0.5rem', backgroundColor: '#f0f0f0', fontWeight: 'bold' }}>
+                Bestelt Date
+              </th>
+            </tr>
+          </thead>
           <tbody>
             {vos.map((vo, index) => (
               <tr key={index}>
@@ -195,10 +244,28 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
                 <td style={{ border: '1px solid #000', padding: '0.5rem' }}>
                   {formatTreatmentDetails(vo)}
                 </td>
+                <td style={{ border: '1px solid #000', padding: '0.5rem' }}>
+                  {vo.besteltDate || ''}
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
+
+        {deliveryAddress && (
+          <div style={{ 
+            padding: '1rem', 
+            marginBottom: '1rem',
+            backgroundColor: '#fff'
+          }}>
+            <div style={{ marginBottom: '0.5rem' }}>
+              Bitte senden Sie Ihr Rezept nach Möglichkeit an diese Adresse:
+            </div>
+            <div style={{ fontWeight: 'bold', whiteSpace: 'pre-line' }}>
+              {deliveryAddress}
+            </div>
+          </div>
+        )}
 
         <div style={{ marginBottom: '1rem' }}>
           Damit wir die Behandlung ohne Unterbrechung fortsetzen und mögliche Rückfragen von Patient:innen, 
@@ -224,7 +291,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
 
   const handleDownload = () => {
     // Mock download functionality
-    console.log('Downloading PDF:', formType, doctorName, Object.keys(facilityGroups).length, 'pages');
+    console.log('Downloading PDF:', formType, Object.keys(doctorGroups).length, 'documents for doctors:', Object.keys(doctorGroups));
     // In a real implementation, this would trigger the PDF download
   };
 
@@ -234,33 +301,26 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
         {/* Modal Header */}
         <div className="modal-header">
           <h2 className="modal-title">
-            {formType === 'initial' ? 'Initial' : 'Follow-up'} Order Form - {doctorName}
+            {formType === 'initial' ? 'Initial' : 'Follow-up'} Order Forms{Object.keys(doctorGroups).length > 1 ? ` - ${Object.keys(doctorGroups).length} Doctors` : ` - ${Object.keys(doctorGroups)[0] || ''}`}
           </h2>
           <button className="modal-close" onClick={onClose}>×</button>
         </div>
 
         {/* PDF Preview Content */}
-        <div className="pdf-preview-content" style={{ justifyContent: Object.keys(facilityGroups).length > 0 ? 'flex-start' : 'center' }}>
-          <div className="pdf-preview-icon">📄</div>
-          <div className="pdf-preview-text">
-            {formType === 'initial' ? 'Initial Order Form' : 'Follow-up Order Form'}
-          </div>
-          <div className="pdf-preview-subtext">
-            {Object.keys(facilityGroups).length} page{Object.keys(facilityGroups).length !== 1 ? 's' : ''} ready to download for Dr. {doctorName}
-          </div>
+        <div className="pdf-preview-content" style={{ justifyContent: Object.keys(doctorGroups).length > 0 ? 'flex-start' : 'center' }}>
 
           {/* Multi-page PDF Content Preview */}
-          <div style={{ marginTop: '2rem', width: '100%' }}>
-            {Object.entries(facilityGroups).map(([facility, vos], index) => (
-              <React.Fragment key={facility}>
+          <div style={{ width: '100%' }}>
+            {Object.entries(doctorGroups).map(([doctorName, vos], index) => (
+              <React.Fragment key={doctorName}>
                 {/* Render the appropriate template based on form type */}
                 {formType === 'initial' 
-                  ? renderInitialOrderForm(facility, vos)
-                  : renderFollowupOrderForm(facility, vos)
+                  ? renderInitialOrderForm(doctorName, vos)
+                  : renderFollowupOrderForm(doctorName, vos)
                 }
                 
                 {/* Page separator (except for the last page) */}
-                {index < Object.keys(facilityGroups).length - 1 && (
+                {index < Object.keys(doctorGroups).length - 1 && (
                   <div style={{
                     margin: '2rem 0',
                     padding: '0.5rem 0',
@@ -270,7 +330,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
                     borderTop: '2px dashed #ccc',
                     borderBottom: '2px dashed #ccc'
                   }}>
-                    ─── Next Page ───
+                    ─── Next Document (Dr. {Object.keys(doctorGroups)[index + 1]}) ───
                   </div>
                 )}
               </React.Fragment>
@@ -289,7 +349,7 @@ const PDFPreviewModal: React.FC<PDFPreviewModalProps> = ({
               Cancel
             </button>
             <button className="action-btn primary" onClick={handleDownload}>
-              Download PDF ({Object.keys(facilityGroups).length} page{Object.keys(facilityGroups).length !== 1 ? 's' : ''})
+              Download PDF
             </button>
           </div>
         </div>
