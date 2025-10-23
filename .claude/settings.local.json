@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(pkill:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Read(//Users/terence/Documents/**)",
+      "Read(//Users/terence/Library/**)",
+      "Read(//Users/terence/.config/**)",
+      "WebSearch",
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp list:*)",
+      "Read(//Users/terence/.cursor/**)",
+      "SlashCommand(/goseq)",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
