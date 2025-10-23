@@ -1,0 +1,190 @@
+[
+  {
+    "id": "upload-001",
+    "voNumber": "2155-10",
+    "uploadedBy": "S. Zeibig",
+    "uploadedById": "therapist-001",
+    "uploadDate": "2025-10-23T13:45:00Z",
+    "fileName": "vo_2155_10.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Pending Review",
+    "notes": []
+  },
+  {
+    "id": "upload-002",
+    "voNumber": "",
+    "uploadedBy": "A. Rosky",
+    "uploadedById": "therapist-002",
+    "uploadDate": "2025-10-23T11:20:00Z",
+    "fileName": "prescription_scan_102323.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Missing VO Number",
+    "notes": [
+      {
+        "id": "note-002-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-23T12:00:00Z",
+        "text": "Please provide the VO number for this prescription"
+      }
+    ]
+  },
+  {
+    "id": "upload-003",
+    "voNumber": "3745-3",
+    "uploadedBy": "S. Zeibig",
+    "uploadedById": "therapist-001",
+    "uploadDate": "2025-10-23T09:15:00Z",
+    "fileName": "vo_3745_3_photo.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Low Picture Quality",
+    "notes": [
+      {
+        "id": "note-003-2",
+        "author": "S. Zeibig",
+        "role": "Therapist",
+        "timestamp": "2025-10-23T11:00:00Z",
+        "text": "I've uploaded a better quality image as a new upload"
+      },
+      {
+        "id": "note-003-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-23T10:30:00Z",
+        "text": "Image is blurry and difficult to read. Please reupload with better quality."
+      }
+    ]
+  },
+  {
+    "id": "upload-004",
+    "voNumber": "5158-1",
+    "uploadedBy": "J. Minge-Teteberg",
+    "uploadedById": "therapist-003",
+    "uploadDate": "2025-10-22T16:30:00Z",
+    "fileName": "andreas_bloch_vo.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Uploaded to TO",
+    "notes": [
+      {
+        "id": "note-004-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-22T17:00:00Z",
+        "text": "Successfully processed and uploaded to Therapios Online system"
+      }
+    ]
+  },
+  {
+    "id": "upload-005",
+    "voNumber": "3588-3",
+    "uploadedBy": "S. Zeibig",
+    "uploadedById": "therapist-001",
+    "uploadDate": "2025-10-22T14:00:00Z",
+    "fileName": "carsten_bunar_prescription.png",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Uploaded to TO",
+    "notes": [
+      {
+        "id": "note-005-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-22T15:30:00Z",
+        "text": "Verified and uploaded"
+      }
+    ]
+  },
+  {
+    "id": "upload-006",
+    "voNumber": "3166-2",
+    "uploadedBy": "A. Rosky",
+    "uploadedById": "therapist-002",
+    "uploadDate": "2025-10-21T10:45:00Z",
+    "fileName": "martina_gerth_vo_scan.pdf",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Pending Review",
+    "notes": []
+  },
+  {
+    "id": "upload-007",
+    "voNumber": "5377-1",
+    "uploadedBy": "J. Minge-Teteberg",
+    "uploadedById": "therapist-003",
+    "uploadDate": "2025-10-21T08:30:00Z",
+    "fileName": "hangekorb_vo.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Other",
+    "notes": [
+      {
+        "id": "note-007-2",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-21T10:00:00Z",
+        "text": "Marked as duplicate - original already in system with ID 5377-1a"
+      },
+      {
+        "id": "note-007-1",
+        "author": "J. Minge-Teteberg",
+        "role": "Therapist",
+        "timestamp": "2025-10-21T09:00:00Z",
+        "text": "This might be a duplicate upload, please check"
+      }
+    ]
+  },
+  {
+    "id": "upload-008",
+    "voNumber": "",
+    "uploadedBy": "M. Schmidt",
+    "uploadedById": "therapist-004",
+    "uploadDate": "2025-10-20T15:20:00Z",
+    "fileName": "img_20251020_152003.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Missing VO Number",
+    "notes": [
+      {
+        "id": "note-008-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-21T09:00:00Z",
+        "text": "Waiting for therapist to identify VO number from the prescription image"
+      }
+    ]
+  },
+  {
+    "id": "upload-009",
+    "voNumber": "4521-7",
+    "uploadedBy": "L. Weber",
+    "uploadedById": "therapist-005",
+    "uploadDate": "2025-10-20T11:00:00Z",
+    "fileName": "vo_4521_upload.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Low Picture Quality",
+    "notes": [
+      {
+        "id": "note-009-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-20T14:30:00Z",
+        "text": "Text not legible in current image quality. Please retake photo with better lighting."
+      }
+    ]
+  },
+  {
+    "id": "upload-010",
+    "voNumber": "6789-4",
+    "uploadedBy": "S. Zeibig",
+    "uploadedById": "therapist-001",
+    "uploadDate": "2025-10-19T13:45:00Z",
+    "fileName": "prescription_6789.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Uploaded to TO",
+    "notes": [
+      {
+        "id": "note-010-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-19T16:00:00Z",
+        "text": "Successfully processed"
+      }
+    ]
+  }
+]

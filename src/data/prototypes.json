@@ -90,6 +90,16 @@
       "createdAt": "2025-10-21T10:00:00Z",
       "lastModified": "2025-10-21T10:00:00Z",
       "tags": ["Calendar", "Therapist", "Treatment", "Workflow", "Healthcare"]
+    },
+    {
+      "id": "vo-upload",
+      "title": "VO Upload",
+      "description": "Prescription upload and review system. Therapists can upload prescription images with optional VO numbers. Admins review uploads, set status (Pending Review, Low Picture Quality, Missing VO Number, Uploaded to TO, Other), and add notes. Includes filtering by status and search functionality.",
+      "category": "draft",
+      "slug": "vo-upload",
+      "createdAt": "2025-10-23T14:00:00Z",
+      "lastModified": "2025-10-23T14:00:00Z",
+      "tags": ["Upload", "VO Management", "Admin", "Therapist", "Review", "Healthcare"]
     }
   ]
 }
