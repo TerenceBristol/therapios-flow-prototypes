@@ -105,6 +105,23 @@ npm run dev  # Start development server
 - **Provides:** Wireframe descriptions, prototype requirements
 - **Never:** Write code directly
 
+#### Workflow Preferences
+
+**Sequential Thinking (Auto-Approved)**
+- The `mcp__sequential-thinking__sequentialthinking` tool is pre-approved in `.claude/settings.local.json`
+- Use sequential thinking proactively when helpful for complex tasks
+- No approval dialogs required - improves workflow efficiency
+
+**Custom Slash Commands**
+- `/goseq` - Use sequential thinking, create task list, proceed with code changes
+- `/askseq` - Use sequential thinking, ask clarifying questions, wait for approval before changes
+
+**Task Management**
+- Always use TodoWrite tool to track multi-step tasks
+- Keep user informed of progress
+- Mark tasks completed immediately upon finishing
+- Break down complex requests into clear, trackable steps
+
 ### Common Tasks for Future Sessions
 
 #### Creating New Prototypes
