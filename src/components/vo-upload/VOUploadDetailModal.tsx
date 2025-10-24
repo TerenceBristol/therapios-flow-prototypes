@@ -52,6 +52,7 @@ export default function VOUploadDetailModal({
   const [newNoteText, setNewNoteText] = useState('');
   const [localNotes, setLocalNotes] = useState<Note[]>([]);
   const [showReplaceUI, setShowReplaceUI] = useState(false);
+  const [voNumberError, setVoNumberError] = useState('');
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ export default function VOUploadDetailModal({
       setVoNumber(upload.voNumber || '');
       setStatus(upload.status);
       setLocalNotes(upload.notes);
+      setVoNumberError('');
     }
   }, [upload]);
 
@@ -75,7 +77,7 @@ export default function VOUploadDetailModal({
   const handleSave = () => {
     // Validate VO number is required for admins
     if (!voNumber.trim()) {
-      alert('Please enter a VO number before saving.');
+      setVoNumberError('Please enter a VO number before saving.');
       return;
     }
     onSave(upload.id, voNumber, status);
@@ -89,8 +91,16 @@ export default function VOUploadDetailModal({
       setStatus(upload.status);
       setNewNoteText('');
       setShowReplaceUI(false);
+      setVoNumberError('');
     }
     onClose();
+  };
+
+  const handleVoNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setVoNumber(e.target.value);
+    if (voNumberError) {
+      setVoNumberError('');
+    }
   };
 
   const handleAddNote = () => {
@@ -309,49 +319,12 @@ export default function VOUploadDetailModal({
               </p>
             </div>
 
-            <div className="md:col-span-2">
-              <label htmlFor="voNumberInput" className="block text-sm font-medium text-gray-700">
-                VO Number:
-              </label>
-              <input
-                type="text"
-                id="voNumberInput"
-                value={voNumber}
-                onChange={(e) => setVoNumber(e.target.value)}
-                placeholder="Enter VO number (e.g., 2155-10)"
-                disabled={!isAdmin}
-                className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  !isAdmin ? 'bg-gray-50 cursor-not-allowed opacity-60' : ''
-                }`}
-              />
-            </div>
-          </div>
-
-          {/* Status Dropdown */}
-          <div>
-            <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-2">
-              Status
-            </label>
-            <select
-              id="status"
-              value={status}
-              onChange={(e) => setStatus(e.target.value as VOUploadStatus)}
-              disabled={!isAdmin}
-              className={`w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                !isAdmin ? 'bg-gray-50 cursor-not-allowed opacity-60' : 'bg-white'
-              }`}
-            >
-              <option value="Hochgeladen – in Prüfung">Hochgeladen – in Prüfung</option>
-              <option value="Nicht lesbar">Nicht lesbar</option>
-              <option value="Fehlende Upload-ID">Fehlende Upload-ID</option>
-              <option value="Angelegt">Angelegt</option>
-              <option value="Sonstiges">Sonstiges</option>
-            </select>
-            <p className="mt-1 text-xs text-gray-500">
-              {isAdmin
-                ? 'Select the appropriate status for this prescription upload'
-                : 'Only admins can change status'}
-            </p>
+            {!isAdmin && upload.voNumber && (
+              <div className="md:col-span-2">
+                <label className="block text-sm font-medium text-gray-700">VO Number:</label>
+                <p className="mt-1 text-sm text-gray-900">{upload.voNumber}</p>
+              </div>
+            )}
           </div>
 
           {/* Notes History */}
@@ -447,22 +420,93 @@ export default function VOUploadDetailModal({
           </div>
         </div>
 
+        {/* Required Information Section */}
+        {isAdmin && (
+          <div className="px-6 py-6 bg-amber-50 border-t border-amber-200">
+            <div className="flex items-center gap-2 mb-4">
+              <svg className="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+              </svg>
+              <h3 className="text-base font-semibold text-gray-900">Required Information</h3>
+            </div>
+
+            <div className="space-y-4 bg-white p-4 rounded-lg border border-amber-200">
+              {/* Status Dropdown */}
+              <div>
+                <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-2">
+                  Status
+                </label>
+                <select
+                  id="status"
+                  value={status}
+                  onChange={(e) => setStatus(e.target.value as VOUploadStatus)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                >
+                  <option value="Hochgeladen – in Prüfung">Hochgeladen – in Prüfung</option>
+                  <option value="Nicht lesbar">Nicht lesbar</option>
+                  <option value="Fehlende Upload-ID">Fehlende Upload-ID</option>
+                  <option value="Angelegt">Angelegt</option>
+                  <option value="Sonstiges">Sonstiges</option>
+                </select>
+              </div>
+
+              {/* VO Number Field - Prominent & Required */}
+              <div>
+                <label htmlFor="voNumberInput" className="flex items-center gap-2 mb-2">
+                  <span className="text-base font-bold text-gray-900">VO Number</span>
+                  <span className="text-red-600 text-lg">*</span>
+                  <span className="inline-flex items-center px-2 py-0.5 text-xs font-semibold text-red-800 bg-red-100 rounded-full">
+                    Required
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  id="voNumberInput"
+                  value={voNumber}
+                  onChange={handleVoNumberChange}
+                  placeholder="Enter VO number (e.g., 2155-10)"
+                  className={`w-full px-4 py-3 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                    voNumberError
+                      ? 'border-red-500 bg-red-50'
+                      : 'border-gray-300 bg-white'
+                  }`}
+                />
+                {!voNumberError && (
+                  <p className="mt-1.5 text-sm text-gray-600">
+                    This field is required to save changes
+                  </p>
+                )}
+                {voNumberError && (
+                  <div className="mt-1.5 flex items-center gap-1.5 text-sm text-red-600">
+                    <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    </svg>
+                    <span>{voNumberError}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Footer */}
-        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex justify-end gap-3">
-          <button
-            onClick={handleClose}
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
-          >
-            Close
-          </button>
-          {isAdmin && (
+        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+          <div className="flex gap-3">
             <button
-              onClick={handleSave}
-              className="px-4 py-2 text-sm font-medium text-white bg-black rounded-lg hover:bg-gray-800"
+              onClick={handleClose}
+              className="flex-1 px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
             >
-              Save Changes
+              Close
             </button>
-          )}
+            {isAdmin && (
+              <button
+                onClick={handleSave}
+                className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-black rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                Save Changes
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
