@@ -28,6 +28,13 @@ export default function ActivityEditModal({
 
   const handleSave = () => {
     if (editedActivity) {
+      // Validate Treatment (No VO) type has required fields
+      if (editedActivity.type === 'Treatment (No VO)') {
+        if (!editedActivity.uploadId || !editedActivity.uploadId.trim()) {
+          alert('Upload ID is required for Treatment (No VO)');
+          return;
+        }
+      }
       onSave(editedActivity);
     }
   };
@@ -98,7 +105,7 @@ export default function ActivityEditModal({
                     {editedActivity.type}
                   </div>
                   <div className="text-xs text-gray-600">
-                    Position #{editedActivity.position} | Duration: {editedActivity.duration} min
+                    Position #{editedActivity.position} | Duration: {editedActivity.duration || 0} min
                   </div>
                 </div>
               </div>
@@ -132,8 +139,39 @@ export default function ActivityEditModal({
                 <option value="Pause">Pause</option>
                 <option value="Doku">Doku</option>
                 <option value="Other">Other</option>
+                <option value="Treatment (No VO)">Treatment (No VO)</option>
               </select>
             </div>
+
+            {editedActivity.type === 'Treatment (No VO)' && (
+              <>
+                <div className="mb-4">
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">
+                    Upload ID <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={editedActivity.uploadId || ''}
+                    onChange={(e) => setEditedActivity({ ...editedActivity, uploadId: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Enter Upload ID (e.g., 03-1)"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-semibold text-gray-900 mb-2">
+                    Notes
+                  </label>
+                  <textarea
+                    value={editedActivity.notes || ''}
+                    onChange={(e) => setEditedActivity({ ...editedActivity, notes: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Enter treatment notes (optional)"
+                    rows={3}
+                  />
+                </div>
+              </>
+            )}
 
             <div className="mb-4">
               <label className="block text-sm font-semibold text-gray-900 mb-2">
@@ -141,7 +179,7 @@ export default function ActivityEditModal({
               </label>
               <input
                 type="number"
-                value={editedActivity.duration}
+                value={editedActivity.duration || 0}
                 onChange={(e) => setEditedActivity({ ...editedActivity, duration: parseInt(e.target.value) || 0 })}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
@@ -162,12 +200,14 @@ export default function ActivityEditModal({
             Cancel
           </button>
           <div className="flex gap-3">
-            <button
-              onClick={handleConvert}
-              className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium"
-            >
-              Convert to Treatment
-            </button>
+            {editedActivity.type === 'Treatment (No VO)' && (
+              <button
+                onClick={handleConvert}
+                className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium"
+              >
+                Convert to Treatment
+              </button>
+            )}
             <button
               onClick={handleSave}
               className="px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-950 font-medium"

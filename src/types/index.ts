@@ -14,6 +14,7 @@ export interface VORecord {
   facility: string; // "Einrichtung"
   therapist: string; // "Therapeut"
   voNumber: string; // "VO Nr."
+  uploadId: string; // "Upload ID" - format: xx-x or xxx-x (e.g., "03-1", "145-2")
   issueDate: string; // "Ausst. Datum" - format: DD.MM.YYYY
   treatmentStatus: string; // "Beh. Status" like "6/12", "10/20"
   type: string; // "Art"
@@ -155,15 +156,17 @@ export interface ValidationRecord {
 }
 
 // Calendar Activity Types
-export type ActivityType = 'Pause' | 'Doku' | 'Other';
+export type ActivityType = 'Pause' | 'Doku' | 'Other' | 'Treatment (No VO)';
 
 export interface Activity {
   id: string;
   type: ActivityType;
   date: string; // ISO date string YYYY-MM-DD
-  duration: number; // in minutes
+  duration?: number; // in minutes (optional)
   position: number;
   therapist: string;
+  uploadId?: string; // Required for 'Treatment (No VO)' type - format: xx-x or xxx-x
+  notes?: string; // Optional
 }
 
 // Calendar Treatment Types

@@ -31,6 +31,26 @@
       "duration": 15,
       "position": 1,
       "therapist": "S. Zeibig"
+    },
+    {
+      "id": "act-005",
+      "type": "Treatment (No VO)",
+      "date": "2025-09-30",
+      "duration": 30,
+      "position": 2,
+      "therapist": "S. Zeibig",
+      "uploadId": "01-2",
+      "notes": "Initial consultation for new patient. Discussed treatment plan and goals."
+    },
+    {
+      "id": "act-006",
+      "type": "Treatment (No VO)",
+      "date": "2025-10-03",
+      "duration": 0,
+      "position": 2,
+      "therapist": "S. Zeibig",
+      "uploadId": "01-3",
+      "notes": "Follow-up session scheduled. Patient requested treatment without prescription."
     }
   ],
   "treatments": [

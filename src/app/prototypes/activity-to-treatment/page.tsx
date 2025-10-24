@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Activity, CalendarTreatment, VORecord } from '@/types';
 import calendarData from '@/data/calendarData.json';
 import therapistVOData from '@/data/therapistVOData.json';
@@ -24,6 +24,19 @@ export default function ActivityToTreatmentCalendar() {
   const [isTreatmentModalOpen, setIsTreatmentModalOpen] = useState(false);
   const [isNewFromActivity, setIsNewFromActivity] = useState(false);
   const [activityBeingConverted, setActivityBeingConverted] = useState<Activity | null>(null);
+
+  // Toast state
+  const [showToast, setShowToast] = useState(false);
+
+  // Auto-hide toast after 3 seconds
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => {
+        setShowToast(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
 
   // Get active VOs for therapist S. Zeibig
   const availableVOs = useMemo(() => {
@@ -136,7 +149,7 @@ export default function ActivityToTreatmentCalendar() {
       voId: vo.id,
       date: activityBeingConverted.date,
       duration: 0, // Empty by default as per user requirement
-      notes: '',
+      notes: activityBeingConverted.notes || '', // Pre-populate from activity notes
       behandlungsart: 'Durchgeführt',
       patientRejected: false,
       position: activityBeingConverted.position,
@@ -163,6 +176,9 @@ export default function ActivityToTreatmentCalendar() {
       setActivities((prev) => prev.filter((a) => a.id !== activityBeingConverted.id));
       setTreatments((prev) => [...prev, savedTreatment]);
       setActivityBeingConverted(null);
+
+      // Show success toast
+      setShowToast(true);
     } else {
       // Update existing treatment
       setTreatments((prev) =>
@@ -280,6 +296,7 @@ export default function ActivityToTreatmentCalendar() {
                             key={`activity-${item.item.id}`}
                             activity={item.item as Activity}
                             onClick={() => handleActivityClick(item.item as Activity)}
+                            availableVOs={availableVOs}
                           />
                         ) : (
                           <TreatmentCard
@@ -334,6 +351,26 @@ export default function ActivityToTreatmentCalendar() {
         onDelete={handleTreatmentDelete}
         isNewFromActivity={isNewFromActivity}
       />
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 z-50 animate-fade-in">
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <span className="font-medium">Activity successfully converted to treatment</span>
+        </div>
+      )}
     </div>
   );
 }

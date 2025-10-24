@@ -8,7 +8,7 @@ interface VOSelectionModalProps {
   availableVOs: VORecord[];
 }
 
-type SortColumn = 'patientName' | 'voNumber' | 'treatmentStatus' | 'heilmittel';
+type SortColumn = 'uploadId' | 'patientName' | 'voNumber' | 'treatmentStatus' | 'heilmittel';
 type SortDirection = 'asc' | 'desc';
 
 export default function VOSelectionModal({
@@ -48,6 +48,7 @@ export default function VOSelectionModal({
       const query = searchQuery.toLowerCase();
       result = result.filter(
         (vo) =>
+          vo.uploadId.toLowerCase().includes(query) ||
           vo.patientName.toLowerCase().includes(query) ||
           vo.voNumber.toLowerCase().includes(query)
       );
@@ -59,6 +60,10 @@ export default function VOSelectionModal({
       let compareB: string | number;
 
       switch (sortBy) {
+        case 'uploadId':
+          compareA = a.uploadId.toLowerCase();
+          compareB = b.uploadId.toLowerCase();
+          break;
         case 'patientName':
           compareA = a.patientName.toLowerCase();
           compareB = b.patientName.toLowerCase();
@@ -121,7 +126,7 @@ export default function VOSelectionModal({
           <div className="relative">
             <input
               type="text"
-              placeholder="Search by patient name or VO number..."
+              placeholder="Search by Upload ID, patient name, or VO number..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full px-4 py-3 pl-11 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -153,6 +158,13 @@ export default function VOSelectionModal({
               <table className="w-full">
                 <thead className="bg-gray-50 border-b border-gray-200 sticky top-0">
                   <tr>
+                    <th
+                      onClick={() => handleSort('uploadId')}
+                      className="px-4 py-3 text-left text-sm font-semibold text-gray-700 cursor-pointer hover:bg-gray-100"
+                    >
+                      Upload ID
+                      <SortIndicator column="uploadId" />
+                    </th>
                     <th
                       onClick={() => handleSort('patientName')}
                       className="px-4 py-3 text-left text-sm font-semibold text-gray-700 cursor-pointer hover:bg-gray-100"
@@ -195,6 +207,9 @@ export default function VOSelectionModal({
                         index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
                       }`}
                     >
+                      <td className="px-4 py-3 text-sm text-gray-700">
+                        {vo.uploadId}
+                      </td>
                       <td className="px-4 py-3 text-sm font-semibold text-gray-900">
                         {vo.patientName}
                       </td>
