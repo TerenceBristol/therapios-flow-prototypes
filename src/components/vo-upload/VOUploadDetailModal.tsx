@@ -233,11 +233,6 @@ export default function VOUploadDetailModal({
                   !isAdmin ? 'bg-gray-50 cursor-not-allowed opacity-60' : ''
                 }`}
               />
-              <p className="mt-1 text-xs text-gray-500">
-                {isAdmin
-                  ? 'If therapist did not provide VO number, you can add it here'
-                  : 'Only admins can edit VO number'}
-              </p>
             </div>
           </div>
 
