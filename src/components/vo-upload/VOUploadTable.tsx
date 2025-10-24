@@ -5,6 +5,7 @@ import { VOUploadStatus, Note } from './VOUploadDetailModal';
 
 interface VOUpload {
   id: string;
+  uploadId: string;
   voNumber?: string;
   uploadedBy: string;
   uploadedById: string;
@@ -12,6 +13,7 @@ interface VOUpload {
   fileName: string;
   imageUrl: string;
   status: VOUploadStatus;
+  toDate?: string;
   notes: Note[];
 }
 
@@ -74,10 +76,12 @@ export default function VOUploadTable({ uploads, onViewUpload }: VOUploadTablePr
         <table className="w-full text-sm">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
+              <th className="px-4 py-3 text-left font-semibold text-gray-700">Upload ID</th>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">VO Nr</th>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Uploaded By</th>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Upload Date</th>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Status</th>
+              <th className="px-4 py-3 text-left font-semibold text-gray-700">TO Date</th>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Notes</th>
               <th className="px-4 py-3 text-left font-semibold text-gray-700">Image</th>
             </tr>
@@ -85,6 +89,9 @@ export default function VOUploadTable({ uploads, onViewUpload }: VOUploadTablePr
           <tbody className="divide-y divide-gray-200">
             {uploads.map((upload) => (
               <tr key={upload.id} className="hover:bg-gray-50">
+                <td className="px-4 py-3 font-mono font-semibold text-gray-900">
+                  {upload.uploadId}
+                </td>
                 <td className="px-4 py-3 font-medium text-gray-900">
                   {upload.voNumber || (
                     <span className="text-gray-400 italic text-xs">N/A</span>
@@ -102,6 +109,11 @@ export default function VOUploadTable({ uploads, onViewUpload }: VOUploadTablePr
                   >
                     {upload.status}
                   </span>
+                </td>
+                <td className="px-4 py-3 text-gray-600 text-xs">
+                  {upload.toDate ? formatDate(upload.toDate) : (
+                    <span className="text-gray-400 italic">-</span>
+                  )}
                 </td>
                 <td className="px-4 py-3 text-gray-600">
                   {upload.notes.length > 0 ? (

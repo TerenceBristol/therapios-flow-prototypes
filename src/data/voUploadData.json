@@ -1,6 +1,7 @@
 [
   {
     "id": "upload-001",
+    "uploadId": "03-1",
     "voNumber": "2155-10",
     "uploadedBy": "S. Zeibig",
     "uploadedById": "therapist-001",
@@ -12,6 +13,7 @@
   },
   {
     "id": "upload-002",
+    "uploadId": "47-1",
     "voNumber": "",
     "uploadedBy": "A. Rosky",
     "uploadedById": "therapist-002",
@@ -31,6 +33,7 @@
   },
   {
     "id": "upload-003",
+    "uploadId": "03-2",
     "voNumber": "3745-3",
     "uploadedBy": "S. Zeibig",
     "uploadedById": "therapist-001",
@@ -57,6 +60,7 @@
   },
   {
     "id": "upload-004",
+    "uploadId": "145-1",
     "voNumber": "5158-1",
     "uploadedBy": "J. Minge-Teteberg",
     "uploadedById": "therapist-003",
@@ -64,6 +68,7 @@
     "fileName": "andreas_bloch_vo.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
     "status": "Uploaded to TO",
+    "toDate": "2025-10-22T17:00:00Z",
     "notes": [
       {
         "id": "note-004-1",
@@ -76,6 +81,7 @@
   },
   {
     "id": "upload-005",
+    "uploadId": "03-3",
     "voNumber": "3588-3",
     "uploadedBy": "S. Zeibig",
     "uploadedById": "therapist-001",
@@ -83,6 +89,7 @@
     "fileName": "carsten_bunar_prescription.png",
     "imageUrl": "/sample-vo-slip.jpg",
     "status": "Uploaded to TO",
+    "toDate": "2025-10-22T15:30:00Z",
     "notes": [
       {
         "id": "note-005-1",
@@ -95,6 +102,7 @@
   },
   {
     "id": "upload-006",
+    "uploadId": "47-2",
     "voNumber": "3166-2",
     "uploadedBy": "A. Rosky",
     "uploadedById": "therapist-002",
@@ -106,6 +114,7 @@
   },
   {
     "id": "upload-007",
+    "uploadId": "145-2",
     "voNumber": "5377-1",
     "uploadedBy": "J. Minge-Teteberg",
     "uploadedById": "therapist-003",
@@ -132,6 +141,7 @@
   },
   {
     "id": "upload-008",
+    "uploadId": "89-1",
     "voNumber": "",
     "uploadedBy": "M. Schmidt",
     "uploadedById": "therapist-004",
@@ -151,6 +161,7 @@
   },
   {
     "id": "upload-009",
+    "uploadId": "112-1",
     "voNumber": "4521-7",
     "uploadedBy": "L. Weber",
     "uploadedById": "therapist-005",
@@ -170,6 +181,7 @@
   },
   {
     "id": "upload-010",
+    "uploadId": "03-4",
     "voNumber": "6789-4",
     "uploadedBy": "S. Zeibig",
     "uploadedById": "therapist-001",
@@ -177,6 +189,7 @@
     "fileName": "prescription_6789.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
     "status": "Uploaded to TO",
+    "toDate": "2025-10-19T16:00:00Z",
     "notes": [
       {
         "id": "note-010-1",

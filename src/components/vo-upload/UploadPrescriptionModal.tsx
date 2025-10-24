@@ -5,7 +5,7 @@ import React, { useState, useRef } from 'react';
 interface UploadPrescriptionModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onUpload: (voNumber: string, file: File) => void;
+  onUpload: (file: File) => void;
 }
 
 export default function UploadPrescriptionModal({
@@ -13,7 +13,6 @@ export default function UploadPrescriptionModal({
   onClose,
   onUpload,
 }: UploadPrescriptionModalProps) {
-  const [voNumber, setVoNumber] = useState('');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -67,13 +66,12 @@ export default function UploadPrescriptionModal({
 
   const handleUploadClick = () => {
     if (selectedFile) {
-      onUpload(voNumber, selectedFile);
+      onUpload(selectedFile);
       handleClose();
     }
   };
 
   const handleClose = () => {
-    setVoNumber('');
     setSelectedFile(null);
     setPreviewUrl(null);
     setIsDragging(false);
@@ -98,24 +96,6 @@ export default function UploadPrescriptionModal({
 
         {/* Content */}
         <div className="px-6 py-4 space-y-4">
-          {/* VO Number Input */}
-          <div>
-            <label htmlFor="voNumber" className="block text-sm font-medium text-gray-700 mb-1">
-              VO Number (Optional)
-            </label>
-            <input
-              type="text"
-              id="voNumber"
-              value={voNumber}
-              onChange={(e) => setVoNumber(e.target.value)}
-              placeholder="e.g., 2155-10"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <p className="mt-1 text-xs text-gray-500">
-              You can leave this blank if not visible on the prescription
-            </p>
-          </div>
-
           {/* File Upload Area */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">

@@ -14,6 +14,7 @@ export interface Note {
 
 interface VOUpload {
   id: string;
+  uploadId: string;
   voNumber?: string;
   uploadedBy: string;
   uploadedById: string;
@@ -21,6 +22,7 @@ interface VOUpload {
   fileName: string;
   imageUrl: string;
   status: VOUploadStatus;
+  toDate?: string;
   notes: Note[];
 }
 
@@ -186,22 +188,36 @@ export default function VOUploadDetailModal({
           {/* Upload Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg">
             <div>
+              <label className="block text-sm font-medium text-gray-700">Upload ID:</label>
+              <p className="mt-1 text-base font-mono font-semibold text-blue-600">{upload.uploadId}</p>
+            </div>
+
+            <div>
               <label className="block text-sm font-medium text-gray-700">Uploaded By:</label>
               <p className="mt-1 text-sm text-gray-900">{upload.uploadedBy}</p>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700">Upload Date:</label>
               <p className="mt-1 text-sm text-gray-900">{formatDate(upload.uploadDate)}</p>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700">File Name:</label>
               <p className="mt-1 text-sm text-gray-900 truncate" title={upload.fileName}>
                 {upload.fileName}
               </p>
             </div>
-            
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700">TO Date:</label>
+              <p className="mt-1 text-sm text-gray-900">
+                {upload.toDate ? formatDate(upload.toDate) : (
+                  <span className="text-gray-400 italic">-</span>
+                )}
+              </p>
+            </div>
+
             <div className="md:col-span-2">
               <label htmlFor="voNumberInput" className="block text-sm font-medium text-gray-700">
                 VO Number:

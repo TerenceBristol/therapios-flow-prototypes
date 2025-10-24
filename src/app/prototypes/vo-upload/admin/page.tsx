@@ -10,6 +10,7 @@ const STORAGE_KEY = 'vo-upload-wireframe-data';
 
 interface VOUpload {
   id: string;
+  uploadId: string;
   voNumber?: string;
   uploadedBy: string;
   uploadedById: string;
@@ -17,6 +18,7 @@ interface VOUpload {
   fileName: string;
   imageUrl: string;
   status: VOUploadStatus;
+  toDate?: string;
   notes: Note[];
 }
 
@@ -27,14 +29,14 @@ export default function AdminVOUploadPage() {
   const [statusFilter, setStatusFilter] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Initialize from localStorage or mock data
+  // Initialize from sessionStorage or mock data
   useEffect(() => {
-    const storedData = localStorage.getItem(STORAGE_KEY);
+    const storedData = sessionStorage.getItem(STORAGE_KEY);
     if (storedData) {
       try {
         setUploads(JSON.parse(storedData));
       } catch (error) {
-        console.error('Failed to parse localStorage data:', error);
+        console.error('Failed to parse sessionStorage data:', error);
         setUploads(voUploadDataJson as VOUpload[]);
       }
     } else {
@@ -42,10 +44,10 @@ export default function AdminVOUploadPage() {
     }
   }, []);
 
-  // Sync to localStorage whenever uploads change
+  // Sync to sessionStorage whenever uploads change
   useEffect(() => {
     if (uploads.length > 0) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(uploads));
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(uploads));
     }
   }, [uploads]);
 
@@ -91,9 +93,24 @@ export default function AdminVOUploadPage() {
 
   const handleSaveUpload = (uploadId: string, voNumber: string, status: VOUploadStatus) => {
     setUploads(
-      uploads.map((u) =>
-        u.id === uploadId ? { ...u, voNumber, status } : u
-      )
+      uploads.map((u) => {
+        if (u.id === uploadId) {
+          // Auto-set/clear toDate based on status
+          let toDate = u.toDate;
+
+          // If status changed to "Uploaded to TO", set toDate to current timestamp
+          if (status === 'Uploaded to TO' && u.status !== 'Uploaded to TO') {
+            toDate = new Date().toISOString();
+          }
+          // If status changed away from "Uploaded to TO", clear toDate
+          else if (status !== 'Uploaded to TO' && u.status === 'Uploaded to TO') {
+            toDate = undefined;
+          }
+
+          return { ...u, voNumber, status, toDate };
+        }
+        return u;
+      })
     );
   };
 
@@ -122,59 +139,45 @@ export default function AdminVOUploadPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* View Switcher */}
+      {/* Header Navigation */}
       <div className="bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex gap-2">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between py-3">
+            <div className="flex items-center gap-6">
+              <Link
+                href="/prototypes/vo-upload/admin"
+                className="text-sm font-medium text-gray-700 hover:text-gray-900"
+              >
+                Dashboard
+              </Link>
+              <Link
+                href="/prototypes/vo-upload/admin"
+                className="text-sm font-medium text-blue-600 border-b-2 border-blue-600 pb-3 -mb-[1px]"
+              >
+                Prescription Upload
+              </Link>
+            </div>
             <Link
               href="/prototypes/vo-upload/therapist"
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
+              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
             >
-              Therapist View
-            </Link>
-            <Link
-              href="/prototypes/vo-upload/admin"
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
-            >
-              Admin View
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+              Switch to Therapist View
             </Link>
           </div>
         </div>
       </div>
 
-      {/* Header */}
+      {/* Page Header */}
       <div className="bg-white border-b border-gray-200">
         <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-gray-900">Dashboard - Administration</h1>
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-gray-900">Prescription Uploads - Administration</h1>
             <div className="text-sm text-gray-600">
               Hello Admin Admin, I hope you have a wonderful day.
             </div>
-          </div>
-
-          {/* Stats Tabs */}
-          <div className="flex gap-6 overflow-x-auto pb-2">
-            <button className="flex-shrink-0 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap">
-              Follow-up VO Received <span className="font-medium">5968</span>
-            </button>
-            <button className="flex-shrink-0 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap">
-              Keine Folge-VO <span className="font-medium">166</span>
-            </button>
-            <button className="flex-shrink-0 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap">
-              Treatment Completed <span className="font-medium">226</span>
-            </button>
-            <button className="flex-shrink-0 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap">
-              Arztbericht zu versenden <span className="font-medium">98</span>
-            </button>
-            <button className="flex-shrink-0 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap">
-              Patient Transfers <span className="font-medium">91</span>
-            </button>
-            <button className="flex-shrink-0 px-4 py-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 whitespace-nowrap">
-              Prescription Uploads <span className="font-medium">{uploads.length}</span>
-            </button>
-            <button className="flex-shrink-0 px-4 py-2 text-sm text-gray-600 hover:text-gray-900 whitespace-nowrap">
-              All VO <span className="font-medium">12847</span>
-            </button>
           </div>
         </div>
       </div>
