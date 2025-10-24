@@ -25,15 +25,15 @@ interface VOUploadTableProps {
 export default function VOUploadTable({ uploads, onViewUpload }: VOUploadTableProps) {
   const getStatusBadgeColor = (status: VOUploadStatus) => {
     switch (status) {
-      case 'Pending Review':
+      case 'Hochgeladen – in Prüfung':
         return 'bg-amber-300 text-amber-900';
-      case 'Low Picture Quality':
+      case 'Nicht lesbar':
         return 'bg-orange-400 text-orange-900';
-      case 'Missing VO Number':
+      case 'Fehlende Upload-ID':
         return 'bg-red-400 text-red-900';
-      case 'Uploaded to TO':
+      case 'Angelegt':
         return 'bg-green-400 text-green-900';
-      case 'Other':
+      case 'Sonstiges':
         return 'bg-gray-400 text-gray-900';
       default:
         return 'bg-gray-200 text-gray-800';

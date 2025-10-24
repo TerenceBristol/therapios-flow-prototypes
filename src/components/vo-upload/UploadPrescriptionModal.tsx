@@ -103,34 +103,71 @@ export default function UploadPrescriptionModal({
             </label>
             
             {!selectedFile ? (
-              <div
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-                onClick={() => fileInputRef.current?.click()}
-                className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors ${
-                  isDragging
-                    ? 'border-blue-500 bg-blue-50'
-                    : 'border-gray-300 hover:border-gray-400 bg-gray-50'
-                }`}
-              >
-                <svg
-                  className="mx-auto h-12 w-12 text-gray-400"
-                  stroke="currentColor"
-                  fill="none"
-                  viewBox="0 0 48 48"
+              <div className="space-y-4">
+                {/* Camera Mockup */}
+                <div className="relative bg-gradient-to-b from-gray-900 to-gray-800 rounded-lg overflow-hidden" style={{ aspectRatio: '9/16', maxHeight: '500px' }}>
+                  {/* Camera viewfinder overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    {/* Grid overlay */}
+                    <div className="absolute inset-0 grid grid-cols-3 grid-rows-3">
+                      <div className="border-r border-b border-white/20"></div>
+                      <div className="border-r border-b border-white/20"></div>
+                      <div className="border-b border-white/20"></div>
+                      <div className="border-r border-b border-white/20"></div>
+                      <div className="border-r border-b border-white/20"></div>
+                      <div className="border-b border-white/20"></div>
+                      <div className="border-r border-white/20"></div>
+                      <div className="border-r border-white/20"></div>
+                      <div></div>
+                    </div>
+
+                    {/* Camera icon */}
+                    <div className="relative z-10 text-center">
+                      <svg
+                        className="mx-auto h-24 w-24 text-white/80"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      <p className="mt-3 text-sm text-white/90 font-medium">Camera View</p>
+                    </div>
+                  </div>
+
+                  {/* Corner brackets for focus */}
+                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-white/50"></div>
+                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/50"></div>
+                  <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/50"></div>
+                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-white/50"></div>
+                </div>
+
+                {/* Upload File Button */}
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-full px-4 py-3 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
                 >
-                  <path
-                    d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <p className="mt-2 text-sm text-gray-600">
-                  <span className="font-medium text-blue-600">Click to upload</span> or drag and drop
-                </p>
-                <p className="mt-1 text-xs text-gray-500">JPG, PNG, or PDF (max 10MB)</p>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                    />
+                  </svg>
+                  Upload File
+                </button>
               </div>
             ) : (
               <div className="space-y-3">
