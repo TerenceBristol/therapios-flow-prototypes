@@ -105,7 +105,7 @@ export default function TherapistVOUploadPage() {
       uploadDate: new Date().toISOString(),
       fileName: file.name,
       imageUrl: '/sample-vo-slip.jpg',
-      status: 'Pending Review',
+      status: 'Hochgeladen – in Prüfung',
       notes: [],
     };
 

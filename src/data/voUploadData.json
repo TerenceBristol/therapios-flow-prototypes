@@ -8,7 +8,7 @@
     "uploadDate": "2025-10-23T13:45:00Z",
     "fileName": "vo_2155_10.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Pending Review",
+    "status": "Hochgeladen – in Prüfung",
     "notes": []
   },
   {
@@ -20,7 +20,7 @@
     "uploadDate": "2025-10-23T11:20:00Z",
     "fileName": "prescription_scan_102323.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Missing VO Number",
+    "status": "Fehlende Upload-ID",
     "notes": [
       {
         "id": "note-002-1",
@@ -40,7 +40,7 @@
     "uploadDate": "2025-10-23T09:15:00Z",
     "fileName": "vo_3745_3_photo.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Low Picture Quality",
+    "status": "Nicht lesbar",
     "notes": [
       {
         "id": "note-003-2",
@@ -67,7 +67,7 @@
     "uploadDate": "2025-10-22T16:30:00Z",
     "fileName": "andreas_bloch_vo.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Uploaded to TO",
+    "status": "Angelegt",
     "toDate": "2025-10-22T17:00:00Z",
     "notes": [
       {
@@ -88,7 +88,7 @@
     "uploadDate": "2025-10-22T14:00:00Z",
     "fileName": "carsten_bunar_prescription.png",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Uploaded to TO",
+    "status": "Angelegt",
     "toDate": "2025-10-22T15:30:00Z",
     "notes": [
       {
@@ -109,7 +109,7 @@
     "uploadDate": "2025-10-21T10:45:00Z",
     "fileName": "martina_gerth_vo_scan.pdf",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Pending Review",
+    "status": "Hochgeladen – in Prüfung",
     "notes": []
   },
   {
@@ -121,7 +121,7 @@
     "uploadDate": "2025-10-21T08:30:00Z",
     "fileName": "hangekorb_vo.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Other",
+    "status": "Sonstiges",
     "notes": [
       {
         "id": "note-007-2",
@@ -148,7 +148,7 @@
     "uploadDate": "2025-10-20T15:20:00Z",
     "fileName": "img_20251020_152003.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Missing VO Number",
+    "status": "Fehlende Upload-ID",
     "notes": [
       {
         "id": "note-008-1",
@@ -168,7 +168,7 @@
     "uploadDate": "2025-10-20T11:00:00Z",
     "fileName": "vo_4521_upload.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Low Picture Quality",
+    "status": "Nicht lesbar",
     "notes": [
       {
         "id": "note-009-1",
@@ -188,7 +188,7 @@
     "uploadDate": "2025-10-19T13:45:00Z",
     "fileName": "prescription_6789.jpg",
     "imageUrl": "/sample-vo-slip.jpg",
-    "status": "Uploaded to TO",
+    "status": "Angelegt",
     "toDate": "2025-10-19T16:00:00Z",
     "notes": [
       {

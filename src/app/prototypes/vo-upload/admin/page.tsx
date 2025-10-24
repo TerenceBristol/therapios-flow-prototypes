@@ -60,12 +60,12 @@ export default function AdminVOUploadPage() {
       filtered = filtered.filter((upload) => upload.status === statusFilter);
     }
 
-    // Filter by search query (VO number or therapist name)
+    // Filter by search query (Upload ID or therapist name)
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(
         (upload) =>
-          upload.voNumber?.toLowerCase().includes(query) ||
+          upload.uploadId.toLowerCase().includes(query) ||
           upload.uploadedBy.toLowerCase().includes(query)
       );
     }
@@ -78,11 +78,11 @@ export default function AdminVOUploadPage() {
   const statusCounts = useMemo(() => {
     return {
       all: uploads.length,
-      pending: uploads.filter((u) => u.status === 'Pending Review').length,
-      lowQuality: uploads.filter((u) => u.status === 'Low Picture Quality').length,
-      missingVO: uploads.filter((u) => u.status === 'Missing VO Number').length,
-      uploaded: uploads.filter((u) => u.status === 'Uploaded to TO').length,
-      other: uploads.filter((u) => u.status === 'Other').length,
+      pending: uploads.filter((u) => u.status === 'Hochgeladen – in Prüfung').length,
+      lowQuality: uploads.filter((u) => u.status === 'Nicht lesbar').length,
+      missingVO: uploads.filter((u) => u.status === 'Fehlende Upload-ID').length,
+      uploaded: uploads.filter((u) => u.status === 'Angelegt').length,
+      other: uploads.filter((u) => u.status === 'Sonstiges').length,
     };
   }, [uploads]);
 
@@ -98,12 +98,12 @@ export default function AdminVOUploadPage() {
           // Auto-set/clear toDate based on status
           let toDate = u.toDate;
 
-          // If status changed to "Uploaded to TO", set toDate to current timestamp
-          if (status === 'Uploaded to TO' && u.status !== 'Uploaded to TO') {
+          // If status changed to "Angelegt", set toDate to current timestamp
+          if (status === 'Angelegt' && u.status !== 'Angelegt') {
             toDate = new Date().toISOString();
           }
-          // If status changed away from "Uploaded to TO", clear toDate
-          else if (status !== 'Uploaded to TO' && u.status === 'Uploaded to TO') {
+          // If status changed away from "Angelegt", clear toDate
+          else if (status !== 'Angelegt' && u.status === 'Angelegt') {
             toDate = undefined;
           }
 
@@ -197,11 +197,11 @@ export default function AdminVOUploadPage() {
               className="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white min-w-[200px]"
             >
               <option value="All">All ({statusCounts.all})</option>
-              <option value="Pending Review">Pending Review ({statusCounts.pending})</option>
-              <option value="Low Picture Quality">Low Picture Quality ({statusCounts.lowQuality})</option>
-              <option value="Missing VO Number">Missing VO Number ({statusCounts.missingVO})</option>
-              <option value="Uploaded to TO">Uploaded to TO ({statusCounts.uploaded})</option>
-              <option value="Other">Other ({statusCounts.other})</option>
+              <option value="Hochgeladen – in Prüfung">Hochgeladen – in Prüfung ({statusCounts.pending})</option>
+              <option value="Nicht lesbar">Nicht lesbar ({statusCounts.lowQuality})</option>
+              <option value="Fehlende Upload-ID">Fehlende Upload-ID ({statusCounts.missingVO})</option>
+              <option value="Angelegt">Angelegt ({statusCounts.uploaded})</option>
+              <option value="Sonstiges">Sonstiges ({statusCounts.other})</option>
             </select>
           </div>
 
@@ -211,7 +211,7 @@ export default function AdminVOUploadPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by VO number or therapist..."
+                placeholder="Search by Upload ID or therapist..."
                 className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <svg

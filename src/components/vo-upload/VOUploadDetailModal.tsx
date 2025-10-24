@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-export type VOUploadStatus = 'Pending Review' | 'Low Picture Quality' | 'Missing VO Number' | 'Uploaded to TO' | 'Other';
+export type VOUploadStatus = 'Hochgeladen – in Prüfung' | 'Nicht lesbar' | 'Fehlende Upload-ID' | 'Angelegt' | 'Sonstiges';
 
 export interface Note {
   id: string;
@@ -48,9 +48,10 @@ export default function VOUploadDetailModal({
   onReplaceImage,
 }: VOUploadDetailModalProps) {
   const [voNumber, setVoNumber] = useState('');
-  const [status, setStatus] = useState<VOUploadStatus>('Pending Review');
+  const [status, setStatus] = useState<VOUploadStatus>('Hochgeladen – in Prüfung');
   const [newNoteText, setNewNoteText] = useState('');
   const [localNotes, setLocalNotes] = useState<Note[]>([]);
+  const [showReplaceUI, setShowReplaceUI] = useState(false);
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -72,6 +73,11 @@ export default function VOUploadDetailModal({
   };
 
   const handleSave = () => {
+    // Validate VO number is required for admins
+    if (!voNumber.trim()) {
+      alert('Please enter a VO number before saving.');
+      return;
+    }
     onSave(upload.id, voNumber, status);
     onClose();
   };
@@ -82,6 +88,7 @@ export default function VOUploadDetailModal({
       setVoNumber(upload.voNumber || '');
       setStatus(upload.status);
       setNewNoteText('');
+      setShowReplaceUI(false);
     }
     onClose();
   };
@@ -135,6 +142,9 @@ export default function VOUploadDetailModal({
       // Persist to parent component
       onReplaceImage(upload.id, file, systemNote);
 
+      // Reset replace UI state
+      setShowReplaceUI(false);
+
       onClose();
     }
   };
@@ -162,20 +172,101 @@ export default function VOUploadDetailModal({
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Prescription Image
             </label>
-            <div className="bg-gray-100 rounded-lg overflow-hidden border border-gray-200" style={{ minHeight: '400px' }}>
-              <img
-                src={upload.imageUrl}
-                alt="Prescription"
-                className="w-full h-full object-contain"
-                style={{ maxHeight: '500px' }}
-              />
-            </div>
-            <button
-              onClick={() => fileInputRef.current?.click()}
-              className="mt-3 w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              Replace Image
-            </button>
+
+            {!showReplaceUI ? (
+              <>
+                <div className="bg-gray-100 rounded-lg overflow-hidden border border-gray-200" style={{ minHeight: '400px' }}>
+                  <img
+                    src={upload.imageUrl}
+                    alt="Prescription"
+                    className="w-full h-full object-contain"
+                    style={{ maxHeight: '500px' }}
+                  />
+                </div>
+                <button
+                  onClick={() => setShowReplaceUI(true)}
+                  className="mt-3 w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  Replace Image
+                </button>
+              </>
+            ) : (
+              <div className="space-y-4">
+                {/* Camera Mockup */}
+                <div className="relative bg-gradient-to-b from-gray-900 to-gray-800 rounded-lg overflow-hidden" style={{ aspectRatio: '9/16', maxHeight: '500px' }}>
+                  {/* Camera viewfinder overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    {/* Grid overlay */}
+                    <div className="absolute inset-0 grid grid-cols-3 grid-rows-3">
+                      <div className="border-r border-b border-white/20"></div>
+                      <div className="border-r border-b border-white/20"></div>
+                      <div className="border-b border-white/20"></div>
+                      <div className="border-r border-b border-white/20"></div>
+                      <div className="border-r border-b border-white/20"></div>
+                      <div className="border-b border-white/20"></div>
+                      <div className="border-r border-white/20"></div>
+                      <div className="border-r border-white/20"></div>
+                      <div></div>
+                    </div>
+
+                    {/* Camera icon */}
+                    <div className="relative z-10 text-center">
+                      <svg
+                        className="mx-auto h-24 w-24 text-white/80"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      <p className="mt-3 text-sm text-white/90 font-medium">Camera View</p>
+                    </div>
+                  </div>
+
+                  {/* Corner brackets for focus */}
+                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-white/50"></div>
+                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/50"></div>
+                  <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/50"></div>
+                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-white/50"></div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setShowReplaceUI(false)}
+                    className="flex-1 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={() => fileInputRef.current?.click()}
+                    className="flex-1 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                    Upload File
+                  </button>
+                </div>
+              </div>
+            )}
+
             <input
               ref={fileInputRef}
               type="file"
@@ -250,11 +341,11 @@ export default function VOUploadDetailModal({
                 !isAdmin ? 'bg-gray-50 cursor-not-allowed opacity-60' : 'bg-white'
               }`}
             >
-              <option value="Pending Review">Pending Review</option>
-              <option value="Low Picture Quality">Low Picture Quality</option>
-              <option value="Missing VO Number">Missing VO Number</option>
-              <option value="Uploaded to TO">Uploaded to TO</option>
-              <option value="Other">Other</option>
+              <option value="Hochgeladen – in Prüfung">Hochgeladen – in Prüfung</option>
+              <option value="Nicht lesbar">Nicht lesbar</option>
+              <option value="Fehlende Upload-ID">Fehlende Upload-ID</option>
+              <option value="Angelegt">Angelegt</option>
+              <option value="Sonstiges">Sonstiges</option>
             </select>
             <p className="mt-1 text-xs text-gray-500">
               {isAdmin
