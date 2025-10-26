@@ -48,7 +48,7 @@ export default function VOUploadDetailModal({
   onReplaceImage,
 }: VOUploadDetailModalProps) {
   const [voNumber, setVoNumber] = useState('');
-  const [status, setStatus] = useState<VOUploadStatus>('Hochgeladen – in Prüfung');
+  const [status, setStatus] = useState<VOUploadStatus>('in Prüfung');
   const [newNoteText, setNewNoteText] = useState('');
   const [localNotes, setLocalNotes] = useState<Note[]>([]);
   const [showReplaceUI, setShowReplaceUI] = useState(false);

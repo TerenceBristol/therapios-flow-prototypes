@@ -78,7 +78,7 @@ export default function AdminVOUploadPage() {
   const statusCounts = useMemo(() => {
     return {
       all: uploads.length,
-      pending: uploads.filter((u) => u.status === 'Hochgeladen – in Prüfung').length,
+      pending: uploads.filter((u) => u.status === 'in Prüfung').length,
       lowQuality: uploads.filter((u) => u.status === 'Nicht lesbar').length,
       missingVO: uploads.filter((u) => u.status === 'Fehlende Upload-ID').length,
       uploaded: uploads.filter((u) => u.status === 'Angelegt').length,
@@ -197,7 +197,7 @@ export default function AdminVOUploadPage() {
               className="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white min-w-[200px]"
             >
               <option value="All">All ({statusCounts.all})</option>
-              <option value="Hochgeladen – in Prüfung">Hochgeladen – in Prüfung ({statusCounts.pending})</option>
+              <option value="in Prüfung">in Prüfung ({statusCounts.pending})</option>
               <option value="Nicht lesbar">Nicht lesbar ({statusCounts.lowQuality})</option>
               <option value="Fehlende Upload-ID">Fehlende Upload-ID ({statusCounts.missingVO})</option>
               <option value="Angelegt">Angelegt ({statusCounts.uploaded})</option>
