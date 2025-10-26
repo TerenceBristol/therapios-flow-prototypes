@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-export type VOUploadStatus = 'Hochgeladen – in Prüfung' | 'Nicht lesbar' | 'Fehlende Upload-ID' | 'Angelegt' | 'Sonstiges';
+export type VOUploadStatus = 'in Prüfung' | 'Nicht lesbar' | 'Fehlende Upload-ID' | 'Angelegt' | 'Sonstiges';
 
 export interface Note {
   id: string;
@@ -193,12 +193,14 @@ export default function VOUploadDetailModal({
                     style={{ maxHeight: '500px' }}
                   />
                 </div>
-                <button
-                  onClick={() => setShowReplaceUI(true)}
-                  className="mt-3 w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  Replace Image
-                </button>
+                {!isAdmin && (
+                  <button
+                    onClick={() => setShowReplaceUI(true)}
+                    className="mt-3 w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
+                    Replace Image
+                  </button>
+                )}
               </>
             ) : (
               <div className="space-y-4">
@@ -442,7 +444,7 @@ export default function VOUploadDetailModal({
                   onChange={(e) => setStatus(e.target.value as VOUploadStatus)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                 >
-                  <option value="Hochgeladen – in Prüfung">Hochgeladen – in Prüfung</option>
+                  <option value="in Prüfung">in Prüfung</option>
                   <option value="Nicht lesbar">Nicht lesbar</option>
                   <option value="Fehlende Upload-ID">Fehlende Upload-ID</option>
                   <option value="Angelegt">Angelegt</option>
