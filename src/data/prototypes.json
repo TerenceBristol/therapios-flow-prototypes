@@ -100,6 +100,16 @@
       "createdAt": "2025-10-23T14:00:00Z",
       "lastModified": "2025-10-23T14:00:00Z",
       "tags": ["Upload", "VO Management", "Admin", "Therapist", "Review", "Healthcare"]
+    },
+    {
+      "id": "fvo-crm",
+      "title": "Practice Follow-up CRM",
+      "description": "CRM system for tracking follow-up verification orders (FVOs) from doctor practices. Priority queue interface automatically triages practices by urgency (Overdue, Due Today, This Week). Split-screen layout with practice cards and detailed follow-up information for efficient calling workflows.",
+      "category": "draft",
+      "slug": "fvo-crm",
+      "createdAt": "2025-10-27T10:00:00Z",
+      "lastModified": "2025-10-27T10:00:00Z",
+      "tags": ["CRM", "F.VO", "Practice Management", "Follow-up", "Healthcare"]
     }
   ]
 }

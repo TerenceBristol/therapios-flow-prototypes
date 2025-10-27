@@ -1,0 +1,2720 @@
+{
+  "practices": [
+    {
+      "id": "prac-001",
+      "name": "Springfield Medical Center",
+      "address": {
+        "street": "123 Main Street",
+        "city": "Springfield",
+        "state": "IL",
+        "zip": "62701"
+      },
+      "phone": "(555) 123-4567",
+      "fax": "(555) 123-4568",
+      "email": "office@springfieldmed.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Sarah Johnson",
+          "role": "Office Manager",
+          "phone": "(555) 123-4567",
+          "extension": "42",
+          "email": "sarah@springfieldmed.com"
+        }
+      ],
+      "notes": "Prefers fax orders by 2pm for same-day processing",
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2025-10-20T14:30:00Z"
+    },
+    {
+      "id": "prac-002",
+      "name": "Riverside Family Practice",
+      "address": {
+        "street": "456 River Road",
+        "city": "Riverside",
+        "state": "CA",
+        "zip": "92501"
+      },
+      "phone": "(555) 234-5678",
+      "fax": "(555) 234-5679",
+      "email": "info@riversidefp.com",
+      "hours": "Mon-Fri 9am-6pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Michael Chen",
+          "role": "Receptionist",
+          "phone": "(555) 234-5678",
+          "extension": "101"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-02-10T09:00:00Z",
+      "updatedAt": "2025-10-22T11:15:00Z"
+    },
+    {
+      "id": "prac-003",
+      "name": "Valley Orthopedics",
+      "address": {
+        "street": "789 Valley Drive",
+        "city": "San Jose",
+        "state": "CA",
+        "zip": "95110"
+      },
+      "phone": "(555) 345-6789",
+      "email": "contact@valleyortho.com",
+      "hours": "Mon-Thu 8am-6pm, Fri 8am-4pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Lisa Martinez",
+          "role": "Medical Assistant",
+          "phone": "(555) 345-6789",
+          "extension": "23",
+          "email": "lisa@valleyortho.com"
+        },
+        {
+          "name": "Tom Wilson",
+          "role": "Office Coordinator",
+          "phone": "(555) 345-6789",
+          "extension": "15"
+        }
+      ],
+      "notes": "Very busy practice, best to call after 2pm",
+      "createdAt": "2024-03-05T12:00:00Z",
+      "updatedAt": "2025-10-18T16:45:00Z"
+    },
+    {
+      "id": "prac-004",
+      "name": "Mountain View Pediatrics",
+      "address": {
+        "street": "321 Highland Ave",
+        "city": "Denver",
+        "state": "CO",
+        "zip": "80202"
+      },
+      "phone": "(555) 456-7890",
+      "fax": "(555) 456-7891",
+      "email": "admin@mvpediatrics.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Jennifer Brown",
+          "role": "Office Manager",
+          "phone": "(555) 456-7890",
+          "extension": "10",
+          "email": "jbrown@mvpediatrics.com"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-01-20T08:30:00Z",
+      "updatedAt": "2025-10-21T09:20:00Z"
+    },
+    {
+      "id": "prac-005",
+      "name": "Lakeside Internal Medicine",
+      "address": {
+        "street": "555 Lake Shore Blvd",
+        "city": "Chicago",
+        "state": "IL",
+        "zip": "60611"
+      },
+      "phone": "(555) 567-8901",
+      "fax": "(555) 567-8902",
+      "email": "office@lakesideim.com",
+      "hours": "Mon-Fri 7am-4pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Robert Davis",
+          "role": "Practice Administrator",
+          "phone": "(555) 567-8901",
+          "extension": "50",
+          "email": "rdavis@lakesideim.com"
+        }
+      ],
+      "notes": "Closed first Friday of every month for staff meetings",
+      "createdAt": "2024-04-12T10:00:00Z",
+      "updatedAt": "2025-10-19T13:30:00Z"
+    },
+    {
+      "id": "prac-006",
+      "name": "Sunset Family Health",
+      "address": {
+        "street": "888 Sunset Boulevard",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "90028"
+      },
+      "phone": "(555) 678-9012",
+      "email": "info@sunsetfh.com",
+      "hours": "Mon-Fri 9am-6pm, Sat 9am-1pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Amy Rodriguez",
+          "role": "Front Desk",
+          "phone": "(555) 678-9012"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-05-01T11:00:00Z",
+      "updatedAt": "2025-10-20T10:15:00Z"
+    },
+    {
+      "id": "prac-007",
+      "name": "Greenwood Sports Medicine",
+      "address": {
+        "street": "234 Forest Lane",
+        "city": "Portland",
+        "state": "OR",
+        "zip": "97201"
+      },
+      "phone": "(555) 789-0123",
+      "fax": "(555) 789-0124",
+      "email": "contact@greenwoodsports.com",
+      "hours": "Mon-Fri 8am-6pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Kevin Thompson",
+          "role": "Athletic Trainer",
+          "phone": "(555) 789-0123",
+          "extension": "33",
+          "email": "kthompson@greenwoodsports.com"
+        }
+      ],
+      "notes": "Specializes in sports injuries",
+      "createdAt": "2024-02-28T09:30:00Z",
+      "updatedAt": "2025-10-17T14:00:00Z"
+    },
+    {
+      "id": "prac-008",
+      "name": "Harbor Medical Group",
+      "address": {
+        "street": "567 Harbor Drive",
+        "city": "San Diego",
+        "state": "CA",
+        "zip": "92101"
+      },
+      "phone": "(555) 890-1234",
+      "fax": "(555) 890-1235",
+      "email": "admin@harbormed.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Patricia Lee",
+          "role": "Office Manager",
+          "phone": "(555) 890-1234",
+          "extension": "12",
+          "email": "plee@harbormed.com"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-03-15T10:30:00Z",
+      "updatedAt": "2025-10-16T11:45:00Z"
+    },
+    {
+      "id": "prac-009",
+      "name": "Parkside Family Physicians",
+      "address": {
+        "street": "890 Park Avenue",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10028"
+      },
+      "phone": "(555) 901-2345",
+      "email": "office@parksidefp.com",
+      "hours": "Mon-Fri 8am-6pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Daniel Kim",
+          "role": "Medical Secretary",
+          "phone": "(555) 901-2345",
+          "extension": "8"
+        }
+      ],
+      "notes": "High volume practice, expect hold times",
+      "createdAt": "2024-01-10T08:00:00Z",
+      "updatedAt": "2025-10-15T15:20:00Z"
+    },
+    {
+      "id": "prac-010",
+      "name": "Meadowbrook Primary Care",
+      "address": {
+        "street": "123 Meadow Lane",
+        "city": "Austin",
+        "state": "TX",
+        "zip": "78701"
+      },
+      "phone": "(555) 012-3456",
+      "fax": "(555) 012-3457",
+      "email": "info@meadowbrookpc.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Michelle Garcia",
+          "role": "Office Coordinator",
+          "phone": "(555) 012-3456",
+          "extension": "20",
+          "email": "mgarcia@meadowbrookpc.com"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-04-20T09:00:00Z",
+      "updatedAt": "2025-10-14T12:30:00Z"
+    },
+    {
+      "id": "prac-011",
+      "name": "Coastal Neurology Associates",
+      "address": {
+        "street": "456 Ocean Boulevard",
+        "city": "Miami",
+        "state": "FL",
+        "zip": "33139"
+      },
+      "phone": "(555) 123-4568",
+      "fax": "(555) 123-4569",
+      "email": "office@coastalneuro.com",
+      "hours": "Mon-Thu 9am-5pm, Fri 9am-3pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Jessica Hernandez",
+          "role": "Practice Manager",
+          "phone": "(555) 123-4568",
+          "extension": "55",
+          "email": "jhernandez@coastalneuro.com"
+        }
+      ],
+      "notes": "Specializes in neurological disorders",
+      "createdAt": "2024-05-10T10:00:00Z",
+      "updatedAt": "2025-10-25T14:15:00Z"
+    },
+    {
+      "id": "prac-012",
+      "name": "Downtown Medical Clinic",
+      "address": {
+        "street": "789 Main Street Suite 200",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98101"
+      },
+      "phone": "(555) 234-5679",
+      "email": "contact@downtownmedical.com",
+      "hours": "Mon-Fri 8am-7pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Brian Anderson",
+          "role": "Clinic Manager",
+          "phone": "(555) 234-5679",
+          "extension": "100"
+        }
+      ],
+      "notes": "Walk-in clinic, always busy",
+      "createdAt": "2024-02-05T11:30:00Z",
+      "updatedAt": "2025-10-24T09:45:00Z"
+    },
+    {
+      "id": "prac-013",
+      "name": "Hillside Pediatric Center",
+      "address": {
+        "street": "234 Hill Road",
+        "city": "Boston",
+        "state": "MA",
+        "zip": "02108"
+      },
+      "phone": "(555) 345-6780",
+      "fax": "(555) 345-6781",
+      "email": "admin@hillsidepeds.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Laura White",
+          "role": "Nurse Practitioner",
+          "phone": "(555) 345-6780",
+          "extension": "14",
+          "email": "lwhite@hillsidepeds.com"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-03-22T08:45:00Z",
+      "updatedAt": "2025-10-23T13:00:00Z"
+    },
+    {
+      "id": "prac-014",
+      "name": "Westside Cardiology",
+      "address": {
+        "street": "567 West Avenue",
+        "city": "Phoenix",
+        "state": "AZ",
+        "zip": "85001"
+      },
+      "phone": "(555) 456-7891",
+      "fax": "(555) 456-7892",
+      "email": "info@westsidecardio.com",
+      "hours": "Mon-Fri 7am-4pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Steven Taylor",
+          "role": "Cardiology Nurse",
+          "phone": "(555) 456-7891",
+          "extension": "30",
+          "email": "staylor@westsidecardio.com"
+        }
+      ],
+      "notes": "Early bird practice, best to call in morning",
+      "createdAt": "2024-04-05T07:30:00Z",
+      "updatedAt": "2025-10-22T08:20:00Z"
+    },
+    {
+      "id": "prac-015",
+      "name": "Eastside Family Medicine",
+      "address": {
+        "street": "890 East Street",
+        "city": "Philadelphia",
+        "state": "PA",
+        "zip": "19102"
+      },
+      "phone": "(555) 567-8902",
+      "email": "office@eastsidefm.com",
+      "hours": "Mon-Fri 9am-6pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Nancy Clark",
+          "role": "Office Administrator",
+          "phone": "(555) 567-8902",
+          "extension": "5"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-05-15T09:15:00Z",
+      "updatedAt": "2025-10-21T10:30:00Z"
+    },
+    {
+      "id": "prac-016",
+      "name": "Central Valley Urgent Care",
+      "address": {
+        "street": "123 Central Drive",
+        "city": "Fresno",
+        "state": "CA",
+        "zip": "93721"
+      },
+      "phone": "(555) 678-9013",
+      "fax": "(555) 678-9014",
+      "email": "contact@centralvalleyuc.com",
+      "hours": "Mon-Sun 8am-8pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Carlos Ramirez",
+          "role": "Lead Physician Assistant",
+          "phone": "(555) 678-9013",
+          "extension": "1",
+          "email": "cramirez@centralvalleyuc.com"
+        }
+      ],
+      "notes": "Open 7 days a week",
+      "createdAt": "2024-01-25T10:00:00Z",
+      "updatedAt": "2025-10-20T11:00:00Z"
+    },
+    {
+      "id": "prac-017",
+      "name": "Northside ENT Specialists",
+      "address": {
+        "street": "456 North Boulevard",
+        "city": "Detroit",
+        "state": "MI",
+        "zip": "48201"
+      },
+      "phone": "(555) 789-0124",
+      "email": "admin@northsideent.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Emily Turner",
+          "role": "ENT Nurse",
+          "phone": "(555) 789-0124",
+          "extension": "22",
+          "email": "eturner@northsideent.com"
+        }
+      ],
+      "notes": "Specializes in ear, nose, and throat conditions",
+      "createdAt": "2024-02-14T11:00:00Z",
+      "updatedAt": "2025-10-19T14:45:00Z"
+    },
+    {
+      "id": "prac-018",
+      "name": "Southside Rehabilitation Center",
+      "address": {
+        "street": "789 South Street",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip": "30303"
+      },
+      "phone": "(555) 890-1235",
+      "fax": "(555) 890-1236",
+      "email": "info@southsiderehab.com",
+      "hours": "Mon-Fri 7am-6pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Mark Johnson",
+          "role": "Physical Therapist",
+          "phone": "(555) 890-1235",
+          "extension": "45",
+          "email": "mjohnson@southsiderehab.com"
+        }
+      ],
+      "notes": "Rehabilitation and physical therapy focus",
+      "createdAt": "2024-03-10T08:30:00Z",
+      "updatedAt": "2025-10-18T15:30:00Z"
+    },
+    {
+      "id": "prac-019",
+      "name": "Bayside Women's Health",
+      "address": {
+        "street": "234 Bay Street",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94102"
+      },
+      "phone": "(555) 901-2346",
+      "email": "office@baysidewh.com",
+      "hours": "Mon-Fri 9am-5pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Dr. Rebecca Adams",
+          "role": "OB/GYN",
+          "phone": "(555) 901-2346",
+          "extension": "0"
+        }
+      ],
+      "notes": "Women's health specialists",
+      "createdAt": "2024-04-18T09:45:00Z",
+      "updatedAt": "2025-10-17T12:15:00Z"
+    },
+    {
+      "id": "prac-020",
+      "name": "Summit Dermatology",
+      "address": {
+        "street": "567 Summit Avenue",
+        "city": "Las Vegas",
+        "state": "NV",
+        "zip": "89101"
+      },
+      "phone": "(555) 012-3457",
+      "fax": "(555) 012-3458",
+      "email": "contact@summitderm.com",
+      "hours": "Mon-Thu 8am-6pm, Fri 8am-2pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Dr. Andrew Martinez",
+          "role": "Dermatologist",
+          "phone": "(555) 012-3457",
+          "extension": "1",
+          "email": "amartinez@summitderm.com"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-05-20T10:30:00Z",
+      "updatedAt": "2025-10-16T13:45:00Z"
+    },
+    {
+      "id": "prac-021",
+      "name": "Gateway Pain Management",
+      "address": {
+        "street": "890 Gateway Plaza",
+        "city": "St. Louis",
+        "state": "MO",
+        "zip": "63101"
+      },
+      "phone": "(555) 123-4570",
+      "email": "admin@gatewaypain.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Rachel Green",
+          "role": "Pain Management Specialist",
+          "phone": "(555) 123-4570",
+          "extension": "18"
+        }
+      ],
+      "notes": "Pain management and chronic pain treatment",
+      "createdAt": "2024-01-30T11:00:00Z",
+      "updatedAt": "2025-10-15T09:30:00Z"
+    },
+    {
+      "id": "prac-022",
+      "name": "Riverbend Rheumatology",
+      "address": {
+        "street": "123 Riverbend Road",
+        "city": "Minneapolis",
+        "state": "MN",
+        "zip": "55401"
+      },
+      "phone": "(555) 234-5680",
+      "fax": "(555) 234-5681",
+      "email": "info@riverbendrheum.com",
+      "hours": "Mon-Fri 8am-4pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Dr. Susan Phillips",
+          "role": "Rheumatologist",
+          "phone": "(555) 234-5680",
+          "extension": "2",
+          "email": "sphillips@riverbendrheum.com"
+        }
+      ],
+      "notes": "Rheumatology and autoimmune disorders",
+      "createdAt": "2024-02-22T09:30:00Z",
+      "updatedAt": "2025-10-14T11:45:00Z"
+    },
+    {
+      "id": "prac-023",
+      "name": "Brookside Gastroenterology",
+      "address": {
+        "street": "456 Brook Lane",
+        "city": "Dallas",
+        "state": "TX",
+        "zip": "75201"
+      },
+      "phone": "(555) 345-6782",
+      "email": "office@brooksidegi.com",
+      "hours": "Mon-Fri 9am-5pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Dr. James Wilson",
+          "role": "Gastroenterologist",
+          "phone": "(555) 345-6782",
+          "extension": "3"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-03-28T10:15:00Z",
+      "updatedAt": "2025-10-13T14:20:00Z"
+    },
+    {
+      "id": "prac-024",
+      "name": "Maple Grove Allergy & Asthma",
+      "address": {
+        "street": "789 Maple Drive",
+        "city": "Charlotte",
+        "state": "NC",
+        "zip": "28201"
+      },
+      "phone": "(555) 456-7893",
+      "fax": "(555) 456-7894",
+      "email": "contact@maplegrovea.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Dr. Linda Cooper",
+          "role": "Allergist",
+          "phone": "(555) 456-7893",
+          "extension": "4",
+          "email": "lcooper@maplegrovea.com"
+        }
+      ],
+      "notes": "Allergy testing and asthma treatment",
+      "createdAt": "2024-04-25T08:45:00Z",
+      "updatedAt": "2025-10-12T10:00:00Z"
+    },
+    {
+      "id": "prac-025",
+      "name": "Oakwood Endocrinology",
+      "address": {
+        "street": "234 Oak Street",
+        "city": "Columbus",
+        "state": "OH",
+        "zip": "43201"
+      },
+      "phone": "(555) 567-8904",
+      "email": "admin@oakwoodendo.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Dr. Richard Brown",
+          "role": "Endocrinologist",
+          "phone": "(555) 567-8904",
+          "extension": "5"
+        }
+      ],
+      "notes": "Diabetes and hormonal disorders",
+      "createdAt": "2024-05-30T09:00:00Z",
+      "updatedAt": "2025-10-11T12:30:00Z"
+    },
+    {
+      "id": "prac-026",
+      "name": "Pinecrest Urology",
+      "address": {
+        "street": "567 Pine Street",
+        "city": "Nashville",
+        "state": "TN",
+        "zip": "37201"
+      },
+      "phone": "(555) 678-9015",
+      "fax": "(555) 678-9016",
+      "email": "office@pinecresturology.com",
+      "hours": "Mon-Thu 8am-5pm, Fri 8am-3pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Dr. Michael Roberts",
+          "role": "Urologist",
+          "phone": "(555) 678-9015",
+          "extension": "6",
+          "email": "mroberts@pinecresturology.com"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-01-18T10:30:00Z",
+      "updatedAt": "2025-10-10T15:00:00Z"
+    },
+    {
+      "id": "prac-027",
+      "name": "Clearwater Pulmonology",
+      "address": {
+        "street": "890 Clear Lake Road",
+        "city": "Houston",
+        "state": "TX",
+        "zip": "77001"
+      },
+      "phone": "(555) 789-0126",
+      "email": "info@clearwaterpulm.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "phone",
+      "keyContacts": [
+        {
+          "name": "Dr. Patricia Davis",
+          "role": "Pulmonologist",
+          "phone": "(555) 789-0126",
+          "extension": "7"
+        }
+      ],
+      "notes": "Lung and respiratory specialists",
+      "createdAt": "2024-02-08T11:15:00Z",
+      "updatedAt": "2025-10-09T13:15:00Z"
+    },
+    {
+      "id": "prac-028",
+      "name": "Fairview Nephrology",
+      "address": {
+        "street": "123 Fairview Avenue",
+        "city": "Indianapolis",
+        "state": "IN",
+        "zip": "46201"
+      },
+      "phone": "(555) 890-1237",
+      "fax": "(555) 890-1238",
+      "email": "contact@fairviewneph.com",
+      "hours": "Mon-Fri 7am-4pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Dr. David Miller",
+          "role": "Nephrologist",
+          "phone": "(555) 890-1237",
+          "extension": "8",
+          "email": "dmiller@fairviewneph.com"
+        }
+      ],
+      "notes": "Kidney disease specialists",
+      "createdAt": "2024-03-16T08:00:00Z",
+      "updatedAt": "2025-10-08T09:45:00Z"
+    },
+    {
+      "id": "prac-029",
+      "name": "Highland Hematology",
+      "address": {
+        "street": "456 Highland Road",
+        "city": "Milwaukee",
+        "state": "WI",
+        "zip": "53201"
+      },
+      "phone": "(555) 901-2347",
+      "email": "admin@highlandhem.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "email",
+      "keyContacts": [
+        {
+          "name": "Dr. Karen Anderson",
+          "role": "Hematologist",
+          "phone": "(555) 901-2347",
+          "extension": "9",
+          "email": "kanderson@highlandhem.com"
+        }
+      ],
+      "notes": "",
+      "createdAt": "2024-04-10T09:30:00Z",
+      "updatedAt": "2025-10-07T11:00:00Z"
+    },
+    {
+      "id": "prac-030",
+      "name": "Cedar Ridge Infectious Disease",
+      "address": {
+        "street": "789 Cedar Ridge Drive",
+        "city": "Kansas City",
+        "state": "MO",
+        "zip": "64101"
+      },
+      "phone": "(555) 012-3459",
+      "fax": "(555) 012-3460",
+      "email": "office@cedarridgeid.com",
+      "hours": "Mon-Fri 8am-5pm",
+      "preferredContactMethod": "fax",
+      "keyContacts": [
+        {
+          "name": "Dr. Thomas Lee",
+          "role": "Infectious Disease Specialist",
+          "phone": "(555) 012-3459",
+          "extension": "10",
+          "email": "tlee@cedarridgeid.com"
+        }
+      ],
+      "notes": "Infectious disease specialists",
+      "createdAt": "2024-05-05T10:00:00Z",
+      "updatedAt": "2025-10-06T14:30:00Z"
+    }
+  ],
+  "doctors": [
+    {
+      "id": "doc-001",
+      "name": "Dr. Jane Smith",
+      "practiceIds": ["prac-001", "prac-006"],
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "doc-002",
+      "name": "Dr. Bob Jones",
+      "practiceIds": ["prac-001"],
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "doc-003",
+      "name": "Dr. Amy Wilson",
+      "practiceIds": ["prac-001", "prac-002"],
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "doc-004",
+      "name": "Dr. David Chen",
+      "practiceIds": ["prac-002", "prac-003"],
+      "createdAt": "2024-02-10T09:00:00Z",
+      "updatedAt": "2024-02-10T09:00:00Z"
+    },
+    {
+      "id": "doc-005",
+      "name": "Dr. Emily Martinez",
+      "practiceIds": ["prac-003"],
+      "createdAt": "2024-03-05T12:00:00Z",
+      "updatedAt": "2024-03-05T12:00:00Z"
+    },
+    {
+      "id": "doc-006",
+      "name": "Dr. Michael Brown",
+      "practiceIds": ["prac-004", "prac-013"],
+      "createdAt": "2024-01-20T08:30:00Z",
+      "updatedAt": "2024-01-20T08:30:00Z"
+    },
+    {
+      "id": "doc-007",
+      "name": "Dr. Sarah Davis",
+      "practiceIds": ["prac-005"],
+      "createdAt": "2024-04-12T10:00:00Z",
+      "updatedAt": "2024-04-12T10:00:00Z"
+    },
+    {
+      "id": "doc-008",
+      "name": "Dr. William Rodriguez",
+      "practiceIds": ["prac-006", "prac-015"],
+      "createdAt": "2024-05-01T11:00:00Z",
+      "updatedAt": "2024-05-01T11:00:00Z"
+    },
+    {
+      "id": "doc-009",
+      "name": "Dr. Lisa Thompson",
+      "practiceIds": ["prac-007"],
+      "createdAt": "2024-02-28T09:30:00Z",
+      "updatedAt": "2024-02-28T09:30:00Z"
+    },
+    {
+      "id": "doc-010",
+      "name": "Dr. James Lee",
+      "practiceIds": ["prac-008", "prac-012"],
+      "createdAt": "2024-03-15T10:30:00Z",
+      "updatedAt": "2024-03-15T10:30:00Z"
+    },
+    {
+      "id": "doc-011",
+      "name": "Dr. Jennifer Kim",
+      "practiceIds": ["prac-009"],
+      "createdAt": "2024-01-10T08:00:00Z",
+      "updatedAt": "2024-01-10T08:00:00Z"
+    },
+    {
+      "id": "doc-012",
+      "name": "Dr. Robert Garcia",
+      "practiceIds": ["prac-010", "prac-025"],
+      "createdAt": "2024-04-20T09:00:00Z",
+      "updatedAt": "2024-04-20T09:00:00Z"
+    },
+    {
+      "id": "doc-013",
+      "name": "Dr. Mary Hernandez",
+      "practiceIds": ["prac-011"],
+      "createdAt": "2024-05-10T10:00:00Z",
+      "updatedAt": "2024-05-10T10:00:00Z"
+    },
+    {
+      "id": "doc-014",
+      "name": "Dr. Charles Anderson",
+      "practiceIds": ["prac-014"],
+      "createdAt": "2024-04-05T07:30:00Z",
+      "updatedAt": "2024-04-05T07:30:00Z"
+    },
+    {
+      "id": "doc-015",
+      "name": "Dr. Barbara White",
+      "practiceIds": ["prac-016"],
+      "createdAt": "2024-01-25T10:00:00Z",
+      "updatedAt": "2024-01-25T10:00:00Z"
+    },
+    {
+      "id": "doc-016",
+      "name": "Dr. Joseph Taylor",
+      "practiceIds": ["prac-017"],
+      "createdAt": "2024-02-14T11:00:00Z",
+      "updatedAt": "2024-02-14T11:00:00Z"
+    },
+    {
+      "id": "doc-017",
+      "name": "Dr. Susan Clark",
+      "practiceIds": ["prac-018"],
+      "createdAt": "2024-03-10T08:30:00Z",
+      "updatedAt": "2024-03-10T08:30:00Z"
+    },
+    {
+      "id": "doc-018",
+      "name": "Dr. Thomas Moore",
+      "practiceIds": ["prac-019"],
+      "createdAt": "2024-04-18T09:45:00Z",
+      "updatedAt": "2024-04-18T09:45:00Z"
+    },
+    {
+      "id": "doc-019",
+      "name": "Dr. Nancy Turner",
+      "practiceIds": ["prac-020", "prac-024"],
+      "createdAt": "2024-05-20T10:30:00Z",
+      "updatedAt": "2024-05-20T10:30:00Z"
+    },
+    {
+      "id": "doc-020",
+      "name": "Dr. Daniel Green",
+      "practiceIds": ["prac-021"],
+      "createdAt": "2024-01-30T11:00:00Z",
+      "updatedAt": "2024-01-30T11:00:00Z"
+    },
+    {
+      "id": "doc-021",
+      "name": "Dr. Karen Phillips",
+      "practiceIds": ["prac-022"],
+      "createdAt": "2024-02-22T09:30:00Z",
+      "updatedAt": "2024-02-22T09:30:00Z"
+    },
+    {
+      "id": "doc-022",
+      "name": "Dr. Mark Wilson",
+      "practiceIds": ["prac-023"],
+      "createdAt": "2024-03-28T10:15:00Z",
+      "updatedAt": "2024-03-28T10:15:00Z"
+    },
+    {
+      "id": "doc-023",
+      "name": "Dr. Patricia Cooper",
+      "practiceIds": ["prac-026"],
+      "createdAt": "2024-01-18T10:30:00Z",
+      "updatedAt": "2024-01-18T10:30:00Z"
+    },
+    {
+      "id": "doc-024",
+      "name": "Dr. Steven Roberts",
+      "practiceIds": ["prac-027"],
+      "createdAt": "2024-02-08T11:15:00Z",
+      "updatedAt": "2024-02-08T11:15:00Z"
+    },
+    {
+      "id": "doc-025",
+      "name": "Dr. Linda Miller",
+      "practiceIds": ["prac-028"],
+      "createdAt": "2024-03-16T08:00:00Z",
+      "updatedAt": "2024-03-16T08:00:00Z"
+    }
+  ],
+  "vos": [
+    {
+      "id": "vo-001",
+      "patientName": "Terrence Johnson",
+      "therapyType": "Physical Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-18T09:15:00Z",
+      "batchId": "batch-001",
+      "practiceId": "prac-001",
+      "createdAt": "2025-10-10T08:00:00Z"
+    },
+    {
+      "id": "vo-002",
+      "patientName": "Dan Martinez",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-12T10:20:00Z",
+      "batchId": "batch-001",
+      "practiceId": "prac-001",
+      "createdAt": "2025-10-10T08:00:00Z"
+    },
+    {
+      "id": "vo-003",
+      "patientName": "Sarah Williams",
+      "therapyType": "Occupational Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-15T14:30:00Z",
+      "batchId": "batch-001",
+      "practiceId": "prac-001",
+      "createdAt": "2025-10-10T08:00:00Z"
+    },
+    {
+      "id": "vo-004",
+      "patientName": "Michael Chen",
+      "therapyType": "Physical Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-20T11:00:00Z",
+      "batchId": "batch-002",
+      "practiceId": "prac-001",
+      "createdAt": "2025-10-18T09:00:00Z"
+    },
+    {
+      "id": "vo-005",
+      "patientName": "Emily Davis",
+      "therapyType": "Physical Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-21T08:15:00Z",
+      "batchId": "batch-002",
+      "practiceId": "prac-001",
+      "createdAt": "2025-10-18T09:00:00Z"
+    },
+    {
+      "id": "vo-006",
+      "patientName": "James Wilson",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-05T13:45:00Z",
+      "batchId": "batch-003",
+      "practiceId": "prac-002",
+      "createdAt": "2025-10-01T10:00:00Z"
+    },
+    {
+      "id": "vo-007",
+      "patientName": "Linda Brown",
+      "therapyType": "Physical Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-08T15:20:00Z",
+      "batchId": "batch-003",
+      "practiceId": "prac-002",
+      "createdAt": "2025-10-01T10:00:00Z"
+    },
+    {
+      "id": "vo-008",
+      "patientName": "Robert Taylor",
+      "therapyType": "Occupational Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-10T09:30:00Z",
+      "batchId": "batch-003",
+      "practiceId": "prac-002",
+      "createdAt": "2025-10-01T10:00:00Z"
+    },
+    {
+      "id": "vo-009",
+      "patientName": "Patricia Anderson",
+      "therapyType": "Physical Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-22T10:00:00Z",
+      "batchId": "batch-004",
+      "practiceId": "prac-002",
+      "createdAt": "2025-10-20T08:30:00Z"
+    },
+    {
+      "id": "vo-010",
+      "patientName": "David Moore",
+      "therapyType": "Speech Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-23T11:15:00Z",
+      "practiceId": "prac-003",
+      "createdAt": "2025-10-23T11:15:00Z"
+    },
+    {
+      "id": "vo-011",
+      "patientName": "Mary Jackson",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-08T14:00:00Z",
+      "batchId": "batch-005",
+      "practiceId": "prac-003",
+      "createdAt": "2025-10-03T09:00:00Z"
+    },
+    {
+      "id": "vo-012",
+      "patientName": "Charles White",
+      "therapyType": "Occupational Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-16T10:45:00Z",
+      "batchId": "batch-005",
+      "practiceId": "prac-003",
+      "createdAt": "2025-10-03T09:00:00Z"
+    },
+    {
+      "id": "vo-013",
+      "patientName": "Jennifer Harris",
+      "therapyType": "Physical Therapy",
+      "status": "Received",
+      "statusTimestamp": "2025-10-19T13:00:00Z",
+      "batchId": "batch-005",
+      "practiceId": "prac-003",
+      "createdAt": "2025-10-03T09:00:00Z"
+    },
+    {
+      "id": "vo-014",
+      "patientName": "Thomas Martin",
+      "therapyType": "Speech Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-06T09:00:00Z",
+      "batchId": "batch-006",
+      "practiceId": "prac-004",
+      "createdAt": "2025-10-01T08:00:00Z"
+    },
+    {
+      "id": "vo-015",
+      "patientName": "Barbara Thompson",
+      "therapyType": "Physical Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-09T11:30:00Z",
+      "batchId": "batch-006",
+      "practiceId": "prac-004",
+      "createdAt": "2025-10-01T08:00:00Z"
+    },
+    {
+      "id": "vo-016",
+      "patientName": "Christopher Garcia",
+      "therapyType": "Occupational Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-11T14:15:00Z",
+      "batchId": "batch-006",
+      "practiceId": "prac-004",
+      "createdAt": "2025-10-01T08:00:00Z"
+    },
+    {
+      "id": "vo-017",
+      "patientName": "Susan Martinez",
+      "therapyType": "Physical Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-24T09:45:00Z",
+      "batchId": "batch-007",
+      "practiceId": "prac-004",
+      "createdAt": "2025-10-22T10:00:00Z"
+    },
+    {
+      "id": "vo-018",
+      "patientName": "Matthew Robinson",
+      "therapyType": "Speech Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-25T10:00:00Z",
+      "practiceId": "prac-005",
+      "createdAt": "2025-10-25T10:00:00Z"
+    },
+    {
+      "id": "vo-019",
+      "patientName": "Lisa Clark",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-07T12:30:00Z",
+      "batchId": "batch-008",
+      "practiceId": "prac-005",
+      "createdAt": "2025-10-02T09:00:00Z"
+    },
+    {
+      "id": "vo-020",
+      "patientName": "Donald Rodriguez",
+      "therapyType": "Occupational Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-14T15:00:00Z",
+      "batchId": "batch-008",
+      "practiceId": "prac-005",
+      "createdAt": "2025-10-02T09:00:00Z"
+    },
+    {
+      "id": "vo-021",
+      "patientName": "Nancy Lewis",
+      "therapyType": "Physical Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-17T08:30:00Z",
+      "batchId": "batch-009",
+      "practiceId": "prac-006",
+      "createdAt": "2025-10-12T10:00:00Z"
+    },
+    {
+      "id": "vo-022",
+      "patientName": "Paul Lee",
+      "therapyType": "Speech Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-19T11:00:00Z",
+      "batchId": "batch-009",
+      "practiceId": "prac-006",
+      "createdAt": "2025-10-12T10:00:00Z"
+    },
+    {
+      "id": "vo-023",
+      "patientName": "Sandra Walker",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-20T13:45:00Z",
+      "batchId": "batch-009",
+      "practiceId": "prac-006",
+      "createdAt": "2025-10-12T10:00:00Z"
+    },
+    {
+      "id": "vo-024",
+      "patientName": "Mark Hall",
+      "therapyType": "Occupational Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-25T10:15:00Z",
+      "practiceId": "prac-007",
+      "createdAt": "2025-10-25T10:15:00Z"
+    },
+    {
+      "id": "vo-025",
+      "patientName": "Donna Allen",
+      "therapyType": "Physical Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-26T09:00:00Z",
+      "practiceId": "prac-007",
+      "createdAt": "2025-10-26T09:00:00Z"
+    },
+    {
+      "id": "vo-026",
+      "patientName": "George Young",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-04T14:20:00Z",
+      "batchId": "batch-010",
+      "practiceId": "prac-008",
+      "createdAt": "2025-09-28T10:00:00Z"
+    },
+    {
+      "id": "vo-027",
+      "patientName": "Betty Hernandez",
+      "therapyType": "Physical Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-13T10:30:00Z",
+      "batchId": "batch-010",
+      "practiceId": "prac-008",
+      "createdAt": "2025-09-28T10:00:00Z"
+    },
+    {
+      "id": "vo-028",
+      "patientName": "Edward King",
+      "therapyType": "Occupational Therapy",
+      "status": "Received",
+      "statusTimestamp": "2025-10-21T12:00:00Z",
+      "batchId": "batch-010",
+      "practiceId": "prac-008",
+      "createdAt": "2025-09-28T10:00:00Z"
+    },
+    {
+      "id": "vo-029",
+      "patientName": "Helen Wright",
+      "therapyType": "Physical Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-09T09:45:00Z",
+      "batchId": "batch-011",
+      "practiceId": "prac-009",
+      "createdAt": "2025-10-04T08:00:00Z"
+    },
+    {
+      "id": "vo-030",
+      "patientName": "Kenneth Lopez",
+      "therapyType": "Speech Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-12T14:00:00Z",
+      "batchId": "batch-011",
+      "practiceId": "prac-009",
+      "createdAt": "2025-10-04T08:00:00Z"
+    },
+    {
+      "id": "vo-031",
+      "patientName": "Dorothy Hill",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-15T10:15:00Z",
+      "batchId": "batch-011",
+      "practiceId": "prac-009",
+      "createdAt": "2025-10-04T08:00:00Z"
+    },
+    {
+      "id": "vo-032",
+      "patientName": "Steven Scott",
+      "therapyType": "Occupational Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-24T11:30:00Z",
+      "practiceId": "prac-010",
+      "createdAt": "2025-10-24T11:30:00Z"
+    },
+    {
+      "id": "vo-033",
+      "patientName": "Ruth Green",
+      "therapyType": "Physical Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-25T08:45:00Z",
+      "practiceId": "prac-010",
+      "createdAt": "2025-10-25T08:45:00Z"
+    },
+    {
+      "id": "vo-034",
+      "patientName": "Frank Adams",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-06T13:00:00Z",
+      "batchId": "batch-012",
+      "practiceId": "prac-011",
+      "createdAt": "2025-10-01T09:00:00Z"
+    },
+    {
+      "id": "vo-035",
+      "patientName": "Sharon Baker",
+      "therapyType": "Physical Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-11T15:30:00Z",
+      "batchId": "batch-012",
+      "practiceId": "prac-011",
+      "createdAt": "2025-10-01T09:00:00Z"
+    },
+    {
+      "id": "vo-036",
+      "patientName": "Gary Nelson",
+      "therapyType": "Occupational Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-18T09:00:00Z",
+      "batchId": "batch-013",
+      "practiceId": "prac-012",
+      "createdAt": "2025-10-13T10:00:00Z"
+    },
+    {
+      "id": "vo-037",
+      "patientName": "Michelle Carter",
+      "therapyType": "Physical Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-20T11:15:00Z",
+      "batchId": "batch-013",
+      "practiceId": "prac-012",
+      "createdAt": "2025-10-13T10:00:00Z"
+    },
+    {
+      "id": "vo-038",
+      "patientName": "Larry Mitchell",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-22T14:30:00Z",
+      "batchId": "batch-013",
+      "practiceId": "prac-012",
+      "createdAt": "2025-10-13T10:00:00Z"
+    },
+    {
+      "id": "vo-039",
+      "patientName": "Kimberly Perez",
+      "therapyType": "Physical Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-23T10:00:00Z",
+      "practiceId": "prac-013",
+      "createdAt": "2025-10-23T10:00:00Z"
+    },
+    {
+      "id": "vo-040",
+      "patientName": "Brian Roberts",
+      "therapyType": "Occupational Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-24T09:15:00Z",
+      "practiceId": "prac-013",
+      "createdAt": "2025-10-24T09:15:00Z"
+    },
+    {
+      "id": "vo-041",
+      "patientName": "Carol Turner",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-05T12:45:00Z",
+      "batchId": "batch-014",
+      "practiceId": "prac-014",
+      "createdAt": "2025-09-30T08:00:00Z"
+    },
+    {
+      "id": "vo-042",
+      "patientName": "Daniel Phillips",
+      "therapyType": "Speech Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-14T14:00:00Z",
+      "batchId": "batch-014",
+      "practiceId": "prac-014",
+      "createdAt": "2025-09-30T08:00:00Z"
+    },
+    {
+      "id": "vo-043",
+      "patientName": "Deborah Campbell",
+      "therapyType": "Occupational Therapy",
+      "status": "Received",
+      "statusTimestamp": "2025-10-20T13:15:00Z",
+      "batchId": "batch-014",
+      "practiceId": "prac-014",
+      "createdAt": "2025-09-30T08:00:00Z"
+    },
+    {
+      "id": "vo-044",
+      "patientName": "Ryan Parker",
+      "therapyType": "Physical Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-10T10:30:00Z",
+      "batchId": "batch-015",
+      "practiceId": "prac-015",
+      "createdAt": "2025-10-05T09:00:00Z"
+    },
+    {
+      "id": "vo-045",
+      "patientName": "Cynthia Evans",
+      "therapyType": "Speech Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-13T12:00:00Z",
+      "batchId": "batch-015",
+      "practiceId": "prac-015",
+      "createdAt": "2025-10-05T09:00:00Z"
+    },
+    {
+      "id": "vo-046",
+      "patientName": "Jeffrey Edwards",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-16T15:45:00Z",
+      "batchId": "batch-015",
+      "practiceId": "prac-015",
+      "createdAt": "2025-10-05T09:00:00Z"
+    },
+    {
+      "id": "vo-047",
+      "patientName": "Stephanie Collins",
+      "therapyType": "Occupational Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-25T11:00:00Z",
+      "practiceId": "prac-016",
+      "createdAt": "2025-10-25T11:00:00Z"
+    },
+    {
+      "id": "vo-048",
+      "patientName": "Raymond Stewart",
+      "therapyType": "Physical Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-26T08:30:00Z",
+      "practiceId": "prac-016",
+      "createdAt": "2025-10-26T08:30:00Z"
+    },
+    {
+      "id": "vo-049",
+      "patientName": "Virginia Sanchez",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-07T14:15:00Z",
+      "batchId": "batch-016",
+      "practiceId": "prac-017",
+      "createdAt": "2025-10-02T10:00:00Z"
+    },
+    {
+      "id": "vo-050",
+      "patientName": "Gregory Morris",
+      "therapyType": "Physical Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-15T10:45:00Z",
+      "batchId": "batch-016",
+      "practiceId": "prac-017",
+      "createdAt": "2025-10-02T10:00:00Z"
+    },
+    {
+      "id": "vo-051",
+      "patientName": "Janet Rogers",
+      "therapyType": "Occupational Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-19T09:15:00Z",
+      "batchId": "batch-017",
+      "practiceId": "prac-018",
+      "createdAt": "2025-10-14T08:00:00Z"
+    },
+    {
+      "id": "vo-052",
+      "patientName": "Harold Reed",
+      "therapyType": "Physical Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-21T13:30:00Z",
+      "batchId": "batch-017",
+      "practiceId": "prac-018",
+      "createdAt": "2025-10-14T08:00:00Z"
+    },
+    {
+      "id": "vo-053",
+      "patientName": "Marilyn Cook",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-23T11:00:00Z",
+      "batchId": "batch-017",
+      "practiceId": "prac-018",
+      "createdAt": "2025-10-14T08:00:00Z"
+    },
+    {
+      "id": "vo-054",
+      "patientName": "Wayne Morgan",
+      "therapyType": "Physical Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-24T09:45:00Z",
+      "practiceId": "prac-019",
+      "createdAt": "2025-10-24T09:45:00Z"
+    },
+    {
+      "id": "vo-055",
+      "patientName": "Alice Bell",
+      "therapyType": "Occupational Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-25T10:30:00Z",
+      "practiceId": "prac-019",
+      "createdAt": "2025-10-25T10:30:00Z"
+    },
+    {
+      "id": "vo-056",
+      "patientName": "Gerald Murphy",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-08T13:20:00Z",
+      "batchId": "batch-018",
+      "practiceId": "prac-020",
+      "createdAt": "2025-10-03T09:00:00Z"
+    },
+    {
+      "id": "vo-057",
+      "patientName": "Judith Bailey",
+      "therapyType": "Speech Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-16T11:45:00Z",
+      "batchId": "batch-018",
+      "practiceId": "prac-020",
+      "createdAt": "2025-10-03T09:00:00Z"
+    },
+    {
+      "id": "vo-058",
+      "patientName": "Willie Rivera",
+      "therapyType": "Occupational Therapy",
+      "status": "Received",
+      "statusTimestamp": "2025-10-22T14:30:00Z",
+      "batchId": "batch-018",
+      "practiceId": "prac-020",
+      "createdAt": "2025-10-03T09:00:00Z"
+    },
+    {
+      "id": "vo-059",
+      "patientName": "Kathryn Cooper",
+      "therapyType": "Physical Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-11T10:00:00Z",
+      "batchId": "batch-019",
+      "practiceId": "prac-021",
+      "createdAt": "2025-10-06T08:00:00Z"
+    },
+    {
+      "id": "vo-060",
+      "patientName": "Dennis Richardson",
+      "therapyType": "Speech Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-14T12:30:00Z",
+      "batchId": "batch-019",
+      "practiceId": "prac-021",
+      "createdAt": "2025-10-06T08:00:00Z"
+    },
+    {
+      "id": "vo-061",
+      "patientName": "Joyce Cox",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-17T14:00:00Z",
+      "batchId": "batch-019",
+      "practiceId": "prac-021",
+      "createdAt": "2025-10-06T08:00:00Z"
+    },
+    {
+      "id": "vo-062",
+      "patientName": "Peter Howard",
+      "therapyType": "Occupational Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-23T11:15:00Z",
+      "practiceId": "prac-022",
+      "createdAt": "2025-10-23T11:15:00Z"
+    },
+    {
+      "id": "vo-063",
+      "patientName": "Evelyn Ward",
+      "therapyType": "Physical Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-24T08:45:00Z",
+      "practiceId": "prac-022",
+      "createdAt": "2025-10-24T08:45:00Z"
+    },
+    {
+      "id": "vo-064",
+      "patientName": "Henry Torres",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-09T13:45:00Z",
+      "batchId": "batch-020",
+      "practiceId": "prac-023",
+      "createdAt": "2025-10-04T10:00:00Z"
+    },
+    {
+      "id": "vo-065",
+      "patientName": "Diane Peterson",
+      "therapyType": "Physical Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-17T10:15:00Z",
+      "batchId": "batch-020",
+      "practiceId": "prac-023",
+      "createdAt": "2025-10-04T10:00:00Z"
+    },
+    {
+      "id": "vo-066",
+      "patientName": "Arthur Gray",
+      "therapyType": "Occupational Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-20T09:30:00Z",
+      "batchId": "batch-021",
+      "practiceId": "prac-024",
+      "createdAt": "2025-10-15T08:00:00Z"
+    },
+    {
+      "id": "vo-067",
+      "patientName": "Teresa Ramirez",
+      "therapyType": "Physical Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-22T11:00:00Z",
+      "batchId": "batch-021",
+      "practiceId": "prac-024",
+      "createdAt": "2025-10-15T08:00:00Z"
+    },
+    {
+      "id": "vo-068",
+      "patientName": "Roy James",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-24T13:15:00Z",
+      "batchId": "batch-021",
+      "practiceId": "prac-024",
+      "createdAt": "2025-10-15T08:00:00Z"
+    },
+    {
+      "id": "vo-069",
+      "patientName": "Pamela Watson",
+      "therapyType": "Physical Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-25T10:45:00Z",
+      "practiceId": "prac-025",
+      "createdAt": "2025-10-25T10:45:00Z"
+    },
+    {
+      "id": "vo-070",
+      "patientName": "Ralph Brooks",
+      "therapyType": "Occupational Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-26T09:30:00Z",
+      "practiceId": "prac-025",
+      "createdAt": "2025-10-26T09:30:00Z"
+    },
+    {
+      "id": "vo-071",
+      "patientName": "Janice Kelly",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-10T14:30:00Z",
+      "batchId": "batch-022",
+      "practiceId": "prac-026",
+      "createdAt": "2025-10-05T09:00:00Z"
+    },
+    {
+      "id": "vo-072",
+      "patientName": "Eugene Sanders",
+      "therapyType": "Speech Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-18T11:15:00Z",
+      "batchId": "batch-022",
+      "practiceId": "prac-026",
+      "createdAt": "2025-10-05T09:00:00Z"
+    },
+    {
+      "id": "vo-073",
+      "patientName": "Katherine Price",
+      "therapyType": "Occupational Therapy",
+      "status": "Received",
+      "statusTimestamp": "2025-10-23T13:00:00Z",
+      "batchId": "batch-022",
+      "practiceId": "prac-026",
+      "createdAt": "2025-10-05T09:00:00Z"
+    },
+    {
+      "id": "vo-074",
+      "patientName": "Russell Bennett",
+      "therapyType": "Physical Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-12T10:45:00Z",
+      "batchId": "batch-023",
+      "practiceId": "prac-027",
+      "createdAt": "2025-10-07T08:00:00Z"
+    },
+    {
+      "id": "vo-075",
+      "patientName": "Frances Wood",
+      "therapyType": "Speech Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-15T13:00:00Z",
+      "batchId": "batch-023",
+      "practiceId": "prac-027",
+      "createdAt": "2025-10-07T08:00:00Z"
+    },
+    {
+      "id": "vo-076",
+      "patientName": "Albert Barnes",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-18T14:45:00Z",
+      "batchId": "batch-023",
+      "practiceId": "prac-027",
+      "createdAt": "2025-10-07T08:00:00Z"
+    },
+    {
+      "id": "vo-077",
+      "patientName": "Ann Ross",
+      "therapyType": "Occupational Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-24T11:30:00Z",
+      "practiceId": "prac-028",
+      "createdAt": "2025-10-24T11:30:00Z"
+    },
+    {
+      "id": "vo-078",
+      "patientName": "Johnny Henderson",
+      "therapyType": "Physical Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-25T09:15:00Z",
+      "practiceId": "prac-028",
+      "createdAt": "2025-10-25T09:15:00Z"
+    },
+    {
+      "id": "vo-079",
+      "patientName": "Jean Coleman",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-11T13:00:00Z",
+      "batchId": "batch-024",
+      "practiceId": "prac-029",
+      "createdAt": "2025-10-06T10:00:00Z"
+    },
+    {
+      "id": "vo-080",
+      "patientName": "Carl Jenkins",
+      "therapyType": "Physical Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-19T10:30:00Z",
+      "batchId": "batch-024",
+      "practiceId": "prac-029",
+      "createdAt": "2025-10-06T10:00:00Z"
+    },
+    {
+      "id": "vo-081",
+      "patientName": "Gloria Perry",
+      "therapyType": "Occupational Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-21T09:45:00Z",
+      "batchId": "batch-025",
+      "practiceId": "prac-030",
+      "createdAt": "2025-10-16T08:00:00Z"
+    },
+    {
+      "id": "vo-082",
+      "patientName": "Victor Powell",
+      "therapyType": "Physical Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-23T11:15:00Z",
+      "batchId": "batch-025",
+      "practiceId": "prac-030",
+      "createdAt": "2025-10-16T08:00:00Z"
+    },
+    {
+      "id": "vo-083",
+      "patientName": "Doris Long",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-25T13:30:00Z",
+      "batchId": "batch-025",
+      "practiceId": "prac-030",
+      "createdAt": "2025-10-16T08:00:00Z"
+    },
+    {
+      "id": "vo-084",
+      "patientName": "Ernest Patterson",
+      "therapyType": "Physical Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-26T10:00:00Z",
+      "practiceId": "prac-001",
+      "createdAt": "2025-10-26T10:00:00Z"
+    },
+    {
+      "id": "vo-085",
+      "patientName": "Mildred Hughes",
+      "therapyType": "Occupational Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-27T08:30:00Z",
+      "practiceId": "prac-002",
+      "createdAt": "2025-10-27T08:30:00Z"
+    },
+    {
+      "id": "vo-086",
+      "patientName": "Howard Flores",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-13T14:00:00Z",
+      "batchId": "batch-026",
+      "practiceId": "prac-003",
+      "createdAt": "2025-10-08T09:00:00Z"
+    },
+    {
+      "id": "vo-087",
+      "patientName": "Ruby Washington",
+      "therapyType": "Speech Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-20T11:30:00Z",
+      "batchId": "batch-026",
+      "practiceId": "prac-003",
+      "createdAt": "2025-10-08T09:00:00Z"
+    },
+    {
+      "id": "vo-088",
+      "patientName": "Jesse Butler",
+      "therapyType": "Occupational Therapy",
+      "status": "Received",
+      "statusTimestamp": "2025-10-24T13:45:00Z",
+      "batchId": "batch-026",
+      "practiceId": "prac-003",
+      "createdAt": "2025-10-08T09:00:00Z"
+    },
+    {
+      "id": "vo-089",
+      "patientName": "Phyllis Simmons",
+      "therapyType": "Physical Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-14T10:15:00Z",
+      "batchId": "batch-027",
+      "practiceId": "prac-004",
+      "createdAt": "2025-10-09T08:00:00Z"
+    },
+    {
+      "id": "vo-090",
+      "patientName": "Louis Foster",
+      "therapyType": "Speech Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-17T12:45:00Z",
+      "batchId": "batch-027",
+      "practiceId": "prac-004",
+      "createdAt": "2025-10-09T08:00:00Z"
+    },
+    {
+      "id": "vo-091",
+      "patientName": "Andrea Gonzales",
+      "therapyType": "Physical Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-19T14:15:00Z",
+      "batchId": "batch-027",
+      "practiceId": "prac-004",
+      "createdAt": "2025-10-09T08:00:00Z"
+    },
+    {
+      "id": "vo-092",
+      "patientName": "Scott Bryant",
+      "therapyType": "Occupational Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-25T11:45:00Z",
+      "practiceId": "prac-005",
+      "createdAt": "2025-10-25T11:45:00Z"
+    },
+    {
+      "id": "vo-093",
+      "patientName": "Norma Alexander",
+      "therapyType": "Physical Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-26T09:45:00Z",
+      "practiceId": "prac-006",
+      "createdAt": "2025-10-26T09:45:00Z"
+    },
+    {
+      "id": "vo-094",
+      "patientName": "Bruce Russell",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-15T13:30:00Z",
+      "batchId": "batch-028",
+      "practiceId": "prac-007",
+      "createdAt": "2025-10-10T10:00:00Z"
+    },
+    {
+      "id": "vo-095",
+      "patientName": "Carolyn Griffin",
+      "therapyType": "Physical Therapy",
+      "status": "Called",
+      "statusTimestamp": "2025-10-21T11:00:00Z",
+      "batchId": "batch-028",
+      "practiceId": "prac-007",
+      "createdAt": "2025-10-10T10:00:00Z"
+    },
+    {
+      "id": "vo-096",
+      "patientName": "Billy Diaz",
+      "therapyType": "Occupational Therapy",
+      "status": "To Call",
+      "statusTimestamp": "2025-10-22T09:30:00Z",
+      "batchId": "batch-029",
+      "practiceId": "prac-008",
+      "createdAt": "2025-10-17T08:00:00Z"
+    },
+    {
+      "id": "vo-097",
+      "patientName": "Marie Hayes",
+      "therapyType": "Physical Therapy",
+      "status": "Followed Up",
+      "statusTimestamp": "2025-10-24T11:45:00Z",
+      "batchId": "batch-029",
+      "practiceId": "prac-008",
+      "createdAt": "2025-10-17T08:00:00Z"
+    },
+    {
+      "id": "vo-098",
+      "patientName": "Randy Myers",
+      "therapyType": "Speech Therapy",
+      "status": "To Follow Up",
+      "statusTimestamp": "2025-10-26T13:00:00Z",
+      "batchId": "batch-029",
+      "practiceId": "prac-008",
+      "createdAt": "2025-10-17T08:00:00Z"
+    },
+    {
+      "id": "vo-099",
+      "patientName": "Lois Ford",
+      "therapyType": "Physical Therapy",
+      "status": "Ordered",
+      "statusTimestamp": "2025-10-27T10:15:00Z",
+      "practiceId": "prac-009",
+      "createdAt": "2025-10-27T10:15:00Z"
+    },
+    {
+      "id": "vo-100",
+      "patientName": "Eugene Hamilton",
+      "therapyType": "Occupational Therapy",
+      "status": "To Order",
+      "statusTimestamp": "2025-10-27T09:00:00Z",
+      "practiceId": "prac-010",
+      "createdAt": "2025-10-27T09:00:00Z"
+    }
+  ],
+  "batches": [
+    {
+      "id": "batch-001",
+      "practiceId": "prac-001",
+      "sentDate": "2025-10-10T08:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-001", "vo-002", "vo-003"]
+    },
+    {
+      "id": "batch-002",
+      "practiceId": "prac-001",
+      "sentDate": "2025-10-18T09:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-004", "vo-005"]
+    },
+    {
+      "id": "batch-003",
+      "practiceId": "prac-002",
+      "sentDate": "2025-10-01T10:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-006", "vo-007", "vo-008"]
+    },
+    {
+      "id": "batch-004",
+      "practiceId": "prac-002",
+      "sentDate": "2025-10-20T08:30:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-009"]
+    },
+    {
+      "id": "batch-005",
+      "practiceId": "prac-003",
+      "sentDate": "2025-10-03T09:00:00Z",
+      "deliveryMethod": "phone",
+      "voIds": ["vo-011", "vo-012", "vo-013"]
+    },
+    {
+      "id": "batch-006",
+      "practiceId": "prac-004",
+      "sentDate": "2025-10-01T08:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-014", "vo-015", "vo-016"]
+    },
+    {
+      "id": "batch-007",
+      "practiceId": "prac-004",
+      "sentDate": "2025-10-22T10:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-017"]
+    },
+    {
+      "id": "batch-008",
+      "practiceId": "prac-005",
+      "sentDate": "2025-10-02T09:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-019", "vo-020"]
+    },
+    {
+      "id": "batch-009",
+      "practiceId": "prac-006",
+      "sentDate": "2025-10-12T10:00:00Z",
+      "deliveryMethod": "phone",
+      "voIds": ["vo-021", "vo-022", "vo-023"]
+    },
+    {
+      "id": "batch-010",
+      "practiceId": "prac-008",
+      "sentDate": "2025-09-28T10:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-026", "vo-027", "vo-028"]
+    },
+    {
+      "id": "batch-011",
+      "practiceId": "prac-009",
+      "sentDate": "2025-10-04T08:00:00Z",
+      "deliveryMethod": "phone",
+      "voIds": ["vo-029", "vo-030", "vo-031"]
+    },
+    {
+      "id": "batch-012",
+      "practiceId": "prac-011",
+      "sentDate": "2025-10-01T09:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-034", "vo-035"]
+    },
+    {
+      "id": "batch-013",
+      "practiceId": "prac-012",
+      "sentDate": "2025-10-13T10:00:00Z",
+      "deliveryMethod": "phone",
+      "voIds": ["vo-036", "vo-037", "vo-038"]
+    },
+    {
+      "id": "batch-014",
+      "practiceId": "prac-014",
+      "sentDate": "2025-09-30T08:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-041", "vo-042", "vo-043"]
+    },
+    {
+      "id": "batch-015",
+      "practiceId": "prac-015",
+      "sentDate": "2025-10-05T09:00:00Z",
+      "deliveryMethod": "phone",
+      "voIds": ["vo-044", "vo-045", "vo-046"]
+    },
+    {
+      "id": "batch-016",
+      "practiceId": "prac-017",
+      "sentDate": "2025-10-02T10:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-049", "vo-050"]
+    },
+    {
+      "id": "batch-017",
+      "practiceId": "prac-018",
+      "sentDate": "2025-10-14T08:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-051", "vo-052", "vo-053"]
+    },
+    {
+      "id": "batch-018",
+      "practiceId": "prac-020",
+      "sentDate": "2025-10-03T09:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-056", "vo-057", "vo-058"]
+    },
+    {
+      "id": "batch-019",
+      "practiceId": "prac-021",
+      "sentDate": "2025-10-06T08:00:00Z",
+      "deliveryMethod": "phone",
+      "voIds": ["vo-059", "vo-060", "vo-061"]
+    },
+    {
+      "id": "batch-020",
+      "practiceId": "prac-023",
+      "sentDate": "2025-10-04T10:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-064", "vo-065"]
+    },
+    {
+      "id": "batch-021",
+      "practiceId": "prac-024",
+      "sentDate": "2025-10-15T08:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-066", "vo-067", "vo-068"]
+    },
+    {
+      "id": "batch-022",
+      "practiceId": "prac-026",
+      "sentDate": "2025-10-05T09:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-071", "vo-072", "vo-073"]
+    },
+    {
+      "id": "batch-023",
+      "practiceId": "prac-027",
+      "sentDate": "2025-10-07T08:00:00Z",
+      "deliveryMethod": "phone",
+      "voIds": ["vo-074", "vo-075", "vo-076"]
+    },
+    {
+      "id": "batch-024",
+      "practiceId": "prac-029",
+      "sentDate": "2025-10-06T10:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-079", "vo-080"]
+    },
+    {
+      "id": "batch-025",
+      "practiceId": "prac-030",
+      "sentDate": "2025-10-16T08:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-081", "vo-082", "vo-083"]
+    },
+    {
+      "id": "batch-026",
+      "practiceId": "prac-003",
+      "sentDate": "2025-10-08T09:00:00Z",
+      "deliveryMethod": "phone",
+      "voIds": ["vo-086", "vo-087", "vo-088"]
+    },
+    {
+      "id": "batch-027",
+      "practiceId": "prac-004",
+      "sentDate": "2025-10-09T08:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-089", "vo-090", "vo-091"]
+    },
+    {
+      "id": "batch-028",
+      "practiceId": "prac-007",
+      "sentDate": "2025-10-10T10:00:00Z",
+      "deliveryMethod": "fax",
+      "voIds": ["vo-094", "vo-095"]
+    },
+    {
+      "id": "batch-029",
+      "practiceId": "prac-008",
+      "sentDate": "2025-10-17T08:00:00Z",
+      "deliveryMethod": "email",
+      "voIds": ["vo-096", "vo-097", "vo-098"]
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-001",
+      "practiceId": "prac-001",
+      "date": "2025-10-15T14:30:00Z",
+      "type": "Call",
+      "notes": "Called Sarah Johnson, left voicemail regarding 5 pending FVOs from Batch #245. She will call back by EOD.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-28",
+      "createdAt": "2025-10-15T14:30:00Z"
+    },
+    {
+      "id": "act-002",
+      "practiceId": "prac-001",
+      "date": "2025-10-10T09:00:00Z",
+      "type": "Fax",
+      "notes": "Sent Batch #245 with 3 FVOs via fax. Confirmation received.",
+      "userId": "system",
+      "createdAt": "2025-10-10T09:00:00Z"
+    },
+    {
+      "id": "act-003",
+      "practiceId": "prac-002",
+      "date": "2025-10-20T10:15:00Z",
+      "type": "Call",
+      "notes": "Spoke with Michael Chen, confirmed receipt of most recent batch. Follow up needed in 2 days for remaining FVOs.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-29",
+      "createdAt": "2025-10-20T10:15:00Z"
+    },
+    {
+      "id": "act-004",
+      "practiceId": "prac-002",
+      "date": "2025-10-01T11:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #003 via email with 3 FVOs. Email delivered successfully.",
+      "userId": "system",
+      "createdAt": "2025-10-01T11:00:00Z"
+    },
+    {
+      "id": "act-005",
+      "practiceId": "prac-003",
+      "date": "2025-10-16T15:45:00Z",
+      "type": "Call",
+      "notes": "Called Lisa Martinez, discussed pending FVOs. Office very busy, best to follow up next week.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-05",
+      "createdAt": "2025-10-16T15:45:00Z"
+    },
+    {
+      "id": "act-006",
+      "practiceId": "prac-003",
+      "date": "2025-10-03T10:00:00Z",
+      "type": "Note",
+      "notes": "Sent Batch #005. Delivery method: phone coordination with Lisa.",
+      "userId": "system",
+      "createdAt": "2025-10-03T10:00:00Z"
+    },
+    {
+      "id": "act-007",
+      "practiceId": "prac-004",
+      "date": "2025-10-19T09:20:00Z",
+      "type": "Call",
+      "notes": "Spoke with Jennifer Brown, 3 FVOs ready for pickup. Will send courier tomorrow.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-27",
+      "createdAt": "2025-10-19T09:20:00Z"
+    },
+    {
+      "id": "act-008",
+      "practiceId": "prac-004",
+      "date": "2025-10-01T09:00:00Z",
+      "type": "Fax",
+      "notes": "Sent Batch #006 with 3 FVOs via fax.",
+      "userId": "system",
+      "createdAt": "2025-10-01T09:00:00Z"
+    },
+    {
+      "id": "act-009",
+      "practiceId": "prac-005",
+      "date": "2025-10-17T13:30:00Z",
+      "type": "Email",
+      "notes": "Emailed Robert Davis for status update on pending FVOs. No response yet.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-23",
+      "createdAt": "2025-10-17T13:30:00Z"
+    },
+    {
+      "id": "act-010",
+      "practiceId": "prac-005",
+      "date": "2025-10-02T10:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #008 via email with 2 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-02T10:00:00Z"
+    },
+    {
+      "id": "act-011",
+      "practiceId": "prac-006",
+      "date": "2025-10-18T10:15:00Z",
+      "type": "Call",
+      "notes": "Called Amy Rodriguez, discussed pending batch. She will check with doctors and call back.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-30",
+      "createdAt": "2025-10-18T10:15:00Z"
+    },
+    {
+      "id": "act-012",
+      "practiceId": "prac-006",
+      "date": "2025-10-12T11:00:00Z",
+      "type": "Note",
+      "notes": "Sent Batch #009 with 3 FVOs via phone coordination.",
+      "userId": "system",
+      "createdAt": "2025-10-12T11:00:00Z"
+    },
+    {
+      "id": "act-013",
+      "practiceId": "prac-007",
+      "date": "2025-10-15T14:00:00Z",
+      "type": "Fax",
+      "notes": "Sent follow-up fax with patient list for pending FVOs.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-01",
+      "createdAt": "2025-10-15T14:00:00Z"
+    },
+    {
+      "id": "act-014",
+      "practiceId": "prac-008",
+      "date": "2025-10-14T11:45:00Z",
+      "type": "Call",
+      "notes": "Spoke with Patricia Lee, confirmed 2 FVOs received, 1 still pending.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-25",
+      "createdAt": "2025-10-14T11:45:00Z"
+    },
+    {
+      "id": "act-015",
+      "practiceId": "prac-008",
+      "date": "2025-09-28T11:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #010 via email with 3 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-09-28T11:00:00Z"
+    },
+    {
+      "id": "act-016",
+      "practiceId": "prac-009",
+      "date": "2025-10-13T15:20:00Z",
+      "type": "Call",
+      "notes": "Called Daniel Kim, left message about pending follow-ups. Expect callback tomorrow.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-24",
+      "createdAt": "2025-10-13T15:20:00Z"
+    },
+    {
+      "id": "act-017",
+      "practiceId": "prac-009",
+      "date": "2025-10-04T09:00:00Z",
+      "type": "Note",
+      "notes": "Sent Batch #011 with 3 FVOs via phone.",
+      "userId": "system",
+      "createdAt": "2025-10-04T09:00:00Z"
+    },
+    {
+      "id": "act-018",
+      "practiceId": "prac-010",
+      "date": "2025-10-12T12:30:00Z",
+      "type": "Fax",
+      "notes": "Sent follow-up fax requesting status on pending FVOs.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-03",
+      "createdAt": "2025-10-12T12:30:00Z"
+    },
+    {
+      "id": "act-019",
+      "practiceId": "prac-011",
+      "date": "2025-10-23T14:15:00Z",
+      "type": "Email",
+      "notes": "Emailed Jessica Hernandez for update. She confirmed all FVOs processed.",
+      "userId": "system",
+      "createdAt": "2025-10-23T14:15:00Z"
+    },
+    {
+      "id": "act-020",
+      "practiceId": "prac-011",
+      "date": "2025-10-01T10:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #012 via email with 2 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-01T10:00:00Z"
+    },
+    {
+      "id": "act-021",
+      "practiceId": "prac-012",
+      "date": "2025-10-22T09:45:00Z",
+      "type": "Call",
+      "notes": "Called Brian Anderson, confirmed receipt of batch. All FVOs being processed.",
+      "userId": "system",
+      "createdAt": "2025-10-22T09:45:00Z"
+    },
+    {
+      "id": "act-022",
+      "practiceId": "prac-012",
+      "date": "2025-10-13T11:00:00Z",
+      "type": "Note",
+      "notes": "Sent Batch #013 with 3 FVOs via phone.",
+      "userId": "system",
+      "createdAt": "2025-10-13T11:00:00Z"
+    },
+    {
+      "id": "act-023",
+      "practiceId": "prac-013",
+      "date": "2025-10-21T13:00:00Z",
+      "type": "Fax",
+      "notes": "Sent follow-up fax with updated patient information.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-02",
+      "createdAt": "2025-10-21T13:00:00Z"
+    },
+    {
+      "id": "act-024",
+      "practiceId": "prac-014",
+      "date": "2025-10-20T08:20:00Z",
+      "type": "Email",
+      "notes": "Emailed Steven Taylor for status update. Received confirmation all FVOs received.",
+      "userId": "system",
+      "createdAt": "2025-10-20T08:20:00Z"
+    },
+    {
+      "id": "act-025",
+      "practiceId": "prac-014",
+      "date": "2025-09-30T09:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #014 via email with 3 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-09-30T09:00:00Z"
+    },
+    {
+      "id": "act-026",
+      "practiceId": "prac-015",
+      "date": "2025-10-19T10:30:00Z",
+      "type": "Call",
+      "notes": "Spoke with Nancy Clark, 2 FVOs ready, 1 still in process.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-31",
+      "createdAt": "2025-10-19T10:30:00Z"
+    },
+    {
+      "id": "act-027",
+      "practiceId": "prac-015",
+      "date": "2025-10-05T10:00:00Z",
+      "type": "Note",
+      "notes": "Sent Batch #015 with 3 FVOs via phone.",
+      "userId": "system",
+      "createdAt": "2025-10-05T10:00:00Z"
+    },
+    {
+      "id": "act-028",
+      "practiceId": "prac-016",
+      "date": "2025-10-18T11:00:00Z",
+      "type": "Fax",
+      "notes": "Sent reminder fax about pending FVOs to Carlos Ramirez.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-04",
+      "createdAt": "2025-10-18T11:00:00Z"
+    },
+    {
+      "id": "act-029",
+      "practiceId": "prac-017",
+      "date": "2025-10-17T14:45:00Z",
+      "type": "Email",
+      "notes": "Emailed Emily Turner for follow-up. Awaiting response.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-26",
+      "createdAt": "2025-10-17T14:45:00Z"
+    },
+    {
+      "id": "act-030",
+      "practiceId": "prac-017",
+      "date": "2025-10-02T11:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #016 via email with 2 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-02T11:00:00Z"
+    },
+    {
+      "id": "act-031",
+      "practiceId": "prac-018",
+      "date": "2025-10-16T15:30:00Z",
+      "type": "Call",
+      "notes": "Called Mark Johnson, discussed batch status. All FVOs being reviewed by doctors.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-06",
+      "createdAt": "2025-10-16T15:30:00Z"
+    },
+    {
+      "id": "act-032",
+      "practiceId": "prac-018",
+      "date": "2025-10-14T09:00:00Z",
+      "type": "Fax",
+      "notes": "Sent Batch #017 via fax with 3 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-14T09:00:00Z"
+    },
+    {
+      "id": "act-033",
+      "practiceId": "prac-019",
+      "date": "2025-10-15T12:15:00Z",
+      "type": "Call",
+      "notes": "Spoke with Dr. Rebecca Adams, confirmed FVO processing timeline.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-07",
+      "createdAt": "2025-10-15T12:15:00Z"
+    },
+    {
+      "id": "act-034",
+      "practiceId": "prac-020",
+      "date": "2025-10-14T13:45:00Z",
+      "type": "Email",
+      "notes": "Emailed Dr. Andrew Martinez for status. All FVOs received and processed.",
+      "userId": "system",
+      "createdAt": "2025-10-14T13:45:00Z"
+    },
+    {
+      "id": "act-035",
+      "practiceId": "prac-020",
+      "date": "2025-10-03T10:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #018 via email with 3 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-03T10:00:00Z"
+    },
+    {
+      "id": "act-036",
+      "practiceId": "prac-021",
+      "date": "2025-10-13T09:30:00Z",
+      "type": "Call",
+      "notes": "Called Rachel Green, left voicemail about pending batch.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-10-22",
+      "createdAt": "2025-10-13T09:30:00Z"
+    },
+    {
+      "id": "act-037",
+      "practiceId": "prac-021",
+      "date": "2025-10-06T09:00:00Z",
+      "type": "Note",
+      "notes": "Sent Batch #019 with 3 FVOs via phone.",
+      "userId": "system",
+      "createdAt": "2025-10-06T09:00:00Z"
+    },
+    {
+      "id": "act-038",
+      "practiceId": "prac-022",
+      "date": "2025-10-12T11:45:00Z",
+      "type": "Fax",
+      "notes": "Sent follow-up fax to Dr. Susan Phillips.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-08",
+      "createdAt": "2025-10-12T11:45:00Z"
+    },
+    {
+      "id": "act-039",
+      "practiceId": "prac-023",
+      "date": "2025-10-11T14:20:00Z",
+      "type": "Email",
+      "notes": "Emailed Dr. James Wilson for update. Confirmed 2 FVOs received.",
+      "userId": "system",
+      "createdAt": "2025-10-11T14:20:00Z"
+    },
+    {
+      "id": "act-040",
+      "practiceId": "prac-023",
+      "date": "2025-10-04T11:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #020 via email with 2 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-04T11:00:00Z"
+    },
+    {
+      "id": "act-041",
+      "practiceId": "prac-024",
+      "date": "2025-10-10T10:00:00Z",
+      "type": "Fax",
+      "notes": "Sent Batch #021 via fax with 3 FVOs to Dr. Linda Cooper.",
+      "userId": "system",
+      "createdAt": "2025-10-10T10:00:00Z"
+    },
+    {
+      "id": "act-042",
+      "practiceId": "prac-025",
+      "date": "2025-10-09T12:30:00Z",
+      "type": "Call",
+      "notes": "Spoke with Dr. Richard Brown, discussed diabetes patient FVOs.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-10",
+      "createdAt": "2025-10-09T12:30:00Z"
+    },
+    {
+      "id": "act-043",
+      "practiceId": "prac-026",
+      "date": "2025-10-08T15:00:00Z",
+      "type": "Email",
+      "notes": "Emailed Dr. Michael Roberts for status update. Awaiting response.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-09",
+      "createdAt": "2025-10-08T15:00:00Z"
+    },
+    {
+      "id": "act-044",
+      "practiceId": "prac-026",
+      "date": "2025-10-05T10:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #022 via email with 3 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-05T10:00:00Z"
+    },
+    {
+      "id": "act-045",
+      "practiceId": "prac-027",
+      "date": "2025-10-07T13:15:00Z",
+      "type": "Call",
+      "notes": "Called Dr. Patricia Davis, confirmed pulmonary patient FVOs received.",
+      "userId": "system",
+      "createdAt": "2025-10-07T13:15:00Z"
+    },
+    {
+      "id": "act-046",
+      "practiceId": "prac-027",
+      "date": "2025-10-07T09:00:00Z",
+      "type": "Note",
+      "notes": "Sent Batch #023 with 3 FVOs via phone.",
+      "userId": "system",
+      "createdAt": "2025-10-07T09:00:00Z"
+    },
+    {
+      "id": "act-047",
+      "practiceId": "prac-028",
+      "date": "2025-10-06T09:45:00Z",
+      "type": "Fax",
+      "notes": "Sent follow-up fax to Dr. David Miller regarding nephrology patients.",
+      "userId": "system",
+      "nextFollowUpDate": "2025-11-12",
+      "createdAt": "2025-10-06T09:45:00Z"
+    },
+    {
+      "id": "act-048",
+      "practiceId": "prac-029",
+      "date": "2025-10-05T11:00:00Z",
+      "type": "Email",
+      "notes": "Emailed Dr. Karen Anderson for hematology patient updates.",
+      "userId": "system",
+      "createdAt": "2025-10-05T11:00:00Z"
+    },
+    {
+      "id": "act-049",
+      "practiceId": "prac-029",
+      "date": "2025-10-06T11:00:00Z",
+      "type": "Email",
+      "notes": "Sent Batch #024 via email with 2 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-06T11:00:00Z"
+    },
+    {
+      "id": "act-050",
+      "practiceId": "prac-030",
+      "date": "2025-10-04T14:30:00Z",
+      "type": "Fax",
+      "notes": "Sent Batch #025 via fax to Dr. Thomas Lee with 3 FVOs.",
+      "userId": "system",
+      "createdAt": "2025-10-04T14:30:00Z"
+    },
+    {
+      "id": "act-051",
+      "practiceId": "prac-001",
+      "date": "2025-09-25T10:00:00Z",
+      "type": "Call",
+      "notes": "Initial contact with practice to introduce our FVO service.",
+      "userId": "system",
+      "createdAt": "2025-09-25T10:00:00Z"
+    },
+    {
+      "id": "act-052",
+      "practiceId": "prac-002",
+      "date": "2025-09-20T11:30:00Z",
+      "type": "Email",
+      "notes": "Sent welcome email with FVO process overview.",
+      "userId": "system",
+      "createdAt": "2025-09-20T11:30:00Z"
+    },
+    {
+      "id": "act-053",
+      "practiceId": "prac-003",
+      "date": "2025-09-28T09:00:00Z",
+      "type": "Call",
+      "notes": "Training call with Lisa Martinez on FVO submission process.",
+      "userId": "system",
+      "createdAt": "2025-09-28T09:00:00Z"
+    },
+    {
+      "id": "act-054",
+      "practiceId": "prac-004",
+      "date": "2025-09-22T14:15:00Z",
+      "type": "Note",
+      "notes": "Practice setup completed. Ready for first FVO batch.",
+      "userId": "system",
+      "createdAt": "2025-09-22T14:15:00Z"
+    },
+    {
+      "id": "act-055",
+      "practiceId": "prac-005",
+      "date": "2025-09-26T10:30:00Z",
+      "type": "Fax",
+      "notes": "Sent practice information packet via fax.",
+      "userId": "system",
+      "createdAt": "2025-09-26T10:30:00Z"
+    },
+    {
+      "id": "act-056",
+      "practiceId": "prac-006",
+      "date": "2025-09-29T13:00:00Z",
+      "type": "Call",
+      "notes": "Discussed preferred contact methods with Amy Rodriguez.",
+      "userId": "system",
+      "createdAt": "2025-09-29T13:00:00Z"
+    },
+    {
+      "id": "act-057",
+      "practiceId": "prac-007",
+      "date": "2025-09-24T11:00:00Z",
+      "type": "Email",
+      "notes": "Sent sports medicine specific FVO guidelines.",
+      "userId": "system",
+      "createdAt": "2025-09-24T11:00:00Z"
+    },
+    {
+      "id": "act-058",
+      "practiceId": "prac-008",
+      "date": "2025-09-21T15:30:00Z",
+      "type": "Call",
+      "notes": "Initial consultation with Patricia Lee.",
+      "userId": "system",
+      "createdAt": "2025-09-21T15:30:00Z"
+    },
+    {
+      "id": "act-059",
+      "practiceId": "prac-009",
+      "date": "2025-09-27T09:45:00Z",
+      "type": "Note",
+      "notes": "High volume practice - assigned dedicated coordinator.",
+      "userId": "system",
+      "createdAt": "2025-09-27T09:45:00Z"
+    },
+    {
+      "id": "act-060",
+      "practiceId": "prac-010",
+      "date": "2025-09-23T12:00:00Z",
+      "type": "Fax",
+      "notes": "Sent initial practice agreement via fax.",
+      "userId": "system",
+      "createdAt": "2025-09-23T12:00:00Z"
+    }
+  ]
+}

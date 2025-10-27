@@ -5,6 +5,7 @@ import CRMDashboard from '@/components/crm/CRMDashboard';
 import Validation from '@/components/Validation';
 import UserManagementTable from '@/components/UserManagementTable';
 import TherapistDashboard from '@/components/TherapistDashboard';
+import FVOCRMDashboard from '@/components/fvo-crm/FVOCRMDashboard';
 
 interface PrototypePageProps {
   params: Promise<{
@@ -14,22 +15,27 @@ interface PrototypePageProps {
 
 export default async function PrototypePage({ params }: PrototypePageProps) {
   const { slug } = await params;
-  
+
+  // FVO CRM is a full-screen component without navigation
+  if (slug === 'fvo-crm') {
+    return <FVOCRMDashboard />;
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       <main className="py-8">
         {/* Back Link */}
         <div className="container mx-auto px-4">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors"
           >
             ← Back to Wireframes
           </Link>
         </div>
-        
+
         {/* Prototype Content */}
         {(slug === 'fvo-ordering-dashboard' || slug === 'fvo-ordering-dashboard-v2' || slug === 'fvo-ordering-dashboard-v3' || slug === 'fertig-vo-breakdown') ? (
           <CRMDashboard initialTab={slug === 'fertig-vo-breakdown' ? 'Fertig-VO-Breakdown' : 'F.VO'} />

@@ -187,3 +187,120 @@ export interface CalendarTreatment {
   therapist: string;
   behStatus: string; // e.g., "4/20" from the VO
 }
+
+// ============================================================================
+// FVO CRM Types (Practice Follow-up CRM)
+// ============================================================================
+
+// Priority level for practice follow-up
+export type PriorityLevel = 'overdue' | 'dueToday' | 'thisWeek' | 'other';
+
+// VO Status for FVO CRM (different from main VO system)
+export type FVOCRMVOStatus = 'To Order' | 'Ordered' | 'To Follow Up' | 'Followed Up' | 'To Call' | 'Called' | 'Received';
+
+// Activity type for practice interactions
+export type PracticeActivityType = 'Call' | 'Email' | 'Fax' | 'Note';
+
+// Preferred contact method for practice
+export type PreferredContactMethod = 'email' | 'fax' | 'phone';
+
+// Delivery method for batches
+export type DeliveryMethod = 'email' | 'fax';
+
+// Key contact at practice
+export interface PracticeKeyContact {
+  name: string;
+  role?: string;
+  phone?: string;
+  extension?: string;
+  email?: string;
+}
+
+// Practice address
+export interface PracticeAddress {
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+}
+
+// Practice entity (main CRM entity)
+export interface Practice {
+  id: string;
+  name: string;
+  address: PracticeAddress;
+  phone: string;
+  fax?: string;
+  email?: string;
+  hours?: string;
+  preferredContactMethod: PreferredContactMethod;
+  keyContacts: PracticeKeyContact[];
+  notes?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+// Doctor entity
+export interface PracticeDoctor {
+  id: string;
+  name: string;
+  practiceIds: string[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+// VO (Verification Order) entity - READ ONLY
+export interface PracticeVO {
+  id: string;
+  patientName: string;
+  therapyType: string; // e.g., 'Physical Therapy', 'Speech Therapy'
+  status: FVOCRMVOStatus;
+  statusTimestamp: string;
+  batchId?: string;
+  practiceId: string;
+  createdAt: string;
+}
+
+// Batch entity - READ ONLY
+export interface PracticeBatch {
+  id: string;
+  practiceId: string;
+  sentDate: string;
+  deliveryMethod: DeliveryMethod;
+  voIds: string[];
+}
+
+// Activity entity for tracking practice interactions
+export interface PracticeActivity {
+  id: string;
+  practiceId: string;
+  date: string; // ISO timestamp
+  type: PracticeActivityType;
+  notes: string;
+  userId: string;
+  nextFollowUpDate?: string; // YYYY-MM-DD format
+  createdAt: string;
+}
+
+// Computed fields for practice (derived at runtime)
+export interface PracticeComputedFields {
+  pendingVOCount: number;
+  activeBatchCount: number;
+  lastActivity?: PracticeActivity;
+  nextFollowUpDate?: string;
+  priorityLevel: PriorityLevel;
+}
+
+// Extended practice with computed fields for display
+export interface PracticeWithComputed extends Practice, PracticeComputedFields {
+  doctors: PracticeDoctor[];
+}
+
+// Complete FVO CRM data structure
+export interface FVOCRMData {
+  practices: Practice[];
+  doctors: PracticeDoctor[];
+  vos: PracticeVO[];
+  batches: PracticeBatch[];
+  activities: PracticeActivity[];
+}
