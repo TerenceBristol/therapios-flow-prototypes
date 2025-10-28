@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Practice } from '@/types';
+import { getHoursSummary } from '@/utils/openingHoursUtils';
 
 interface ContactInfoSectionProps {
   practice: Practice;
@@ -79,12 +80,12 @@ const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({ practice }) => 
           )}
 
           {/* Hours */}
-          {practice.hours && (
-            <div className="flex items-start gap-2">
-              <span className="text-lg">⏰</span>
-              <span className="text-foreground">{practice.hours}</span>
-            </div>
-          )}
+          <div className="flex items-start gap-2">
+            <span className="text-lg">⏰</span>
+            <span className="text-foreground">
+              {getHoursSummary(practice.openingHours)}
+            </span>
+          </div>
 
           {/* Preferred Contact Method */}
           <div className="flex items-start gap-2">
