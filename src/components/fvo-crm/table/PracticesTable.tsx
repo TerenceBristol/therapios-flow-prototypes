@@ -138,7 +138,8 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
     // Column sorting (if a column header was clicked)
     if (sortColumn) {
       result.sort((a, b) => {
-        let aVal: any, bVal: any;
+        let aVal: string | number | undefined;
+        let bVal: string | number | undefined;
 
         switch (sortColumn) {
           case 'name':
@@ -367,7 +368,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                               Practice Name{getSortIndicator('name')}
                             </th>
                             <th className="px-4 py-3">Phone</th>
-                            <th className="px-4 py-3">Today's Hours</th>
+                            <th className="px-4 py-3">Today&apos;s Hours</th>
                             <th className="px-4 py-3 text-center cursor-pointer hover:text-foreground" onClick={() => handleSort('pending')}>
                               Pending{getSortIndicator('pending')}
                             </th>
@@ -414,7 +415,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                       Practice Name{getSortIndicator('name')}
                     </th>
                     <th className="px-4 py-3">Phone</th>
-                    <th className="px-4 py-3">Today's Hours</th>
+                    <th className="px-4 py-3">Today&apos;s Hours</th>
                     <th className="px-4 py-3 text-center cursor-pointer hover:text-foreground" onClick={() => handleSort('pending')}>
                       Pending{getSortIndicator('pending')}
                     </th>

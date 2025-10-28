@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import PracticesManagementTable from '@/components/fvo-crm/table/PracticesManagementTable';
 import PracticeDetailModal from '@/components/fvo-crm/modals/PracticeDetailModal';
 import PracticeFormModal from '@/components/fvo-crm/PracticeFormModal';
-import { Practice, PracticeDoctor } from '@/types';
+import { Practice, PracticeDoctor, PracticeActivity, PracticeBatch, PracticeVO } from '@/types';
 
 // Import mock data
 import mockData from '@/data/fvoCRMData.json';
@@ -106,13 +106,13 @@ export default function PracticesManagementPage() {
           }}
           activities={mockData.activities.filter(
             a => a.practiceId === selectedPractice.id
-          ) as any}
+          ) as PracticeActivity[]}
           batches={(() => {
             const vos = mockData.vos.filter(vo => vo.practiceId === selectedPractice.id);
             const batchIds = new Set(vos.map(vo => vo.batchId));
             return mockData.batches.filter(batch => batchIds.has(batch.id));
-          })() as any}
-          vos={mockData.vos.filter(vo => vo.practiceId === selectedPractice.id) as any}
+          })() as PracticeBatch[]}
+          vos={mockData.vos.filter(vo => vo.practiceId === selectedPractice.id) as PracticeVO[]}
           doctors={doctors.filter(doc => doc.practiceIds.includes(selectedPractice.id))}
           allDoctors={doctors}
           onClose={handleCloseDetailModal}

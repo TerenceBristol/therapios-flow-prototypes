@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import PracticesTable from '@/components/fvo-crm/table/PracticesTable';
 import PracticeCRMModal from '@/components/fvo-crm/modals/PracticeCRMModal';
-import { Practice, PracticeDoctor, PracticeWithComputed, PracticeActivity } from '@/types';
+import { Practice, PracticeDoctor, PracticeWithComputed, PracticeActivity, PracticeBatch, PracticeVO } from '@/types';
 import { isTimePast } from '@/utils/timeUtils';
 
 // Import mock data
@@ -100,13 +100,13 @@ export default function FVOCRMPage() {
 
   const handleAddActivity = (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => {
     // Add new activity with generated ID and timestamp
-    const newActivity = {
+    const newActivity: PracticeActivity = {
       ...activity,
       id: `activity-${Date.now()}`,
       createdAt: new Date().toISOString()
     };
 
-    setActivities(prev => [...prev, newActivity as any]);
+    setActivities(prev => [...prev, newActivity]);
     console.log('Activity added:', newActivity);
   };
 
@@ -137,13 +137,13 @@ export default function FVOCRMPage() {
           practice={selectedPractice}
           activities={activities.filter(
             a => a.practiceId === selectedPractice.id
-          ) as any}
+          ) as PracticeActivity[]}
           batches={(() => {
             const vos = mockData.vos.filter(vo => vo.practiceId === selectedPractice.id);
             const batchIds = new Set(vos.map(vo => vo.batchId));
             return mockData.batches.filter(batch => batchIds.has(batch.id));
-          })() as any}
-          vos={mockData.vos.filter(vo => vo.practiceId === selectedPractice.id) as any}
+          })() as PracticeBatch[]}
+          vos={mockData.vos.filter(vo => vo.practiceId === selectedPractice.id) as PracticeVO[]}
           doctors={doctors.filter(doc => doc.practiceIds.includes(selectedPractice.id))}
           onClose={handleCloseModal}
           onAddActivity={handleAddActivity}

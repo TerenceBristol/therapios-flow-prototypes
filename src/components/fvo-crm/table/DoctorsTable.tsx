@@ -73,7 +73,8 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
     // Column sorting (if a column header was clicked)
     if (sortColumn) {
       result.sort((a, b) => {
-        let aVal: any, bVal: any;
+        let aVal: string | number;
+        let bVal: string | number;
 
         switch (sortColumn) {
           case 'name':
