@@ -207,6 +207,24 @@ export type PreferredContactMethod = 'email' | 'fax' | 'phone';
 // Delivery method for batches
 export type DeliveryMethod = 'email' | 'fax';
 
+// Opening hours for a single day
+export interface OpeningHoursDay {
+  open: string; // Time in HH:MM format (24-hour)
+  close: string; // Time in HH:MM format (24-hour)
+  isClosed: boolean;
+}
+
+// Opening hours for all days of the week
+export interface OpeningHours {
+  monday: OpeningHoursDay;
+  tuesday: OpeningHoursDay;
+  wednesday: OpeningHoursDay;
+  thursday: OpeningHoursDay;
+  friday: OpeningHoursDay;
+  saturday: OpeningHoursDay;
+  sunday: OpeningHoursDay;
+}
+
 // Key contact at practice
 export interface PracticeKeyContact {
   name: string;
@@ -232,7 +250,7 @@ export interface Practice {
   phone: string;
   fax?: string;
   email?: string;
-  hours?: string;
+  openingHours: OpeningHours;
   preferredContactMethod: PreferredContactMethod;
   keyContacts: PracticeKeyContact[];
   notes?: string;
@@ -245,6 +263,12 @@ export interface PracticeDoctor {
   id: string;
   name: string;
   practiceIds: string[];
+  facilities: string[]; // List of facility/ER names (Einrichtung)
+  address?: PracticeAddress;
+  phone?: string;
+  email?: string;
+  specialty?: string;
+  notes?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -258,6 +282,8 @@ export interface PracticeVO {
   statusTimestamp: string;
   batchId?: string;
   practiceId: string;
+  doctorId?: string; // Which doctor this VO is for
+  facilityName?: string; // Which facility/ER this VO is going to
   createdAt: string;
 }
 
@@ -279,6 +305,7 @@ export interface PracticeActivity {
   notes: string;
   userId: string;
   nextFollowUpDate?: string; // YYYY-MM-DD format
+  nextFollowUpTime?: string; // 12-hour format like "2:30 PM"
   createdAt: string;
 }
 
@@ -288,6 +315,7 @@ export interface PracticeComputedFields {
   activeBatchCount: number;
   lastActivity?: PracticeActivity;
   nextFollowUpDate?: string;
+  nextFollowUpTime?: string;
   priorityLevel: PriorityLevel;
 }
 

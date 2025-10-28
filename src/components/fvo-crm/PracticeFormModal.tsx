@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Practice, PracticeKeyContact, PreferredContactMethod } from '@/types';
+import { Practice, PracticeKeyContact, PreferredContactMethod, OpeningHours } from '@/types';
+import OpeningHoursEditor from './OpeningHoursEditor';
+import { createDefaultOpeningHours } from '@/utils/openingHoursUtils';
 
 interface PracticeFormModalProps {
   isOpen: boolean;
@@ -22,7 +24,7 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
   const [phone, setPhone] = useState('');
   const [fax, setFax] = useState('');
   const [email, setEmail] = useState('');
-  const [hours, setHours] = useState('');
+  const [openingHours, setOpeningHours] = useState<OpeningHours>(createDefaultOpeningHours());
   const [preferredContactMethod, setPreferredContactMethod] = useState<PreferredContactMethod>('phone');
   const [keyContacts, setKeyContacts] = useState<PracticeKeyContact[]>([]);
   const [notes, setNotes] = useState('');
@@ -40,7 +42,7 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
         setPhone(practice.phone);
         setFax(practice.fax || '');
         setEmail(practice.email || '');
-        setHours(practice.hours || '');
+        setOpeningHours(practice.openingHours);
         setPreferredContactMethod(practice.preferredContactMethod);
         setKeyContacts(practice.keyContacts);
         setNotes(practice.notes || '');
@@ -54,7 +56,7 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
         setPhone('');
         setFax('');
         setEmail('');
-        setHours('');
+        setOpeningHours(createDefaultOpeningHours());
         setPreferredContactMethod('phone');
         setKeyContacts([]);
         setNotes('');
@@ -120,7 +122,7 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
       phone: phone.trim(),
       fax: fax.trim() || undefined,
       email: email.trim() || undefined,
-      hours: hours.trim() || undefined,
+      openingHours,
       preferredContactMethod,
       keyContacts: keyContacts.filter(c => c.name.trim()),
       notes: notes.trim() || undefined
@@ -279,15 +281,12 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Hours
+              <label className="block text-sm font-medium text-foreground mb-3">
+                Opening Hours
               </label>
-              <input
-                type="text"
-                value={hours}
-                onChange={(e) => setHours(e.target.value)}
-                placeholder="e.g., Mon-Fri 8am-5pm"
-                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              <OpeningHoursEditor
+                openingHours={openingHours}
+                onChange={setOpeningHours}
               />
             </div>
 

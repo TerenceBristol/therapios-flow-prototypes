@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PracticeActivityType } from '@/types';
+import { generateTimeOptions } from '@/utils/timeUtils';
 
 interface AddActivityModalProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ interface AddActivityModalProps {
     date: string;
     notes: string;
     nextFollowUpDate?: string;
+    nextFollowUpTime?: string;
   }) => void;
 }
 
@@ -24,7 +26,10 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
   const [date, setDate] = useState('');
   const [notes, setNotes] = useState('');
   const [nextFollowUpDate, setNextFollowUpDate] = useState('');
+  const [nextFollowUpTime, setNextFollowUpTime] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const timeOptions = generateTimeOptions();
 
   // Set default date to today
   useEffect(() => {
@@ -35,6 +40,7 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
       setType('Call');
       setNotes('');
       setNextFollowUpDate('');
+      setNextFollowUpTime('');
       setErrors({});
     }
   }, [isOpen]);
@@ -84,7 +90,8 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
       type,
       date: new Date(date).toISOString(),
       notes: notes.trim(),
-      nextFollowUpDate: nextFollowUpDate || undefined
+      nextFollowUpDate: nextFollowUpDate || undefined,
+      nextFollowUpTime: nextFollowUpTime || undefined
     });
 
     onClose();
@@ -189,6 +196,27 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
                 <p className="text-sm text-red-500 mt-1">{errors.nextFollowUpDate}</p>
               )}
             </div>
+
+            {/* Next Follow-up Time */}
+            {nextFollowUpDate && (
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1">
+                  Next Follow-up Time (Optional)
+                </label>
+                <select
+                  value={nextFollowUpTime}
+                  onChange={(e) => setNextFollowUpTime(e.target.value)}
+                  className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option value="">Select time...</option>
+                  {timeOptions.map(time => (
+                    <option key={time} value={time}>
+                      {time}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
 
             {/* Actions */}
             <div className="flex gap-3 pt-4">

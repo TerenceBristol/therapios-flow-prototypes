@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PracticeActivity, PracticeActivityType } from '@/types';
+import { formatDateTimeDisplay } from '@/utils/timeUtils';
 
 interface ActivityLogSectionProps {
   activities: PracticeActivity[];
@@ -86,7 +87,7 @@ const ActivityLogSection: React.FC<ActivityLogSectionProps> = ({ activities, onA
                     </div>
                     {activity.nextFollowUpDate && (
                       <div className="text-xs text-muted-foreground ml-7 mt-1">
-                        Next: {formatDate(activity.nextFollowUpDate)}
+                        Next: {formatDateTimeDisplay(activity.nextFollowUpDate, activity.nextFollowUpTime)}
                       </div>
                     )}
                   </div>
