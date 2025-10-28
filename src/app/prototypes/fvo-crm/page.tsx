@@ -12,7 +12,7 @@ import mockData from '@/data/fvoCRMData.json';
 export default function FVOCRMPage() {
   const [practices] = useState<Practice[]>(mockData.practices as Practice[]);
   const [doctors] = useState<PracticeDoctor[]>(mockData.doctors as PracticeDoctor[]);
-  const [activities, setActivities] = useState(mockData.activities);
+  const [activities, setActivities] = useState<PracticeActivity[]>(mockData.activities as PracticeActivity[]);
   const [selectedPractice, setSelectedPractice] = useState<PracticeWithComputed | null>(null);
   const [isCRMModalOpen, setIsCRMModalOpen] = useState(false);
 
