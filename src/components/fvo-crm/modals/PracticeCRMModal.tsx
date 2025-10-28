@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { PracticeWithComputed, PracticeActivity, PracticeBatch, PracticeVO, PracticeDoctor } from '@/types';
+import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeBatch, PracticeVO, PracticeDoctor } from '@/types';
 import OpeningHoursDisplay from '../OpeningHoursDisplay';
 import ActivityLogSection from '../ActivityLogSection';
 import AddActivityModal from '../AddActivityModal';
@@ -46,8 +46,20 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
     setExpandedSections(prev => ({ ...prev, [section]: !prev[section] }));
   };
 
-  const handleAddActivity = (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => {
-    onAddActivity(activity);
+  const handleAddActivityFromModal = (activity: {
+    practiceId: string;
+    type: PracticeActivityType;
+    date: string;
+    notes: string;
+    nextFollowUpDate?: string;
+    nextFollowUpTime?: string;
+  }) => {
+    // Add userId to the activity
+    const activityWithUser: Omit<PracticeActivity, 'id' | 'createdAt'> = {
+      ...activity,
+      userId: 'current-user' // TODO: Get from auth context
+    };
+    onAddActivity(activityWithUser);
     setIsAddActivityModalOpen(false);
   };
 
@@ -349,7 +361,7 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
       <AddActivityModal
         isOpen={isAddActivityModalOpen}
         onClose={() => setIsAddActivityModalOpen(false)}
-        onSave={handleAddActivity}
+        onSave={handleAddActivityFromModal}
         practiceId={practice.id}
       />
     </>

@@ -83,6 +83,11 @@ export default function PracticesManagementPage() {
     setIsFormModalOpen(false);
   };
 
+  const handleAddActivity = () => {
+    // TODO: Implement add activity modal for management context
+    console.log('Add activity clicked in management context');
+  };
+
   return (
     <>
       <PracticesManagementTable
@@ -117,6 +122,7 @@ export default function PracticesManagementPage() {
           allDoctors={doctors}
           onClose={handleCloseDetailModal}
           onSave={handleSavePractice}
+          onAddActivity={handleAddActivity}
         />
       )}
 

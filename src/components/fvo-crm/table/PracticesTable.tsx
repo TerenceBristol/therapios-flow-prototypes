@@ -166,13 +166,14 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
             return 0;
         }
 
-        if (typeof aVal === 'string') {
+        if (typeof aVal === 'string' && typeof bVal === 'string') {
           return sortDirection === 'asc'
             ? aVal.localeCompare(bVal)
             : bVal.localeCompare(aVal);
-        } else {
+        } else if (typeof aVal === 'number' && typeof bVal === 'number') {
           return sortDirection === 'asc' ? aVal - bVal : bVal - aVal;
         }
+        return 0;
       });
     }
 

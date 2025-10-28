@@ -196,7 +196,7 @@ export interface CalendarTreatment {
 export type PriorityLevel = 'overdue' | 'dueToday' | 'thisWeek' | 'other';
 
 // VO Status for FVO CRM (different from main VO system)
-export type FVOCRMVOStatus = 'To Order' | 'Ordered' | 'To Follow Up' | 'Followed Up' | 'To Call' | 'Called' | 'Received';
+export type FVOCRMVOStatus = 'Pending' | 'To Order' | 'Ordered' | 'To Follow Up' | 'Followed Up' | 'To Call' | 'Called' | 'Received';
 
 // Activity type for practice interactions
 export type PracticeActivityType = 'Call' | 'Email' | 'Fax' | 'Note';
