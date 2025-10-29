@@ -266,6 +266,7 @@ export interface Arzt {
   name: string;
   practiceId?: string;
   facilities: string[]; // List of ER names only
+  specialty?: string;
   phone?: string;
   email?: string;
   createdAt: string;
