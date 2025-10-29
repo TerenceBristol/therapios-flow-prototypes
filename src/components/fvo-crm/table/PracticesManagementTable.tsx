@@ -4,7 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { Practice, Arzt } from '@/types';
 import PhoneCell from './PhoneCell';
 import TodayHoursCell from './TodayHoursCell';
-import ArzteCell from './ArzteCell';
+import ArztCell from './ArztCell';
 
 interface PracticesManagementTableProps {
   practices: Practice[];
@@ -246,10 +246,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
 
                     {/* Phone */}
                     <td className="px-4 py-3">
-                      <PhoneCell
-                        phone={practice.phone}
-                        keyContact={practice.keyContacts[0]}
-                      />
+                      <PhoneCell phone={practice.phone} />
                     </td>
 
                     {/* Address */}
@@ -266,7 +263,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
 
                     {/* Doctors */}
                     <td className="px-4 py-3">
-                      <ArzteCell doctors={practiceDoctors} />
+                      <ArztCell doctors={practiceDoctors} />
                     </td>
 
                     {/* Actions */}

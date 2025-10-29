@@ -1,14 +1,12 @@
 import React from 'react';
-import { PracticeWithComputed, PracticeActivity, PracticeBatch, PracticeVO, PracticeDoctor } from '@/types';
+import { PracticeWithComputed, PracticeActivity, PracticeVO, PracticeDoctor } from '@/types';
 import ContactInfoSection from './ContactInfoSection';
 import QuickStatsSection from './QuickStatsSection';
 import ActivityLogSection from './ActivityLogSection';
-import PendingBatchesSection from './PendingBatchesSection';
 
 interface DetailPanelProps {
   practice: PracticeWithComputed | null;
   activities: PracticeActivity[];
-  batches: PracticeBatch[];
   vos: PracticeVO[];
   doctors: PracticeDoctor[];
   onAddActivity: () => void;
@@ -18,7 +16,6 @@ interface DetailPanelProps {
 const DetailPanel: React.FC<DetailPanelProps> = ({
   practice,
   activities,
-  batches,
   vos,
   doctors,
   onAddActivity,
@@ -55,41 +52,6 @@ const DetailPanel: React.FC<DetailPanelProps> = ({
         {/* Contact Information */}
         <ContactInfoSection practice={practice} />
 
-        {/* Key Contacts */}
-        <div className="mb-6">
-          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-2">
-            Key Contacts
-          </h3>
-          {practice.keyContacts.length === 0 ? (
-            <div className="text-sm text-muted-foreground">No key contacts listed</div>
-          ) : (
-            <div className="space-y-2">
-              {practice.keyContacts.map((contact, index) => (
-                <div key={index} className="text-sm">
-                  <div className="font-medium text-foreground">
-                    • {contact.name} {contact.role && `(${contact.role})`}
-                  </div>
-                  {contact.phone && (
-                    <div className="ml-3 text-muted-foreground">
-                      📞 <a href={`tel:${contact.phone}`} className="hover:text-primary hover:underline">
-                        {contact.phone}
-                      </a>
-                      {contact.extension && ` ext. ${contact.extension}`}
-                    </div>
-                  )}
-                  {contact.email && (
-                    <div className="ml-3 text-muted-foreground">
-                      📧 <a href={`mailto:${contact.email}`} className="hover:text-primary hover:underline">
-                        {contact.email}
-                      </a>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
         {/* Doctors at Practice */}
         <div className="mb-6">
           <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-2">
@@ -125,12 +87,6 @@ const DetailPanel: React.FC<DetailPanelProps> = ({
 
         {/* Divider */}
         <div className="border-t border-border my-6" />
-
-        {/* Pending Batches */}
-        <PendingBatchesSection
-          batches={batches}
-          vos={vos}
-        />
 
         {/* Notes Section */}
         {practice.notes && (

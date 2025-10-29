@@ -3,17 +3,14 @@ import {
   Practice,
   PracticeWithComputed,
   PracticeActivity,
-  PracticeBatch,
   PracticeVO,
   PracticeDoctor,
-  PracticeKeyContact,
   PreferredContactMethod,
   OpeningHours
 } from '@/types';
 import OpeningHoursDisplay from '../OpeningHoursDisplay';
 import OpeningHoursEditor from '../OpeningHoursEditor';
 import ActivityLogSection from '../ActivityLogSection';
-import PendingBatchesSection from '../PendingBatchesSection';
 import QuickStatsSection from '../QuickStatsSection';
 import { createDefaultOpeningHours } from '@/utils/openingHoursUtils';
 
@@ -21,7 +18,6 @@ interface PracticeDetailModalProps {
   isOpen: boolean;
   practice: PracticeWithComputed | null;
   activities: PracticeActivity[];
-  batches: PracticeBatch[];
   vos: PracticeVO[];
   doctors: PracticeDoctor[];
   allDoctors: PracticeDoctor[];
@@ -34,7 +30,6 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
   isOpen,
   practice,
   activities,
-  batches,
   vos,
   doctors,
   allDoctors,
@@ -55,7 +50,6 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
   const [zip, setZip] = useState('');
   const [openingHours, setOpeningHours] = useState<OpeningHours>(createDefaultOpeningHours());
   const [preferredContactMethod, setPreferredContactMethod] = useState<PreferredContactMethod>('phone');
-  const [keyContacts, setKeyContacts] = useState<PracticeKeyContact[]>([]);
   const [assignedDoctorIds, setAssignedDoctorIds] = useState<string[]>([]);
   const [notes, setNotes] = useState('');
 
@@ -74,7 +68,6 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       setZip(stateZip[1] || '');
       setOpeningHours(practice.openingHours);
       setPreferredContactMethod(practice.preferredContactMethod || 'phone');
-      setKeyContacts(practice.keyContacts);
       setAssignedDoctorIds(practice.doctors.map(d => d.id));
       setNotes(practice.notes || '');
       setIsEditMode(false);
@@ -92,7 +85,6 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       address: `${street}, ${city}, ${state} ${zip}`,
       openingHours,
       preferredContactMethod,
-      keyContacts,
       notes: notes || undefined
     });
 
@@ -114,25 +106,10 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       setZip(stateZip[1] || '');
       setOpeningHours(practice.openingHours);
       setPreferredContactMethod(practice.preferredContactMethod || 'phone');
-      setKeyContacts(practice.keyContacts);
       setAssignedDoctorIds(practice.doctors.map(d => d.id));
       setNotes(practice.notes || '');
     }
     setIsEditMode(false);
-  };
-
-  const addKeyContact = () => {
-    setKeyContacts([...keyContacts, { name: '', role: '', phone: '', extension: '', email: '' }]);
-  };
-
-  const updateKeyContact = (index: number, field: keyof PracticeKeyContact, value: string) => {
-    const updated = [...keyContacts];
-    updated[index] = { ...updated[index], [field]: value };
-    setKeyContacts(updated);
-  };
-
-  const removeKeyContact = (index: number) => {
-    setKeyContacts(keyContacts.filter((_, i) => i !== index));
   };
 
   const toggleDoctorAssignment = (doctorId: string) => {
@@ -394,107 +371,6 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
             {/* Divider */}
             <div className="border-t border-border my-6" />
 
-            {/* Key Contacts */}
-            <div className="mb-6">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">
-                  Key Contacts
-                </h3>
-                {isEditMode && (
-                  <button
-                    onClick={addKeyContact}
-                    className="text-xs px-2 py-1 bg-primary text-primary-foreground rounded-md hover:bg-primary/90"
-                  >
-                    + Add
-                  </button>
-                )}
-              </div>
-              {isEditMode ? (
-                <div className="space-y-3">
-                  {keyContacts.map((contact, index) => (
-                    <div key={index} className="p-3 border border-border rounded-md space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-foreground">Contact {index + 1}</span>
-                        <button
-                          onClick={() => removeKeyContact(index)}
-                          className="text-xs text-red-500 hover:text-red-700"
-                        >
-                          Remove
-                        </button>
-                      </div>
-                      <input
-                        type="text"
-                        value={contact.name}
-                        onChange={(e) => updateKeyContact(index, 'name', e.target.value)}
-                        placeholder="Name"
-                        className="w-full px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                      <input
-                        type="text"
-                        value={contact.role || ''}
-                        onChange={(e) => updateKeyContact(index, 'role', e.target.value)}
-                        placeholder="Role (optional)"
-                        className="w-full px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                      <div className="grid grid-cols-2 gap-2">
-                        <input
-                          type="tel"
-                          value={contact.phone || ''}
-                          onChange={(e) => updateKeyContact(index, 'phone', e.target.value)}
-                          placeholder="Phone"
-                          className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                        />
-                        <input
-                          type="text"
-                          value={contact.extension || ''}
-                          onChange={(e) => updateKeyContact(index, 'extension', e.target.value)}
-                          placeholder="Ext."
-                          className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                        />
-                      </div>
-                      <input
-                        type="email"
-                        value={contact.email || ''}
-                        onChange={(e) => updateKeyContact(index, 'email', e.target.value)}
-                        placeholder="Email"
-                        className="w-full px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                      />
-                    </div>
-                  ))}
-                  {keyContacts.length === 0 && (
-                    <div className="text-sm text-muted-foreground">No key contacts added yet</div>
-                  )}
-                </div>
-              ) : (
-                practice.keyContacts.length === 0 ? (
-                  <div className="text-sm text-muted-foreground">No key contacts listed</div>
-                ) : (
-                  <div className="space-y-2">
-                    {practice.keyContacts.map((contact, index) => (
-                      <div key={index} className="text-sm">
-                        <div className="font-medium text-foreground">
-                          • {contact.name} {contact.role && `(${contact.role})`}
-                        </div>
-                        {contact.phone && (
-                          <div className="ml-3 text-muted-foreground">
-                            📞 {contact.phone}{contact.extension && ` ext. ${contact.extension}`}
-                          </div>
-                        )}
-                        {contact.email && (
-                          <div className="ml-3 text-muted-foreground">
-                            📧 {contact.email}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )
-              )}
-            </div>
-
-            {/* Divider */}
-            <div className="border-t border-border my-6" />
-
             {/* Quick Stats */}
             {!isEditMode && <QuickStatsSection practice={practice} />}
 
@@ -535,12 +411,6 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
                   activities={activities}
                   onAddActivity={onAddActivity}
                 />
-
-                {/* Divider */}
-                <div className="border-t border-border my-6" />
-
-                {/* Pending Batches */}
-                <PendingBatchesSection batches={batches} vos={vos} />
               </>
             )}
           </div>
