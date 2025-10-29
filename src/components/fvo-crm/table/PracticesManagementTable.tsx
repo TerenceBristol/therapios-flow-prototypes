@@ -9,7 +9,9 @@ import ArzteCell from './ArzteCell';
 interface PracticesManagementTableProps {
   practices: Practice[];
   doctors: Arzt[];
+  onView: (practiceId: string) => void;
   onEdit: (practiceId: string) => void;
+  onDelete: (practiceId: string) => void;
   onAdd: () => void;
 }
 
@@ -18,7 +20,9 @@ type SortColumn = 'name' | 'phone' | 'city' | 'doctors';
 const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
   practices,
   doctors,
+  onView,
   onEdit,
+  onDelete,
   onAdd
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
