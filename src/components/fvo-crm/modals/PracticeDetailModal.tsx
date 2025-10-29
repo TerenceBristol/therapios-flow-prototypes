@@ -73,7 +73,7 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       setState(stateZip[0] || '');
       setZip(stateZip[1] || '');
       setOpeningHours(practice.openingHours);
-      setPreferredContactMethod(practice.preferredContactMethod);
+      setPreferredContactMethod(practice.preferredContactMethod || 'phone');
       setKeyContacts(practice.keyContacts);
       setAssignedDoctorIds(practice.doctors.map(d => d.id));
       setNotes(practice.notes || '');
@@ -113,7 +113,7 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       setState(stateZip[0] || '');
       setZip(stateZip[1] || '');
       setOpeningHours(practice.openingHours);
-      setPreferredContactMethod(practice.preferredContactMethod);
+      setPreferredContactMethod(practice.preferredContactMethod || 'phone');
       setKeyContacts(practice.keyContacts);
       setAssignedDoctorIds(practice.doctors.map(d => d.id));
       setNotes(practice.notes || '');
