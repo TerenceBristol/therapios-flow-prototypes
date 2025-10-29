@@ -192,11 +192,8 @@ export interface CalendarTreatment {
 // FVO CRM Types (Practice Follow-up CRM)
 // ============================================================================
 
-// Priority level for practice follow-up
-export type PriorityLevel = 'overdue' | 'dueToday' | 'thisWeek' | 'other';
-
 // VO Status for FVO CRM (different from main VO system)
-export type FVOCRMVOStatus = 'Pending' | 'To Order' | 'Ordered' | 'To Follow Up' | 'Followed Up' | 'To Call' | 'Called' | 'Received';
+export type FVOCRMVOStatus = 'Bestellen' | 'Bestellt' | 'Nachverfolgen' | 'Nachverfolgt' | 'Telefonieren' | 'Telefoniert' | 'Received';
 
 // Activity type for practice interactions
 export type PracticeActivityType = 'Call' | 'Email' | 'Fax' | 'Note';
@@ -225,15 +222,6 @@ export interface OpeningHours {
   sunday: OpeningHoursDay;
 }
 
-// Key contact at practice
-export interface PracticeKeyContact {
-  name: string;
-  role?: string;
-  phone?: string;
-  extension?: string;
-  email?: string;
-}
-
 // Practice address
 export interface PracticeAddress {
   street: string;
@@ -253,7 +241,6 @@ export interface Practice {
   email?: string;
   openingHours: OpeningHours;
   preferredContactMethod?: PreferredContactMethod;
-  keyContacts: PracticeKeyContact[];
   notes?: string;
   createdAt: string;
   updatedAt: string;
@@ -281,23 +268,16 @@ export type PracticeDoctor = Arzt;
 export interface PracticeVO {
   id: string;
   patientName: string;
-  therapyType: string; // e.g., 'Physical Therapy', 'Speech Therapy'
+  therapyType: string; // Heilmittel code (e.g., 'KG-H', 'BO-E-H', 'MLD45H')
+  anzahl: number; // Number of treatments (e.g., 6, 10, 12, 18)
   status: FVOCRMVOStatus;
   statusTimestamp: string;
-  batchId?: string;
+  statusDate: string; // Formatted status date (DD.MM.YYYY)
+  gebDatum: string; // Patient birth date (DD.MM.YYYY)
   practiceId: string;
-  doctorId?: string; // Which doctor this VO is for
-  facilityName?: string; // Which facility/ER this VO is going to
+  doctorId: string; // Which doctor this VO is for (required)
+  facilityName: string; // Which facility/ER this VO is going to (required)
   createdAt: string;
-}
-
-// Batch entity - READ ONLY
-export interface PracticeBatch {
-  id: string;
-  practiceId: string;
-  sentDate: string;
-  deliveryMethod: DeliveryMethod;
-  voIds: string[];
 }
 
 // Activity entity for tracking practice interactions
@@ -316,11 +296,9 @@ export interface PracticeActivity {
 // Computed fields for practice (derived at runtime)
 export interface PracticeComputedFields {
   pendingVOCount: number;
-  activeBatchCount: number;
   lastActivity?: PracticeActivity;
   nextFollowUpDate?: string;
   nextFollowUpTime?: string;
-  priorityLevel: PriorityLevel;
 }
 
 // Extended practice with computed fields for display
@@ -333,6 +311,5 @@ export interface FVOCRMData {
   practices: Practice[];
   doctors: PracticeDoctor[];
   vos: PracticeVO[];
-  batches: PracticeBatch[];
   activities: PracticeActivity[];
 }

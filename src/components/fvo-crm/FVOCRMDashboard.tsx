@@ -5,7 +5,6 @@ import {
   Practice,
   PracticeDoctor,
   PracticeVO,
-  PracticeBatch,
   PracticeActivity,
   PracticeWithComputed,
   PriorityLevel
@@ -21,7 +20,6 @@ const FVOCRMDashboard: React.FC = () => {
   const [practices, setPractices] = useState<Practice[]>(fvoCRMData.practices as Practice[]);
   const [doctors] = useState<PracticeDoctor[]>(fvoCRMData.doctors as PracticeDoctor[]);
   const [vos] = useState<PracticeVO[]>(fvoCRMData.vos as PracticeVO[]);
-  const [batches] = useState<PracticeBatch[]>(fvoCRMData.batches as PracticeBatch[]);
   const [activities, setActivities] = useState<PracticeActivity[]>(fvoCRMData.activities as PracticeActivity[]);
 
   // UI State
@@ -70,7 +68,6 @@ const FVOCRMDashboard: React.FC = () => {
     return practices.map(practice => {
       const practiceVOs = vos.filter(vo => vo.practiceId === practice.id);
       const pendingVOs = practiceVOs.filter(vo => vo.status !== 'Received');
-      const pendingBatchIds = new Set(pendingVOs.map(vo => vo.batchId).filter(Boolean));
       const practiceActivities = activities.filter(a => a.practiceId === practice.id);
       const sortedActivities = [...practiceActivities].sort((a, b) =>
         new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -82,14 +79,13 @@ const FVOCRMDashboard: React.FC = () => {
       return {
         ...practice,
         pendingVOCount: pendingVOs.length,
-        activeBatchCount: pendingBatchIds.size,
         lastActivity: sortedActivities[0],
         nextFollowUpDate,
         priorityLevel,
         doctors: practiceDoctors
       };
     });
-  }, [practices, vos, batches, activities, doctors]);
+  }, [practices, vos, activities, doctors]);
 
   // Get selected practice with computed fields
   const selectedPractice = useMemo(() => {
@@ -102,12 +98,6 @@ const FVOCRMDashboard: React.FC = () => {
     if (!selectedPracticeId) return [];
     return activities.filter(a => a.practiceId === selectedPracticeId);
   }, [selectedPracticeId, activities]);
-
-  // Get batches for selected practice
-  const selectedPracticeBatches = useMemo(() => {
-    if (!selectedPracticeId) return [];
-    return batches.filter(b => b.practiceId === selectedPracticeId);
-  }, [selectedPracticeId, batches]);
 
   // Get VOs for selected practice
   const selectedPracticeVOs = useMemo(() => {
@@ -232,7 +222,6 @@ const FVOCRMDashboard: React.FC = () => {
           <DetailPanel
             practice={selectedPractice}
             activities={selectedPracticeActivities}
-            batches={selectedPracticeBatches}
             vos={selectedPracticeVOs}
             doctors={selectedPracticeDoctors}
             onAddActivity={handleAddActivity}
