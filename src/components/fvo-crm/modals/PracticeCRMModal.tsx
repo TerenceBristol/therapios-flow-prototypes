@@ -1,43 +1,45 @@
 'use client';
 
 import React, { useState } from 'react';
-import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeBatch, PracticeVO, PracticeDoctor } from '@/types';
+import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, FVOCRMVOStatus } from '@/types';
 import OpeningHoursDisplay from '../OpeningHoursDisplay';
 import ActivityLogSection from '../ActivityLogSection';
 import AddActivityModal from '../AddActivityModal';
+import VOsTable from '../VOsTable';
 import { formatDate } from '@/utils/timeUtils';
 
 interface PracticeCRMModalProps {
   isOpen: boolean;
   practice: PracticeWithComputed | null;
   activities: PracticeActivity[];
-  batches: PracticeBatch[];
   vos: PracticeVO[];
   doctors: PracticeDoctor[];
   onClose: () => void;
   onAddActivity: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
+  onStatusChange?: (voId: string, newStatus: FVOCRMVOStatus) => void;
+  onGeneratePDF?: (selectedVOIds: string[], selectedDoctorId: string) => void;
 }
 
 const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   isOpen,
   practice,
   activities,
-  batches,
   vos,
   doctors,
   onClose,
-  onAddActivity
+  onAddActivity,
+  onStatusChange,
+  onGeneratePDF
 }) => {
   const [isAddActivityModalOpen, setIsAddActivityModalOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
     contact: true,
     hours: true,
     doctors: true,
-    keyContacts: true,
     stats: true,
     notes: true,
     activities: true,
-    batches: true
+    vos: true
   });
 
   if (!isOpen || !practice) return null;
@@ -63,8 +65,8 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
     setIsAddActivityModalOpen(false);
   };
 
-  // Get pending VOs
-  const pendingVOs = vos.filter(vo => vo.status === 'Pending');
+  // Get pending VOs (all non-received VOs)
+  const pendingVOs = vos.filter(vo => vo.status !== 'Received');
 
   return (
     <>
@@ -205,42 +207,6 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
               </div>
 
               {/* Key Contacts */}
-              <div className="space-y-3">
-                <button
-                  onClick={() => toggleSection('keyContacts')}
-                  className="w-full flex items-center justify-between text-left"
-                >
-                  <h3 className="text-lg font-semibold text-foreground">Key Contacts</h3>
-                  <span className="text-muted-foreground">{expandedSections.keyContacts ? '▲' : '▼'}</span>
-                </button>
-
-                {expandedSections.keyContacts && (
-                  <div className="pl-2 space-y-2">
-                    {practice.keyContacts.length === 0 ? (
-                      <p className="text-muted-foreground text-sm">No key contacts</p>
-                    ) : (
-                      practice.keyContacts.map((contact, index) => (
-                        <div key={index} className="border border-border rounded-md p-3">
-                          <div className="font-medium text-foreground">{contact.name}</div>
-                          {contact.role && (
-                            <div className="text-sm text-muted-foreground">{contact.role}</div>
-                          )}
-                          {contact.phone && (
-                            <div className="text-sm text-foreground">
-                              📞 {contact.phone}
-                              {contact.extension && <span> ext. {contact.extension}</span>}
-                            </div>
-                          )}
-                          {contact.email && (
-                            <div className="text-sm text-foreground">✉️ {contact.email}</div>
-                          )}
-                        </div>
-                      ))
-                    )}
-                  </div>
-                )}
-              </div>
-
               {/* Quick Stats */}
               <div className="space-y-3">
                 <button
@@ -252,14 +218,10 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                 </button>
 
                 {expandedSections.stats && (
-                  <div className="pl-2 grid grid-cols-2 gap-3">
+                  <div className="pl-2">
                     <div className="bg-muted rounded-md p-3">
                       <div className="text-2xl font-bold text-foreground">{practice.pendingVOCount}</div>
                       <div className="text-sm text-muted-foreground">Pending FVOs</div>
-                    </div>
-                    <div className="bg-muted rounded-md p-3">
-                      <div className="text-2xl font-bold text-foreground">{practice.activeBatchCount}</div>
-                      <div className="text-sm text-muted-foreground">Active Batches</div>
                     </div>
                   </div>
                 )}
@@ -306,48 +268,24 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                 )}
               </div>
 
-              {/* Pending Batches */}
-              <div className="space-y-3">
+              {/* VOs Table */}
+              <div className="space-y-3 flex flex-col" style={{ height: '500px' }}>
                 <button
-                  onClick={() => toggleSection('batches')}
-                  className="w-full flex items-center justify-between text-left"
+                  onClick={() => toggleSection('vos')}
+                  className="w-full flex items-center justify-between text-left flex-shrink-0"
                 >
-                  <h3 className="text-lg font-semibold text-foreground">Pending Batches</h3>
-                  <span className="text-muted-foreground">{expandedSections.batches ? '▲' : '▼'}</span>
+                  <h3 className="text-lg font-semibold text-foreground">Follow-Up Verordnungen</h3>
+                  <span className="text-muted-foreground">{expandedSections.vos ? '▲' : '▼'}</span>
                 </button>
 
-                {expandedSections.batches && (
-                  <div className="space-y-2">
-                    {batches.length === 0 ? (
-                      <p className="text-muted-foreground text-sm">No pending batches</p>
-                    ) : (
-                      batches.map(batch => {
-                        const batchVOs = vos.filter(vo => vo.batchId === batch.id);
-                        const pendingCount = batchVOs.filter(vo => vo.status === 'Pending').length;
-
-                        return (
-                          <div key={batch.id} className="border border-border rounded-md p-4">
-                            <div className="flex items-start justify-between mb-2">
-                              <div>
-                                <div className="font-medium text-foreground">
-                                  Batch sent {formatDate(batch.sentDate)}
-                                </div>
-                                <div className="text-sm text-muted-foreground">
-                                  via {batch.deliveryMethod}
-                                </div>
-                              </div>
-                              <div className="text-right">
-                                <div className="text-lg font-bold text-foreground">{pendingCount}</div>
-                                <div className="text-xs text-muted-foreground">pending</div>
-                              </div>
-                            </div>
-                            <div className="text-sm text-muted-foreground">
-                              {batchVOs.length} total FVOs in batch
-                            </div>
-                          </div>
-                        );
-                      })
-                    )}
+                {expandedSections.vos && (
+                  <div className="flex-1 min-h-0 border border-border rounded-md overflow-hidden">
+                    <VOsTable
+                      vos={vos}
+                      doctors={doctors}
+                      onStatusChange={onStatusChange}
+                      onGeneratePDF={onGeneratePDF}
+                    />
                   </div>
                 )}
               </div>

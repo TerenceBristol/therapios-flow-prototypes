@@ -31,14 +31,6 @@ const QuickStatsSection: React.FC<QuickStatsSectionProps> = ({ practice }) => {
           </span>
         </div>
 
-        {/* Active Batches */}
-        <div className="flex items-center gap-2">
-          <span className="text-lg">📦</span>
-          <span className="text-foreground">
-            <span className="font-medium">{practice.activeBatchCount}</span> Active Batches
-          </span>
-        </div>
-
         {/* Last Contact */}
         <div className="flex items-center gap-2">
           <span className="text-lg">📅</span>

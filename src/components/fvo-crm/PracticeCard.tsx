@@ -73,7 +73,7 @@ const PracticeCard: React.FC<PracticeCardProps> = ({ practice, isSelected, onCli
         {practice.pendingVOCount === 0 ? (
           <span>✅ No Pending FVOs</span>
         ) : (
-          <span>📋 {practice.pendingVOCount} Pending FVOs • {practice.activeBatchCount} Batches</span>
+          <span>📋 {practice.pendingVOCount} Pending FVOs</span>
         )}
       </div>
 
