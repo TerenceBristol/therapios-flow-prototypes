@@ -37,7 +37,7 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
         setFax(practice.fax || '');
         setEmail(practice.email || '');
         setOpeningHours(practice.openingHours);
-        setPreferredContactMethod(practice.preferredContactMethod);
+        setPreferredContactMethod(practice.preferredContactMethod || 'phone');
         setKeyContacts(practice.keyContacts);
         setNotes(practice.notes || '');
       } else {

@@ -90,7 +90,9 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
 
     // Contact method filters
     if (filters.contactMethodFilters.length > 0) {
-      result = result.filter(p => filters.contactMethodFilters.includes(p.preferredContactMethod));
+      result = result.filter(p =>
+        p.preferredContactMethod && filters.contactMethodFilters.includes(p.preferredContactMethod)
+      );
     }
 
     // Doctor filter

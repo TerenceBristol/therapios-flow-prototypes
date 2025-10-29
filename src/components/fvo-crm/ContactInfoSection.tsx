@@ -17,6 +17,8 @@ const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({ practice }) => 
         return '📧 Email';
       case 'phone':
         return '📞 Phone';
+      default:
+        return '📞 Phone'; // Default to phone if not specified
     }
   };
 
