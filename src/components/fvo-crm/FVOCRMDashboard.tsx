@@ -6,8 +6,7 @@ import {
   PracticeDoctor,
   PracticeVO,
   PracticeActivity,
-  PracticeWithComputed,
-  PriorityLevel
+  PracticeWithComputed
 } from '@/types';
 import fvoCRMData from '@/data/fvoCRMData.json';
 import PriorityQueuePanel from './PriorityQueuePanel';

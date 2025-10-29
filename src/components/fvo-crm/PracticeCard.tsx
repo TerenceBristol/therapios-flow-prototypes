@@ -8,18 +8,9 @@ interface PracticeCardProps {
 }
 
 const PracticeCard: React.FC<PracticeCardProps> = ({ practice, isSelected, onClick }) => {
-  // Priority styling
+  // Simple border styling
   const getPriorityStyles = () => {
-    switch (practice.priorityLevel) {
-      case 'overdue':
-        return 'border-l-4 border-l-[#DC2626] bg-[#FEF2F2]';
-      case 'dueToday':
-        return 'border-l-4 border-l-[#F59E0B] bg-[#FFFBEB]';
-      case 'thisWeek':
-        return 'border-l-4 border-l-[#3B82F6] bg-[#EFF6FF]';
-      default:
-        return 'border-l-4 border-l-[#9CA3AF] bg-[#F9FAFB]';
-    }
+    return 'border-l-4 border-l-[#3B82F6] bg-[#F9FAFB]';
   };
 
   // Format date for display
@@ -39,18 +30,10 @@ const PracticeCard: React.FC<PracticeCardProps> = ({ practice, isSelected, onCli
 
   // Get quick contact text
   const getQuickContactText = () => {
-    if (practice.keyContacts.length > 0) {
-      const contact = practice.keyContacts[0];
-      const name = contact.name;
-      const ext = contact.extension ? ` ext. ${contact.extension}` : '';
-      const method = practice.preferredContactMethod === 'fax' ? '📠 Fax pref' :
-                     practice.preferredContactMethod === 'email' ? '📧 Email pref' :
-                     '📞 Phone pref';
-      return `🤝 ${name}${ext} • ${method}`;
-    }
-    return `📞 ${practice.phone} • ${practice.preferredContactMethod === 'fax' ? '📠 Fax pref' :
-                                    practice.preferredContactMethod === 'email' ? '📧 Email pref' :
-                                    '📞 Phone pref'}`;
+    const method = practice.preferredContactMethod === 'fax' ? '📠 Fax pref' :
+                   practice.preferredContactMethod === 'email' ? '📧 Email pref' :
+                   '📞 Phone pref';
+    return `📞 ${practice.phone} • ${method}`;
   };
 
   return (
