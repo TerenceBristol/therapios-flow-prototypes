@@ -74,7 +74,7 @@ export default function FVOCRMPage() {
 
       // Get doctors for this practice
       const practiceDoctors = doctors.filter(doc =>
-        doc.practiceIds.includes(practice.id)
+        doc.practiceId === practice.id
       );
 
       return {
@@ -144,7 +144,7 @@ export default function FVOCRMPage() {
             return mockData.batches.filter(batch => batchIds.has(batch.id));
           })() as PracticeBatch[]}
           vos={mockData.vos.filter(vo => vo.practiceId === selectedPractice.id) as PracticeVO[]}
-          doctors={doctors.filter(doc => doc.practiceIds.includes(selectedPractice.id))}
+          doctors={doctors.filter(doc => doc.practiceId === selectedPractice.id)}
           onClose={handleCloseModal}
           onAddActivity={handleAddActivity}
         />

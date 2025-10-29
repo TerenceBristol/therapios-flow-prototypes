@@ -9,11 +9,6 @@ interface ContactInfoSectionProps {
 const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({ practice }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
-  const formatAddress = () => {
-    const { street, city, state, zip } = practice.address;
-    return `${street}, ${city}, ${state} ${zip}`;
-  };
-
   const getPreferredMethodLabel = () => {
     switch (practice.preferredContactMethod) {
       case 'fax':
@@ -22,6 +17,8 @@ const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({ practice }) => 
         return '📧 Email';
       case 'phone':
         return '📞 Phone';
+      default:
+        return '📞 Phone'; // Default to phone if not specified
     }
   };
 
@@ -44,7 +41,7 @@ const ContactInfoSection: React.FC<ContactInfoSectionProps> = ({ practice }) => 
           {/* Address */}
           <div className="flex items-start gap-2">
             <span className="text-lg">🏥</span>
-            <span className="text-foreground">{formatAddress()}</span>
+            <span className="text-foreground">{practice.address}</span>
           </div>
 
           {/* Phone */}

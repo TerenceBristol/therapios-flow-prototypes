@@ -66,12 +66,14 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       setPhone(practice.phone);
       setFax(practice.fax || '');
       setEmail(practice.email || '');
-      setStreet(practice.address.street);
-      setCity(practice.address.city);
-      setState(practice.address.state);
-      setZip(practice.address.zip);
+      const addressParts = practice.address.split(',').map(s => s.trim());
+      setStreet(addressParts[0] || '');
+      setCity(addressParts[1] || '');
+      const stateZip = (addressParts[2] || '').split(' ');
+      setState(stateZip[0] || '');
+      setZip(stateZip[1] || '');
       setOpeningHours(practice.openingHours);
-      setPreferredContactMethod(practice.preferredContactMethod);
+      setPreferredContactMethod(practice.preferredContactMethod || 'phone');
       setKeyContacts(practice.keyContacts);
       setAssignedDoctorIds(practice.doctors.map(d => d.id));
       setNotes(practice.notes || '');
@@ -87,7 +89,7 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       phone,
       fax: fax || undefined,
       email: email || undefined,
-      address: { street, city, state, zip },
+      address: `${street}, ${city}, ${state} ${zip}`,
       openingHours,
       preferredContactMethod,
       keyContacts,
@@ -104,12 +106,14 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       setPhone(practice.phone);
       setFax(practice.fax || '');
       setEmail(practice.email || '');
-      setStreet(practice.address.street);
-      setCity(practice.address.city);
-      setState(practice.address.state);
-      setZip(practice.address.zip);
+      const addressParts = practice.address.split(',').map(s => s.trim());
+      setStreet(addressParts[0] || '');
+      setCity(addressParts[1] || '');
+      const stateZip = (addressParts[2] || '').split(' ');
+      setState(stateZip[0] || '');
+      setZip(stateZip[1] || '');
       setOpeningHours(practice.openingHours);
-      setPreferredContactMethod(practice.preferredContactMethod);
+      setPreferredContactMethod(practice.preferredContactMethod || 'phone');
       setKeyContacts(practice.keyContacts);
       setAssignedDoctorIds(practice.doctors.map(d => d.id));
       setNotes(practice.notes || '');
@@ -294,7 +298,7 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
                   <div className="flex items-start gap-2">
                     <span className="text-lg">🏥</span>
                     <span className="text-foreground">
-                      {practice.address.street}, {practice.address.city}, {practice.address.state} {practice.address.zip}
+                      {practice.address}
                     </span>
                   </div>
                   <div className="flex items-start gap-2">

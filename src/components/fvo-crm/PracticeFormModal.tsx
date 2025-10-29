@@ -17,10 +17,7 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
   onSave
 }) => {
   const [name, setName] = useState('');
-  const [street, setStreet] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [zip, setZip] = useState('');
+  const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [fax, setFax] = useState('');
   const [email, setEmail] = useState('');
@@ -35,24 +32,18 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
     if (isOpen) {
       if (practice) {
         setName(practice.name);
-        setStreet(practice.address.street);
-        setCity(practice.address.city);
-        setState(practice.address.state);
-        setZip(practice.address.zip);
+        setAddress(practice.address);
         setPhone(practice.phone);
         setFax(practice.fax || '');
         setEmail(practice.email || '');
         setOpeningHours(practice.openingHours);
-        setPreferredContactMethod(practice.preferredContactMethod);
+        setPreferredContactMethod(practice.preferredContactMethod || 'phone');
         setKeyContacts(practice.keyContacts);
         setNotes(practice.notes || '');
       } else {
         // Reset form for new practice
         setName('');
-        setStreet('');
-        setCity('');
-        setState('');
-        setZip('');
+        setAddress('');
         setPhone('');
         setFax('');
         setEmail('');
@@ -113,12 +104,7 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
 
     onSave({
       name: name.trim(),
-      address: {
-        street: street.trim(),
-        city: city.trim(),
-        state: state.trim(),
-        zip: zip.trim()
-      },
+      address: address.trim(),
       phone: phone.trim(),
       fax: fax.trim() || undefined,
       email: email.trim() || undefined,
@@ -184,52 +170,17 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
             </div>
 
             {/* Address */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="col-span-2">
-                <label className="block text-sm font-medium text-foreground mb-1">
-                  Street Address
-                </label>
-                <input
-                  type="text"
-                  value={street}
-                  onChange={(e) => setStreet(e.target.value)}
-                  className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-1">
-                  City
-                </label>
-                <input
-                  type="text"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-1">
-                  State
-                </label>
-                <input
-                  type="text"
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}
-                  maxLength={2}
-                  className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div className="col-span-2">
-                <label className="block text-sm font-medium text-foreground mb-1">
-                  ZIP Code
-                </label>
-                <input
-                  type="text"
-                  value={zip}
-                  onChange={(e) => setZip(e.target.value)}
-                  className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Address
+              </label>
+              <textarea
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                placeholder="123 Main Street, Springfield, IL 62701"
+                rows={2}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              />
             </div>
 
             {/* Contact Info */}

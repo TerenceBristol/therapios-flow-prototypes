@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PracticeDoctor, Practice, PracticeAddress } from '@/types';
+import { PracticeDoctor, Practice } from '@/types';
 
 interface DoctorFormModalProps {
   isOpen: boolean;
@@ -19,11 +19,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
   const [specialty, setSpecialty] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [street, setStreet] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [zip, setZip] = useState('');
-  const [practiceIds, setPracticeIds] = useState<string[]>([]);
+  const [practiceId, setPracticeId] = useState<string | undefined>(undefined);
   const [facilities, setFacilities] = useState<string[]>([]);
   const [notes, setNotes] = useState('');
   const [newFacility, setNewFacility] = useState('');
@@ -36,11 +32,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
       setSpecialty('');
       setPhone('');
       setEmail('');
-      setStreet('');
-      setCity('');
-      setState('');
-      setZip('');
-      setPracticeIds([]);
+      setPracticeId(undefined);
       setFacilities([]);
       setNotes('');
       setNewFacility('');
@@ -66,15 +58,10 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
   const handleSave = () => {
     if (!validate()) return;
 
-    const address: PracticeAddress | undefined = street || city || state || zip
-      ? { street, city, state, zip }
-      : undefined;
-
     onSave({
       name: name.trim(),
-      practiceIds,
+      practiceId,
       facilities,
-      address,
       phone: phone || undefined,
       email: email || undefined,
       specialty: specialty || undefined,
@@ -84,12 +71,8 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
     onClose();
   };
 
-  const togglePractice = (practiceId: string) => {
-    if (practiceIds.includes(practiceId)) {
-      setPracticeIds(practiceIds.filter(id => id !== practiceId));
-    } else {
-      setPracticeIds([...practiceIds, practiceId]);
-    }
+  const selectPractice = (newPracticeId: string) => {
+    setPracticeId(newPracticeId === practiceId ? undefined : newPracticeId);
   };
 
   const addFacility = () => {
@@ -192,53 +175,6 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
                   )}
                 </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-1">
-                  Street Address
-                </label>
-                <input
-                  type="text"
-                  value={street}
-                  onChange={(e) => setStreet(e.target.value)}
-                  placeholder="123 Medical Plaza"
-                  className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              <div className="grid grid-cols-3 gap-3">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    City
-                  </label>
-                  <input
-                    type="text"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    State
-                  </label>
-                  <input
-                    type="text"
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                    className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    ZIP
-                  </label>
-                  <input
-                    type="text"
-                    value={zip}
-                    onChange={(e) => setZip(e.target.value)}
-                    className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-              </div>
             </div>
           </div>
 
@@ -254,17 +190,17 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
               {practices.map(practice => (
                 <label key={practice.id} className="flex items-center gap-2 cursor-pointer">
                   <input
-                    type="checkbox"
-                    checked={practiceIds.includes(practice.id)}
-                    onChange={() => togglePractice(practice.id)}
-                    className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
+                    type="radio"
+                    checked={practiceId === practice.id}
+                    onChange={() => selectPractice(practice.id)}
+                    className="w-4 h-4 border-border text-primary focus:ring-primary"
                   />
                   <span className="text-sm text-foreground">{practice.name}</span>
                 </label>
               ))}
             </div>
             <div className="text-xs text-muted-foreground mt-2">
-              Selected: {practiceIds.length} practice{practiceIds.length !== 1 ? 's' : ''}
+              Selected: {practiceId ? '1 practice' : 'None'}
             </div>
           </div>
 

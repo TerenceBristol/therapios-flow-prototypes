@@ -1,17 +1,17 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Practice, PracticeDoctor } from '@/types';
+import { Practice, Arzt } from '@/types';
 import PhoneCell from './PhoneCell';
 import TodayHoursCell from './TodayHoursCell';
-import DoctorsCell from './DoctorsCell';
+import ArzteCell from './ArzteCell';
 
 interface PracticesManagementTableProps {
   practices: Practice[];
-  doctors: PracticeDoctor[];
-  onView: (practiceId: string) => void;
+  doctors: Arzt[];
+  onView?: (practiceId: string) => void;
   onEdit: (practiceId: string) => void;
-  onDelete: (practiceId: string) => void;
+  onDelete?: (practiceId: string) => void;
   onAdd: () => void;
 }
 
@@ -39,7 +39,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
       const query = searchQuery.toLowerCase();
       result = result.filter(p =>
         p.name.toLowerCase().includes(query) ||
-        p.address.city.toLowerCase().includes(query) ||
+        p.address.toLowerCase().includes(query) ||
         p.phone.includes(query)
       );
     }
@@ -47,7 +47,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
     // Doctor filter
     if (doctorFilter) {
       result = result.filter(p => {
-        const practiceDoctors = doctors.filter(doc => doc.practiceIds.includes(p.id));
+        const practiceDoctors = doctors.filter(doc => doc.practiceId === p.id);
         return practiceDoctors.some(doc => doc.id === doctorFilter);
       });
     }
@@ -70,11 +70,11 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
           compareValue = a.phone.localeCompare(b.phone);
           break;
         case 'city':
-          compareValue = a.address.city.localeCompare(b.address.city);
+          compareValue = a.address.localeCompare(b.address);
           break;
         case 'doctors': {
-          const aDoctors = doctors.filter(doc => doc.practiceIds.includes(a.id)).length;
-          const bDoctors = doctors.filter(doc => doc.practiceIds.includes(b.id)).length;
+          const aDoctors = doctors.filter(doc => doc.practiceId === a.id).length;
+          const bDoctors = doctors.filter(doc => doc.practiceId === b.id).length;
           compareValue = aDoctors - bDoctors;
           break;
         }
@@ -102,7 +102,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
 
   // Get doctors for each practice
   const getPracticeDoctors = (practiceId: string) => {
-    return doctors.filter(doc => doc.practiceIds.includes(practiceId));
+    return doctors.filter(doc => doc.practiceId === practiceId);
   };
 
   return (
@@ -138,7 +138,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
             onChange={(e) => setDoctorFilter(e.target.value || null)}
             className="px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
           >
-            <option value="">All Doctors</option>
+            <option value="">All Ärzte</option>
             {doctors.map(doctor => (
               <option key={doctor.id} value={doctor.id}>
                 {doctor.name}
@@ -204,7 +204,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
                 onClick={() => handleSort('doctors')}
                 className="px-4 py-3 text-left text-sm font-semibold text-foreground cursor-pointer hover:bg-muted/80"
               >
-                Doctors{getSortIndicator('doctors')}
+                Ärzte{getSortIndicator('doctors')}
               </th>
               <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
                 Actions
@@ -255,10 +255,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
                     {/* Address */}
                     <td className="px-4 py-3">
                       <div className="text-sm text-foreground">
-                        {practice.address.city}, {practice.address.state}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {practice.address.zip}
+                        {practice.address}
                       </div>
                     </td>
 
@@ -269,38 +266,18 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
 
                     {/* Doctors */}
                     <td className="px-4 py-3">
-                      <DoctorsCell doctors={practiceDoctors} />
+                      <ArzteCell doctors={practiceDoctors} />
                     </td>
 
                     {/* Actions */}
                     <td className="px-4 py-3">
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => onView(practice.id)}
-                          className="px-3 py-1 text-sm bg-muted hover:bg-muted/80 text-foreground rounded transition-colors"
-                          title="View"
-                        >
-                          👁️
-                        </button>
-                        <button
-                          onClick={() => onEdit(practice.id)}
-                          className="px-3 py-1 text-sm bg-primary hover:bg-primary/90 text-primary-foreground rounded transition-colors"
-                          title="Edit"
-                        >
-                          ✏️
-                        </button>
-                        <button
-                          onClick={() => {
-                            if (confirm(`Are you sure you want to delete "${practice.name}"?`)) {
-                              onDelete(practice.id);
-                            }
-                          }}
-                          className="px-3 py-1 text-sm bg-destructive hover:bg-destructive/90 text-destructive-foreground rounded transition-colors"
-                          title="Delete"
-                        >
-                          🗑️
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => onEdit(practice.id)}
+                        className="p-2 hover:bg-muted rounded-md transition-colors text-primary hover:text-primary/80"
+                        title="Edit"
+                      >
+                        ✏️
+                      </button>
                     </td>
                   </tr>
                 );

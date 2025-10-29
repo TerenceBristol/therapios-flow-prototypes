@@ -1,25 +1,22 @@
 import React, { useState, useMemo } from 'react';
-import { PracticeDoctor, Practice } from '@/types';
-import DoctorsTableFilters, { DoctorsFilterOptions } from './DoctorsTableFilters';
-import TableActionButtons from './TableActionButtons';
+import { Arzt, Practice } from '@/types';
+import ArzteTableFilters, { ArzteFilterOptions } from './ArzteTableFilters';
 
-interface DoctorsTableProps {
-  doctors: PracticeDoctor[];
+interface ArzteTableProps {
+  arzte: Arzt[];
   practices: Practice[];
-  onViewDoctor: (doctorId: string) => void;
-  onEditDoctor: (doctorId: string) => void;
-  onAddDoctor: () => void;
+  onEdit: (arztId: string) => void;
+  onAdd: () => void;
 }
 
-const DoctorsTable: React.FC<DoctorsTableProps> = ({
-  doctors,
+const ArzteTable: React.FC<ArzteTableProps> = ({
+  arzte,
   practices,
-  onViewDoctor,
-  onEditDoctor,
-  onAddDoctor
+  onEdit,
+  onAdd
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filters, setFilters] = useState<DoctorsFilterOptions>({
+  const [filters, setFilters] = useState<ArzteFilterOptions>({
     practiceFilter: null,
     facilityFilter: null,
     sortBy: 'name'
@@ -31,36 +28,44 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
   // Get all unique facilities
   const allFacilities = useMemo(() => {
     const facilitiesSet = new Set<string>();
-    doctors.forEach(doctor => {
-      doctor.facilities.forEach(facility => facilitiesSet.add(facility));
+    arzte.forEach(arzt => {
+      arzt.facilities.forEach(facility => facilitiesSet.add(facility));
     });
     return Array.from(facilitiesSet).sort();
-  }, [doctors]);
+  }, [arzte]);
 
   // Apply filters and search
-  const filteredDoctors = useMemo(() => {
-    let result = [...doctors];
+  const filteredArzte = useMemo(() => {
+    let result = [...arzte];
 
     // Search filter
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      result = result.filter(d => d.name.toLowerCase().includes(query));
+      result = result.filter(a => a.name.toLowerCase().includes(query));
     }
 
     // Practice filter
     if (filters.practiceFilter) {
-      result = result.filter(d => d.practiceId === filters.practiceFilter);
+      result = result.filter(a => a.practiceId === filters.practiceFilter);
     }
 
     // Facility filter
     if (filters.facilityFilter) {
-      result = result.filter(d => d.facilities.includes(filters.facilityFilter!));
+      result = result.filter(a => a.facilities.includes(filters.facilityFilter!));
     }
 
     // Apply sorting
     switch (filters.sortBy) {
       case 'name':
         result.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'practiceCount':
+        // Sort by whether they have a practice or not
+        result.sort((a, b) => {
+          const aHasPractice = a.practiceId ? 1 : 0;
+          const bHasPractice = b.practiceId ? 1 : 0;
+          return bHasPractice - aHasPractice;
+        });
         break;
       case 'facilityCount':
         result.sort((a, b) => b.facilities.length - a.facilities.length);
@@ -79,8 +84,8 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
             bVal = b.name;
             break;
           case 'practices':
-            aVal = a.practiceId || '';
-            bVal = b.practiceId || '';
+            aVal = a.practiceId ? 1 : 0;
+            bVal = b.practiceId ? 1 : 0;
             break;
           case 'facilities':
             aVal = a.facilities.length;
@@ -102,7 +107,7 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
     }
 
     return result;
-  }, [doctors, searchQuery, filters, sortColumn, sortDirection]);
+  }, [arzte, searchQuery, filters, sortColumn, sortDirection]);
 
   const handleSort = (column: string) => {
     if (sortColumn === column) {
@@ -118,11 +123,6 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
     return sortDirection === 'asc' ? ' ↑' : ' ↓';
   };
 
-  const getPracticeName = (practiceId?: string) => {
-    if (!practiceId) return 'None';
-    return practices.find(p => p.id === practiceId)?.name || 'Unknown';
-  };
-
   return (
     <div className="h-full flex flex-col bg-background">
       {/* Search and Filters Bar */}
@@ -133,7 +133,7 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search doctors..."
+              placeholder="Search ärzte..."
               className="w-full px-4 py-2 pr-10 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
             />
             {searchQuery && (
@@ -147,12 +147,12 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
           </div>
           {searchQuery && (
             <div className="mt-2 text-sm text-muted-foreground">
-              Showing {filteredDoctors.length} of {doctors.length} doctors
+              Showing {filteredArzte.length} of {arzte.length} ärzte
             </div>
           )}
         </div>
 
-        <DoctorsTableFilters
+        <ArzteTableFilters
           filters={filters}
           onFiltersChange={setFilters}
           practices={practices}
@@ -160,10 +160,10 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
         />
 
         <button
-          onClick={onAddDoctor}
+          onClick={onAdd}
           className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium whitespace-nowrap"
         >
-          + Add Doctor
+          + Add Arzt
         </button>
       </div>
 
@@ -174,48 +174,45 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
             <thead className="bg-muted/50">
               <tr className="text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                 <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('name')}>
-                  Doctor Name{getSortIndicator('name')}
+                  Arzt Name{getSortIndicator('name')}
                 </th>
                 <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('practices')}>
                   Practices{getSortIndicator('practices')}
                 </th>
                 <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('facilities')}>
-                  Facilities/ERs{getSortIndicator('facilities')}
+                  ERs{getSortIndicator('facilities')}
                 </th>
                 <th className="px-4 py-3">Phone</th>
                 <th className="px-4 py-3 w-24">Actions</th>
               </tr>
             </thead>
             <tbody>
-              {filteredDoctors.map(doctor => (
+              {filteredArzte.map(arzt => (
                 <tr
-                  key={doctor.id}
+                  key={arzt.id}
                   className="border-b border-border hover:bg-muted/50 transition-colors"
                 >
                   <td className="px-4 py-3">
-                    <div className="font-medium text-foreground">{doctor.name}</div>
-                    {doctor.specialty && (
-                      <div className="text-xs text-muted-foreground">{doctor.specialty}</div>
-                    )}
+                    <div className="font-medium text-foreground">{arzt.name}</div>
                   </td>
                   <td className="px-4 py-3">
                     <div className="text-sm text-foreground">
-                      {doctor.practiceId ? (
-                        <span className="text-muted-foreground">{getPracticeName(doctor.practiceId)}</span>
+                      {arzt.practiceId ? (
+                        practices.find(p => p.id === arzt.practiceId)?.name || 'Unknown'
                       ) : (
-                        <span className="text-muted-foreground">None</span>
+                        <span className="text-muted-foreground">Unassigned</span>
                       )}
                     </div>
                   </td>
                   <td className="px-4 py-3">
                     <div className="text-sm text-foreground">
-                      {doctor.facilities.length > 0 ? (
+                      {arzt.facilities.length > 0 ? (
                         <>
-                          <span className="font-medium">{doctor.facilities.length}</span>
-                          {doctor.facilities.length <= 2 ? (
-                            <span className="text-muted-foreground"> - {doctor.facilities.join(', ')}</span>
+                          <span className="font-medium">{arzt.facilities.length}</span>
+                          {arzt.facilities.length <= 2 ? (
+                            <span className="text-muted-foreground"> - {arzt.facilities.join(', ')}</span>
                           ) : (
-                            <span className="text-muted-foreground"> facilities</span>
+                            <span className="text-muted-foreground"> ERs</span>
                           )}
                         </>
                       ) : (
@@ -225,24 +222,27 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
                   </td>
                   <td className="px-4 py-3">
                     <div className="text-sm text-foreground">
-                      {doctor.phone || <span className="text-muted-foreground">-</span>}
+                      {arzt.phone || <span className="text-muted-foreground">-</span>}
                     </div>
                   </td>
                   <td className="px-4 py-3">
-                    <TableActionButtons
-                      onView={() => onViewDoctor(doctor.id)}
-                      onEdit={() => onEditDoctor(doctor.id)}
-                    />
+                    <button
+                      onClick={() => onEdit(arzt.id)}
+                      className="p-2 hover:bg-muted rounded-md transition-colors text-primary hover:text-primary/80"
+                      title="Edit"
+                    >
+                      ✏️
+                    </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
 
-          {filteredDoctors.length === 0 && (
+          {filteredArzte.length === 0 && (
             <div className="text-center py-12 text-muted-foreground">
               <div className="text-4xl mb-4">🔍</div>
-              <p>No doctors found</p>
+              <p>No ärzte found</p>
               <p className="text-sm mt-2">Try adjusting your search or filters</p>
             </div>
           )}
@@ -252,4 +252,4 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
   );
 };
 
-export default DoctorsTable;
+export default ArzteTable;
