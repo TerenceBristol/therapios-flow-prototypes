@@ -1,17 +1,16 @@
 import React, { useState, useMemo } from 'react';
-import { PracticeWithComputed, PriorityLevel, PracticeDoctor } from '@/types';
+import { PracticeWithComputed, PriorityLevel, Arzt } from '@/types';
 import PracticesTableFilters, { PracticesFilterOptions } from './PracticesTableFilters';
 import PriorityBadge from './PriorityBadge';
 import PhoneCell from './PhoneCell';
 import TodayHoursCell from './TodayHoursCell';
-import DoctorsCell from './DoctorsCell';
-import TableActionButtons from './TableActionButtons';
+import ArzteCell from './ArzteCell';
 import { formatDateTimeDisplay } from '@/utils/timeUtils';
 import { isOpenToday } from '@/utils/openingHoursUtils';
 
 interface PracticesTableProps {
   practices: PracticeWithComputed[];
-  allDoctors: PracticeDoctor[];
+  allDoctors: Arzt[];
   onViewPractice: (practiceId: string) => void;
   onEditPractice: (practiceId: string) => void;
   onAddPractice: () => void;
@@ -222,7 +221,8 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
   const renderTableRow = (practice: PracticeWithComputed) => (
     <tr
       key={practice.id}
-      className="border-b border-border hover:bg-muted/50 transition-colors"
+      onClick={() => onViewPractice(practice.id)}
+      className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer"
     >
       <td className="px-4 py-3">
         <PriorityBadge priority={practice.priorityLevel} showLabel={false} />
@@ -257,13 +257,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
         </div>
       </td>
       <td className="px-4 py-3">
-        <DoctorsCell doctors={practice.doctors} />
-      </td>
-      <td className="px-4 py-3">
-        <TableActionButtons
-          onView={() => onViewPractice(practice.id)}
-          onEdit={() => onEditPractice(practice.id)}
-        />
+        <ArzteCell doctors={practice.doctors} />
       </td>
     </tr>
   );
@@ -382,8 +376,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                             <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('nextFollowUp')}>
                               Next Follow-up{getSortIndicator('nextFollowUp')}
                             </th>
-                            <th className="px-4 py-3">Doctors</th>
-                            <th className="px-4 py-3 w-24">Actions</th>
+                            <th className="px-4 py-3">Ärzte</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -429,8 +422,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                     <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('nextFollowUp')}>
                       Next Follow-up{getSortIndicator('nextFollowUp')}
                     </th>
-                    <th className="px-4 py-3">Doctors</th>
-                    <th className="px-4 py-3 w-24">Actions</th>
+                    <th className="px-4 py-3">Ärzte</th>
                   </tr>
                 </thead>
                 <tbody>

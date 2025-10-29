@@ -3,16 +3,9 @@
     {
       "id": "prac-001",
       "name": "Springfield Medical Center",
-      "address": {
-        "street": "123 Main Street",
-        "city": "Springfield",
-        "state": "IL",
-        "zip": "62701"
-      },
       "phone": "(555) 123-4567",
       "fax": "(555) 123-4568",
       "email": "office@springfieldmed.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Sarah Johnson",
@@ -22,7 +15,6 @@
           "email": "sarah@springfieldmed.com"
         }
       ],
-      "notes": "Prefers fax orders by 2pm for same-day processing",
       "createdAt": "2024-01-15T10:00:00Z",
       "updatedAt": "2025-10-20T14:30:00Z",
       "openingHours": {
@@ -61,21 +53,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 1,
+      "address": "123 Main Street, Springfield, IL 62701"
     },
     {
       "id": "prac-002",
       "name": "Riverside Family Practice",
-      "address": {
-        "street": "456 River Road",
-        "city": "Riverside",
-        "state": "CA",
-        "zip": "92501"
-      },
       "phone": "(555) 234-5678",
       "fax": "(555) 234-5679",
       "email": "info@riversidefp.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Michael Chen",
@@ -84,7 +71,6 @@
           "extension": "101"
         }
       ],
-      "notes": "",
       "createdAt": "2024-02-10T09:00:00Z",
       "updatedAt": "2025-10-22T11:15:00Z",
       "openingHours": {
@@ -123,20 +109,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 2,
+      "address": "456 River Road, Riverside, CA 92501"
     },
     {
       "id": "prac-003",
       "name": "Valley Orthopedics",
-      "address": {
-        "street": "789 Valley Drive",
-        "city": "San Jose",
-        "state": "CA",
-        "zip": "95110"
-      },
       "phone": "(555) 345-6789",
       "email": "contact@valleyortho.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Lisa Martinez",
@@ -152,7 +133,6 @@
           "extension": "15"
         }
       ],
-      "notes": "Very busy practice, best to call after 2pm",
       "createdAt": "2024-03-05T12:00:00Z",
       "updatedAt": "2025-10-18T16:45:00Z",
       "openingHours": {
@@ -191,21 +171,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 3,
+      "address": "789 Valley Drive, San Jose, CA 95110"
     },
     {
       "id": "prac-004",
       "name": "Mountain View Pediatrics",
-      "address": {
-        "street": "321 Highland Ave",
-        "city": "Denver",
-        "state": "CO",
-        "zip": "80202"
-      },
       "phone": "(555) 456-7890",
       "fax": "(555) 456-7891",
       "email": "admin@mvpediatrics.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Jennifer Brown",
@@ -215,7 +190,6 @@
           "email": "jbrown@mvpediatrics.com"
         }
       ],
-      "notes": "",
       "createdAt": "2024-01-20T08:30:00Z",
       "updatedAt": "2025-10-21T09:20:00Z",
       "openingHours": {
@@ -254,21 +228,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 4,
+      "address": "321 Highland Ave, Denver, CO 80202"
     },
     {
       "id": "prac-005",
       "name": "Lakeside Internal Medicine",
-      "address": {
-        "street": "555 Lake Shore Blvd",
-        "city": "Chicago",
-        "state": "IL",
-        "zip": "60611"
-      },
       "phone": "(555) 567-8901",
       "fax": "(555) 567-8902",
       "email": "office@lakesideim.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Robert Davis",
@@ -278,7 +247,6 @@
           "email": "rdavis@lakesideim.com"
         }
       ],
-      "notes": "Closed first Friday of every month for staff meetings",
       "createdAt": "2024-04-12T10:00:00Z",
       "updatedAt": "2025-10-19T13:30:00Z",
       "openingHours": {
@@ -317,20 +285,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 5,
+      "address": "555 Lake Shore Blvd, Chicago, IL 60611"
     },
     {
       "id": "prac-006",
       "name": "Sunset Family Health",
-      "address": {
-        "street": "888 Sunset Boulevard",
-        "city": "Los Angeles",
-        "state": "CA",
-        "zip": "90028"
-      },
       "phone": "(555) 678-9012",
       "email": "info@sunsetfh.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Amy Rodriguez",
@@ -338,7 +301,6 @@
           "phone": "(555) 678-9012"
         }
       ],
-      "notes": "",
       "createdAt": "2024-05-01T11:00:00Z",
       "updatedAt": "2025-10-20T10:15:00Z",
       "openingHours": {
@@ -377,21 +339,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 6,
+      "address": "888 Sunset Boulevard, Los Angeles, CA 90028"
     },
     {
       "id": "prac-007",
       "name": "Greenwood Sports Medicine",
-      "address": {
-        "street": "234 Forest Lane",
-        "city": "Portland",
-        "state": "OR",
-        "zip": "97201"
-      },
       "phone": "(555) 789-0123",
       "fax": "(555) 789-0124",
       "email": "contact@greenwoodsports.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Kevin Thompson",
@@ -401,7 +358,6 @@
           "email": "kthompson@greenwoodsports.com"
         }
       ],
-      "notes": "Specializes in sports injuries",
       "createdAt": "2024-02-28T09:30:00Z",
       "updatedAt": "2025-10-17T14:00:00Z",
       "openingHours": {
@@ -440,21 +396,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 7,
+      "address": "234 Forest Lane, Portland, OR 97201"
     },
     {
       "id": "prac-008",
       "name": "Harbor Medical Group",
-      "address": {
-        "street": "567 Harbor Drive",
-        "city": "San Diego",
-        "state": "CA",
-        "zip": "92101"
-      },
       "phone": "(555) 890-1234",
       "fax": "(555) 890-1235",
       "email": "admin@harbormed.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Patricia Lee",
@@ -464,7 +415,6 @@
           "email": "plee@harbormed.com"
         }
       ],
-      "notes": "",
       "createdAt": "2024-03-15T10:30:00Z",
       "updatedAt": "2025-10-16T11:45:00Z",
       "openingHours": {
@@ -503,20 +453,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 8,
+      "address": "567 Harbor Drive, San Diego, CA 92101"
     },
     {
       "id": "prac-009",
       "name": "Parkside Family Physicians",
-      "address": {
-        "street": "890 Park Avenue",
-        "city": "New York",
-        "state": "NY",
-        "zip": "10028"
-      },
       "phone": "(555) 901-2345",
       "email": "office@parksidefp.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Daniel Kim",
@@ -525,7 +470,6 @@
           "extension": "8"
         }
       ],
-      "notes": "High volume practice, expect hold times",
       "createdAt": "2024-01-10T08:00:00Z",
       "updatedAt": "2025-10-15T15:20:00Z",
       "openingHours": {
@@ -564,21 +508,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 9,
+      "address": "890 Park Avenue, New York, NY 10028"
     },
     {
       "id": "prac-010",
       "name": "Meadowbrook Primary Care",
-      "address": {
-        "street": "123 Meadow Lane",
-        "city": "Austin",
-        "state": "TX",
-        "zip": "78701"
-      },
       "phone": "(555) 012-3456",
       "fax": "(555) 012-3457",
       "email": "info@meadowbrookpc.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Michelle Garcia",
@@ -588,7 +527,6 @@
           "email": "mgarcia@meadowbrookpc.com"
         }
       ],
-      "notes": "",
       "createdAt": "2024-04-20T09:00:00Z",
       "updatedAt": "2025-10-14T12:30:00Z",
       "openingHours": {
@@ -627,21 +565,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 10,
+      "address": "123 Meadow Lane, Austin, TX 78701"
     },
     {
       "id": "prac-011",
       "name": "Coastal Neurology Associates",
-      "address": {
-        "street": "456 Ocean Boulevard",
-        "city": "Miami",
-        "state": "FL",
-        "zip": "33139"
-      },
       "phone": "(555) 123-4568",
       "fax": "(555) 123-4569",
       "email": "office@coastalneuro.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Jessica Hernandez",
@@ -651,7 +584,6 @@
           "email": "jhernandez@coastalneuro.com"
         }
       ],
-      "notes": "Specializes in neurological disorders",
       "createdAt": "2024-05-10T10:00:00Z",
       "updatedAt": "2025-10-25T14:15:00Z",
       "openingHours": {
@@ -690,20 +622,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 11,
+      "address": "456 Ocean Boulevard, Miami, FL 33139"
     },
     {
       "id": "prac-012",
       "name": "Downtown Medical Clinic",
-      "address": {
-        "street": "789 Main Street Suite 200",
-        "city": "Seattle",
-        "state": "WA",
-        "zip": "98101"
-      },
       "phone": "(555) 234-5679",
       "email": "contact@downtownmedical.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Brian Anderson",
@@ -712,7 +639,6 @@
           "extension": "100"
         }
       ],
-      "notes": "Walk-in clinic, always busy",
       "createdAt": "2024-02-05T11:30:00Z",
       "updatedAt": "2025-10-24T09:45:00Z",
       "openingHours": {
@@ -751,21 +677,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 12,
+      "address": "789 Main Street Suite 200, Seattle, WA 98101"
     },
     {
       "id": "prac-013",
       "name": "Hillside Pediatric Center",
-      "address": {
-        "street": "234 Hill Road",
-        "city": "Boston",
-        "state": "MA",
-        "zip": "02108"
-      },
       "phone": "(555) 345-6780",
       "fax": "(555) 345-6781",
       "email": "admin@hillsidepeds.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Laura White",
@@ -775,7 +696,6 @@
           "email": "lwhite@hillsidepeds.com"
         }
       ],
-      "notes": "",
       "createdAt": "2024-03-22T08:45:00Z",
       "updatedAt": "2025-10-23T13:00:00Z",
       "openingHours": {
@@ -814,21 +734,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 13,
+      "address": "234 Hill Road, Boston, MA 02108"
     },
     {
       "id": "prac-014",
       "name": "Westside Cardiology",
-      "address": {
-        "street": "567 West Avenue",
-        "city": "Phoenix",
-        "state": "AZ",
-        "zip": "85001"
-      },
       "phone": "(555) 456-7891",
       "fax": "(555) 456-7892",
       "email": "info@westsidecardio.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Steven Taylor",
@@ -838,7 +753,6 @@
           "email": "staylor@westsidecardio.com"
         }
       ],
-      "notes": "Early bird practice, best to call in morning",
       "createdAt": "2024-04-05T07:30:00Z",
       "updatedAt": "2025-10-22T08:20:00Z",
       "openingHours": {
@@ -877,20 +791,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 14,
+      "address": "567 West Avenue, Phoenix, AZ 85001"
     },
     {
       "id": "prac-015",
       "name": "Eastside Family Medicine",
-      "address": {
-        "street": "890 East Street",
-        "city": "Philadelphia",
-        "state": "PA",
-        "zip": "19102"
-      },
       "phone": "(555) 567-8902",
       "email": "office@eastsidefm.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Nancy Clark",
@@ -899,7 +808,6 @@
           "extension": "5"
         }
       ],
-      "notes": "",
       "createdAt": "2024-05-15T09:15:00Z",
       "updatedAt": "2025-10-21T10:30:00Z",
       "openingHours": {
@@ -938,21 +846,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 15,
+      "address": "890 East Street, Philadelphia, PA 19102"
     },
     {
       "id": "prac-016",
       "name": "Central Valley Urgent Care",
-      "address": {
-        "street": "123 Central Drive",
-        "city": "Fresno",
-        "state": "CA",
-        "zip": "93721"
-      },
       "phone": "(555) 678-9013",
       "fax": "(555) 678-9014",
       "email": "contact@centralvalleyuc.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Carlos Ramirez",
@@ -962,7 +865,6 @@
           "email": "cramirez@centralvalleyuc.com"
         }
       ],
-      "notes": "Open 7 days a week",
       "createdAt": "2024-01-25T10:00:00Z",
       "updatedAt": "2025-10-20T11:00:00Z",
       "openingHours": {
@@ -1001,20 +903,15 @@
           "close": "20:00",
           "isClosed": false
         }
-      }
+      },
+      "practiceId": 16,
+      "address": "123 Central Drive, Fresno, CA 93721"
     },
     {
       "id": "prac-017",
       "name": "Northside ENT Specialists",
-      "address": {
-        "street": "456 North Boulevard",
-        "city": "Detroit",
-        "state": "MI",
-        "zip": "48201"
-      },
       "phone": "(555) 789-0124",
       "email": "admin@northsideent.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Emily Turner",
@@ -1024,7 +921,6 @@
           "email": "eturner@northsideent.com"
         }
       ],
-      "notes": "Specializes in ear, nose, and throat conditions",
       "createdAt": "2024-02-14T11:00:00Z",
       "updatedAt": "2025-10-19T14:45:00Z",
       "openingHours": {
@@ -1063,21 +959,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 17,
+      "address": "456 North Boulevard, Detroit, MI 48201"
     },
     {
       "id": "prac-018",
       "name": "Southside Rehabilitation Center",
-      "address": {
-        "street": "789 South Street",
-        "city": "Atlanta",
-        "state": "GA",
-        "zip": "30303"
-      },
       "phone": "(555) 890-1235",
       "fax": "(555) 890-1236",
       "email": "info@southsiderehab.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Mark Johnson",
@@ -1087,7 +978,6 @@
           "email": "mjohnson@southsiderehab.com"
         }
       ],
-      "notes": "Rehabilitation and physical therapy focus",
       "createdAt": "2024-03-10T08:30:00Z",
       "updatedAt": "2025-10-18T15:30:00Z",
       "openingHours": {
@@ -1126,20 +1016,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 18,
+      "address": "789 South Street, Atlanta, GA 30303"
     },
     {
       "id": "prac-019",
       "name": "Bayside Women's Health",
-      "address": {
-        "street": "234 Bay Street",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94102"
-      },
       "phone": "(555) 901-2346",
       "email": "office@baysidewh.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Dr. Rebecca Adams",
@@ -1148,7 +1033,6 @@
           "extension": "0"
         }
       ],
-      "notes": "Women's health specialists",
       "createdAt": "2024-04-18T09:45:00Z",
       "updatedAt": "2025-10-17T12:15:00Z",
       "openingHours": {
@@ -1187,21 +1071,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 19,
+      "address": "234 Bay Street, San Francisco, CA 94102"
     },
     {
       "id": "prac-020",
       "name": "Summit Dermatology",
-      "address": {
-        "street": "567 Summit Avenue",
-        "city": "Las Vegas",
-        "state": "NV",
-        "zip": "89101"
-      },
       "phone": "(555) 012-3457",
       "fax": "(555) 012-3458",
       "email": "contact@summitderm.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Dr. Andrew Martinez",
@@ -1211,7 +1090,6 @@
           "email": "amartinez@summitderm.com"
         }
       ],
-      "notes": "",
       "createdAt": "2024-05-20T10:30:00Z",
       "updatedAt": "2025-10-16T13:45:00Z",
       "openingHours": {
@@ -1250,20 +1128,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 20,
+      "address": "567 Summit Avenue, Las Vegas, NV 89101"
     },
     {
       "id": "prac-021",
       "name": "Gateway Pain Management",
-      "address": {
-        "street": "890 Gateway Plaza",
-        "city": "St. Louis",
-        "state": "MO",
-        "zip": "63101"
-      },
       "phone": "(555) 123-4570",
       "email": "admin@gatewaypain.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Rachel Green",
@@ -1272,7 +1145,6 @@
           "extension": "18"
         }
       ],
-      "notes": "Pain management and chronic pain treatment",
       "createdAt": "2024-01-30T11:00:00Z",
       "updatedAt": "2025-10-15T09:30:00Z",
       "openingHours": {
@@ -1311,21 +1183,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 21,
+      "address": "890 Gateway Plaza, St. Louis, MO 63101"
     },
     {
       "id": "prac-022",
       "name": "Riverbend Rheumatology",
-      "address": {
-        "street": "123 Riverbend Road",
-        "city": "Minneapolis",
-        "state": "MN",
-        "zip": "55401"
-      },
       "phone": "(555) 234-5680",
       "fax": "(555) 234-5681",
       "email": "info@riverbendrheum.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Dr. Susan Phillips",
@@ -1335,7 +1202,6 @@
           "email": "sphillips@riverbendrheum.com"
         }
       ],
-      "notes": "Rheumatology and autoimmune disorders",
       "createdAt": "2024-02-22T09:30:00Z",
       "updatedAt": "2025-10-14T11:45:00Z",
       "openingHours": {
@@ -1374,20 +1240,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 22,
+      "address": "123 Riverbend Road, Minneapolis, MN 55401"
     },
     {
       "id": "prac-023",
       "name": "Brookside Gastroenterology",
-      "address": {
-        "street": "456 Brook Lane",
-        "city": "Dallas",
-        "state": "TX",
-        "zip": "75201"
-      },
       "phone": "(555) 345-6782",
       "email": "office@brooksidegi.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Dr. James Wilson",
@@ -1396,7 +1257,6 @@
           "extension": "3"
         }
       ],
-      "notes": "",
       "createdAt": "2024-03-28T10:15:00Z",
       "updatedAt": "2025-10-13T14:20:00Z",
       "openingHours": {
@@ -1435,21 +1295,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 23,
+      "address": "456 Brook Lane, Dallas, TX 75201"
     },
     {
       "id": "prac-024",
       "name": "Maple Grove Allergy & Asthma",
-      "address": {
-        "street": "789 Maple Drive",
-        "city": "Charlotte",
-        "state": "NC",
-        "zip": "28201"
-      },
       "phone": "(555) 456-7893",
       "fax": "(555) 456-7894",
       "email": "contact@maplegrovea.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Dr. Linda Cooper",
@@ -1459,7 +1314,6 @@
           "email": "lcooper@maplegrovea.com"
         }
       ],
-      "notes": "Allergy testing and asthma treatment",
       "createdAt": "2024-04-25T08:45:00Z",
       "updatedAt": "2025-10-12T10:00:00Z",
       "openingHours": {
@@ -1498,20 +1352,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 24,
+      "address": "789 Maple Drive, Charlotte, NC 28201"
     },
     {
       "id": "prac-025",
       "name": "Oakwood Endocrinology",
-      "address": {
-        "street": "234 Oak Street",
-        "city": "Columbus",
-        "state": "OH",
-        "zip": "43201"
-      },
       "phone": "(555) 567-8904",
       "email": "admin@oakwoodendo.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Dr. Richard Brown",
@@ -1520,7 +1369,6 @@
           "extension": "5"
         }
       ],
-      "notes": "Diabetes and hormonal disorders",
       "createdAt": "2024-05-30T09:00:00Z",
       "updatedAt": "2025-10-11T12:30:00Z",
       "openingHours": {
@@ -1559,21 +1407,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 25,
+      "address": "234 Oak Street, Columbus, OH 43201"
     },
     {
       "id": "prac-026",
       "name": "Pinecrest Urology",
-      "address": {
-        "street": "567 Pine Street",
-        "city": "Nashville",
-        "state": "TN",
-        "zip": "37201"
-      },
       "phone": "(555) 678-9015",
       "fax": "(555) 678-9016",
       "email": "office@pinecresturology.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Dr. Michael Roberts",
@@ -1583,7 +1426,6 @@
           "email": "mroberts@pinecresturology.com"
         }
       ],
-      "notes": "",
       "createdAt": "2024-01-18T10:30:00Z",
       "updatedAt": "2025-10-10T15:00:00Z",
       "openingHours": {
@@ -1622,20 +1464,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 26,
+      "address": "567 Pine Street, Nashville, TN 37201"
     },
     {
       "id": "prac-027",
       "name": "Clearwater Pulmonology",
-      "address": {
-        "street": "890 Clear Lake Road",
-        "city": "Houston",
-        "state": "TX",
-        "zip": "77001"
-      },
       "phone": "(555) 789-0126",
       "email": "info@clearwaterpulm.com",
-      "preferredContactMethod": "phone",
       "keyContacts": [
         {
           "name": "Dr. Patricia Davis",
@@ -1644,7 +1481,6 @@
           "extension": "7"
         }
       ],
-      "notes": "Lung and respiratory specialists",
       "createdAt": "2024-02-08T11:15:00Z",
       "updatedAt": "2025-10-09T13:15:00Z",
       "openingHours": {
@@ -1683,21 +1519,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 27,
+      "address": "890 Clear Lake Road, Houston, TX 77001"
     },
     {
       "id": "prac-028",
       "name": "Fairview Nephrology",
-      "address": {
-        "street": "123 Fairview Avenue",
-        "city": "Indianapolis",
-        "state": "IN",
-        "zip": "46201"
-      },
       "phone": "(555) 890-1237",
       "fax": "(555) 890-1238",
       "email": "contact@fairviewneph.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Dr. David Miller",
@@ -1707,7 +1538,6 @@
           "email": "dmiller@fairviewneph.com"
         }
       ],
-      "notes": "Kidney disease specialists",
       "createdAt": "2024-03-16T08:00:00Z",
       "updatedAt": "2025-10-08T09:45:00Z",
       "openingHours": {
@@ -1746,20 +1576,15 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 28,
+      "address": "123 Fairview Avenue, Indianapolis, IN 46201"
     },
     {
       "id": "prac-029",
       "name": "Highland Hematology",
-      "address": {
-        "street": "456 Highland Road",
-        "city": "Milwaukee",
-        "state": "WI",
-        "zip": "53201"
-      },
       "phone": "(555) 901-2347",
       "email": "admin@highlandhem.com",
-      "preferredContactMethod": "email",
       "keyContacts": [
         {
           "name": "Dr. Karen Anderson",
@@ -1769,7 +1594,6 @@
           "email": "kanderson@highlandhem.com"
         }
       ],
-      "notes": "",
       "createdAt": "2024-04-10T09:30:00Z",
       "updatedAt": "2025-10-07T11:00:00Z",
       "openingHours": {
@@ -1808,21 +1632,16 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 29,
+      "address": "456 Highland Road, Milwaukee, WI 53201"
     },
     {
       "id": "prac-030",
       "name": "Cedar Ridge Infectious Disease",
-      "address": {
-        "street": "789 Cedar Ridge Drive",
-        "city": "Kansas City",
-        "state": "MO",
-        "zip": "64101"
-      },
       "phone": "(555) 012-3459",
       "fax": "(555) 012-3460",
       "email": "office@cedarridgeid.com",
-      "preferredContactMethod": "fax",
       "keyContacts": [
         {
           "name": "Dr. Thomas Lee",
@@ -1832,7 +1651,6 @@
           "email": "tlee@cedarridgeid.com"
         }
       ],
-      "notes": "Infectious disease specialists",
       "createdAt": "2024-05-05T10:00:00Z",
       "updatedAt": "2025-10-06T14:30:00Z",
       "openingHours": {
@@ -1871,579 +1689,360 @@
           "close": "00:00",
           "isClosed": true
         }
-      }
+      },
+      "practiceId": 30,
+      "address": "789 Cedar Ridge Drive, Kansas City, MO 64101"
     }
   ],
   "doctors": [
     {
       "id": "doc-001",
       "name": "Dr. Jane Smith",
-      "practiceIds": [
-        "prac-001",
-        "prac-006"
-      ],
       "createdAt": "2024-01-15T10:00:00Z",
       "updatedAt": "2024-01-15T10:00:00Z",
-      "facilities": [
-        "ER Hamburg"
-      ],
-      "address": {
-        "street": "850 Medical Plaza",
-        "city": "Springfield",
-        "state": "IL",
-        "zip": "62701"
-      },
       "phone": "(555) 590-2077",
       "email": "jane.smith@medical.com",
-      "specialty": "Physical Therapy",
-      "notes": "Available for consultations"
+      "arztId": 1,
+      "facilities": [
+        "ER Leipzig"
+      ],
+      "practiceId": "prac-001"
     },
     {
       "id": "doc-002",
       "name": "Dr. Bob Jones",
-      "practiceIds": [
-        "prac-001"
-      ],
       "createdAt": "2024-01-15T10:00:00Z",
       "updatedAt": "2024-01-15T10:00:00Z",
-      "facilities": [
-        "ER Leipzig",
-        "Care Home Oakwood"
-      ],
-      "address": {
-        "street": "650 Medical Plaza",
-        "city": "Springfield",
-        "state": "IL",
-        "zip": "62701"
-      },
       "phone": "(555) 476-9646",
       "email": "bob.jones@medical.com",
-      "specialty": "Geriatrics"
+      "arztId": 2,
+      "facilities": [
+        "ER München"
+      ],
+      "practiceId": "prac-001"
     },
     {
       "id": "doc-003",
       "name": "Dr. Amy Wilson",
-      "practiceIds": [
-        "prac-001",
-        "prac-002"
-      ],
       "createdAt": "2024-01-15T10:00:00Z",
       "updatedAt": "2024-01-15T10:00:00Z",
-      "facilities": [
-        "ER Leipzig",
-        "ER Hamburg"
-      ],
-      "address": {
-        "street": "683 Medical Plaza",
-        "city": "Springfield",
-        "state": "IL",
-        "zip": "62701"
-      },
       "phone": "(555) 822-1677",
       "email": "amy.wilson@medical.com",
-      "specialty": "Orthopedics"
+      "arztId": 3,
+      "facilities": [
+        "ER München",
+        "ER Berlin"
+      ],
+      "practiceId": "prac-001"
     },
     {
       "id": "doc-004",
       "name": "Dr. David Chen",
-      "practiceIds": [
-        "prac-002",
-        "prac-003"
-      ],
       "createdAt": "2024-02-10T09:00:00Z",
       "updatedAt": "2024-02-10T09:00:00Z",
-      "facilities": [
-        "Care Home Oakwood",
-        "Care Home Sunrise"
-      ],
-      "address": {
-        "street": "372 Medical Plaza",
-        "city": "Riverside",
-        "state": "CA",
-        "zip": "92501"
-      },
       "phone": "(555) 566-6550",
       "email": "david.chen@medical.com",
-      "specialty": "Cardiology",
-      "notes": "Available for consultations"
+      "arztId": 4,
+      "facilities": [
+        "ER Dortmund"
+      ],
+      "practiceId": "prac-002"
     },
     {
       "id": "doc-005",
       "name": "Dr. Emily Martinez",
-      "practiceIds": [
-        "prac-003"
-      ],
       "createdAt": "2024-03-05T12:00:00Z",
       "updatedAt": "2024-03-05T12:00:00Z",
-      "facilities": [
-        "Care Home Oakwood",
-        "ER Frankfurt",
-        "ER Stuttgart"
-      ],
-      "address": {
-        "street": "905 Medical Plaza",
-        "city": "San Jose",
-        "state": "CA",
-        "zip": "95110"
-      },
       "phone": "(555) 774-5034",
       "email": "emily.martinez@medical.com",
-      "specialty": "ENT"
+      "arztId": 5,
+      "facilities": [
+        "ER Dortmund",
+        "ER Düsseldorf"
+      ],
+      "practiceId": "prac-003"
     },
     {
       "id": "doc-006",
       "name": "Dr. Michael Brown",
-      "practiceIds": [
-        "prac-004",
-        "prac-013"
-      ],
       "createdAt": "2024-01-20T08:30:00Z",
       "updatedAt": "2024-01-20T08:30:00Z",
-      "facilities": [
-        "Care Home Golden Years",
-        "ER Frankfurt"
-      ],
-      "address": {
-        "street": "504 Medical Plaza",
-        "city": "Denver",
-        "state": "CO",
-        "zip": "80202"
-      },
       "phone": "(555) 229-4715",
       "email": "michael.brown@medical.com",
-      "specialty": "Geriatrics"
+      "arztId": 6,
+      "facilities": [
+        "ER Bremen"
+      ],
+      "practiceId": "prac-004"
     },
     {
       "id": "doc-007",
       "name": "Dr. Sarah Davis",
-      "practiceIds": [
-        "prac-005"
-      ],
       "createdAt": "2024-04-12T10:00:00Z",
       "updatedAt": "2024-04-12T10:00:00Z",
-      "facilities": [
-        "Care Home Riverside",
-        "ER Munich"
-      ],
-      "address": {
-        "street": "648 Medical Plaza",
-        "city": "Chicago",
-        "state": "IL",
-        "zip": "60611"
-      },
       "phone": "(555) 342-6397",
       "email": "sarah.davis@medical.com",
-      "specialty": "Orthopedics",
-      "notes": "Available for consultations"
+      "arztId": 7,
+      "facilities": [
+        "ER Düsseldorf",
+        "ER Dresden",
+        "ER Bremen"
+      ],
+      "practiceId": "prac-005"
     },
     {
       "id": "doc-008",
       "name": "Dr. William Rodriguez",
-      "practiceIds": [
-        "prac-006",
-        "prac-015"
-      ],
       "createdAt": "2024-05-01T11:00:00Z",
       "updatedAt": "2024-05-01T11:00:00Z",
-      "facilities": [
-        "ER Frankfurt",
-        "Care Home Sunrise",
-        "Care Home Riverside"
-      ],
-      "address": {
-        "street": "305 Medical Plaza",
-        "city": "Los Angeles",
-        "state": "CA",
-        "zip": "90028"
-      },
       "phone": "(555) 657-6003",
       "email": "william.rodriguez@medical.com",
-      "specialty": "Physical Therapy"
+      "arztId": 8,
+      "facilities": [
+        "ER Köln",
+        "ER Dortmund"
+      ],
+      "practiceId": "prac-006"
     },
     {
       "id": "doc-009",
       "name": "Dr. Lisa Thompson",
-      "practiceIds": [
-        "prac-007"
-      ],
       "createdAt": "2024-02-28T09:30:00Z",
       "updatedAt": "2024-02-28T09:30:00Z",
-      "facilities": [
-        "Care Home Sunrise",
-        "ER Munich",
-        "Care Home Oakwood"
-      ],
-      "address": {
-        "street": "766 Medical Plaza",
-        "city": "Portland",
-        "state": "OR",
-        "zip": "97201"
-      },
       "phone": "(555) 456-1469",
       "email": "lisa.thompson@medical.com",
-      "specialty": "Pediatrics"
+      "arztId": 9,
+      "facilities": [
+        "ER Dresden",
+        "ER Hamburg"
+      ],
+      "practiceId": "prac-007"
     },
     {
       "id": "doc-010",
       "name": "Dr. James Lee",
-      "practiceIds": [
-        "prac-008",
-        "prac-012"
-      ],
       "createdAt": "2024-03-15T10:30:00Z",
       "updatedAt": "2024-03-15T10:30:00Z",
-      "facilities": [
-        "ER Berlin",
-        "ER Dresden"
-      ],
-      "address": {
-        "street": "877 Medical Plaza",
-        "city": "San Diego",
-        "state": "CA",
-        "zip": "92101"
-      },
       "phone": "(555) 584-9335",
       "email": "james.lee@medical.com",
-      "specialty": "Pediatrics",
-      "notes": "Available for consultations"
+      "arztId": 10,
+      "facilities": [
+        "ER Düsseldorf"
+      ],
+      "practiceId": "prac-008"
     },
     {
       "id": "doc-011",
       "name": "Dr. Jennifer Kim",
-      "practiceIds": [
-        "prac-009"
-      ],
       "createdAt": "2024-01-10T08:00:00Z",
       "updatedAt": "2024-01-10T08:00:00Z",
-      "facilities": [
-        "Care Home Golden Years",
-        "Care Home Oakwood"
-      ],
-      "address": {
-        "street": "57 Medical Plaza",
-        "city": "New York",
-        "state": "NY",
-        "zip": "10028"
-      },
       "phone": "(555) 165-7353",
       "email": "jennifer.kim@medical.com",
-      "specialty": "Pediatrics"
+      "arztId": 11,
+      "facilities": [
+        "ER Bremen",
+        "ER Köln",
+        "ER Dortmund"
+      ],
+      "practiceId": "prac-009"
     },
     {
       "id": "doc-012",
       "name": "Dr. Robert Garcia",
-      "practiceIds": [
-        "prac-010",
-        "prac-025"
-      ],
       "createdAt": "2024-04-20T09:00:00Z",
       "updatedAt": "2024-04-20T09:00:00Z",
-      "facilities": [
-        "Care Home Sunrise",
-        "Care Home Oakwood",
-        "Care Home Riverside"
-      ],
-      "address": {
-        "street": "436 Medical Plaza",
-        "city": "Austin",
-        "state": "TX",
-        "zip": "78701"
-      },
       "phone": "(555) 292-0520",
       "email": "robert.garcia@medical.com",
-      "specialty": "Family Medicine"
+      "arztId": 12,
+      "facilities": [
+        "ER Frankfurt",
+        "ER Leipzig"
+      ],
+      "practiceId": "prac-010"
     },
     {
       "id": "doc-013",
       "name": "Dr. Mary Hernandez",
-      "practiceIds": [
-        "prac-011"
-      ],
       "createdAt": "2024-05-10T10:00:00Z",
       "updatedAt": "2024-05-10T10:00:00Z",
-      "facilities": [
-        "ER Frankfurt",
-        "Care Home Pleasant Valley"
-      ],
-      "address": {
-        "street": "379 Medical Plaza",
-        "city": "Miami",
-        "state": "FL",
-        "zip": "33139"
-      },
       "phone": "(555) 978-8889",
       "email": "mary.hernandez@medical.com",
-      "specialty": "ENT",
-      "notes": "Available for consultations"
+      "arztId": 13,
+      "facilities": [
+        "ER Stuttgart",
+        "ER Berlin",
+        "ER Bremen"
+      ],
+      "practiceId": "prac-011"
     },
     {
       "id": "doc-014",
       "name": "Dr. Charles Anderson",
-      "practiceIds": [
-        "prac-014"
-      ],
       "createdAt": "2024-04-05T07:30:00Z",
       "updatedAt": "2024-04-05T07:30:00Z",
-      "facilities": [
-        "ER Frankfurt"
-      ],
-      "address": {
-        "street": "756 Medical Plaza",
-        "city": "Phoenix",
-        "state": "AZ",
-        "zip": "85001"
-      },
       "phone": "(555) 224-7709",
       "email": "charles.anderson@medical.com",
-      "specialty": "Geriatrics"
+      "arztId": 14,
+      "facilities": [
+        "ER Dresden",
+        "ER Stuttgart",
+        "ER Hannover"
+      ],
+      "practiceId": "prac-014"
     },
     {
       "id": "doc-015",
       "name": "Dr. Barbara White",
-      "practiceIds": [
-        "prac-016"
-      ],
       "createdAt": "2024-01-25T10:00:00Z",
       "updatedAt": "2024-01-25T10:00:00Z",
-      "facilities": [
-        "ER Berlin",
-        "ER Frankfurt"
-      ],
-      "address": {
-        "street": "732 Medical Plaza",
-        "city": "Fresno",
-        "state": "CA",
-        "zip": "93721"
-      },
       "phone": "(555) 950-9972",
       "email": "barbara.white@medical.com",
-      "specialty": "Sports Medicine"
+      "arztId": 15,
+      "facilities": [
+        "ER Dortmund"
+      ],
+      "practiceId": "prac-016"
     },
     {
       "id": "doc-016",
       "name": "Dr. Joseph Taylor",
-      "practiceIds": [
-        "prac-017"
-      ],
       "createdAt": "2024-02-14T11:00:00Z",
       "updatedAt": "2024-02-14T11:00:00Z",
-      "facilities": [
-        "Care Home Sunrise",
-        "ER Frankfurt"
-      ],
-      "address": {
-        "street": "474 Medical Plaza",
-        "city": "Detroit",
-        "state": "MI",
-        "zip": "48201"
-      },
       "phone": "(555) 560-5069",
       "email": "joseph.taylor@medical.com",
-      "specialty": "Orthopedics",
-      "notes": "Available for consultations"
+      "arztId": 16,
+      "facilities": [
+        "ER Düsseldorf",
+        "ER München"
+      ],
+      "practiceId": "prac-017"
     },
     {
       "id": "doc-017",
       "name": "Dr. Susan Clark",
-      "practiceIds": [
-        "prac-018"
-      ],
       "createdAt": "2024-03-10T08:30:00Z",
       "updatedAt": "2024-03-10T08:30:00Z",
-      "facilities": [
-        "Care Home Sunrise",
-        "ER Berlin"
-      ],
-      "address": {
-        "street": "791 Medical Plaza",
-        "city": "Atlanta",
-        "state": "GA",
-        "zip": "30303"
-      },
       "phone": "(555) 568-3870",
       "email": "susan.clark@medical.com",
-      "specialty": "Orthopedics"
+      "arztId": 17,
+      "facilities": [
+        "ER Stuttgart",
+        "ER München"
+      ],
+      "practiceId": "prac-018"
     },
     {
       "id": "doc-018",
       "name": "Dr. Thomas Moore",
-      "practiceIds": [
-        "prac-019"
-      ],
       "createdAt": "2024-04-18T09:45:00Z",
       "updatedAt": "2024-04-18T09:45:00Z",
-      "facilities": [
-        "ER Dresden"
-      ],
-      "address": {
-        "street": "323 Medical Plaza",
-        "city": "San Francisco",
-        "state": "CA",
-        "zip": "94102"
-      },
       "phone": "(555) 181-9504",
       "email": "thomas.moore@medical.com",
-      "specialty": "Orthopedics"
+      "arztId": 18,
+      "facilities": [
+        "ER Leipzig",
+        "ER Düsseldorf"
+      ],
+      "practiceId": "prac-019"
     },
     {
       "id": "doc-019",
       "name": "Dr. Nancy Turner",
-      "practiceIds": [
-        "prac-020",
-        "prac-024"
-      ],
       "createdAt": "2024-05-20T10:30:00Z",
       "updatedAt": "2024-05-20T10:30:00Z",
-      "facilities": [
-        "Care Home Oakwood",
-        "ER Stuttgart",
-        "Care Home Riverside"
-      ],
-      "address": {
-        "street": "21 Medical Plaza",
-        "city": "Las Vegas",
-        "state": "NV",
-        "zip": "89101"
-      },
       "phone": "(555) 751-0290",
       "email": "nancy.turner@medical.com",
-      "specialty": "Pediatrics",
-      "notes": "Available for consultations"
+      "arztId": 19,
+      "facilities": [
+        "ER Frankfurt"
+      ],
+      "practiceId": "prac-020"
     },
     {
       "id": "doc-020",
       "name": "Dr. Daniel Green",
-      "practiceIds": [
-        "prac-021"
-      ],
       "createdAt": "2024-01-30T11:00:00Z",
       "updatedAt": "2024-01-30T11:00:00Z",
-      "facilities": [
-        "Care Home Pleasant Valley",
-        "Care Home Sunrise"
-      ],
-      "address": {
-        "street": "503 Medical Plaza",
-        "city": "St. Louis",
-        "state": "MO",
-        "zip": "63101"
-      },
       "phone": "(555) 598-8299",
       "email": "daniel.green@medical.com",
-      "specialty": "Orthopedics"
+      "arztId": 20,
+      "facilities": [
+        "ER Berlin",
+        "ER Dresden"
+      ],
+      "practiceId": "prac-021"
     },
     {
       "id": "doc-021",
       "name": "Dr. Karen Phillips",
-      "practiceIds": [
-        "prac-022"
-      ],
       "createdAt": "2024-02-22T09:30:00Z",
       "updatedAt": "2024-02-22T09:30:00Z",
-      "facilities": [
-        "ER Frankfurt"
-      ],
-      "address": {
-        "street": "836 Medical Plaza",
-        "city": "Minneapolis",
-        "state": "MN",
-        "zip": "55401"
-      },
       "phone": "(555) 857-1058",
       "email": "karen.phillips@medical.com",
-      "specialty": "Physical Therapy"
+      "arztId": 21,
+      "facilities": [
+        "ER München",
+        "ER Dresden",
+        "ER Hannover"
+      ],
+      "practiceId": "prac-022"
     },
     {
       "id": "doc-022",
       "name": "Dr. Mark Wilson",
-      "practiceIds": [
-        "prac-023"
-      ],
       "createdAt": "2024-03-28T10:15:00Z",
       "updatedAt": "2024-03-28T10:15:00Z",
-      "facilities": [
-        "ER Munich",
-        "ER Stuttgart"
-      ],
-      "address": {
-        "street": "59 Medical Plaza",
-        "city": "Dallas",
-        "state": "TX",
-        "zip": "75201"
-      },
       "phone": "(555) 592-4319",
       "email": "mark.wilson@medical.com",
-      "specialty": "Pediatrics",
-      "notes": "Available for consultations"
+      "arztId": 22,
+      "facilities": [
+        "ER Stuttgart"
+      ],
+      "practiceId": "prac-023"
     },
     {
       "id": "doc-023",
       "name": "Dr. Patricia Cooper",
-      "practiceIds": [
-        "prac-026"
-      ],
       "createdAt": "2024-01-18T10:30:00Z",
       "updatedAt": "2024-01-18T10:30:00Z",
-      "facilities": [
-        "ER Stuttgart",
-        "ER Dresden"
-      ],
-      "address": {
-        "street": "992 Medical Plaza",
-        "city": "Nashville",
-        "state": "TN",
-        "zip": "37201"
-      },
       "phone": "(555) 963-7400",
       "email": "patricia.cooper@medical.com",
-      "specialty": "Pediatrics"
+      "arztId": 23,
+      "facilities": [
+        "ER Düsseldorf",
+        "ER Bremen",
+        "ER Leipzig"
+      ],
+      "practiceId": "prac-026"
     },
     {
       "id": "doc-024",
       "name": "Dr. Steven Roberts",
-      "practiceIds": [
-        "prac-027"
-      ],
       "createdAt": "2024-02-08T11:15:00Z",
       "updatedAt": "2024-02-08T11:15:00Z",
-      "facilities": [
-        "Care Home Riverside",
-        "ER Stuttgart",
-        "Care Home Sunrise"
-      ],
-      "address": {
-        "street": "418 Medical Plaza",
-        "city": "Houston",
-        "state": "TX",
-        "zip": "77001"
-      },
       "phone": "(555) 503-5820",
       "email": "steven.roberts@medical.com",
-      "specialty": "Cardiology"
+      "arztId": 24,
+      "facilities": [
+        "ER Dortmund",
+        "ER Bremen"
+      ],
+      "practiceId": "prac-027"
     },
     {
       "id": "doc-025",
       "name": "Dr. Linda Miller",
-      "practiceIds": [
-        "prac-028"
-      ],
       "createdAt": "2024-03-16T08:00:00Z",
       "updatedAt": "2024-03-16T08:00:00Z",
-      "facilities": [
-        "ER Berlin",
-        "ER Frankfurt",
-        "Care Home Golden Years"
-      ],
-      "address": {
-        "street": "138 Medical Plaza",
-        "city": "Indianapolis",
-        "state": "IN",
-        "zip": "46201"
-      },
       "phone": "(555) 819-3751",
       "email": "linda.miller@medical.com",
-      "specialty": "Physical Therapy",
-      "notes": "Available for consultations"
+      "arztId": 25,
+      "facilities": [
+        "ER Bremen",
+        "ER Dortmund",
+        "ER Hamburg"
+      ],
+      "practiceId": "prac-028"
     }
   ],
   "vos": [

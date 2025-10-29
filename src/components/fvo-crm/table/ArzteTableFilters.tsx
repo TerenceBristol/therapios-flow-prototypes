@@ -1,20 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Practice } from '@/types';
 
-export interface DoctorsFilterOptions {
+export interface ArzteFilterOptions {
   practiceFilter: string | null;
   facilityFilter: string | null;
   sortBy: 'name' | 'practiceCount' | 'facilityCount';
 }
 
-interface DoctorsTableFiltersProps {
-  filters: DoctorsFilterOptions;
-  onFiltersChange: (filters: DoctorsFilterOptions) => void;
+interface ArzteTableFiltersProps {
+  filters: ArzteFilterOptions;
+  onFiltersChange: (filters: ArzteFilterOptions) => void;
   practices: Practice[];
   facilities: string[];
 }
 
-const DoctorsTableFilters: React.FC<DoctorsTableFiltersProps> = ({
+const ArzteTableFilters: React.FC<ArzteTableFiltersProps> = ({
   filters,
   onFiltersChange,
   practices,
@@ -55,7 +55,7 @@ const DoctorsTableFilters: React.FC<DoctorsTableFiltersProps> = ({
     });
   };
 
-  const handleSortChange = (sortBy: DoctorsFilterOptions['sortBy']) => {
+  const handleSortChange = (sortBy: ArzteFilterOptions['sortBy']) => {
     onFiltersChange({
       ...filters,
       sortBy
@@ -119,15 +119,15 @@ const DoctorsTableFilters: React.FC<DoctorsTableFiltersProps> = ({
               <h4 className="text-sm font-semibold text-foreground mb-2">Sort by</h4>
               <div className="space-y-1">
                 {[
-                  { value: 'name', label: '⬆ Doctor Name (A-Z)' },
+                  { value: 'name', label: '⬆ Arzt Name (A-Z)' },
                   { value: 'practiceCount', label: '⬇ Number of Practices (High to Low)' },
-                  { value: 'facilityCount', label: '⬇ Number of Facilities (High to Low)' }
+                  { value: 'facilityCount', label: '⬇ Number of ERs (High to Low)' }
                 ].map(option => (
                   <label key={option.value} className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="radio"
                       checked={filters.sortBy === option.value}
-                      onChange={() => handleSortChange(option.value as DoctorsFilterOptions['sortBy'])}
+                      onChange={() => handleSortChange(option.value as ArzteFilterOptions['sortBy'])}
                       className="w-4 h-4 text-primary focus:ring-primary"
                     />
                     <span className="text-sm text-foreground">{option.label}</span>
@@ -142,4 +142,4 @@ const DoctorsTableFilters: React.FC<DoctorsTableFiltersProps> = ({
   );
 };
 
-export default DoctorsTableFilters;
+export default ArzteTableFilters;

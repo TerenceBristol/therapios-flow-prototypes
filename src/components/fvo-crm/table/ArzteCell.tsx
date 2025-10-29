@@ -1,44 +1,44 @@
 import React, { useState } from 'react';
-import { PracticeDoctor } from '@/types';
+import { Arzt } from '@/types';
 
-interface DoctorsCellProps {
-  doctors: PracticeDoctor[];
+interface ArzteCellProps {
+  doctors: Arzt[];
 }
 
-const DoctorsCell: React.FC<DoctorsCellProps> = ({ doctors }) => {
-  const [hoveredDoctor, setHoveredDoctor] = useState<string | null>(null);
+const ArzteCell: React.FC<ArzteCellProps> = ({ doctors }) => {
+  const [hoveredArzt, setHoveredArzt] = useState<string | null>(null);
 
   if (doctors.length === 0) {
-    return <div className="text-sm text-muted-foreground">No doctors</div>;
+    return <div className="text-sm text-muted-foreground">No ärzte</div>;
   }
 
-  // Display first 2 doctors, then show "+X more"
+  // Display first 2 ärzte, then show "+X more"
   const displayDoctors = doctors.slice(0, 2);
   const remainingCount = doctors.length - 2;
 
   return (
     <div className="text-sm text-foreground">
-      {displayDoctors.map((doctor, index) => (
+      {displayDoctors.map((arzt, index) => (
         <div
-          key={doctor.id}
+          key={arzt.id}
           className="relative inline-block"
-          onMouseEnter={() => setHoveredDoctor(doctor.id)}
-          onMouseLeave={() => setHoveredDoctor(null)}
+          onMouseEnter={() => setHoveredArzt(arzt.id)}
+          onMouseLeave={() => setHoveredArzt(null)}
         >
           <span className="hover:text-primary cursor-default">
-            {doctor.name.replace('Dr. ', '')}
+            {arzt.name.replace('Dr. ', '')}
           </span>
           {index < displayDoctors.length - 1 && remainingCount === 0 && (
             <span className="text-muted-foreground">, </span>
           )}
 
           {/* Tooltip */}
-          {hoveredDoctor === doctor.id && doctor.facilities.length > 0 && (
+          {hoveredArzt === arzt.id && arzt.facilities.length > 0 && (
             <div className="absolute z-50 left-0 top-full mt-1 bg-background border border-border rounded-md shadow-lg p-2 whitespace-nowrap">
               <div className="text-xs font-semibold text-foreground mb-1">
-                Facilities:
+                ERs:
               </div>
-              {doctor.facilities.map((facility, idx) => (
+              {arzt.facilities.map((facility, idx) => (
                 <div key={idx} className="text-xs text-muted-foreground">
                   • {facility}
                 </div>
@@ -54,4 +54,4 @@ const DoctorsCell: React.FC<DoctorsCellProps> = ({ doctors }) => {
   );
 };
 
-export default DoctorsCell;
+export default ArzteCell;

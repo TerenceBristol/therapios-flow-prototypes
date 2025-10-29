@@ -245,33 +245,33 @@ export interface PracticeAddress {
 // Practice entity (main CRM entity)
 export interface Practice {
   id: string;
+  practiceId?: number; // Manual numeric ID
   name: string;
-  address: PracticeAddress;
+  address: string; // Combined address field
   phone: string;
   fax?: string;
   email?: string;
   openingHours: OpeningHours;
-  preferredContactMethod: PreferredContactMethod;
   keyContacts: PracticeKeyContact[];
-  notes?: string;
   createdAt: string;
   updatedAt: string;
 }
 
-// Doctor entity
-export interface PracticeDoctor {
+// Arzt entity (formerly Doctor)
+export interface Arzt {
   id: string;
+  arztId?: number; // Manual numeric ID
   name: string;
-  practiceIds: string[];
-  facilities: string[]; // List of facility/ER names (Einrichtung)
-  address?: PracticeAddress;
+  practiceId?: string;
+  facilities: string[]; // List of ER names only
   phone?: string;
   email?: string;
-  specialty?: string;
-  notes?: string;
   createdAt: string;
   updatedAt: string;
 }
+
+// Alias for backward compatibility (will be removed after refactoring)
+export type PracticeDoctor = Arzt;
 
 // VO (Verification Order) entity - READ ONLY
 export interface PracticeVO {
