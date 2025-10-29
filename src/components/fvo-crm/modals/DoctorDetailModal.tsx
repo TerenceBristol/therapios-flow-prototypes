@@ -23,10 +23,6 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
   const [specialty, setSpecialty] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [street, setStreet] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
-  const [zip, setZip] = useState('');
   const [practiceId, setPracticeId] = useState<string | undefined>(undefined);
   const [facilities, setFacilities] = useState<string[]>([]);
   const [notes, setNotes] = useState('');
@@ -39,10 +35,6 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
       setSpecialty(doctor.specialty || '');
       setPhone(doctor.phone || '');
       setEmail(doctor.email || '');
-      setStreet(doctor.address?.street || '');
-      setCity(doctor.address?.city || '');
-      setState(doctor.address?.state || '');
-      setZip(doctor.address?.zip || '');
       setPracticeId(doctor.practiceId);
       setFacilities(doctor.facilities);
       setNotes(doctor.notes || '');
@@ -54,15 +46,10 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
   const handleSave = () => {
     if (!doctor) return;
 
-    const address: PracticeAddress | undefined = street || city || state || zip
-      ? { street, city, state, zip }
-      : undefined;
-
     onSave({
       name,
       practiceId,
       facilities,
-      address,
       phone: phone || undefined,
       email: email || undefined,
       specialty: specialty || undefined,
@@ -79,10 +66,6 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
       setSpecialty(doctor.specialty || '');
       setPhone(doctor.phone || '');
       setEmail(doctor.email || '');
-      setStreet(doctor.address?.street || '');
-      setCity(doctor.address?.city || '');
-      setState(doctor.address?.state || '');
-      setZip(doctor.address?.zip || '');
       setPracticeId(doctor.practiceId);
       setFacilities(doctor.facilities);
       setNotes(doctor.notes || '');
@@ -195,52 +178,6 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    Street Address
-                  </label>
-                  <input
-                    type="text"
-                    value={street}
-                    onChange={(e) => setStreet(e.target.value)}
-                    className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                </div>
-                <div className="grid grid-cols-3 gap-3">
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1">
-                      City
-                    </label>
-                    <input
-                      type="text"
-                      value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1">
-                      State
-                    </label>
-                    <input
-                      type="text"
-                      value={state}
-                      onChange={(e) => setState(e.target.value)}
-                      className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1">
-                      ZIP
-                    </label>
-                    <input
-                      type="text"
-                      value={zip}
-                      onChange={(e) => setZip(e.target.value)}
                       className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                   </div>
