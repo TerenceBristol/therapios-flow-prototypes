@@ -1,12 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import PracticeForm from '@/components/fvo-crm/forms/PracticeForm';
-import { Practice } from '@/types';
+import { Practice, Arzt } from '@/types';
+
+// Import mock data
+import mockData from '@/data/fvoCRMData.json';
 
 export default function NewPracticePage() {
   const router = useRouter();
+  const [doctors] = useState<Arzt[]>(mockData.doctors as Arzt[]);
 
   const handleSave = (practiceData: Omit<Practice, 'id' | 'createdAt' | 'updatedAt'>) => {
     // TODO: Implement save logic (will be handled by dashboard refactor)
@@ -28,6 +32,7 @@ export default function NewPracticePage() {
 
   return (
     <PracticeForm
+      doctors={doctors}
       onSave={handleSave}
       onCancel={handleCancel}
       isEditing={false}

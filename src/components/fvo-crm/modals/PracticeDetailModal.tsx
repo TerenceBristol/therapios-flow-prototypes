@@ -11,7 +11,6 @@ import {
 import OpeningHoursDisplay from '../OpeningHoursDisplay';
 import OpeningHoursEditor from '../OpeningHoursEditor';
 import ActivityLogSection from '../ActivityLogSection';
-import QuickStatsSection from '../QuickStatsSection';
 import { createDefaultOpeningHours } from '@/utils/openingHoursUtils';
 
 interface PracticeDetailModalProps {
@@ -294,12 +293,6 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
                       <span className="text-foreground">{practice.email}</span>
                     </div>
                   )}
-                  <div className="flex items-start gap-2">
-                    <span className="text-lg">⭐</span>
-                    <span className="text-foreground">
-                      Preferred: {practice.preferredContactMethod === 'phone' ? '📞 Phone' : practice.preferredContactMethod === 'fax' ? '📠 Fax' : '📧 Email'}
-                    </span>
-                  </div>
                 </div>
               )}
             </div>
@@ -370,12 +363,6 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
 
             {/* Divider */}
             <div className="border-t border-border my-6" />
-
-            {/* Quick Stats */}
-            {!isEditMode && <QuickStatsSection practice={practice} />}
-
-            {/* Divider */}
-            {!isEditMode && <div className="border-t border-border my-6" />}
 
             {/* Notes */}
             <div className="mb-6">

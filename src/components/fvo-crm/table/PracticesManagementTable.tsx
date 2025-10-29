@@ -179,6 +179,9 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
         <table className="w-full">
           <thead className="bg-muted sticky top-0">
             <tr>
+              <th className="px-4 py-3 text-left text-sm font-semibold text-foreground w-20">
+                ID
+              </th>
               <th
                 onClick={() => handleSort('name')}
                 className="px-4 py-3 text-left text-sm font-semibold text-foreground cursor-pointer hover:bg-muted/80"
@@ -197,14 +200,11 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
               >
                 Address{getSortIndicator('city')}
               </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
-                Hours
-              </th>
               <th
                 onClick={() => handleSort('doctors')}
                 className="px-4 py-3 text-left text-sm font-semibold text-foreground cursor-pointer hover:bg-muted/80"
               >
-                Ärzte{getSortIndicator('doctors')}
+                Arzt{getSortIndicator('doctors')}
               </th>
               <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
                 Actions
@@ -214,7 +214,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
           <tbody>
             {sortedPractices.length === 0 ? (
               <tr>
-                <td colSpan={6} className="px-4 py-12 text-center text-muted-foreground">
+                <td colSpan={5} className="px-4 py-12 text-center text-muted-foreground">
                   <div className="text-4xl mb-2">🔍</div>
                   <div>No practices found</div>
                   {(searchQuery || doctorFilter) && (
@@ -239,6 +239,11 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
                     key={practice.id}
                     className="border-b border-border hover:bg-muted/50 transition-colors"
                   >
+                    {/* ID */}
+                    <td className="px-4 py-3">
+                      <div className="text-sm text-muted-foreground">{practice.practiceId || '-'}</div>
+                    </td>
+
                     {/* Name */}
                     <td className="px-4 py-3">
                       <div className="font-medium text-foreground">{practice.name}</div>
@@ -256,14 +261,9 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
                       </div>
                     </td>
 
-                    {/* Hours */}
+                    {/* Arzt Count */}
                     <td className="px-4 py-3">
-                      <TodayHoursCell openingHours={practice.openingHours} />
-                    </td>
-
-                    {/* Doctors */}
-                    <td className="px-4 py-3">
-                      <ArztCell doctors={practiceDoctors} />
+                      <div className="text-sm text-foreground">{practiceDoctors.length}</div>
                     </td>
 
                     {/* Actions */}

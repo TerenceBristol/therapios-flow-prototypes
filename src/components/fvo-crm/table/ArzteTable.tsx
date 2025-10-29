@@ -173,6 +173,9 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
           <table className="w-full">
             <thead className="bg-muted/50">
               <tr className="text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                <th className="px-4 py-3 w-20">
+                  ID
+                </th>
                 <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('name')}>
                   Arzt Name{getSortIndicator('name')}
                 </th>
@@ -192,6 +195,9 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
                   key={arzt.id}
                   className="border-b border-border hover:bg-muted/50 transition-colors"
                 >
+                  <td className="px-4 py-3">
+                    <div className="text-sm text-muted-foreground">{arzt.arztId || '-'}</div>
+                  </td>
                   <td className="px-4 py-3">
                     <div className="font-medium text-foreground">{arzt.name}</div>
                   </td>

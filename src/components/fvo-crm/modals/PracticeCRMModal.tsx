@@ -144,14 +144,6 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                       </div>
                     )}
 
-                    {/* Preferred Contact Method */}
-                    <div className="flex items-start gap-2">
-                      <span className="text-lg">⭐</span>
-                      <span className="text-foreground">
-                        Preferred: {practice.preferredContactMethod === 'phone' ? 'Phone' :
-                                   practice.preferredContactMethod === 'fax' ? 'Fax' : 'Email'}
-                      </span>
-                    </div>
                   </div>
                 )}
               </div>
@@ -202,27 +194,6 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                         </div>
                       ))
                     )}
-                  </div>
-                )}
-              </div>
-
-              {/* Key Contacts */}
-              {/* Quick Stats */}
-              <div className="space-y-3">
-                <button
-                  onClick={() => toggleSection('stats')}
-                  className="w-full flex items-center justify-between text-left"
-                >
-                  <h3 className="text-lg font-semibold text-foreground">Quick Stats</h3>
-                  <span className="text-muted-foreground">{expandedSections.stats ? '▲' : '▼'}</span>
-                </button>
-
-                {expandedSections.stats && (
-                  <div className="pl-2">
-                    <div className="bg-muted rounded-md p-3">
-                      <div className="text-2xl font-bold text-foreground">{practice.pendingVOCount}</div>
-                      <div className="text-sm text-muted-foreground">Pending FVOs</div>
-                    </div>
                   </div>
                 )}
               </div>
