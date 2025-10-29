@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import PracticesManagementTable from '@/components/fvo-crm/table/PracticesManagementTable';
 import PracticeDetailModal from '@/components/fvo-crm/modals/PracticeDetailModal';
 import PracticeFormModal from '@/components/fvo-crm/PracticeFormModal';
-import { Practice, PracticeDoctor, PracticeActivity, PracticeBatch, PracticeVO } from '@/types';
+import { Practice, PracticeDoctor, PracticeActivity, PracticeVO } from '@/types';
 
 // Import mock data
 import mockData from '@/data/fvoCRMData.json';
@@ -104,19 +104,12 @@ export default function PracticesManagementPage() {
           isOpen={isDetailModalOpen}
           practice={{
             ...selectedPractice,
-            pendingVOCount: 0,
-            activeBatchCount: 0,
-            priorityLevel: 'other',
+            pendingVOCount: mockData.vos.filter(vo => vo.practiceId === selectedPractice.id && vo.status === 'Pending').length,
             doctors: doctors.filter(doc => doc.practiceId === selectedPractice.id)
           }}
           activities={mockData.activities.filter(
             a => a.practiceId === selectedPractice.id
           ) as PracticeActivity[]}
-          batches={(() => {
-            const vos = mockData.vos.filter(vo => vo.practiceId === selectedPractice.id);
-            const batchIds = new Set(vos.map(vo => vo.batchId));
-            return mockData.batches.filter(batch => batchIds.has(batch.id));
-          })() as PracticeBatch[]}
           vos={mockData.vos.filter(vo => vo.practiceId === selectedPractice.id) as PracticeVO[]}
           doctors={doctors.filter(doc => doc.practiceId === selectedPractice.id)}
           allDoctors={doctors}

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Practice, PracticeKeyContact, OpeningHours } from '@/types';
+import { Practice, OpeningHours } from '@/types';
 import OpeningHoursEditor from '../OpeningHoursEditor';
 import { createDefaultOpeningHours } from '@/utils/openingHoursUtils';
 import Link from 'next/link';
@@ -26,7 +26,6 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
   const [fax, setFax] = useState('');
   const [email, setEmail] = useState('');
   const [openingHours, setOpeningHours] = useState<OpeningHours>(createDefaultOpeningHours());
-  const [keyContacts, setKeyContacts] = useState<PracticeKeyContact[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   // Initialize form with initial data
@@ -39,26 +38,8 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
       setFax(initialData.fax || '');
       setEmail(initialData.email || '');
       setOpeningHours(initialData.openingHours);
-      setKeyContacts(initialData.keyContacts);
     }
   }, [initialData]);
-
-  const addKeyContact = () => {
-    setKeyContacts([
-      ...keyContacts,
-      { name: '', role: '', phone: '', extension: '', email: '' }
-    ]);
-  };
-
-  const updateKeyContact = (index: number, field: keyof PracticeKeyContact, value: string) => {
-    const updated = [...keyContacts];
-    updated[index] = { ...updated[index], [field]: value };
-    setKeyContacts(updated);
-  };
-
-  const removeKeyContact = (index: number) => {
-    setKeyContacts(keyContacts.filter((_, i) => i !== index));
-  };
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -93,8 +74,7 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
       phone: phone.trim(),
       fax: fax.trim() || undefined,
       email: email.trim() || undefined,
-      openingHours,
-      keyContacts: keyContacts.filter(c => c.name.trim())
+      openingHours
     });
   };
 
@@ -230,75 +210,6 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
               openingHours={openingHours}
               onChange={setOpeningHours}
             />
-          </div>
-
-          {/* Key Contacts */}
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="block text-sm font-medium text-foreground">
-                Key Contacts
-              </label>
-              <button
-                type="button"
-                onClick={addKeyContact}
-                className="text-sm text-primary hover:text-primary/80 font-medium"
-              >
-                + Add Contact
-              </button>
-            </div>
-
-            {keyContacts.map((contact, index) => (
-              <div key={index} className="mb-3 p-3 border border-border rounded-md bg-muted/30">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-foreground">Contact {index + 1}</span>
-                  <button
-                    type="button"
-                    onClick={() => removeKeyContact(index)}
-                    className="text-sm text-red-500 hover:text-red-600"
-                  >
-                    Remove
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-2 gap-2">
-                  <input
-                    type="text"
-                    value={contact.name}
-                    onChange={(e) => updateKeyContact(index, 'name', e.target.value)}
-                    placeholder="Name"
-                    className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                  <input
-                    type="text"
-                    value={contact.role || ''}
-                    onChange={(e) => updateKeyContact(index, 'role', e.target.value)}
-                    placeholder="Role"
-                    className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                  <input
-                    type="tel"
-                    value={contact.phone || ''}
-                    onChange={(e) => updateKeyContact(index, 'phone', e.target.value)}
-                    placeholder="Phone"
-                    className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                  <input
-                    type="text"
-                    value={contact.extension || ''}
-                    onChange={(e) => updateKeyContact(index, 'extension', e.target.value)}
-                    placeholder="Extension"
-                    className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                  <input
-                    type="email"
-                    value={contact.email || ''}
-                    onChange={(e) => updateKeyContact(index, 'email', e.target.value)}
-                    placeholder="Email"
-                    className="col-span-2 px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

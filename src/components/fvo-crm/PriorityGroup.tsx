@@ -1,5 +1,7 @@
 import React from 'react';
-import { PriorityLevel } from '@/types';
+
+// Legacy component - no longer used in main prototype
+type PriorityLevel = 'overdue' | 'dueToday' | 'thisWeek' | 'other';
 
 interface PriorityGroupProps {
   priorityLevel: PriorityLevel;

@@ -293,12 +293,16 @@ export interface PracticeActivity {
   createdAt: string;
 }
 
+// Priority level for practices (used by legacy Priority Queue Panel)
+export type PriorityLevel = 'overdue' | 'dueToday' | 'thisWeek' | 'other';
+
 // Computed fields for practice (derived at runtime)
 export interface PracticeComputedFields {
   pendingVOCount: number;
   lastActivity?: PracticeActivity;
   nextFollowUpDate?: string;
   nextFollowUpTime?: string;
+  priorityLevel?: PriorityLevel; // Optional - only used in legacy Priority Queue Panel
 }
 
 // Extended practice with computed fields for display

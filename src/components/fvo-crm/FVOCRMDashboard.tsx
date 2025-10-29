@@ -27,8 +27,8 @@ const FVOCRMDashboard: React.FC = () => {
   const [isPracticeFormModalOpen, setIsPracticeFormModalOpen] = useState(false);
   const [practiceToEdit, setPracticeToEdit] = useState<Practice | null>(null);
 
-  // Calculate priority level for a practice
-  const calculatePriorityLevel = (nextFollowUpDate?: string): PriorityLevel => {
+  // Calculate priority level for a practice (legacy - for Priority Queue Panel only)
+  const calculatePriorityLevel = (nextFollowUpDate?: string) => {
     if (!nextFollowUpDate) return 'other';
 
     const today = new Date();

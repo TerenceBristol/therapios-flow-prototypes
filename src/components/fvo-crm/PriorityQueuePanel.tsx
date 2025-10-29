@@ -86,7 +86,8 @@ const PriorityQueuePanel: React.FC<PriorityQueuePanelProps> = ({
     };
 
     filteredPractices.forEach(practice => {
-      groups[practice.priorityLevel].push(practice);
+      const priority = practice.priorityLevel || 'other';
+      groups[priority].push(practice);
     });
 
     return groups;

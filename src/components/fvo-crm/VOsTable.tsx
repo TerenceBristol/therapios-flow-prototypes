@@ -43,8 +43,8 @@ const VOsTable: React.FC<VOsTableProps> = ({
     const sorted = [...filteredVOs];
 
     sorted.sort((a, b) => {
-      let aValue: any;
-      let bValue: any;
+      let aValue: string | number;
+      let bValue: string | number;
 
       switch (sortColumn) {
         case 'patientName':
