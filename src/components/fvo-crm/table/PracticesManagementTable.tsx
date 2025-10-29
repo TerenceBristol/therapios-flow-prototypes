@@ -9,9 +9,9 @@ import ArzteCell from './ArzteCell';
 interface PracticesManagementTableProps {
   practices: Practice[];
   doctors: Arzt[];
-  onView: (practiceId: string) => void;
+  onView?: (practiceId: string) => void;
   onEdit: (practiceId: string) => void;
-  onDelete: (practiceId: string) => void;
+  onDelete?: (practiceId: string) => void;
   onAdd: () => void;
 }
 
