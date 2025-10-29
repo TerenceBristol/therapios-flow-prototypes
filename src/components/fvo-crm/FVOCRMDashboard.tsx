@@ -75,7 +75,7 @@ const FVOCRMDashboard: React.FC = () => {
       const sortedActivities = [...practiceActivities].sort((a, b) =>
         new Date(b.date).getTime() - new Date(a.date).getTime()
       );
-      const practiceDoctors = doctors.filter(d => d.practiceIds.includes(practice.id));
+      const practiceDoctors = doctors.filter(d => d.practiceId === practice.id);
       const nextFollowUpDate = getNextFollowUpDate(practice.id);
       const priorityLevel = calculatePriorityLevel(nextFollowUpDate);
 
@@ -118,7 +118,7 @@ const FVOCRMDashboard: React.FC = () => {
   // Get doctors for selected practice
   const selectedPracticeDoctors = useMemo(() => {
     if (!selectedPracticeId) return [];
-    return doctors.filter(d => d.practiceIds.includes(selectedPracticeId));
+    return doctors.filter(d => d.practiceId === selectedPracticeId);
   }, [selectedPracticeId, doctors]);
 
   // Handler: Select practice
