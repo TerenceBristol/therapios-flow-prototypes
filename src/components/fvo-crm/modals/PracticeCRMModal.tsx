@@ -106,8 +106,7 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                     <div className="flex items-start gap-2">
                       <span className="text-lg">📍</span>
                       <div className="text-foreground">
-                        <div>{practice.address.street}</div>
-                        <div>{practice.address.city}, {practice.address.state} {practice.address.zip}</div>
+                        {practice.address}
                       </div>
                     </div>
 
