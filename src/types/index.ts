@@ -252,7 +252,9 @@ export interface Practice {
   fax?: string;
   email?: string;
   openingHours: OpeningHours;
+  preferredContactMethod?: PreferredContactMethod;
   keyContacts: PracticeKeyContact[];
+  notes?: string;
   createdAt: string;
   updatedAt: string;
 }
