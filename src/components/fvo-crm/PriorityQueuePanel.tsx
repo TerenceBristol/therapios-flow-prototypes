@@ -1,5 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { PracticeWithComputed, PriorityLevel } from '@/types';
+import { PracticeWithComputed } from '@/types';
+
+// Legacy component - no longer used in main prototype
+type PriorityLevel = 'overdue' | 'dueToday' | 'thisWeek' | 'other';
 import SearchBar from './SearchBar';
 import FiltersDropdown, { FilterOptions } from './FiltersDropdown';
 import PriorityGroup from './PriorityGroup';
@@ -83,7 +86,8 @@ const PriorityQueuePanel: React.FC<PriorityQueuePanelProps> = ({
     };
 
     filteredPractices.forEach(practice => {
-      groups[practice.priorityLevel].push(practice);
+      const priority = practice.priorityLevel || 'other';
+      groups[priority].push(practice);
     });
 
     return groups;

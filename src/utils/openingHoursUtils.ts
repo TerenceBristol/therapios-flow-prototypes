@@ -87,6 +87,33 @@ export function getOpensLaterTime(openingHours: OpeningHours): string | null {
 }
 
 /**
+ * Get the next day the practice will be open
+ * @param openingHours - Full week opening hours
+ * @returns Object with day name and opening time, or null if closed all week
+ */
+export function getNextOpeningDay(openingHours: OpeningHours): { day: string; time: string } | null {
+  const days: Array<keyof OpeningHours> = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  const today = getCurrentDayOfWeek();
+  const todayIndex = days.indexOf(today as keyof OpeningHours);
+
+  // Check each day starting from tomorrow
+  for (let i = 1; i <= 7; i++) {
+    const dayIndex = (todayIndex + i) % 7;
+    const day = days[dayIndex];
+    const dayHours = openingHours[day];
+
+    if (!dayHours.isClosed) {
+      const dayName = i === 1 ? 'tomorrow' : day.charAt(0).toUpperCase() + day.slice(1, 3);
+      const time = convertTo12Hour(dayHours.open);
+      return { day: dayName, time };
+    }
+  }
+
+  // Closed all week
+  return null;
+}
+
+/**
  * Get the current status of a practice (open, closed, or opens later today)
  * @param openingHours - Full week opening hours
  * @returns Status object with display information
@@ -95,6 +122,14 @@ export function getTodayStatus(openingHours: OpeningHours): TodayStatus {
   const todayHours = getTodayHours(openingHours);
 
   if (todayHours.isClosed) {
+    const nextOpening = getNextOpeningDay(openingHours);
+    if (nextOpening) {
+      return {
+        status: 'closed',
+        displayText: `Closed • Opens ${nextOpening.day} at ${nextOpening.time}`,
+        icon: '🔴'
+      };
+    }
     return {
       status: 'closed',
       displayText: 'Closed',
@@ -122,7 +157,15 @@ export function getTodayStatus(openingHours: OpeningHours): TodayStatus {
     };
   }
 
-  // Closed for today (past closing time)
+  // Closed for today (past closing time) - show next opening
+  const nextOpening = getNextOpeningDay(openingHours);
+  if (nextOpening) {
+    return {
+      status: 'closed',
+      displayText: `Closed • Opens ${nextOpening.day} at ${nextOpening.time}`,
+      icon: '🔴'
+    };
+  }
   return {
     status: 'closed',
     displayText: 'Closed',
