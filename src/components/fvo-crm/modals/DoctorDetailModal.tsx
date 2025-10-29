@@ -27,7 +27,7 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zip, setZip] = useState('');
-  const [practiceIds, setPracticeIds] = useState<string[]>([]);
+  const [practiceId, setPracticeId] = useState<string | undefined>(undefined);
   const [facilities, setFacilities] = useState<string[]>([]);
   const [notes, setNotes] = useState('');
   const [newFacility, setNewFacility] = useState('');
@@ -43,7 +43,7 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
       setCity(doctor.address?.city || '');
       setState(doctor.address?.state || '');
       setZip(doctor.address?.zip || '');
-      setPracticeIds(doctor.practiceIds);
+      setPracticeId(doctor.practiceId);
       setFacilities(doctor.facilities);
       setNotes(doctor.notes || '');
       setIsEditMode(false);
@@ -60,7 +60,7 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
 
     onSave({
       name,
-      practiceIds,
+      practiceId,
       facilities,
       address,
       phone: phone || undefined,
@@ -83,7 +83,7 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
       setCity(doctor.address?.city || '');
       setState(doctor.address?.state || '');
       setZip(doctor.address?.zip || '');
-      setPracticeIds(doctor.practiceIds);
+      setPracticeId(doctor.practiceId);
       setFacilities(doctor.facilities);
       setNotes(doctor.notes || '');
       setNewFacility('');
@@ -91,12 +91,8 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
     setIsEditMode(false);
   };
 
-  const togglePractice = (practiceId: string) => {
-    if (practiceIds.includes(practiceId)) {
-      setPracticeIds(practiceIds.filter(id => id !== practiceId));
-    } else {
-      setPracticeIds([...practiceIds, practiceId]);
-    }
+  const selectPractice = (newPracticeId: string) => {
+    setPracticeId(newPracticeId === practiceId ? undefined : newPracticeId);
   };
 
   const addFacility = () => {
@@ -267,11 +263,6 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
                     <span className="font-medium">Email:</span> {doctor.email}
                   </div>
                 )}
-                {doctor.address && (
-                  <div className="text-foreground">
-                    <span className="font-medium">Address:</span> {doctor.address.street}, {doctor.address.city}, {doctor.address.state} {doctor.address.zip}
-                  </div>
-                )}
               </div>
             )}
           </div>
@@ -289,25 +280,21 @@ const DoctorDetailModal: React.FC<DoctorDetailModalProps> = ({
                 {practices.map(practice => (
                   <label key={practice.id} className="flex items-center gap-2 cursor-pointer">
                     <input
-                      type="checkbox"
-                      checked={practiceIds.includes(practice.id)}
-                      onChange={() => togglePractice(practice.id)}
-                      className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
+                      type="radio"
+                      checked={practiceId === practice.id}
+                      onChange={() => selectPractice(practice.id)}
+                      className="w-4 h-4 border-border text-primary focus:ring-primary"
                     />
                     <span className="text-sm text-foreground">{practice.name}</span>
                   </label>
                 ))}
               </div>
             ) : (
-              doctor.practiceIds.length === 0 ? (
-                <div className="text-sm text-muted-foreground">No practices assigned</div>
+              !doctor.practiceId ? (
+                <div className="text-sm text-muted-foreground">No practice assigned</div>
               ) : (
-                <div className="space-y-1">
-                  {doctor.practiceIds.map(practiceId => (
-                    <div key={practiceId} className="text-sm text-foreground">
-                      • {getPracticeName(practiceId)}
-                    </div>
-                  ))}
+                <div className="text-sm text-foreground">
+                  • {getPracticeName(doctor.practiceId)}
                 </div>
               )
             )}

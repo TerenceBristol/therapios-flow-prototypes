@@ -23,7 +23,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zip, setZip] = useState('');
-  const [practiceIds, setPracticeIds] = useState<string[]>([]);
+  const [practiceId, setPracticeId] = useState<string | undefined>(undefined);
   const [facilities, setFacilities] = useState<string[]>([]);
   const [notes, setNotes] = useState('');
   const [newFacility, setNewFacility] = useState('');
@@ -40,7 +40,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
       setCity('');
       setState('');
       setZip('');
-      setPracticeIds([]);
+      setPracticeId(undefined);
       setFacilities([]);
       setNotes('');
       setNewFacility('');
@@ -72,7 +72,7 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
 
     onSave({
       name: name.trim(),
-      practiceIds,
+      practiceId,
       facilities,
       address,
       phone: phone || undefined,
@@ -84,12 +84,8 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
     onClose();
   };
 
-  const togglePractice = (practiceId: string) => {
-    if (practiceIds.includes(practiceId)) {
-      setPracticeIds(practiceIds.filter(id => id !== practiceId));
-    } else {
-      setPracticeIds([...practiceIds, practiceId]);
-    }
+  const selectPractice = (newPracticeId: string) => {
+    setPracticeId(newPracticeId === practiceId ? undefined : newPracticeId);
   };
 
   const addFacility = () => {
@@ -254,17 +250,17 @@ const DoctorFormModal: React.FC<DoctorFormModalProps> = ({
               {practices.map(practice => (
                 <label key={practice.id} className="flex items-center gap-2 cursor-pointer">
                   <input
-                    type="checkbox"
-                    checked={practiceIds.includes(practice.id)}
-                    onChange={() => togglePractice(practice.id)}
-                    className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
+                    type="radio"
+                    checked={practiceId === practice.id}
+                    onChange={() => selectPractice(practice.id)}
+                    className="w-4 h-4 border-border text-primary focus:ring-primary"
                   />
                   <span className="text-sm text-foreground">{practice.name}</span>
                 </label>
               ))}
             </div>
             <div className="text-xs text-muted-foreground mt-2">
-              Selected: {practiceIds.length} practice{practiceIds.length !== 1 ? 's' : ''}
+              Selected: {practiceId ? '1 practice' : 'None'}
             </div>
           </div>
 

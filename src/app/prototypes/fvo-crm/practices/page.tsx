@@ -107,7 +107,7 @@ export default function PracticesManagementPage() {
             pendingVOCount: 0,
             activeBatchCount: 0,
             priorityLevel: 'other',
-            doctors: doctors.filter(doc => doc.practiceIds.includes(selectedPractice.id))
+            doctors: doctors.filter(doc => doc.practiceId === selectedPractice.id)
           }}
           activities={mockData.activities.filter(
             a => a.practiceId === selectedPractice.id
@@ -118,7 +118,7 @@ export default function PracticesManagementPage() {
             return mockData.batches.filter(batch => batchIds.has(batch.id));
           })() as PracticeBatch[]}
           vos={mockData.vos.filter(vo => vo.practiceId === selectedPractice.id) as PracticeVO[]}
-          doctors={doctors.filter(doc => doc.practiceIds.includes(selectedPractice.id))}
+          doctors={doctors.filter(doc => doc.practiceId === selectedPractice.id)}
           allDoctors={doctors}
           onClose={handleCloseDetailModal}
           onSave={handleSavePractice}

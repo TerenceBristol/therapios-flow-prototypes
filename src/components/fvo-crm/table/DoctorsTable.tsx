@@ -49,7 +49,7 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
 
     // Practice filter
     if (filters.practiceFilter) {
-      result = result.filter(d => d.practiceIds.includes(filters.practiceFilter!));
+      result = result.filter(d => d.practiceId === filters.practiceFilter);
     }
 
     // Facility filter
@@ -61,9 +61,6 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
     switch (filters.sortBy) {
       case 'name':
         result.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case 'practiceCount':
-        result.sort((a, b) => b.practiceIds.length - a.practiceIds.length);
         break;
       case 'facilityCount':
         result.sort((a, b) => b.facilities.length - a.facilities.length);
@@ -82,8 +79,8 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
             bVal = b.name;
             break;
           case 'practices':
-            aVal = a.practiceIds.length;
-            bVal = b.practiceIds.length;
+            aVal = a.practiceId || '';
+            bVal = b.practiceId || '';
             break;
           case 'facilities':
             aVal = a.facilities.length;
@@ -121,10 +118,9 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
     return sortDirection === 'asc' ? ' ↑' : ' ↓';
   };
 
-  const getPracticeNames = (practiceIds: string[]) => {
-    return practiceIds
-      .map(id => practices.find(p => p.id === id)?.name || 'Unknown')
-      .join(', ');
+  const getPracticeName = (practiceId?: string) => {
+    if (!practiceId) return 'None';
+    return practices.find(p => p.id === practiceId)?.name || 'Unknown';
   };
 
   return (
@@ -204,15 +200,8 @@ const DoctorsTable: React.FC<DoctorsTableProps> = ({
                   </td>
                   <td className="px-4 py-3">
                     <div className="text-sm text-foreground">
-                      {doctor.practiceIds.length > 0 ? (
-                        <>
-                          <span className="font-medium">{doctor.practiceIds.length}</span>
-                          {doctor.practiceIds.length <= 2 ? (
-                            <span className="text-muted-foreground"> - {getPracticeNames(doctor.practiceIds)}</span>
-                          ) : (
-                            <span className="text-muted-foreground"> practices</span>
-                          )}
-                        </>
+                      {doctor.practiceId ? (
+                        <span className="text-muted-foreground">{getPracticeName(doctor.practiceId)}</span>
                       ) : (
                         <span className="text-muted-foreground">None</span>
                       )}

@@ -269,6 +269,7 @@ export interface Arzt {
   specialty?: string;
   phone?: string;
   email?: string;
+  notes?: string;
   createdAt: string;
   updatedAt: string;
 }
