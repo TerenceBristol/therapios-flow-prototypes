@@ -1,31 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Arzt, Practice } from '@/types';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Arzt, Practice, PracticeVO } from '@/types';
 import Link from 'next/link';
-import MultiSelect, { MultiSelectOption } from './MultiSelect';
-
-// Predefined German ER names
-const GERMAN_ERS: MultiSelectOption[] = [
-  { value: 'ER Berlin', label: 'ER Berlin' },
-  { value: 'ER München', label: 'ER München' },
-  { value: 'ER Hamburg', label: 'ER Hamburg' },
-  { value: 'ER Köln', label: 'ER Köln' },
-  { value: 'ER Frankfurt', label: 'ER Frankfurt' },
-  { value: 'ER Stuttgart', label: 'ER Stuttgart' },
-  { value: 'ER Düsseldorf', label: 'ER Düsseldorf' },
-  { value: 'ER Leipzig', label: 'ER Leipzig' },
-  { value: 'ER Dortmund', label: 'ER Dortmund' },
-  { value: 'ER Essen', label: 'ER Essen' },
-  { value: 'ER Bremen', label: 'ER Bremen' },
-  { value: 'ER Dresden', label: 'ER Dresden' },
-  { value: 'ER Hannover', label: 'ER Hannover' },
-  { value: 'ER Nürnberg', label: 'ER Nürnberg' },
-];
 
 interface ArztFormProps {
   initialData?: Arzt | null;
   practices: Practice[];
+  vos: PracticeVO[];
   onSave: (arztData: Omit<Arzt, 'id' | 'createdAt' | 'updatedAt'>) => void;
   onCancel: () => void;
   isEditing?: boolean;
@@ -34,6 +16,7 @@ interface ArztFormProps {
 const ArztForm: React.FC<ArztFormProps> = ({
   initialData,
   practices,
+  vos,
   onSave,
   onCancel,
   isEditing = false
@@ -44,8 +27,18 @@ const ArztForm: React.FC<ArztFormProps> = ({
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [practiceId, setPracticeId] = useState<string | undefined>(undefined);
-  const [facilities, setFacilities] = useState<string[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Compute doctor's VOs and ERs
+  const doctorVOs = useMemo(() => {
+    if (!initialData?.id) return [];
+    return vos.filter(vo => vo.doctorId === initialData.id);
+  }, [vos, initialData]);
+
+  const computedERs = useMemo(() => {
+    const uniqueERs = [...new Set(doctorVOs.map(vo => vo.facilityName))];
+    return uniqueERs.sort();
+  }, [doctorVOs]);
 
   // Initialize form with initial data
   useEffect(() => {
@@ -55,7 +48,6 @@ const ArztForm: React.FC<ArztFormProps> = ({
       setPhone(initialData.phone || '');
       setEmail(initialData.email || '');
       setPracticeId(initialData.practiceId);
-      setFacilities(initialData.facilities || []);
     }
   }, [initialData]);
 
@@ -85,7 +77,7 @@ const ArztForm: React.FC<ArztFormProps> = ({
       arztId: arztId ? parseInt(arztId) : undefined,
       name: name.trim(),
       practiceId,
-      facilities,
+      facilities: computedERs, // Use computed ERs from VOs
       phone: phone || undefined,
       email: email || undefined
     });
@@ -215,15 +207,77 @@ const ArztForm: React.FC<ArztFormProps> = ({
           {/* Divider */}
           <div className="border-t border-border my-8" />
 
-          {/* ERs */}
+          {/* ERs - Computed from VOs */}
           <div className="mb-8">
-            <MultiSelect
-              label="ERs"
-              options={GERMAN_ERS}
-              value={facilities}
-              onChange={setFacilities}
-              placeholder="Select ERs..."
-            />
+            {computedERs.length > 0 ? (
+              <div className="flex flex-wrap gap-2">
+                {computedERs.map(er => (
+                  <div
+                    key={er}
+                    className="px-3 py-1.5 bg-muted border border-border rounded-md text-sm text-foreground"
+                  >
+                    {er}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-sm text-muted-foreground italic">
+                No VOs yet - ERs will appear once VOs are assigned to this doctor
+              </div>
+            )}
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-border my-8" />
+
+          {/* VOs Table */}
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
+              Verordnungen ({doctorVOs.length})
+            </h3>
+            {doctorVOs.length > 0 ? (
+              <div className="border border-border rounded-lg overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-muted/50">
+                      <tr className="text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                        <th className="px-4 py-3">Patient Name</th>
+                        <th className="px-4 py-3">Heilmittel</th>
+                        <th className="px-4 py-3">Anzahl</th>
+                        <th className="px-4 py-3">Status</th>
+                        <th className="px-4 py-3">Status Date</th>
+                        <th className="px-4 py-3">Facility</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {doctorVOs.map(vo => (
+                        <tr
+                          key={vo.id}
+                          className="border-b border-border hover:bg-muted/30 transition-colors"
+                        >
+                          <td className="px-4 py-3 text-sm text-foreground">{vo.patientName}</td>
+                          <td className="px-4 py-3 text-sm text-foreground font-mono">{vo.therapyType}</td>
+                          <td className="px-4 py-3 text-sm text-foreground">{vo.anzahl}</td>
+                          <td className="px-4 py-3 text-sm">
+                            <span className="px-2 py-1 bg-muted border border-border rounded text-xs">
+                              {vo.status}
+                            </span>
+                          </td>
+                          <td className="px-4 py-3 text-sm text-muted-foreground">{vo.statusDate}</td>
+                          <td className="px-4 py-3 text-sm text-foreground">{vo.facilityName}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ) : (
+              <div className="text-center py-12 text-muted-foreground border border-border rounded-lg bg-muted/20">
+                <div className="text-4xl mb-4">📋</div>
+                <p>No VOs assigned to this doctor yet</p>
+                <p className="text-sm mt-2">VOs will appear here once they are created</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

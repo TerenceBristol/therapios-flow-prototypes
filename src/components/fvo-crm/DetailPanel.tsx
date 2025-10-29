@@ -1,7 +1,6 @@
 import React from 'react';
 import { PracticeWithComputed, PracticeActivity, PracticeVO, PracticeDoctor } from '@/types';
 import ContactInfoSection from './ContactInfoSection';
-import QuickStatsSection from './QuickStatsSection';
 import ActivityLogSection from './ActivityLogSection';
 
 interface DetailPanelProps {
@@ -69,12 +68,6 @@ const DetailPanel: React.FC<DetailPanelProps> = ({
             </div>
           )}
         </div>
-
-        {/* Divider */}
-        <div className="border-t border-border my-6" />
-
-        {/* Quick Stats */}
-        <QuickStatsSection practice={practice} />
 
         {/* Divider */}
         <div className="border-t border-border my-6" />

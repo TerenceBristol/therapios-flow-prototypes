@@ -1,13 +1,14 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Practice, OpeningHours } from '@/types';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Practice, OpeningHours, Arzt } from '@/types';
 import OpeningHoursEditor from '../OpeningHoursEditor';
 import { createDefaultOpeningHours } from '@/utils/openingHoursUtils';
 import Link from 'next/link';
 
 interface PracticeFormProps {
   initialData?: Practice | null;
+  doctors: Arzt[];
   onSave: (practice: Omit<Practice, 'id' | 'createdAt' | 'updatedAt'>) => void;
   onCancel: () => void;
   isEditing?: boolean;
@@ -15,6 +16,7 @@ interface PracticeFormProps {
 
 const PracticeForm: React.FC<PracticeFormProps> = ({
   initialData,
+  doctors,
   onSave,
   onCancel,
   isEditing = false
@@ -27,6 +29,12 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
   const [email, setEmail] = useState('');
   const [openingHours, setOpeningHours] = useState<OpeningHours>(createDefaultOpeningHours());
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Get doctors for this practice
+  const practiceDoctors = useMemo(() => {
+    if (!initialData?.id) return [];
+    return doctors.filter(doc => doc.practiceId === initialData.id);
+  }, [doctors, initialData]);
 
   // Initialize form with initial data
   useEffect(() => {
@@ -202,10 +210,40 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
             )}
           </div>
 
+          {/* Divider */}
+          <div className="border-t border-border my-6" />
+
+          {/* Doctors at this Practice */}
+          {isEditing && (
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+                Ärzte at this Practice
+              </h3>
+              {practiceDoctors.length > 0 ? (
+                <div className="space-y-2">
+                  {practiceDoctors.map(doctor => (
+                    <div key={doctor.id} className="text-sm text-foreground">
+                      • {doctor.name}
+                      {doctor.facilities.length > 0 && (
+                        <span className="text-muted-foreground ml-2">
+                          ({doctor.facilities.join(', ')})
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-sm text-muted-foreground italic">
+                  No doctors assigned to this practice
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Divider */}
+          {isEditing && <div className="border-t border-border my-6" />}
+
           <div>
-            <label className="block text-sm font-medium text-foreground mb-3">
-              Opening Hours
-            </label>
             <OpeningHoursEditor
               openingHours={openingHours}
               onChange={setOpeningHours}

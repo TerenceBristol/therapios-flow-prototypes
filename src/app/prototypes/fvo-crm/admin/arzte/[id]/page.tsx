@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import ArztForm from '@/components/fvo-crm/forms/ArztForm';
-import { Practice, Arzt } from '@/types';
+import { Practice, Arzt, PracticeVO } from '@/types';
 
 // Import mock data
 import mockData from '@/data/fvoCRMData.json';
@@ -15,6 +15,7 @@ export default function EditArztPage() {
 
   const [arzte] = useState<Arzt[]>(mockData.doctors as Arzt[]);
   const [practices] = useState<Practice[]>(mockData.practices as Practice[]);
+  const [vos] = useState<PracticeVO[]>(mockData.vos as PracticeVO[]);
   const [selectedArzt, setSelectedArzt] = useState<Arzt | null>(null);
 
   useEffect(() => {
@@ -62,6 +63,7 @@ export default function EditArztPage() {
     <ArztForm
       initialData={selectedArzt}
       practices={practices}
+      vos={vos}
       onSave={handleSave}
       onCancel={handleCancel}
       isEditing={true}

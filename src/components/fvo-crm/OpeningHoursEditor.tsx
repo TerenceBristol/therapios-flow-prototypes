@@ -56,29 +56,31 @@ const OpeningHoursEditor: React.FC<OpeningHoursEditorProps> = ({ openingHours, o
               {dayLabels[day]}
             </div>
 
-            {!dayHours.isClosed ? (
-              <>
-                <input
-                  type="time"
-                  value={dayHours.open}
-                  onChange={(e) => handleDayChange(day, 'open', e.target.value)}
-                  className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-                <span className="text-sm text-muted-foreground">to</span>
-                <input
-                  type="time"
-                  value={dayHours.close}
-                  onChange={(e) => handleDayChange(day, 'close', e.target.value)}
-                  className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </>
-            ) : (
-              <div className="flex-1 text-sm text-muted-foreground italic">
-                Closed
-              </div>
-            )}
+            <div className="flex items-center gap-3 flex-1">
+              {!dayHours.isClosed ? (
+                <>
+                  <input
+                    type="time"
+                    value={dayHours.open}
+                    onChange={(e) => handleDayChange(day, 'open', e.target.value)}
+                    className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                  <span className="text-sm text-muted-foreground">to</span>
+                  <input
+                    type="time"
+                    value={dayHours.close}
+                    onChange={(e) => handleDayChange(day, 'close', e.target.value)}
+                    className="px-2 py-1.5 text-sm border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </>
+              ) : (
+                <div className="text-sm text-muted-foreground italic">
+                  Closed
+                </div>
+              )}
+            </div>
 
-            <label className="flex items-center gap-2 cursor-pointer">
+            <label className="flex items-center gap-2 cursor-pointer ml-auto">
               <input
                 type="checkbox"
                 checked={dayHours.isClosed}
