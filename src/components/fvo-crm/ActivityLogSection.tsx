@@ -5,9 +5,18 @@ import { formatDateTimeDisplay } from '@/utils/timeUtils';
 interface ActivityLogSectionProps {
   activities: PracticeActivity[];
   onAddActivity: () => void;
+  showHeader?: boolean; // Control header visibility
+  showAddButton?: boolean; // Control add button visibility
+  collapsible?: boolean; // Control collapsible behavior
 }
 
-const ActivityLogSection: React.FC<ActivityLogSectionProps> = ({ activities, onAddActivity }) => {
+const ActivityLogSection: React.FC<ActivityLogSectionProps> = ({
+  activities,
+  onAddActivity,
+  showHeader = true,
+  showAddButton = true,
+  collapsible = true
+}) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [showAll, setShowAll] = useState(false);
 
@@ -39,30 +48,36 @@ const ActivityLogSection: React.FC<ActivityLogSectionProps> = ({ activities, onA
 
   return (
     <div className="mb-6">
-      <div
-        className="flex items-center justify-between cursor-pointer mb-2"
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
-        <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">
-          📝 Activity Log
-        </h3>
-        <div className="flex items-center gap-3">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onAddActivity();
-            }}
-            className="px-3 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-          >
-            + Add
-          </button>
-          <span className="text-muted-foreground text-sm">
-            {isExpanded ? '▲' : '▼'}
-          </span>
+      {showHeader && (
+        <div
+          className={`flex items-center justify-between mb-2 ${collapsible ? 'cursor-pointer' : ''}`}
+          onClick={collapsible ? () => setIsExpanded(!isExpanded) : undefined}
+        >
+          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">
+            📝 Activity Log
+          </h3>
+          <div className="flex items-center gap-3">
+            {showAddButton && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onAddActivity();
+                }}
+                className="px-3 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+              >
+                + Add
+              </button>
+            )}
+            {collapsible && (
+              <span className="text-muted-foreground text-sm">
+                {isExpanded ? '▲' : '▼'}
+              </span>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
-      {isExpanded && (
+      {(collapsible ? isExpanded : true) && (
         <div className="mt-3">
           {activities.length === 0 ? (
             <div className="text-center py-6 text-muted-foreground text-sm">

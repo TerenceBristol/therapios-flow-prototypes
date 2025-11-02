@@ -193,7 +193,10 @@ export interface CalendarTreatment {
 // ============================================================================
 
 // VO Status for FVO CRM (different from main VO system)
-export type FVOCRMVOStatus = 'Bestellen' | 'Bestellt' | 'Nachverfolgen' | 'Nachverfolgt' | 'Telefonieren' | 'Telefoniert' | 'Received';
+export type FVOCRMVOStatus = 'Bestellen' | 'Bestellt' | 'Nachverfolgen' | 'Nachverfolgt' | 'Telefonieren' | 'Telefoniert' | 'In Transit' | 'Received';
+
+// Order Form Type for PDF generation
+export type OrderFormType = 'initial' | 'followup';
 
 // Activity type for practice interactions
 export type PracticeActivityType = 'Call' | 'Email' | 'Fax' | 'Note';
@@ -204,11 +207,17 @@ export type PreferredContactMethod = 'email' | 'fax' | 'phone';
 // Delivery method for batches
 export type DeliveryMethod = 'email' | 'fax';
 
-// Opening hours for a single day
-export interface OpeningHoursDay {
+// Opening hours period (for breaks like 9-12, 3-5)
+export interface OpeningHoursPeriod {
   open: string; // Time in HH:MM format (24-hour)
   close: string; // Time in HH:MM format (24-hour)
+}
+
+// Opening hours for a single day (supports multiple periods for breaks)
+export interface OpeningHoursDay {
+  periods: OpeningHoursPeriod[]; // Multiple time ranges per day (e.g., 9-12, 3-5)
   isClosed: boolean;
+  notes?: string; // Free text comments about hours
 }
 
 // Opening hours for all days of the week
@@ -230,16 +239,62 @@ export interface PracticeAddress {
   zip: string;
 }
 
+// Contact person at practice
+export interface PracticeContact {
+  id: string;
+  name: string; // e.g., "Maria", "Front Desk"
+  phone: string;
+  role?: string; // e.g., "Receptionist", "Manager"
+  note?: string; // e.g., "Best for scheduling"
+  isPrimary: boolean;
+}
+
+// Vacation period for practice or doctor
+export interface VacationPeriod {
+  id: string;
+  startDate: string; // YYYY-MM-DD
+  endDate: string; // YYYY-MM-DD
+  reason: string; // e.g., "Family holiday", "Conference"
+  appliesToDoctorId?: string; // If specified, vacation is for specific doctor only
+}
+
+// Facility entity (ER/therapy location)
+export interface Facility {
+  id: string;
+  name: string;
+  type: 'ER' | 'Care Home' | 'Clinic';
+  address?: string;
+  phone?: string;
+  email?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+// Therapist entity (individual practitioner)
+export interface Therapist {
+  id: string;
+  name: string;
+  facilityId: string; // Reference to Facility
+  specialty?: string;
+  phone?: string;
+  email?: string;
+  active: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
 // Practice entity (main CRM entity)
 export interface Practice {
   id: string;
   practiceId?: number; // Manual numeric ID
   name: string;
   address: string; // Combined address field
-  phone: string;
+  contacts: PracticeContact[]; // Multiple contact numbers with names/notes (replaces phone)
+  phone?: string; // DEPRECATED - use contacts array instead (kept for migration)
   fax?: string;
   email?: string;
   openingHours: OpeningHours;
+  vacationPeriods?: VacationPeriod[]; // Practice vacation/closure periods
   preferredContactMethod?: PreferredContactMethod;
   notes?: string;
   createdAt: string;
@@ -264,23 +319,35 @@ export interface Arzt {
 // Alias for backward compatibility (will be removed after refactoring)
 export type PracticeDoctor = Arzt;
 
+// Note history entry for VO
+export interface VONoteEntry {
+  text: string;
+  userId: string;
+  timestamp: string; // ISO timestamp
+}
+
 // VO (Verification Order) entity - READ ONLY
 export interface PracticeVO {
   id: string;
+  voNumber?: string; // VO number (e.g., '3139-1', '2155-6') - can be multiple VOs per patient
   patientName: string;
   therapyType: string; // Heilmittel code (e.g., 'KG-H', 'BO-E-H', 'MLD45H')
   anzahl: number; // Number of treatments (e.g., 6, 10, 12, 18)
+  voStatus?: VOStatus; // Actual VO status (Aktiv, Abgebrochen, Fertig Behandelt, etc.)
   status: FVOCRMVOStatus;
   statusTimestamp: string;
   statusDate: string; // Formatted status date (DD.MM.YYYY)
   gebDatum: string; // Patient birth date (DD.MM.YYYY)
   practiceId: string;
   doctorId: string; // Which doctor this VO is for (required)
-  facilityName: string; // Which facility/ER this VO is going to (required)
+  therapistId: string; // Which therapist this VO is assigned to (required)
+  facilityName: string; // Which facility/ER this VO is going to (derived from therapist.facilityId)
+  note?: string; // Latest note (e.g., "card not yet scanned, will be scanned at next visit")
+  noteHistory?: VONoteEntry[]; // Full history of notes with audit trail
   createdAt: string;
 }
 
-// Activity entity for tracking practice interactions
+// Activity entity for tracking practice interactions (past events only)
 export interface PracticeActivity {
   id: string;
   practiceId: string;
@@ -288,8 +355,19 @@ export interface PracticeActivity {
   type: PracticeActivityType;
   notes: string;
   userId: string;
-  nextFollowUpDate?: string; // YYYY-MM-DD format
-  nextFollowUpTime?: string; // 12-hour format like "2:30 PM"
+  createdAt: string;
+}
+
+// Follow-up entity for tracking future scheduled follow-ups
+export interface PracticeFollowUp {
+  id: string;
+  practiceId: string;
+  dueDate: string; // YYYY-MM-DD format
+  dueTime?: string; // 12-hour format like "2:30 PM"
+  notes: string;
+  completed: boolean;
+  completedAt?: string; // ISO timestamp when completed
+  userId: string;
   createdAt: string;
 }
 
@@ -310,10 +388,24 @@ export interface PracticeWithComputed extends Practice, PracticeComputedFields {
   doctors: PracticeDoctor[];
 }
 
+// Therapist statistics (aggregated VO data by therapist)
+export interface TherapistStats {
+  therapist: Therapist; // The therapist entity
+  facility: Facility; // The facility where therapist works
+  totalVOs: number; // Total VOs for this therapist
+  pendingVOs: number; // VOs not in "Received" or "In Transit" status
+  practices: string[]; // Practice IDs that send VOs to this therapist
+  lastVODate?: string; // Date of most recent VO (YYYY-MM-DD)
+  timeWindow: string; // "30 days", "60 days", "all time"
+}
+
 // Complete FVO CRM data structure
 export interface FVOCRMData {
   practices: Practice[];
   doctors: PracticeDoctor[];
   vos: PracticeVO[];
   activities: PracticeActivity[];
+  followUps: PracticeFollowUp[];
+  therapists: Therapist[];
+  facilities: Facility[];
 }

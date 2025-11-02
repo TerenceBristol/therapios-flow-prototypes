@@ -1,38 +1,52 @@
-import React, { useState } from 'react';
-import { PracticeVO, PracticeDoctor } from '@/types';
+import React, { useState, useMemo } from 'react';
+import { PracticeVO, PracticeDoctor, OrderFormType } from '@/types';
 
 interface GeneratePDFModalProps {
   isOpen: boolean;
   onClose: () => void;
-  selectedDoctor: PracticeDoctor | null;
   selectedVOs: PracticeVO[];
-  onGenerate: (deliveryType: 'er' | 'teltow') => void;
+  doctors: PracticeDoctor[];
+  orderType: OrderFormType;
+  onGenerate: (orderType: OrderFormType, deliveryType: 'er' | 'teltow') => void;
 }
 
 const GeneratePDFModal: React.FC<GeneratePDFModalProps> = ({
   isOpen,
   onClose,
-  selectedDoctor,
   selectedVOs,
+  doctors,
+  orderType,
   onGenerate
 }) => {
   const [deliveryType, setDeliveryType] = useState<'er' | 'teltow'>('er');
 
-  if (!isOpen || !selectedDoctor) return null;
+  // Get unique doctors from selected VOs
+  const uniqueDoctorIds = useMemo(() => {
+    return Array.from(new Set(selectedVOs.map(vo => vo.doctorId)));
+  }, [selectedVOs]);
+
+  const uniqueDoctors = useMemo(() => {
+    if (!doctors) return [];
+    return doctors.filter(d => uniqueDoctorIds.includes(d.id));
+  }, [doctors, uniqueDoctorIds]);
+
+  const formCount = uniqueDoctors.length;
+
+  // Get ER name from first VO (all VOs should have same ER if from same practice)
+  const erName = selectedVOs[0]?.facilityName || 'ER';
+
+  if (!isOpen || selectedVOs.length === 0) return null;
 
   const handleGenerate = () => {
-    onGenerate(deliveryType);
+    onGenerate(orderType, deliveryType);
   };
-
-  // Get ER name from first VO (all VOs should have same doctor, so same ER)
-  const erName = selectedVOs[0]?.facilityName || 'ER';
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
       <div className="bg-background border border-border rounded-lg shadow-xl w-full max-w-md">
         {/* Header */}
         <div className="px-6 py-4 border-b border-border flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-foreground">Generate Follow-Up Form</h2>
+          <h2 className="text-xl font-semibold text-foreground">Generate Order Form</h2>
           <button
             onClick={onClose}
             className="text-muted-foreground hover:text-foreground text-2xl leading-none"
@@ -43,19 +57,13 @@ const GeneratePDFModal: React.FC<GeneratePDFModalProps> = ({
 
         {/* Content */}
         <div className="px-6 py-6 space-y-6">
-          {/* Summary */}
-          <div className="space-y-2">
+          {/* Order Type Display */}
+          <div className="space-y-2 pb-4 border-b border-border">
             <div className="text-sm">
-              <span className="text-muted-foreground">Doctor: </span>
-              <span className="font-medium text-foreground">{selectedDoctor.name}</span>
-            </div>
-            <div className="text-sm">
-              <span className="text-muted-foreground">Selected VOs: </span>
-              <span className="font-medium text-foreground">{selectedVOs.length}</span>
-            </div>
-            <div className="text-sm">
-              <span className="text-muted-foreground">Facility: </span>
-              <span className="font-medium text-foreground">{erName}</span>
+              <span className="text-muted-foreground">Order Type: </span>
+              <span className="font-medium text-foreground">
+                {orderType === 'initial' ? 'Initial Order' : 'Follow-up Order'}
+              </span>
             </div>
           </div>
 
@@ -67,7 +75,11 @@ const GeneratePDFModal: React.FC<GeneratePDFModalProps> = ({
 
             <div className="space-y-2">
               {/* ER Option */}
-              <label className="flex items-start gap-3 p-3 border border-border rounded-md cursor-pointer hover:bg-muted/30 transition-colors">
+              <label className={`flex items-start gap-3 p-3 border rounded-md cursor-pointer transition-colors ${
+                deliveryType === 'er'
+                  ? 'border-primary bg-primary/5'
+                  : 'border-border hover:bg-muted/30'
+              }`}>
                 <input
                   type="radio"
                   name="delivery"
@@ -85,7 +97,11 @@ const GeneratePDFModal: React.FC<GeneratePDFModalProps> = ({
               </label>
 
               {/* Teltow Option */}
-              <label className="flex items-start gap-3 p-3 border border-border rounded-md cursor-pointer hover:bg-muted/30 transition-colors">
+              <label className={`flex items-start gap-3 p-3 border rounded-md cursor-pointer transition-colors ${
+                deliveryType === 'teltow'
+                  ? 'border-primary bg-primary/5'
+                  : 'border-border hover:bg-muted/30'
+              }`}>
                 <input
                   type="radio"
                   name="delivery"
@@ -117,7 +133,7 @@ const GeneratePDFModal: React.FC<GeneratePDFModalProps> = ({
             onClick={handleGenerate}
             className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-medium text-sm"
           >
-            Generate PDF
+            Generate {formCount > 1 ? `${formCount} Forms` : 'Form'}
           </button>
         </div>
       </div>

@@ -11,8 +11,10 @@ interface AddActivityModalProps {
     type: PracticeActivityType;
     date: string;
     notes: string;
-    nextFollowUpDate?: string;
-    nextFollowUpTime?: string;
+    createFollowUp?: {
+      dueDate: string;
+      notes: string;
+    };
   }) => void;
 }
 
@@ -24,23 +26,31 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
 }) => {
   const [type, setType] = useState<PracticeActivityType>('Call');
   const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
   const [notes, setNotes] = useState('');
-  const [nextFollowUpDate, setNextFollowUpDate] = useState('');
-  const [nextFollowUpTime, setNextFollowUpTime] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const timeOptions = generateTimeOptions();
 
-  // Set default date to today
+  // Set default date and time
   useEffect(() => {
     if (isOpen) {
-      const today = new Date().toISOString().split('T')[0];
-      setDate(today);
+      const now = new Date();
+      setDate(now.toISOString().split('T')[0]);
+
+      // Set current time rounded to nearest 15 minutes
+      const minutes = now.getMinutes();
+      const roundedMinutes = Math.round(minutes / 15) * 15;
+      now.setMinutes(roundedMinutes, 0, 0);
+      const hours = now.getHours();
+      const period = hours >= 12 ? 'PM' : 'AM';
+      const displayHours = hours % 12 || 12;
+      const displayMinutes = roundedMinutes.toString().padStart(2, '0');
+      setTime(`${displayHours}:${displayMinutes} ${period}`);
+
       // Reset form
       setType('Call');
       setNotes('');
-      setNextFollowUpDate('');
-      setNextFollowUpTime('');
       setErrors({});
     }
   }, [isOpen]);
@@ -67,15 +77,6 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
       newErrors.notes = 'Notes must be less than 500 characters';
     }
 
-    if (nextFollowUpDate) {
-      const followUpDate = new Date(nextFollowUpDate);
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      if (followUpDate < today) {
-        newErrors.nextFollowUpDate = 'Follow-up date must be today or in the future';
-      }
-    }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -85,13 +86,22 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
 
     if (!validate()) return;
 
+    // Combine date and time
+    const activityDate = new Date(date);
+    if (time) {
+      const [timeStr, period] = time.split(' ');
+      const [hours, minutes] = timeStr.split(':').map(Number);
+      let hour24 = hours;
+      if (period === 'PM' && hours !== 12) hour24 += 12;
+      if (period === 'AM' && hours === 12) hour24 = 0;
+      activityDate.setHours(hour24, minutes, 0, 0);
+    }
+
     onSave({
       practiceId,
       type,
-      date: new Date(date).toISOString(),
-      notes: notes.trim(),
-      nextFollowUpDate: nextFollowUpDate || undefined,
-      nextFollowUpTime: nextFollowUpTime || undefined
+      date: activityDate.toISOString(),
+      notes: notes.trim()
     });
 
     onClose();
@@ -112,114 +122,89 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
         <div className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-foreground">Add Activity</h2>
+            <h2 className="text-xl font-bold text-foreground">📝 Log Activity</h2>
             <button
               onClick={onClose}
-              className="text-muted-foreground hover:text-foreground"
+              className="text-muted-foreground hover:text-foreground text-2xl leading-none"
             >
-              ✕
+              ×
             </button>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Activity Type */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* What Happened Section */}
             <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Activity Type *
+              <label className="block text-sm font-medium text-foreground mb-3">
+                What happened?
               </label>
-              <select
-                value={type}
-                onChange={(e) => setType(e.target.value as PracticeActivityType)}
-                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              >
-                <option value="Call">Call</option>
-                <option value="Email">Email</option>
-                <option value="Fax">Fax</option>
-                <option value="Note">Note</option>
-              </select>
-            </div>
 
-            {/* Date */}
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Date *
-              </label>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className={`w-full px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.date ? 'border-red-500' : 'border-border'
-                }`}
-              />
+              {/* Inline Type/Date/Time */}
+              <div className="flex items-center gap-2 text-sm flex-wrap">
+                <select
+                  value={type}
+                  onChange={(e) => setType(e.target.value as PracticeActivityType)}
+                  className="px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <option value="Call">📞 Call</option>
+                  <option value="Email">✉️ Email</option>
+                  <option value="Fax">📠 Fax</option>
+                  <option value="Note">📝 Note</option>
+                </select>
+
+                <span className="text-muted-foreground">on</span>
+
+                <input
+                  type="date"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  className={`px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
+                    errors.date ? 'border-red-500' : 'border-border'
+                  }`}
+                />
+
+                <span className="text-muted-foreground">at</span>
+
+                <select
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
+                  className="px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  {timeOptions.map(t => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+              </div>
               {errors.date && (
-                <p className="text-sm text-red-500 mt-1">{errors.date}</p>
+                <p className="text-xs text-red-500 mt-1">{errors.date}</p>
               )}
             </div>
 
             {/* Notes */}
             <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Notes * ({notes.length}/500)
-              </label>
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="What happened during this interaction?"
+                placeholder="Describe what happened during this interaction..."
                 rows={4}
                 maxLength={500}
                 className={`w-full px-3 py-2 border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none ${
                   errors.notes ? 'border-red-500' : 'border-border'
                 }`}
               />
-              {errors.notes && (
-                <p className="text-sm text-red-500 mt-1">{errors.notes}</p>
-              )}
-            </div>
-
-            {/* Next Follow-up Date */}
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Next Follow-up Date (Optional)
-              </label>
-              <input
-                type="date"
-                value={nextFollowUpDate}
-                onChange={(e) => setNextFollowUpDate(e.target.value)}
-                placeholder="When should we follow up?"
-                className={`w-full px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.nextFollowUpDate ? 'border-red-500' : 'border-border'
-                }`}
-              />
-              {errors.nextFollowUpDate && (
-                <p className="text-sm text-red-500 mt-1">{errors.nextFollowUpDate}</p>
-              )}
-            </div>
-
-            {/* Next Follow-up Time */}
-            {nextFollowUpDate && (
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-1">
-                  Next Follow-up Time (Optional)
-                </label>
-                <select
-                  value={nextFollowUpTime}
-                  onChange={(e) => setNextFollowUpTime(e.target.value)}
-                  className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  <option value="">Select time...</option>
-                  {timeOptions.map(time => (
-                    <option key={time} value={time}>
-                      {time}
-                    </option>
-                  ))}
-                </select>
+              <div className="flex items-center justify-between mt-1">
+                {errors.notes ? (
+                  <p className="text-xs text-red-500">{errors.notes}</p>
+                ) : (
+                  <span className="text-xs text-muted-foreground">{notes.length}/500 characters</span>
+                )}
               </div>
-            )}
+            </div>
 
             {/* Actions */}
-            <div className="flex gap-3 pt-4">
+            <div className="flex gap-3 pt-4 border-t border-border">
               <button
                 type="button"
                 onClick={onClose}
@@ -231,7 +216,7 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
                 type="submit"
                 className="flex-1 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
               >
-                Save
+                Save Activity
               </button>
             </div>
           </form>

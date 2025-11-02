@@ -1,22 +1,41 @@
 'use client';
 
-import React, { useState } from 'react';
-import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, FVOCRMVOStatus } from '@/types';
-import OpeningHoursDisplay from '../OpeningHoursDisplay';
-import ActivityLogSection from '../ActivityLogSection';
+import React, { useState, useEffect } from 'react';
+import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, PracticeFollowUp, FVOCRMVOStatus, Therapist, Facility } from '@/types';
+import ActivityAndFollowUpsSection from '../ActivityAndFollowUpsSection';
 import AddActivityModal from '../AddActivityModal';
+import AddFollowUpModal from '../AddFollowUpModal';
 import VOsTable from '../VOsTable';
-import { formatDate } from '@/utils/timeUtils';
+import PracticeInfoTab from '../PracticeInfoTab';
 
 interface PracticeCRMModalProps {
   isOpen: boolean;
   practice: PracticeWithComputed | null;
   activities: PracticeActivity[];
+  followUps: PracticeFollowUp[];
   vos: PracticeVO[];
   doctors: PracticeDoctor[];
+  therapists: Therapist[];
+  facilities: Facility[];
+  initialTab?: 'practiceInfo' | 'vos' | 'activityFollowups';
   onClose: () => void;
   onAddActivity: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
+  onDeleteActivity?: (activityId: string) => void;
+  onAddFollowUp: (followUp: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'>) => void;
+  onDeleteFollowUp?: (followUpId: string) => void;
+  onCompleteFollowUpAndLogActivity?: (followUpId: string, activityData: {
+    practiceId: string;
+    date: string;
+    type: PracticeActivityType;
+    notes: string;
+    userId: string;
+  }) => void;
   onStatusChange?: (voId: string, newStatus: FVOCRMVOStatus) => void;
+  onNoteChange?: (voId: string, note: string) => void;
+  onEditNote?: (voId: string, noteIndex: number, newText: string) => void;
+  onDeleteNote?: (voId: string, noteIndex: number) => void;
+  onBulkStatusChange?: (voIds: string[], newStatus: FVOCRMVOStatus) => void;
+  onBulkNoteChange?: (voIds: string[], note: string) => void;
   onGeneratePDF?: (selectedVOIds: string[], selectedDoctorId: string) => void;
 }
 
@@ -24,37 +43,44 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   isOpen,
   practice,
   activities,
+  followUps,
   vos,
   doctors,
+  therapists,
+  facilities,
+  initialTab = 'practiceInfo',
   onClose,
   onAddActivity,
+  onDeleteActivity,
+  onAddFollowUp,
+  onDeleteFollowUp,
+  onCompleteFollowUpAndLogActivity,
   onStatusChange,
+  onNoteChange,
+  onEditNote,
+  onDeleteNote,
+  onBulkStatusChange,
+  onBulkNoteChange,
   onGeneratePDF
 }) => {
   const [isAddActivityModalOpen, setIsAddActivityModalOpen] = useState(false);
-  const [expandedSections, setExpandedSections] = useState({
-    contact: true,
-    hours: true,
-    doctors: true,
-    stats: true,
-    notes: true,
-    activities: true,
-    vos: true
-  });
+  const [isAddFollowUpModalOpen, setIsAddFollowUpModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<'practiceInfo' | 'vos' | 'activityFollowups'>(initialTab);
+
+  // Reset active tab when modal opens or practice changes
+  useEffect(() => {
+    if (isOpen && practice) {
+      setActiveTab(initialTab);
+    }
+  }, [isOpen, practice?.id, initialTab]);
 
   if (!isOpen || !practice) return null;
-
-  const toggleSection = (section: keyof typeof expandedSections) => {
-    setExpandedSections(prev => ({ ...prev, [section]: !prev[section] }));
-  };
 
   const handleAddActivityFromModal = (activity: {
     practiceId: string;
     type: PracticeActivityType;
     date: string;
     notes: string;
-    nextFollowUpDate?: string;
-    nextFollowUpTime?: string;
   }) => {
     // Add userId to the activity
     const activityWithUser: Omit<PracticeActivity, 'id' | 'createdAt'> = {
@@ -65,13 +91,29 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
     setIsAddActivityModalOpen(false);
   };
 
+  const handleAddFollowUpFromModal = (followUp: {
+    practiceId: string;
+    dueDate: string;
+    dueTime?: string;
+    priority: 'low' | 'medium' | 'high';
+    notes: string;
+  }) => {
+    // Add userId to the follow-up
+    const followUpWithUser: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'> = {
+      ...followUp,
+      userId: 'current-user' // TODO: Get from auth context
+    };
+    onAddFollowUp(followUpWithUser);
+    setIsAddFollowUpModalOpen(false);
+  };
+
   // Get pending VOs (all non-received VOs)
   const pendingVOs = vos.filter(vo => vo.status !== 'Received');
 
   return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-        <div className="w-full h-full max-w-[95vw] max-h-[95vh] bg-card rounded-lg shadow-xl flex flex-col">
+        <div className="w-full h-full max-w-7xl max-h-[90vh] bg-card rounded-lg shadow-xl flex flex-col">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-border">
             <div>
@@ -87,175 +129,82 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
             </button>
           </div>
 
-          {/* Content - Split Layout */}
-          <div className="flex-1 flex overflow-hidden">
-            {/* Left Side - Practice Information (40%) */}
-            <div className="w-[40%] border-r border-border overflow-y-auto p-6 space-y-6">
+          {/* Content - Full Width Tabbed Interface */}
+          <div className="flex-1 flex flex-col min-h-0">
 
-              {/* Contact Information */}
-              <div className="space-y-3">
-                <button
-                  onClick={() => toggleSection('contact')}
-                  className="w-full flex items-center justify-between text-left"
-                >
-                  <h3 className="text-lg font-semibold text-foreground">Contact Information</h3>
-                  <span className="text-muted-foreground">{expandedSections.contact ? '▲' : '▼'}</span>
-                </button>
-
-                {expandedSections.contact && (
-                  <div className="space-y-2 pl-2">
-                    {/* Address */}
-                    <div className="flex items-start gap-2">
-                      <span className="text-lg">📍</span>
-                      <div className="text-foreground">
-                        {practice.address}
-                      </div>
-                    </div>
-
-                    {/* Phone */}
-                    <div className="flex items-start gap-2">
-                      <span className="text-lg">📞</span>
-                      <a
-                        href={`tel:${practice.phone}`}
-                        className="text-primary hover:underline"
-                      >
-                        {practice.phone}
-                      </a>
-                    </div>
-
-                    {/* Fax */}
-                    {practice.fax && (
-                      <div className="flex items-start gap-2">
-                        <span className="text-lg">📠</span>
-                        <span className="text-foreground">{practice.fax}</span>
-                      </div>
-                    )}
-
-                    {/* Email */}
-                    {practice.email && (
-                      <div className="flex items-start gap-2">
-                        <span className="text-lg">✉️</span>
-                        <a
-                          href={`mailto:${practice.email}`}
-                          className="text-primary hover:underline"
-                        >
-                          {practice.email}
-                        </a>
-                      </div>
-                    )}
-
-                  </div>
-                )}
-              </div>
-
-              {/* Opening Hours */}
-              <div className="space-y-3">
-                <button
-                  onClick={() => toggleSection('hours')}
-                  className="w-full flex items-center justify-between text-left"
-                >
-                  <h3 className="text-lg font-semibold text-foreground">Opening Hours</h3>
-                  <span className="text-muted-foreground">{expandedSections.hours ? '▲' : '▼'}</span>
-                </button>
-
-                {expandedSections.hours && (
-                  <div className="pl-2">
-                    <OpeningHoursDisplay openingHours={practice.openingHours} prominent />
-                  </div>
-                )}
-              </div>
-
-              {/* Doctors */}
-              <div className="space-y-3">
-                <button
-                  onClick={() => toggleSection('doctors')}
-                  className="w-full flex items-center justify-between text-left"
-                >
-                  <h3 className="text-lg font-semibold text-foreground">Doctors</h3>
-                  <span className="text-muted-foreground">{expandedSections.doctors ? '▲' : '▼'}</span>
-                </button>
-
-                {expandedSections.doctors && (
-                  <div className="pl-2 space-y-2">
-                    {doctors.length === 0 ? (
-                      <p className="text-muted-foreground text-sm">No doctors assigned</p>
-                    ) : (
-                      doctors.map(doctor => (
-                        <div key={doctor.id} className="border border-border rounded-md p-3">
-                          <div className="font-medium text-foreground">{doctor.name}</div>
-                          {doctor.specialty && (
-                            <div className="text-sm text-muted-foreground">{doctor.specialty}</div>
-                          )}
-                          {doctor.facilities && doctor.facilities.length > 0 && (
-                            <div className="text-sm text-muted-foreground mt-1">
-                              <span className="font-medium">Facilities:</span> {doctor.facilities.join(', ')}
-                            </div>
-                          )}
-                        </div>
-                      ))
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Notes */}
-              {practice.notes && (
-                <div className="space-y-3">
+              {/* Tab Navigation */}
+              <div className="flex-shrink-0 border-b border-border bg-muted/20">
+                <div className="flex gap-1 px-6">
                   <button
-                    onClick={() => toggleSection('notes')}
-                    className="w-full flex items-center justify-between text-left"
+                    onClick={() => setActiveTab('practiceInfo')}
+                    className={`px-6 py-4 font-medium transition-colors relative ${
+                      activeTab === 'practiceInfo' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    }`}
                   >
-                    <h3 className="text-lg font-semibold text-foreground">Notes</h3>
-                    <span className="text-muted-foreground">{expandedSections.notes ? '▲' : '▼'}</span>
+                    Practice Info
+                    {activeTab === 'practiceInfo' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
                   </button>
-
-                  {expandedSections.notes && (
-                    <div className="pl-2">
-                      <p className="text-foreground whitespace-pre-wrap">{practice.notes}</p>
-                    </div>
-                  )}
+                  <button
+                    onClick={() => setActiveTab('vos')}
+                    className={`px-6 py-4 font-medium transition-colors relative ${
+                      activeTab === 'vos' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    Follow-Up Verordnungen
+                    {activeTab === 'vos' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
+                    <span className="ml-2 text-sm">({pendingVOs.length} pending)</span>
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('activityFollowups')}
+                    className={`px-6 py-4 font-medium transition-colors relative ${
+                      activeTab === 'activityFollowups' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    Activity & Follow-ups
+                    {activeTab === 'activityFollowups' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
+                    <span className="ml-2 text-sm">
+                      ({followUps.filter(f => !f.completed).length} active)
+                    </span>
+                  </button>
                 </div>
-              )}
-            </div>
+              </div>
 
-            {/* Right Side - Activities & Batches (60%) */}
-            <div className="w-[60%] overflow-y-auto p-6 space-y-6">
-
-              {/* Activity Log */}
-              <div className="space-y-3">
-                <button
-                  onClick={() => toggleSection('activities')}
-                  className="w-full flex items-center justify-between text-left"
-                >
-                  <h3 className="text-lg font-semibold text-foreground">Activity Log</h3>
-                  <span className="text-muted-foreground">{expandedSections.activities ? '▲' : '▼'}</span>
-                </button>
-
-                {expandedSections.activities && (
-                  <ActivityLogSection
-                    activities={activities}
-                    onAddActivity={() => setIsAddActivityModalOpen(true)}
+              {/* Tab Content - Full Height */}
+              <div className="flex-1 min-h-0 overflow-y-auto">
+                {activeTab === 'practiceInfo' && (
+                  <PracticeInfoTab
+                    practice={practice}
+                    doctors={doctors}
                   />
                 )}
-              </div>
 
-              {/* VOs Table */}
-              <div className="space-y-3 flex flex-col" style={{ height: '500px' }}>
-                <button
-                  onClick={() => toggleSection('vos')}
-                  className="w-full flex items-center justify-between text-left flex-shrink-0"
-                >
-                  <h3 className="text-lg font-semibold text-foreground">Follow-Up Verordnungen</h3>
-                  <span className="text-muted-foreground">{expandedSections.vos ? '▲' : '▼'}</span>
-                </button>
+                {activeTab === 'vos' && (
+                  <VOsTable
+                    vos={vos}
+                    doctors={doctors}
+                    therapists={therapists}
+                    facilities={facilities}
+                    onStatusChange={onStatusChange}
+                    onNoteChange={onNoteChange}
+                    onEditNote={onEditNote}
+                    onDeleteNote={onDeleteNote}
+                    onBulkStatusChange={onBulkStatusChange}
+                    onBulkNoteChange={onBulkNoteChange}
+                    onGeneratePDF={onGeneratePDF}
+                  />
+                )}
 
-                {expandedSections.vos && (
-                  <div className="flex-1 min-h-0 border border-border rounded-md overflow-hidden">
-                    <VOsTable
-                      vos={vos}
-                      doctors={doctors}
-                      onStatusChange={onStatusChange}
-                      onGeneratePDF={onGeneratePDF}
+                {activeTab === 'activityFollowups' && (
+                  <div className="h-full overflow-y-auto px-6 py-4">
+                    <ActivityAndFollowUpsSection
+                      practiceId={practice.id}
+                      activities={activities}
+                      followUps={followUps}
+                      onAddActivity={() => setIsAddActivityModalOpen(true)}
+                      onDeleteActivity={onDeleteActivity}
+                      onAddFollowUp={() => setIsAddFollowUpModalOpen(true)}
+                      onDeleteFollowUp={onDeleteFollowUp}
+                      onCompleteFollowUpAndLogActivity={onCompleteFollowUpAndLogActivity || (() => {})}
                     />
                   </div>
                 )}
@@ -263,13 +212,20 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
             </div>
           </div>
         </div>
-      </div>
 
       {/* Add Activity Modal */}
       <AddActivityModal
         isOpen={isAddActivityModalOpen}
         onClose={() => setIsAddActivityModalOpen(false)}
         onSave={handleAddActivityFromModal}
+        practiceId={practice.id}
+      />
+
+      {/* Add Follow-up Modal */}
+      <AddFollowUpModal
+        isOpen={isAddFollowUpModalOpen}
+        onClose={() => setIsAddFollowUpModalOpen(false)}
+        onSave={handleAddFollowUpFromModal}
         practiceId={practice.id}
       />
     </>
