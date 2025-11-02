@@ -1,11 +1,12 @@
-import React from 'react';
-import { PracticeVO, PracticeDoctor } from '@/types';
+import React, { useState, useMemo } from 'react';
+import { PracticeVO, PracticeDoctor, OrderFormType } from '@/types';
 
 interface VOsPDFPreviewModalProps {
   isOpen: boolean;
   onClose: () => void;
   selectedVOs: PracticeVO[];
-  selectedDoctor: PracticeDoctor | null;
+  doctors: PracticeDoctor[];
+  orderType: OrderFormType;
   deliveryType: 'er' | 'teltow';
 }
 
@@ -13,9 +14,29 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
   isOpen,
   onClose,
   selectedVOs,
-  selectedDoctor,
+  doctors,
+  orderType,
   deliveryType
 }) => {
+  // Group VOs by doctor
+  const vosByDoctor = useMemo(() => {
+    const grouped = new Map<string, { doctor: PracticeDoctor; vos: PracticeVO[] }>();
+
+    selectedVOs.forEach(vo => {
+      const doctor = doctors.find(d => d.id === vo.doctorId);
+      if (!doctor) return;
+
+      if (!grouped.has(vo.doctorId)) {
+        grouped.set(vo.doctorId, { doctor, vos: [] });
+      }
+      grouped.get(vo.doctorId)!.vos.push(vo);
+    });
+
+    return Array.from(grouped.values());
+  }, [selectedVOs, doctors]);
+
+  if (!isOpen || vosByDoctor.length === 0) return null;
+
   // Helper function to format current date as DD.MM.YYYY
   const getCurrentDate = (): string => {
     const now = new Date();
@@ -30,16 +51,6 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
     return `${vo.anzahl} ${vo.therapyType} im Hausbesuch`;
   };
 
-  // Handle download (mock for now)
-  const handleDownload = () => {
-    console.log('Downloading PDF for doctor:', selectedDoctor?.name);
-    console.log('Delivery type:', deliveryType);
-    console.log('Selected VOs:', selectedVOs.length);
-    alert('PDF download would start here (mock implementation)');
-  };
-
-  if (!isOpen || !selectedDoctor) return null;
-
   // Get ER name from first VO
   const erName = selectedVOs[0]?.facilityName || 'ER';
 
@@ -48,11 +59,20 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
     ? `Please deliver to the ${erName}`
     : 'Therapios, Rheinstr. 7f, 14513 Teltow';
 
-  // Render Follow-Up Order Form (always use this template)
-  const renderFollowUpForm = () => {
+  // Get form title based on order type
+  const formTitle = orderType === 'initial'
+    ? 'Bestellung von Erstverordnungen'
+    : 'Bitte um kurze Rückmeldung zu Folgeverordnungen';
+
+  // Get greeting text based on order type
+  const greetingText = orderType === 'initial'
+    ? 'wir möchten folgende Erstverordnungen für unsere Patienten bestellen.'
+    : 'wir warten noch auf die Folgeverordnungen für unsere unten genannten Patienten. Bitte geben Sie uns kurz Bescheid, ob die Rezepte fertig sind bzw. wann wir damit rechnen können.';
+
+  // Render PDF form
+  const renderForm = (doctor: PracticeDoctor, vos: PracticeVO[]) => {
     return (
       <div style={{
-        marginBottom: '2rem',
         padding: '2rem',
         backgroundColor: 'white',
         border: '1px solid #ddd',
@@ -66,7 +86,7 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
         {/* Header */}
         <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
           <div style={{ fontWeight: 'bold', fontSize: '1rem', textAlign: 'center' }}>
-            Bitte um kurze Rückmeldung zu Folgeverordnungen
+            {formTitle}
           </div>
           <div style={{ position: 'absolute', top: 0, right: 0, fontSize: '0.875rem' }}>
             {getCurrentDate()}
@@ -75,13 +95,12 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
 
         {/* Greeting */}
         <div style={{ marginBottom: '1rem' }}>
-          Sehr geehrtes Praxisteam {selectedDoctor.name},
+          Sehr geehrtes Praxisteam {doctor.name},
         </div>
 
         {/* Body text */}
         <div style={{ marginBottom: '1rem', lineHeight: '1.5' }}>
-          wir warten noch auf die Folgeverordnungen für unsere unten genannten Patienten.
-          Bitte geben Sie uns kurz Bescheid, ob die Rezepte fertig sind bzw. wann wir damit rechnen können.
+          {greetingText}
         </div>
 
         {/* ER Name */}
@@ -126,7 +145,7 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
                 textAlign: 'left',
                 width: '100px'
               }}>
-                Bestelt Date
+                {orderType === 'initial' ? 'Date' : 'Bestelt Date'}
               </th>
               <th style={{
                 border: '1px solid #000',
@@ -140,7 +159,7 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
             </tr>
           </thead>
           <tbody>
-            {selectedVOs.map((vo, index) => (
+            {vos.map((vo, index) => (
               <tr key={vo.id}>
                 <td style={{ border: '1px solid #000', padding: '0.5rem' }}>
                   {vo.patientName}
@@ -180,15 +199,33 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
     );
   };
 
+  // Handle download for individual doctor
+  const handleDownload = (doctorName: string, vosCount: number) => {
+    console.log('Downloading PDF for doctor:', doctorName);
+    console.log('Order type:', orderType);
+    console.log('Delivery type:', deliveryType);
+    console.log('Selected VOs:', vosCount);
+    alert(`PDF download would start here (mock implementation)\n\nDoctor: ${doctorName}\nVOs: ${vosCount}`);
+  };
+
+  const handleDownloadAll = () => {
+    console.log('Downloading all PDFs');
+    console.log('Total forms:', vosByDoctor.length);
+    console.log('Total VOs:', selectedVOs.length);
+    alert(`All PDFs download would start here (mock implementation)\n\nForms: ${vosByDoctor.length}\nTotal VOs: ${selectedVOs.length}`);
+  };
+
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <div className="bg-background border border-border rounded-lg shadow-xl w-full max-w-5xl max-h-[90vh] flex flex-col">
         {/* Header */}
         <div className="px-6 py-4 border-b border-border flex items-center justify-between flex-shrink-0">
           <div>
-            <h2 className="text-xl font-semibold text-foreground">PDF Preview - Follow-Up Form</h2>
+            <h2 className="text-xl font-semibold text-foreground">
+              PDF Preview - {orderType === 'initial' ? 'Initial' : 'Follow-up'} Order Form
+            </h2>
             <p className="text-sm text-muted-foreground mt-1">
-              {selectedVOs.length} VO{selectedVOs.length !== 1 ? 's' : ''} for Dr. {selectedDoctor.name}
+              {vosByDoctor.length} form{vosByDoctor.length !== 1 ? 's' : ''} • {selectedVOs.length} VO{selectedVOs.length !== 1 ? 's' : ''}
             </p>
           </div>
           <button
@@ -199,9 +236,51 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
           </button>
         </div>
 
-        {/* PDF Content (scrollable) */}
-        <div className="flex-1 overflow-auto p-6 bg-muted/30">
-          {renderFollowUpForm()}
+        {/* Preview Content - All Forms */}
+        <div className="flex-1 overflow-y-auto p-6 bg-muted/20">
+          <div className="space-y-8">
+            {vosByDoctor.map((group, index) => (
+              <div key={group.doctor.id}>
+                {/* Doctor Section Header */}
+                <div className="mb-4 flex items-center justify-between bg-white p-4 rounded-lg border-2 border-primary shadow-sm">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      Form {index + 1}: Dr. {group.doctor.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {group.vos.length} VO{group.vos.length !== 1 ? 's' : ''}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleDownload(group.doctor.name, group.vos.length)}
+                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-medium text-sm flex items-center gap-2"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download
+                  </button>
+                </div>
+
+                {/* Form Preview */}
+                {renderForm(group.doctor, group.vos)}
+
+                {/* Page Break Indicator (not for last form) */}
+                {index < vosByDoctor.length - 1 && (
+                  <div className="my-8 relative">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t-2 border-dashed border-gray-400"></div>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <span className="bg-muted/20 px-4 py-1 text-sm font-medium text-gray-600 uppercase tracking-wide">
+                        Page Break
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Footer */}
@@ -213,10 +292,13 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
             Close
           </button>
           <button
-            onClick={handleDownload}
-            className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-medium text-sm"
+            onClick={handleDownloadAll}
+            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-medium text-sm flex items-center gap-2"
           >
-            Download PDF
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download All {vosByDoctor.length > 1 ? `(${vosByDoctor.length} Forms)` : ''}
           </button>
         </div>
       </div>

@@ -1,20 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import PracticeForm from '@/components/fvo-crm/forms/PracticeForm';
-import { Practice, Arzt } from '@/types';
-
-// Import mock data
-import mockData from '@/data/fvoCRMData.json';
+import { Practice } from '@/types';
+import { useFVOCRM } from '@/hooks/useFVOCRM';
 
 export default function EditPracticePage() {
   const router = useRouter();
   const params = useParams();
   const practiceId = params.id as string;
 
-  const [practices] = useState<Practice[]>(mockData.practices as Practice[]);
-  const [doctors] = useState<Arzt[]>(mockData.doctors as Arzt[]);
+  const { practices, doctors, updatePractice } = useFVOCRM();
   const [selectedPractice, setSelectedPractice] = useState<Practice | null>(null);
 
   useEffect(() => {
@@ -30,14 +27,8 @@ export default function EditPracticePage() {
   const handleSave = (practiceData: Omit<Practice, 'id' | 'createdAt' | 'updatedAt'>) => {
     if (!selectedPractice) return;
 
-    // TODO: Implement save logic (will be handled by dashboard refactor)
-    const updatedPractice: Practice = {
-      ...practiceData,
-      id: selectedPractice.id,
-      createdAt: selectedPractice.createdAt,
-      updatedAt: new Date().toISOString()
-    };
-    console.log('Save practice:', updatedPractice);
+    // Update practice using context
+    updatePractice(selectedPractice.id, practiceData);
 
     // Navigate back to practices list
     router.push('/prototypes/fvo-crm/admin/practices');

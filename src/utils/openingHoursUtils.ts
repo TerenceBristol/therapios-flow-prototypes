@@ -44,20 +44,23 @@ export function getTodayHours(openingHours: OpeningHours): OpeningHoursDay {
 export function isOpenNow(openingHours: OpeningHours): boolean {
   const todayHours = getTodayHours(openingHours);
 
-  if (todayHours.isClosed) {
+  if (todayHours.isClosed || !todayHours.periods || todayHours.periods.length === 0) {
     return false;
   }
 
   const now = new Date();
   const currentTime = now.getHours() * 60 + now.getMinutes(); // Minutes since midnight
 
-  const [openHour, openMinute] = todayHours.open.split(':').map(Number);
-  const [closeHour, closeMinute] = todayHours.close.split(':').map(Number);
+  // Check if current time falls within ANY of the periods
+  return todayHours.periods.some(period => {
+    const [openHour, openMinute] = period.open.split(':').map(Number);
+    const [closeHour, closeMinute] = period.close.split(':').map(Number);
 
-  const openTime = openHour * 60 + openMinute;
-  const closeTime = closeHour * 60 + closeMinute;
+    const openTime = openHour * 60 + openMinute;
+    const closeTime = closeHour * 60 + closeMinute;
 
-  return currentTime >= openTime && currentTime < closeTime;
+    return currentTime >= openTime && currentTime < closeTime;
+  });
 }
 
 /**
@@ -68,19 +71,22 @@ export function isOpenNow(openingHours: OpeningHours): boolean {
 export function getOpensLaterTime(openingHours: OpeningHours): string | null {
   const todayHours = getTodayHours(openingHours);
 
-  if (todayHours.isClosed) {
+  if (todayHours.isClosed || !todayHours.periods || todayHours.periods.length === 0) {
     return null;
   }
 
   const now = new Date();
   const currentTime = now.getHours() * 60 + now.getMinutes();
 
-  const [openHour, openMinute] = todayHours.open.split(':').map(Number);
-  const openTime = openHour * 60 + openMinute;
+  // Find the next period that hasn't started yet
+  for (const period of todayHours.periods) {
+    const [openHour, openMinute] = period.open.split(':').map(Number);
+    const openTime = openHour * 60 + openMinute;
 
-  // If current time is before opening time, practice opens later today
-  if (currentTime < openTime) {
-    return convertTo12Hour(todayHours.open);
+    // If current time is before this period's opening time, practice opens later
+    if (currentTime < openTime) {
+      return convertTo12Hour(period.open);
+    }
   }
 
   return null;
@@ -102,9 +108,10 @@ export function getNextOpeningDay(openingHours: OpeningHours): { day: string; ti
     const day = days[dayIndex];
     const dayHours = openingHours[day];
 
-    if (!dayHours.isClosed) {
+    if (!dayHours.isClosed && dayHours.periods && dayHours.periods.length > 0) {
       const dayName = i === 1 ? 'tomorrow' : day.charAt(0).toUpperCase() + day.slice(1, 3);
-      const time = convertTo12Hour(dayHours.open);
+      // Use the first period's opening time
+      const time = convertTo12Hour(dayHours.periods[0].open);
       return { day: dayName, time };
     }
   }
@@ -148,13 +155,27 @@ export function getTodayStatus(openingHours: OpeningHours): TodayStatus {
   }
 
   if (isOpenNow(openingHours)) {
-    const openTime = convertTo12Hour(todayHours.open);
-    const closeTime = convertTo12Hour(todayHours.close);
-    return {
-      status: 'open',
-      displayText: `${openTime} - ${closeTime}`,
-      icon: '🟢'
-    };
+    // Find which period we're currently in and show its hours
+    const now = new Date();
+    const currentTime = now.getHours() * 60 + now.getMinutes();
+
+    const currentPeriod = todayHours.periods.find(period => {
+      const [openHour, openMinute] = period.open.split(':').map(Number);
+      const [closeHour, closeMinute] = period.close.split(':').map(Number);
+      const openTime = openHour * 60 + openMinute;
+      const closeTime = closeHour * 60 + closeMinute;
+      return currentTime >= openTime && currentTime < closeTime;
+    });
+
+    if (currentPeriod) {
+      const openTime = convertTo12Hour(currentPeriod.open);
+      const closeTime = convertTo12Hour(currentPeriod.close);
+      return {
+        status: 'open',
+        displayText: `${openTime} - ${closeTime}`,
+        icon: '🟢'
+      };
+    }
   }
 
   // Closed for today (past closing time) - show next opening
@@ -176,17 +197,29 @@ export function getTodayStatus(openingHours: OpeningHours): TodayStatus {
 /**
  * Format opening hours for display
  * @param dayHours - Opening hours for a day
- * @returns Formatted string like "8:00 AM - 5:00 PM" or "Closed"
+ * @returns Formatted string like "8:00 AM - 5:00 PM" or "8:00 AM - 5:00 PM (Break: 12:00 PM - 1:00 PM)" or "Closed"
  */
 export function formatDayHours(dayHours: OpeningHoursDay): string {
-  if (dayHours.isClosed) {
+  if (dayHours.isClosed || !dayHours.periods || dayHours.periods.length === 0) {
     return 'Closed';
   }
 
-  const openTime = convertTo12Hour(dayHours.open);
-  const closeTime = convertTo12Hour(dayHours.close);
+  const mainPeriod = dayHours.periods[0];
+  const breakPeriod = dayHours.periods[1];
 
-  return `${openTime} - ${closeTime}`;
+  // Format main hours
+  const openTime = convertTo12Hour(mainPeriod.open);
+  const closeTime = convertTo12Hour(mainPeriod.close);
+  let result = `${openTime} - ${closeTime}`;
+
+  // Add break if exists
+  if (breakPeriod) {
+    const breakOpen = convertTo12Hour(breakPeriod.open);
+    const breakClose = convertTo12Hour(breakPeriod.close);
+    result += ` (Break: ${breakOpen} - ${breakClose})`;
+  }
+
+  return result;
 }
 
 /**
@@ -234,6 +267,106 @@ export function isOpenOnDay(openingHours: OpeningHours, dayName: keyof OpeningHo
 export function isOpenToday(openingHours: OpeningHours): boolean {
   const today = getCurrentDayOfWeek() as keyof OpeningHours;
   return !openingHours[today].isClosed;
+}
+
+/**
+ * Group consecutive days with identical hours for compact display
+ * @param openingHours - Full week opening hours
+ * @returns Array of grouped day ranges with their hours
+ */
+export function groupConsecutiveDaysWithHours(
+  openingHours: OpeningHours
+): Array<{ days: string; hours: string; isToday: boolean; notes?: string[] }> {
+  const days: Array<keyof OpeningHours> = [
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+    'sunday'
+  ];
+
+  const dayAbbrev = {
+    monday: 'Mon',
+    tuesday: 'Tue',
+    wednesday: 'Wed',
+    thursday: 'Thu',
+    friday: 'Fri',
+    saturday: 'Sat',
+    sunday: 'Sun'
+  };
+
+  const today = getCurrentDayOfWeek();
+  const groups: Array<{ days: string; hours: string; isToday: boolean; notes?: string[] }> = [];
+
+  let currentGroup: {
+    dayKeys: Array<keyof OpeningHours>;
+    hours: string;
+    notes: string[]
+  } | null = null;
+
+  days.forEach(day => {
+    const dayHours = openingHours[day];
+    const hoursStr = formatDayHours(dayHours);
+    const dayNote = dayHours.notes?.trim();
+
+    // Check if we can group with current group (same hours, no notes on either)
+    const canGroup = currentGroup &&
+                     currentGroup.hours === hoursStr &&
+                     currentGroup.notes.length === 0 &&
+                     !dayNote;
+
+    if (canGroup) {
+      currentGroup!.dayKeys.push(day);
+    } else {
+      // Push current group if exists
+      if (currentGroup) {
+        const dayRange = currentGroup.dayKeys.length > 1
+          ? `${dayAbbrev[currentGroup.dayKeys[0]]}-${dayAbbrev[currentGroup.dayKeys[currentGroup.dayKeys.length - 1]]}`
+          : dayAbbrev[currentGroup.dayKeys[0]];
+
+        const includesToday = currentGroup.dayKeys.includes(today as keyof OpeningHours);
+
+        groups.push({
+          days: dayRange,
+          hours: currentGroup.hours,
+          isToday: includesToday,
+          notes: currentGroup.notes.length > 0 ? currentGroup.notes : undefined
+        });
+      }
+
+      // Start new group
+      currentGroup = {
+        dayKeys: [day],
+        hours: hoursStr,
+        notes: dayNote ? [dayNote] : []
+      };
+    }
+  });
+
+  // Push final group
+  if (currentGroup) {
+    const group: {
+      dayKeys: Array<keyof OpeningHours>;
+      hours: string;
+      notes: string[]
+    } = currentGroup; // Type narrowing helper
+    const dayRange = group.dayKeys.length > 1
+      ? `${dayAbbrev[group.dayKeys[0]]}-${dayAbbrev[group.dayKeys[group.dayKeys.length - 1]]}`
+      : dayAbbrev[group.dayKeys[0]];
+
+    const includesToday = group.dayKeys.includes(today as keyof OpeningHours);
+
+    groups.push({
+      days: dayRange,
+      hours: group.hours,
+      isToday: includesToday,
+      notes: group.notes.length > 0 ? group.notes : undefined
+    });
+  }
+
+  return groups;
 }
 
 /**
@@ -317,14 +450,17 @@ export function isValidTimeFormat(time: string): boolean {
  */
 export function createDefaultOpeningHours(): OpeningHours {
   const weekdayHours: OpeningHoursDay = {
-    open: '09:00',
-    close: '17:00',
+    periods: [
+      {
+        open: '09:00',
+        close: '17:00'
+      }
+    ],
     isClosed: false
   };
 
   const closedDay: OpeningHoursDay = {
-    open: '00:00',
-    close: '00:00',
+    periods: [],
     isClosed: true
   };
 

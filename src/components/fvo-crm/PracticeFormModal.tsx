@@ -32,7 +32,7 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
       if (practice) {
         setName(practice.name);
         setAddress(practice.address);
-        setPhone(practice.phone);
+        setPhone(practice.phone || '');
         setFax(practice.fax || '');
         setEmail(practice.email || '');
         setOpeningHours(practice.openingHours);
@@ -90,7 +90,8 @@ const PracticeFormModal: React.FC<PracticeFormModalProps> = ({
       email: email.trim() || undefined,
       openingHours,
       preferredContactMethod,
-      notes: notes.trim() || undefined
+      notes: notes.trim() || undefined,
+      contacts: practice?.contacts || []
     });
 
     onClose();

@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { Practice, OpeningHours, Arzt } from '@/types';
+import { Practice, OpeningHours, Arzt, PracticeContact, VacationPeriod } from '@/types';
 import OpeningHoursEditor from '../OpeningHoursEditor';
+import ContactArrayEditor from '../ContactArrayEditor';
+import VacationManager from '../VacationManager';
 import { createDefaultOpeningHours } from '@/utils/openingHoursUtils';
 import Link from 'next/link';
 
@@ -24,10 +26,12 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
   const [practiceId, setPracticeId] = useState<string>('');
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
-  const [phone, setPhone] = useState('');
+  const [contacts, setContacts] = useState<PracticeContact[]>([]);
+  const [phone, setPhone] = useState(''); // Deprecated - kept for migration
   const [fax, setFax] = useState('');
   const [email, setEmail] = useState('');
   const [openingHours, setOpeningHours] = useState<OpeningHours>(createDefaultOpeningHours());
+  const [vacationPeriods, setVacationPeriods] = useState<VacationPeriod[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   // Get doctors for this practice
@@ -42,10 +46,27 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
       setPracticeId(initialData.practiceId?.toString() || '');
       setName(initialData.name);
       setAddress(initialData.address || '');
-      setPhone(initialData.phone);
+
+      // Initialize contacts array
+      if (initialData.contacts && initialData.contacts.length > 0) {
+        setContacts(initialData.contacts);
+      } else if (initialData.phone) {
+        // Migrate old phone field to contacts array
+        setContacts([{
+          id: `contact-${Date.now()}`,
+          name: '',
+          phone: initialData.phone,
+          role: '',
+          note: '',
+          isPrimary: true
+        }]);
+      }
+
+      setPhone(initialData.phone || ''); // Keep for migration
       setFax(initialData.fax || '');
       setEmail(initialData.email || '');
       setOpeningHours(initialData.openingHours);
+      setVacationPeriods(initialData.vacationPeriods || []);
     }
   }, [initialData]);
 
@@ -56,8 +77,23 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
       newErrors.name = 'Practice name is required (min 2 characters)';
     }
 
-    if (!phone.trim()) {
-      newErrors.phone = 'Phone is required';
+    // Validate contacts array
+    if (contacts.length === 0) {
+      newErrors.contacts = 'At least one contact number is required';
+    } else {
+      // Check that at least one contact has a phone number
+      const hasValidPhone = contacts.some(c => c.phone.trim().length > 0);
+      if (!hasValidPhone) {
+        newErrors.contacts = 'At least one contact must have a phone number';
+      }
+
+      // Check that exactly one contact is marked as primary
+      const primaryCount = contacts.filter(c => c.isPrimary).length;
+      if (primaryCount === 0) {
+        newErrors.contacts = 'One contact must be marked as primary';
+      } else if (primaryCount > 1) {
+        newErrors.contacts = 'Only one contact can be marked as primary';
+      }
     }
 
     if (practiceId && !/^\d+$/.test(practiceId)) {
@@ -75,14 +111,20 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
   const handleSave = () => {
     if (!validate()) return;
 
+    // Get primary contact phone for backward compatibility
+    const primaryContact = contacts.find(c => c.isPrimary);
+    const primaryPhone = primaryContact?.phone || contacts[0]?.phone || '';
+
     onSave({
       practiceId: practiceId ? parseInt(practiceId) : undefined,
       name: name.trim(),
       address: address.trim(),
-      phone: phone.trim(),
+      contacts: contacts, // New contacts array
+      phone: primaryPhone, // Deprecated - kept for backward compatibility
       fax: fax.trim() || undefined,
       email: email.trim() || undefined,
-      openingHours
+      openingHours,
+      vacationPeriods: vacationPeriods.length > 0 ? vacationPeriods : undefined
     });
   };
 
@@ -162,24 +204,15 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
             />
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Numbers (Multiple) */}
+          <ContactArrayEditor
+            contacts={contacts}
+            onChange={setContacts}
+            error={errors.contacts}
+          />
+
+          {/* Fax and Email */}
           <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                Phone *
-              </label>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className={`w-full px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.phone ? 'border-red-500' : 'border-border'
-                }`}
-              />
-              {errors.phone && (
-                <p className="text-sm text-red-500 mt-1">{errors.phone}</p>
-              )}
-            </div>
             <div>
               <label className="block text-sm font-medium text-foreground mb-1">
                 Fax
@@ -191,24 +224,56 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
                 className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={`w-full px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
+                  errors.email ? 'border-red-500' : 'border-border'
+                }`}
+              />
+              {errors.email && (
+                <p className="text-sm text-red-500 mt-1">{errors.email}</p>
+              )}
+            </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-foreground mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={`w-full px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-                errors.email ? 'border-red-500' : 'border-border'
-              }`}
-            />
-            {errors.email && (
-              <p className="text-sm text-red-500 mt-1">{errors.email}</p>
-            )}
-          </div>
+          {/* Divider */}
+          <div className="border-t border-border my-6" />
+
+          {/* Doctors at this Practice */}
+          {isEditing && (
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+                Ärzte at this Practice
+              </h3>
+              {practiceDoctors.length > 0 ? (
+                <div className="space-y-2">
+                  {practiceDoctors.map(doctor => (
+                    <div key={doctor.id} className="text-sm text-foreground">
+                      • {doctor.name}
+                      {doctor.facilities.length > 0 && (
+                        <span className="text-muted-foreground ml-2">
+                          ({doctor.facilities.join(', ')})
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-sm text-muted-foreground italic">
+                  No doctors assigned to this practice
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Divider */}
+          {isEditing && <div className="border-t border-border my-6" />}
 
           {/* Divider */}
           <div className="border-t border-border my-6" />
@@ -247,6 +312,18 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
             <OpeningHoursEditor
               openingHours={openingHours}
               onChange={setOpeningHours}
+            />
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-border my-6" />
+
+          {/* Vacation Periods */}
+          <div>
+            <VacationManager
+              vacationPeriods={vacationPeriods}
+              onChange={setVacationPeriods}
+              doctors={practiceDoctors}
             />
           </div>
         </div>

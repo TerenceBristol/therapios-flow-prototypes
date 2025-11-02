@@ -56,7 +56,7 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
   useEffect(() => {
     if (practice && isOpen) {
       setName(practice.name);
-      setPhone(practice.phone);
+      setPhone(practice.phone || '');
       setFax(practice.fax || '');
       setEmail(practice.email || '');
       const addressParts = practice.address.split(',').map(s => s.trim());
@@ -84,7 +84,8 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
       address: `${street}, ${city}, ${state} ${zip}`,
       openingHours,
       preferredContactMethod,
-      notes: notes || undefined
+      notes: notes || undefined,
+      contacts: practice.contacts || []
     });
 
     setIsEditMode(false);
@@ -94,7 +95,7 @@ const PracticeDetailModal: React.FC<PracticeDetailModalProps> = ({
     // Reset form to original values
     if (practice) {
       setName(practice.name);
-      setPhone(practice.phone);
+      setPhone(practice.phone || '');
       setFax(practice.fax || '');
       setEmail(practice.email || '');
       const addressParts = practice.address.split(',').map(s => s.trim());

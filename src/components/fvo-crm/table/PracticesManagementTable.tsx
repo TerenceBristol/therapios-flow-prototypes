@@ -40,7 +40,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
       result = result.filter(p =>
         p.name.toLowerCase().includes(query) ||
         p.address.toLowerCase().includes(query) ||
-        p.phone.includes(query)
+        (p.phone && p.phone.includes(query))
       );
     }
 
@@ -67,7 +67,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
           compareValue = a.name.localeCompare(b.name);
           break;
         case 'phone':
-          compareValue = a.phone.localeCompare(b.phone);
+          compareValue = (a.phone || '').localeCompare(b.phone || '');
           break;
         case 'city':
           compareValue = a.address.localeCompare(b.address);
@@ -251,7 +251,7 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
 
                     {/* Phone */}
                     <td className="px-4 py-3">
-                      <PhoneCell phone={practice.phone} />
+                      <PhoneCell phone={practice.phone || ''} />
                     </td>
 
                     {/* Address */}

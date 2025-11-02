@@ -10,70 +10,43 @@
       "updatedAt": "2025-10-20T14:30:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 1,
-      "address": "123 Main Street, Springfield, IL 62701",
-      "contacts": [
-        {
-          "id": "cnt-prac-001-1",
-          "name": "Main",
-          "phone": "(555) 123-4567",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "123 Main Street, Springfield, IL 62701"
     },
     {
       "id": "prac-002",
@@ -85,70 +58,43 @@
       "updatedAt": "2025-10-22T11:15:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 2,
-      "address": "456 River Road, Riverside, CA 92501",
-      "contacts": [
-        {
-          "id": "cnt-prac-002-1",
-          "name": "Main",
-          "phone": "(555) 234-5678",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "456 River Road, Riverside, CA 92501"
     },
     {
       "id": "prac-003",
@@ -159,70 +105,43 @@
       "updatedAt": "2025-10-18T16:45:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "16:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 3,
-      "address": "789 Valley Drive, San Jose, CA 95110",
-      "contacts": [
-        {
-          "id": "cnt-prac-003-1",
-          "name": "Main",
-          "phone": "(555) 345-6789",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "789 Valley Drive, San Jose, CA 95110"
     },
     {
       "id": "prac-004",
@@ -234,70 +153,43 @@
       "updatedAt": "2025-10-21T09:20:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 4,
-      "address": "321 Highland Ave, Denver, CO 80202",
-      "contacts": [
-        {
-          "id": "cnt-prac-004-1",
-          "name": "Main",
-          "phone": "(555) 456-7890",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "321 Highland Ave, Denver, CO 80202"
     },
     {
       "id": "prac-005",
@@ -309,70 +201,43 @@
       "updatedAt": "2025-10-19T13:30:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 5,
-      "address": "555 Lake Shore Blvd, Chicago, IL 60611",
-      "contacts": [
-        {
-          "id": "cnt-prac-005-1",
-          "name": "Main",
-          "phone": "(555) 567-8901",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "555 Lake Shore Blvd, Chicago, IL 60611"
     },
     {
       "id": "prac-006",
@@ -383,75 +248,43 @@
       "updatedAt": "2025-10-20T10:15:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "13:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "13:00",
           "isClosed": false
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 6,
-      "address": "888 Sunset Boulevard, Los Angeles, CA 90028",
-      "contacts": [
-        {
-          "id": "cnt-prac-006-1",
-          "name": "Main",
-          "phone": "(555) 678-9012",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "888 Sunset Boulevard, Los Angeles, CA 90028"
     },
     {
       "id": "prac-007",
@@ -463,70 +296,43 @@
       "updatedAt": "2025-10-17T14:00:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 7,
-      "address": "234 Forest Lane, Portland, OR 97201",
-      "contacts": [
-        {
-          "id": "cnt-prac-007-1",
-          "name": "Main",
-          "phone": "(555) 789-0123",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "234 Forest Lane, Portland, OR 97201"
     },
     {
       "id": "prac-008",
@@ -538,70 +344,43 @@
       "updatedAt": "2025-10-16T11:45:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 8,
-      "address": "567 Harbor Drive, San Diego, CA 92101",
-      "contacts": [
-        {
-          "id": "cnt-prac-008-1",
-          "name": "Main",
-          "phone": "(555) 890-1234",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "567 Harbor Drive, San Diego, CA 92101"
     },
     {
       "id": "prac-009",
@@ -612,70 +391,43 @@
       "updatedAt": "2025-10-15T15:20:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 9,
-      "address": "890 Park Avenue, New York, NY 10028",
-      "contacts": [
-        {
-          "id": "cnt-prac-009-1",
-          "name": "Main",
-          "phone": "(555) 901-2345",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "890 Park Avenue, New York, NY 10028"
     },
     {
       "id": "prac-010",
@@ -687,70 +439,43 @@
       "updatedAt": "2025-10-14T12:30:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 10,
-      "address": "123 Meadow Lane, Austin, TX 78701",
-      "contacts": [
-        {
-          "id": "cnt-prac-010-1",
-          "name": "Main",
-          "phone": "(555) 012-3456",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "123 Meadow Lane, Austin, TX 78701"
     },
     {
       "id": "prac-011",
@@ -762,70 +487,43 @@
       "updatedAt": "2025-10-25T14:15:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "15:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "15:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 11,
-      "address": "456 Ocean Boulevard, Miami, FL 33139",
-      "contacts": [
-        {
-          "id": "cnt-prac-011-1",
-          "name": "Main",
-          "phone": "(555) 123-4568",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "456 Ocean Boulevard, Miami, FL 33139"
     },
     {
       "id": "prac-012",
@@ -836,70 +534,43 @@
       "updatedAt": "2025-10-24T09:45:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "19:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "19:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "19:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "19:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "19:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "19:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "19:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "19:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "19:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "19:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 12,
-      "address": "789 Main Street Suite 200, Seattle, WA 98101",
-      "contacts": [
-        {
-          "id": "cnt-prac-012-1",
-          "name": "Main",
-          "phone": "(555) 234-5679",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "789 Main Street Suite 200, Seattle, WA 98101"
     },
     {
       "id": "prac-013",
@@ -911,70 +582,43 @@
       "updatedAt": "2025-10-23T13:00:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 13,
-      "address": "234 Hill Road, Boston, MA 02108",
-      "contacts": [
-        {
-          "id": "cnt-prac-013-1",
-          "name": "Main",
-          "phone": "(555) 345-6780",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "234 Hill Road, Boston, MA 02108"
     },
     {
       "id": "prac-014",
@@ -986,70 +630,43 @@
       "updatedAt": "2025-10-22T08:20:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 14,
-      "address": "567 West Avenue, Phoenix, AZ 85001",
-      "contacts": [
-        {
-          "id": "cnt-prac-014-1",
-          "name": "Main",
-          "phone": "(555) 456-7891",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "567 West Avenue, Phoenix, AZ 85001"
     },
     {
       "id": "prac-015",
@@ -1060,70 +677,43 @@
       "updatedAt": "2025-10-21T10:30:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "18:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 15,
-      "address": "890 East Street, Philadelphia, PA 19102",
-      "contacts": [
-        {
-          "id": "cnt-prac-015-1",
-          "name": "Main",
-          "phone": "(555) 567-8902",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "890 East Street, Philadelphia, PA 19102"
     },
     {
       "id": "prac-016",
@@ -1135,55 +725,43 @@
       "updatedAt": "2025-10-20T11:00:00Z",
       "openingHours": {
         "monday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "tuesday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "wednesday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "thursday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "friday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "saturday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "20:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "20:00",
           "isClosed": false
         },
         "sunday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "20:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "20:00",
           "isClosed": false
         }
       },
       "practiceId": 16,
-      "address": "123 Central Drive, Fresno, CA 93721",
-      "contacts": [
-        {
-          "id": "cnt-prac-016-1",
-          "name": "Main",
-          "phone": "(555) 678-9013",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "123 Central Drive, Fresno, CA 93721"
     },
     {
       "id": "prac-017",
@@ -1194,70 +772,43 @@
       "updatedAt": "2025-10-19T14:45:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 17,
-      "address": "456 North Boulevard, Detroit, MI 48201",
-      "contacts": [
-        {
-          "id": "cnt-prac-017-1",
-          "name": "Main",
-          "phone": "(555) 789-0124",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "456 North Boulevard, Detroit, MI 48201"
     },
     {
       "id": "prac-018",
@@ -1269,70 +820,43 @@
       "updatedAt": "2025-10-18T15:30:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "18:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "18:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "18:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "18:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "18:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 18,
-      "address": "789 South Street, Atlanta, GA 30303",
-      "contacts": [
-        {
-          "id": "cnt-prac-018-1",
-          "name": "Main",
-          "phone": "(555) 890-1235",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "789 South Street, Atlanta, GA 30303"
     },
     {
       "id": "prac-019",
@@ -1343,70 +867,43 @@
       "updatedAt": "2025-10-17T12:15:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 19,
-      "address": "234 Bay Street, San Francisco, CA 94102",
-      "contacts": [
-        {
-          "id": "cnt-prac-019-1",
-          "name": "Main",
-          "phone": "(555) 901-2346",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "234 Bay Street, San Francisco, CA 94102"
     },
     {
       "id": "prac-020",
@@ -1418,70 +915,43 @@
       "updatedAt": "2025-10-16T13:45:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "18:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "18:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "14:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "14:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 20,
-      "address": "567 Summit Avenue, Las Vegas, NV 89101",
-      "contacts": [
-        {
-          "id": "cnt-prac-020-1",
-          "name": "Main",
-          "phone": "(555) 012-3457",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "567 Summit Avenue, Las Vegas, NV 89101"
     },
     {
       "id": "prac-021",
@@ -1492,70 +962,43 @@
       "updatedAt": "2025-10-15T09:30:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 21,
-      "address": "890 Gateway Plaza, St. Louis, MO 63101",
-      "contacts": [
-        {
-          "id": "cnt-prac-021-1",
-          "name": "Main",
-          "phone": "(555) 123-4570",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "890 Gateway Plaza, St. Louis, MO 63101"
     },
     {
       "id": "prac-022",
@@ -1567,70 +1010,43 @@
       "updatedAt": "2025-10-14T11:45:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "16:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "16:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "16:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "16:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "16:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 22,
-      "address": "123 Riverbend Road, Minneapolis, MN 55401",
-      "contacts": [
-        {
-          "id": "cnt-prac-022-1",
-          "name": "Main",
-          "phone": "(555) 234-5680",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "123 Riverbend Road, Minneapolis, MN 55401"
     },
     {
       "id": "prac-023",
@@ -1641,70 +1057,43 @@
       "updatedAt": "2025-10-13T14:20:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "09:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 23,
-      "address": "456 Brook Lane, Dallas, TX 75201",
-      "contacts": [
-        {
-          "id": "cnt-prac-023-1",
-          "name": "Main",
-          "phone": "(555) 345-6782",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "456 Brook Lane, Dallas, TX 75201"
     },
     {
       "id": "prac-024",
@@ -1716,70 +1105,43 @@
       "updatedAt": "2025-10-12T10:00:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 24,
-      "address": "789 Maple Drive, Charlotte, NC 28201",
-      "contacts": [
-        {
-          "id": "cnt-prac-024-1",
-          "name": "Main",
-          "phone": "(555) 456-7893",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "789 Maple Drive, Charlotte, NC 28201"
     },
     {
       "id": "prac-025",
@@ -1790,70 +1152,43 @@
       "updatedAt": "2025-10-11T12:30:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 25,
-      "address": "234 Oak Street, Columbus, OH 43201",
-      "contacts": [
-        {
-          "id": "cnt-prac-025-1",
-          "name": "Main",
-          "phone": "(555) 567-8904",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "234 Oak Street, Columbus, OH 43201"
     },
     {
       "id": "prac-026",
@@ -1865,70 +1200,43 @@
       "updatedAt": "2025-10-10T15:00:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "15:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "15:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 26,
-      "address": "567 Pine Street, Nashville, TN 37201",
-      "contacts": [
-        {
-          "id": "cnt-prac-026-1",
-          "name": "Main",
-          "phone": "(555) 678-9015",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "567 Pine Street, Nashville, TN 37201"
     },
     {
       "id": "prac-027",
@@ -1939,70 +1247,43 @@
       "updatedAt": "2025-10-09T13:15:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 27,
-      "address": "890 Clear Lake Road, Houston, TX 77001",
-      "contacts": [
-        {
-          "id": "cnt-prac-027-1",
-          "name": "Main",
-          "phone": "(555) 789-0126",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "890 Clear Lake Road, Houston, TX 77001"
     },
     {
       "id": "prac-028",
@@ -2014,70 +1295,43 @@
       "updatedAt": "2025-10-08T09:45:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            }
-          ],
+          "open": "07:00",
+          "close": "16:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 28,
-      "address": "123 Fairview Avenue, Indianapolis, IN 46201",
-      "contacts": [
-        {
-          "id": "cnt-prac-028-1",
-          "name": "Main",
-          "phone": "(555) 890-1237",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "123 Fairview Avenue, Indianapolis, IN 46201"
     },
     {
       "id": "prac-029",
@@ -2088,70 +1342,43 @@
       "updatedAt": "2025-10-07T11:00:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 29,
-      "address": "456 Highland Road, Milwaukee, WI 53201",
-      "contacts": [
-        {
-          "id": "cnt-prac-029-1",
-          "name": "Main",
-          "phone": "(555) 901-2347",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
+      "address": "456 Highland Road, Milwaukee, WI 53201"
     },
     {
       "id": "prac-030",
@@ -2163,152 +1390,43 @@
       "updatedAt": "2025-10-06T14:30:00Z",
       "openingHours": {
         "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            }
-          ],
+          "open": "08:00",
+          "close": "17:00",
           "isClosed": false
         },
         "saturday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         },
         "sunday": {
-          "periods": [],
+          "open": "00:00",
+          "close": "00:00",
           "isClosed": true
         }
       },
       "practiceId": 30,
-      "address": "789 Cedar Ridge Drive, Kansas City, MO 64101",
-      "contacts": [
-        {
-          "id": "cnt-prac-030-1",
-          "name": "Main",
-          "phone": "(555) 012-3459",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": []
-    },
-    {
-      "id": "prac-031",
-      "name": "Busy Medical Practice - Test Scrolling",
-      "phone": "(555) 999-8888",
-      "fax": "(555) 999-8889",
-      "email": "office@busymedical.com",
-      "createdAt": "2024-01-20T10:00:00Z",
-      "updatedAt": "2025-10-25T16:00:00Z",
-      "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "19:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "19:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "19:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "19:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "19:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "12:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
-      },
-      "practiceId": 31,
-      "address": "1000 Test Avenue, Boston, MA 02101",
-      "contacts": [
-        {
-          "id": "cnt-prac-031-1",
-          "name": "Reception Desk",
-          "phone": "(555) 999-8888",
-          "role": "Front Desk",
-          "isPrimary": true
-        }
-      ],
-      "vacationPeriods": [],
-      "notes": "This practice has many pending VOs to test table scrolling behavior. Extended hours Mon-Fri."
+      "address": "789 Cedar Ridge Drive, Kansas City, MO 64101"
     }
   ],
   "doctors": [
@@ -2779,21 +1897,6 @@
       "notes": "",
       "createdAt": "2025-10-29T10:37:14.274Z",
       "updatedAt": "2025-10-29T10:37:14.274Z"
-    },
-    {
-      "id": "doc-061",
-      "name": "Dr. Scroll TestDoctor",
-      "createdAt": "2024-01-20T10:00:00Z",
-      "updatedAt": "2024-01-20T10:00:00Z",
-      "phone": "(555) 999-7777",
-      "email": "scroll.test@medical.com",
-      "arztId": 61,
-      "facilities": [
-        "ER Hamburg",
-        "ER Berlin"
-      ],
-      "practiceId": "prac-031",
-      "specialty": "General Practice"
     }
   ],
   "vos": [
@@ -2809,10 +1912,7 @@
       "practiceId": "prac-001",
       "doctorId": "doc-001",
       "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-10T08:00:00Z",
-      "therapistId": "ther-023",
-      "voNumber": "4034-4",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-10T08:00:00Z"
     },
     {
       "id": "vo-002",
@@ -2826,10 +1926,7 @@
       "practiceId": "prac-001",
       "doctorId": "doc-002",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-10T08:00:00Z",
-      "therapistId": "ther-004",
-      "voNumber": "2118-1",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-10T08:00:00Z"
     },
     {
       "id": "vo-003",
@@ -2843,10 +1940,7 @@
       "practiceId": "prac-001",
       "doctorId": "doc-001",
       "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-10T08:00:00Z",
-      "therapistId": "ther-024",
-      "voNumber": "7169-7",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-10T08:00:00Z"
     },
     {
       "id": "vo-004",
@@ -2860,10 +1954,7 @@
       "practiceId": "prac-001",
       "doctorId": "doc-003",
       "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-18T09:00:00Z",
-      "therapistId": "ther-024",
-      "voNumber": "8719-6",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-18T09:00:00Z"
     },
     {
       "id": "vo-005",
@@ -2877,10 +1968,7 @@
       "practiceId": "prac-001",
       "doctorId": "doc-002",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-18T09:00:00Z",
-      "therapistId": "ther-004",
-      "voNumber": "5797-3",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-18T09:00:00Z"
     },
     {
       "id": "vo-006",
@@ -2894,10 +1982,7 @@
       "practiceId": "prac-002",
       "doctorId": "doc-004",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-01T10:00:00Z",
-      "therapistId": "ther-005",
-      "voNumber": "1165-4",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-01T10:00:00Z"
     },
     {
       "id": "vo-007",
@@ -2911,10 +1996,7 @@
       "practiceId": "prac-002",
       "doctorId": "doc-003",
       "facilityName": "ER Leipzig",
-      "createdAt": "2025-10-01T10:00:00Z",
-      "therapistId": "ther-025",
-      "voNumber": "6187-1",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-01T10:00:00Z"
     },
     {
       "id": "vo-008",
@@ -2928,10 +2010,7 @@
       "practiceId": "prac-002",
       "doctorId": "doc-004",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-01T10:00:00Z",
-      "therapistId": "ther-012",
-      "voNumber": "3640-4",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-01T10:00:00Z"
     },
     {
       "id": "vo-009",
@@ -2945,10 +2024,7 @@
       "practiceId": "prac-002",
       "doctorId": "doc-004",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-20T08:30:00Z",
-      "therapistId": "ther-013",
-      "voNumber": "3570-5",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-20T08:30:00Z"
     },
     {
       "id": "vo-010",
@@ -2962,10 +2038,7 @@
       "practiceId": "prac-003",
       "doctorId": "doc-004",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-23T11:15:00Z",
-      "therapistId": "ther-013",
-      "voNumber": "8439-9",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-23T11:15:00Z"
     },
     {
       "id": "vo-011",
@@ -2979,10 +2052,7 @@
       "practiceId": "prac-003",
       "doctorId": "doc-005",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-03T09:00:00Z",
-      "therapistId": "ther-005",
-      "voNumber": "8063-5",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-03T09:00:00Z"
     },
     {
       "id": "vo-012",
@@ -2996,10 +2066,7 @@
       "practiceId": "prac-003",
       "doctorId": "doc-004",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-03T09:00:00Z",
-      "therapistId": "ther-013",
-      "voNumber": "8434-5",
-      "voStatus": "Abgebrochen"
+      "createdAt": "2025-10-03T09:00:00Z"
     },
     {
       "id": "vo-014",
@@ -3013,10 +2080,7 @@
       "practiceId": "prac-004",
       "doctorId": "doc-006",
       "facilityName": "Care Home Golden Years",
-      "createdAt": "2025-10-01T08:00:00Z",
-      "therapistId": "ther-001",
-      "voNumber": "9853-6",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-01T08:00:00Z"
     },
     {
       "id": "vo-015",
@@ -3030,10 +2094,7 @@
       "practiceId": "prac-004",
       "doctorId": "doc-006",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-01T08:00:00Z",
-      "therapistId": "ther-019",
-      "voNumber": "3940-4",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-01T08:00:00Z"
     },
     {
       "id": "vo-016",
@@ -3047,10 +2108,7 @@
       "practiceId": "prac-004",
       "doctorId": "doc-006",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-01T08:00:00Z",
-      "therapistId": "ther-019",
-      "voNumber": "8960-4",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-01T08:00:00Z"
     },
     {
       "id": "vo-017",
@@ -3064,10 +2122,7 @@
       "practiceId": "prac-004",
       "doctorId": "doc-006",
       "facilityName": "Care Home Golden Years",
-      "createdAt": "2025-10-22T10:00:00Z",
-      "therapistId": "ther-002",
-      "voNumber": "9586-9",
-      "voStatus": "Abgebrochen"
+      "createdAt": "2025-10-22T10:00:00Z"
     },
     {
       "id": "vo-018",
@@ -3081,10 +2136,7 @@
       "practiceId": "prac-005",
       "doctorId": "doc-007",
       "facilityName": "ER Munich",
-      "createdAt": "2025-10-25T10:00:00Z",
-      "therapistId": "ther-028",
-      "voNumber": "4959-7",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-25T10:00:00Z"
     },
     {
       "id": "vo-019",
@@ -3098,10 +2150,7 @@
       "practiceId": "prac-005",
       "doctorId": "doc-007",
       "facilityName": "Care Home Riverside",
-      "createdAt": "2025-10-02T09:00:00Z",
-      "therapistId": "ther-009",
-      "voNumber": "9321-1",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-02T09:00:00Z"
     },
     {
       "id": "vo-020",
@@ -3115,10 +2164,7 @@
       "practiceId": "prac-005",
       "doctorId": "doc-007",
       "facilityName": "ER Munich",
-      "createdAt": "2025-10-02T09:00:00Z",
-      "therapistId": "ther-029",
-      "voNumber": "6626-6",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-02T09:00:00Z"
     },
     {
       "id": "vo-021",
@@ -3132,10 +2178,7 @@
       "practiceId": "prac-006",
       "doctorId": "doc-008",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-12T10:00:00Z",
-      "therapistId": "ther-020",
-      "voNumber": "1728-7",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-12T10:00:00Z"
     },
     {
       "id": "vo-022",
@@ -3149,10 +2192,7 @@
       "practiceId": "prac-006",
       "doctorId": "doc-008",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-12T10:00:00Z",
-      "therapistId": "ther-013",
-      "voNumber": "4030-7",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-12T10:00:00Z"
     },
     {
       "id": "vo-023",
@@ -3166,10 +2206,7 @@
       "practiceId": "prac-006",
       "doctorId": "doc-008",
       "facilityName": "Care Home Riverside",
-      "createdAt": "2025-10-12T10:00:00Z",
-      "therapistId": "ther-009",
-      "voNumber": "1994-6",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-12T10:00:00Z"
     },
     {
       "id": "vo-024",
@@ -3183,10 +2220,7 @@
       "practiceId": "prac-007",
       "doctorId": "doc-009",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-25T10:15:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "7533-8",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-25T10:15:00Z"
     },
     {
       "id": "vo-025",
@@ -3200,27 +2234,21 @@
       "practiceId": "prac-007",
       "doctorId": "doc-009",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-26T09:00:00Z",
-      "therapistId": "ther-005",
-      "voNumber": "2341-2",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-26T09:00:00Z"
     },
     {
       "id": "vo-026",
       "patientName": "George Young",
       "therapyType": "L-E45H",
       "anzahl": 18,
-      "status": "In Transit",
-      "statusTimestamp": "2025-10-25T10:00:00Z",
-      "statusDate": "25.10.2025",
+      "status": "Nachverfolgen",
+      "statusTimestamp": "2025-10-04T14:20:00Z",
+      "statusDate": "04.10.2025",
       "gebDatum": "25.10.1991",
       "practiceId": "prac-008",
       "doctorId": "doc-010",
       "facilityName": "ER Berlin",
-      "createdAt": "2025-09-28T10:00:00Z",
-      "therapistId": "ther-015",
-      "voNumber": "5521-2",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-09-28T10:00:00Z"
     },
     {
       "id": "vo-027",
@@ -3234,10 +2262,7 @@
       "practiceId": "prac-008",
       "doctorId": "doc-010",
       "facilityName": "ER Dresden",
-      "createdAt": "2025-09-28T10:00:00Z",
-      "therapistId": "ther-017",
-      "voNumber": "8288-5",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-09-28T10:00:00Z"
     },
     {
       "id": "vo-029",
@@ -3251,10 +2276,7 @@
       "practiceId": "prac-009",
       "doctorId": "doc-011",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-04T08:00:00Z",
-      "therapistId": "ther-005",
-      "voNumber": "2839-5",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-04T08:00:00Z"
     },
     {
       "id": "vo-030",
@@ -3268,10 +2290,7 @@
       "practiceId": "prac-009",
       "doctorId": "doc-011",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-04T08:00:00Z",
-      "therapistId": "ther-006",
-      "voNumber": "4247-5",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-04T08:00:00Z"
     },
     {
       "id": "vo-031",
@@ -3285,10 +2304,7 @@
       "practiceId": "prac-009",
       "doctorId": "doc-011",
       "facilityName": "Care Home Golden Years",
-      "createdAt": "2025-10-04T08:00:00Z",
-      "therapistId": "ther-002",
-      "voNumber": "9074-9",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-04T08:00:00Z"
     },
     {
       "id": "vo-032",
@@ -3302,10 +2318,7 @@
       "practiceId": "prac-010",
       "doctorId": "doc-012",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-24T11:30:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "5978-4",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-24T11:30:00Z"
     },
     {
       "id": "vo-033",
@@ -3319,10 +2332,7 @@
       "practiceId": "prac-010",
       "doctorId": "doc-012",
       "facilityName": "Care Home Riverside",
-      "createdAt": "2025-10-25T08:45:00Z",
-      "therapistId": "ther-010",
-      "voNumber": "2489-4",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-25T08:45:00Z"
     },
     {
       "id": "vo-034",
@@ -3336,10 +2346,7 @@
       "practiceId": "prac-011",
       "doctorId": "doc-013",
       "facilityName": "Care Home Pleasant Valley",
-      "createdAt": "2025-10-01T09:00:00Z",
-      "therapistId": "ther-007",
-      "voNumber": "7292-8",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-01T09:00:00Z"
     },
     {
       "id": "vo-035",
@@ -3353,10 +2360,7 @@
       "practiceId": "prac-011",
       "doctorId": "doc-013",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-01T09:00:00Z",
-      "therapistId": "ther-020",
-      "voNumber": "2938-3",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-01T09:00:00Z"
     },
     {
       "id": "vo-036",
@@ -3370,10 +2374,7 @@
       "practiceId": "prac-012",
       "doctorId": "doc-010",
       "facilityName": "ER Berlin",
-      "createdAt": "2025-10-13T10:00:00Z",
-      "therapistId": "ther-015",
-      "voNumber": "5505-6",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-13T10:00:00Z"
     },
     {
       "id": "vo-037",
@@ -3387,27 +2388,21 @@
       "practiceId": "prac-012",
       "doctorId": "doc-010",
       "facilityName": "ER Dresden",
-      "createdAt": "2025-10-13T10:00:00Z",
-      "therapistId": "ther-017",
-      "voNumber": "4897-2",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-13T10:00:00Z"
     },
     {
       "id": "vo-038",
       "patientName": "Larry Mitchell",
       "therapyType": "L-E45H",
       "anzahl": 12,
-      "status": "In Transit",
-      "statusTimestamp": "2025-10-25T10:00:00Z",
-      "statusDate": "25.10.2025",
+      "status": "Nachverfolgen",
+      "statusTimestamp": "2025-10-22T14:30:00Z",
+      "statusDate": "22.10.2025",
       "gebDatum": "11.06.1947",
       "practiceId": "prac-012",
       "doctorId": "doc-010",
       "facilityName": "ER Berlin",
-      "createdAt": "2025-10-13T10:00:00Z",
-      "therapistId": "ther-016",
-      "voNumber": "8124-2",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-13T10:00:00Z"
     },
     {
       "id": "vo-039",
@@ -3421,10 +2416,7 @@
       "practiceId": "prac-013",
       "doctorId": "doc-006",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-23T10:00:00Z",
-      "therapistId": "ther-020",
-      "voNumber": "1123-7",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-23T10:00:00Z"
     },
     {
       "id": "vo-040",
@@ -3438,10 +2430,7 @@
       "practiceId": "prac-013",
       "doctorId": "doc-006",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-24T09:15:00Z",
-      "therapistId": "ther-020",
-      "voNumber": "3071-6",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-24T09:15:00Z"
     },
     {
       "id": "vo-041",
@@ -3455,10 +2444,7 @@
       "practiceId": "prac-014",
       "doctorId": "doc-014",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-09-30T08:00:00Z",
-      "therapistId": "ther-020",
-      "voNumber": "3051-3",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-09-30T08:00:00Z"
     },
     {
       "id": "vo-042",
@@ -3472,10 +2458,7 @@
       "practiceId": "prac-014",
       "doctorId": "doc-014",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-09-30T08:00:00Z",
-      "therapistId": "ther-021",
-      "voNumber": "7883-8",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-09-30T08:00:00Z"
     },
     {
       "id": "vo-044",
@@ -3489,10 +2472,7 @@
       "practiceId": "prac-015",
       "doctorId": "doc-008",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-05T09:00:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "5935-1",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-05T09:00:00Z"
     },
     {
       "id": "vo-045",
@@ -3506,10 +2486,7 @@
       "practiceId": "prac-015",
       "doctorId": "doc-008",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-05T09:00:00Z",
-      "therapistId": "ther-021",
-      "voNumber": "9702-5",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-05T09:00:00Z"
     },
     {
       "id": "vo-046",
@@ -3523,10 +2500,7 @@
       "practiceId": "prac-015",
       "doctorId": "doc-008",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-05T09:00:00Z",
-      "therapistId": "ther-021",
-      "voNumber": "2641-5",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-05T09:00:00Z"
     },
     {
       "id": "vo-047",
@@ -3540,10 +2514,7 @@
       "practiceId": "prac-016",
       "doctorId": "doc-015",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-25T11:00:00Z",
-      "therapistId": "ther-021",
-      "voNumber": "8396-9",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-25T11:00:00Z"
     },
     {
       "id": "vo-048",
@@ -3557,10 +2528,7 @@
       "practiceId": "prac-016",
       "doctorId": "doc-015",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-26T08:30:00Z",
-      "therapistId": "ther-021",
-      "voNumber": "4968-8",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-26T08:30:00Z"
     },
     {
       "id": "vo-049",
@@ -3574,10 +2542,7 @@
       "practiceId": "prac-017",
       "doctorId": "doc-016",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-02T10:00:00Z",
-      "therapistId": "ther-021",
-      "voNumber": "5877-8",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-02T10:00:00Z"
     },
     {
       "id": "vo-050",
@@ -3591,10 +2556,7 @@
       "practiceId": "prac-017",
       "doctorId": "doc-016",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-02T10:00:00Z",
-      "therapistId": "ther-022",
-      "voNumber": "6450-7",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-02T10:00:00Z"
     },
     {
       "id": "vo-051",
@@ -3608,10 +2570,7 @@
       "practiceId": "prac-018",
       "doctorId": "doc-017",
       "facilityName": "ER Berlin",
-      "createdAt": "2025-10-14T08:00:00Z",
-      "therapistId": "ther-016",
-      "voNumber": "6419-9",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-14T08:00:00Z"
     },
     {
       "id": "vo-052",
@@ -3625,10 +2584,7 @@
       "practiceId": "prac-018",
       "doctorId": "doc-017",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-14T08:00:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "3109-1",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-14T08:00:00Z"
     },
     {
       "id": "vo-053",
@@ -3642,10 +2598,7 @@
       "practiceId": "prac-018",
       "doctorId": "doc-017",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-14T08:00:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "5322-1",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-14T08:00:00Z"
     },
     {
       "id": "vo-054",
@@ -3659,10 +2612,7 @@
       "practiceId": "prac-019",
       "doctorId": "doc-018",
       "facilityName": "ER Dresden",
-      "createdAt": "2025-10-24T09:45:00Z",
-      "therapistId": "ther-018",
-      "voNumber": "3552-4",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-24T09:45:00Z"
     },
     {
       "id": "vo-055",
@@ -3676,10 +2626,7 @@
       "practiceId": "prac-019",
       "doctorId": "doc-018",
       "facilityName": "ER Dresden",
-      "createdAt": "2025-10-25T10:30:00Z",
-      "therapistId": "ther-018",
-      "voNumber": "1269-9",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-25T10:30:00Z"
     },
     {
       "id": "vo-056",
@@ -3693,10 +2640,7 @@
       "practiceId": "prac-020",
       "doctorId": "doc-019",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-03T09:00:00Z",
-      "therapistId": "ther-006",
-      "voNumber": "4802-5",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-03T09:00:00Z"
     },
     {
       "id": "vo-057",
@@ -3710,10 +2654,7 @@
       "practiceId": "prac-020",
       "doctorId": "doc-019",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-03T09:00:00Z",
-      "therapistId": "ther-006",
-      "voNumber": "4982-7",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-03T09:00:00Z"
     },
     {
       "id": "vo-059",
@@ -3727,10 +2668,7 @@
       "practiceId": "prac-021",
       "doctorId": "doc-020",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-06T08:00:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "3706-2",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-06T08:00:00Z"
     },
     {
       "id": "vo-060",
@@ -3744,10 +2682,7 @@
       "practiceId": "prac-021",
       "doctorId": "doc-020",
       "facilityName": "Care Home Pleasant Valley",
-      "createdAt": "2025-10-06T08:00:00Z",
-      "therapistId": "ther-008",
-      "voNumber": "5673-8",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-06T08:00:00Z"
     },
     {
       "id": "vo-061",
@@ -3761,10 +2696,7 @@
       "practiceId": "prac-021",
       "doctorId": "doc-020",
       "facilityName": "Care Home Pleasant Valley",
-      "createdAt": "2025-10-06T08:00:00Z",
-      "therapistId": "ther-008",
-      "voNumber": "8477-6",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-06T08:00:00Z"
     },
     {
       "id": "vo-062",
@@ -3778,10 +2710,7 @@
       "practiceId": "prac-022",
       "doctorId": "doc-021",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-23T11:15:00Z",
-      "therapistId": "ther-022",
-      "voNumber": "8827-4",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-23T11:15:00Z"
     },
     {
       "id": "vo-063",
@@ -3795,10 +2724,7 @@
       "practiceId": "prac-022",
       "doctorId": "doc-021",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-24T08:45:00Z",
-      "therapistId": "ther-022",
-      "voNumber": "3697-8",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-24T08:45:00Z"
     },
     {
       "id": "vo-064",
@@ -3812,10 +2738,7 @@
       "practiceId": "prac-023",
       "doctorId": "doc-022",
       "facilityName": "ER Munich",
-      "createdAt": "2025-10-04T10:00:00Z",
-      "therapistId": "ther-029",
-      "voNumber": "9028-8",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-04T10:00:00Z"
     },
     {
       "id": "vo-065",
@@ -3829,10 +2752,7 @@
       "practiceId": "prac-023",
       "doctorId": "doc-022",
       "facilityName": "ER Munich",
-      "createdAt": "2025-10-04T10:00:00Z",
-      "therapistId": "ther-029",
-      "voNumber": "9632-6",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-04T10:00:00Z"
     },
     {
       "id": "vo-066",
@@ -3846,10 +2766,7 @@
       "practiceId": "prac-024",
       "doctorId": "doc-019",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-15T08:00:00Z",
-      "therapistId": "ther-006",
-      "voNumber": "6247-2",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-15T08:00:00Z"
     },
     {
       "id": "vo-067",
@@ -3863,10 +2780,7 @@
       "practiceId": "prac-024",
       "doctorId": "doc-019",
       "facilityName": "ER Stuttgart",
-      "createdAt": "2025-10-15T08:00:00Z",
-      "therapistId": "ther-032",
-      "voNumber": "3440-2",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-15T08:00:00Z"
     },
     {
       "id": "vo-068",
@@ -3880,10 +2794,7 @@
       "practiceId": "prac-024",
       "doctorId": "doc-019",
       "facilityName": "ER Stuttgart",
-      "createdAt": "2025-10-15T08:00:00Z",
-      "therapistId": "ther-033",
-      "voNumber": "6380-8",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-15T08:00:00Z"
     },
     {
       "id": "vo-069",
@@ -3897,10 +2808,7 @@
       "practiceId": "prac-025",
       "doctorId": "doc-012",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-25T10:45:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "8808-3",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-25T10:45:00Z"
     },
     {
       "id": "vo-070",
@@ -3914,27 +2822,21 @@
       "practiceId": "prac-025",
       "doctorId": "doc-012",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-26T09:30:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "3742-3",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-26T09:30:00Z"
     },
     {
       "id": "vo-071",
       "patientName": "Janice Kelly",
       "therapyType": "KG-H",
       "anzahl": 18,
-      "status": "In Transit",
-      "statusTimestamp": "2025-10-25T10:00:00Z",
-      "statusDate": "25.10.2025",
+      "status": "Nachverfolgen",
+      "statusTimestamp": "2025-10-10T14:30:00Z",
+      "statusDate": "10.10.2025",
       "gebDatum": "08.11.1945",
       "practiceId": "prac-026",
       "doctorId": "doc-023",
       "facilityName": "ER Stuttgart",
-      "createdAt": "2025-10-05T09:00:00Z",
-      "therapistId": "ther-033",
-      "voNumber": "3089-4",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-05T09:00:00Z"
     },
     {
       "id": "vo-072",
@@ -3948,10 +2850,7 @@
       "practiceId": "prac-026",
       "doctorId": "doc-023",
       "facilityName": "ER Stuttgart",
-      "createdAt": "2025-10-05T09:00:00Z",
-      "therapistId": "ther-034",
-      "voNumber": "3703-3",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-05T09:00:00Z"
     },
     {
       "id": "vo-074",
@@ -3965,10 +2864,7 @@
       "practiceId": "prac-027",
       "doctorId": "doc-024",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-07T08:00:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "5424-7",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-07T08:00:00Z"
     },
     {
       "id": "vo-075",
@@ -3982,10 +2878,7 @@
       "practiceId": "prac-027",
       "doctorId": "doc-024",
       "facilityName": "Care Home Riverside",
-      "createdAt": "2025-10-07T08:00:00Z",
-      "therapistId": "ther-011",
-      "voNumber": "8989-2",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-07T08:00:00Z"
     },
     {
       "id": "vo-076",
@@ -3999,10 +2892,7 @@
       "practiceId": "prac-027",
       "doctorId": "doc-024",
       "facilityName": "ER Stuttgart",
-      "createdAt": "2025-10-07T08:00:00Z",
-      "therapistId": "ther-034",
-      "voNumber": "2596-1",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-07T08:00:00Z"
     },
     {
       "id": "vo-077",
@@ -4016,10 +2906,7 @@
       "practiceId": "prac-028",
       "doctorId": "doc-025",
       "facilityName": "ER Berlin",
-      "createdAt": "2025-10-24T11:30:00Z",
-      "therapistId": "ther-016",
-      "voNumber": "4718-4",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-24T11:30:00Z"
     },
     {
       "id": "vo-078",
@@ -4033,10 +2920,7 @@
       "practiceId": "prac-028",
       "doctorId": "doc-025",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-25T09:15:00Z",
-      "therapistId": "ther-022",
-      "voNumber": "4954-9",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-25T09:15:00Z"
     },
     {
       "id": "vo-079",
@@ -4048,9 +2932,7 @@
       "statusDate": "11.10.2025",
       "gebDatum": "15.06.1995",
       "practiceId": "prac-029",
-      "createdAt": "2025-10-06T10:00:00Z",
-      "voNumber": "4056-5",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-06T10:00:00Z"
     },
     {
       "id": "vo-080",
@@ -4062,9 +2944,7 @@
       "statusDate": "19.10.2025",
       "gebDatum": "10.12.1956",
       "practiceId": "prac-029",
-      "createdAt": "2025-10-06T10:00:00Z",
-      "voNumber": "8306-2",
-      "voStatus": "Abgerechnet"
+      "createdAt": "2025-10-06T10:00:00Z"
     },
     {
       "id": "vo-081",
@@ -4076,9 +2956,7 @@
       "statusDate": "21.10.2025",
       "gebDatum": "20.04.1982",
       "practiceId": "prac-030",
-      "createdAt": "2025-10-16T08:00:00Z",
-      "voNumber": "8765-1",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-16T08:00:00Z"
     },
     {
       "id": "vo-082",
@@ -4090,9 +2968,7 @@
       "statusDate": "23.10.2025",
       "gebDatum": "04.02.1947",
       "practiceId": "prac-030",
-      "createdAt": "2025-10-16T08:00:00Z",
-      "voNumber": "3283-3",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-16T08:00:00Z"
     },
     {
       "id": "vo-083",
@@ -4104,9 +2980,7 @@
       "statusDate": "25.10.2025",
       "gebDatum": "27.05.1943",
       "practiceId": "prac-030",
-      "createdAt": "2025-10-16T08:00:00Z",
-      "voNumber": "1506-3",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-16T08:00:00Z"
     },
     {
       "id": "vo-084",
@@ -4120,10 +2994,7 @@
       "practiceId": "prac-001",
       "doctorId": "doc-002",
       "facilityName": "ER Leipzig",
-      "createdAt": "2025-10-26T10:00:00Z",
-      "therapistId": "ther-026",
-      "voNumber": "4238-9",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-26T10:00:00Z"
     },
     {
       "id": "vo-085",
@@ -4137,10 +3008,7 @@
       "practiceId": "prac-002",
       "doctorId": "doc-004",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-27T08:30:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "8519-6",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-27T08:30:00Z"
     },
     {
       "id": "vo-086",
@@ -4154,10 +3022,7 @@
       "practiceId": "prac-003",
       "doctorId": "doc-005",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-08T09:00:00Z",
-      "therapistId": "ther-006",
-      "voNumber": "1554-7",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-08T09:00:00Z"
     },
     {
       "id": "vo-087",
@@ -4171,10 +3036,7 @@
       "practiceId": "prac-003",
       "doctorId": "doc-004",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-08T09:00:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "1503-1",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-08T09:00:00Z"
     },
     {
       "id": "vo-089",
@@ -4188,10 +3050,7 @@
       "practiceId": "prac-004",
       "doctorId": "doc-006",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-09T08:00:00Z",
-      "therapistId": "ther-022",
-      "voNumber": "4974-6",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-09T08:00:00Z"
     },
     {
       "id": "vo-090",
@@ -4205,10 +3064,7 @@
       "practiceId": "prac-004",
       "doctorId": "doc-006",
       "facilityName": "Care Home Golden Years",
-      "createdAt": "2025-10-09T08:00:00Z",
-      "therapistId": "ther-003",
-      "voNumber": "2856-2",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-09T08:00:00Z"
     },
     {
       "id": "vo-091",
@@ -4222,10 +3078,7 @@
       "practiceId": "prac-004",
       "doctorId": "doc-006",
       "facilityName": "Care Home Golden Years",
-      "createdAt": "2025-10-09T08:00:00Z",
-      "therapistId": "ther-003",
-      "voNumber": "3316-7",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-09T08:00:00Z"
     },
     {
       "id": "vo-092",
@@ -4239,10 +3092,7 @@
       "practiceId": "prac-005",
       "doctorId": "doc-007",
       "facilityName": "ER Munich",
-      "createdAt": "2025-10-25T11:45:00Z",
-      "therapistId": "ther-029",
-      "voNumber": "2861-4",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-25T11:45:00Z"
     },
     {
       "id": "vo-093",
@@ -4256,10 +3106,7 @@
       "practiceId": "prac-006",
       "doctorId": "doc-008",
       "facilityName": "ER Frankfurt",
-      "createdAt": "2025-10-26T09:45:00Z",
-      "therapistId": "ther-022",
-      "voNumber": "4880-8",
-      "voStatus": "Abgelaufen"
+      "createdAt": "2025-10-26T09:45:00Z"
     },
     {
       "id": "vo-094",
@@ -4273,10 +3120,7 @@
       "practiceId": "prac-007",
       "doctorId": "doc-009",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-10T10:00:00Z",
-      "therapistId": "ther-006",
-      "voNumber": "3179-9",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-10T10:00:00Z"
     },
     {
       "id": "vo-095",
@@ -4290,10 +3134,7 @@
       "practiceId": "prac-007",
       "doctorId": "doc-009",
       "facilityName": "ER Munich",
-      "createdAt": "2025-10-10T10:00:00Z",
-      "therapistId": "ther-029",
-      "voNumber": "7837-3",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-10T10:00:00Z"
     },
     {
       "id": "vo-096",
@@ -4307,9 +3148,7 @@
       "practiceId": "prac-008",
       "doctorId": "doc-010",
       "facilityName": "ER Berlin",
-      "createdAt": "2025-10-17T08:00:00Z",
-      "voNumber": "2553-6",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-17T08:00:00Z"
     },
     {
       "id": "vo-097",
@@ -4323,9 +3162,7 @@
       "practiceId": "prac-008",
       "doctorId": "doc-010",
       "facilityName": "ER Berlin",
-      "createdAt": "2025-10-17T08:00:00Z",
-      "voNumber": "9981-4",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-17T08:00:00Z"
     },
     {
       "id": "vo-098",
@@ -4339,10 +3176,7 @@
       "practiceId": "prac-008",
       "doctorId": "doc-010",
       "facilityName": "ER Dresden",
-      "createdAt": "2025-10-17T08:00:00Z",
-      "therapistId": "ther-018",
-      "voNumber": "7873-5",
-      "voStatus": "Fertig Behandelt"
+      "createdAt": "2025-10-17T08:00:00Z"
     },
     {
       "id": "vo-099",
@@ -4356,10 +3190,7 @@
       "practiceId": "prac-009",
       "doctorId": "doc-011",
       "facilityName": "Care Home Oakwood",
-      "createdAt": "2025-10-27T10:15:00Z",
-      "therapistId": "ther-006",
-      "voNumber": "8474-1",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-27T10:15:00Z"
     },
     {
       "id": "vo-100",
@@ -4373,622 +3204,7 @@
       "practiceId": "prac-010",
       "doctorId": "doc-012",
       "facilityName": "Care Home Sunrise",
-      "createdAt": "2025-10-27T09:00:00Z",
-      "therapistId": "ther-014",
-      "voNumber": "9654-9",
-      "voStatus": "Abgelaufen"
-    },
-    {
-      "id": "vo-101",
-      "patientName": "Emma Thompson",
-      "therapyType": "KG-H",
-      "anzahl": 6,
-      "status": "Bestellen",
-      "statusTimestamp": "2025-10-09T16:00:00.000Z",
-      "statusDate": "10.10.2025",
-      "gebDatum": "01.01.1950",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-04T16:00:00.000Z",
-      "therapistId": "ther-001",
-      "voNumber": "3878-2",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-102",
-      "patientName": "Oliver Anderson",
-      "therapyType": "BO-E-H",
-      "anzahl": 10,
-      "status": "Bestellt",
-      "statusTimestamp": "2025-10-10T16:00:00.000Z",
-      "statusDate": "11.10.2025",
-      "gebDatum": "02.02.1952",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-05T16:00:00.000Z",
-      "therapistId": "ther-002",
-      "voNumber": "6408-1",
-      "voStatus": "Abgelaufen"
-    },
-    {
-      "id": "vo-103",
-      "patientName": "Sophia Martinez",
-      "therapyType": "L-E45H",
-      "anzahl": 12,
-      "status": "Nachverfolgen",
-      "statusTimestamp": "2025-10-11T16:00:00.000Z",
-      "statusDate": "12.10.2025",
-      "gebDatum": "03.03.1954",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-06T16:00:00.000Z",
-      "therapistId": "ther-003",
-      "voNumber": "9283-1",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-104",
-      "patientName": "Liam Garcia",
-      "therapyType": "MT-H",
-      "anzahl": 18,
-      "status": "Nachverfolgt",
-      "statusTimestamp": "2025-10-12T16:00:00.000Z",
-      "statusDate": "13.10.2025",
-      "gebDatum": "04.04.1956",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-07T16:00:00.000Z",
-      "therapistId": "ther-004",
-      "voNumber": "5640-7",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-105",
-      "patientName": "Isabella Rodriguez",
-      "therapyType": "MLD30H",
-      "anzahl": 6,
-      "status": "Telefonieren",
-      "statusTimestamp": "2025-10-13T16:00:00.000Z",
-      "statusDate": "14.10.2025",
-      "gebDatum": "05.05.1958",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-08T16:00:00.000Z",
-      "therapistId": "ther-005",
-      "voNumber": "1986-7",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-106",
-      "patientName": "Noah Wilson",
-      "therapyType": "KG-ZNS-H",
-      "anzahl": 10,
-      "status": "Telefoniert",
-      "statusTimestamp": "2025-10-14T16:00:00.000Z",
-      "statusDate": "15.10.2025",
-      "gebDatum": "06.06.1960",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-09T16:00:00.000Z",
-      "therapistId": "ther-023",
-      "voNumber": "4883-7",
-      "voStatus": "Abgelaufen"
-    },
-    {
-      "id": "vo-107",
-      "patientName": "Ava Miller",
-      "therapyType": "KG-H",
-      "anzahl": 12,
-      "status": "Bestellen",
-      "statusTimestamp": "2025-10-15T16:00:00.000Z",
-      "statusDate": "16.10.2025",
-      "gebDatum": "07.07.1962",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-10T16:00:00.000Z",
-      "therapistId": "ther-024",
-      "voNumber": "2009-4",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-108",
-      "patientName": "Ethan Davis",
-      "therapyType": "BO-E-H",
-      "anzahl": 18,
-      "status": "Bestellt",
-      "statusTimestamp": "2025-10-16T16:00:00.000Z",
-      "statusDate": "17.10.2025",
-      "gebDatum": "08.08.1964",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-11T16:00:00.000Z",
-      "therapistId": "ther-001",
-      "voNumber": "6905-1",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-109",
-      "patientName": "Mia Brown",
-      "therapyType": "L-E45H",
-      "anzahl": 6,
-      "status": "Nachverfolgen",
-      "statusTimestamp": "2025-10-17T16:00:00.000Z",
-      "statusDate": "18.10.2025",
-      "gebDatum": "09.09.1966",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-12T16:00:00.000Z",
-      "therapistId": "ther-002",
-      "voNumber": "7035-9",
-      "voStatus": "Abgebrochen"
-    },
-    {
-      "id": "vo-110",
-      "patientName": "Lucas Taylor",
-      "therapyType": "MT-H",
-      "anzahl": 10,
-      "status": "Nachverfolgt",
-      "statusTimestamp": "2025-10-18T16:00:00.000Z",
-      "statusDate": "19.10.2025",
-      "gebDatum": "10.10.1968",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-13T16:00:00.000Z",
-      "therapistId": "ther-003",
-      "voNumber": "3491-6",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-111",
-      "patientName": "Charlotte Moore",
-      "therapyType": "MLD30H",
-      "anzahl": 12,
-      "status": "Telefonieren",
-      "statusTimestamp": "2025-10-19T16:00:00.000Z",
-      "statusDate": "20.10.2025",
-      "gebDatum": "11.11.1970",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-04T16:00:00.000Z",
-      "therapistId": "ther-004",
-      "voNumber": "9382-6",
-      "voStatus": "Abgebrochen"
-    },
-    {
-      "id": "vo-112",
-      "patientName": "Mason Jackson",
-      "therapyType": "KG-ZNS-H",
-      "anzahl": 18,
-      "status": "Telefoniert",
-      "statusTimestamp": "2025-10-20T16:00:00.000Z",
-      "statusDate": "21.10.2025",
-      "gebDatum": "12.12.1972",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-05T16:00:00.000Z",
-      "therapistId": "ther-005",
-      "voNumber": "8377-7",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-113",
-      "patientName": "Amelia White",
-      "therapyType": "KG-H",
-      "anzahl": 6,
-      "status": "Bestellen",
-      "statusTimestamp": "2025-10-21T16:00:00.000Z",
-      "statusDate": "22.10.2025",
-      "gebDatum": "13.01.1974",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-06T16:00:00.000Z",
-      "therapistId": "ther-023",
-      "voNumber": "3154-5",
-      "voStatus": "Abgerechnet"
-    },
-    {
-      "id": "vo-114",
-      "patientName": "Logan Harris",
-      "therapyType": "BO-E-H",
-      "anzahl": 10,
-      "status": "Bestellt",
-      "statusTimestamp": "2025-10-22T16:00:00.000Z",
-      "statusDate": "23.10.2025",
-      "gebDatum": "14.02.1976",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-07T16:00:00.000Z",
-      "therapistId": "ther-024",
-      "voNumber": "8867-1",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-115",
-      "patientName": "Harper Martin",
-      "therapyType": "L-E45H",
-      "anzahl": 12,
-      "status": "Nachverfolgen",
-      "statusTimestamp": "2025-10-23T16:00:00.000Z",
-      "statusDate": "24.10.2025",
-      "gebDatum": "15.03.1978",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-08T16:00:00.000Z",
-      "therapistId": "ther-001",
-      "voNumber": "4710-8",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-116",
-      "patientName": "Elijah Lee",
-      "therapyType": "MT-H",
-      "anzahl": 18,
-      "status": "Nachverfolgt",
-      "statusTimestamp": "2025-10-09T16:00:00.000Z",
-      "statusDate": "10.10.2025",
-      "gebDatum": "16.04.1980",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-09T16:00:00.000Z",
-      "therapistId": "ther-002",
-      "voNumber": "1335-8",
-      "voStatus": "Abgebrochen"
-    },
-    {
-      "id": "vo-117",
-      "patientName": "Evelyn Walker",
-      "therapyType": "MLD30H",
-      "anzahl": 6,
-      "status": "Telefonieren",
-      "statusTimestamp": "2025-10-10T16:00:00.000Z",
-      "statusDate": "11.10.2025",
-      "gebDatum": "17.05.1982",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-10T16:00:00.000Z",
-      "therapistId": "ther-003",
-      "voNumber": "7782-9",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-118",
-      "patientName": "James Hall",
-      "therapyType": "KG-ZNS-H",
-      "anzahl": 10,
-      "status": "Telefoniert",
-      "statusTimestamp": "2025-10-11T16:00:00.000Z",
-      "statusDate": "12.10.2025",
-      "gebDatum": "18.06.1984",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-11T16:00:00.000Z",
-      "therapistId": "ther-004",
-      "voNumber": "8674-1",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-119",
-      "patientName": "Emma Thompson",
-      "therapyType": "KG-H",
-      "anzahl": 6,
-      "status": "Bestellen",
-      "statusTimestamp": "2025-10-09T16:00:00.000Z",
-      "statusDate": "10.10.2025",
-      "gebDatum": "01.01.1950",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-04T16:00:00.000Z",
-      "therapistId": "ther-001",
-      "voNumber": "9838-5",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-120",
-      "patientName": "Oliver Anderson",
-      "therapyType": "BO-E-H",
-      "anzahl": 10,
-      "status": "Bestellt",
-      "statusTimestamp": "2025-10-10T16:00:00.000Z",
-      "statusDate": "11.10.2025",
-      "gebDatum": "02.02.1952",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-05T16:00:00.000Z",
-      "therapistId": "ther-002",
-      "voNumber": "6699-5",
-      "voStatus": "Abgerechnet"
-    },
-    {
-      "id": "vo-121",
-      "patientName": "Sophia Martinez",
-      "therapyType": "L-E45H",
-      "anzahl": 12,
-      "status": "Nachverfolgen",
-      "statusTimestamp": "2025-10-11T16:00:00.000Z",
-      "statusDate": "12.10.2025",
-      "gebDatum": "03.03.1954",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-06T16:00:00.000Z",
-      "therapistId": "ther-003",
-      "voNumber": "3514-9",
-      "voStatus": "Abgerechnet"
-    },
-    {
-      "id": "vo-122",
-      "patientName": "Liam Garcia",
-      "therapyType": "MT-H",
-      "anzahl": 18,
-      "status": "Nachverfolgt",
-      "statusTimestamp": "2025-10-12T16:00:00.000Z",
-      "statusDate": "13.10.2025",
-      "gebDatum": "04.04.1956",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-07T16:00:00.000Z",
-      "therapistId": "ther-004",
-      "voNumber": "1136-8",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-123",
-      "patientName": "Isabella Rodriguez",
-      "therapyType": "MLD30H",
-      "anzahl": 6,
-      "status": "Telefonieren",
-      "statusTimestamp": "2025-10-13T16:00:00.000Z",
-      "statusDate": "14.10.2025",
-      "gebDatum": "05.05.1958",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-08T16:00:00.000Z",
-      "therapistId": "ther-005",
-      "voNumber": "5569-8",
-      "voStatus": "Abgelaufen"
-    },
-    {
-      "id": "vo-124",
-      "patientName": "Noah Wilson",
-      "therapyType": "KG-ZNS-H",
-      "anzahl": 10,
-      "status": "Telefoniert",
-      "statusTimestamp": "2025-10-14T16:00:00.000Z",
-      "statusDate": "15.10.2025",
-      "gebDatum": "06.06.1960",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-09T16:00:00.000Z",
-      "therapistId": "ther-023",
-      "voNumber": "2034-3",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-125",
-      "patientName": "Ava Miller",
-      "therapyType": "KG-H",
-      "anzahl": 12,
-      "status": "Bestellen",
-      "statusTimestamp": "2025-10-15T16:00:00.000Z",
-      "statusDate": "16.10.2025",
-      "gebDatum": "07.07.1962",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-10T16:00:00.000Z",
-      "therapistId": "ther-024",
-      "voNumber": "8621-8",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-126",
-      "patientName": "Ethan Davis",
-      "therapyType": "BO-E-H",
-      "anzahl": 18,
-      "status": "Bestellt",
-      "statusTimestamp": "2025-10-16T16:00:00.000Z",
-      "statusDate": "17.10.2025",
-      "gebDatum": "08.08.1964",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-11T16:00:00.000Z",
-      "therapistId": "ther-001",
-      "voNumber": "4858-5",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-127",
-      "patientName": "Mia Brown",
-      "therapyType": "L-E45H",
-      "anzahl": 6,
-      "status": "Nachverfolgen",
-      "statusTimestamp": "2025-10-17T16:00:00.000Z",
-      "statusDate": "18.10.2025",
-      "gebDatum": "09.09.1966",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-12T16:00:00.000Z",
-      "therapistId": "ther-002",
-      "voNumber": "2841-8",
-      "voStatus": "Abgebrochen"
-    },
-    {
-      "id": "vo-128",
-      "patientName": "Lucas Taylor",
-      "therapyType": "MT-H",
-      "anzahl": 10,
-      "status": "Nachverfolgt",
-      "statusTimestamp": "2025-10-18T16:00:00.000Z",
-      "statusDate": "19.10.2025",
-      "gebDatum": "10.10.1968",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-13T16:00:00.000Z",
-      "therapistId": "ther-003",
-      "voNumber": "3250-3",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-129",
-      "patientName": "Charlotte Moore",
-      "therapyType": "MLD30H",
-      "anzahl": 12,
-      "status": "Telefonieren",
-      "statusTimestamp": "2025-10-19T16:00:00.000Z",
-      "statusDate": "20.10.2025",
-      "gebDatum": "11.11.1970",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-04T16:00:00.000Z",
-      "therapistId": "ther-004",
-      "voNumber": "8773-7",
-      "voStatus": "Abgebrochen"
-    },
-    {
-      "id": "vo-130",
-      "patientName": "Mason Jackson",
-      "therapyType": "KG-ZNS-H",
-      "anzahl": 18,
-      "status": "Telefoniert",
-      "statusTimestamp": "2025-10-20T16:00:00.000Z",
-      "statusDate": "21.10.2025",
-      "gebDatum": "12.12.1972",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-05T16:00:00.000Z",
-      "therapistId": "ther-005",
-      "voNumber": "6315-4",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-131",
-      "patientName": "Amelia White",
-      "therapyType": "KG-H",
-      "anzahl": 6,
-      "status": "Bestellen",
-      "statusTimestamp": "2025-10-21T16:00:00.000Z",
-      "statusDate": "22.10.2025",
-      "gebDatum": "13.01.1974",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-06T16:00:00.000Z",
-      "therapistId": "ther-023",
-      "voNumber": "7201-4",
-      "voStatus": "Fertig Behandelt"
-    },
-    {
-      "id": "vo-132",
-      "patientName": "Logan Harris",
-      "therapyType": "BO-E-H",
-      "anzahl": 10,
-      "status": "Bestellt",
-      "statusTimestamp": "2025-10-22T16:00:00.000Z",
-      "statusDate": "23.10.2025",
-      "gebDatum": "14.02.1976",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-07T16:00:00.000Z",
-      "therapistId": "ther-024",
-      "voNumber": "2980-4",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-133",
-      "patientName": "Harper Martin",
-      "therapyType": "L-E45H",
-      "anzahl": 12,
-      "status": "Nachverfolgen",
-      "statusTimestamp": "2025-10-23T16:00:00.000Z",
-      "statusDate": "24.10.2025",
-      "gebDatum": "15.03.1978",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-08T16:00:00.000Z",
-      "therapistId": "ther-001",
-      "voNumber": "7057-9",
-      "voStatus": "Abgerechnet"
-    },
-    {
-      "id": "vo-134",
-      "patientName": "Elijah Lee",
-      "therapyType": "MT-H",
-      "anzahl": 18,
-      "status": "Nachverfolgt",
-      "statusTimestamp": "2025-10-09T16:00:00.000Z",
-      "statusDate": "10.10.2025",
-      "gebDatum": "16.04.1980",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-09T16:00:00.000Z",
-      "therapistId": "ther-002",
-      "voNumber": "6191-6",
-      "voStatus": "Abgelaufen"
-    },
-    {
-      "id": "vo-135",
-      "patientName": "Evelyn Walker",
-      "therapyType": "MLD30H",
-      "anzahl": 6,
-      "status": "Telefonieren",
-      "statusTimestamp": "2025-10-10T16:00:00.000Z",
-      "statusDate": "11.10.2025",
-      "gebDatum": "17.05.1982",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Hamburg",
-      "createdAt": "2025-10-10T16:00:00.000Z",
-      "therapistId": "ther-003",
-      "voNumber": "2299-4",
-      "voStatus": "Aktiv"
-    },
-    {
-      "id": "vo-136",
-      "patientName": "James Hall",
-      "therapyType": "KG-ZNS-H",
-      "anzahl": 10,
-      "status": "Telefoniert",
-      "statusTimestamp": "2025-10-11T16:00:00.000Z",
-      "statusDate": "12.10.2025",
-      "gebDatum": "18.06.1984",
-      "practiceId": "prac-031",
-      "doctorId": "doc-061",
-      "facilityName": "ER Berlin",
-      "createdAt": "2025-10-11T16:00:00.000Z",
-      "therapistId": "ther-004",
-      "voNumber": "3089-4",
-      "voStatus": "Aktiv"
+      "createdAt": "2025-10-27T09:00:00Z"
     }
   ],
   "activities": [
@@ -5565,715 +3781,6 @@
       "notes": "Sent initial practice agreement via fax.",
       "userId": "system",
       "createdAt": "2025-09-23T12:00:00Z"
-    }
-  ],
-  "followUps": [
-    {
-      "id": "fu-prac-001-1761992145495-67h4ht7q7",
-      "practiceId": "prac-001",
-      "dueDate": "2025-10-25",
-      "dueTime": "09:00",
-      "notes": "Follow up on pending VO request - patient waiting",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-002-1761992145495-t9zsi8gb0",
-      "practiceId": "prac-002",
-      "dueDate": "2025-10-27",
-      "dueTime": "14:00",
-      "notes": "Check status of ordered supplies",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-003-1761992145495-bou5vy9ww",
-      "practiceId": "prac-003",
-      "dueDate": "2025-10-28",
-      "dueTime": "10:30",
-      "notes": "Contact practice about missing documentation",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-004-1761992145495-c4v3qr6e7",
-      "practiceId": "prac-004",
-      "dueDate": "2025-10-30",
-      "dueTime": "11:00",
-      "notes": "Verify receipt of faxed VO",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-005-1761992145495-5scez7t8p",
-      "practiceId": "prac-005",
-      "dueDate": "2025-10-31",
-      "dueTime": "15:00",
-      "notes": "Confirm appointment scheduling",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-006-1761992145495-etkdjncw3",
-      "practiceId": "prac-006",
-      "dueDate": "2025-11-01",
-      "dueTime": "09:30",
-      "notes": "Follow up on urgent patient case",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-007-1761992145495-nczggz3ec",
-      "practiceId": "prac-007",
-      "dueDate": "2025-11-02",
-      "dueTime": "10:00",
-      "notes": "Check on new patient registration",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-008-1761992145495-vvzyhxp0u",
-      "practiceId": "prac-008",
-      "dueDate": "2025-11-03",
-      "dueTime": "14:00",
-      "notes": "Review updated opening hours",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-009-1761992145495-1dhp04ec2",
-      "practiceId": "prac-009",
-      "dueDate": "2025-11-04",
-      "dueTime": "11:30",
-      "notes": "Discuss vacation period coverage",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-010-1761992145495-6dvndj60m",
-      "practiceId": "prac-010",
-      "dueDate": "2025-11-05",
-      "dueTime": "09:00",
-      "notes": "Follow up on equipment delivery",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-011-1761992145495-11x9nuxjh",
-      "practiceId": "prac-011",
-      "dueDate": "2025-11-05",
-      "dueTime": "16:00",
-      "notes": "Confirm doctor availability for consultation",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-012-1761992145495-a740p03q3",
-      "practiceId": "prac-012",
-      "dueDate": "2025-11-06",
-      "dueTime": "13:00",
-      "notes": "Review quarterly performance metrics",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-013-1761992145495-znmgg5mpc",
-      "practiceId": "prac-013",
-      "dueDate": "2025-11-07",
-      "dueTime": "10:00",
-      "notes": "Schedule staff training session",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-014-1761992145495-uvv6byzux",
-      "practiceId": "prac-014",
-      "dueDate": "2025-11-10",
-      "dueTime": "09:00",
-      "notes": "Monthly check-in call",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-015-1761992145495-4up2k8u04",
-      "practiceId": "prac-015",
-      "dueDate": "2025-11-12",
-      "dueTime": "14:00",
-      "notes": "Review contract renewal terms",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-016-1761992145495-aylxcow4y",
-      "practiceId": "prac-016",
-      "dueDate": "2025-11-15",
-      "dueTime": "11:00",
-      "notes": "Quarterly business review meeting",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-017-1761992145495-hlf1arhqn",
-      "practiceId": "prac-017",
-      "dueDate": "2025-11-18",
-      "dueTime": "10:30",
-      "notes": "Discuss new service offerings",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-018-1761992145495-dv3glv90o",
-      "practiceId": "prac-018",
-      "dueDate": "2025-11-22",
-      "dueTime": "15:00",
-      "notes": "Plan year-end inventory review",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    },
-    {
-      "id": "fu-prac-019-1761992145495-grz74sono",
-      "practiceId": "prac-019",
-      "dueDate": "2025-11-28",
-      "dueTime": "09:30",
-      "notes": "Follow up on expansion plans",
-      "completed": false,
-      "completedAt": null,
-      "userId": "user-001",
-      "createdAt": "2025-11-01T10:15:45.495Z"
-    }
-  ],
-  "facilities": [
-    {
-      "id": "fac-001",
-      "name": "Care Home Golden Years",
-      "type": "Care Home",
-      "address": "100 Medical Plaza, Years, Germany",
-      "phone": "+49 531 5590757",
-      "email": "contact@carehomegoldenyears.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-002",
-      "name": "Care Home Oakwood",
-      "type": "Care Home",
-      "address": "101 Medical Plaza, Oakwood, Germany",
-      "phone": "+49 606 7864497",
-      "email": "contact@carehomeoakwood.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-003",
-      "name": "Care Home Pleasant Valley",
-      "type": "Care Home",
-      "address": "102 Medical Plaza, Valley, Germany",
-      "phone": "+49 882 4857660",
-      "email": "contact@carehomepleasantvalley.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-004",
-      "name": "Care Home Riverside",
-      "type": "Care Home",
-      "address": "103 Medical Plaza, Riverside, Germany",
-      "phone": "+49 492 1979644",
-      "email": "contact@carehomeriverside.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-005",
-      "name": "Care Home Sunrise",
-      "type": "Care Home",
-      "address": "104 Medical Plaza, Sunrise, Germany",
-      "phone": "+49 707 8822055",
-      "email": "contact@carehomesunrise.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-006",
-      "name": "ER Berlin",
-      "type": "ER",
-      "address": "105 Medical Plaza, Berlin, Germany",
-      "phone": "+49 300 9805551",
-      "email": "contact@erberlin.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-007",
-      "name": "ER Dresden",
-      "type": "ER",
-      "address": "106 Medical Plaza, Dresden, Germany",
-      "phone": "+49 666 5453650",
-      "email": "contact@erdresden.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-008",
-      "name": "ER Frankfurt",
-      "type": "ER",
-      "address": "107 Medical Plaza, Frankfurt, Germany",
-      "phone": "+49 528 3946677",
-      "email": "contact@erfrankfurt.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-009",
-      "name": "ER Hamburg",
-      "type": "ER",
-      "address": "108 Medical Plaza, Hamburg, Germany",
-      "phone": "+49 229 9430003",
-      "email": "contact@erhamburg.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-010",
-      "name": "ER Leipzig",
-      "type": "ER",
-      "address": "109 Medical Plaza, Leipzig, Germany",
-      "phone": "+49 835 5809982",
-      "email": "contact@erleipzig.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-011",
-      "name": "ER Munich",
-      "type": "ER",
-      "address": "110 Medical Plaza, Munich, Germany",
-      "phone": "+49 321 5053493",
-      "email": "contact@ermunich.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "fac-012",
-      "name": "ER Stuttgart",
-      "type": "ER",
-      "address": "111 Medical Plaza, Stuttgart, Germany",
-      "phone": "+49 908 8496507",
-      "email": "contact@erstuttgart.de",
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    }
-  ],
-  "therapists": [
-    {
-      "id": "ther-001",
-      "name": "Felix Hoffmann",
-      "facilityId": "fac-001",
-      "specialty": "Lymphatic Drainage",
-      "phone": "+49 747 4962245",
-      "email": "felix.hoffmann@carehomegoldenyears.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-002",
-      "name": "Jana Hoffmann",
-      "facilityId": "fac-001",
-      "specialty": "Physiotherapy",
-      "phone": "+49 541 9196928",
-      "email": "jana.hoffmann@carehomegoldenyears.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-003",
-      "name": "Hannah Bauer",
-      "facilityId": "fac-001",
-      "specialty": "Lymphatic Drainage",
-      "phone": "+49 692 9417547",
-      "email": "hannah.bauer@carehomegoldenyears.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-004",
-      "name": "Jana Schwarz",
-      "facilityId": "fac-002",
-      "specialty": "Speech Therapy",
-      "phone": "+49 299 7463459",
-      "email": "jana.schwarz@carehomeoakwood.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-005",
-      "name": "Tom Hoffmann",
-      "facilityId": "fac-002",
-      "specialty": "Occupational Therapy",
-      "phone": "+49 220 5815110",
-      "email": "tom.hoffmann@carehomeoakwood.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-006",
-      "name": "Julia Braun",
-      "facilityId": "fac-002",
-      "specialty": "Sports Therapy",
-      "phone": "+49 386 4856191",
-      "email": "julia.braun@carehomeoakwood.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-007",
-      "name": "Hannah Klein",
-      "facilityId": "fac-003",
-      "specialty": "Manual Therapy",
-      "phone": "+49 584 2633920",
-      "email": "hannah.klein@carehomepleasantvalley.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-008",
-      "name": "Moritz Klein",
-      "facilityId": "fac-003",
-      "specialty": "Occupational Therapy",
-      "phone": "+49 380 5413644",
-      "email": "moritz.klein@carehomepleasantvalley.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-009",
-      "name": "Moritz Hoffmann",
-      "facilityId": "fac-004",
-      "specialty": "Speech Therapy",
-      "phone": "+49 548 4590733",
-      "email": "moritz.hoffmann@carehomeriverside.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-010",
-      "name": "Noah Becker",
-      "facilityId": "fac-004",
-      "specialty": "Speech Therapy",
-      "phone": "+49 395 1020484",
-      "email": "noah.becker@carehomeriverside.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-011",
-      "name": "Lukas Neumann",
-      "facilityId": "fac-004",
-      "specialty": "Sports Therapy",
-      "phone": "+49 420 3084927",
-      "email": "lukas.neumann@carehomeriverside.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-012",
-      "name": "Mia Schmidt",
-      "facilityId": "fac-005",
-      "specialty": "Sports Therapy",
-      "phone": "+49 580 4495677",
-      "email": "mia.schmidt@carehomesunrise.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-013",
-      "name": "Jonas Koch",
-      "facilityId": "fac-005",
-      "specialty": "Lymphatic Drainage",
-      "phone": "+49 516 8534913",
-      "email": "jonas.koch@carehomesunrise.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-014",
-      "name": "Jana Schwarz",
-      "facilityId": "fac-005",
-      "specialty": "Manual Therapy",
-      "phone": "+49 446 5769015",
-      "email": "jana.schwarz@carehomesunrise.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-015",
-      "name": "Niklas Schröder",
-      "facilityId": "fac-006",
-      "specialty": "Speech Therapy",
-      "phone": "+49 271 5127968",
-      "email": "niklas.schröder@erberlin.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-016",
-      "name": "Emma Schröder",
-      "facilityId": "fac-006",
-      "specialty": "Physiotherapy",
-      "phone": "+49 558 5877434",
-      "email": "emma.schröder@erberlin.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-017",
-      "name": "Sarah Fischer",
-      "facilityId": "fac-007",
-      "specialty": "Sports Therapy",
-      "phone": "+49 212 2270490",
-      "email": "sarah.fischer@erdresden.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-018",
-      "name": "Lea Bauer",
-      "facilityId": "fac-007",
-      "specialty": "Sports Therapy",
-      "phone": "+49 201 1625812",
-      "email": "lea.bauer@erdresden.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-019",
-      "name": "Mia Wagner",
-      "facilityId": "fac-008",
-      "specialty": "Sports Therapy",
-      "phone": "+49 734 4694147",
-      "email": "mia.wagner@erfrankfurt.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-020",
-      "name": "Lukas Zimmermann",
-      "facilityId": "fac-008",
-      "specialty": "Sports Therapy",
-      "phone": "+49 135 3741983",
-      "email": "lukas.zimmermann@erfrankfurt.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-021",
-      "name": "Ben Bauer",
-      "facilityId": "fac-008",
-      "specialty": "Physiotherapy",
-      "phone": "+49 429 4966574",
-      "email": "ben.bauer@erfrankfurt.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-022",
-      "name": "Lisa Weber",
-      "facilityId": "fac-008",
-      "specialty": "Occupational Therapy",
-      "phone": "+49 406 9716215",
-      "email": "lisa.weber@erfrankfurt.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-023",
-      "name": "Anna Fischer",
-      "facilityId": "fac-009",
-      "specialty": "Sports Therapy",
-      "phone": "+49 190 4683994",
-      "email": "anna.fischer@erhamburg.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-024",
-      "name": "Lukas Bauer",
-      "facilityId": "fac-009",
-      "specialty": "Speech Therapy",
-      "phone": "+49 769 8934677",
-      "email": "lukas.bauer@erhamburg.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-025",
-      "name": "Mia Schmidt",
-      "facilityId": "fac-010",
-      "specialty": "Sports Therapy",
-      "phone": "+49 261 7422130",
-      "email": "mia.schmidt@erleipzig.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-026",
-      "name": "David Richter",
-      "facilityId": "fac-010",
-      "specialty": "Physiotherapy",
-      "phone": "+49 184 6450772",
-      "email": "david.richter@erleipzig.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-027",
-      "name": "Julia Koch",
-      "facilityId": "fac-010",
-      "specialty": "Physiotherapy",
-      "phone": "+49 388 2853710",
-      "email": "julia.koch@erleipzig.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-028",
-      "name": "Lisa Schneider",
-      "facilityId": "fac-011",
-      "specialty": "Physiotherapy",
-      "phone": "+49 539 1163522",
-      "email": "lisa.schneider@ermunich.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-029",
-      "name": "Felix Koch",
-      "facilityId": "fac-011",
-      "specialty": "Manual Therapy",
-      "phone": "+49 149 4564052",
-      "email": "felix.koch@ermunich.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-030",
-      "name": "Max Schmidt",
-      "facilityId": "fac-011",
-      "specialty": "Manual Therapy",
-      "phone": "+49 134 1096843",
-      "email": "max.schmidt@ermunich.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-031",
-      "name": "Jonas Schröder",
-      "facilityId": "fac-011",
-      "specialty": "Physiotherapy",
-      "phone": "+49 805 6635515",
-      "email": "jonas.schröder@ermunich.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-032",
-      "name": "Moritz Weber",
-      "facilityId": "fac-012",
-      "specialty": "Manual Therapy",
-      "phone": "+49 773 1609840",
-      "email": "moritz.weber@erstuttgart.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-033",
-      "name": "Niklas Schröder",
-      "facilityId": "fac-012",
-      "specialty": "Manual Therapy",
-      "phone": "+49 369 4390392",
-      "email": "niklas.schröder@erstuttgart.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "ther-034",
-      "name": "Hannah Neumann",
-      "facilityId": "fac-012",
-      "specialty": "Lymphatic Drainage",
-      "phone": "+49 893 4057687",
-      "email": "hannah.neumann@erstuttgart.de",
-      "active": true,
-      "createdAt": "2024-01-01T00:00:00Z",
-      "updatedAt": "2025-10-01T00:00:00Z"
     }
   ]
 }
