@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { PracticeActivity, PracticeFollowUp, PracticeActivityType } from '@/types';
-import { formatDateTimeDisplay } from '@/utils/openingHoursUtils';
 import CompleteFollowUpModal from './modals/CompleteFollowUpModal';
 import ConfirmDeleteDialog from './ConfirmDeleteDialog';
 

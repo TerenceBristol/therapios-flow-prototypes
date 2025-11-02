@@ -12,8 +12,7 @@ interface QuickActivityModalProps {
     type: PracticeActivityType;
     date: string;
     notes: string;
-    nextFollowUpDate?: string;
-    nextFollowUpTime?: string;
+    userId: string;
   }) => void;
 }
 
@@ -37,10 +36,7 @@ const QuickActivityModal: React.FC<QuickActivityModalProps> = ({
       type: activityType,
       date: new Date().toISOString(),
       notes: notes.trim(),
-      ...(includeFollowUp && followUpDate && {
-        nextFollowUpDate: followUpDate,
-        nextFollowUpTime: followUpTime || undefined
-      })
+      userId: 'current-user' // TODO: Get from auth context
     };
 
     onSave(activity);

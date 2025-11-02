@@ -95,8 +95,8 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
     practiceId: string;
     dueDate: string;
     dueTime?: string;
-    priority: 'low' | 'medium' | 'high';
     notes: string;
+    activityType?: PracticeActivityType;
   }) => {
     // Add userId to the follow-up
     const followUpWithUser: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'> = {

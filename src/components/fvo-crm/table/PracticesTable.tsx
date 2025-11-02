@@ -139,7 +139,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
         <div className="font-medium text-foreground">{practice.name}</div>
       </td>
       <td className="px-4 py-3">
-        <PhoneCell phone={practice.phone} />
+        <PhoneCell phone={practice.phone || ''} />
       </td>
       <td className="px-4 py-3">
         <ArztCell doctors={practice.doctors} />

@@ -347,17 +347,22 @@ export function groupConsecutiveDaysWithHours(
 
   // Push final group
   if (currentGroup) {
-    const dayRange = currentGroup.dayKeys.length > 1
-      ? `${dayAbbrev[currentGroup.dayKeys[0]]}-${dayAbbrev[currentGroup.dayKeys[currentGroup.dayKeys.length - 1]]}`
-      : dayAbbrev[currentGroup.dayKeys[0]];
+    const group: {
+      dayKeys: Array<keyof OpeningHours>;
+      hours: string;
+      notes: string[]
+    } = currentGroup; // Type narrowing helper
+    const dayRange = group.dayKeys.length > 1
+      ? `${dayAbbrev[group.dayKeys[0]]}-${dayAbbrev[group.dayKeys[group.dayKeys.length - 1]]}`
+      : dayAbbrev[group.dayKeys[0]];
 
-    const includesToday = currentGroup.dayKeys.includes(today as keyof OpeningHours);
+    const includesToday = group.dayKeys.includes(today as keyof OpeningHours);
 
     groups.push({
       days: dayRange,
-      hours: currentGroup.hours,
+      hours: group.hours,
       isToday: includesToday,
-      notes: currentGroup.notes.length > 0 ? currentGroup.notes : undefined
+      notes: group.notes.length > 0 ? group.notes : undefined
     });
   }
 

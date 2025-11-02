@@ -100,11 +100,6 @@ const ActivityLogSection: React.FC<ActivityLogSectionProps> = ({
                     <div className="text-sm text-foreground ml-7">
                       {activity.notes}
                     </div>
-                    {activity.nextFollowUpDate && (
-                      <div className="text-xs text-muted-foreground ml-7 mt-1">
-                        Next: {formatDateTimeDisplay(activity.nextFollowUpDate, activity.nextFollowUpTime)}
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>

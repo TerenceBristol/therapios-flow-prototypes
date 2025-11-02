@@ -71,7 +71,7 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
   const [doctors, setDoctors] = useState<PracticeDoctor[]>(mockData.doctors as PracticeDoctor[]);
   const [vos, setVOs] = useState<PracticeVO[]>(mockData.vos as PracticeVO[]);
   const [activities, setActivities] = useState<PracticeActivity[]>(mockData.activities as PracticeActivity[]);
-  const [followUps, setFollowUps] = useState<PracticeFollowUp[]>((mockData.followUps as PracticeFollowUp[]) || []);
+  const [followUps, setFollowUps] = useState<PracticeFollowUp[]>((mockData.followUps as unknown as PracticeFollowUp[]) || []);
   const [therapists, setTherapists] = useState<Therapist[]>(mockData.therapists as Therapist[]);
   const [facilities, setFacilities] = useState<Facility[]>(mockData.facilities as Facility[]);
 

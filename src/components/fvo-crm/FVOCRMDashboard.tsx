@@ -49,17 +49,11 @@ const FVOCRMDashboard: React.FC = () => {
   };
 
   // Calculate next follow-up date from activities
+  // Note: This component uses legacy data model without follow-ups array
   const getNextFollowUpDate = (practiceId: string): string | undefined => {
-    const today = new Date().toISOString().split('T')[0];
-    const practiceActivities = activities.filter(a => a.practiceId === practiceId);
-
-    // Get all future follow-up dates
-    const futureFollowUps = practiceActivities
-      .filter(a => a.nextFollowUpDate && a.nextFollowUpDate >= today)
-      .map(a => a.nextFollowUpDate!)
-      .sort();
-
-    return futureFollowUps[0];
+    // Follow-ups are now tracked separately, not in activities
+    // Return undefined for this legacy component
+    return undefined;
   };
 
   // Calculate practices with computed fields
@@ -127,7 +121,6 @@ const FVOCRMDashboard: React.FC = () => {
     type: PracticeActivity['type'];
     date: string;
     notes: string;
-    nextFollowUpDate?: string;
   }) => {
     const newActivity: PracticeActivity = {
       id: `act-${Date.now()}`,
@@ -136,7 +129,6 @@ const FVOCRMDashboard: React.FC = () => {
       type: activityData.type,
       notes: activityData.notes,
       userId: 'system',
-      nextFollowUpDate: activityData.nextFollowUpDate,
       createdAt: new Date().toISOString()
     };
 

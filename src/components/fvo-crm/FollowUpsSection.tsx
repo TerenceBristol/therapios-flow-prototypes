@@ -26,14 +26,8 @@ const FollowUpsSection: React.FC<FollowUpsSectionProps> = ({
   const activeFollowUps = followUps.filter(f => !f.completed);
   const completedFollowUps = followUps.filter(f => f.completed);
 
-  // Sort active follow-ups by priority and due date
+  // Sort active follow-ups by due date (earlier first)
   const sortedActiveFollowUps = [...activeFollowUps].sort((a, b) => {
-    // Priority order: high > medium > low
-    const priorityOrder = { high: 0, medium: 1, low: 2 };
-    if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
-      return priorityOrder[a.priority] - priorityOrder[b.priority];
-    }
-    // Then by due date (earlier first)
     return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
   });
 
@@ -129,15 +123,11 @@ const FollowUpsSection: React.FC<FollowUpsSectionProps> = ({
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-lg">{getPriorityIcon(followUp.priority)}</span>
                         <span className={`text-sm font-medium ${getUrgencyClass(followUp.dueDate)}`}>
                           {formatDateTimeDisplay(followUp.dueDate, followUp.dueTime)}
                         </span>
-                        <span className={`px-2 py-0.5 text-xs rounded border ${getPriorityBadge(followUp.priority)}`}>
-                          {followUp.priority}
-                        </span>
                       </div>
-                      <div className="text-sm text-foreground ml-7">
+                      <div className="text-sm text-foreground">
                         {followUp.notes}
                       </div>
                     </div>
