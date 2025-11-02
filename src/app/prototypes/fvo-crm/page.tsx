@@ -7,7 +7,7 @@ import GeneratePDFModal from '@/components/fvo-crm/GeneratePDFModal';
 import VOsPDFPreviewModal from '@/components/fvo-crm/VOsPDFPreviewModal';
 import UndoToast from '@/components/fvo-crm/UndoToast';
 import QuickActivityModal from '@/components/fvo-crm/QuickActivityModal';
-import { PracticeWithComputed, PracticeVO, FVOCRMVOStatus } from '@/types';
+import { PracticeWithComputed, PracticeVO, FVOCRMVOStatus, PracticeActivity } from '@/types';
 import { calculateTherapistStats } from '@/utils/therapistStats';
 import { useFVOCRM } from '@/hooks/useFVOCRM';
 

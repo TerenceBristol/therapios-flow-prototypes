@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, PracticeFollowUp, FVOCRMVOStatus, Therapist, Facility } from '@/types';
+import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, PracticeFollowUp, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import ActivityAndFollowUpsSection from '../ActivityAndFollowUpsSection';
 import AddActivityModal from '../AddActivityModal';
 import AddFollowUpModal from '../AddFollowUpModal';
@@ -36,7 +36,7 @@ interface PracticeCRMModalProps {
   onDeleteNote?: (voId: string, noteIndex: number) => void;
   onBulkStatusChange?: (voIds: string[], newStatus: FVOCRMVOStatus) => void;
   onBulkNoteChange?: (voIds: string[], note: string) => void;
-  onGeneratePDF?: (selectedVOIds: string[], selectedDoctorId: string) => void;
+  onGeneratePDF?: (selectedVOIds: string[], orderType: OrderFormType) => void;
 }
 
 const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({

@@ -83,7 +83,7 @@ const ContactArrayEditor: React.FC<ContactArrayEditorProps> = ({
 
       {contacts.length === 0 ? (
         <div className="border border-border rounded-md p-4 text-center text-muted-foreground text-sm">
-          No contacts added. Click "Add Contact" to add a phone number.
+          No contacts added. Click &quot;Add Contact&quot; to add a phone number.
         </div>
       ) : (
         <div className="space-y-2">

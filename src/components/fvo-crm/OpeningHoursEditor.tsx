@@ -27,7 +27,7 @@ const OpeningHoursEditor: React.FC<OpeningHoursEditorProps> = ({ openingHours, o
     sunday: 'Sunday'
   };
 
-  const handleDayChange = (day: keyof OpeningHours, field: keyof OpeningHoursDay, value: any) => {
+  const handleDayChange = (day: keyof OpeningHours, field: keyof OpeningHoursDay, value: boolean | OpeningHoursPeriod[] | string) => {
     const updated = {
       ...openingHours,
       [day]: {
