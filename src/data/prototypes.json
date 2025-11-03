@@ -110,6 +110,16 @@
       "createdAt": "2025-10-27T10:00:00Z",
       "lastModified": "2025-10-27T10:00:00Z",
       "tags": ["CRM", "F.VO", "Practice Management", "Follow-up", "Healthcare"]
+    },
+    {
+      "id": "patient-view",
+      "title": "Patienten-Übersicht",
+      "description": "Patient-centric view for therapists to see complete VO history per patient. Expandable rows show all prescriptions sorted by date, with search functionality and treatment documentation access.",
+      "category": "draft",
+      "slug": "patient-view",
+      "createdAt": "2025-11-03T19:00:00Z",
+      "lastModified": "2025-11-03T19:00:00Z",
+      "tags": ["Therapist", "Patient Management", "VO History", "Healthcare"]
     }
   ]
 }

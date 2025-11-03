@@ -1,0 +1,522 @@
+{
+  "patients": [
+    {
+      "id": "patient-1",
+      "name": "Franz Abitz",
+      "lastName": "Abitz",
+      "aktivCount": 2,
+      "otherCount": 4,
+      "vos": [
+        {
+          "name": "Franz Abitz",
+          "voNr": "2155-10",
+          "ausstDatum": "2025-10-15",
+          "heilmittel": "KG",
+          "behStatus": "3/10",
+          "tb": "Ja",
+          "einrichtung": "HB - No name",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "M. Frieß-Weisbacher",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Franz Abitz",
+          "voNr": "2155-09",
+          "ausstDatum": "2025-09-20",
+          "heilmittel": "MT",
+          "behStatus": "8/12",
+          "tb": "Nein",
+          "einrichtung": "HB - No name",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Franz Abitz",
+          "voNr": "2155-08",
+          "ausstDatum": "2025-07-10",
+          "heilmittel": "KG",
+          "behStatus": "10/10",
+          "tb": "Ja",
+          "einrichtung": "HB - No name",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Franz Abitz",
+          "voNr": "2155-07",
+          "ausstDatum": "2025-05-12",
+          "heilmittel": "KG-ZNS",
+          "behStatus": "12/12",
+          "tb": "Nein",
+          "einrichtung": "HB - No name",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "A. Schmidt",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Franz Abitz",
+          "voNr": "2155-06",
+          "ausstDatum": "2025-03-05",
+          "heilmittel": "MT",
+          "behStatus": "6/10",
+          "tb": "Ja",
+          "einrichtung": "HB - No name",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgebrochen",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Franz Abitz",
+          "voNr": "2155-05",
+          "ausstDatum": "2024-12-20",
+          "heilmittel": "KG",
+          "behStatus": "0/10",
+          "tb": "Nein",
+          "einrichtung": "HB - No name",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgelaufen",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-2",
+      "name": "Ingeborg Achtenberg",
+      "lastName": "Achtenberg",
+      "aktivCount": 1,
+      "otherCount": 2,
+      "vos": [
+        {
+          "name": "Ingeborg Achtenberg",
+          "voNr": "2201-14",
+          "ausstDatum": "2025-10-20",
+          "heilmittel": "KG-H",
+          "behStatus": "5/10",
+          "tb": "Ja",
+          "einrichtung": "Senioren Centrum",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "B. Mueller",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Ingeborg Achtenberg",
+          "voNr": "2201-13",
+          "ausstDatum": "2025-08-15",
+          "heilmittel": "KG",
+          "behStatus": "10/10",
+          "tb": "Nein",
+          "einrichtung": "Senioren Centrum",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Ingeborg Achtenberg",
+          "voNr": "2201-12",
+          "ausstDatum": "2025-06-05",
+          "heilmittel": "MT",
+          "behStatus": "12/12",
+          "tb": "Ja",
+          "einrichtung": "Senioren Centrum",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-3",
+      "name": "Heldemarie Appasani-Konapatski",
+      "lastName": "Appasani-Konapatski",
+      "aktivCount": 3,
+      "otherCount": 7,
+      "vos": [
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-22",
+          "ausstDatum": "2025-10-25",
+          "heilmittel": "KG-ZNS",
+          "behStatus": "2/10",
+          "tb": "Nein",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "L. Wagner",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-21",
+          "ausstDatum": "2025-10-01",
+          "heilmittel": "MT",
+          "behStatus": "6/12",
+          "tb": "Ja",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-20",
+          "ausstDatum": "2025-09-10",
+          "heilmittel": "KG",
+          "behStatus": "7/10",
+          "tb": "Nein",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "M. Frieß-Weisbacher",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-19",
+          "ausstDatum": "2025-07-22",
+          "heilmittel": "KG-H",
+          "behStatus": "10/10",
+          "tb": "Ja",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-18",
+          "ausstDatum": "2025-05-18",
+          "heilmittel": "MT",
+          "behStatus": "12/12",
+          "tb": "Nein",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "A. Schmidt",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-17",
+          "ausstDatum": "2025-03-14",
+          "heilmittel": "KG",
+          "behStatus": "8/10",
+          "tb": "Ja",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgebrochen",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-16",
+          "ausstDatum": "2025-01-10",
+          "heilmittel": "KG-ZNS",
+          "behStatus": "10/10",
+          "tb": "Nein",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "B. Mueller",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-15",
+          "ausstDatum": "2024-11-22",
+          "heilmittel": "MT",
+          "behStatus": "12/12",
+          "tb": "Ja",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-14",
+          "ausstDatum": "2024-09-30",
+          "heilmittel": "KG",
+          "behStatus": "6/10",
+          "tb": "Nein",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgebrochen",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Heldemarie Appasani-Konapatski",
+          "voNr": "2303-13",
+          "ausstDatum": "2024-08-15",
+          "heilmittel": "KG-H",
+          "behStatus": "0/10",
+          "tb": "Ja",
+          "einrichtung": "AIP Inter Care GmbH",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "L. Wagner",
+          "voStatus": "Abgelaufen",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-4",
+      "name": "Klaus Becker",
+      "lastName": "Becker",
+      "aktivCount": 1,
+      "otherCount": 1,
+      "vos": [
+        {
+          "name": "Klaus Becker",
+          "voNr": "2412-08",
+          "ausstDatum": "2025-10-18",
+          "heilmittel": "BO-E-H",
+          "behStatus": "4/6",
+          "tb": "Ja",
+          "einrichtung": "Praxis Zentrum",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Klaus Becker",
+          "voNr": "2412-07",
+          "ausstDatum": "2025-08-05",
+          "heilmittel": "KG",
+          "behStatus": "10/10",
+          "tb": "Nein",
+          "einrichtung": "Praxis Zentrum",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "M. Frieß-Weisbacher",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-5",
+      "name": "Maria Hoffmann",
+      "lastName": "Hoffmann",
+      "aktivCount": 2,
+      "otherCount": 3,
+      "vos": [
+        {
+          "name": "Maria Hoffmann",
+          "voNr": "2518-12",
+          "ausstDatum": "2025-10-22",
+          "heilmittel": "KG",
+          "behStatus": "1/10",
+          "tb": "Nein",
+          "einrichtung": "Therapiezentrum Nord",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "A. Schmidt",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Maria Hoffmann",
+          "voNr": "2518-11",
+          "ausstDatum": "2025-09-15",
+          "heilmittel": "MT",
+          "behStatus": "9/12",
+          "tb": "Ja",
+          "einrichtung": "Therapiezentrum Nord",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Maria Hoffmann",
+          "voNr": "2518-10",
+          "ausstDatum": "2025-07-01",
+          "heilmittel": "KG-ZNS",
+          "behStatus": "10/10",
+          "tb": "Nein",
+          "einrichtung": "Therapiezentrum Nord",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "B. Mueller",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Maria Hoffmann",
+          "voNr": "2518-09",
+          "ausstDatum": "2025-04-20",
+          "heilmittel": "MT",
+          "behStatus": "12/12",
+          "tb": "Ja",
+          "einrichtung": "Therapiezentrum Nord",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Maria Hoffmann",
+          "voNr": "2518-08",
+          "ausstDatum": "2025-02-10",
+          "heilmittel": "KG",
+          "behStatus": "5/10",
+          "tb": "Nein",
+          "einrichtung": "Therapiezentrum Nord",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgebrochen",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-6",
+      "name": "Peter Schmidt",
+      "lastName": "Schmidt",
+      "aktivCount": 1,
+      "otherCount": 4,
+      "vos": [
+        {
+          "name": "Peter Schmidt",
+          "voNr": "2625-16",
+          "ausstDatum": "2025-10-12",
+          "heilmittel": "KG-H",
+          "behStatus": "6/10",
+          "tb": "Ja",
+          "einrichtung": "Reha Plus",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "L. Wagner",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Peter Schmidt",
+          "voNr": "2625-15",
+          "ausstDatum": "2025-08-25",
+          "heilmittel": "MT",
+          "behStatus": "10/10",
+          "tb": "Nein",
+          "einrichtung": "Reha Plus",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Peter Schmidt",
+          "voNr": "2625-14",
+          "ausstDatum": "2025-06-18",
+          "heilmittel": "KG",
+          "behStatus": "12/12",
+          "tb": "Ja",
+          "einrichtung": "Reha Plus",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "M. Frieß-Weisbacher",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Peter Schmidt",
+          "voNr": "2625-13",
+          "ausstDatum": "2025-04-05",
+          "heilmittel": "KG-ZNS",
+          "behStatus": "7/10",
+          "tb": "Nein",
+          "einrichtung": "Reha Plus",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgebrochen",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Peter Schmidt",
+          "voNr": "2625-12",
+          "ausstDatum": "2025-01-15",
+          "heilmittel": "MT",
+          "behStatus": "0/12",
+          "tb": "Ja",
+          "einrichtung": "Reha Plus",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "A. Schmidt",
+          "voStatus": "Abgelaufen",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-7",
+      "name": "Anna Weber",
+      "lastName": "Weber",
+      "aktivCount": 2,
+      "otherCount": 2,
+      "vos": [
+        {
+          "name": "Anna Weber",
+          "voNr": "2732-09",
+          "ausstDatum": "2025-10-28",
+          "heilmittel": "BO-E-H",
+          "behStatus": "2/6",
+          "tb": "Nein",
+          "einrichtung": "Gesundheitszentrum West",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Anna Weber",
+          "voNr": "2732-08",
+          "ausstDatum": "2025-09-30",
+          "heilmittel": "KG",
+          "behStatus": "8/10",
+          "tb": "Ja",
+          "einrichtung": "Gesundheitszentrum West",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "B. Mueller",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Anna Weber",
+          "voNr": "2732-07",
+          "ausstDatum": "2025-07-15",
+          "heilmittel": "MT",
+          "behStatus": "12/12",
+          "tb": "Nein",
+          "einrichtung": "Gesundheitszentrum West",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Anna Weber",
+          "voNr": "2732-06",
+          "ausstDatum": "2025-05-08",
+          "heilmittel": "KG-H",
+          "behStatus": "10/10",
+          "tb": "Ja",
+          "einrichtung": "Gesundheitszentrum West",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "L. Wagner",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    }
+  ]
+}
