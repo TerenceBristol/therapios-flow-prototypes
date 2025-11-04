@@ -120,6 +120,16 @@
       "createdAt": "2025-11-03T19:00:00Z",
       "lastModified": "2025-11-03T19:00:00Z",
       "tags": ["Therapist", "Patient Management", "VO History", "Healthcare"]
+    },
+    {
+      "id": "notification-center",
+      "title": "Notification Center",
+      "description": "Tabbed notification center for therapists with VO-related reminders and status updates. Features color-coded urgency levels, expandable notifications, read/unread states, and auto-archiving. Optimized for tablet portrait orientation with bell icon dropdown access.",
+      "category": "draft",
+      "slug": "notification-center",
+      "createdAt": "2025-11-04T08:00:00Z",
+      "lastModified": "2025-11-04T08:00:00Z",
+      "tags": ["Notifications", "Therapist", "VO Management", "Reminders", "Healthcare"]
     }
   ]
 }
