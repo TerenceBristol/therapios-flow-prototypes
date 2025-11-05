@@ -1,79 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import NotificationBell from '@/components/notifications/NotificationBell';
-import NotificationBanner from '@/components/notifications/NotificationBanner';
-import { sampleNotifications, getUnreadCount, getHighestUrgency } from '@/data/notifications';
-import type { Notification } from '@/data/notifications';
 
 export default function NotificationCenterPrototype() {
-  const [notifications, setNotifications] = useState<Notification[]>(sampleNotifications);
-  const [isBannerDismissed, setIsBannerDismissed] = useState(false);
-  const [isPanelOpen, setIsPanelOpen] = useState(false);
-
-  const unreadCount = getUnreadCount(notifications);
-  const highestUrgency = getHighestUrgency(notifications);
-
-  // Reset banner dismissed state when notifications are marked as read/unread
-  // If unread count becomes 0, keep banner dismissed
-  // If unread count increases from 0, show banner again
-  useEffect(() => {
-    if (unreadCount === 0) {
-      setIsBannerDismissed(false);
-    }
-  }, [unreadCount]);
-
-  const handleViewNotifications = () => {
-    setIsPanelOpen(true);
-    // Banner stays visible until explicitly dismissed with X button
-  };
-
-  const handleDismissBanner = () => {
-    setIsBannerDismissed(true);
-  };
-
-  const handleUpdateNotifications = (updatedNotifications: Notification[]) => {
-    setNotifications(updatedNotifications);
-  };
-
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            {/* Left side - Logo/Brand */}
-            <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold text-gray-900">Flow</h1>
-              <button className="px-3 py-1.5 text-sm border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors">
-                <span className="mr-2">👤</span>
-                T Board
-              </button>
-            </div>
-
-            {/* Right side - User info and Notification Bell */}
-            <div className="flex items-center gap-4">
-              <NotificationBell
-                notifications={notifications}
-                onUpdateNotifications={handleUpdateNotifications}
-                isPanelOpen={isPanelOpen}
-                setIsPanelOpen={setIsPanelOpen}
-              />
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-sm font-semibold text-gray-700">
-                  FW
-                </div>
-                <div className="text-right">
-                  <div className="text-sm font-semibold text-gray-900">Frauke Wolff</div>
-                  <div className="text-xs text-gray-500">Therapist</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <>
       {/* Announcement Banner */}
       <div className="bg-blue-100 border-b border-blue-200">
         <div className="container mx-auto px-4 py-3">
@@ -91,16 +22,6 @@ export default function NotificationCenterPrototype() {
           </div>
         </div>
       </div>
-
-      {/* Notification Alert Banner */}
-      {unreadCount > 0 && !isBannerDismissed && (
-        <NotificationBanner
-          unreadCount={unreadCount}
-          urgency={highestUrgency}
-          onView={handleViewNotifications}
-          onDismiss={handleDismissBanner}
-        />
-      )}
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-6">
@@ -226,6 +147,6 @@ export default function NotificationCenterPrototype() {
           </div>
         </div>
       </main>
-    </div>
+    </>
   );
 }
