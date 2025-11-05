@@ -517,6 +517,281 @@
           "fVoStatus": "Keine FVO"
         }
       ]
+    },
+    {
+      "id": "patient-8",
+      "name": "Thomas Mueller",
+      "lastName": "Mueller",
+      "aktivCount": 3,
+      "otherCount": 0,
+      "vos": [
+        {
+          "name": "Thomas Mueller",
+          "voNr": "2840-03",
+          "ausstDatum": "2025-10-30",
+          "heilmittel": "KG",
+          "behStatus": "1/10",
+          "tb": "Ja",
+          "einrichtung": "Therapie am Markt",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "A. Schmidt",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Thomas Mueller",
+          "voNr": "2840-02",
+          "ausstDatum": "2025-10-10",
+          "heilmittel": "MT",
+          "behStatus": "4/12",
+          "tb": "Nein",
+          "einrichtung": "Therapie am Markt",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Thomas Mueller",
+          "voNr": "2840-01",
+          "ausstDatum": "2025-09-25",
+          "heilmittel": "KG-ZNS",
+          "behStatus": "6/10",
+          "tb": "Ja",
+          "einrichtung": "Therapie am Markt",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "B. Mueller",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        }
+      ]
+    },
+    {
+      "id": "patient-9",
+      "name": "Lisa Schneider",
+      "lastName": "Schneider",
+      "aktivCount": 1,
+      "otherCount": 0,
+      "vos": [
+        {
+          "name": "Lisa Schneider",
+          "voNr": "2945-01",
+          "ausstDatum": "2025-10-26",
+          "heilmittel": "KG-H",
+          "behStatus": "3/6",
+          "tb": "Nein",
+          "einrichtung": "PhysioVital",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-10",
+      "name": "Stefan Wagner",
+      "lastName": "Wagner",
+      "aktivCount": 2,
+      "otherCount": 0,
+      "vos": [
+        {
+          "name": "Stefan Wagner",
+          "voNr": "3050-02",
+          "ausstDatum": "2025-10-24",
+          "heilmittel": "MT",
+          "behStatus": "5/12",
+          "tb": "Ja",
+          "einrichtung": "Bewegungstherapie Süd",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "L. Wagner",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Geplant"
+        },
+        {
+          "name": "Stefan Wagner",
+          "voNr": "3050-01",
+          "ausstDatum": "2025-10-05",
+          "heilmittel": "KG",
+          "behStatus": "7/10",
+          "tb": "Nein",
+          "einrichtung": "Bewegungstherapie Süd",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Aktiv",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-11",
+      "name": "Hans Zimmermann",
+      "lastName": "Zimmermann",
+      "aktivCount": 0,
+      "otherCount": 5,
+      "vos": [
+        {
+          "name": "Hans Zimmermann",
+          "voNr": "3155-05",
+          "ausstDatum": "2025-08-20",
+          "heilmittel": "KG",
+          "behStatus": "10/10",
+          "tb": "Ja",
+          "einrichtung": "Praxis am Park",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "M. Frieß-Weisbacher",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Hans Zimmermann",
+          "voNr": "3155-04",
+          "ausstDatum": "2025-06-12",
+          "heilmittel": "MT",
+          "behStatus": "12/12",
+          "tb": "Nein",
+          "einrichtung": "Praxis am Park",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Hans Zimmermann",
+          "voNr": "3155-03",
+          "ausstDatum": "2025-04-18",
+          "heilmittel": "KG-H",
+          "behStatus": "10/10",
+          "tb": "Ja",
+          "einrichtung": "Praxis am Park",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "A. Schmidt",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Hans Zimmermann",
+          "voNr": "3155-02",
+          "ausstDatum": "2025-02-22",
+          "heilmittel": "KG-ZNS",
+          "behStatus": "5/10",
+          "tb": "Nein",
+          "einrichtung": "Praxis am Park",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgebrochen",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Hans Zimmermann",
+          "voNr": "3155-01",
+          "ausstDatum": "2024-12-10",
+          "heilmittel": "MT",
+          "behStatus": "0/12",
+          "tb": "Ja",
+          "einrichtung": "Praxis am Park",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "B. Mueller",
+          "voStatus": "Abgelaufen",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-12",
+      "name": "Greta Fischer",
+      "lastName": "Fischer",
+      "aktivCount": 0,
+      "otherCount": 2,
+      "vos": [
+        {
+          "name": "Greta Fischer",
+          "voNr": "3260-02",
+          "ausstDatum": "2025-07-30",
+          "heilmittel": "KG",
+          "behStatus": "10/10",
+          "tb": "Nein",
+          "einrichtung": "Klinik für Rehabilitation",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Greta Fischer",
+          "voNr": "3260-01",
+          "ausstDatum": "2025-05-15",
+          "heilmittel": "MT",
+          "behStatus": "12/12",
+          "tb": "Ja",
+          "einrichtung": "Klinik für Rehabilitation",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "L. Wagner",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
+    },
+    {
+      "id": "patient-13",
+      "name": "Monika Klein",
+      "lastName": "Klein",
+      "aktivCount": 0,
+      "otherCount": 4,
+      "vos": [
+        {
+          "name": "Monika Klein",
+          "voNr": "3365-04",
+          "ausstDatum": "2025-09-05",
+          "heilmittel": "KG-H",
+          "behStatus": "6/6",
+          "tb": "Ja",
+          "einrichtung": "ErgoMed Center",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "A. Schmidt",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Monika Klein",
+          "voNr": "3365-03",
+          "ausstDatum": "2025-07-08",
+          "heilmittel": "MT",
+          "behStatus": "12/12",
+          "tb": "Nein",
+          "einrichtung": "ErgoMed Center",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgerechnet",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Monika Klein",
+          "voNr": "3365-02",
+          "ausstDatum": "2025-04-25",
+          "heilmittel": "KG",
+          "behStatus": "10/10",
+          "tb": "Ja",
+          "einrichtung": "ErgoMed Center",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "M. Frieß-Weisbacher",
+          "voStatus": "Fertig Behandelt",
+          "fVoStatus": "Keine FVO"
+        },
+        {
+          "name": "Monika Klein",
+          "voNr": "3365-01",
+          "ausstDatum": "2025-02-14",
+          "heilmittel": "KG-ZNS",
+          "behStatus": "7/10",
+          "tb": "Nein",
+          "einrichtung": "ErgoMed Center",
+          "primaererTherapeut": "S. Zeibig",
+          "geteilterTherapeut": "-",
+          "voStatus": "Abgebrochen",
+          "fVoStatus": "Keine FVO"
+        }
+      ]
     }
   ]
 }
