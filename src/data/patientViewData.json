@@ -15,8 +15,8 @@
           "behStatus": "3/10",
           "tb": "Ja",
           "einrichtung": "HB - No name",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "M. Frieß-Weisbacher",
+          "primaererTherapeut": "L. Wagner",
+          "geteilterTherapeut": "S. Zeibig",
           "voStatus": "Aktiv",
           "fVoStatus": "Keine FVO"
         },
@@ -28,8 +28,8 @@
           "behStatus": "8/12",
           "tb": "Nein",
           "einrichtung": "HB - No name",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "primaererTherapeut": "L. Wagner",
+          "geteilterTherapeut": "S. Zeibig",
           "voStatus": "Aktiv",
           "fVoStatus": "Geplant"
         },
@@ -41,8 +41,8 @@
           "behStatus": "10/10",
           "tb": "Ja",
           "einrichtung": "HB - No name",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "primaererTherapeut": "L. Wagner",
+          "geteilterTherapeut": "S. Zeibig",
           "voStatus": "Fertig Behandelt",
           "fVoStatus": "Keine FVO"
         },
@@ -54,8 +54,8 @@
           "behStatus": "12/12",
           "tb": "Nein",
           "einrichtung": "HB - No name",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "A. Schmidt",
+          "primaererTherapeut": "L. Wagner",
+          "geteilterTherapeut": "S. Zeibig, A. Schmidt",
           "voStatus": "Abgerechnet",
           "fVoStatus": "Keine FVO"
         },
@@ -67,8 +67,8 @@
           "behStatus": "6/10",
           "tb": "Ja",
           "einrichtung": "HB - No name",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "primaererTherapeut": "L. Wagner",
+          "geteilterTherapeut": "S. Zeibig",
           "voStatus": "Abgebrochen",
           "fVoStatus": "Keine FVO"
         },
@@ -80,8 +80,8 @@
           "behStatus": "0/10",
           "tb": "Nein",
           "einrichtung": "HB - No name",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "primaererTherapeut": "L. Wagner",
+          "geteilterTherapeut": "S. Zeibig",
           "voStatus": "Abgelaufen",
           "fVoStatus": "Keine FVO"
         }
@@ -102,8 +102,8 @@
           "behStatus": "5/10",
           "tb": "Ja",
           "einrichtung": "Senioren Centrum",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "B. Mueller",
+          "primaererTherapeut": "B. Mueller",
+          "geteilterTherapeut": "S. Zeibig",
           "voStatus": "Aktiv",
           "fVoStatus": "Geplant"
         },
@@ -115,8 +115,8 @@
           "behStatus": "10/10",
           "tb": "Nein",
           "einrichtung": "Senioren Centrum",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "primaererTherapeut": "B. Mueller",
+          "geteilterTherapeut": "S. Zeibig",
           "voStatus": "Fertig Behandelt",
           "fVoStatus": "Keine FVO"
         },
@@ -128,8 +128,8 @@
           "behStatus": "12/12",
           "tb": "Ja",
           "einrichtung": "Senioren Centrum",
-          "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "primaererTherapeut": "B. Mueller",
+          "geteilterTherapeut": "S. Zeibig",
           "voStatus": "Abgerechnet",
           "fVoStatus": "Keine FVO"
         }
@@ -164,7 +164,7 @@
           "tb": "Ja",
           "einrichtung": "AIP Inter Care GmbH",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Aktiv",
           "fVoStatus": "Keine FVO"
         },
@@ -190,7 +190,7 @@
           "tb": "Ja",
           "einrichtung": "AIP Inter Care GmbH",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Fertig Behandelt",
           "fVoStatus": "Keine FVO"
         },
@@ -216,7 +216,7 @@
           "tb": "Ja",
           "einrichtung": "AIP Inter Care GmbH",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgebrochen",
           "fVoStatus": "Keine FVO"
         },
@@ -242,7 +242,7 @@
           "tb": "Ja",
           "einrichtung": "AIP Inter Care GmbH",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgerechnet",
           "fVoStatus": "Keine FVO"
         },
@@ -255,7 +255,7 @@
           "tb": "Nein",
           "einrichtung": "AIP Inter Care GmbH",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgebrochen",
           "fVoStatus": "Keine FVO"
         },
@@ -290,7 +290,7 @@
           "tb": "Ja",
           "einrichtung": "Praxis Zentrum",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Aktiv",
           "fVoStatus": "Geplant"
         },
@@ -338,7 +338,7 @@
           "tb": "Ja",
           "einrichtung": "Therapiezentrum Nord",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Aktiv",
           "fVoStatus": "Geplant"
         },
@@ -364,7 +364,7 @@
           "tb": "Ja",
           "einrichtung": "Therapiezentrum Nord",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgerechnet",
           "fVoStatus": "Keine FVO"
         },
@@ -377,7 +377,7 @@
           "tb": "Nein",
           "einrichtung": "Therapiezentrum Nord",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgebrochen",
           "fVoStatus": "Keine FVO"
         }
@@ -412,7 +412,7 @@
           "tb": "Nein",
           "einrichtung": "Reha Plus",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Fertig Behandelt",
           "fVoStatus": "Keine FVO"
         },
@@ -438,7 +438,7 @@
           "tb": "Nein",
           "einrichtung": "Reha Plus",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgebrochen",
           "fVoStatus": "Keine FVO"
         },
@@ -473,7 +473,7 @@
           "tb": "Nein",
           "einrichtung": "Gesundheitszentrum West",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Aktiv",
           "fVoStatus": "Geplant"
         },
@@ -499,7 +499,7 @@
           "tb": "Nein",
           "einrichtung": "Gesundheitszentrum West",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Fertig Behandelt",
           "fVoStatus": "Keine FVO"
         },
@@ -547,7 +547,7 @@
           "tb": "Nein",
           "einrichtung": "Therapie am Markt",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Aktiv",
           "fVoStatus": "Keine FVO"
         },
@@ -582,7 +582,7 @@
           "tb": "Nein",
           "einrichtung": "PhysioVital",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Aktiv",
           "fVoStatus": "Keine FVO"
         }
@@ -617,7 +617,7 @@
           "tb": "Nein",
           "einrichtung": "Bewegungstherapie Süd",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Aktiv",
           "fVoStatus": "Keine FVO"
         }
@@ -652,7 +652,7 @@
           "tb": "Nein",
           "einrichtung": "Praxis am Park",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgerechnet",
           "fVoStatus": "Keine FVO"
         },
@@ -678,7 +678,7 @@
           "tb": "Nein",
           "einrichtung": "Praxis am Park",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgebrochen",
           "fVoStatus": "Keine FVO"
         },
@@ -713,7 +713,7 @@
           "tb": "Nein",
           "einrichtung": "Klinik für Rehabilitation",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Fertig Behandelt",
           "fVoStatus": "Keine FVO"
         },
@@ -761,7 +761,7 @@
           "tb": "Nein",
           "einrichtung": "ErgoMed Center",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgerechnet",
           "fVoStatus": "Keine FVO"
         },
@@ -787,7 +787,7 @@
           "tb": "Nein",
           "einrichtung": "ErgoMed Center",
           "primaererTherapeut": "S. Zeibig",
-          "geteilterTherapeut": "-",
+          "geteilterTherapeut": "–",
           "voStatus": "Abgebrochen",
           "fVoStatus": "Keine FVO"
         }

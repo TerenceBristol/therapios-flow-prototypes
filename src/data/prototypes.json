@@ -122,14 +122,24 @@
       "tags": ["Therapist", "Patient Management", "VO History", "Healthcare"]
     },
     {
-      "id": "notification-center",
-      "title": "Notification Center",
-      "description": "Tabbed notification center for therapists with VO-related reminders and status updates. Features color-coded urgency levels, expandable notifications, read/unread states, and auto-archiving. Optimized for tablet portrait orientation with bell icon dropdown access.",
+      "id": "patient-view-notif-center",
+      "title": "Patient View + Notification Center",
+      "description": "Combined patient-centric view and notification center for therapists. Manage complete VO history per patient with expandable rows, treatment documentation, and integrated notification system. Features tabbed interface, sorting, filtering, and expand/collapse controls. Optimized for tablet portrait orientation.",
       "category": "draft",
-      "slug": "notification-center",
+      "slug": "patient-view-notif-center",
       "createdAt": "2025-11-04T08:00:00Z",
-      "lastModified": "2025-11-04T08:00:00Z",
-      "tags": ["Notifications", "Therapist", "VO Management", "Reminders", "Healthcare"]
+      "lastModified": "2025-11-06T10:00:00Z",
+      "tags": ["Therapist", "Patient Management", "VO Management", "Notifications", "Healthcare"]
+    },
+    {
+      "id": "patient-view-notif-center-alt",
+      "title": "Patient View + Notification Center (Alternative)",
+      "description": "Alternative design for patient-centric view with notification center. Features different layout approach for therapists to manage VOs and receive notifications. Same functionality as main version with experimental UI patterns.",
+      "category": "draft",
+      "slug": "patient-view-notif-center-alt",
+      "createdAt": "2025-11-06T10:00:00Z",
+      "lastModified": "2025-11-06T10:00:00Z",
+      "tags": ["Therapist", "Patient Management", "VO Management", "Notifications", "Healthcare", "Alternative"]
     }
   ]
 }
