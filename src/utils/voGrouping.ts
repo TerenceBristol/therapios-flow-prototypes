@@ -12,7 +12,7 @@ function daysSince(dateString: string): number {
 
 // Calculate days since last treatment for a patient
 // Uses mock data based on VO issuance date and treatment progress
-function calculateDaysSinceLastTreatment(vos: any[]): number {
+function calculateDaysSinceLastTreatment(vos: Pick<VO, 'ausstDatum' | 'behStatus'>[]): number {
   if (vos.length === 0) return 0;
 
   let mostRecentTreatmentDate = new Date(0);
