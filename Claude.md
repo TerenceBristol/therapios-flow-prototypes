@@ -93,11 +93,22 @@ npm run dev  # Start development server
 ```
 
 #### CRITICAL WORKFLOW NOTE
+
 **ALWAYS use `is_background: true` when running `npm run dev`**
 - Running `npm run dev` without background mode blocks the terminal session
 - This makes the chat "stuck" and prevents the user from sending new messages
 - User specifically requested this be remembered to avoid chat interruptions
 - Use: `npm run dev` with `is_background: true` for all development server starts
+
+**Screenshot Size Management (5 MB API Limit)**
+- **ALWAYS use `browser_snapshot` instead of `browser_take_screenshot` for web testing**
+- Snapshots capture accessibility tree (text-based) and are much smaller
+- If screenshots are needed:
+  - NEVER use `fullPage: true` on large pages
+  - Screenshot specific elements only, not entire viewport
+  - Resize browser window smaller before taking screenshots
+- **Why:** Images >5 MB cause fatal API errors that kill the entire chat session
+- User specifically requested this be remembered to avoid frustrating "chat goes dead" issues
 
 #### User Profile
 - **Non-technical user** - Handle ALL code changes
@@ -193,10 +204,28 @@ npm run dev  # Start development server
 - **German language** support for VO data display
 
 ### Troubleshooting
+
+#### Common Issues
 - If fonts don't load: Check Google Fonts import in layout.tsx
 - If colors are wrong: Verify Theme.css import in globals.css
 - If routing fails: Check dynamic route structure in prototypes/[slug]
 - If build fails: Run `npm run lint` and fix TypeScript errors
+
+#### Screenshot API Errors (5 MB Limit Exceeded)
+**Error:** `"image exceeds 5 MB maximum: X bytes > 5242880 bytes"`
+
+**Immediate Fix:**
+- Start a new chat session (current session is corrupted)
+- Report to: https://github.com/anthropics/claude-code/issues
+
+**Prevention:**
+1. **Use `browser_snapshot`** - Text-based accessibility tree, not image pixels
+2. **Limit screenshot scope** - Target specific elements, not full pages
+3. **Resize browser** - Make viewport smaller before screenshots
+4. **Compress before reading** - Use `sips -Z 1920 image.png` (macOS) to resize large images
+5. **Start fresh periodically** - Long conversations with many images accumulate in context
+
+**Root Cause:** Claude API has a 5 MB limit per image. Full-page screenshots of modern web apps often exceed this, causing fatal chat errors.
 
 ---
 
