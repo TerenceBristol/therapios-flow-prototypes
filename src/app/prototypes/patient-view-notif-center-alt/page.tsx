@@ -27,7 +27,7 @@ export default function PatientViewNotifCenterAltPrototype() {
     return patientData.patients.map(patient => ({
       ...patient,
       vos: patient.vos.map((vo, idx) => ({
-        ...vo,
+        ...(vo as VO),
         id: `${patient.id}-vo-${idx}`
       }))
     }));
