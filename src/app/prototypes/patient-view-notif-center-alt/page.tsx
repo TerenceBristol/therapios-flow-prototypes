@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import patientData from '@/data/patientViewDataAlt.json';
 import { VO } from '@/data/voTypesAlt';
 import PatientSectionV2 from '@/components/patient-view/PatientSectionV2';
 import SectionHeaderRow from '@/components/patient-view/SectionHeaderRow';
+import { useNotificationContext } from '@/contexts/NotificationContext';
 
 type TabType = 'my_vos' | 'shared_vos' | 'calendar';
 
@@ -21,6 +22,10 @@ export default function PatientViewNotifCenterAltPrototype() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isWithActiveExpanded, setIsWithActiveExpanded] = useState(true);
   const [isWithoutActiveExpanded, setIsWithoutActiveExpanded] = useState(false);
+  const [highlightedVO, setHighlightedVO] = useState<string | null>(null);
+  const [expandedCompletedPatient, setExpandedCompletedPatient] = useState<string | null>(null);
+  const { viewVORequest, clearViewVORequest } = useNotificationContext();
+  const voRefs = useRef<{ [key: string]: HTMLTableRowElement | null }>({});
 
   // Process patient data and add unique IDs to VOs
   const processedPatients: Patient[] = useMemo(() => {
@@ -107,6 +112,74 @@ export default function PatientViewNotifCenterAltPrototype() {
     setSelectedVOs(new Set());
   };
 
+  // Handle View VO navigation from notifications
+  useEffect(() => {
+    if (!viewVORequest) return;
+
+    const { patientId, voNumber, targetTab } = viewVORequest;
+
+    // Step 1: Switch to the correct tab
+    const tabType: TabType = targetTab === 'my-vos' ? 'my_vos' : 'shared_vos';
+    setActiveTab(tabType);
+
+    // Step 2: Find the patient in the processed data
+    const patient = processedPatients.find(p => p.id === patientId);
+    if (!patient) {
+      console.warn(`Patient ${patientId} not found`);
+      clearViewVORequest();
+      return;
+    }
+
+    // Step 3: Find the VO
+    const vo = patient.vos.find(v => v.voNr === voNumber);
+    if (!vo) {
+      console.warn(`VO ${voNumber} not found for patient ${patientId}`);
+      clearViewVORequest();
+      return;
+    }
+
+    // Step 4: Determine which section the patient is in and expand it
+    const hasActiveVO = patient.vos.some(v => v.voStatus === 'Aktiv');
+    if (hasActiveVO) {
+      setIsWithActiveExpanded(true);
+    } else {
+      setIsWithoutActiveExpanded(true);
+    }
+
+    // Step 4.5: Check if the VO is completed/non-active and expand completed VOs if needed
+    const isNonActiveVO = vo.voStatus !== 'Aktiv';
+    if (isNonActiveVO && hasActiveVO) {
+      // Patient has active VOs but we need to show a completed one
+      setExpandedCompletedPatient(patientId);
+    } else {
+      setExpandedCompletedPatient(null);
+    }
+
+    // Step 5: Highlight and scroll to the VO (with delay to ensure DOM is ready)
+    setTimeout(() => {
+      // Highlight the VO
+      setHighlightedVO(voNumber);
+
+      // Scroll to the VO if we have a ref
+      const voKey = `${patientId}-${voNumber}`;
+      const voElement = voRefs.current[voKey];
+      if (voElement) {
+        voElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }
+
+      // Clear highlight after 3 seconds (keep section expanded)
+      setTimeout(() => {
+        setHighlightedVO(null);
+      }, 3000);
+
+      // Clear the request
+      clearViewVORequest();
+    }, 300);
+  }, [viewVORequest, processedPatients, clearViewVORequest]);
+
   return (
     <>
       {/* Announcement Banner */}
@@ -150,7 +223,7 @@ export default function PatientViewNotifCenterAltPrototype() {
         </div>
 
         {/* Tabs */}
-        <div className="bg-white rounded-t-lg border border-gray-200">
+        <div className="sticky top-0 z-20 bg-white rounded-t-lg border border-gray-200">
           <div className="px-4">
           <div className="flex border-b border-gray-200">
             <button
@@ -182,8 +255,8 @@ export default function PatientViewNotifCenterAltPrototype() {
           </div>
           </div>
 
-          {/* Sticky filter section */}
-          <div className="sticky top-0 z-40 bg-white">
+          {/* Filter section */}
+          <div className="bg-white">
             {/* Filter Row with Action Buttons */}
             <div className="px-4 py-4 border-b border-gray-200 bg-gray-50">
             <div className="flex items-center gap-4">
@@ -250,16 +323,11 @@ export default function PatientViewNotifCenterAltPrototype() {
             </div>
           </div>
 
-            {/* Patient Table */}
+          {/* Table #1 - Header Only (inside sticky container) */}
+          {activeTab !== 'calendar' && (
             <div className="px-4">
-            {activeTab === 'calendar' ? (
-              <div className="py-12 text-center text-gray-500">
-                Calendar view coming soon
-              </div>
-            ) : (
               <table className="w-full border-collapse">
-                {/* Table Header */}
-                <thead className="sticky top-[72px] z-30 bg-gray-100">
+                <thead className="bg-gray-100">
                   <tr className="border-b border-gray-300">
                     <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Select</th>
                     <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Name</th>
@@ -281,6 +349,19 @@ export default function PatientViewNotifCenterAltPrototype() {
                     <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Arzt</th>
                   </tr>
                 </thead>
+              </table>
+            </div>
+          )}
+        </div>
+
+        {/* Patient Table - Body Only */}
+        <div className="px-4">
+            {activeTab === 'calendar' ? (
+              <div className="py-12 text-center text-gray-500">
+                Calendar view coming soon
+              </div>
+            ) : (
+              <table className="w-full border-collapse">
 
                 {/* Section 1: Patients WITH active VOs */}
                 {patientsWithActive.length > 0 && (
@@ -303,6 +384,9 @@ export default function PatientViewNotifCenterAltPrototype() {
                       nonActiveVOs={nonActiveVOs}
                       selectedVOs={selectedVOs}
                       onVOCheck={handleVOCheck}
+                      highlightedVO={highlightedVO}
+                      voRefs={voRefs}
+                      forceExpandCompleted={expandedCompletedPatient === patient.id}
                     />
                   );
                 })}
@@ -337,6 +421,9 @@ export default function PatientViewNotifCenterAltPrototype() {
                       nonActiveVOs={nonActiveVOs}
                       selectedVOs={selectedVOs}
                       onVOCheck={handleVOCheck}
+                      highlightedVO={highlightedVO}
+                      voRefs={voRefs}
+                      forceExpandCompleted={expandedCompletedPatient === patient.id}
                     />
                   );
                 })}
@@ -353,8 +440,7 @@ export default function PatientViewNotifCenterAltPrototype() {
                 )}
               </table>
             )}
-            </div>
-        </div>
+          </div>
       </main>
     </>
   );

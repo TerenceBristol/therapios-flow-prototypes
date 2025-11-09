@@ -1,31 +1,32 @@
 'use client';
 
 import { useState } from 'react';
-import { Notification, getUnreadNotifications, getAllActiveNotifications, getArchivedNotifications } from '@/data/notifications';
+import { Notification, getUnreadNotifications, getReadNotifications, getArchivedNotifications } from '@/data/notifications';
 import NotificationItem from './NotificationItem';
 
 interface NotificationPanelProps {
   notifications: Notification[];
   onClose: () => void;
   onUpdateNotifications: (notifications: Notification[]) => void;
+  onViewVO?: (notification: Notification) => void;
 }
 
-type TabType = 'unread' | 'all' | 'archive';
+type TabType = 'unread' | 'read' | 'archived';
 
-export default function NotificationPanel({ notifications, onClose, onUpdateNotifications }: NotificationPanelProps) {
+export default function NotificationPanel({ notifications, onClose, onUpdateNotifications, onViewVO }: NotificationPanelProps) {
   const [activeTab, setActiveTab] = useState<TabType>('unread');
 
   const unreadNotifications = getUnreadNotifications(notifications);
-  const allActiveNotifications = getAllActiveNotifications(notifications);
+  const readNotifications = getReadNotifications(notifications);
   const archivedNotifications = getArchivedNotifications(notifications);
 
   const getCurrentTabNotifications = () => {
     switch (activeTab) {
       case 'unread':
         return unreadNotifications;
-      case 'all':
-        return allActiveNotifications;
-      case 'archive':
+      case 'read':
+        return readNotifications;
+      case 'archived':
         return archivedNotifications;
     }
   };
@@ -51,16 +52,25 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
     switch (activeTab) {
       case 'unread':
         return 'No unread notifications';
-      case 'all':
-        return 'No notifications';
-      case 'archive':
+      case 'read':
+        return 'No read notifications';
+      case 'archived':
         return 'No archived notifications';
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-start pt-16 animate-fadeIn" style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}>
-      <div className="bg-white rounded-lg shadow-2xl w-[90%] max-w-2xl animate-slideDown" style={{ maxHeight: '50vh' }}>
+    <div
+      className="fixed inset-0 z-[60] flex"
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
+      onClick={onClose}
+    >
+      {/* Side Drawer - slides in from right */}
+      <div
+        className="ml-auto bg-white shadow-2xl h-full flex flex-col animate-slideInRight"
+        style={{ width: '400px' }}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header with close button */}
         <div className="flex justify-between items-center px-4 py-3 border-b border-gray-200">
           <h2 className="text-lg font-semibold text-gray-900">Notifications</h2>
@@ -90,33 +100,33 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
             Unread {unreadCount > 0 && `(${unreadCount})`}
           </button>
           <button
-            onClick={() => setActiveTab('all')}
+            onClick={() => setActiveTab('read')}
             className={`
               flex-1 px-4 py-3 text-sm font-medium transition-colors min-h-[44px]
-              ${activeTab === 'all'
+              ${activeTab === 'read'
                 ? 'text-blue-600 border-b-2 border-blue-600'
                 : 'text-gray-600 hover:text-gray-900'
               }
             `}
           >
-            All
+            Read
           </button>
           <button
-            onClick={() => setActiveTab('archive')}
+            onClick={() => setActiveTab('archived')}
             className={`
               flex-1 px-4 py-3 text-sm font-medium transition-colors min-h-[44px]
-              ${activeTab === 'archive'
+              ${activeTab === 'archived'
                 ? 'text-blue-600 border-b-2 border-blue-600'
                 : 'text-gray-600 hover:text-gray-900'
               }
             `}
           >
-            Archive
+            Archived
           </button>
         </div>
 
         {/* Notification list */}
-        <div className="overflow-y-auto" style={{ maxHeight: 'calc(50vh - 160px)' }}>
+        <div className="flex-1 overflow-y-auto">
           {currentNotifications.length === 0 ? (
             <div className="flex items-center justify-center py-12 text-gray-500 text-sm">
               {getEmptyStateMessage()}
@@ -127,13 +137,14 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
                 key={notification.id}
                 notification={notification}
                 onToggleRead={handleToggleRead}
+                onViewVO={onViewVO}
               />
             ))
           )}
         </div>
 
         {/* Footer with Mark all as read button */}
-        {activeTab !== 'archive' && unreadCount > 0 && (
+        {activeTab !== 'archived' && unreadCount > 0 && (
           <div className="px-4 py-3 border-t border-gray-200">
             <button
               onClick={handleMarkAllAsRead}

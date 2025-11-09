@@ -1,5 +1,6 @@
 'use client';
 
+import { forwardRef } from 'react';
 import { VO } from '@/data/voTypesAlt';
 
 interface VOTableRowV2Props {
@@ -8,6 +9,8 @@ interface VOTableRowV2Props {
   isChecked: boolean;
   onCheck: (voId: string, checked: boolean) => void;
   showCheckbox: boolean;
+  className?: string;
+  highlighted?: boolean;
 }
 
 // Get status badge styling based on VO status
@@ -28,11 +31,20 @@ function getStatusBadgeClass(status: string): string {
   }
 }
 
-export default function VOTableRowV2({ vo, patientName, isChecked, onCheck, showCheckbox }: VOTableRowV2Props) {
+const VOTableRowV2 = forwardRef<HTMLTableRowElement, VOTableRowV2Props>(
+  ({ vo, patientName, isChecked, onCheck, showCheckbox, className = '', highlighted = false }, ref) => {
   const isActive = vo.voStatus === 'Aktiv';
 
   return (
-    <tr className={`border-b border-gray-200 ${!isActive ? 'opacity-70 bg-gray-50' : 'hover:bg-gray-50'}`}>
+    <tr
+      ref={ref}
+      className={`
+        border-b border-gray-200
+        ${!isActive ? 'opacity-70 bg-gray-50' : 'hover:bg-gray-50'}
+        ${highlighted ? 'bg-yellow-100 transition-colors duration-300' : ''}
+        ${className}
+      `}
+    >
       {/* 1. Checkbox */}
       <td className="px-3 py-3 text-center">
         {showCheckbox && (
@@ -125,4 +137,8 @@ export default function VOTableRowV2({ vo, patientName, isChecked, onCheck, show
       <td className="px-3 py-3 text-gray-900 text-sm">{vo.arzt || '–'}</td>
     </tr>
   );
-}
+});
+
+VOTableRowV2.displayName = 'VOTableRowV2';
+
+export default VOTableRowV2;

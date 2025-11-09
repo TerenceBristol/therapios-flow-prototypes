@@ -8,9 +8,10 @@ interface NotificationBellProps {
   onUpdateNotifications: (notifications: Notification[]) => void;
   isPanelOpen: boolean;
   setIsPanelOpen: (isOpen: boolean) => void;
+  onViewVO?: (notification: Notification) => void;
 }
 
-export default function NotificationBell({ notifications, onUpdateNotifications, isPanelOpen, setIsPanelOpen }: NotificationBellProps) {
+export default function NotificationBell({ notifications, onUpdateNotifications, isPanelOpen, setIsPanelOpen, onViewVO }: NotificationBellProps) {
   const unreadCount = getUnreadCount(notifications);
 
   const handleTogglePanel = () => {
@@ -57,6 +58,7 @@ export default function NotificationBell({ notifications, onUpdateNotifications,
           notifications={notifications}
           onClose={handleClosePanel}
           onUpdateNotifications={onUpdateNotifications}
+          onViewVO={onViewVO}
         />
       )}
     </>

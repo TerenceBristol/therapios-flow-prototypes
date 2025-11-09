@@ -10,13 +10,15 @@ interface NotificationCenterHeaderProps {
   onUpdateNotifications: (notifications: Notification[]) => void;
   isPanelOpen: boolean;
   setIsPanelOpen: (open: boolean) => void;
+  onViewVO?: (notification: Notification) => void;
 }
 
 export default function NotificationCenterHeader({
   notifications,
   onUpdateNotifications,
   isPanelOpen,
-  setIsPanelOpen
+  setIsPanelOpen,
+  onViewVO
 }: NotificationCenterHeaderProps) {
   const pathname = usePathname();
 
@@ -63,6 +65,7 @@ export default function NotificationCenterHeader({
               onUpdateNotifications={onUpdateNotifications}
               isPanelOpen={isPanelOpen}
               setIsPanelOpen={setIsPanelOpen}
+              onViewVO={onViewVO}
             />
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-sm font-semibold text-gray-700">

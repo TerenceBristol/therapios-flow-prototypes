@@ -1,17 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import { Notification, getUrgencyColor, formatNotificationTime, truncateText } from '@/data/notifications';
+import { Notification, formatNotificationTime, truncateText } from '@/data/notifications';
 
 interface NotificationItemProps {
   notification: Notification;
   onToggleRead: (id: string) => void;
+  onViewVO?: (notification: Notification) => void;
 }
 
-export default function NotificationItem({ notification, onToggleRead }: NotificationItemProps) {
+export default function NotificationItem({ notification, onToggleRead, onViewVO }: NotificationItemProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const urgencyColor = getUrgencyColor(notification.urgency);
   const formattedTime = formatNotificationTime(notification.timestamp);
   const truncatedMessage = truncateText(notification.message, 60);
 
@@ -25,6 +25,17 @@ export default function NotificationItem({ notification, onToggleRead }: Notific
     setIsExpanded(false); // Collapse after marking
   };
 
+  const handleViewVO = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onViewVO) {
+      onViewVO(notification);
+      // Mark as read when viewing
+      if (!notification.read) {
+        onToggleRead(notification.id);
+      }
+    }
+  };
+
   return (
     <div
       className={`
@@ -34,16 +45,7 @@ export default function NotificationItem({ notification, onToggleRead }: Notific
       `}
       onClick={handleClick}
     >
-      <div className="flex items-start gap-3">
-        {/* Color indicator dot */}
-        <div
-          className="w-2.5 h-2.5 rounded-full flex-shrink-0 mt-1.5 transition-transform duration-200"
-          style={{
-            backgroundColor: urgencyColor,
-            transform: isExpanded ? 'scale(1.2)' : 'scale(1)'
-          }}
-        />
-
+      <div className="flex items-start">
         {/* Content */}
         <div className="flex-1 min-w-0">
           {/* Header row */}
@@ -60,22 +62,23 @@ export default function NotificationItem({ notification, onToggleRead }: Notific
             {isExpanded ? notification.message : truncatedMessage}
           </div>
 
-          {/* Mark as Read/Unread button (only shown when expanded) */}
-          <div
-            className="overflow-hidden transition-all duration-300"
-            style={{
-              maxHeight: isExpanded ? '60px' : '0px',
-              opacity: isExpanded ? 1 : 0,
-              marginTop: isExpanded ? '12px' : '0px'
-            }}
-          >
-            <button
-              onClick={handleToggleRead}
-              className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-colors min-h-[44px]"
-            >
-              {notification.read ? 'Mark as Unread' : 'Mark as Read'}
-            </button>
-          </div>
+          {/* Action buttons (only shown when expanded) - shown inline below message */}
+          {isExpanded && (
+            <div className="mt-3 flex gap-2">
+              <button
+                onClick={handleViewVO}
+                className="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors min-h-[44px]"
+              >
+                View VO
+              </button>
+              <button
+                onClick={handleToggleRead}
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors min-h-[44px]"
+              >
+                Mark as Read
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

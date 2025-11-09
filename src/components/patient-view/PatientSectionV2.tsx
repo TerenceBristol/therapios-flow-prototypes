@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { VO } from '@/data/voTypesAlt';
 import VOTableRowV2 from './VOTableRowV2';
 
@@ -12,6 +12,9 @@ interface PatientSectionV2Props {
   nonActiveVOs: VO[];
   selectedVOs: Set<string>;
   onVOCheck: (voId: string, checked: boolean) => void;
+  highlightedVO?: string | null;
+  voRefs?: React.MutableRefObject<{ [key: string]: HTMLTableRowElement | null }>;
+  forceExpandCompleted?: boolean;
 }
 
 export default function PatientSectionV2({
@@ -21,9 +24,19 @@ export default function PatientSectionV2({
   activeVOs,
   nonActiveVOs,
   selectedVOs,
-  onVOCheck
+  onVOCheck,
+  highlightedVO,
+  voRefs,
+  forceExpandCompleted
 }: PatientSectionV2Props) {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // Sync internal expanded state with external prop
+  useEffect(() => {
+    if (forceExpandCompleted !== undefined) {
+      setIsExpanded(forceExpandCompleted);
+    }
+  }, [forceExpandCompleted]);
 
   const hasActiveVOs = activeVOs.length > 0;
   // Show active VOs if they exist, otherwise show first non-active VO
@@ -32,33 +45,52 @@ export default function PatientSectionV2({
   const remainingCount = hasActiveVOs ? nonActiveCount : nonActiveCount - 1;
 
   return (
-    <tbody className="shadow-md bg-gray-50 mb-3">
+    <tbody className="shadow-lg border border-gray-200 rounded-lg bg-gray-50 mb-3">
       {/* Active VO Rows (or first completed VO if no active) */}
-      {vosToShow.map((vo) => (
-        <VOTableRowV2
-          key={vo.id}
-          vo={vo}
-          patientName={patientName}
-          isChecked={selectedVOs.has(vo.id!)}
-          onCheck={onVOCheck}
-          showCheckbox={vo.voStatus === 'Aktiv'}
-        />
-      ))}
+      {vosToShow.map((vo, index) => {
+        const voKey = `${patientId}-${vo.voNr}`;
+        return (
+          <VOTableRowV2
+            key={vo.id}
+            ref={(el) => {
+              if (voRefs) {
+                voRefs.current[voKey] = el;
+              }
+            }}
+            vo={vo}
+            patientName={patientName}
+            isChecked={selectedVOs.has(vo.id!)}
+            onCheck={onVOCheck}
+            showCheckbox={vo.voStatus === 'Aktiv'}
+            className={index === 0 ? 'rounded-t-lg' : ''}
+            highlighted={highlightedVO === vo.voNr}
+          />
+        );
+      })}
 
       {/* Remaining Non-Active VO Rows (when expanded) */}
-      {isExpanded && (hasActiveVOs ? nonActiveVOs : nonActiveVOs.slice(1)).map((vo) => (
-        <VOTableRowV2
-          key={vo.id}
-          vo={vo}
-          patientName={patientName}
-          isChecked={false}
-          onCheck={onVOCheck}
-          showCheckbox={false}
-        />
-      ))}
+      {isExpanded && (hasActiveVOs ? nonActiveVOs : nonActiveVOs.slice(1)).map((vo) => {
+        const voKey = `${patientId}-${vo.voNr}`;
+        return (
+          <VOTableRowV2
+            key={vo.id}
+            ref={(el) => {
+              if (voRefs) {
+                voRefs.current[voKey] = el;
+              }
+            }}
+            vo={vo}
+            patientName={patientName}
+            isChecked={false}
+            onCheck={onVOCheck}
+            showCheckbox={false}
+            highlighted={highlightedVO === vo.voNr}
+          />
+        );
+      })}
 
       {/* Expand Button Row - always at the end */}
-      <tr className="bg-gray-50">
+      <tr className="bg-gray-50 rounded-b-lg">
         <td colSpan={18} className="px-4 py-2 text-left">
           {remainingCount > 0 ? (
             <button
