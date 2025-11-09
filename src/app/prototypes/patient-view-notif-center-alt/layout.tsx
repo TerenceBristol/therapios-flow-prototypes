@@ -38,12 +38,14 @@ function NotificationCenterLayoutContent({ children }: { children: React.ReactNo
     // Close the panel
     setIsPanelOpen(false);
 
-    // Request navigation to the VO
-    requestViewVO({
-      patientId: notification.patientId,
-      voNumber: notification.voNumber,
-      targetTab: notification.targetTab,
-    });
+    // Only request navigation if this is a VO notification (not an announcement)
+    if (notification.category === 'vo-notification' && notification.patientId && notification.voNumber && notification.targetTab) {
+      requestViewVO({
+        patientId: notification.patientId,
+        voNumber: notification.voNumber,
+        targetTab: notification.targetTab,
+      });
+    }
   };
 
   return (

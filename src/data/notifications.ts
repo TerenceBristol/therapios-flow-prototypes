@@ -1,12 +1,17 @@
 export interface Notification {
   id: string;
-  type: 'new-vo-assigned' | 'vo-shared' | 'shared-therapist-removed' | 'patient-transferred' | 'vo-completed' | 'vo-expired' | 'vo-terminated' | 'vo-expiring-soon';
+  category: 'announcement' | 'vo-notification';
+  type: 'general-announcement' | 'new-feature' | 'technical-issue' | 'company-announcement' |
+        'new-vo-assigned' | 'vo-shared' | 'shared-therapist-removed' | 'patient-transferred' |
+        'vo-completed' | 'vo-expired' | 'vo-terminated' | 'vo-expiring-soon';
   urgency: 'high' | 'medium' | 'info';
-  patientName: string;
-  patientId: string;
-  voNumber: string;
+  tier: 1 | 2 | 3; // Visual hierarchy: 1=Announcements, 2=Action Required, 3=Informational
+  title: string; // Scenario name or announcement type
+  patientName?: string; // Optional for announcements
+  patientId?: string; // Optional for announcements
+  voNumber?: string; // Optional for announcements
   voId?: string;
-  targetTab: 'my-vos' | 'shared-vos';
+  targetTab?: 'my-vos' | 'shared-vos'; // Optional for announcements
   message: string;
   timestamp: Date;
   read: boolean;
@@ -18,11 +23,40 @@ const hoursAgo = (hours: number) => new Date(Date.now() - hours * 60 * 60 * 1000
 const daysAgo = (days: number) => new Date(Date.now() - days * 24 * 60 * 60 * 1000);
 
 export const sampleNotifications: Notification[] = [
-  // Unread notifications - 8 scenarios
+  // Unread Announcements (Tier 1)
+  {
+    id: 'ann-1',
+    category: 'announcement',
+    type: 'technical-issue',
+    urgency: 'high',
+    tier: 1,
+    title: 'Technical Issue',
+    message: 'We are currently experiencing intermittent server issues that may affect document uploads. Our technical team is actively working on a resolution. Expected fix time: 2 hours.',
+    timestamp: hoursAgo(1),
+    read: false,
+    archived: false,
+  },
+  {
+    id: 'ann-2',
+    category: 'announcement',
+    type: 'new-feature',
+    urgency: 'info',
+    tier: 1,
+    title: 'New Feature',
+    message: 'Introducing automated VO expiration alerts! You will now receive notifications 7 days before a VO expires with zero treatments. Check the notification center to stay on top of your workflow.',
+    timestamp: hoursAgo(3),
+    read: false,
+    archived: false,
+  },
+
+  // Unread VO notifications - Tier 2 (Action Required)
   {
     id: '1',
+    category: 'vo-notification',
     type: 'new-vo-assigned',
     urgency: 'info',
+    tier: 2,
+    title: 'New VO Assigned',
     patientName: 'Heldemarie Appasani-Konapatski',
     patientId: 'patient-3',
     voNumber: '2303-22',
@@ -33,10 +67,14 @@ export const sampleNotifications: Notification[] = [
     read: false,
     archived: false,
   },
+  // Tier 3 (Informational)
   {
     id: '2',
+    category: 'vo-notification',
     type: 'vo-shared',
     urgency: 'info',
+    tier: 3,
+    title: 'VO Shared',
     patientName: 'Klaus Becker',
     patientId: 'patient-4',
     voNumber: '2412-08',
@@ -49,8 +87,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '3',
+    category: 'vo-notification',
     type: 'shared-therapist-removed',
     urgency: 'info',
+    tier: 3,
+    title: 'Shared Therapist Removed',
     patientName: 'Maria Hoffmann',
     patientId: 'patient-5',
     voNumber: '2801-15',
@@ -62,8 +103,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '4',
+    category: 'vo-notification',
     type: 'patient-transferred',
     urgency: 'info',
+    tier: 2,
+    title: 'Patient Transferred',
     patientName: 'Stefan Wagner',
     patientId: 'patient-10',
     voNumber: '3050-01',
@@ -76,8 +120,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '5',
+    category: 'vo-notification',
     type: 'vo-completed',
     urgency: 'info',
+    tier: 3,
+    title: 'VO Completed',
     patientName: 'Anna Weber',
     patientId: 'patient-7',
     voNumber: '2732-08',
@@ -90,8 +137,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '6',
+    category: 'vo-notification',
     type: 'vo-expired',
     urgency: 'high',
+    tier: 2,
+    title: 'VO Expired',
     patientName: 'Peter Schmidt',
     patientId: 'patient-6',
     voNumber: '2625-12',
@@ -104,8 +154,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '7',
+    category: 'vo-notification',
     type: 'vo-terminated',
     urgency: 'medium',
+    tier: 3,
+    title: 'VO Terminated',
     patientName: 'Lisa Schneider',
     patientId: 'patient-9',
     voNumber: '2945-02',
@@ -118,8 +171,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '8',
+    category: 'vo-notification',
     type: 'vo-expiring-soon',
     urgency: 'medium',
+    tier: 2,
+    title: 'VO Expiring Soon',
     patientName: 'Anna Weber',
     patientId: 'patient-7',
     voNumber: '2732-09',
@@ -133,9 +189,24 @@ export const sampleNotifications: Notification[] = [
 
   // Read notifications (recent)
   {
+    id: 'ann-3',
+    category: 'announcement',
+    type: 'general-announcement',
+    urgency: 'info',
+    tier: 1,
+    title: 'General Announcement',
+    message: 'System maintenance scheduled for Sunday, January 19th from 2:00 AM to 4:00 AM. The system will be unavailable during this time. Please plan accordingly.',
+    timestamp: daysAgo(1),
+    read: true,
+    archived: false,
+  },
+  {
     id: '9',
+    category: 'vo-notification',
     type: 'new-vo-assigned',
     urgency: 'info',
+    tier: 2,
+    title: 'New VO Assigned',
     patientName: 'Ingeborg Achtenberg',
     patientId: 'patient-2',
     voNumber: '2201-14',
@@ -148,8 +219,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '10',
+    category: 'vo-notification',
     type: 'vo-completed',
     urgency: 'info',
+    tier: 3,
+    title: 'VO Completed',
     patientName: 'Franz Abitz',
     patientId: 'patient-1',
     voNumber: '2155-08',
@@ -162,8 +236,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '11',
+    category: 'vo-notification',
     type: 'vo-expiring-soon',
     urgency: 'medium',
+    tier: 2,
+    title: 'VO Expiring Soon',
     patientName: 'Franz Abitz',
     patientId: 'patient-1',
     voNumber: '2155-11',
@@ -178,8 +255,11 @@ export const sampleNotifications: Notification[] = [
   // Archived notifications
   {
     id: '12',
+    category: 'vo-notification',
     type: 'vo-completed',
     urgency: 'info',
+    tier: 3,
+    title: 'VO Completed',
     patientName: 'Hans Zimmermann',
     patientId: 'patient-11',
     voNumber: '3155-05',
@@ -192,8 +272,11 @@ export const sampleNotifications: Notification[] = [
   },
   {
     id: '13',
+    category: 'vo-notification',
     type: 'new-vo-assigned',
     urgency: 'info',
+    tier: 2,
+    title: 'New VO Assigned',
     patientName: 'Klaus Weber',
     patientId: 'patient-12',
     voNumber: '3260-05',
@@ -286,3 +369,19 @@ export const truncateText = (text: string, maxLength: number = 60): string => {
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength).trim() + '...';
 };
+
+// Category-based filtering
+export const getUnreadByCategory = (notifications: Notification[], category: 'announcement' | 'vo-notification') =>
+  getUnreadNotifications(notifications).filter(n => n.category === category);
+
+export const getUnreadAnnouncementCount = (notifications: Notification[]) =>
+  getUnreadByCategory(notifications, 'announcement').length;
+
+export const getUnreadVONotificationCount = (notifications: Notification[]) =>
+  getUnreadByCategory(notifications, 'vo-notification').length;
+
+export const getAnnouncementsByReadStatus = (notifications: Notification[], read: boolean) =>
+  notifications.filter(n => n.category === 'announcement' && n.read === read && !n.archived);
+
+export const getVONotificationsByReadStatus = (notifications: Notification[], read: boolean) =>
+  notifications.filter(n => n.category === 'vo-notification' && n.read === read && !n.archived);
