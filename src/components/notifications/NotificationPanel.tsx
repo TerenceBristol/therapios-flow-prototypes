@@ -5,9 +5,7 @@ import {
   Notification,
   getUnreadAnnouncementCount,
   getUnreadVONotificationCount,
-  getAnnouncementsByReadStatus,
-  getVONotificationsByReadStatus,
-  getReadNotifications
+  getVONotificationsByReadStatus
 } from '@/data/notifications';
 import NotificationItem from './NotificationItem';
 import AnnouncementItem from './AnnouncementItem';
@@ -29,18 +27,18 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
   const unreadVONotificationCount = getUnreadVONotificationCount(notifications);
 
   // Get notifications by category and read status
-  const unreadAnnouncements = getAnnouncementsByReadStatus(notifications, false);
+  const allAnnouncements = notifications.filter(n => n.category === 'announcement');
   const unreadVONotifications = getVONotificationsByReadStatus(notifications, false);
-  const readNotifications = getReadNotifications(notifications);
+  const readVONotifications = notifications.filter(n => n.category === 'vo-notification' && n.read);
 
   const getCurrentTabNotifications = () => {
     switch (activeTab) {
       case 'announcements':
-        return unreadAnnouncements;
+        return allAnnouncements;
       case 'my-notifications':
         return unreadVONotifications;
       case 'read':
-        return readNotifications;
+        return readVONotifications;
     }
   };
 
@@ -54,21 +52,13 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
   };
 
   const handleMarkAllAsRead = () => {
-    let updatedNotifications = notifications;
-
-    if (activeTab === 'announcements') {
-      // Mark all unread announcements as read
-      updatedNotifications = notifications.map(n =>
-        n.category === 'announcement' && !n.read ? { ...n, read: true } : n
-      );
-    } else if (activeTab === 'my-notifications') {
-      // Mark all unread VO notifications as read
-      updatedNotifications = notifications.map(n =>
+    // Only mark VO notifications as read (announcements are admin-controlled)
+    if (activeTab === 'my-notifications') {
+      const updatedNotifications = notifications.map(n =>
         n.category === 'vo-notification' && !n.read ? { ...n, read: true } : n
       );
+      onUpdateNotifications(updatedNotifications);
     }
-
-    onUpdateNotifications(updatedNotifications);
   };
 
   const getEmptyStateMessage = () => {
@@ -179,11 +169,8 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
           )}
         </div>
 
-        {/* Footer with Mark all as read button */}
-        {activeTab !== 'read' && (
-          (activeTab === 'announcements' && unreadAnnouncementCount > 0) ||
-          (activeTab === 'my-notifications' && unreadVONotificationCount > 0)
-        ) && (
+        {/* Footer with Mark all as read button - only for My Notifications tab */}
+        {activeTab === 'my-notifications' && unreadVONotificationCount > 0 && (
           <div className="px-4 py-3 border-t border-gray-200">
             <button
               onClick={handleMarkAllAsRead}

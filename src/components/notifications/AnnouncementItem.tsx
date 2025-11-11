@@ -49,10 +49,6 @@ export default function AnnouncementItem({ notification, onToggleRead }: Announc
   // Get styling based on announcement type
   const style = announcementStyles[notification.type as keyof typeof announcementStyles] || announcementStyles['general-announcement'];
 
-  const handleToggleRead = () => {
-    onToggleRead(notification.id);
-  };
-
   return (
     <div
       className={`
@@ -79,21 +75,8 @@ export default function AnnouncementItem({ notification, onToggleRead }: Announc
           </div>
 
           {/* Message */}
-          <div className="text-sm text-gray-700 mb-4">
+          <div className="text-sm text-gray-700">
             {notification.message}
-          </div>
-
-          {/* Action button */}
-          <div className="flex justify-end">
-            <button
-              onClick={handleToggleRead}
-              className={`
-                px-6 py-2.5 ${style.buttonColor} text-white rounded-md
-                text-sm font-medium transition-colors min-h-[48px] min-w-[120px]
-              `}
-            >
-              Mark as Read
-            </button>
           </div>
         </div>
       </div>
