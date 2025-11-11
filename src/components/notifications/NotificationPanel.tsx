@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import {
   Notification,
-  getUnreadAnnouncementCount,
   getUnreadVONotificationCount,
   getVONotificationsByReadStatus
 } from '@/data/notifications';
@@ -23,7 +22,6 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
   const [activeTab, setActiveTab] = useState<TabType>('announcements');
 
   // Get counts for badge display
-  const unreadAnnouncementCount = getUnreadAnnouncementCount(notifications);
   const unreadVONotificationCount = getUnreadVONotificationCount(notifications);
 
   // Get notifications by category and read status
@@ -110,7 +108,7 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
               }
             `}
           >
-            📢 Announcements {unreadAnnouncementCount > 0 && `(${unreadAnnouncementCount})`}
+            📢 Announcements {allAnnouncements.length > 0 && `(${allAnnouncements.length})`}
           </button>
           <button
             onClick={() => setActiveTab('my-notifications')}

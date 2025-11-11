@@ -33,16 +33,6 @@ export default function NotificationCenterHeader({
             {/* Menu Items */}
             <nav className="flex items-center gap-4">
               <Link
-                href="/prototypes/notification-center"
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
-                  pathname === '/prototypes/notification-center'
-                    ? 'bg-blue-50 text-blue-700'
-                    : 'text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                T Board
-              </Link>
-              <Link
                 href="/prototypes/notification-center/patient-view"
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
                   pathname.includes('/patient-view')
@@ -50,7 +40,7 @@ export default function NotificationCenterHeader({
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
-                Patient View
+                T Board
               </Link>
               <span className="px-4 py-2 text-sm font-medium text-gray-400 cursor-not-allowed">
                 VO Upload
