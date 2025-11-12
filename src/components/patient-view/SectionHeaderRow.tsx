@@ -10,7 +10,7 @@ export default function SectionHeaderRow({ title, isExpanded, onToggle }: Sectio
   return (
     <tbody>
       <tr className="bg-gray-200 hover:bg-gray-300 cursor-pointer transition-colors" onClick={onToggle}>
-        <td colSpan={18} className="px-4 py-3">
+        <td colSpan={9} className="px-4 py-3">
           <button
             className="flex items-center gap-2 font-bold text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 rounded w-full"
             aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${title}`}

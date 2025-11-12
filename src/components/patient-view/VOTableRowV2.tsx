@@ -1,7 +1,8 @@
 'use client';
 
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 import { VO } from '@/data/voTypesAlt';
+import VODetailSection from './VODetailSection';
 
 interface VOTableRowV2Props {
   vo: VO;
@@ -33,111 +34,119 @@ function getStatusBadgeClass(status: string): string {
 
 const VOTableRowV2 = forwardRef<HTMLTableRowElement, VOTableRowV2Props>(
   ({ vo, patientName, isChecked, onCheck, showCheckbox, className = '', highlighted = false }, ref) => {
-  const isActive = vo.voStatus === 'Aktiv';
+    const [isExpanded, setIsExpanded] = useState(false);
+    const isActive = vo.voStatus === 'Aktiv';
 
-  return (
-    <tr
-      ref={ref}
-      className={`
-        border-b border-gray-200
-        ${!isActive ? 'opacity-70 bg-gray-50' : 'hover:bg-gray-50'}
-        ${highlighted ? 'bg-yellow-100 transition-colors duration-300' : ''}
-        ${className}
-      `}
-    >
-      {/* 1. Checkbox */}
-      <td className="px-3 py-3 text-center">
-        {showCheckbox && (
-          <input
-            type="checkbox"
-            checked={isChecked}
-            onChange={(e) => onCheck(vo.id!, e.target.checked)}
-            className="rounded border-gray-300 cursor-pointer"
-          />
+    const handleExpandToggle = () => {
+      setIsExpanded(!isExpanded);
+    };
+
+    const handleRowClick = (e: React.MouseEvent) => {
+      // Don't expand if clicking on interactive elements
+      const target = e.target as HTMLElement;
+      if (target.closest('input, select, button')) {
+        return;
+      }
+      handleExpandToggle();
+    };
+
+    return (
+      <>
+        {/* Main Row */}
+        <tr
+          ref={ref}
+          onClick={handleRowClick}
+          className={`
+            border-b border-gray-200 cursor-pointer transition-colors
+            ${isExpanded ? 'bg-gray-100' : 'hover:bg-gray-50'}
+            ${!isActive ? 'opacity-70' : ''}
+            ${highlighted ? 'bg-yellow-100' : ''}
+            ${className}
+          `}
+        >
+          {/* 1. Expand Icon */}
+          <td className="px-3 py-3 text-center w-10">
+            <button
+              onClick={handleExpandToggle}
+              className="hover:bg-gray-200 p-1 rounded transition-colors"
+            >
+              <svg
+                className={`w-5 h-5 text-gray-600 transition-transform duration-150 ${
+                  isExpanded ? 'rotate-90' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </td>
+
+          {/* 2. Checkbox */}
+          <td className="px-3 py-3 text-center w-10">
+            {showCheckbox && (
+              <input
+                type="checkbox"
+                checked={isChecked}
+                onChange={(e) => onCheck(vo.id!, e.target.checked)}
+                className="rounded border-gray-300 cursor-pointer"
+                onClick={(e) => e.stopPropagation()}
+              />
+            )}
+          </td>
+
+          {/* 3. Name */}
+          <td className="px-4 py-3 text-sm text-gray-900 font-medium">{patientName}</td>
+
+          {/* 4. VO Nr. */}
+          <td className="px-3 py-3 text-sm text-gray-900 font-mono">{vo.voNr}</td>
+
+          {/* 5. HM (Heilmittel) */}
+          <td className="px-3 py-3 text-sm text-gray-900">{vo.heilmittel}</td>
+
+          {/* 6. T.sl. Beh (Days since last treatment) */}
+          <td className="px-3 py-3 text-center text-sm text-gray-900">{vo.tageSeit}</td>
+
+          {/* 7. Beh. Status */}
+          <td className="px-3 py-3 text-center text-sm text-gray-900">{vo.behStatus}</td>
+
+          {/* 8. Organizer */}
+          <td className="px-3 py-3">
+            <select
+              className="px-2 py-1 border border-gray-300 rounded text-sm bg-white text-gray-700 cursor-pointer"
+              defaultValue={vo.organizer || 'Planned'}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <option value="Planned">Planned</option>
+              <option value="Treated">Treated</option>
+            </select>
+          </td>
+
+          {/* 9. VO Status */}
+          <td className="px-3 py-3">
+            <span
+              className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getStatusBadgeClass(
+                vo.voStatus
+              )}`}
+            >
+              {vo.voStatus}
+            </span>
+          </td>
+        </tr>
+
+        {/* Detail Row - Conditionally Rendered */}
+        {isExpanded && (
+          <tr>
+            <td colSpan={9} className="p-0">
+              <VODetailSection vo={vo} />
+            </td>
+          </tr>
         )}
-      </td>
-
-      {/* 2. Name */}
-      <td className="px-4 py-3 text-sm text-gray-900 font-medium">{patientName}</td>
-
-      {/* 3. Organizer */}
-      <td className="px-3 py-3">
-        <select
-          className="px-2 py-1 border border-gray-300 rounded text-sm bg-white text-gray-700 cursor-pointer"
-          defaultValue={vo.organizer || 'Planned'}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <option value="Planned">Planned</option>
-          <option value="Treated">Treated</option>
-        </select>
-      </td>
-
-      {/* 4. Tage s.l. Beh */}
-      <td className="px-3 py-3 text-center text-sm text-gray-900">{vo.tageSeit}</td>
-
-      {/* 5. VO Nr. */}
-      <td className="px-3 py-3 text-sm text-gray-900 font-mono">{vo.voNr}</td>
-
-      {/* 6. VO Status */}
-      <td className="px-3 py-3">
-        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getStatusBadgeClass(vo.voStatus)}`}>
-          {vo.voStatus}
-        </span>
-      </td>
-
-      {/* 7. Doku (Eye icon) */}
-      <td className="px-3 py-3 text-center">
-        <button
-          className="hover:bg-gray-100 p-1 rounded"
-          onClick={(e) => {
-            e.stopPropagation();
-            // TODO: Open documentation modal
-          }}
-        >
-          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-          </svg>
-        </button>
-      </td>
-
-      {/* 8. Heilmittel */}
-      <td className="px-3 py-3 text-sm text-gray-900">{vo.heilmittel}</td>
-
-      {/* 9. ICD (NEW COLUMN) */}
-      <td className="px-3 py-3 text-sm text-gray-900 font-mono">
-        {vo.icdCode}
-      </td>
-
-      {/* 10. TB */}
-      <td className="px-3 py-3 text-center text-sm text-gray-600">{vo.tb}</td>
-
-      {/* 11. Einrichtung */}
-      <td className="px-3 py-3 text-gray-700 text-sm">{vo.einrichtung}</td>
-
-      {/* 12. Primärer Therapeut */}
-      <td className="px-3 py-3 text-gray-900 text-sm">{vo.primaererTherapeut}</td>
-
-      {/* 13. Geteilter Therapeut */}
-      <td className="px-3 py-3 text-gray-900 text-sm">{vo.geteilterTherapeut}</td>
-
-      {/* 14. Beh. Wbh */}
-      <td className="px-3 py-3 text-center text-sm text-gray-900">{vo.behWbh}</td>
-
-      {/* 15. Abgelehnte Beh. */}
-      <td className="px-3 py-3 text-center text-sm text-gray-900">{vo.abgelehnteBeh}</td>
-
-      {/* 16. Doppel-B */}
-      <td className="px-3 py-3 text-center text-sm text-gray-600">{vo.doppelB}</td>
-
-      {/* 17. Frequenz */}
-      <td className="px-3 py-3 text-center text-gray-700 text-sm">{vo.frequenz || '–'}</td>
-
-      {/* 18. Arzt */}
-      <td className="px-3 py-3 text-gray-900 text-sm">{vo.arzt || '–'}</td>
-    </tr>
-  );
-});
+      </>
+    );
+  }
+);
 
 VOTableRowV2.displayName = 'VOTableRowV2';
 

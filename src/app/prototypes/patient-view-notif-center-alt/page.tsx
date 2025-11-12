@@ -304,36 +304,6 @@ export default function PatientViewNotifCenterAltPrototype() {
             </div>
             </div>
           </div>
-
-          {/* Table #1 - Header Only (inside sticky container) */}
-          {activeTab !== 'calendar' && (
-            <div className="px-4">
-              <table className="w-full border-collapse">
-                <thead className="bg-gray-100">
-                  <tr className="border-b border-gray-300">
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Select</th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Name</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Organizer</th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">Tage s.l. Beh</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">VO Nr.</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">VO Status</th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">Doku</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Heilmittel</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">ICD</th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">TB</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Einrichtung</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Primärer Therapeut</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Geteilter Therapeut</th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">Beh. Wbh</th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">Abgelehnte Beh.</th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">Doppel-B</th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">Frequenz</th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Arzt</th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-          )}
         </div>
 
         {/* Patient Table - Body Only */}
@@ -344,6 +314,20 @@ export default function PatientViewNotifCenterAltPrototype() {
               </div>
             ) : (
               <table className="w-full border-collapse">
+                {/* Sticky Table Header */}
+                <thead className="bg-gray-100 sticky top-28 z-10">
+                  <tr className="border-b border-gray-300">
+                    <th className="px-3 py-3 w-10"></th>
+                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase w-10">Select</th>
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Name</th>
+                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">VO Nr.</th>
+                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">HM</th>
+                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">T.sl. Beh</th>
+                    <th className="px-3 py-3 text-center text-xs font-semibold text-gray-700 uppercase">Beh. Status</th>
+                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">Organizer</th>
+                    <th className="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase">VO Status</th>
+                  </tr>
+                </thead>
 
                 {/* Section 1: Patients WITH active VOs */}
                 {patientsWithActive.length > 0 && (
@@ -377,7 +361,7 @@ export default function PatientViewNotifCenterAltPrototype() {
                 {patientsWithActive.length > 0 && patientsWithoutActive.length > 0 && (
                   <tbody>
                     <tr>
-                      <td colSpan={18} className="py-4 bg-gray-50"></td>
+                      <td colSpan={9} className="py-4 bg-gray-50"></td>
                     </tr>
                   </tbody>
                 )}
