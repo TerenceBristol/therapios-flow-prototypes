@@ -102,6 +102,16 @@
       "tags": ["Upload", "VO Management", "Admin", "Therapist", "Review", "Healthcare"]
     },
     {
+      "id": "copayment-upload",
+      "title": "Copayment Upload",
+      "description": "Simplified copayment slip upload and review system. Therapists can upload copayment slip images. Admins review uploads and set status (Pending Review, Low Picture Quality, Confirmed). Streamlined workflow with filtering by status and search functionality.",
+      "category": "draft",
+      "slug": "copayment-upload",
+      "createdAt": "2025-11-13T10:00:00Z",
+      "lastModified": "2025-11-13T10:00:00Z",
+      "tags": ["Upload", "Copayment", "Admin", "Therapist", "Review", "Healthcare"]
+    },
+    {
       "id": "fvo-crm",
       "title": "Practice Follow-up CRM",
       "description": "CRM system for tracking follow-up verification orders (FVOs) from doctor practices. Priority queue interface automatically triages practices by urgency (Overdue, Due Today, This Week). Split-screen layout with practice cards and detailed follow-up information for efficient calling workflows.",
