@@ -35,7 +35,7 @@ export default function AdminCopaymentUploadPage() {
       try {
         const parsed = JSON.parse(storedData);
         // Migrate old data: ensure all uploads have notes array
-        const migrated = parsed.map((upload: any) => ({
+        const migrated = parsed.map((upload: Omit<CopaymentUpload, 'notes'> & { notes?: Note[] }) => ({
           ...upload,
           notes: upload.notes ?? []
         }));
