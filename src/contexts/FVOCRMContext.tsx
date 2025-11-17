@@ -7,6 +7,7 @@ import {
   PracticeVO,
   PracticeActivity,
   PracticeFollowUp,
+  PracticeIssue,
   Therapist,
   Facility
 } from '@/types';
@@ -20,6 +21,7 @@ export interface FVOCRMContextValue {
   vos: PracticeVO[];
   activities: PracticeActivity[];
   followUps: PracticeFollowUp[];
+  issues: PracticeIssue[];
   therapists: Therapist[];
   facilities: Facility[];
 
@@ -48,6 +50,13 @@ export interface FVOCRMContextValue {
   completeFollowUp: (followUpId: string) => void;
   completeFollowUpAndLogActivity: (followUpId: string, activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
 
+  // Issue CRUD
+  addIssue: (issue: Omit<PracticeIssue, 'id' | 'status' | 'createdAt'>) => void;
+  updateIssue: (issueId: string, updates: Partial<PracticeIssue>) => void;
+  resolveIssue: (issueId: string, resolvedBy: string) => void;
+  deleteIssue: (issueId: string) => void;
+  getIssuesForPractice: (practiceId: string) => PracticeIssue[];
+
   // Therapist helpers
   getTherapistById: (id: string) => Therapist | undefined;
   getTherapistsByFacility: (facilityId: string) => Therapist[];
@@ -72,6 +81,7 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
   const [vos, setVOs] = useState<PracticeVO[]>(mockData.vos as PracticeVO[]);
   const [activities, setActivities] = useState<PracticeActivity[]>(mockData.activities as PracticeActivity[]);
   const [followUps, setFollowUps] = useState<PracticeFollowUp[]>((mockData.followUps as unknown as PracticeFollowUp[]) || []);
+  const [issues, setIssues] = useState<PracticeIssue[]>((mockData.issues as unknown as PracticeIssue[]) || []);
   const [therapists, setTherapists] = useState<Therapist[]>(mockData.therapists as Therapist[]);
   const [facilities, setFacilities] = useState<Facility[]>(mockData.facilities as Facility[]);
 
@@ -223,6 +233,55 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
     setActivities(prev => [...prev, newActivity]);
   }, []);
 
+  // ========== Issue CRUD ==========
+
+  const addIssue = useCallback((issue: Omit<PracticeIssue, 'id' | 'status' | 'createdAt'>) => {
+    const newIssue: PracticeIssue = {
+      ...issue,
+      id: `issue-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      status: 'active',
+      createdAt: new Date().toISOString()
+    };
+
+    setIssues(prev => [...prev, newIssue]);
+  }, []);
+
+  const updateIssue = useCallback((issueId: string, updates: Partial<PracticeIssue>) => {
+    setIssues(prev => prev.map(issue =>
+      issue.id === issueId
+        ? { ...issue, ...updates }
+        : issue
+    ));
+  }, []);
+
+  const resolveIssue = useCallback((issueId: string, resolvedBy: string) => {
+    setIssues(prev => prev.map(issue =>
+      issue.id === issueId
+        ? {
+            ...issue,
+            status: 'resolved' as const,
+            resolvedAt: new Date().toISOString(),
+            resolvedBy
+          }
+        : issue
+    ));
+  }, []);
+
+  const deleteIssue = useCallback((issueId: string) => {
+    setIssues(prev => prev.filter(issue => issue.id !== issueId));
+  }, []);
+
+  const getIssuesForPractice = useCallback((practiceId: string) => {
+    return issues
+      .filter(i => i.practiceId === practiceId)
+      .sort((a, b) => {
+        // Active issues first, then by creation date (newest first)
+        if (a.status === 'active' && b.status !== 'active') return -1;
+        if (a.status !== 'active' && b.status === 'active') return 1;
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      });
+  }, [issues]);
+
   // ========== Therapist Helpers ==========
 
   const getTherapistById = useCallback((id: string) => {
@@ -251,6 +310,7 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
     vos,
     activities,
     followUps,
+    issues,
     therapists,
     facilities,
 
@@ -278,6 +338,13 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
     getFollowUpsForPractice,
     completeFollowUp,
     completeFollowUpAndLogActivity,
+
+    // Issue CRUD
+    addIssue,
+    updateIssue,
+    resolveIssue,
+    deleteIssue,
+    getIssuesForPractice,
 
     // Therapist helpers
     getTherapistById,

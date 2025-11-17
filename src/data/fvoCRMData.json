@@ -5778,6 +5778,46 @@
       "createdAt": "2025-11-01T10:15:45.495Z"
     }
   ],
+  "issues": [
+    {
+      "id": "issue-001",
+      "practiceId": "prac-001",
+      "title": "VOs sent but not received yet",
+      "description": "Sent 3 VOs via fax on Nov 10, but practice has not confirmed receipt. Follow up needed.",
+      "status": "active",
+      "createdAt": "2025-11-10T14:30:00Z",
+      "createdBy": "user-001"
+    },
+    {
+      "id": "issue-002",
+      "practiceId": "prac-002",
+      "title": "Doctor pausing treatments temporarily",
+      "description": "Dr. Brown informed us that they are pausing all new VO treatments for 2 weeks due to staffing issues.",
+      "status": "active",
+      "createdAt": "2025-11-12T09:15:00Z",
+      "createdBy": "user-001"
+    },
+    {
+      "id": "issue-003",
+      "practiceId": "prac-004",
+      "title": "Practice phone not answering",
+      "description": "Multiple attempts to reach practice by phone unsuccessful. May need to switch to email communication.",
+      "status": "active",
+      "createdAt": "2025-11-14T16:00:00Z",
+      "createdBy": "user-002"
+    },
+    {
+      "id": "issue-004",
+      "practiceId": "prac-001",
+      "title": "Missing patient information",
+      "description": "Practice requesting additional patient details before processing VOs. Resolved by sending patient records.",
+      "status": "resolved",
+      "createdAt": "2025-11-05T10:00:00Z",
+      "resolvedAt": "2025-11-08T14:30:00Z",
+      "createdBy": "user-001",
+      "resolvedBy": "user-001"
+    }
+  ],
   "facilities": [
     {
       "id": "fac-001",

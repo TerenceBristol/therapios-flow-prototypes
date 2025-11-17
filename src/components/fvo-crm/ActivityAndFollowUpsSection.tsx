@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useState, useMemo } from 'react';
 import { PracticeActivity, PracticeFollowUp, PracticeActivityType } from '@/types';
+import CollapsibleSection from './CollapsibleSection';
 import CompleteFollowUpModal from './modals/CompleteFollowUpModal';
 import ConfirmDeleteDialog from './ConfirmDeleteDialog';
 
@@ -7,8 +10,8 @@ interface ActivityAndFollowUpsSectionProps {
   practiceId: string;
   activities: PracticeActivity[];
   followUps: PracticeFollowUp[];
-  onAddActivity: () => void;
-  onAddFollowUp: () => void;
+  onAddActivity: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
+  onAddFollowUp: (followUp: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'>) => void;
   onCompleteFollowUpAndLogActivity: (followUpId: string, activityData: {
     practiceId: string;
     date: string;
@@ -18,8 +21,6 @@ interface ActivityAndFollowUpsSectionProps {
   }) => void;
   onDeleteFollowUp?: (followUpId: string) => void;
   onDeleteActivity?: (activityId: string) => void;
-  onEditFollowUp?: (followUpId: string) => void;
-  onEditActivity?: (activityId: string) => void;
 }
 
 const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = ({
@@ -30,12 +31,19 @@ const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = 
   onAddFollowUp,
   onCompleteFollowUpAndLogActivity,
   onDeleteFollowUp,
-  onDeleteActivity,
-  onEditFollowUp,
-  onEditActivity
+  onDeleteActivity
 }) => {
+  // Follow-up form state
+  const [followUpDueDate, setFollowUpDueDate] = useState('');
+  const [followUpDueTime, setFollowUpDueTime] = useState('');
+  const [followUpNotes, setFollowUpNotes] = useState('');
+
+  // Activity form state
+  const [activityType, setActivityType] = useState<PracticeActivityType>('Call');
+  const [activityDate, setActivityDate] = useState('');
+  const [activityNotes, setActivityNotes] = useState('');
+
   const [showCompletedFollowUps, setShowCompletedFollowUps] = useState(false);
-  const [showAllActivities, setShowAllActivities] = useState(false);
   const [selectedFollowUp, setSelectedFollowUp] = useState<PracticeFollowUp | null>(null);
   const [isCompleteModalOpen, setIsCompleteModalOpen] = useState(false);
 
@@ -80,8 +88,6 @@ const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = 
     );
   }, [activities]);
 
-  const displayedActivities = showAllActivities ? sortedActivities : sortedActivities.slice(0, 5);
-
   // Activity type icons
   const getActivityIcon = (type: PracticeActivityType) => {
     switch (type) {
@@ -90,6 +96,39 @@ const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = 
       case 'Fax': return '📠';
       case 'Note': return '📝';
     }
+  };
+
+  const handleAddFollowUp = () => {
+    if (!followUpDueDate.trim() || !followUpNotes.trim()) return;
+
+    onAddFollowUp({
+      practiceId,
+      dueDate: followUpDueDate,
+      dueTime: followUpDueTime || undefined,
+      notes: followUpNotes,
+      userId: 'current-user' // TODO: Get from auth context
+    });
+
+    // Reset form
+    setFollowUpDueDate('');
+    setFollowUpDueTime('');
+    setFollowUpNotes('');
+  };
+
+  const handleAddActivity = () => {
+    if (!activityDate.trim() || !activityNotes.trim()) return;
+
+    onAddActivity({
+      practiceId,
+      type: activityType,
+      date: activityDate,
+      notes: activityNotes,
+      userId: 'current-user' // TODO: Get from auth context
+    });
+
+    // Reset form
+    setActivityDate('');
+    setActivityNotes('');
   };
 
   const handleCompleteWithActivity = (followUp: PracticeFollowUp) => {
@@ -144,34 +183,25 @@ const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = 
         </h4>
         <div className="space-y-2">
           {followUps.map(followUp => (
-            <div key={followUp.id} className="border border-gray-200 rounded-md p-3 bg-white hover:border-gray-300 transition-colors">
+            <div key={followUp.id} className="border border-border rounded-md p-3 bg-background hover:border-foreground/20 transition-colors">
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-muted-foreground">
                       Due: {new Date(followUp.dueDate).toLocaleDateString()}
                       {followUp.dueTime && ` at ${followUp.dueTime}`}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-900">{followUp.notes}</p>
+                  <p className="text-sm text-foreground">{followUp.notes}</p>
                 </div>
               </div>
               <div className="mt-3 flex gap-2">
                 <button
                   onClick={() => handleCompleteWithActivity(followUp)}
-                  className="flex-1 text-xs px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                  className="flex-1 text-xs px-3 py-1.5 bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors"
                 >
                   Complete
                 </button>
-                {onEditFollowUp && (
-                  <button
-                    onClick={() => onEditFollowUp(followUp.id)}
-                    className="text-xs px-3 py-1.5 border border-border text-muted-foreground rounded hover:bg-muted transition-colors"
-                    title="Edit follow-up"
-                  >
-                    ✏️
-                  </button>
-                )}
                 {onDeleteFollowUp && (
                   <button
                     onClick={() => handleDeleteFollowUp(followUp.id)}
@@ -197,35 +227,71 @@ const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = 
   return (
     <div className="space-y-6">
       {/* FOLLOW UP ACTIVITIES SECTION */}
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">
-            🎯 Follow Up Activities {totalActiveFollowUps > 0 && `(${totalActiveFollowUps})`}
-          </h3>
+      <CollapsibleSection
+        title="Follow-up Activities"
+        icon="🎯"
+        count={totalActiveFollowUps}
+        defaultExpanded={true}
+      >
+        {/* Add Follow-up Form */}
+        <div className="border border-border rounded-lg p-4 bg-muted/30 mb-4">
+          <h4 className="text-sm font-semibold text-foreground mb-3">Add Follow-up</h4>
+          <div className="grid grid-cols-2 gap-3 mb-3">
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Due Date *
+              </label>
+              <input
+                type="date"
+                value={followUpDueDate}
+                onChange={(e) => setFollowUpDueDate(e.target.value)}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground text-sm"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Due Time (optional)
+              </label>
+              <input
+                type="time"
+                value={followUpDueTime}
+                onChange={(e) => setFollowUpDueTime(e.target.value)}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground text-sm"
+              />
+            </div>
+          </div>
+          <div className="mb-3">
+            <label className="block text-sm font-medium text-foreground mb-1">
+              Notes *
+            </label>
+            <textarea
+              value={followUpNotes}
+              onChange={(e) => setFollowUpNotes(e.target.value)}
+              placeholder="What should be done?"
+              rows={2}
+              className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground text-sm resize-none"
+            />
+          </div>
           <button
-            onClick={onAddFollowUp}
-            className="text-sm px-3 py-1.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+            onClick={handleAddFollowUp}
+            disabled={!followUpDueDate.trim() || !followUpNotes.trim()}
+            className="px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            + Add Follow-up
+            Add Follow-up
           </button>
         </div>
 
+        {/* Follow-up List */}
         {totalActiveFollowUps === 0 ? (
-          <div className="text-center py-8 text-gray-500 border border-dashed border-gray-300 rounded-lg">
+          <div className="text-center py-6 text-muted-foreground border border-dashed border-border rounded-lg">
             <p className="text-sm">No upcoming follow-ups</p>
-            <button
-              onClick={onAddFollowUp}
-              className="text-sm text-blue-600 hover:text-blue-700 mt-2"
-            >
-              Schedule one now
-            </button>
           </div>
         ) : (
           <div className="space-y-4">
             {renderFollowUpGroup('Overdue', groupedFollowUps.overdue, 'text-red-600', '⚠️')}
             {renderFollowUpGroup('Due Today', groupedFollowUps.dueToday, 'text-orange-600', '📅')}
             {renderFollowUpGroup('This Week', groupedFollowUps.thisWeek, 'text-yellow-600', '📆')}
-            {renderFollowUpGroup('Upcoming', groupedFollowUps.future, 'text-gray-600', '📋')}
+            {renderFollowUpGroup('Upcoming', groupedFollowUps.future, 'text-muted-foreground', '📋')}
           </div>
         )}
 
@@ -234,7 +300,7 @@ const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = 
           <div className="mt-4">
             <button
               onClick={() => setShowCompletedFollowUps(!showCompletedFollowUps)}
-              className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-2"
+              className="text-sm text-muted-foreground hover:text-foreground flex items-center gap-2"
             >
               <span>{showCompletedFollowUps ? '▼' : '▶'}</span>
               <span>Completed ({groupedFollowUps.completed.length})</span>
@@ -242,12 +308,12 @@ const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = 
             {showCompletedFollowUps && (
               <div className="mt-2 space-y-2">
                 {groupedFollowUps.completed.map(followUp => (
-                  <div key={followUp.id} className="border border-gray-200 rounded-md p-3 bg-gray-50 opacity-60">
+                  <div key={followUp.id} className="border border-border rounded-md p-3 bg-muted/50 opacity-60">
                     <div className="flex items-start gap-2">
                       <span className="text-green-600 mt-0.5">✓</span>
                       <div className="flex-1">
-                        <p className="text-sm text-gray-700 line-through">{followUp.notes}</p>
-                        <p className="text-xs text-gray-500 mt-1">
+                        <p className="text-sm text-foreground line-through">{followUp.notes}</p>
+                        <p className="text-xs text-muted-foreground mt-1">
                           Completed: {followUp.completedAt && new Date(followUp.completedAt).toLocaleString()}
                         </p>
                       </div>
@@ -258,88 +324,105 @@ const ActivityAndFollowUpsSection: React.FC<ActivityAndFollowUpsSectionProps> = 
             )}
           </div>
         )}
-      </div>
-
-      {/* DIVIDER */}
-      <div className="border-t-2 border-gray-300"></div>
+      </CollapsibleSection>
 
       {/* ACTIVITY HISTORY SECTION */}
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">
-            📋 Activity History {activities.length > 0 && `(${activities.length})`}
-          </h3>
+      <CollapsibleSection
+        title="Activity History"
+        icon="📋"
+        count={activities.length}
+        defaultExpanded={true}
+      >
+        {/* Add Activity Form */}
+        <div className="border border-border rounded-lg p-4 bg-muted/30 mb-4">
+          <h4 className="text-sm font-semibold text-foreground mb-3">Log Activity</h4>
+          <div className="grid grid-cols-2 gap-3 mb-3">
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Type *
+              </label>
+              <select
+                value={activityType}
+                onChange={(e) => setActivityType(e.target.value as PracticeActivityType)}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground text-sm"
+              >
+                <option value="Call">📞 Call</option>
+                <option value="Email">📧 Email</option>
+                <option value="Fax">📠 Fax</option>
+                <option value="Note">📝 Note</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Date & Time *
+              </label>
+              <input
+                type="datetime-local"
+                value={activityDate}
+                onChange={(e) => setActivityDate(e.target.value)}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground text-sm"
+              />
+            </div>
+          </div>
+          <div className="mb-3">
+            <label className="block text-sm font-medium text-foreground mb-1">
+              Notes *
+            </label>
+            <textarea
+              value={activityNotes}
+              onChange={(e) => setActivityNotes(e.target.value)}
+              placeholder="What was discussed or done?"
+              rows={2}
+              className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground text-sm resize-none"
+            />
+          </div>
           <button
-            onClick={onAddActivity}
-            className="text-sm px-3 py-1.5 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
+            onClick={handleAddActivity}
+            disabled={!activityDate.trim() || !activityNotes.trim()}
+            className="px-4 py-2 bg-primary text-primary-foreground rounded-md text-sm font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            + Log Activity
+            Log Activity
           </button>
         </div>
 
+        {/* Activity List */}
         {activities.length === 0 ? (
-          <div className="text-center py-8 text-gray-500 border border-dashed border-gray-300 rounded-lg">
+          <div className="text-center py-6 text-muted-foreground border border-dashed border-border rounded-lg">
             <p className="text-sm">No activities logged yet</p>
-            <button
-              onClick={onAddActivity}
-              className="text-sm text-green-600 hover:text-green-700 mt-2"
-            >
-              Log your first activity
-            </button>
           </div>
         ) : (
-          <>
-            <div className="space-y-3">
-              {displayedActivities.map(activity => (
-                <div key={activity.id} className="border-l-4 border-blue-500 bg-white p-3 rounded-r-md shadow-sm">
-                  <div className="flex items-start gap-3">
-                    <span className="text-xl">{getActivityIcon(activity.type)}</span>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-medium text-gray-900">{activity.type}</span>
-                        <span className="text-xs text-gray-500">
-                          {new Date(activity.date).toLocaleDateString()} at{' '}
-                          {new Date(activity.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-700">{activity.notes}</p>
+          <div className="space-y-3">
+            {sortedActivities.map(activity => (
+              <div key={activity.id} className="border-l-4 border-primary bg-background p-3 rounded-r-md shadow-sm">
+                <div className="flex items-start gap-3">
+                  <span className="text-xl">{getActivityIcon(activity.type)}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-sm font-medium text-foreground">{activity.type}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {new Date(activity.date).toLocaleDateString()} at{' '}
+                        {new Date(activity.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      </span>
                     </div>
-                    <div className="flex gap-1">
-                      {onEditActivity && (
-                        <button
-                          onClick={() => onEditActivity(activity.id)}
-                          className="text-xs px-2 py-1 border border-border text-muted-foreground rounded hover:bg-muted transition-colors"
-                          title="Edit activity"
-                        >
-                          ✏️
-                        </button>
-                      )}
-                      {onDeleteActivity && (
-                        <button
-                          onClick={() => handleDeleteActivity(activity.id)}
-                          className="text-xs px-2 py-1 border border-border text-muted-foreground rounded hover:bg-muted transition-colors"
-                          title="Delete activity"
-                        >
-                          🗑️
-                        </button>
-                      )}
-                    </div>
+                    <p className="text-sm text-foreground">{activity.notes}</p>
+                  </div>
+                  <div className="flex gap-1">
+                    {onDeleteActivity && (
+                      <button
+                        onClick={() => handleDeleteActivity(activity.id)}
+                        className="text-xs px-2 py-1 border border-border text-muted-foreground rounded hover:bg-muted transition-colors"
+                        title="Delete activity"
+                      >
+                        🗑️
+                      </button>
+                    )}
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {sortedActivities.length > 5 && !showAllActivities && (
-              <button
-                onClick={() => setShowAllActivities(true)}
-                className="w-full text-center text-sm text-blue-600 hover:text-blue-700 py-2 mt-3 border-t border-gray-200"
-              >
-                Show {sortedActivities.length - 5} more activities ▼
-              </button>
-            )}
-          </>
+              </div>
+            ))}
+          </div>
         )}
-      </div>
+      </CollapsibleSection>
 
       {/* Complete Follow-up Modal */}
       <CompleteFollowUpModal

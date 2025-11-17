@@ -128,28 +128,17 @@ const PracticeInfoTab: React.FC<PracticeInfoTabProps> = ({ practice, doctors }) 
                     key={doctor.id}
                     className="border border-border rounded-md px-3 py-2 bg-background hover:border-primary/50 hover:shadow-sm transition-all"
                   >
-                    {/* Compact Single-Line Format */}
+                    {/* Simplified Format - Name and ERs only */}
                     <div className="text-sm">
-                      <div className="font-medium text-foreground">
-                        {doctor.name} • {doctor.specialty || 'General Practice'}
+                      <div className="font-medium text-foreground mb-1">
+                        {doctor.name}
                       </div>
-                      <div className="text-xs text-muted-foreground mt-1 flex items-center gap-3 flex-wrap">
-                        {doctor.phone && (
-                          <a href={`tel:${doctor.phone}`} className="text-primary hover:underline flex items-center gap-1">
-                            <span>📞</span> {doctor.phone}
-                          </a>
-                        )}
-                        {doctor.email && (
-                          <a href={`mailto:${doctor.email}`} className="text-primary hover:underline flex items-center gap-1">
-                            <span>✉️</span> {doctor.email}
-                          </a>
-                        )}
-                        {doctor.facilities && doctor.facilities.length > 0 && (
-                          <span className="flex items-center gap-1">
-                            <span>🏥</span> {doctor.facilities.length} {doctor.facilities.length === 1 ? 'ER' : 'ERs'}
-                          </span>
-                        )}
-                      </div>
+                      {doctor.facilities && doctor.facilities.length > 0 && (
+                        <div className="text-xs text-muted-foreground flex items-center gap-1">
+                          <span>🏥</span>
+                          <span>{doctor.facilities.join(', ')}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))

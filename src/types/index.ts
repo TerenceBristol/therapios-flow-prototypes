@@ -371,6 +371,19 @@ export interface PracticeFollowUp {
   createdAt: string;
 }
 
+// Issue entity for tracking practice blockers and delays
+export interface PracticeIssue {
+  id: string;
+  practiceId: string;
+  title: string; // Short description (e.g., "VOs sent but not received")
+  description: string; // Detailed explanation
+  status: 'active' | 'resolved';
+  createdAt: string; // ISO timestamp
+  resolvedAt?: string; // ISO timestamp when resolved
+  createdBy: string; // User ID
+  resolvedBy?: string; // User ID who resolved
+}
+
 // Priority level for practices (used by legacy Priority Queue Panel)
 export type PriorityLevel = 'overdue' | 'dueToday' | 'thisWeek' | 'other';
 
@@ -381,6 +394,8 @@ export interface PracticeComputedFields {
   nextFollowUpDate?: string;
   nextFollowUpTime?: string;
   priorityLevel?: PriorityLevel; // Optional - only used in legacy Priority Queue Panel
+  activeIssueCount: number; // Count of unresolved issues
+  latestIssue?: PracticeIssue; // Most recent active issue for table display
 }
 
 // Extended practice with computed fields for display
@@ -406,6 +421,7 @@ export interface FVOCRMData {
   vos: PracticeVO[];
   activities: PracticeActivity[];
   followUps: PracticeFollowUp[];
+  issues: PracticeIssue[];
   therapists: Therapist[];
   facilities: Facility[];
 }

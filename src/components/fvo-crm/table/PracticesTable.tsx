@@ -24,7 +24,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [sortColumn, setSortColumn] = useState<string | null>('pending');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [followUpFilter, setFollowUpFilter] = useState<'all' | 'urgent' | 'dueThisWeek' | 'none'>('all');
+  const [followUpFilter, setFollowUpFilter] = useState<'all' | 'hasIssues' | 'todayOverdue' | 'none'>('all');
 
   // Helper function to classify follow-up urgency
   const getFollowUpUrgency = (nextFollowUpDate?: string): 'urgent' | 'dueThisWeek' | 'future' | 'none' => {
@@ -50,11 +50,18 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
   const filteredPractices = useMemo(() => {
     let result = [...practices];
 
-    // Follow-up urgency filter
+    // Follow-up and issue filters
     if (followUpFilter !== 'all') {
       result = result.filter(p => {
-        const urgency = getFollowUpUrgency(p.nextFollowUpDate);
-        return urgency === followUpFilter;
+        if (followUpFilter === 'hasIssues') {
+          return p.activeIssueCount > 0;
+        } else if (followUpFilter === 'todayOverdue') {
+          const urgency = getFollowUpUrgency(p.nextFollowUpDate);
+          return urgency === 'urgent' || urgency === 'dueThisWeek';
+        } else if (followUpFilter === 'none') {
+          return !p.nextFollowUpDate;
+        }
+        return true;
       });
     }
 
@@ -147,6 +154,23 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
       <td className="px-4 py-3">
         <TodayHoursCell openingHours={practice.openingHours} />
       </td>
+      <td className="px-4 py-3">
+        {practice.latestIssue ? (
+          <div
+            className="text-sm text-foreground cursor-help"
+            title={practice.latestIssue.description}
+          >
+            {practice.latestIssue.title}
+            {practice.activeIssueCount > 1 && (
+              <span className="ml-1 text-xs text-muted-foreground">
+                +{practice.activeIssueCount - 1} more
+              </span>
+            )}
+          </div>
+        ) : (
+          <span className="text-sm text-muted-foreground">-</span>
+        )}
+      </td>
       <td className="px-4 py-3 text-center">
         <span className="text-sm font-bold text-foreground">{practice.pendingVOCount}</span>
       </td>
@@ -215,7 +239,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
           )}
         </div>
         <div className="mt-3 space-y-3">
-          {/* Filter Controls: Follow-up Urgency */}
+          {/* Filter Controls: Follow-up and Issues */}
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-sm font-medium text-muted-foreground">Follow-up:</span>
             <button
@@ -229,24 +253,24 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
               All
             </button>
             <button
-              onClick={() => setFollowUpFilter('urgent')}
+              onClick={() => setFollowUpFilter('hasIssues')}
               className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                followUpFilter === 'urgent'
+                followUpFilter === 'hasIssues'
+                  ? 'bg-orange-100 text-orange-800 border border-orange-200'
+                  : 'bg-muted text-muted-foreground border border-border hover:bg-muted/80'
+              }`}
+            >
+              ⚠️ Has Issues
+            </button>
+            <button
+              onClick={() => setFollowUpFilter('todayOverdue')}
+              className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                followUpFilter === 'todayOverdue'
                   ? 'bg-red-100 text-red-800 border border-red-200'
                   : 'bg-muted text-muted-foreground border border-border hover:bg-muted/80'
               }`}
             >
-              🔴 Urgent
-            </button>
-            <button
-              onClick={() => setFollowUpFilter('dueThisWeek')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                followUpFilter === 'dueThisWeek'
-                  ? 'bg-yellow-100 text-yellow-800 border border-yellow-200'
-                  : 'bg-muted text-muted-foreground border border-border hover:bg-muted/80'
-              }`}
-            >
-              📅 This Week
+              🔴 Today + Overdue
             </button>
             <button
               onClick={() => setFollowUpFilter('none')}
@@ -287,6 +311,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                   <th className="px-4 py-3" role="columnheader">Phone</th>
                   <th className="px-4 py-3" role="columnheader">Arzt</th>
                   <th className="px-4 py-3" role="columnheader">Today&apos;s Hours</th>
+                  <th className="px-4 py-3" role="columnheader">Issue</th>
                   <th
                     className="px-4 py-3 text-center cursor-pointer hover:text-foreground font-bold"
                     onClick={() => handleSort('pending')}

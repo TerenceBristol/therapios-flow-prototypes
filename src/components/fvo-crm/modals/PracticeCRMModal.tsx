@@ -1,12 +1,11 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, PracticeFollowUp, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
+import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, PracticeFollowUp, PracticeIssue, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import ActivityAndFollowUpsSection from '../ActivityAndFollowUpsSection';
-import AddActivityModal from '../AddActivityModal';
-import AddFollowUpModal from '../AddFollowUpModal';
 import VOsTable from '../VOsTable';
 import PracticeInfoTab from '../PracticeInfoTab';
+import IssuesSection from '../IssuesSection';
 
 interface PracticeCRMModalProps {
   isOpen: boolean;
@@ -17,7 +16,8 @@ interface PracticeCRMModalProps {
   doctors: PracticeDoctor[];
   therapists: Therapist[];
   facilities: Facility[];
-  initialTab?: 'practiceInfo' | 'vos' | 'activityFollowups';
+  issues: PracticeIssue[];
+  initialTab?: 'practiceInfo' | 'vos' | 'activityFollowups' | 'issues';
   onClose: () => void;
   onAddActivity: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
   onDeleteActivity?: (activityId: string) => void;
@@ -37,6 +37,10 @@ interface PracticeCRMModalProps {
   onBulkStatusChange?: (voIds: string[], newStatus: FVOCRMVOStatus) => void;
   onBulkNoteChange?: (voIds: string[], note: string) => void;
   onGeneratePDF?: (selectedVOIds: string[], orderType: OrderFormType) => void;
+  onAddIssue?: (issue: Omit<PracticeIssue, 'id' | 'status' | 'createdAt'>) => void;
+  onUpdateIssue?: (issueId: string, updates: Partial<PracticeIssue>) => void;
+  onResolveIssue?: (issueId: string, resolvedBy: string) => void;
+  onDeleteIssue?: (issueId: string) => void;
 }
 
 const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
@@ -48,6 +52,7 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   doctors,
   therapists,
   facilities,
+  issues,
   initialTab = 'practiceInfo',
   onClose,
   onAddActivity,
@@ -61,11 +66,13 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   onDeleteNote,
   onBulkStatusChange,
   onBulkNoteChange,
-  onGeneratePDF
+  onGeneratePDF,
+  onAddIssue,
+  onUpdateIssue,
+  onResolveIssue,
+  onDeleteIssue
 }) => {
-  const [isAddActivityModalOpen, setIsAddActivityModalOpen] = useState(false);
-  const [isAddFollowUpModalOpen, setIsAddFollowUpModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<'practiceInfo' | 'vos' | 'activityFollowups'>(initialTab);
+  const [activeTab, setActiveTab] = useState<'practiceInfo' | 'vos' | 'activityFollowups' | 'issues'>(initialTab);
 
   // Reset active tab when modal opens or practice changes
   useEffect(() => {
@@ -73,39 +80,6 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
       setActiveTab(initialTab);
     }
   }, [isOpen, practice?.id, initialTab]);
-
-  if (!isOpen || !practice) return null;
-
-  const handleAddActivityFromModal = (activity: {
-    practiceId: string;
-    type: PracticeActivityType;
-    date: string;
-    notes: string;
-  }) => {
-    // Add userId to the activity
-    const activityWithUser: Omit<PracticeActivity, 'id' | 'createdAt'> = {
-      ...activity,
-      userId: 'current-user' // TODO: Get from auth context
-    };
-    onAddActivity(activityWithUser);
-    setIsAddActivityModalOpen(false);
-  };
-
-  const handleAddFollowUpFromModal = (followUp: {
-    practiceId: string;
-    dueDate: string;
-    dueTime?: string;
-    notes: string;
-    activityType?: PracticeActivityType;
-  }) => {
-    // Add userId to the follow-up
-    const followUpWithUser: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'> = {
-      ...followUp,
-      userId: 'current-user' // TODO: Get from auth context
-    };
-    onAddFollowUp(followUpWithUser);
-    setIsAddFollowUpModalOpen(false);
-  };
 
   // Get pending VOs (all non-received VOs)
   const pendingVOs = vos.filter(vo => vo.status !== 'Received');
@@ -166,6 +140,18 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                       ({followUps.filter(f => !f.completed).length} active)
                     </span>
                   </button>
+                  <button
+                    onClick={() => setActiveTab('issues')}
+                    className={`px-6 py-4 font-medium transition-colors relative ${
+                      activeTab === 'issues' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    Issues
+                    {activeTab === 'issues' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
+                    <span className="ml-2 text-sm">
+                      ({issues.filter(i => i.status === 'active').length} active)
+                    </span>
+                  </button>
                 </div>
               </div>
 
@@ -200,11 +186,24 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                       practiceId={practice.id}
                       activities={activities}
                       followUps={followUps}
-                      onAddActivity={() => setIsAddActivityModalOpen(true)}
+                      onAddActivity={onAddActivity}
                       onDeleteActivity={onDeleteActivity}
-                      onAddFollowUp={() => setIsAddFollowUpModalOpen(true)}
+                      onAddFollowUp={onAddFollowUp}
                       onDeleteFollowUp={onDeleteFollowUp}
                       onCompleteFollowUpAndLogActivity={onCompleteFollowUpAndLogActivity || (() => {})}
+                    />
+                  </div>
+                )}
+
+                {activeTab === 'issues' && (
+                  <div className="h-full overflow-y-auto px-6 py-4">
+                    <IssuesSection
+                      practice={practice}
+                      issues={issues}
+                      onAddIssue={onAddIssue || (() => {})}
+                      onUpdateIssue={onUpdateIssue || (() => {})}
+                      onResolveIssue={onResolveIssue || (() => {})}
+                      onDeleteIssue={onDeleteIssue || (() => {})}
                     />
                   </div>
                 )}
@@ -212,22 +211,6 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
             </div>
           </div>
         </div>
-
-      {/* Add Activity Modal */}
-      <AddActivityModal
-        isOpen={isAddActivityModalOpen}
-        onClose={() => setIsAddActivityModalOpen(false)}
-        onSave={handleAddActivityFromModal}
-        practiceId={practice.id}
-      />
-
-      {/* Add Follow-up Modal */}
-      <AddFollowUpModal
-        isOpen={isAddFollowUpModalOpen}
-        onClose={() => setIsAddFollowUpModalOpen(false)}
-        onSave={handleAddFollowUpFromModal}
-        practiceId={practice.id}
-      />
     </>
   );
 };

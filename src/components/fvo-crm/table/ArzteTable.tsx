@@ -185,7 +185,6 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
                 <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('facilities')}>
                   ERs{getSortIndicator('facilities')}
                 </th>
-                <th className="px-4 py-3">Phone</th>
                 <th className="px-4 py-3 w-24">Actions</th>
               </tr>
             </thead>
@@ -224,11 +223,6 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
                       ) : (
                         <span className="text-muted-foreground">None</span>
                       )}
-                    </div>
-                  </td>
-                  <td className="px-4 py-3">
-                    <div className="text-sm text-foreground">
-                      {arzt.phone || <span className="text-muted-foreground">-</span>}
                     </div>
                   </td>
                   <td className="px-4 py-3">
