@@ -84,6 +84,8 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   // Get pending VOs (all non-received VOs)
   const pendingVOs = vos.filter(vo => vo.status !== 'Received');
 
+  if (!practice) return null;
+
   return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
