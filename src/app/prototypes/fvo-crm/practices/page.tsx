@@ -105,6 +105,10 @@ export default function PracticesManagementPage() {
           practice={{
             ...selectedPractice,
             pendingVOCount: mockData.vos.filter(vo => vo.practiceId === selectedPractice.id && vo.status === 'Pending').length,
+            activeIssueCount: mockData.issues.filter(i => i.practiceId === selectedPractice.id && i.status === 'active').length,
+            latestIssue: mockData.issues
+              .filter(i => i.practiceId === selectedPractice.id && i.status === 'active')
+              .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0],
             doctors: doctors.filter(doc => doc.practiceId === selectedPractice.id)
           }}
           activities={mockData.activities.filter(
