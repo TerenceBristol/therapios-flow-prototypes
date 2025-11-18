@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { PracticeFollowUp, PracticeActivityType } from '@/types';
+import { PracticeFollowUp, PracticeActivity } from '@/types';
 import { generateTimeOptions } from '@/utils/timeUtils';
 
 interface CompleteFollowUpModalProps {
   isOpen: boolean;
   followUp: PracticeFollowUp | null;
   onClose: () => void;
-  onComplete: (followUpId: string, activityData: {
-    practiceId: string;
-    date: string;
-    type: PracticeActivityType;
-    notes: string;
-    userId: string;
-  }, chainFollowUp?: {
-    dueDate: string;
-    notes: string;
-    activityType: PracticeActivityType;
-  }) => void;
+  onComplete: (followUpId: string, activityData: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
 }
 
 const CompleteFollowUpModal: React.FC<CompleteFollowUpModalProps> = ({
@@ -25,7 +15,6 @@ const CompleteFollowUpModal: React.FC<CompleteFollowUpModalProps> = ({
   onClose,
   onComplete
 }) => {
-  const [activityType, setActivityType] = useState<PracticeActivityType>('Call');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [notes, setNotes] = useState('');
@@ -51,18 +40,6 @@ const CompleteFollowUpModal: React.FC<CompleteFollowUpModalProps> = ({
 
       // Pre-fill with follow-up notes
       setNotes(followUp.notes);
-
-      // Smart default for activity type based on follow-up notes
-      const lowerNotes = followUp.notes.toLowerCase();
-      if (lowerNotes.includes('call') || lowerNotes.includes('phone')) {
-        setActivityType('Call');
-      } else if (lowerNotes.includes('email')) {
-        setActivityType('Email');
-      } else if (lowerNotes.includes('fax')) {
-        setActivityType('Fax');
-      } else {
-        setActivityType('Note');
-      }
     }
   }, [followUp]);
 
@@ -86,9 +63,9 @@ const CompleteFollowUpModal: React.FC<CompleteFollowUpModalProps> = ({
       {
         practiceId: followUp.practiceId,
         date: activityDate.toISOString(),
-        type: activityType,
         notes: notes.trim(),
-        userId: 'current-user' // TODO: Get from auth context
+        userId: 'current-user', // TODO: Get from auth context
+        isIssue: false
       }
     );
 
@@ -116,25 +93,11 @@ const CompleteFollowUpModal: React.FC<CompleteFollowUpModalProps> = ({
           {/* Resolution Section */}
           <div>
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
-              How was this resolved?
+              When was this completed?
             </h3>
 
-            {/* Inline Type/Date/Time */}
+            {/* Inline Date/Time */}
             <div className="flex items-center gap-2 text-sm flex-wrap mb-3">
-              <span className="text-muted-foreground">Via:</span>
-              <select
-                value={activityType}
-                onChange={(e) => setActivityType(e.target.value as PracticeActivityType)}
-                className="px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              >
-                <option value="Call">📞 Call</option>
-                <option value="Email">✉️ Email</option>
-                <option value="Fax">📠 Fax</option>
-                <option value="Note">📝 Note</option>
-              </select>
-
-              <span className="text-muted-foreground">on</span>
-
               <input
                 type="date"
                 value={date}
