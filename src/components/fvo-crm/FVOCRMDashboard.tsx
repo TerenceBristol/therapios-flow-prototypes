@@ -6,7 +6,6 @@ import {
   PracticeDoctor,
   PracticeVO,
   PracticeActivity,
-  PracticeIssue,
   PracticeWithComputed
 } from '@/types';
 import fvoCRMData from '@/data/fvoCRMData.json';
@@ -21,7 +20,6 @@ const FVOCRMDashboard: React.FC = () => {
   const [doctors] = useState<PracticeDoctor[]>(fvoCRMData.doctors as PracticeDoctor[]);
   const [vos] = useState<PracticeVO[]>(fvoCRMData.vos as PracticeVO[]);
   const [activities, setActivities] = useState<PracticeActivity[]>(fvoCRMData.activities as PracticeActivity[]);
-  const [issues] = useState<PracticeIssue[]>(fvoCRMData.issues as PracticeIssue[]);
 
   // UI State
   const [selectedPracticeId, setSelectedPracticeId] = useState<string | null>(null);
@@ -71,12 +69,13 @@ const FVOCRMDashboard: React.FC = () => {
       const nextFollowUpDate = getNextFollowUpDate(practice.id);
       const priorityLevel = calculatePriorityLevel(nextFollowUpDate);
 
-      // Compute issue-related fields
-      const practiceIssues = issues.filter(i => i.practiceId === practice.id);
-      const activeIssues = practiceIssues.filter(i => i.status === 'active');
-      const latestIssue = activeIssues.sort((a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-      )[0];
+      // Compute issue-related fields from activities
+      const activeIssues = practiceActivities.filter(a => a.isIssue && a.issueStatus === 'active');
+      const latestIssue = activeIssues.length > 0
+        ? activeIssues.sort((a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          )[0]
+        : undefined;
 
       return {
         ...practice,
@@ -89,7 +88,7 @@ const FVOCRMDashboard: React.FC = () => {
         doctors: practiceDoctors
       };
     });
-  }, [practices, vos, activities, doctors, issues]);
+  }, [practices, vos, activities, doctors]);
 
   // Get selected practice with computed fields
   const selectedPractice = useMemo(() => {
