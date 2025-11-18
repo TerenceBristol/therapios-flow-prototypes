@@ -23,9 +23,8 @@ const PracticeCard: React.FC<PracticeCardProps> = ({ practice, isSelected, onCli
   // Format last activity
   const getLastActivityText = () => {
     if (!practice.lastActivity) return 'None';
-    const type = practice.lastActivity.type;
     const date = formatDate(practice.lastActivity.date);
-    return `${type} ${date}`;
+    return `Activity ${date}`;
   };
 
   // Get quick contact text
