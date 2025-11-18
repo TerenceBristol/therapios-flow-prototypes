@@ -81,7 +81,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
   const historySection = useMemo(() => {
     const logs = practiceActivities.map(a => ({
       ...a,
-      type: 'log' as const,
+      itemType: 'log' as const,
       displayDate: new Date(a.date)
     }));
 
@@ -89,7 +89,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
       .filter(f => f.completed)
       .map(f => ({
         ...f,
-        type: 'followup' as const,
+        itemType: 'followup' as const,
         displayDate: new Date(f.completedAt || f.createdAt)
       }));
 
@@ -97,7 +97,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
       .filter(i => i.status === 'resolved')
       .map(i => ({
         ...i,
-        type: 'issue' as const,
+        itemType: 'issue' as const,
         displayDate: new Date(i.resolvedAt || i.createdAt)
       }));
 
@@ -406,10 +406,10 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
           <div className="space-y-2">
             {historySection.map((item) => (
               <div
-                key={`${item.type}-${item.id}`}
+                key={`${item.itemType}-${item.id}`}
                 className="rounded-lg border border-border bg-muted/30 p-3"
               >
-                {item.type === 'log' && (
+                {item.itemType === 'log' && (
                   <div>
                     <div className="text-sm mb-1">{(item as PracticeActivity).notes}</div>
                     <div className="text-xs text-muted-foreground">
@@ -417,7 +417,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                     </div>
                   </div>
                 )}
-                {item.type === 'followup' && (
+                {item.itemType === 'followup' && (
                   <div>
                     <div className="flex items-start gap-2 mb-1">
                       <span className="text-base flex-shrink-0">✓</span>
@@ -433,7 +433,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                     </div>
                   </div>
                 )}
-                {item.type === 'issue' && (
+                {item.itemType === 'issue' && (
                   <div>
                     <div className="flex items-start gap-2 mb-1">
                       <span className="text-base flex-shrink-0">✓</span>
