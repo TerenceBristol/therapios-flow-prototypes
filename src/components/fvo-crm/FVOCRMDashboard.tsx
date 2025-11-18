@@ -127,20 +127,11 @@ const FVOCRMDashboard: React.FC = () => {
   };
 
   // Handler: Save activity
-  const handleSaveActivity = (activityData: {
-    practiceId: string;
-    type: PracticeActivity['type'];
-    date: string;
-    notes: string;
-  }) => {
+  const handleSaveActivity = (activityData: Omit<PracticeActivity, 'id' | 'createdAt'>) => {
     const newActivity: PracticeActivity = {
       id: `act-${Date.now()}`,
-      practiceId: activityData.practiceId,
-      date: activityData.date,
-      type: activityData.type,
-      notes: activityData.notes,
-      userId: 'system',
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
+      ...activityData
     };
 
     setActivities([...activities, newActivity]);

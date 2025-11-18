@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { PracticeActivityType } from '@/types';
+import { PracticeActivity } from '@/types';
 import { generateTimeOptions } from '@/utils/timeUtils';
 
 interface AddActivityModalProps {
   isOpen: boolean;
   practiceId: string;
   onClose: () => void;
-  onSave: (activity: {
-    practiceId: string;
-    type: PracticeActivityType;
-    date: string;
-    notes: string;
-    createFollowUp?: {
-      dueDate: string;
-      notes: string;
-    };
-  }) => void;
+  onSave: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
 }
 
 const AddActivityModal: React.FC<AddActivityModalProps> = ({
@@ -24,7 +15,6 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
   onClose,
   onSave
 }) => {
-  const [type, setType] = useState<PracticeActivityType>('Call');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [notes, setNotes] = useState('');
@@ -49,7 +39,6 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
       setTime(`${displayHours}:${displayMinutes} ${period}`);
 
       // Reset form
-      setType('Call');
       setNotes('');
       setErrors({});
     }
@@ -99,9 +88,10 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
 
     onSave({
       practiceId,
-      type,
       date: activityDate.toISOString(),
-      notes: notes.trim()
+      notes: notes.trim(),
+      userId: 'current-user', // TODO: Get from auth context
+      isIssue: false
     });
 
     onClose();
@@ -136,24 +126,11 @@ const AddActivityModal: React.FC<AddActivityModalProps> = ({
             {/* What Happened Section */}
             <div>
               <label className="block text-sm font-medium text-foreground mb-3">
-                What happened?
+                When did this happen?
               </label>
 
-              {/* Inline Type/Date/Time */}
+              {/* Inline Date/Time */}
               <div className="flex items-center gap-2 text-sm flex-wrap">
-                <select
-                  value={type}
-                  onChange={(e) => setType(e.target.value as PracticeActivityType)}
-                  className="px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  <option value="Call">📞 Call</option>
-                  <option value="Email">✉️ Email</option>
-                  <option value="Fax">📠 Fax</option>
-                  <option value="Note">📝 Note</option>
-                </select>
-
-                <span className="text-muted-foreground">on</span>
-
                 <input
                   type="date"
                   value={date}
