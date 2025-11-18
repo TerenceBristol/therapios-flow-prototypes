@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { generateTimeOptions } from '@/utils/timeUtils';
-import { PracticeActivityType } from '@/types';
 
 interface AddFollowUpModalProps {
   isOpen: boolean;
@@ -11,7 +10,6 @@ interface AddFollowUpModalProps {
     dueDate: string;
     dueTime?: string;
     notes: string;
-    activityType?: PracticeActivityType;
   }) => void;
 }
 
