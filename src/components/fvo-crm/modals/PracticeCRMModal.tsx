@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, PracticeFollowUp, PracticeIssue, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
+import { PracticeWithComputed, PracticeActivity, PracticeVO, PracticeDoctor, PracticeFollowUp, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import ActivitiesSection from '../ActivitiesSection';
 import VOsTable from '../VOsTable';
 import PracticeInfoTab from '../PracticeInfoTab';
@@ -15,20 +15,14 @@ interface PracticeCRMModalProps {
   doctors: PracticeDoctor[];
   therapists: Therapist[];
   facilities: Facility[];
-  issues: PracticeIssue[];
   initialTab?: 'practiceInfo' | 'vos' | 'activities';
   onClose: () => void;
   onAddActivity: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
   onDeleteActivity?: (activityId: string) => void;
   onAddFollowUp: (followUp: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'>) => void;
   onDeleteFollowUp?: (followUpId: string) => void;
-  onCompleteFollowUpAndLogActivity?: (followUpId: string, activityData: {
-    practiceId: string;
-    date: string;
-    type: PracticeActivityType;
-    notes: string;
-    userId: string;
-  }) => void;
+  onResolveActivity: (activityId: string, resolvedBy: string, resolutionNotes?: string) => void;
+  onCompleteFollowUp: (followUpId: string, completionNotes?: string) => void;
   onStatusChange?: (voId: string, newStatus: FVOCRMVOStatus) => void;
   onNoteChange?: (voId: string, note: string) => void;
   onEditNote?: (voId: string, noteIndex: number, newText: string) => void;
@@ -36,10 +30,6 @@ interface PracticeCRMModalProps {
   onBulkStatusChange?: (voIds: string[], newStatus: FVOCRMVOStatus) => void;
   onBulkNoteChange?: (voIds: string[], note: string) => void;
   onGeneratePDF?: (selectedVOIds: string[], orderType: OrderFormType) => void;
-  onAddIssue?: (issue: Omit<PracticeIssue, 'id' | 'status' | 'createdAt'>) => void;
-  onUpdateIssue?: (issueId: string, updates: Partial<PracticeIssue>) => void;
-  onResolveIssue?: (issueId: string, resolvedBy: string) => void;
-  onDeleteIssue?: (issueId: string) => void;
 }
 
 const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
@@ -51,25 +41,21 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   doctors,
   therapists,
   facilities,
-  issues,
   initialTab = 'practiceInfo',
   onClose,
   onAddActivity,
   onDeleteActivity,
   onAddFollowUp,
   onDeleteFollowUp,
-  onCompleteFollowUpAndLogActivity,
+  onResolveActivity,
+  onCompleteFollowUp,
   onStatusChange,
   onNoteChange,
   onEditNote,
   onDeleteNote,
   onBulkStatusChange,
   onBulkNoteChange,
-  onGeneratePDF,
-  onAddIssue,
-  onUpdateIssue,
-  onResolveIssue,
-  onDeleteIssue
+  onGeneratePDF
 }) => {
   const [activeTab, setActiveTab] = useState<'practiceInfo' | 'vos' | 'activities'>(initialTab);
 
@@ -138,7 +124,7 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                     Activities
                     {activeTab === 'activities' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
                     <span className="ml-2 text-sm">
-                      ({followUps.filter(f => !f.completed).length + issues.filter(i => i.status === 'active').length} active)
+                      ({followUps.filter(f => !f.completed).length + activities.filter(a => a.isIssue && a.issueStatus === 'active').length} active)
                     </span>
                   </button>
                 </div>
@@ -170,11 +156,15 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                 )}
 
                 {activeTab === 'activities' && (
-                  <div className="h-full overflow-y-auto px-6 py-4">
-                    <ActivitiesSection
-                      practiceId={practice.id}
-                    />
-                  </div>
+                  <ActivitiesSection
+                    practiceId={practice.id}
+                    activities={activities}
+                    followUps={followUps}
+                    onAddActivity={onAddActivity}
+                    onAddFollowUp={onAddFollowUp}
+                    onResolveActivity={onResolveActivity}
+                    onCompleteFollowUp={onCompleteFollowUp}
+                  />
                 )}
               </div>
             </div>

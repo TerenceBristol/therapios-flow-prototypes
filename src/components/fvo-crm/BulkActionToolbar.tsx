@@ -30,7 +30,9 @@ const BulkActionToolbar: React.FC<BulkActionToolbarProps> = ({
     'Nachverfolgen',
     'Nachverfolgt',
     'Telefonieren',
-    'Telefoniert'
+    'Telefoniert',
+    'In Transit',
+    'Keine-Folge VO'
   ];
 
   const handleBulkStatus = (status: FVOCRMVOStatus) => {

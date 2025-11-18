@@ -7,7 +7,6 @@ import {
   PracticeVO,
   PracticeActivity,
   PracticeFollowUp,
-  PracticeIssue,
   Therapist,
   Facility
 } from '@/types';
@@ -21,7 +20,6 @@ export interface FVOCRMContextValue {
   vos: PracticeVO[];
   activities: PracticeActivity[];
   followUps: PracticeFollowUp[];
-  issues: PracticeIssue[];
   therapists: Therapist[];
   facilities: Facility[];
 
@@ -42,20 +40,13 @@ export interface FVOCRMContextValue {
   addActivity: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
   deleteActivity: (activityId: string) => void;
   getActivitiesForPractice: (practiceId: string) => PracticeActivity[];
+  resolveActivity: (activityId: string, resolvedBy: string, resolutionNotes?: string) => void;
 
   // Follow-up CRUD
   addFollowUp: (followUp: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'>) => void;
   deleteFollowUp: (followUpId: string) => void;
   getFollowUpsForPractice: (practiceId: string) => PracticeFollowUp[];
   completeFollowUp: (followUpId: string, completionNotes?: string) => void;
-  completeFollowUpAndLogActivity: (followUpId: string, activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
-
-  // Issue CRUD
-  addIssue: (issue: Omit<PracticeIssue, 'id' | 'status' | 'createdAt'>) => void;
-  updateIssue: (issueId: string, updates: Partial<PracticeIssue>) => void;
-  resolveIssue: (issueId: string, resolutionNotes?: string, resolvedBy?: string) => void;
-  deleteIssue: (issueId: string) => void;
-  getIssuesForPractice: (practiceId: string) => PracticeIssue[];
 
   // Therapist helpers
   getTherapistById: (id: string) => Therapist | undefined;
@@ -81,7 +72,6 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
   const [vos, setVOs] = useState<PracticeVO[]>(mockData.vos as PracticeVO[]);
   const [activities, setActivities] = useState<PracticeActivity[]>(mockData.activities as PracticeActivity[]);
   const [followUps, setFollowUps] = useState<PracticeFollowUp[]>((mockData.followUps as unknown as PracticeFollowUp[]) || []);
-  const [issues, setIssues] = useState<PracticeIssue[]>((mockData.issues as unknown as PracticeIssue[]) || []);
   const [therapists, setTherapists] = useState<Therapist[]>(mockData.therapists as Therapist[]);
   const [facilities, setFacilities] = useState<Facility[]>(mockData.facilities as Facility[]);
 
@@ -183,6 +173,25 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [activities]);
 
+  const resolveActivity = useCallback((activityId: string, resolvedBy: string, resolutionNotes?: string) => {
+    setActivities(prev => prev.map(activity => {
+      if (activity.id !== activityId) return activity;
+
+      // If resolution notes provided, append to existing notes
+      const updatedNotes = resolutionNotes
+        ? `${activity.notes}\n\nResolution: ${resolutionNotes}`
+        : activity.notes;
+
+      return {
+        ...activity,
+        notes: updatedNotes,
+        issueStatus: 'resolved' as const,
+        resolvedAt: new Date().toISOString(),
+        resolvedBy
+      };
+    }));
+  }, []);
+
   // ========== Follow-up CRUD ==========
 
   const addFollowUp = useCallback((followUp: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'>) => {
@@ -205,88 +214,35 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
   }, [followUps]);
 
   const completeFollowUp = useCallback((followUpId: string, completionNotes?: string) => {
-    setFollowUps(prev => prev.map(followUp =>
-      followUp.id === followUpId
-        ? {
-            ...followUp,
-            completed: true,
-            completedAt: new Date().toISOString(),
-            completionNotes
-          }
-        : followUp
-    ));
-  }, []);
+    // Find the follow-up
+    const followUp = followUps.find(f => f.id === followUpId);
+    if (!followUp) return;
 
-  const completeFollowUpAndLogActivity = useCallback((
-    followUpId: string,
-    activity: Omit<PracticeActivity, 'id' | 'createdAt'>
-  ) => {
-    // Complete the follow-up
-    setFollowUps(prev => prev.map(followUp =>
-      followUp.id === followUpId
-        ? { ...followUp, completed: true, completedAt: new Date().toISOString() }
-        : followUp
+    // Mark follow-up as completed
+    setFollowUps(prev => prev.map(f =>
+      f.id === followUpId
+        ? { ...f, completed: true, completedAt: new Date().toISOString() }
+        : f
     ));
 
-    // Create the activity
+    // Combine follow-up notes with completion notes if provided
+    const activityNotes = completionNotes
+      ? `${followUp.notes}\n\nCompletion: ${completionNotes}`
+      : followUp.notes;
+
+    // Auto-create activity from the completed follow-up
     const newActivity: PracticeActivity = {
-      ...activity,
-      id: `act-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      createdAt: new Date().toISOString()
+      id: followUpId, // Use same ID so we can track it came from this follow-up
+      practiceId: followUp.practiceId,
+      date: new Date().toISOString(),
+      notes: activityNotes,
+      userId: followUp.userId,
+      createdAt: new Date().toISOString(),
+      isIssue: false,
     };
 
     setActivities(prev => [...prev, newActivity]);
-  }, []);
-
-  // ========== Issue CRUD ==========
-
-  const addIssue = useCallback((issue: Omit<PracticeIssue, 'id' | 'status' | 'createdAt'>) => {
-    const newIssue: PracticeIssue = {
-      ...issue,
-      id: `issue-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      status: 'active',
-      createdAt: new Date().toISOString()
-    };
-
-    setIssues(prev => [...prev, newIssue]);
-  }, []);
-
-  const updateIssue = useCallback((issueId: string, updates: Partial<PracticeIssue>) => {
-    setIssues(prev => prev.map(issue =>
-      issue.id === issueId
-        ? { ...issue, ...updates }
-        : issue
-    ));
-  }, []);
-
-  const resolveIssue = useCallback((issueId: string, resolutionNotes?: string, resolvedBy?: string) => {
-    setIssues(prev => prev.map(issue =>
-      issue.id === issueId
-        ? {
-            ...issue,
-            status: 'resolved' as const,
-            resolvedAt: new Date().toISOString(),
-            resolutionNotes,
-            resolvedBy
-          }
-        : issue
-    ));
-  }, []);
-
-  const deleteIssue = useCallback((issueId: string) => {
-    setIssues(prev => prev.filter(issue => issue.id !== issueId));
-  }, []);
-
-  const getIssuesForPractice = useCallback((practiceId: string) => {
-    return issues
-      .filter(i => i.practiceId === practiceId)
-      .sort((a, b) => {
-        // Active issues first, then by creation date (newest first)
-        if (a.status === 'active' && b.status !== 'active') return -1;
-        if (a.status !== 'active' && b.status === 'active') return 1;
-        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-      });
-  }, [issues]);
+  }, [followUps]);
 
   // ========== Therapist Helpers ==========
 
@@ -316,7 +272,6 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
     vos,
     activities,
     followUps,
-    issues,
     therapists,
     facilities,
 
@@ -337,20 +292,13 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
     addActivity,
     deleteActivity,
     getActivitiesForPractice,
+    resolveActivity,
 
     // Follow-up CRUD
     addFollowUp,
     deleteFollowUp,
     getFollowUpsForPractice,
     completeFollowUp,
-    completeFollowUpAndLogActivity,
-
-    // Issue CRUD
-    addIssue,
-    updateIssue,
-    resolveIssue,
-    deleteIssue,
-    getIssuesForPractice,
 
     // Therapist helpers
     getTherapistById,
