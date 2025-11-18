@@ -1,19 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { PracticeWithComputed, PracticeActivityType } from '@/types';
+import { PracticeWithComputed, PracticeActivity } from '@/types';
 
 interface QuickActivityModalProps {
   isOpen: boolean;
   practice: PracticeWithComputed | null;
   onClose: () => void;
-  onSave: (activity: {
-    practiceId: string;
-    type: PracticeActivityType;
-    date: string;
-    notes: string;
-    userId: string;
-  }) => void;
+  onSave: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
 }
 
 const QuickActivityModal: React.FC<QuickActivityModalProps> = ({
@@ -22,7 +16,6 @@ const QuickActivityModal: React.FC<QuickActivityModalProps> = ({
   onClose,
   onSave
 }) => {
-  const [activityType, setActivityType] = useState<PracticeActivityType>('Call');
   const [notes, setNotes] = useState('');
   const [includeFollowUp, setIncludeFollowUp] = useState(false);
   const [followUpDate, setFollowUpDate] = useState('');
@@ -31,12 +24,12 @@ const QuickActivityModal: React.FC<QuickActivityModalProps> = ({
   if (!isOpen || !practice) return null;
 
   const handleSave = () => {
-    const activity = {
+    const activity: Omit<PracticeActivity, 'id' | 'createdAt'> = {
       practiceId: practice.id,
-      type: activityType,
       date: new Date().toISOString(),
       notes: notes.trim(),
-      userId: 'current-user' // TODO: Get from auth context
+      userId: 'current-user', // TODO: Get from auth context
+      isIssue: false
     };
 
     onSave(activity);
@@ -45,15 +38,12 @@ const QuickActivityModal: React.FC<QuickActivityModalProps> = ({
 
   const handleClose = () => {
     // Reset form
-    setActivityType('Call');
     setNotes('');
     setIncludeFollowUp(false);
     setFollowUpDate('');
     setFollowUpTime('');
     onClose();
   };
-
-  const activityTypes: PracticeActivityType[] = ['Call', 'Email', 'Fax', 'Note'];
 
   return (
     <>
@@ -117,38 +107,18 @@ const QuickActivityModal: React.FC<QuickActivityModalProps> = ({
             ) : null}
           </div>
 
-          {/* Activity Type Buttons */}
-          <div>
-            <label className="block text-sm font-medium mb-3">Activity Type</label>
-            <div className="grid grid-cols-4 gap-2">
-              {activityTypes.map(type => (
-                <button
-                  key={type}
-                  onClick={() => setActivityType(type)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    activityType === type
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                  }`}
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
-          </div>
-
           {/* Notes */}
           <div>
             <label htmlFor="quick-notes" className="block text-sm font-medium mb-2">
-              Notes
+              Activity Notes
             </label>
             <textarea
               id="quick-notes"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               className="w-full px-3 py-2 border border-border rounded-md resize-none bg-background"
-              rows={4}
-              placeholder={`Enter ${activityType.toLowerCase()} notes...`}
+              rows={6}
+              placeholder="Enter activity notes (e.g., called practice, sent email, left voicemail...)..."
               autoFocus
             />
           </div>
