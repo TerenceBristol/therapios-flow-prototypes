@@ -426,7 +426,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                       </div>
                     </div>
                     <div className="ml-6 text-xs text-muted-foreground space-y-0.5">
-                      <div>Due: {formatDate((item as PracticeFollowUp).dueDate)}{formatTime((item as PracticeFollowUp).dueTime)} → Completed: {formatDateTime((item as PracticeFollowUp).completedAt)}</div>
+                      <div>Due: {formatDate((item as PracticeFollowUp).dueDate)}{formatTime((item as PracticeFollowUp).dueTime)} → Completed: {formatDateTime((item as PracticeFollowUp).completedAt || (item as PracticeFollowUp).createdAt)}</div>
                       {(item as PracticeFollowUp).completionNotes && (
                         <div className="text-foreground/70">Notes: {(item as PracticeFollowUp).completionNotes}</div>
                       )}
