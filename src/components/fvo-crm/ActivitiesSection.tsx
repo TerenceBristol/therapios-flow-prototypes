@@ -10,11 +10,6 @@ interface ActivitiesSectionProps {
 
 type ActivityType = 'Log' | 'Follow-up' | 'Issue';
 
-type HistoryItem =
-  | (PracticeActivity & { type: 'log'; displayDate: Date })
-  | (PracticeFollowUp & { type: 'followup'; displayDate: Date })
-  | (PracticeIssue & { type: 'issue'; displayDate: Date });
-
 export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps) {
   const {
     activities,
@@ -416,9 +411,9 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
               >
                 {item.type === 'log' && (
                   <div>
-                    <div className="text-sm mb-1">{(item as PracticeActivity & { type: 'log' }).notes}</div>
+                    <div className="text-sm mb-1">{(item as PracticeActivity).notes}</div>
                     <div className="text-xs text-muted-foreground">
-                      {formatDateTime((item as PracticeActivity & { type: 'log' }).date)}
+                      {formatDateTime((item as PracticeActivity).date)}
                     </div>
                   </div>
                 )}
@@ -427,13 +422,13 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                     <div className="flex items-start gap-2 mb-1">
                       <span className="text-base flex-shrink-0">✓</span>
                       <div className="flex-1">
-                        <div className="text-sm font-medium">Follow-up: {(item as PracticeFollowUp & { type: 'followup' }).notes}</div>
+                        <div className="text-sm font-medium">Follow-up: {(item as PracticeFollowUp).notes}</div>
                       </div>
                     </div>
                     <div className="ml-6 text-xs text-muted-foreground space-y-0.5">
-                      <div>Due: {formatDate((item as PracticeFollowUp & { type: 'followup' }).dueDate)}{formatTime((item as PracticeFollowUp & { type: 'followup' }).dueTime)} → Completed: {formatDateTime((item as PracticeFollowUp & { type: 'followup' }).completedAt)}</div>
-                      {(item as PracticeFollowUp & { type: 'followup' }).completionNotes && (
-                        <div className="text-foreground/70">Notes: {(item as PracticeFollowUp & { type: 'followup' }).completionNotes}</div>
+                      <div>Due: {formatDate((item as PracticeFollowUp).dueDate)}{formatTime((item as PracticeFollowUp).dueTime)} → Completed: {formatDateTime((item as PracticeFollowUp).completedAt)}</div>
+                      {(item as PracticeFollowUp).completionNotes && (
+                        <div className="text-foreground/70">Notes: {(item as PracticeFollowUp).completionNotes}</div>
                       )}
                     </div>
                   </div>
@@ -443,13 +438,13 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                     <div className="flex items-start gap-2 mb-1">
                       <span className="text-base flex-shrink-0">✓</span>
                       <div className="flex-1">
-                        <div className="text-sm font-medium">Issue resolved: {(item as PracticeIssue & { type: 'issue' }).notes}</div>
+                        <div className="text-sm font-medium">Issue resolved: {(item as PracticeIssue).notes}</div>
                       </div>
                     </div>
                     <div className="ml-6 text-xs text-muted-foreground space-y-0.5">
-                      <div>Created: {formatDate((item as PracticeIssue & { type: 'issue' }).createdAt)} → Resolved: {formatDateTime((item as PracticeIssue & { type: 'issue' }).resolvedAt)}</div>
-                      {(item as PracticeIssue & { type: 'issue' }).resolutionNotes && (
-                        <div className="text-foreground/70">Resolution: {(item as PracticeIssue & { type: 'issue' }).resolutionNotes}</div>
+                      <div>Created: {formatDate((item as PracticeIssue).createdAt)} → Resolved: {formatDateTime((item as PracticeIssue).resolvedAt)}</div>
+                      {(item as PracticeIssue).resolutionNotes && (
+                        <div className="text-foreground/70">Resolution: {(item as PracticeIssue).resolutionNotes}</div>
                       )}
                     </div>
                   </div>
