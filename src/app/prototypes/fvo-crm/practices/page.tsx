@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import PracticesManagementTable from '@/components/fvo-crm/table/PracticesManagementTable';
 import PracticeDetailModal from '@/components/fvo-crm/modals/PracticeDetailModal';
 import PracticeFormModal from '@/components/fvo-crm/PracticeFormModal';
-import { Practice, PracticeDoctor, PracticeActivity, PracticeVO, PracticeIssue } from '@/types';
+import { Practice, PracticeDoctor, PracticeActivity, PracticeVO } from '@/types';
 
 // Import mock data
 import mockData from '@/data/fvoCRMData.json';
@@ -105,9 +105,9 @@ export default function PracticesManagementPage() {
           practice={{
             ...selectedPractice,
             pendingVOCount: mockData.vos.filter(vo => vo.practiceId === selectedPractice.id && vo.status === 'Pending').length,
-            activeIssueCount: mockData.issues.filter(i => i.practiceId === selectedPractice.id && i.status === 'active').length,
-            latestIssue: (mockData.issues as PracticeIssue[])
-              .filter(i => i.practiceId === selectedPractice.id && i.status === 'active')
+            activeIssueCount: (mockData.activities as PracticeActivity[]).filter(a => a.practiceId === selectedPractice.id && a.isIssue && a.issueStatus === 'active').length,
+            latestIssue: (mockData.activities as PracticeActivity[])
+              .filter(a => a.practiceId === selectedPractice.id && a.isIssue && a.issueStatus === 'active')
               .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())[0],
             doctors: doctors.filter(doc => doc.practiceId === selectedPractice.id)
           }}
