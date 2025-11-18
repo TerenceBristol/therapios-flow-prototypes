@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PracticeActivity, PracticeActivityType } from '@/types';
+import { PracticeActivity } from '@/types';
 import { formatDateTimeDisplay } from '@/utils/timeUtils';
 
 interface ActivityLogSectionProps {
@@ -23,19 +23,6 @@ const ActivityLogSection: React.FC<ActivityLogSectionProps> = ({
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  };
-
-  const getActivityIcon = (type: PracticeActivityType) => {
-    switch (type) {
-      case 'Call':
-        return '📞';
-      case 'Email':
-        return '📧';
-      case 'Fax':
-        return '📠';
-      case 'Note':
-        return '📝';
-    }
   };
 
   // Sort activities by date descending (newest first)
@@ -92,7 +79,7 @@ const ActivityLogSection: React.FC<ActivityLogSectionProps> = ({
                     className="p-3 border border-border rounded-lg bg-background"
                   >
                     <div className="flex items-start gap-2 mb-1">
-                      <span className="text-lg">{getActivityIcon(activity.type)}</span>
+                      <span className="text-lg">📝</span>
                       <span className="text-sm font-medium text-foreground">
                         {formatDate(activity.date)}
                       </span>
