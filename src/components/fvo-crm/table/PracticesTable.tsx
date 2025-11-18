@@ -142,25 +142,30 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
       onClick={() => onViewPractice(practice.id)}
       className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer"
     >
-      <td className="px-4 py-3">
-        <div className="font-medium text-foreground">{practice.name}</div>
+      <td className="px-4 py-3.5">
+        <div className="font-semibold text-base text-foreground">{practice.name}</div>
       </td>
-      <td className="px-4 py-3">
+      <td className="px-4 py-3.5">
         <PhoneCell phone={practice.phone || ''} />
       </td>
-      <td className="px-4 py-3">
+      <td className="px-4 py-3.5">
         <ArztCell doctors={practice.doctors} />
       </td>
-      <td className="px-4 py-3">
+      <td className="px-4 py-3.5">
         <TodayHoursCell openingHours={practice.openingHours} />
       </td>
-      <td className="px-4 py-3">
+      <td className="px-4 py-3.5 text-center">
+        <span className="text-sm font-bold text-foreground">{practice.pendingVOCount}</span>
+      </td>
+      <td className="px-4 py-3.5">
         {practice.latestIssue ? (
           <div
             className="text-sm text-foreground cursor-help"
-            title={practice.latestIssue.description}
+            title={practice.latestIssue.notes}
           >
-            {practice.latestIssue.title}
+            <div className="line-clamp-2">
+              {practice.latestIssue.notes}
+            </div>
             {practice.activeIssueCount > 1 && (
               <span className="ml-1 text-xs text-muted-foreground">
                 +{practice.activeIssueCount - 1} more
@@ -171,31 +176,55 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
           <span className="text-sm text-muted-foreground">-</span>
         )}
       </td>
-      <td className="px-4 py-3 text-center">
-        <span className="text-sm font-bold text-foreground">{practice.pendingVOCount}</span>
-      </td>
-      <td className="px-4 py-3">
+      <td className="px-4 py-3.5 w-40">
         <div className="text-sm text-foreground">
-          {practice.lastActivity
-            ? `${practice.lastActivity.type} ${new Date(practice.lastActivity.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
-            : 'None'}
-        </div>
-      </td>
-      <td className="px-4 py-3">
-        <div className="text-sm text-foreground">
-          {practice.nextFollowUpDate ? (
-            <div>
-              <div>{new Date(practice.nextFollowUpDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</div>
-              {practice.nextFollowUpTime && (
-                <div className="text-xs text-muted-foreground">{practice.nextFollowUpTime}</div>
-              )}
-            </div>
+          {practice.lastActivity ? (
+            <span
+              className="cursor-help"
+              title={`${practice.lastActivity.type} - ${new Date(practice.lastActivity.date).toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit'
+              })}`}
+            >
+              {new Date(practice.lastActivity.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+            </span>
           ) : (
             <span className="text-muted-foreground">-</span>
           )}
         </div>
       </td>
-      <td className="px-4 py-3">
+      <td className="px-4 py-3.5 w-52">
+        {practice.nextFollowUpDate ? (
+          (() => {
+            const urgency = getFollowUpUrgency(practice.nextFollowUpDate);
+            const colorClasses =
+              urgency === 'urgent'
+                ? 'bg-red-100 text-red-800 border border-red-200'
+                : urgency === 'dueThisWeek'
+                  ? 'bg-amber-100 text-amber-800 border border-amber-200'
+                  : urgency === 'future'
+                    ? 'bg-green-100 text-green-800 border border-green-200'
+                    : '';
+
+            return (
+              <div className={`inline-block px-3 py-1.5 rounded-lg ${colorClasses}`}>
+                <div className="text-sm font-medium">
+                  {new Date(practice.nextFollowUpDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </div>
+                {practice.nextFollowUpTime && (
+                  <div className="text-xs mt-0.5">{practice.nextFollowUpTime}</div>
+                )}
+              </div>
+            );
+          })()
+        ) : (
+          <span className="text-sm text-muted-foreground">-</span>
+        )}
+      </td>
+      <td className="px-4 py-3.5">
         <div className="flex justify-center">
           {onOpenActivities && (
             <button
@@ -298,30 +327,30 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
         <div className="p-4">
           <div className="bg-background border border-border rounded-lg overflow-hidden">
             <table className="w-full">
-              <thead className="bg-muted/50">
+              <thead className="bg-muted/50 sticky top-0 z-10">
                 <tr className="text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                   <th
-                    className="px-4 py-3 cursor-pointer hover:text-foreground"
+                    className="px-4 py-3.5 cursor-pointer hover:text-foreground"
                     onClick={() => handleSort('name')}
                     aria-sort={sortColumn === 'name' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
                   >
                     Practice Name{getSortIndicator('name')}
                   </th>
-                  <th className="px-4 py-3" role="columnheader">Phone</th>
-                  <th className="px-4 py-3" role="columnheader">Arzt</th>
-                  <th className="px-4 py-3" role="columnheader">Today&apos;s Hours</th>
-                  <th className="px-4 py-3" role="columnheader">Issue</th>
+                  <th className="px-4 py-3.5" role="columnheader">Phone</th>
+                  <th className="px-4 py-3.5" role="columnheader">Arzt</th>
+                  <th className="px-4 py-3.5" role="columnheader">Today&apos;s Hours</th>
                   <th
-                    className="px-4 py-3 text-center cursor-pointer hover:text-foreground font-bold"
+                    className="px-4 py-3.5 text-center cursor-pointer hover:text-foreground font-bold"
                     onClick={() => handleSort('pending')}
                     aria-sort={sortColumn === 'pending' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
                   >
-                    Pending{getSortIndicator('pending')}
+                    Pending VOs{getSortIndicator('pending')}
                   </th>
+                  <th className="px-4 py-3.5" role="columnheader">Issues</th>
                   <th
-                    className="px-4 py-3 cursor-pointer hover:text-foreground"
+                    className="px-4 py-3.5 w-40 cursor-pointer hover:text-foreground"
                     onClick={() => handleSort('lastActivity')}
                     aria-sort={sortColumn === 'lastActivity' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
@@ -329,14 +358,14 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                     Last Activity{getSortIndicator('lastActivity')}
                   </th>
                   <th
-                    className="px-4 py-3 cursor-pointer hover:text-foreground"
+                    className="px-4 py-3.5 w-52 cursor-pointer hover:text-foreground"
                     onClick={() => handleSort('nextFollowUp')}
                     aria-sort={sortColumn === 'nextFollowUp' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
                   >
-                    Next Follow-up{getSortIndicator('nextFollowUp')}
+                    Follow-Up Date{getSortIndicator('nextFollowUp')}
                   </th>
-                  <th className="px-4 py-3 text-center" role="columnheader">Activities</th>
+                  <th className="px-4 py-3.5 text-center" role="columnheader">Activities</th>
                 </tr>
               </thead>
               <tbody>

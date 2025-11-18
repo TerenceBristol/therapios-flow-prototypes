@@ -376,8 +376,7 @@ export interface PracticeFollowUp {
 export interface PracticeIssue {
   id: string;
   practiceId: string;
-  title: string; // Short description (e.g., "VOs sent but not received")
-  description: string; // Detailed explanation
+  notes: string; // Description of the issue
   status: 'active' | 'resolved';
   createdAt: string; // ISO timestamp
   resolvedAt?: string; // ISO timestamp when resolved

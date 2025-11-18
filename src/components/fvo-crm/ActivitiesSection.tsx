@@ -133,8 +133,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
     } else if (activityType === 'Issue') {
       addIssue({
         practiceId,
-        title: notes.split('\n')[0].substring(0, 100), // First line as title
-        description: notes,
+        notes,
         createdBy: 'current-user'
       });
     }
@@ -177,6 +176,11 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
       hour: '2-digit',
       minute: '2-digit'
     });
+  };
+
+  const formatTime = (timeStr?: string) => {
+    if (!timeStr) return '';
+    return ` at ${timeStr}`;
   };
 
   return (
@@ -228,10 +232,10 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
               onChange={(e) => setNotes(e.target.value)}
               placeholder={
                 activityType === 'Log'
-                  ? 'e.g., Called practice, spoke with receptionist...'
+                  ? 'e.g., Spoke with receptionist about VO status...'
                   : activityType === 'Follow-up'
-                  ? 'e.g., Call back about VO status'
-                  : 'e.g., Practice phone line not working'
+                  ? 'e.g., Follow up on VO status'
+                  : 'e.g., Practice phone not answering'
               }
               rows={2}
               className="w-full px-3 py-2 border border-border rounded-md bg-background"
@@ -251,11 +255,11 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
       {upcomingSection.length > 0 && (
         <div>
           <h3 className="text-sm font-semibold mb-3">▼ UPCOMING ({upcomingSection.length})</h3>
-          <div className="space-y-2">
+          <div className="space-y-3">
             {upcomingSection.map((item) => (
               <div
                 key={item.id}
-                className={`rounded-lg border p-3 ${
+                className={`rounded-lg border p-4 ${
                   item.status === 'overdue'
                     ? 'border-red-500 bg-red-50/50'
                     : item.status === 'today'
@@ -263,25 +267,29 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                     : 'border-green-500 bg-green-50/50'
                 }`}
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <span className={`text-xl ${
-                        item.status === 'overdue' ? 'text-red-500' :
-                        item.status === 'today' ? 'text-orange-500' :
-                        'text-green-500'
-                      }`}>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start gap-2 mb-2">
+                      <span className={`text-lg flex-shrink-0 mt-0.5`}>
                         {item.status === 'overdue' ? '🔴' : item.status === 'today' ? '🟠' : '🟢'}
                       </span>
-                      <span className="font-medium">{item.notes}</span>
+                      <span className="font-medium text-base">{item.notes}</span>
                     </div>
-                    <div className="text-sm text-muted-foreground mt-1 ml-7">
-                      Created: {formatDate(item.createdAt)} | Due: {formatDate(item.dueDate)}
-                      {item.dueTime && `, ${item.dueTime}`}
-                      {item.status === 'overdue' && ' (overdue)'}
+                    <div className="ml-7 space-y-0.5">
+                      <div className={`text-sm font-medium ${
+                        item.status === 'overdue' ? 'text-red-700' :
+                        item.status === 'today' ? 'text-orange-700' :
+                        'text-green-700'
+                      }`}>
+                        Due: {formatDate(item.dueDate)}{formatTime(item.dueTime)}
+                        {item.status === 'overdue' && ' (overdue)'}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Created: {formatDate(item.createdAt)}
+                      </div>
                     </div>
                   </div>
-                  <div>
+                  <div className="flex-shrink-0">
                     {completingId === item.id ? (
                       <div className="flex items-center gap-2">
                         <input
@@ -294,7 +302,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                         />
                         <button
                           onClick={() => handleComplete(item.id)}
-                          className="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700"
+                          className="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700 whitespace-nowrap"
                         >
                           Save
                         </button>
@@ -303,7 +311,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                             setCompletingId(null);
                             setCompletionNotes('');
                           }}
-                          className="px-3 py-1 bg-gray-300 rounded text-sm hover:bg-gray-400"
+                          className="px-3 py-1 bg-gray-300 rounded text-sm hover:bg-gray-400 whitespace-nowrap"
                         >
                           Cancel
                         </button>
@@ -311,7 +319,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                     ) : (
                       <button
                         onClick={() => setCompletingId(item.id)}
-                        className="px-3 py-1 bg-blue-600 text-white rounded text-sm hover:bg-blue-700"
+                        className="px-3 py-1.5 bg-blue-600 text-white rounded text-sm hover:bg-blue-700 whitespace-nowrap"
                       >
                         Complete
                       </button>
@@ -324,30 +332,31 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
         </div>
       )}
 
-      {/* Open Items Section */}
+      {/* Issues Section (renamed from Open Items) */}
       {openItemsSection.length > 0 && (
         <div>
-          <h3 className="text-sm font-semibold mb-3">▼ OPEN ITEMS ({openItemsSection.length})</h3>
-          <div className="space-y-2">
+          <h3 className="text-sm font-semibold mb-3">▼ ISSUES ({openItemsSection.length})</h3>
+          <div className="space-y-3">
             {openItemsSection.map((item) => (
               <div
                 key={item.id}
-                className="rounded-lg border border-yellow-500 bg-yellow-50/50 p-3"
+                className="rounded-lg border border-yellow-500 bg-yellow-50/50 p-4"
               >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">⚠️</span>
-                      <span className="font-medium">{item.title}</span>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start gap-2 mb-2">
+                      <span className="text-lg flex-shrink-0 mt-0.5">⚠️</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium text-base">{item.notes}</div>
+                      </div>
                     </div>
-                    {item.description !== item.title && (
-                      <div className="text-sm mt-1 ml-7">{item.description}</div>
-                    )}
-                    <div className="text-sm text-muted-foreground mt-1 ml-7">
-                      Created: {formatDate(item.createdAt)}
+                    <div className="ml-7">
+                      <div className="text-xs text-muted-foreground">
+                        Created: {formatDate(item.createdAt)}
+                      </div>
                     </div>
                   </div>
-                  <div>
+                  <div className="flex-shrink-0">
                     {resolvingId === item.id ? (
                       <div className="flex items-center gap-2">
                         <input
@@ -360,7 +369,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                         />
                         <button
                           onClick={() => handleResolve(item.id)}
-                          className="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700"
+                          className="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700 whitespace-nowrap"
                         >
                           Save
                         </button>
@@ -369,7 +378,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                             setResolvingId(null);
                             setResolutionNotes('');
                           }}
-                          className="px-3 py-1 bg-gray-300 rounded text-sm hover:bg-gray-400"
+                          className="px-3 py-1 bg-gray-300 rounded text-sm hover:bg-gray-400 whitespace-nowrap"
                         >
                           Cancel
                         </button>
@@ -377,7 +386,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                     ) : (
                       <button
                         onClick={() => setResolvingId(item.id)}
-                        className="px-3 py-1 bg-purple-600 text-white rounded text-sm hover:bg-purple-700"
+                        className="px-3 py-1.5 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 whitespace-nowrap"
                       >
                         Resolve
                       </button>
@@ -402,42 +411,40 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
               >
                 {item.type === 'log' && (
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">📞</span>
-                      <span>{(item as any).notes}</span>
-                    </div>
-                    <div className="text-sm text-muted-foreground mt-1 ml-7">
+                    <div className="text-sm mb-1">{(item as any).notes}</div>
+                    <div className="text-xs text-muted-foreground">
                       {formatDateTime((item as any).date)}
                     </div>
                   </div>
                 )}
                 {item.type === 'followup' && (
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">✓</span>
-                      <span>Follow-up: {(item as any).notes}</span>
+                    <div className="flex items-start gap-2 mb-1">
+                      <span className="text-base flex-shrink-0">✓</span>
+                      <div className="flex-1">
+                        <div className="text-sm font-medium">Follow-up: {(item as any).notes}</div>
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground mt-1 ml-7">
-                      Created: {formatDate((item as any).createdAt)} | Due: {formatDate((item as any).dueDate)}
-                      {(item as any).dueTime && `, ${(item as any).dueTime}`}
-                      <br />
-                      Completed: {formatDateTime((item as any).completedAt)}
+                    <div className="ml-6 text-xs text-muted-foreground space-y-0.5">
+                      <div>Due: {formatDate((item as any).dueDate)}{formatTime((item as any).dueTime)} → Completed: {formatDateTime((item as any).completedAt)}</div>
                       {(item as any).completionNotes && (
-                        <> | Notes: {(item as any).completionNotes}</>
+                        <div className="text-foreground/70">Notes: {(item as any).completionNotes}</div>
                       )}
                     </div>
                   </div>
                 )}
                 {item.type === 'issue' && (
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">✓</span>
-                      <span>Issue resolved: {(item as any).title}</span>
+                    <div className="flex items-start gap-2 mb-1">
+                      <span className="text-base flex-shrink-0">✓</span>
+                      <div className="flex-1">
+                        <div className="text-sm font-medium">Issue resolved: {(item as any).notes}</div>
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground mt-1 ml-7">
-                      Created: {formatDate((item as any).createdAt)} | Resolved: {formatDateTime((item as any).resolvedAt)}
+                    <div className="ml-6 text-xs text-muted-foreground space-y-0.5">
+                      <div>Created: {formatDate((item as any).createdAt)} → Resolved: {formatDateTime((item as any).resolvedAt)}</div>
                       {(item as any).resolutionNotes && (
-                        <> | Notes: {(item as any).resolutionNotes}</>
+                        <div className="text-foreground/70">Resolution: {(item as any).resolutionNotes}</div>
                       )}
                     </div>
                   </div>
