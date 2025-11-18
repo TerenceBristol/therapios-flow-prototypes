@@ -181,7 +181,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
           {practice.lastActivity ? (
             <span
               className="cursor-help"
-              title={`${practice.lastActivity.type} - ${new Date(practice.lastActivity.date).toLocaleString('en-US', {
+              title={`Activity - ${new Date(practice.lastActivity.date).toLocaleString('en-US', {
                 month: 'short',
                 day: 'numeric',
                 year: 'numeric',
