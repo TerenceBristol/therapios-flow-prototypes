@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useState, useCallback, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
 import {
   Practice,
   PracticeDoctor,
@@ -366,4 +366,13 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
       {children}
     </FVOCRMContext.Provider>
   );
+}
+
+// Custom hook to use the context
+export function useFVOCRM() {
+  const context = useContext(FVOCRMContext);
+  if (context === undefined) {
+    throw new Error('useFVOCRM must be used within a FVOCRMProvider');
+  }
+  return context;
 }
