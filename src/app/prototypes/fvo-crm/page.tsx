@@ -17,7 +17,7 @@ export default function FVOCRMPage() {
 
   const [selectedPractice, setSelectedPractice] = useState<PracticeWithComputed | null>(null);
   const [isCRMModalOpen, setIsCRMModalOpen] = useState(false);
-  const [initialTab, setInitialTab] = useState<'practiceInfo' | 'vos' | 'activityFollowups' | 'issues'>('practiceInfo');
+  const [initialTab, setInitialTab] = useState<'practiceInfo' | 'vos' | 'activities'>('practiceInfo');
 
   // PDF Modal States
   const [isPDFModalOpen, setIsPDFModalOpen] = useState(false);
@@ -109,7 +109,7 @@ export default function FVOCRMPage() {
     const practice = practicesWithComputed.find(p => p.id === practiceId);
     if (practice) {
       setSelectedPractice(practice);
-      setInitialTab('activityFollowups');
+      setInitialTab('activities');
       setIsCRMModalOpen(true);
     }
   };
