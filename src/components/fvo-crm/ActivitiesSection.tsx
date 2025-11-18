@@ -442,7 +442,7 @@ export default function ActivitiesSection({ practiceId }: ActivitiesSectionProps
                       </div>
                     </div>
                     <div className="ml-6 text-xs text-muted-foreground space-y-0.5">
-                      <div>Created: {formatDate((item as PracticeIssue).createdAt)} → Resolved: {formatDateTime((item as PracticeIssue).resolvedAt)}</div>
+                      <div>Created: {formatDate((item as PracticeIssue).createdAt)} → Resolved: {formatDateTime((item as PracticeIssue).resolvedAt || (item as PracticeIssue).createdAt)}</div>
                       {(item as PracticeIssue).resolutionNotes && (
                         <div className="text-foreground/70">Resolution: {(item as PracticeIssue).resolutionNotes}</div>
                       )}
