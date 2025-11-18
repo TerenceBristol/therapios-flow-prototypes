@@ -4996,541 +4996,589 @@
       "id": "act-001",
       "practiceId": "prac-001",
       "date": "2025-11-17T10:00:00.000Z",
-      "type": "Note",
       "notes": "left voicemail regarding 5 pending FVOs from Batch #245. She will call back by EOD.",
       "userId": "system",
-      "createdAt": "2025-11-17T10:00:00.000Z"
+      "createdAt": "2025-11-17T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-002",
       "practiceId": "prac-001",
       "date": "2025-11-17T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #245 with 3 FVOs . Confirmation received.",
       "userId": "system",
-      "createdAt": "2025-11-17T10:00:00.000Z"
+      "createdAt": "2025-11-17T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-003",
       "practiceId": "prac-002",
       "date": "2025-11-16T10:00:00.000Z",
-      "type": "Note",
       "notes": "confirmed receipt of most recent batch. Follow up needed in 2 days for remaining FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-16T10:00:00.000Z"
+      "createdAt": "2025-11-16T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-004",
       "practiceId": "prac-002",
       "date": "2025-11-16T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 3 FVOs. Delivered successfully.",
       "userId": "system",
-      "createdAt": "2025-11-16T10:00:00.000Z"
+      "createdAt": "2025-11-16T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-005",
       "practiceId": "prac-003",
       "date": "2025-11-15T10:00:00.000Z",
-      "type": "Note",
       "notes": "discussed pending FVOs. Office very busy, best to follow up next week.",
       "userId": "system",
-      "createdAt": "2025-11-15T10:00:00.000Z"
+      "createdAt": "2025-11-15T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-006",
       "practiceId": "prac-003",
       "date": "2025-11-15T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #005. Delivery method: phone coordination with Lisa.",
       "userId": "system",
-      "createdAt": "2025-11-15T10:00:00.000Z"
+      "createdAt": "2025-11-15T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-007",
       "practiceId": "prac-004",
       "date": "2025-11-14T10:00:00.000Z",
-      "type": "Note",
       "notes": "3 FVOs ready for pickup. Will send courier tomorrow.",
       "userId": "system",
-      "createdAt": "2025-11-14T10:00:00.000Z"
+      "createdAt": "2025-11-14T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-008",
       "practiceId": "prac-004",
       "date": "2025-11-14T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #006 with 3 FVOs .",
       "userId": "system",
-      "createdAt": "2025-11-14T10:00:00.000Z"
+      "createdAt": "2025-11-14T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-009",
       "practiceId": "prac-005",
       "date": "2025-11-13T10:00:00.000Z",
-      "type": "Note",
       "notes": "Requested status update on pending FVOs. No response yet.",
       "userId": "system",
-      "createdAt": "2025-11-13T10:00:00.000Z"
+      "createdAt": "2025-11-13T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-010",
       "practiceId": "prac-005",
       "date": "2025-11-13T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 2 FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-13T10:00:00.000Z"
+      "createdAt": "2025-11-13T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-011",
       "practiceId": "prac-006",
       "date": "2025-11-12T10:00:00.000Z",
-      "type": "Note",
       "notes": "discussed pending batch. She will check with doctors and call back.",
       "userId": "system",
-      "createdAt": "2025-11-12T10:00:00.000Z"
+      "createdAt": "2025-11-12T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-012",
       "practiceId": "prac-006",
       "date": "2025-11-12T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #009 with 3 FVOs via phone coordination.",
       "userId": "system",
-      "createdAt": "2025-11-12T10:00:00.000Z"
+      "createdAt": "2025-11-12T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-013",
       "practiceId": "prac-007",
       "date": "2025-11-11T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent follow-up with patient list for pending FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-11T10:00:00.000Z"
+      "createdAt": "2025-11-11T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-014",
       "practiceId": "prac-008",
       "date": "2025-11-11T10:00:00.000Z",
-      "type": "Note",
       "notes": "confirmed 2 FVOs received, 1 still pending.",
       "userId": "system",
-      "createdAt": "2025-11-11T10:00:00.000Z"
+      "createdAt": "2025-11-11T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-015",
       "practiceId": "prac-008",
       "date": "2025-11-10T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 3 FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-10T10:00:00.000Z"
+      "createdAt": "2025-11-10T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-016",
       "practiceId": "prac-009",
       "date": "2025-11-10T10:00:00.000Z",
-      "type": "Note",
       "notes": "left message about pending follow-ups. Expect callback tomorrow.",
       "userId": "system",
-      "createdAt": "2025-11-10T10:00:00.000Z"
+      "createdAt": "2025-11-10T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-017",
       "practiceId": "prac-009",
       "date": "2025-11-09T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #011 with 3 FVOs via phone.",
       "userId": "system",
-      "createdAt": "2025-11-09T10:00:00.000Z"
+      "createdAt": "2025-11-09T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-018",
       "practiceId": "prac-010",
       "date": "2025-11-09T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent follow-up fax requesting status on pending FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-09T10:00:00.000Z"
+      "createdAt": "2025-11-09T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-019",
       "practiceId": "prac-011",
       "date": "2025-11-08T10:00:00.000Z",
-      "type": "Note",
       "notes": "Requested update. She confirmed all FVOs processed.",
       "userId": "system",
-      "createdAt": "2025-11-08T10:00:00.000Z"
+      "createdAt": "2025-11-08T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-020",
       "practiceId": "prac-011",
       "date": "2025-11-08T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 2 FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-08T10:00:00.000Z"
+      "createdAt": "2025-11-08T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-021",
       "practiceId": "prac-012",
       "date": "2025-11-07T10:00:00.000Z",
-      "type": "Note",
       "notes": "confirmed receipt of batch. All FVOs being processed.",
       "userId": "system",
-      "createdAt": "2025-11-07T10:00:00.000Z"
+      "createdAt": "2025-11-07T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-022",
       "practiceId": "prac-012",
       "date": "2025-11-07T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #013 with 3 FVOs via phone.",
       "userId": "system",
-      "createdAt": "2025-11-07T10:00:00.000Z"
+      "createdAt": "2025-11-07T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-023",
       "practiceId": "prac-013",
       "date": "2025-11-06T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent follow-up with updated patient information.",
       "userId": "system",
-      "createdAt": "2025-11-06T10:00:00.000Z"
+      "createdAt": "2025-11-06T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-024",
       "practiceId": "prac-014",
       "date": "2025-11-06T10:00:00.000Z",
-      "type": "Note",
       "notes": "Requested status update. Received confirmation all FVOs received.",
       "userId": "system",
-      "createdAt": "2025-11-06T10:00:00.000Z"
+      "createdAt": "2025-11-06T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-025",
       "practiceId": "prac-014",
       "date": "2025-11-05T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 3 FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-05T10:00:00.000Z"
+      "createdAt": "2025-11-05T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-026",
       "practiceId": "prac-015",
       "date": "2025-11-05T10:00:00.000Z",
-      "type": "Note",
       "notes": "2 FVOs ready, 1 still in process.",
       "userId": "system",
-      "createdAt": "2025-11-05T10:00:00.000Z"
+      "createdAt": "2025-11-05T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-027",
       "practiceId": "prac-015",
       "date": "2025-11-04T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #015 with 3 FVOs via phone.",
       "userId": "system",
-      "createdAt": "2025-11-04T10:00:00.000Z"
+      "createdAt": "2025-11-04T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-028",
       "practiceId": "prac-016",
       "date": "2025-11-04T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent reminder fax about pending FVOs to Carlos Ramirez.",
       "userId": "system",
-      "createdAt": "2025-11-04T10:00:00.000Z"
+      "createdAt": "2025-11-04T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-029",
       "practiceId": "prac-017",
       "date": "2025-11-03T10:00:00.000Z",
-      "type": "Note",
       "notes": "Requested follow-up. Awaiting response.",
       "userId": "system",
-      "createdAt": "2025-11-03T10:00:00.000Z"
+      "createdAt": "2025-11-03T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-030",
       "practiceId": "prac-017",
       "date": "2025-11-03T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 2 FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-03T10:00:00.000Z"
+      "createdAt": "2025-11-03T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-031",
       "practiceId": "prac-018",
       "date": "2025-11-02T10:00:00.000Z",
-      "type": "Note",
       "notes": "discussed batch status. All FVOs being reviewed by doctors.",
       "userId": "system",
-      "createdAt": "2025-11-02T10:00:00.000Z"
+      "createdAt": "2025-11-02T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-032",
       "practiceId": "prac-018",
       "date": "2025-11-02T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 3 FVOs.",
       "userId": "system",
-      "createdAt": "2025-11-02T10:00:00.000Z"
+      "createdAt": "2025-11-02T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-033",
       "practiceId": "prac-019",
       "date": "2025-11-01T10:00:00.000Z",
-      "type": "Note",
       "notes": "confirmed FVO processing timeline.",
       "userId": "system",
-      "createdAt": "2025-11-01T10:00:00.000Z"
+      "createdAt": "2025-11-01T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-034",
       "practiceId": "prac-020",
       "date": "2025-11-01T10:00:00.000Z",
-      "type": "Note",
       "notes": "Requested status. All FVOs received and processed.",
       "userId": "system",
-      "createdAt": "2025-11-01T10:00:00.000Z"
+      "createdAt": "2025-11-01T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-035",
       "practiceId": "prac-020",
       "date": "2025-10-31T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 3 FVOs.",
       "userId": "system",
-      "createdAt": "2025-10-31T10:00:00.000Z"
+      "createdAt": "2025-10-31T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-036",
       "practiceId": "prac-021",
       "date": "2025-10-31T10:00:00.000Z",
-      "type": "Note",
       "notes": "left voicemail about pending batch.",
       "userId": "system",
-      "createdAt": "2025-10-31T10:00:00.000Z"
+      "createdAt": "2025-10-31T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-037",
       "practiceId": "prac-021",
       "date": "2025-10-30T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #019 with 3 FVOs via phone.",
       "userId": "system",
-      "createdAt": "2025-10-30T10:00:00.000Z"
+      "createdAt": "2025-10-30T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-038",
       "practiceId": "prac-022",
       "date": "2025-10-30T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent follow-up fax to Dr. Susan Phillips.",
       "userId": "system",
-      "createdAt": "2025-10-30T10:00:00.000Z"
+      "createdAt": "2025-10-30T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-039",
       "practiceId": "prac-023",
       "date": "2025-10-29T10:00:00.000Z",
-      "type": "Note",
       "notes": "Requested update. Confirmed 2 FVOs received.",
       "userId": "system",
-      "createdAt": "2025-10-29T10:00:00.000Z"
+      "createdAt": "2025-10-29T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-040",
       "practiceId": "prac-023",
       "date": "2025-10-29T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 2 FVOs.",
       "userId": "system",
-      "createdAt": "2025-10-29T10:00:00.000Z"
+      "createdAt": "2025-10-29T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-041",
       "practiceId": "prac-024",
       "date": "2025-10-28T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 3 FVOs to Dr. Linda Cooper.",
       "userId": "system",
-      "createdAt": "2025-10-28T10:00:00.000Z"
+      "createdAt": "2025-10-28T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-042",
       "practiceId": "prac-025",
       "date": "2025-10-28T10:00:00.000Z",
-      "type": "Note",
       "notes": "discussed diabetes patient FVOs.",
       "userId": "system",
-      "createdAt": "2025-10-28T10:00:00.000Z"
+      "createdAt": "2025-10-28T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-043",
       "practiceId": "prac-026",
       "date": "2025-10-27T10:00:00.000Z",
-      "type": "Note",
       "notes": "Requested status update. Awaiting response.",
       "userId": "system",
-      "createdAt": "2025-10-27T10:00:00.000Z"
+      "createdAt": "2025-10-27T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-044",
       "practiceId": "prac-026",
       "date": "2025-10-27T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 3 FVOs.",
       "userId": "system",
-      "createdAt": "2025-10-27T10:00:00.000Z"
+      "createdAt": "2025-10-27T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-045",
       "practiceId": "prac-027",
       "date": "2025-10-26T10:00:00.000Z",
-      "type": "Note",
       "notes": "confirmed pulmonary patient FVOs received.",
       "userId": "system",
-      "createdAt": "2025-10-26T10:00:00.000Z"
+      "createdAt": "2025-10-26T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-046",
       "practiceId": "prac-027",
       "date": "2025-10-26T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #023 with 3 FVOs via phone.",
       "userId": "system",
-      "createdAt": "2025-10-26T10:00:00.000Z"
+      "createdAt": "2025-10-26T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-047",
       "practiceId": "prac-028",
       "date": "2025-10-25T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent follow-up fax to Dr. David Miller regarding nephrology patients.",
       "userId": "system",
-      "createdAt": "2025-10-25T10:00:00.000Z"
+      "createdAt": "2025-10-25T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-048",
       "practiceId": "prac-029",
       "date": "2025-10-25T10:00:00.000Z",
-      "type": "Note",
       "notes": "Requested hematology patient updates.",
       "userId": "system",
-      "createdAt": "2025-10-25T10:00:00.000Z"
+      "createdAt": "2025-10-25T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-049",
       "practiceId": "prac-029",
       "date": "2025-10-24T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent 2 FVOs.",
       "userId": "system",
-      "createdAt": "2025-10-24T10:00:00.000Z"
+      "createdAt": "2025-10-24T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-050",
       "practiceId": "prac-030",
       "date": "2025-10-24T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent Batch #025 via fax to Dr. Thomas Lee with 3 FVOs.",
       "userId": "system",
-      "createdAt": "2025-10-24T10:00:00.000Z"
+      "createdAt": "2025-10-24T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-051",
       "practiceId": "prac-001",
       "date": "2025-10-23T10:00:00.000Z",
-      "type": "Note",
       "notes": "Initial contact with practice to introduce our FVO service.",
       "userId": "system",
-      "createdAt": "2025-10-23T10:00:00.000Z"
+      "createdAt": "2025-10-23T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-052",
       "practiceId": "prac-002",
       "date": "2025-10-23T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent welcome email with FVO process overview.",
       "userId": "system",
-      "createdAt": "2025-10-23T10:00:00.000Z"
+      "createdAt": "2025-10-23T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-053",
       "practiceId": "prac-003",
       "date": "2025-10-22T10:00:00.000Z",
-      "type": "Note",
       "notes": "Training call with Lisa Martinez on FVO submission process.",
       "userId": "system",
-      "createdAt": "2025-10-22T10:00:00.000Z"
+      "createdAt": "2025-10-22T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-054",
       "practiceId": "prac-004",
       "date": "2025-10-22T10:00:00.000Z",
-      "type": "Note",
       "notes": "Practice setup completed. Ready for first FVO batch.",
       "userId": "system",
-      "createdAt": "2025-10-22T10:00:00.000Z"
+      "createdAt": "2025-10-22T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-055",
       "practiceId": "prac-005",
       "date": "2025-10-21T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent practice information packet .",
       "userId": "system",
-      "createdAt": "2025-10-21T10:00:00.000Z"
+      "createdAt": "2025-10-21T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-056",
       "practiceId": "prac-006",
       "date": "2025-10-21T10:00:00.000Z",
-      "type": "Note",
       "notes": "Discussed preferred contact methods with Amy Rodriguez.",
       "userId": "system",
-      "createdAt": "2025-10-21T10:00:00.000Z"
+      "createdAt": "2025-10-21T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-057",
       "practiceId": "prac-007",
       "date": "2025-10-20T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent sports medicine specific FVO guidelines.",
       "userId": "system",
-      "createdAt": "2025-10-20T10:00:00.000Z"
+      "createdAt": "2025-10-20T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-058",
       "practiceId": "prac-008",
       "date": "2025-10-20T10:00:00.000Z",
-      "type": "Note",
       "notes": "Initial consultation with Patricia Lee.",
       "userId": "system",
-      "createdAt": "2025-10-20T10:00:00.000Z"
+      "createdAt": "2025-10-20T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-059",
       "practiceId": "prac-009",
       "date": "2025-10-19T10:00:00.000Z",
-      "type": "Note",
       "notes": "High volume practice - assigned dedicated coordinator.",
       "userId": "system",
-      "createdAt": "2025-10-19T10:00:00.000Z"
+      "createdAt": "2025-10-19T10:00:00.000Z",
+      "isIssue": false
     },
     {
       "id": "act-060",
       "practiceId": "prac-010",
       "date": "2025-10-19T10:00:00.000Z",
-      "type": "Note",
       "notes": "Sent initial practice agreement .",
       "userId": "system",
-      "createdAt": "2025-10-19T10:00:00.000Z"
+      "createdAt": "2025-10-19T10:00:00.000Z",
+      "isIssue": false
+    },
+    {
+      "id": "issue-001",
+      "practiceId": "prac-001",
+      "date": "2025-11-14T10:00:00.000Z",
+      "notes": "Sent 3 VOs via fax on Nov 10, but practice has not confirmed receipt. Follow up needed.",
+      "userId": "user-001",
+      "createdAt": "2025-11-14T10:00:00.000Z",
+      "isIssue": true,
+      "issueStatus": "active",
+      "resolvedAt": null,
+      "resolvedBy": null
+    },
+    {
+      "id": "issue-002",
+      "practiceId": "prac-002",
+      "date": "2025-11-15T10:00:00.000Z",
+      "notes": "Dr. Brown informed us that they are pausing all new VO treatments for 2 weeks due to staffing issues.",
+      "userId": "user-001",
+      "createdAt": "2025-11-15T10:00:00.000Z",
+      "isIssue": true,
+      "issueStatus": "active",
+      "resolvedAt": null,
+      "resolvedBy": null
+    },
+    {
+      "id": "issue-003",
+      "practiceId": "prac-004",
+      "date": "2025-11-15T10:00:00.000Z",
+      "notes": "Multiple attempts to reach practice by phone unsuccessful. May need to switch to email communication.",
+      "userId": "user-002",
+      "createdAt": "2025-11-15T10:00:00.000Z",
+      "isIssue": true,
+      "issueStatus": "active",
+      "resolvedAt": null,
+      "resolvedBy": null
+    },
+    {
+      "id": "issue-004",
+      "practiceId": "prac-001",
+      "date": "2025-11-08T10:00:00.000Z",
+      "notes": "Practice requesting additional patient details before processing VOs. Resolved by sending patient records.",
+      "userId": "user-001",
+      "createdAt": "2025-11-08T10:00:00.000Z",
+      "isIssue": true,
+      "issueStatus": "resolved",
+      "resolvedAt": "2025-11-15T10:00:00.000Z",
+      "resolvedBy": "user-001"
     }
   ],
   "followUps": [
@@ -5745,43 +5793,6 @@
       "completedAt": null,
       "userId": "user-001",
       "createdAt": "2025-12-01T10:00:00Z"
-    }
-  ],
-  "issues": [
-    {
-      "id": "issue-001",
-      "practiceId": "prac-001",
-      "notes": "Sent 3 VOs via fax on Nov 10, but practice has not confirmed receipt. Follow up needed.",
-      "status": "active",
-      "createdAt": "2025-11-14T10:00:00.000Z",
-      "createdBy": "user-001"
-    },
-    {
-      "id": "issue-002",
-      "practiceId": "prac-002",
-      "notes": "Dr. Brown informed us that they are pausing all new VO treatments for 2 weeks due to staffing issues.",
-      "status": "active",
-      "createdAt": "2025-11-15T10:00:00.000Z",
-      "createdBy": "user-001"
-    },
-    {
-      "id": "issue-003",
-      "practiceId": "prac-004",
-      "notes": "Multiple attempts to reach practice by phone unsuccessful. May need to switch to email communication.",
-      "status": "active",
-      "createdAt": "2025-11-15T10:00:00.000Z",
-      "createdBy": "user-002"
-    },
-    {
-      "id": "issue-004",
-      "practiceId": "prac-001",
-      "notes": "Practice requesting additional patient details before processing VOs. Resolved by sending patient records.",
-      "status": "resolved",
-      "createdAt": "2025-11-08T10:00:00.000Z",
-      "resolvedAt": "2025-11-15T10:00:00.000Z",
-      "resolutionNotes": "Sent patient records to practice. They confirmed receipt and processing VOs.",
-      "createdBy": "user-001",
-      "resolvedBy": "user-001"
     }
   ],
   "facilities": [

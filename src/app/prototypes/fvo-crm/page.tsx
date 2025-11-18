@@ -13,7 +13,7 @@ import { useFVOCRM } from '@/hooks/useFVOCRM';
 
 export default function FVOCRMPage() {
   // Get data from context
-  const { practices, doctors, vos, activities, followUps, issues, therapists, facilities, updateVO, bulkUpdateVOs, addActivity, deleteActivity, addFollowUp, deleteFollowUp, completeFollowUp, completeFollowUpAndLogActivity, addIssue, updateIssue, resolveIssue, deleteIssue } = useFVOCRM();
+  const { practices, doctors, vos, activities, followUps, therapists, facilities, updateVO, bulkUpdateVOs, addActivity, deleteActivity, addFollowUp, deleteFollowUp, completeFollowUp, resolveActivity } = useFVOCRM();
 
   const [selectedPractice, setSelectedPractice] = useState<PracticeWithComputed | null>(null);
   const [isCRMModalOpen, setIsCRMModalOpen] = useState(false);
@@ -76,12 +76,13 @@ export default function FVOCRMPage() {
         doc.practiceId === practice.id
       );
 
-      // Get issues for this practice
-      const practiceIssues = issues.filter(i => i.practiceId === practice.id);
-      const activeIssues = practiceIssues.filter(i => i.status === 'active');
-      const latestIssue = activeIssues.sort((a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-      )[0];
+      // Get active issues (activities marked as issues with active status)
+      const activeIssues = practiceActivities.filter(a => a.isIssue && a.issueStatus === 'active');
+      const latestIssue = activeIssues.length > 0
+        ? activeIssues.sort((a, b) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          )[0]
+        : undefined;
 
       return {
         ...practice,
@@ -94,7 +95,7 @@ export default function FVOCRMPage() {
         doctors: practiceDoctors
       };
     });
-  }, [practices, doctors, activities, vos, followUps, issues]);
+  }, [practices, doctors, activities, vos, followUps]);
 
   const handleViewPractice = (practiceId: string) => {
     const practice = practicesWithComputed.find(p => p.id === practiceId);
@@ -285,14 +286,14 @@ export default function FVOCRMPage() {
           therapists={therapists}
           facilities={facilities}
           followUps={followUps.filter(f => f.practiceId === selectedPractice.id)}
-          issues={issues.filter(i => i.practiceId === selectedPractice.id)}
           initialTab={initialTab}
           onClose={handleCloseModal}
           onAddActivity={handleAddActivity}
           onDeleteActivity={deleteActivity}
           onAddFollowUp={addFollowUp}
           onDeleteFollowUp={deleteFollowUp}
-          onCompleteFollowUpAndLogActivity={completeFollowUpAndLogActivity}
+          onResolveActivity={resolveActivity}
+          onCompleteFollowUp={completeFollowUp}
           onStatusChange={handleStatusChange}
           onNoteChange={handleNoteChange}
           onEditNote={handleEditNote}
@@ -300,10 +301,6 @@ export default function FVOCRMPage() {
           onBulkStatusChange={handleBulkStatusChange}
           onBulkNoteChange={handleBulkNoteChange}
           onGeneratePDF={handleGeneratePDF}
-          onAddIssue={addIssue}
-          onUpdateIssue={updateIssue}
-          onResolveIssue={resolveIssue}
-          onDeleteIssue={deleteIssue}
         />
       )}
 
