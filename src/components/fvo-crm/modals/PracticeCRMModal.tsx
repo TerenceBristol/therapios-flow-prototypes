@@ -2,10 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { PracticeWithComputed, PracticeActivity, PracticeActivityType, PracticeVO, PracticeDoctor, PracticeFollowUp, PracticeIssue, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
-import ActivityAndFollowUpsSection from '../ActivityAndFollowUpsSection';
+import ActivitiesSection from '../ActivitiesSection';
 import VOsTable from '../VOsTable';
 import PracticeInfoTab from '../PracticeInfoTab';
-import IssuesSection from '../IssuesSection';
 
 interface PracticeCRMModalProps {
   isOpen: boolean;
@@ -17,7 +16,7 @@ interface PracticeCRMModalProps {
   therapists: Therapist[];
   facilities: Facility[];
   issues: PracticeIssue[];
-  initialTab?: 'practiceInfo' | 'vos' | 'activityFollowups' | 'issues';
+  initialTab?: 'practiceInfo' | 'vos' | 'activities';
   onClose: () => void;
   onAddActivity: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
   onDeleteActivity?: (activityId: string) => void;
@@ -72,7 +71,7 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   onResolveIssue,
   onDeleteIssue
 }) => {
-  const [activeTab, setActiveTab] = useState<'practiceInfo' | 'vos' | 'activityFollowups' | 'issues'>(initialTab);
+  const [activeTab, setActiveTab] = useState<'practiceInfo' | 'vos' | 'activities'>(initialTab);
 
   // Reset active tab when modal opens or practice changes
   useEffect(() => {
@@ -131,27 +130,15 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                     <span className="ml-2 text-sm">({pendingVOs.length} pending)</span>
                   </button>
                   <button
-                    onClick={() => setActiveTab('activityFollowups')}
+                    onClick={() => setActiveTab('activities')}
                     className={`px-6 py-4 font-medium transition-colors relative ${
-                      activeTab === 'activityFollowups' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                      activeTab === 'activities' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
                     }`}
                   >
-                    Activity & Follow-ups
-                    {activeTab === 'activityFollowups' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
+                    Activities
+                    {activeTab === 'activities' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
                     <span className="ml-2 text-sm">
-                      ({followUps.filter(f => !f.completed).length} active)
-                    </span>
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('issues')}
-                    className={`px-6 py-4 font-medium transition-colors relative ${
-                      activeTab === 'issues' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
-                    }`}
-                  >
-                    Issues
-                    {activeTab === 'issues' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
-                    <span className="ml-2 text-sm">
-                      ({issues.filter(i => i.status === 'active').length} active)
+                      ({followUps.filter(f => !f.completed).length + issues.filter(i => i.status === 'active').length} active)
                     </span>
                   </button>
                 </div>
@@ -182,30 +169,10 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                   />
                 )}
 
-                {activeTab === 'activityFollowups' && (
+                {activeTab === 'activities' && (
                   <div className="h-full overflow-y-auto px-6 py-4">
-                    <ActivityAndFollowUpsSection
+                    <ActivitiesSection
                       practiceId={practice.id}
-                      activities={activities}
-                      followUps={followUps}
-                      onAddActivity={onAddActivity}
-                      onDeleteActivity={onDeleteActivity}
-                      onAddFollowUp={onAddFollowUp}
-                      onDeleteFollowUp={onDeleteFollowUp}
-                      onCompleteFollowUpAndLogActivity={onCompleteFollowUpAndLogActivity || (() => {})}
-                    />
-                  </div>
-                )}
-
-                {activeTab === 'issues' && (
-                  <div className="h-full overflow-y-auto px-6 py-4">
-                    <IssuesSection
-                      practice={practice}
-                      issues={issues}
-                      onAddIssue={onAddIssue || (() => {})}
-                      onUpdateIssue={onUpdateIssue || (() => {})}
-                      onResolveIssue={onResolveIssue || (() => {})}
-                      onDeleteIssue={onDeleteIssue || (() => {})}
                     />
                   </div>
                 )}
