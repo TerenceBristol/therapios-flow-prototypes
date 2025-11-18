@@ -367,6 +367,7 @@ export interface PracticeFollowUp {
   notes: string;
   completed: boolean;
   completedAt?: string; // ISO timestamp when completed
+  completionNotes?: string; // Notes added when marking complete
   userId: string;
   createdAt: string;
 }
@@ -380,6 +381,7 @@ export interface PracticeIssue {
   status: 'active' | 'resolved';
   createdAt: string; // ISO timestamp
   resolvedAt?: string; // ISO timestamp when resolved
+  resolutionNotes?: string; // Notes added when marking resolved
   createdBy: string; // User ID
   resolvedBy?: string; // User ID who resolved
 }

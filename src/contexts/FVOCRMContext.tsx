@@ -47,13 +47,13 @@ export interface FVOCRMContextValue {
   addFollowUp: (followUp: Omit<PracticeFollowUp, 'id' | 'completed' | 'createdAt'>) => void;
   deleteFollowUp: (followUpId: string) => void;
   getFollowUpsForPractice: (practiceId: string) => PracticeFollowUp[];
-  completeFollowUp: (followUpId: string) => void;
+  completeFollowUp: (followUpId: string, completionNotes?: string) => void;
   completeFollowUpAndLogActivity: (followUpId: string, activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
 
   // Issue CRUD
   addIssue: (issue: Omit<PracticeIssue, 'id' | 'status' | 'createdAt'>) => void;
   updateIssue: (issueId: string, updates: Partial<PracticeIssue>) => void;
-  resolveIssue: (issueId: string, resolvedBy: string) => void;
+  resolveIssue: (issueId: string, resolutionNotes?: string, resolvedBy?: string) => void;
   deleteIssue: (issueId: string) => void;
   getIssuesForPractice: (practiceId: string) => PracticeIssue[];
 
@@ -204,10 +204,15 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
     return followUps.filter(f => f.practiceId === practiceId);
   }, [followUps]);
 
-  const completeFollowUp = useCallback((followUpId: string) => {
+  const completeFollowUp = useCallback((followUpId: string, completionNotes?: string) => {
     setFollowUps(prev => prev.map(followUp =>
       followUp.id === followUpId
-        ? { ...followUp, completed: true, completedAt: new Date().toISOString() }
+        ? {
+            ...followUp,
+            completed: true,
+            completedAt: new Date().toISOString(),
+            completionNotes
+          }
         : followUp
     ));
   }, []);
@@ -254,13 +259,14 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
     ));
   }, []);
 
-  const resolveIssue = useCallback((issueId: string, resolvedBy: string) => {
+  const resolveIssue = useCallback((issueId: string, resolutionNotes?: string, resolvedBy?: string) => {
     setIssues(prev => prev.map(issue =>
       issue.id === issueId
         ? {
             ...issue,
             status: 'resolved' as const,
             resolvedAt: new Date().toISOString(),
+            resolutionNotes,
             resolvedBy
           }
         : issue
