@@ -16,25 +16,34 @@ interface NotificationPanelProps {
   onViewVO?: (notification: Notification) => void;
 }
 
-type TabType = 'announcements' | 'my-notifications' | 'read';
+type TabType = 'all-notifications' | 'read';
 
 export default function NotificationPanel({ notifications, onClose, onUpdateNotifications, onViewVO }: NotificationPanelProps) {
-  const [activeTab, setActiveTab] = useState<TabType>('announcements');
+  const [activeTab, setActiveTab] = useState<TabType>('all-notifications');
 
-  // Get counts for badge display
-  const unreadVONotificationCount = getUnreadVONotificationCount(notifications);
+  // Get and sort announcements (all of them, since they can't be marked read)
+  const sortedAnnouncements = notifications
+    .filter(n => n.category === 'announcement')
+    .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 
-  // Get notifications by category and read status
-  const allAnnouncements = notifications.filter(n => n.category === 'announcement');
-  const unreadVONotifications = getVONotificationsByReadStatus(notifications, false);
+  // Get and sort unread VO notifications
+  const sortedUnreadVOs = notifications
+    .filter(n => n.category === 'vo-notification' && !n.read)
+    .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+
+  // Get read VO notifications
   const readVONotifications = notifications.filter(n => n.category === 'vo-notification' && n.read);
+
+  // Merge: announcements first, then VO notifications
+  const allNotifications = [...sortedAnnouncements, ...sortedUnreadVOs];
+
+  // Calculate combined count for badge
+  const totalUnreadCount = sortedAnnouncements.length + sortedUnreadVOs.length;
 
   const getCurrentTabNotifications = () => {
     switch (activeTab) {
-      case 'announcements':
-        return allAnnouncements;
-      case 'my-notifications':
-        return unreadVONotifications;
+      case 'all-notifications':
+        return allNotifications;
       case 'read':
         return readVONotifications;
     }
@@ -51,7 +60,7 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
 
   const handleMarkAllAsRead = () => {
     // Only mark VO notifications as read (announcements are admin-controlled)
-    if (activeTab === 'my-notifications') {
+    if (activeTab === 'all-notifications') {
       const updatedNotifications = notifications.map(n =>
         n.category === 'vo-notification' && !n.read ? { ...n, read: true } : n
       );
@@ -61,9 +70,7 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
 
   const getEmptyStateMessage = () => {
     switch (activeTab) {
-      case 'announcements':
-        return "You're all caught up! 🎉";
-      case 'my-notifications':
+      case 'all-notifications':
         return "You're all caught up! 🎉";
       case 'read':
         return 'No read notifications yet';
@@ -99,28 +106,16 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
         {/* Tabs */}
         <div className="flex border-b border-gray-200">
           <button
-            onClick={() => setActiveTab('announcements')}
+            onClick={() => setActiveTab('all-notifications')}
             className={`
               flex-1 px-4 py-3 text-sm font-medium transition-colors min-h-[48px]
-              ${activeTab === 'announcements'
+              ${activeTab === 'all-notifications'
                 ? 'text-blue-600 border-b-2 border-blue-600'
                 : 'text-gray-600 hover:text-gray-900'
               }
             `}
           >
-            📢 Announcements {allAnnouncements.length > 0 && `(${allAnnouncements.length})`}
-          </button>
-          <button
-            onClick={() => setActiveTab('my-notifications')}
-            className={`
-              flex-1 px-4 py-3 text-sm font-medium transition-colors min-h-[48px]
-              ${activeTab === 'my-notifications'
-                ? 'text-blue-600 border-b-2 border-blue-600'
-                : 'text-gray-600 hover:text-gray-900'
-              }
-            `}
-          >
-            📋 My Notifications {unreadVONotificationCount > 0 && `(${unreadVONotificationCount})`}
+            📋 All Notifications {totalUnreadCount > 0 && `(${totalUnreadCount})`}
           </button>
           <button
             onClick={() => setActiveTab('read')}
@@ -167,8 +162,8 @@ export default function NotificationPanel({ notifications, onClose, onUpdateNoti
           )}
         </div>
 
-        {/* Footer with Mark all as read button - only for My Notifications tab */}
-        {activeTab === 'my-notifications' && unreadVONotificationCount > 0 && (
+        {/* Footer with Mark all as read button - only for All Notifications tab when VO notifications exist */}
+        {activeTab === 'all-notifications' && sortedUnreadVOs.length > 0 && (
           <div className="px-4 py-3 border-t border-gray-200">
             <button
               onClick={handleMarkAllAsRead}
