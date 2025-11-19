@@ -78,7 +78,7 @@ const FollowUpsSection: React.FC<FollowUpsSectionProps> = ({
           onClick={collapsible ? () => setIsExpanded(!isExpanded) : undefined}
         >
           <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide">
-            📅 Follow-ups
+            📅 Next Activities
             {activeFollowUps.length > 0 && (
               <span className="ml-2 px-2 py-0.5 bg-primary/20 text-primary rounded-full text-xs font-bold">
                 {activeFollowUps.length}
@@ -111,7 +111,7 @@ const FollowUpsSection: React.FC<FollowUpsSectionProps> = ({
           {/* Active Follow-ups */}
           {sortedActiveFollowUps.length === 0 ? (
             <div className="text-center py-6 text-muted-foreground text-sm">
-              No upcoming follow-ups
+              No upcoming next activities
             </div>
           ) : (
             <div className="space-y-3">
@@ -150,7 +150,7 @@ const FollowUpsSection: React.FC<FollowUpsSectionProps> = ({
                 onClick={() => setShowCompleted(!showCompleted)}
                 className="w-full mt-4 py-2 text-sm text-muted-foreground hover:text-foreground font-medium transition-colors"
               >
-                {showCompleted ? '▲' : '▼'} {completedFollowUps.length} Completed Follow-up{completedFollowUps.length !== 1 ? 's' : ''}
+                {showCompleted ? '▲' : '▼'} {completedFollowUps.length} Completed Next Activit{completedFollowUps.length !== 1 ? 'ies' : 'y'}
               </button>
 
               {showCompleted && (

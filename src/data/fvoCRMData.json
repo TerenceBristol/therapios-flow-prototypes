@@ -5540,6 +5540,7 @@
       "userId": "user-001",
       "createdAt": "2025-11-14T10:00:00.000Z",
       "isIssue": true,
+      "issueType": "VOs Sent - Unknown Destination",
       "issueStatus": "active",
       "resolvedAt": null,
       "resolvedBy": null
@@ -5552,6 +5553,7 @@
       "userId": "user-001",
       "createdAt": "2025-11-15T10:00:00.000Z",
       "isIssue": true,
+      "issueType": "Practice Paused Patient",
       "issueStatus": "active",
       "resolvedAt": null,
       "resolvedBy": null
@@ -5564,6 +5566,7 @@
       "userId": "user-002",
       "createdAt": "2025-11-15T10:00:00.000Z",
       "isIssue": true,
+      "issueType": "Cannot Reach Practice",
       "issueStatus": "active",
       "resolvedAt": null,
       "resolvedBy": null
@@ -5576,6 +5579,7 @@
       "userId": "user-001",
       "createdAt": "2025-11-08T10:00:00.000Z",
       "isIssue": true,
+      "issueType": "Other",
       "issueStatus": "resolved",
       "resolvedAt": "2025-11-15T10:00:00.000Z",
       "resolvedBy": "user-001"

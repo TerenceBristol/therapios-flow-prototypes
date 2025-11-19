@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { PracticeActivity, PracticeFollowUp } from '@/types';
+import { PracticeActivity, PracticeFollowUp, IssueType } from '@/types';
+
+const ISSUE_TYPES: readonly IssueType[] = [
+  'Practice Paused Patient',
+  'Cannot Reach Practice',
+  'VOs Promised Not Received',
+  'VOs Sent - Unknown Destination',
+  'Other'
+] as const;
 
 interface InlineAddEntryFormProps {
   practiceId: string;
@@ -17,7 +25,7 @@ const InlineAddEntryForm: React.FC<InlineAddEntryFormProps> = ({
   const [isExpanded, setIsExpanded] = useState(true);
   const [mode, setMode] = useState<'activity' | 'followUp'>(initialMode);
   const [notes, setNotes] = useState('');
-  const [isIssue, setIsIssue] = useState(false);
+  const [issueType, setIssueType] = useState<IssueType | ''>('');
   const [dueDate, setDueDate] = useState('');
   const [dueTime, setDueTime] = useState('');
 
@@ -25,12 +33,14 @@ const InlineAddEntryForm: React.FC<InlineAddEntryFormProps> = ({
     if (!notes.trim()) return;
 
     if (mode === 'activity') {
+      const isIssue = issueType !== '';
       onAddActivity({
         practiceId,
         date: new Date().toISOString(),
         notes: notes.trim(),
         userId: 'current-user', // TODO: Get from auth context
         isIssue,
+        issueType: issueType || undefined,
         issueStatus: isIssue ? 'active' : undefined,
         resolvedAt: undefined,
         resolvedBy: undefined
@@ -46,27 +56,25 @@ const InlineAddEntryForm: React.FC<InlineAddEntryFormProps> = ({
       });
     }
 
-    // Reset form and collapse
+    // Reset form (keep expanded)
     setNotes('');
-    setIsIssue(false);
+    setIssueType('');
     setDueDate('');
     setDueTime('');
-    setIsExpanded(false);
   };
 
   const handleCancel = () => {
     setNotes('');
-    setIsIssue(false);
+    setIssueType('');
     setDueDate('');
     setDueTime('');
-    setIsExpanded(false);
   };
 
   const handleModeChange = (newMode: 'activity' | 'followUp') => {
     setMode(newMode);
     // Reset fields when switching modes
     setNotes('');
-    setIsIssue(false);
+    setIssueType('');
     setDueDate('');
     setDueTime('');
   };
@@ -82,7 +90,7 @@ const InlineAddEntryForm: React.FC<InlineAddEntryFormProps> = ({
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
           </svg>
-          Add Activity or Follow-Up
+          Add Activity or Next Activity
         </button>
       )}
 
@@ -92,7 +100,7 @@ const InlineAddEntryForm: React.FC<InlineAddEntryFormProps> = ({
           {/* Form Header */}
           <div className="flex items-center justify-between p-3 border-b border-border">
             <h3 className="text-sm font-semibold text-foreground">
-              {mode === 'activity' ? 'Add Activity' : 'Add Follow-Up'}
+              {mode === 'activity' ? 'Add Activity' : 'Add Next Activity'}
             </h3>
             <button
               onClick={handleCancel}
@@ -127,7 +135,7 @@ const InlineAddEntryForm: React.FC<InlineAddEntryFormProps> = ({
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
-                Follow-Up
+                Next Activity
               </button>
             </div>
 
@@ -148,17 +156,23 @@ const InlineAddEntryForm: React.FC<InlineAddEntryFormProps> = ({
                   />
                 </div>
 
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="markAsIssue"
-                    checked={isIssue}
-                    onChange={(e) => setIsIssue(e.target.checked)}
-                    className="w-4 h-4 text-primary border-border rounded focus:ring-2 focus:ring-primary"
-                  />
-                  <label htmlFor="markAsIssue" className="ml-2 text-xs text-foreground cursor-pointer">
-                    Mark as issue
+                <div className="mb-3">
+                  <label htmlFor="issueType" className="block text-xs font-medium text-foreground mb-1.5">
+                    Issue Type (optional)
                   </label>
+                  <select
+                    id="issueType"
+                    value={issueType}
+                    onChange={(e) => setIssueType(e.target.value as IssueType | '')}
+                    className="w-full px-3 py-2 border border-border rounded-md bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="">None (Regular Activity)</option>
+                    {ISSUE_TYPES.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </>
             )}

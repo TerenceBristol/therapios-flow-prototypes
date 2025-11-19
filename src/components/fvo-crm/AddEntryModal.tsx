@@ -82,7 +82,7 @@ const AddEntryModal: React.FC<AddEntryModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border">
           <h2 className="text-xl font-semibold text-foreground">
-            {mode === 'activity' ? 'Add Activity' : 'Add Follow-Up'}
+            {mode === 'activity' ? 'Add Activity' : 'Add Next Activity'}
           </h2>
           <button
             onClick={handleCancel}
@@ -115,7 +115,7 @@ const AddEntryModal: React.FC<AddEntryModalProps> = ({
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
-              Follow-Up
+              Next Activity
             </button>
           </div>
 

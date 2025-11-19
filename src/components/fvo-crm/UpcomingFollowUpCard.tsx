@@ -77,7 +77,7 @@ const UpcomingFollowUpCard: React.FC<UpcomingFollowUpCardProps> = ({ followUp, o
             <textarea
               value={completionNotes}
               onChange={(e) => setCompletionNotes(e.target.value)}
-              placeholder="Add any notes about completing this follow-up..."
+              placeholder="Add any notes about completing this next activity..."
               rows={2}
               className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />

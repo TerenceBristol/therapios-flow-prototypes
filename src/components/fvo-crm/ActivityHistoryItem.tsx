@@ -30,7 +30,7 @@ const ActivityHistoryItem: React.FC<ActivityHistoryItemProps> = ({ activity, isF
             </span>
           ) : isFromFollowUp ? (
             <span className="inline-flex items-center justify-center w-[110px] px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700 border border-blue-300">
-              Follow-Up
+              Next Activity
             </span>
           ) : (
             <span className="inline-flex items-center justify-center w-[110px] px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700 border border-gray-300">
@@ -41,6 +41,13 @@ const ActivityHistoryItem: React.FC<ActivityHistoryItemProps> = ({ activity, isF
 
         {/* Content */}
         <div className="flex-1 min-w-0">
+          {/* Issue Type (for issues only) */}
+          {activity.isIssue && (
+            <h5 className="text-foreground font-semibold text-sm mb-1">
+              {activity.issueType || '(Unspecified Issue)'}
+            </h5>
+          )}
+
           {/* Notes */}
           <p className="text-foreground text-sm mb-2 whitespace-pre-wrap">{activity.notes}</p>
 

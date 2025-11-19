@@ -79,7 +79,7 @@ const CompleteFollowUpModal: React.FC<CompleteFollowUpModalProps> = ({
       <div className="bg-background border border-border rounded-lg shadow-2xl max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border">
-          <h2 className="text-xl font-bold text-foreground">✅ Complete Follow-Up</h2>
+          <h2 className="text-xl font-bold text-foreground">✅ Complete Next Activity</h2>
           <button
             onClick={onClose}
             className="text-muted-foreground hover:text-foreground text-2xl leading-none"

@@ -192,6 +192,14 @@ export interface CalendarTreatment {
 // FVO CRM Types (Practice Follow-up CRM)
 // ============================================================================
 
+// Issue types for practice activities
+export type IssueType =
+  | 'Practice Paused Patient'
+  | 'Cannot Reach Practice'
+  | 'VOs Promised Not Received'
+  | 'VOs Sent - Unknown Destination'
+  | 'Other';
+
 // VO Status for FVO CRM (different from main VO system)
 export type FVOCRMVOStatus = 'Bestellen' | 'Bestellt' | 'Nachverfolgen' | 'Nachverfolgt' | 'Telefonieren' | 'Telefoniert' | 'In Transit' | 'Received' | 'Keine-Folge VO';
 
@@ -354,6 +362,7 @@ export interface PracticeActivity {
   createdAt: string;
   // Issue fields (optional - when isIssue is true, activity represents an issue)
   isIssue: boolean;
+  issueType?: IssueType; // Type of issue (if isIssue is true)
   issueStatus?: 'active' | 'resolved';
   resolvedAt?: string; // ISO timestamp when issue was resolved
   resolvedBy?: string; // User ID who resolved the issue

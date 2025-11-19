@@ -132,7 +132,7 @@ const AddFollowUpModal: React.FC<AddFollowUpModalProps> = ({
         <div className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-foreground">➕ Add Follow-Up</h2>
+            <h2 className="text-xl font-bold text-foreground">➕ Add Next Activity</h2>
             <button
               onClick={onClose}
               className="text-muted-foreground hover:text-foreground text-2xl leading-none"
@@ -243,7 +243,7 @@ const AddFollowUpModal: React.FC<AddFollowUpModalProps> = ({
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Describe the follow-up task..."
+                placeholder="Describe the next activity task..."
                 rows={4}
                 maxLength={500}
                 className={`w-full px-3 py-2 border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none ${
@@ -268,7 +268,7 @@ const AddFollowUpModal: React.FC<AddFollowUpModalProps> = ({
                 type="submit"
                 className="flex-1 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
               >
-                Save Follow-Up
+                Save Next Activity
               </button>
             </div>
           </form>

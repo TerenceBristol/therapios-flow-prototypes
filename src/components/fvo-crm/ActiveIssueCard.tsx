@@ -41,6 +41,11 @@ const ActiveIssueCard: React.FC<ActiveIssueCardProps> = ({ activity, onResolve }
         <div className="flex items-start justify-between gap-3">
           {/* Issue Content */}
           <div className="flex-1 min-w-0">
+            {/* Issue Type Header */}
+            <h4 className="text-foreground font-bold text-base mb-1.5">
+              {activity.issueType || '(Unspecified Issue)'}
+            </h4>
+
             {/* Issue Notes */}
             <p className="text-foreground text-sm mb-1.5">{activity.notes}</p>
 

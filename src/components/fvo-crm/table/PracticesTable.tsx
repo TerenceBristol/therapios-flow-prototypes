@@ -164,7 +164,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
             title={practice.latestIssue.notes}
           >
             <div className="line-clamp-2">
-              {practice.latestIssue.notes}
+              {practice.latestIssue.issueType || '(Unspecified Issue)'}
             </div>
             {practice.activeIssueCount > 1 && (
               <span className="ml-1 text-xs text-muted-foreground">
@@ -233,8 +233,8 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                 onOpenActivities(practice.id);
               }}
               className="p-2 text-primary hover:bg-primary/10 rounded-md transition-colors"
-              title="View activities & follow-ups"
-              aria-label="View activities & follow-ups"
+              title="View activities & next activities"
+              aria-label="View activities & next activities"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
@@ -270,7 +270,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
         <div className="mt-3 space-y-3">
           {/* Filter Controls: Follow-up and Issues */}
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-sm font-medium text-muted-foreground">Follow-up:</span>
+            <span className="text-sm font-medium text-muted-foreground">Next Activity:</span>
             <button
               onClick={() => setFollowUpFilter('all')}
               className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
@@ -309,7 +309,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                   : 'bg-muted text-muted-foreground border border-border hover:bg-muted/80'
               }`}
             >
-              ⚫ No Follow-up
+              ⚫ No Next Activity
             </button>
           </div>
 
@@ -363,7 +363,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                     aria-sort={sortColumn === 'nextFollowUp' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
                   >
-                    Follow-Up Date{getSortIndicator('nextFollowUp')}
+                    Next Activity Date{getSortIndicator('nextFollowUp')}
                   </th>
                   <th className="px-4 py-3.5 text-center" role="columnheader">Activities</th>
                 </tr>

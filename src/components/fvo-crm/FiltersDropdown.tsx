@@ -91,7 +91,7 @@ const FiltersDropdown: React.FC<FiltersDropdownProps> = ({ filters, onFiltersCha
                   onChange={handleToggleNoFollowUp}
                   className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
                 />
-                <span className="text-sm text-foreground">Show only practices with no next follow-up</span>
+                <span className="text-sm text-foreground">Show only practices with no next activity</span>
               </label>
             </div>
 
