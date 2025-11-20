@@ -30,7 +30,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
   onBulkStatusChange,
   onBulkNoteChange
 }) => {
-  const [orderTypeFilter, setOrderTypeFilter] = useState<null | 'initial' | 'followup'>(null);
+  const [statusFilter, setStatusFilter] = useState<'all' | FVOCRMVOStatus>('all');
   const [selectedDoctorId, setSelectedDoctorId] = useState<string>('all');
   const [selectedTherapistId, setSelectedTherapistId] = useState<string>('all');
   const [selectedFacilityId, setSelectedFacilityId] = useState<string>('all');
@@ -44,30 +44,38 @@ const VOsTable: React.FC<VOsTableProps> = ({
     return vos.filter(vo => vo.status !== 'Received');
   }, [vos]);
 
-  // Filter VOs by order type
-  const orderTypeFilteredVOs = useMemo(() => {
-    if (orderTypeFilter === 'initial') {
-      return displayVOs.filter(vo => vo.status === 'Bestellen');
-    } else if (orderTypeFilter === 'followup') {
-      return displayVOs.filter(vo => vo.status !== 'Bestellen');
+  // Filter VOs by status
+  const statusFilteredVOs = useMemo(() => {
+    if (statusFilter === 'all') {
+      return displayVOs;
     }
-    return displayVOs; // null - show all
-  }, [displayVOs, orderTypeFilter]);
+    return displayVOs.filter(vo => vo.status === statusFilter);
+  }, [displayVOs, statusFilter]);
 
-  // Calculate VO counts per order type (for UI badges)
-  const orderTypeCounts = useMemo(() => {
-    const initial = displayVOs.filter(vo => vo.status === 'Bestellen').length;
-    const followup = displayVOs.filter(vo => vo.status !== 'Bestellen').length;
-    return { initial, followup, all: displayVOs.length };
+  // Calculate VO counts per status (for tab badges)
+  const statusCounts = useMemo(() => {
+    const counts: Record<FVOCRMVOStatus | 'all', number> = {
+      all: displayVOs.length,
+      'Bestellt': displayVOs.filter(vo => vo.status === 'Bestellt').length,
+      'Nachverfolgen': displayVOs.filter(vo => vo.status === 'Nachverfolgen').length,
+      'Nachverfolgt': displayVOs.filter(vo => vo.status === 'Nachverfolgt').length,
+      'Telefonieren': displayVOs.filter(vo => vo.status === 'Telefonieren').length,
+      'Telefoniert': displayVOs.filter(vo => vo.status === 'Telefoniert').length,
+      'Paused by Doctor': displayVOs.filter(vo => vo.status === 'Paused by Doctor').length,
+      'In Transit': displayVOs.filter(vo => vo.status === 'In Transit').length,
+      'Received': displayVOs.filter(vo => vo.status === 'Received').length,
+      'Keine-Folge VO': displayVOs.filter(vo => vo.status === 'Keine-Folge VO').length,
+    };
+    return counts;
   }, [displayVOs]);
 
   // Filter VOs by selected doctor
   const doctorFilteredVOs = useMemo(() => {
     if (selectedDoctorId === 'all') {
-      return orderTypeFilteredVOs;
+      return statusFilteredVOs;
     }
-    return orderTypeFilteredVOs.filter(vo => vo.doctorId === selectedDoctorId);
-  }, [orderTypeFilteredVOs, selectedDoctorId]);
+    return statusFilteredVOs.filter(vo => vo.doctorId === selectedDoctorId);
+  }, [statusFilteredVOs, selectedDoctorId]);
 
   // Calculate therapist stats (from doctor-filtered VOs)
   const therapistStats = useMemo(() => {
@@ -241,9 +249,10 @@ const VOsTable: React.FC<VOsTableProps> = ({
 
   // Handle generate PDF
   const handleGeneratePDF = () => {
-    if (onGeneratePDF && selectedVOIds.size > 0 && orderTypeFilter) {
+    if (onGeneratePDF && selectedVOIds.size > 0) {
       const selectedVOsArray = Array.from(selectedVOIds);
-      onGeneratePDF(selectedVOsArray, orderTypeFilter);
+      // Default to 'followup' since we removed initial orders
+      onGeneratePDF(selectedVOsArray, 'followup');
     }
   };
 
@@ -316,11 +325,9 @@ const VOsTable: React.FC<VOsTableProps> = ({
     return doctors.find(d => d.id === doctorId)?.name || 'Unknown Doctor';
   };
 
-  // Status color mapping
+  // Status color mapping with exhaustiveness check
   const getStatusColor = (status: FVOCRMVOStatus) => {
     switch (status) {
-      case 'Bestellen':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
       case 'Bestellt':
         return 'bg-green-100 text-green-800 border-green-200';
       case 'Nachverfolgen':
@@ -331,13 +338,16 @@ const VOsTable: React.FC<VOsTableProps> = ({
         return 'bg-orange-100 text-orange-800 border-orange-200';
       case 'Telefoniert':
         return 'bg-purple-100 text-purple-800 border-purple-200';
+      case 'Paused by Doctor':
+        return 'bg-red-100 text-red-800 border-red-200';
       case 'In Transit':
         return 'bg-blue-100 text-blue-800 border-blue-200';
       case 'Received':
         return 'bg-gray-100 text-gray-800 border-gray-200';
       case 'Keine-Folge VO':
-        return 'bg-red-100 text-red-800 border-red-200';
+        return 'bg-gray-100 text-gray-800 border-gray-200';
       default:
+        const _exhaustive: never = status;
         return 'bg-gray-100 text-gray-800 border-gray-200';
     }
   };
@@ -348,7 +358,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
     return <span className="ml-1">{sortDirection === 'asc' ? '↑' : '↓'}</span>;
   };
 
-  const allStatuses: FVOCRMVOStatus[] = ['Bestellen', 'Bestellt', 'Nachverfolgen', 'Nachverfolgt', 'Telefonieren', 'Telefoniert', 'In Transit', 'Keine-Folge VO'];
+  const allStatuses: FVOCRMVOStatus[] = ['Bestellt', 'Nachverfolgen', 'Nachverfolgt', 'Telefonieren', 'Telefoniert', 'Paused by Doctor', 'In Transit', 'Keine-Folge VO'];
 
   return (
     <div className="flex flex-col flex-1 min-h-0">
@@ -356,7 +366,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
       {selectedVOIds.size > 0 && (
         <BulkActionToolbar
           selectedCount={selectedVOIds.size}
-          orderTypeFilter={orderTypeFilter}
+          orderTypeFilter={'followup'}
           onBulkStatusChange={handleBulkStatusChange}
           onBulkNote={handleBulkNoteChange}
           onGeneratePDF={handleGeneratePDF}
@@ -364,71 +374,13 @@ const VOsTable: React.FC<VOsTableProps> = ({
         />
       )}
 
-      {/* Order Type Filter Section - Prominent */}
-      <div className="p-4 border-b border-border bg-card">
-        <div className="flex flex-col gap-3">
-          <div className="flex items-center gap-4 justify-between">
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold text-foreground">Order Type:</span>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => {
-                    setOrderTypeFilter('initial');
-                    setSelectedVOIds(new Set());
-                  }}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    orderTypeFilter === 'initial'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-muted hover:bg-muted/80 text-foreground border border-border'
-                  }`}
-                >
-                  Initial Order ({orderTypeCounts.initial})
-                </button>
-                <button
-                  onClick={() => {
-                    setOrderTypeFilter('followup');
-                    setSelectedVOIds(new Set());
-                  }}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    orderTypeFilter === 'followup'
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-muted hover:bg-muted/80 text-foreground border border-border'
-                  }`}
-                >
-                  Follow-up Order ({orderTypeCounts.followup})
-                </button>
-              </div>
-            </div>
-            {orderTypeFilter && (
-              <button
-                onClick={() => {
-                  setOrderTypeFilter(null);
-                  setSelectedVOIds(new Set());
-                }}
-                className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-md transition-colors flex items-center gap-1"
-              >
-                <span>✕</span>
-                <span>Clear Filter</span>
-              </button>
-            )}
-          </div>
-
-          <div className="text-sm text-muted-foreground">
-            Showing {filteredVOs.length} {filteredVOs.length === 1 ? 'VO' : 'VOs'}
-            {orderTypeFilter && <span className="font-medium"> • {orderTypeFilter === 'initial' ? 'Initial Orders' : 'Follow-up Orders'}</span>}
-          </div>
-        </div>
-      </div>
-
-      {/* Visual Separator */}
-      <div className="h-2 bg-muted/20"></div>
-
-      {/* Secondary Filters (Doctor, Therapist, Facility) */}
+      {/* Filters Section */}
       <div className="p-4 border-b border-border bg-muted/10">
-        <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">
-          Additional Filters
-        </h3>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+            Filters
+          </h3>
+          <div className="flex flex-wrap items-center gap-4">
           {/* Doctor Filter */}
           <div className="flex items-center gap-2">
             <label htmlFor="doctor-filter" className="text-sm font-medium whitespace-nowrap">
@@ -499,12 +451,51 @@ const VOsTable: React.FC<VOsTableProps> = ({
               ))}
             </select>
           </div>
+          </div>
+        </div>
+
+        {/* Status Tabs */}
+        <div className="flex flex-wrap items-center gap-0.5 mb-4 border-b border-border bg-muted/20 px-2">
+          <button
+            onClick={() => {
+              setStatusFilter('all');
+              setSelectedVOIds(new Set());
+            }}
+            className={`px-3 py-2 text-xs font-medium transition-colors relative whitespace-nowrap ${
+              statusFilter === 'all'
+                ? 'text-primary'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            All ({statusCounts.all})
+            {statusFilter === 'all' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
+          </button>
+          {allStatuses.map(status => (
+            <button
+              key={status}
+              onClick={() => {
+                setStatusFilter(status);
+                setSelectedVOIds(new Set());
+              }}
+              className={`px-3 py-2 text-xs font-medium transition-colors relative whitespace-nowrap ${
+                statusFilter === status
+                  ? 'text-primary'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              {status} ({statusCounts[status]})
+              {statusFilter === status && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
+            </button>
+          ))}
         </div>
 
         {/* VO Count and Active Filters */}
-        <div className="mt-2 flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4">
           <div className="text-sm text-muted-foreground">
             Showing {sortedVOs.length} {sortedVOs.length === 1 ? 'VO' : 'VOs'}
+            {statusFilter !== 'all' && (
+              <span> • Status: {statusFilter}</span>
+            )}
             {selectedDoctorId !== 'all' && (
               <span> • Doctor: {doctors.find(d => d.id === selectedDoctorId)?.name}</span>
             )}
@@ -517,9 +508,10 @@ const VOsTable: React.FC<VOsTableProps> = ({
           </div>
 
           {/* Clear Filters */}
-          {(selectedDoctorId !== 'all' || selectedTherapistId !== 'all' || selectedFacilityId !== 'all') && (
+          {(statusFilter !== 'all' || selectedDoctorId !== 'all' || selectedTherapistId !== 'all' || selectedFacilityId !== 'all') && (
             <button
               onClick={() => {
+                setStatusFilter('all');
                 setSelectedDoctorId('all');
                 setSelectedTherapistId('all');
                 setSelectedFacilityId('all');

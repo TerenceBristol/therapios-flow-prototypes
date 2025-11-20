@@ -25,12 +25,12 @@ const BulkActionToolbar: React.FC<BulkActionToolbarProps> = ({
   const [noteText, setNoteText] = useState('');
 
   const allStatuses: FVOCRMVOStatus[] = [
-    'Bestellen',
     'Bestellt',
     'Nachverfolgen',
     'Nachverfolgt',
     'Telefonieren',
     'Telefoniert',
+    'Paused by Doctor',
     'In Transit',
     'Keine-Folge VO'
   ];

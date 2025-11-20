@@ -201,7 +201,7 @@ export type IssueType =
   | 'Other';
 
 // VO Status for FVO CRM (different from main VO system)
-export type FVOCRMVOStatus = 'Bestellen' | 'Bestellt' | 'Nachverfolgen' | 'Nachverfolgt' | 'Telefonieren' | 'Telefoniert' | 'In Transit' | 'Received' | 'Keine-Folge VO';
+export type FVOCRMVOStatus = 'Bestellt' | 'Nachverfolgen' | 'Nachverfolgt' | 'Telefonieren' | 'Telefoniert' | 'Paused by Doctor' | 'In Transit' | 'Received' | 'Keine-Folge VO';
 
 // Order Form Type for PDF generation
 export type OrderFormType = 'initial' | 'followup';
