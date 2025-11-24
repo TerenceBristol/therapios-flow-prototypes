@@ -151,7 +151,7 @@ const BulkActionToolbar: React.FC<BulkActionToolbarProps> = ({
 
       {/* Bulk Note Modal */}
       {showNoteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50">
           <div className="bg-card rounded-lg shadow-xl w-full max-w-md p-6">
             <h3 className="text-lg font-semibold mb-4">Bulk Note</h3>
 

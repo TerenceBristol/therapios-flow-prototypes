@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { PracticeVO, PracticeDoctor, FVOCRMVOStatus, VOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import BulkActionToolbar from './BulkActionToolbar';
 import VONotesModal from './modals/VONotesModal';
@@ -37,6 +37,16 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
   const [sortColumn, setSortColumn] = useState<string>('statusDate');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [notesModalVO, setNotesModalVO] = useState<PracticeVO | null>(null);
+
+  // Sync notesModalVO with props when vos array updates
+  useEffect(() => {
+    if (notesModalVO) {
+      const updatedVO = vos.find(vo => vo.id === notesModalVO.id);
+      if (updatedVO && JSON.stringify(updatedVO) !== JSON.stringify(notesModalVO)) {
+        setNotesModalVO(updatedVO);
+      }
+    }
+  }, [vos, notesModalVO]);
 
   // All available statuses for dropdown
   const allStatuses: FVOCRMVOStatus[] = ['Bestellen', 'Bestellt', 'Nachverfolgen', 'Nachverfolgt', 'Telefonieren', 'Telefoniert', 'Paused by Doctor', 'In Transit', 'Keine-Folge VO'];
@@ -265,12 +275,7 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
   const handleAddNoteFromModal = (voId: string, note: string) => {
     if (onNoteChange) {
       onNoteChange(voId, note);
-      setTimeout(() => {
-        const updatedVO = vos.find(vo => vo.id === voId);
-        if (updatedVO) {
-          setNotesModalVO(updatedVO);
-        }
-      }, 0);
+      // useEffect will sync notesModalVO when vos prop updates
     }
   };
 
@@ -278,12 +283,7 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
   const handleEditNoteFromModal = (voId: string, noteIndex: number, newText: string) => {
     if (onEditNote) {
       onEditNote(voId, noteIndex, newText);
-      setTimeout(() => {
-        const updatedVO = vos.find(vo => vo.id === voId);
-        if (updatedVO) {
-          setNotesModalVO(updatedVO);
-        }
-      }, 0);
+      // useEffect will sync notesModalVO when vos prop updates
     }
   };
 
@@ -291,12 +291,7 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
   const handleDeleteNoteFromModal = (voId: string, noteIndex: number) => {
     if (onDeleteNote) {
       onDeleteNote(voId, noteIndex);
-      setTimeout(() => {
-        const updatedVO = vos.find(vo => vo.id === voId);
-        if (updatedVO) {
-          setNotesModalVO(updatedVO);
-        }
-      }, 0);
+      // useEffect will sync notesModalVO when vos prop updates
     }
   };
 

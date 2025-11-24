@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { PracticeVO, PracticeDoctor, FVOCRMVOStatus, VOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import BulkActionToolbar from './BulkActionToolbar';
 import VONotesModal from './modals/VONotesModal';
@@ -38,6 +38,16 @@ const VOsTable: React.FC<VOsTableProps> = ({
   const [sortColumn, setSortColumn] = useState<string>('statusDate');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [notesModalVO, setNotesModalVO] = useState<PracticeVO | null>(null);
+
+  // Sync notesModalVO with props when vos array updates
+  useEffect(() => {
+    if (notesModalVO) {
+      const updatedVO = vos.find(vo => vo.id === notesModalVO.id);
+      if (updatedVO && JSON.stringify(updatedVO) !== JSON.stringify(notesModalVO)) {
+        setNotesModalVO(updatedVO);
+      }
+    }
+  }, [vos, notesModalVO]);
 
   // Filter out VOs with "Received" status (In Transit VOs are still shown for tracking)
   const displayVOs = useMemo(() => {
@@ -290,14 +300,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
   const handleAddNoteFromModal = (voId: string, note: string) => {
     if (onNoteChange) {
       onNoteChange(voId, note);
-      // Refresh the modal's VO state with the updated VO to show changes immediately
-      // Use setTimeout to allow parent state to update first
-      setTimeout(() => {
-        const updatedVO = vos.find(vo => vo.id === voId);
-        if (updatedVO) {
-          setNotesModalVO(updatedVO);
-        }
-      }, 0);
+      // useEffect will sync notesModalVO when vos prop updates
     }
   };
 
@@ -305,13 +308,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
   const handleEditNoteFromModal = (voId: string, noteIndex: number, newText: string) => {
     if (onEditNote) {
       onEditNote(voId, noteIndex, newText);
-      // Refresh the modal's VO state with the updated VO to show changes immediately
-      setTimeout(() => {
-        const updatedVO = vos.find(vo => vo.id === voId);
-        if (updatedVO) {
-          setNotesModalVO(updatedVO);
-        }
-      }, 0);
+      // useEffect will sync notesModalVO when vos prop updates
     }
   };
 
@@ -319,13 +316,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
   const handleDeleteNoteFromModal = (voId: string, noteIndex: number) => {
     if (onDeleteNote) {
       onDeleteNote(voId, noteIndex);
-      // Refresh the modal's VO state with the updated VO to show changes immediately
-      setTimeout(() => {
-        const updatedVO = vos.find(vo => vo.id === voId);
-        if (updatedVO) {
-          setNotesModalVO(updatedVO);
-        }
-      }, 0);
+      // useEffect will sync notesModalVO when vos prop updates
     }
   };
 

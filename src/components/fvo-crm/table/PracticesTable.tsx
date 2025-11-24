@@ -44,6 +44,18 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
     return 'future';
   };
 
+  // Calculate totals for summary cards
+  const totals = useMemo(() => {
+    return practices.reduce(
+      (acc, practice) => ({
+        pendingBestellen: acc.pendingBestellen + practice.pendingBestellenCount,
+        pendingFollowUp: acc.pendingFollowUp + practice.pendingFollowUpCount,
+        activeIssues: acc.activeIssues + practice.activeIssueCount
+      }),
+      { pendingBestellen: 0, pendingFollowUp: 0, activeIssues: 0 }
+    );
+  }, [practices]);
+
   // Apply search and sorting
   const filteredPractices = useMemo(() => {
     let result = [...practices];
@@ -242,78 +254,121 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
 
   return (
     <div className="h-full flex flex-col bg-background">
-      {/* Search Bar */}
-      <div className="p-4 border-b border-border">
-        <div className="relative">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search practices or doctors..."
-            className="w-full px-4 py-2 pr-10 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-            >
-              ✕
-            </button>
-          )}
+      {/* Summary Cards */}
+      <div className="p-4 border-b border-border bg-muted/10">
+        <div className="grid grid-cols-3 gap-4">
+          {/* Pending Bestellen Card */}
+          <div className="bg-card border border-border rounded-lg p-4 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+              <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-foreground">{totals.pendingBestellen}</div>
+              <div className="text-sm text-muted-foreground">Pending Bestellen</div>
+            </div>
+          </div>
+
+          {/* Pending Follow-up Card */}
+          <div className="bg-card border border-border rounded-lg p-4 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+              <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-foreground">{totals.pendingFollowUp}</div>
+              <div className="text-sm text-muted-foreground">Pending Follow-up</div>
+            </div>
+          </div>
+
+          {/* Active Issues Card */}
+          <div className="bg-card border border-border rounded-lg p-4 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
+              <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-foreground">{totals.activeIssues}</div>
+              <div className="text-sm text-muted-foreground">Active Issues</div>
+            </div>
+          </div>
         </div>
-        <div className="mt-3 space-y-3">
-          {/* Filter Controls: Follow-up and Issues */}
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-sm font-medium text-muted-foreground">Next Activity:</span>
+      </div>
+
+      {/* Filter Tabs and Search */}
+      <div className="border-b border-border">
+        <div className="flex items-center justify-between px-4">
+          {/* Tab-style Filters */}
+          <div className="flex items-center gap-0">
             <button
               onClick={() => setFollowUpFilter('all')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+              className={`px-6 py-4 text-sm font-medium transition-colors relative ${
                 followUpFilter === 'all'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-muted text-muted-foreground border border-border hover:bg-muted/80'
+                  ? 'text-primary'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               All
+              {followUpFilter === 'all' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
             </button>
             <button
               onClick={() => setFollowUpFilter('hasIssues')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+              className={`px-6 py-4 text-sm font-medium transition-colors relative ${
                 followUpFilter === 'hasIssues'
-                  ? 'bg-orange-100 text-orange-800 border border-orange-200'
-                  : 'bg-muted text-muted-foreground border border-border hover:bg-muted/80'
+                  ? 'text-primary'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
-              ⚠️ Has Issues
+              Has Issues
+              {followUpFilter === 'hasIssues' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
             </button>
             <button
               onClick={() => setFollowUpFilter('todayOverdue')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+              className={`px-6 py-4 text-sm font-medium transition-colors relative ${
                 followUpFilter === 'todayOverdue'
-                  ? 'bg-red-100 text-red-800 border border-red-200'
-                  : 'bg-muted text-muted-foreground border border-border hover:bg-muted/80'
+                  ? 'text-primary'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
-              🔴 Today + Overdue
+              Today + Overdue
+              {followUpFilter === 'todayOverdue' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
             </button>
             <button
               onClick={() => setFollowUpFilter('none')}
-              className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+              className={`px-6 py-4 text-sm font-medium transition-colors relative ${
                 followUpFilter === 'none'
-                  ? 'bg-gray-100 text-gray-800 border border-gray-200'
-                  : 'bg-muted text-muted-foreground border border-border hover:bg-muted/80'
+                  ? 'text-primary'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
-              ⚫ No Next Activity
+              No Next Activity
+              {followUpFilter === 'none' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
             </button>
           </div>
 
-          {/* Results count */}
-          {(searchQuery || followUpFilter !== 'all') && (
-            <div className="text-sm text-muted-foreground">
-              Showing {filteredPractices.length} of {practices.length} practices
-            </div>
-          )}
+          {/* Search Bar (fixed width, right side) */}
+          <div className="relative w-72 py-2">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search practices or doctors..."
+              className="w-full px-4 py-2 pr-10 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+              >
+                ✕
+              </button>
+            )}
+          </div>
         </div>
+
       </div>
 
       {/* Table */}
