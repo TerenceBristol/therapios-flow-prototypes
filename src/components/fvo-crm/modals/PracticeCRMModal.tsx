@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { PracticeWithComputed, PracticeActivity, PracticeVO, PracticeDoctor, PracticeFollowUp, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import ActivitiesSection from '../ActivitiesSection';
 import VOsTable from '../VOsTable';
+import InitialOrdersTable from '../InitialOrdersTable';
 import PracticeInfoTab from '../PracticeInfoTab';
 
 interface PracticeCRMModalProps {
@@ -15,7 +16,7 @@ interface PracticeCRMModalProps {
   doctors: PracticeDoctor[];
   therapists: Therapist[];
   facilities: Facility[];
-  initialTab?: 'practiceInfo' | 'vos' | 'activities';
+  initialTab?: 'practiceInfo' | 'initialOrders' | 'vos' | 'activities';
   onClose: () => void;
   onAddActivity: (activity: Omit<PracticeActivity, 'id' | 'createdAt'>) => void;
   onDeleteActivity?: (activityId: string) => void;
@@ -57,7 +58,7 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   onBulkNoteChange,
   onGeneratePDF
 }) => {
-  const [activeTab, setActiveTab] = useState<'practiceInfo' | 'vos' | 'activities'>(initialTab);
+  const [activeTab, setActiveTab] = useState<'practiceInfo' | 'initialOrders' | 'vos' | 'activities'>(initialTab);
 
   // Reset active tab when modal opens or practice changes
   useEffect(() => {
@@ -66,8 +67,11 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
     }
   }, [isOpen, practice?.id, initialTab]);
 
-  // Get pending VOs (all non-received VOs)
-  const pendingVOs = vos.filter(vo => vo.status !== 'Received');
+  // Get initial order VOs (status = 'Bestellen')
+  const initialOrderVOs = vos.filter(vo => vo.status === 'Bestellen');
+
+  // Get pending follow-up VOs (all non-received VOs except 'Bestellen')
+  const pendingVOs = vos.filter(vo => vo.status !== 'Received' && vo.status !== 'Bestellen');
 
   if (!practice) return null;
 
@@ -106,6 +110,16 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                     {activeTab === 'practiceInfo' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
                   </button>
                   <button
+                    onClick={() => setActiveTab('initialOrders')}
+                    className={`px-6 py-4 font-medium transition-colors relative ${
+                      activeTab === 'initialOrders' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    Initial Orders
+                    {activeTab === 'initialOrders' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
+                    <span className="ml-2 text-sm">({initialOrderVOs.length} pending)</span>
+                  </button>
+                  <button
                     onClick={() => setActiveTab('vos')}
                     className={`px-6 py-4 font-medium transition-colors relative ${
                       activeTab === 'vos' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
@@ -136,6 +150,22 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                   <PracticeInfoTab
                     practice={practice}
                     doctors={doctors}
+                  />
+                )}
+
+                {activeTab === 'initialOrders' && (
+                  <InitialOrdersTable
+                    vos={vos}
+                    doctors={doctors}
+                    therapists={therapists}
+                    facilities={facilities}
+                    onStatusChange={onStatusChange}
+                    onNoteChange={onNoteChange}
+                    onEditNote={onEditNote}
+                    onDeleteNote={onDeleteNote}
+                    onBulkStatusChange={onBulkStatusChange}
+                    onBulkNoteChange={onBulkNoteChange}
+                    onGeneratePDF={onGeneratePDF}
                   />
                 )}
 

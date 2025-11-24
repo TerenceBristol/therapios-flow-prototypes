@@ -3,7 +3,7 @@ import { PracticeVO, PracticeDoctor, FVOCRMVOStatus, Therapist, Facility, OrderF
 import BulkActionToolbar from './BulkActionToolbar';
 import VONotesModal from './modals/VONotesModal';
 
-interface VOsTableProps {
+interface InitialOrdersTableProps {
   vos: PracticeVO[];
   doctors: PracticeDoctor[];
   therapists: Therapist[];
@@ -17,7 +17,7 @@ interface VOsTableProps {
   onBulkNoteChange?: (voIds: string[], note: string) => void;
 }
 
-const VOsTable: React.FC<VOsTableProps> = ({
+const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
   vos,
   doctors,
   therapists,
@@ -30,7 +30,6 @@ const VOsTable: React.FC<VOsTableProps> = ({
   onBulkStatusChange,
   onBulkNoteChange
 }) => {
-  const [statusFilter, setStatusFilter] = useState<'all' | FVOCRMVOStatus>('all');
   const [selectedDoctorId, setSelectedDoctorId] = useState<string>('all');
   const [selectedTherapistId, setSelectedTherapistId] = useState<string>('all');
   const [selectedFacilityId, setSelectedFacilityId] = useState<string>('all');
@@ -38,45 +37,21 @@ const VOsTable: React.FC<VOsTableProps> = ({
   const [sortColumn, setSortColumn] = useState<string>('statusDate');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [notesModalVO, setNotesModalVO] = useState<PracticeVO | null>(null);
+  const [showBulkNoteModal, setShowBulkNoteModal] = useState(false);
+  const [bulkNoteText, setBulkNoteText] = useState('');
 
-  // Filter out VOs with "Received" status (In Transit VOs are still shown for tracking)
-  const displayVOs = useMemo(() => {
-    return vos.filter(vo => vo.status !== 'Received');
+  // Filter to only show VOs with "Bestellen" status (initial orders)
+  const initialOrderVOs = useMemo(() => {
+    return vos.filter(vo => vo.status === 'Bestellen');
   }, [vos]);
-
-  // Filter VOs by status
-  const statusFilteredVOs = useMemo(() => {
-    if (statusFilter === 'all') {
-      return displayVOs;
-    }
-    return displayVOs.filter(vo => vo.status === statusFilter);
-  }, [displayVOs, statusFilter]);
-
-  // Calculate VO counts per status (for tab badges)
-  const statusCounts = useMemo(() => {
-    const counts: Record<FVOCRMVOStatus | 'all', number> = {
-      all: displayVOs.length,
-      'Bestellen': displayVOs.filter(vo => vo.status === 'Bestellen').length,
-      'Bestellt': displayVOs.filter(vo => vo.status === 'Bestellt').length,
-      'Nachverfolgen': displayVOs.filter(vo => vo.status === 'Nachverfolgen').length,
-      'Nachverfolgt': displayVOs.filter(vo => vo.status === 'Nachverfolgt').length,
-      'Telefonieren': displayVOs.filter(vo => vo.status === 'Telefonieren').length,
-      'Telefoniert': displayVOs.filter(vo => vo.status === 'Telefoniert').length,
-      'Paused by Doctor': displayVOs.filter(vo => vo.status === 'Paused by Doctor').length,
-      'In Transit': displayVOs.filter(vo => vo.status === 'In Transit').length,
-      'Received': displayVOs.filter(vo => vo.status === 'Received').length,
-      'Keine-Folge VO': displayVOs.filter(vo => vo.status === 'Keine-Folge VO').length,
-    };
-    return counts;
-  }, [displayVOs]);
 
   // Filter VOs by selected doctor
   const doctorFilteredVOs = useMemo(() => {
     if (selectedDoctorId === 'all') {
-      return statusFilteredVOs;
+      return initialOrderVOs;
     }
-    return statusFilteredVOs.filter(vo => vo.doctorId === selectedDoctorId);
-  }, [statusFilteredVOs, selectedDoctorId]);
+    return initialOrderVOs.filter(vo => vo.doctorId === selectedDoctorId);
+  }, [initialOrderVOs, selectedDoctorId]);
 
   // Calculate therapist stats (from doctor-filtered VOs)
   const therapistStats = useMemo(() => {
@@ -158,11 +133,11 @@ const VOsTable: React.FC<VOsTableProps> = ({
     });
   }, [therapistFilteredVOs, selectedFacilityId, therapists]);
 
-  // Get doctors that have VOs
+  // Get doctors that have initial order VOs
   const doctorsWithVOs = useMemo(() => {
-    const doctorIds = new Set(displayVOs.map(vo => vo.doctorId));
+    const doctorIds = new Set(initialOrderVOs.map(vo => vo.doctorId));
     return doctors.filter(d => doctorIds.has(d.id));
-  }, [doctors, displayVOs]);
+  }, [doctors, initialOrderVOs]);
 
   // Sort VOs
   const sortedVOs = useMemo(() => {
@@ -182,10 +157,6 @@ const VOsTable: React.FC<VOsTableProps> = ({
           const bDoctor = doctors.find(d => d.id === b.doctorId)?.name || '';
           aValue = aDoctor.toLowerCase();
           bValue = bDoctor.toLowerCase();
-          break;
-        case 'status':
-          aValue = a.status;
-          bValue = b.status;
           break;
         case 'statusDate':
           aValue = new Date(a.statusTimestamp).getTime();
@@ -241,35 +212,47 @@ const VOsTable: React.FC<VOsTableProps> = ({
     }
   };
 
-  // Handle status change
-  const handleStatusChange = (voId: string, newStatus: FVOCRMVOStatus) => {
+  // Handle marking as "Bestellt" (ordered)
+  const handleMarkAsOrdered = (voId: string) => {
     if (onStatusChange) {
-      onStatusChange(voId, newStatus);
+      onStatusChange(voId, 'Bestellt');
     }
   };
 
-  // Handle generate PDF
+  // Handle generate PDF for initial orders
   const handleGeneratePDF = () => {
     if (onGeneratePDF && selectedVOIds.size > 0) {
       const selectedVOsArray = Array.from(selectedVOIds);
-      // Default to 'followup' since we removed initial orders
-      onGeneratePDF(selectedVOsArray, 'followup');
+      onGeneratePDF(selectedVOsArray, 'initial');
     }
   };
 
-  // Handle bulk status change
-  const handleBulkStatusChange = (newStatus: FVOCRMVOStatus) => {
+  // Handle bulk status change to "Bestellt"
+  const handleBulkMarkAsOrdered = () => {
     if (onBulkStatusChange && selectedVOIds.size > 0) {
-      onBulkStatusChange(Array.from(selectedVOIds), newStatus);
+      onBulkStatusChange(Array.from(selectedVOIds), 'Bestellt');
       setSelectedVOIds(new Set());
     }
   };
 
   // Handle bulk note change
-  const handleBulkNoteChange = (note: string) => {
-    if (onBulkNoteChange && selectedVOIds.size > 0) {
-      onBulkNoteChange(Array.from(selectedVOIds), note);
-      setSelectedVOIds(new Set());
+  const handleBulkNoteSubmit = () => {
+    if (bulkNoteText.trim().length < 5) {
+      alert('Note must be at least 5 characters');
+      return;
+    }
+    if (bulkNoteText.length > 500) {
+      alert('Note must be less than 500 characters');
+      return;
+    }
+
+    if (window.confirm(`Add note to ${selectedVOIds.size} selected VOs?`)) {
+      if (onBulkNoteChange && selectedVOIds.size > 0) {
+        onBulkNoteChange(Array.from(selectedVOIds), bulkNoteText);
+        setSelectedVOIds(new Set());
+      }
+      setBulkNoteText('');
+      setShowBulkNoteModal(false);
     }
   };
 
@@ -282,8 +265,6 @@ const VOsTable: React.FC<VOsTableProps> = ({
   const handleAddNoteFromModal = (voId: string, note: string) => {
     if (onNoteChange) {
       onNoteChange(voId, note);
-      // Refresh the modal's VO state with the updated VO to show changes immediately
-      // Use setTimeout to allow parent state to update first
       setTimeout(() => {
         const updatedVO = vos.find(vo => vo.id === voId);
         if (updatedVO) {
@@ -297,7 +278,6 @@ const VOsTable: React.FC<VOsTableProps> = ({
   const handleEditNoteFromModal = (voId: string, noteIndex: number, newText: string) => {
     if (onEditNote) {
       onEditNote(voId, noteIndex, newText);
-      // Refresh the modal's VO state with the updated VO to show changes immediately
       setTimeout(() => {
         const updatedVO = vos.find(vo => vo.id === voId);
         if (updatedVO) {
@@ -311,7 +291,6 @@ const VOsTable: React.FC<VOsTableProps> = ({
   const handleDeleteNoteFromModal = (voId: string, noteIndex: number) => {
     if (onDeleteNote) {
       onDeleteNote(voId, noteIndex);
-      // Refresh the modal's VO state with the updated VO to show changes immediately
       setTimeout(() => {
         const updatedVO = vos.find(vo => vo.id === voId);
         if (updatedVO) {
@@ -326,55 +305,57 @@ const VOsTable: React.FC<VOsTableProps> = ({
     return doctors.find(d => d.id === doctorId)?.name || 'Unknown Doctor';
   };
 
-  // Status color mapping with exhaustiveness check
-  const getStatusColor = (status: FVOCRMVOStatus) => {
-    switch (status) {
-      case 'Bestellt':
-        return 'bg-green-100 text-green-800 border-green-200';
-      case 'Nachverfolgen':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      case 'Nachverfolgt':
-        return 'bg-lime-100 text-lime-800 border-lime-200';
-      case 'Telefonieren':
-        return 'bg-orange-100 text-orange-800 border-orange-200';
-      case 'Telefoniert':
-        return 'bg-purple-100 text-purple-800 border-purple-200';
-      case 'Paused by Doctor':
-        return 'bg-red-100 text-red-800 border-red-200';
-      case 'In Transit':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'Received':
-        return 'bg-gray-100 text-gray-800 border-gray-200';
-      case 'Keine-Folge VO':
-        return 'bg-gray-100 text-gray-800 border-gray-200';
-      case 'Bestellen':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      default:
-        const _exhaustive: never = status;
-        return 'bg-gray-100 text-gray-800 border-gray-200';
-    }
-  };
-
   // Sort indicator
   const SortIndicator = ({ column }: { column: string }) => {
     if (sortColumn !== column) return null;
     return <span className="ml-1">{sortDirection === 'asc' ? '↑' : '↓'}</span>;
   };
 
-  const allStatuses: FVOCRMVOStatus[] = ['Bestellt', 'Nachverfolgen', 'Nachverfolgt', 'Telefonieren', 'Telefoniert', 'Paused by Doctor', 'In Transit', 'Keine-Folge VO'];
-
   return (
     <div className="flex flex-col flex-1 min-h-0">
       {/* Bulk Action Toolbar (appears when items selected) */}
       {selectedVOIds.size > 0 && (
-        <BulkActionToolbar
-          selectedCount={selectedVOIds.size}
-          orderTypeFilter={'followup'}
-          onBulkStatusChange={handleBulkStatusChange}
-          onBulkNote={handleBulkNoteChange}
-          onGeneratePDF={handleGeneratePDF}
-          onClearSelection={() => setSelectedVOIds(new Set())}
-        />
+        <div className="sticky top-0 z-20 bg-blue-50 border-b-2 border-blue-200 px-4 py-3 shadow-md">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="font-semibold text-blue-900">
+                {selectedVOIds.size} {selectedVOIds.size === 1 ? 'VO' : 'VOs'} selected
+              </span>
+              <button
+                onClick={() => setSelectedVOIds(new Set())}
+                className="text-sm text-blue-700 hover:text-blue-900 underline"
+              >
+                Clear selection
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2">
+              {/* Add Note */}
+              <button
+                onClick={() => setShowBulkNoteModal(true)}
+                className="px-4 py-2 bg-white border border-blue-300 rounded-md hover:bg-blue-50 text-sm font-medium text-blue-900 transition-colors"
+              >
+                Add Note
+              </button>
+
+              {/* Generate PDF */}
+              <button
+                onClick={handleGeneratePDF}
+                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-medium transition-colors"
+              >
+                Generate Initial Order Form
+              </button>
+
+              {/* Change to Bestellt */}
+              <button
+                onClick={handleBulkMarkAsOrdered}
+                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm font-medium transition-colors"
+              >
+                Change to Bestellt
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Filters Section */}
@@ -384,121 +365,83 @@ const VOsTable: React.FC<VOsTableProps> = ({
             Filters
           </h3>
           <div className="flex flex-wrap items-center gap-4">
-          {/* Doctor Filter */}
-          <div className="flex items-center gap-2">
-            <label htmlFor="doctor-filter" className="text-sm font-medium whitespace-nowrap">
-              Doctor:
-            </label>
-            <select
-              id="doctor-filter"
-              value={selectedDoctorId}
-              onChange={(e) => {
-                setSelectedDoctorId(e.target.value);
-                setSelectedTherapistId('all'); // Reset therapist filter when doctor changes
-                setSelectedVOIds(new Set()); // Clear selections when changing filter
-              }}
-              className="px-3 py-2 border border-border rounded-md bg-background text-sm w-48"
-            >
-              <option value="all">All Doctors</option>
-              {doctorsWithVOs.map(doctor => (
-                <option key={doctor.id} value={doctor.id}>
-                  {doctor.name}
-                </option>
-              ))}
-            </select>
-          </div>
+            {/* Doctor Filter */}
+            <div className="flex items-center gap-2">
+              <label htmlFor="doctor-filter-initial" className="text-sm font-medium whitespace-nowrap">
+                Doctor:
+              </label>
+              <select
+                id="doctor-filter-initial"
+                value={selectedDoctorId}
+                onChange={(e) => {
+                  setSelectedDoctorId(e.target.value);
+                  setSelectedTherapistId('all');
+                  setSelectedVOIds(new Set());
+                }}
+                className="px-3 py-2 border border-border rounded-md bg-background text-sm w-48"
+              >
+                <option value="all">All Doctors</option>
+                {doctorsWithVOs.map(doctor => (
+                  <option key={doctor.id} value={doctor.id}>
+                    {doctor.name}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          {/* Therapist Filter */}
-          <div className="flex items-center gap-2">
-            <label htmlFor="therapist-filter" className="text-sm font-medium whitespace-nowrap">
-              Therapist:
-            </label>
-            <select
-              id="therapist-filter"
-              value={selectedTherapistId}
-              onChange={(e) => {
-                setSelectedTherapistId(e.target.value);
-                setSelectedFacilityId('all'); // Reset facility filter when therapist changes
-                setSelectedVOIds(new Set()); // Clear selections when changing filter
-              }}
-              className="px-3 py-2 border border-border rounded-md bg-background text-sm w-64"
-            >
-              <option value="all">All Therapists ({doctorFilteredVOs.length} VOs)</option>
-              {therapistStats.map(stat => (
-                <option key={stat.therapistId} value={stat.therapistId}>
-                  {stat.therapistName} ({stat.voCount} {stat.voCount === 1 ? 'VO' : 'VOs'})
-                </option>
-              ))}
-            </select>
-          </div>
+            {/* Therapist Filter */}
+            <div className="flex items-center gap-2">
+              <label htmlFor="therapist-filter-initial" className="text-sm font-medium whitespace-nowrap">
+                Therapist:
+              </label>
+              <select
+                id="therapist-filter-initial"
+                value={selectedTherapistId}
+                onChange={(e) => {
+                  setSelectedTherapistId(e.target.value);
+                  setSelectedFacilityId('all');
+                  setSelectedVOIds(new Set());
+                }}
+                className="px-3 py-2 border border-border rounded-md bg-background text-sm w-64"
+              >
+                <option value="all">All Therapists ({doctorFilteredVOs.length} VOs)</option>
+                {therapistStats.map(stat => (
+                  <option key={stat.therapistId} value={stat.therapistId}>
+                    {stat.therapistName} ({stat.voCount} {stat.voCount === 1 ? 'VO' : 'VOs'})
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          {/* Facility Filter */}
-          <div className="flex items-center gap-2">
-            <label htmlFor="facility-filter" className="text-sm font-medium whitespace-nowrap">
-              Facility:
-            </label>
-            <select
-              id="facility-filter"
-              value={selectedFacilityId}
-              onChange={(e) => {
-                setSelectedFacilityId(e.target.value);
-                setSelectedVOIds(new Set()); // Clear selections when changing filter
-              }}
-              className="px-3 py-2 border border-border rounded-md bg-background text-sm w-64"
-            >
-              <option value="all">All Facilities ({therapistFilteredVOs.length} VOs)</option>
-              {facilityStats.map(stat => (
-                <option key={stat.facilityId} value={stat.facilityId}>
-                  {stat.facilityName} ({stat.voCount} {stat.voCount === 1 ? 'VO' : 'VOs'})
-                </option>
-              ))}
-            </select>
-          </div>
+            {/* Facility Filter */}
+            <div className="flex items-center gap-2">
+              <label htmlFor="facility-filter-initial" className="text-sm font-medium whitespace-nowrap">
+                Facility:
+              </label>
+              <select
+                id="facility-filter-initial"
+                value={selectedFacilityId}
+                onChange={(e) => {
+                  setSelectedFacilityId(e.target.value);
+                  setSelectedVOIds(new Set());
+                }}
+                className="px-3 py-2 border border-border rounded-md bg-background text-sm w-64"
+              >
+                <option value="all">All Facilities ({therapistFilteredVOs.length} VOs)</option>
+                {facilityStats.map(stat => (
+                  <option key={stat.facilityId} value={stat.facilityId}>
+                    {stat.facilityName} ({stat.voCount} {stat.voCount === 1 ? 'VO' : 'VOs'})
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
-        {/* Status Tabs */}
-        <div className="flex flex-wrap items-center gap-0.5 mb-4 border-b border-border bg-muted/20 px-2">
-          <button
-            onClick={() => {
-              setStatusFilter('all');
-              setSelectedVOIds(new Set());
-            }}
-            className={`px-3 py-2 text-xs font-medium transition-colors relative whitespace-nowrap ${
-              statusFilter === 'all'
-                ? 'text-primary'
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            All ({statusCounts.all})
-            {statusFilter === 'all' && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
-          </button>
-          {allStatuses.map(status => (
-            <button
-              key={status}
-              onClick={() => {
-                setStatusFilter(status);
-                setSelectedVOIds(new Set());
-              }}
-              className={`px-3 py-2 text-xs font-medium transition-colors relative whitespace-nowrap ${
-                statusFilter === status
-                  ? 'text-primary'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {status} ({statusCounts[status]})
-              {statusFilter === status && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />}
-            </button>
-          ))}
-        </div>
-
-        {/* VO Count and Active Filters */}
+        {/* VO Count */}
         <div className="flex items-center justify-between gap-4">
           <div className="text-sm text-muted-foreground">
-            Showing {sortedVOs.length} {sortedVOs.length === 1 ? 'VO' : 'VOs'}
-            {statusFilter !== 'all' && (
-              <span> • Status: {statusFilter}</span>
-            )}
+            Showing {sortedVOs.length} initial order{sortedVOs.length !== 1 ? 's' : ''}
             {selectedDoctorId !== 'all' && (
               <span> • Doctor: {doctors.find(d => d.id === selectedDoctorId)?.name}</span>
             )}
@@ -511,10 +454,9 @@ const VOsTable: React.FC<VOsTableProps> = ({
           </div>
 
           {/* Clear Filters */}
-          {(statusFilter !== 'all' || selectedDoctorId !== 'all' || selectedTherapistId !== 'all' || selectedFacilityId !== 'all') && (
+          {(selectedDoctorId !== 'all' || selectedTherapistId !== 'all' || selectedFacilityId !== 'all') && (
             <button
               onClick={() => {
-                setStatusFilter('all');
                 setSelectedDoctorId('all');
                 setSelectedTherapistId('all');
                 setSelectedFacilityId('all');
@@ -532,7 +474,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
       <div className="flex-1 overflow-auto">
         {sortedVOs.length === 0 ? (
           <div className="flex items-center justify-center h-full text-muted-foreground">
-            <p>No VOs found for this selection</p>
+            <p>No initial orders found</p>
           </div>
         ) : (
           <table className="w-full text-sm">
@@ -550,61 +492,46 @@ const VOsTable: React.FC<VOsTableProps> = ({
                 <th
                   className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
                   onClick={() => handleSort('patientName')}
-                  aria-sort={sortColumn === 'patientName' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
-                  role="columnheader"
                 >
                   Patient Name <SortIndicator column="patientName" />
                 </th>
                 <th
                   className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
                   onClick={() => handleSort('doctor')}
-                  aria-sort={sortColumn === 'doctor' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
-                  role="columnheader"
                 >
                   Doctor <SortIndicator column="doctor" />
                 </th>
                 <th
                   className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
-                  onClick={() => handleSort('status')}
-                  aria-sort={sortColumn === 'status' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
-                  role="columnheader"
-                >
-                  F.VO Status <SortIndicator column="status" />
-                </th>
-                <th
-                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
                   onClick={() => handleSort('statusDate')}
-                  aria-sort={sortColumn === 'statusDate' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
-                  role="columnheader"
                 >
-                  Status Date <SortIndicator column="statusDate" />
+                  Created Date <SortIndicator column="statusDate" />
                 </th>
                 <th
                   className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
                   onClick={() => handleSort('therapyType')}
-                  aria-sort={sortColumn === 'therapyType' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
-                  role="columnheader"
                 >
                   Heilmittel <SortIndicator column="therapyType" />
                 </th>
                 <th
                   className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
                   onClick={() => handleSort('anzahl')}
-                  aria-sort={sortColumn === 'anzahl' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
-                  role="columnheader"
                 >
                   Anzahl <SortIndicator column="anzahl" />
                 </th>
-                <th className="p-2 text-left font-medium" role="columnheader">
+                <th className="p-2 text-left font-medium">
                   Geb. Datum
                 </th>
-                <th className="p-2 text-left font-medium" role="columnheader">
+                <th className="p-2 text-left font-medium">
                   Therapist
                 </th>
-                <th className="p-2 text-left font-medium" role="columnheader">
+                <th className="p-2 text-left font-medium">
                   Facility
                 </th>
-                <th className="p-2 text-left font-medium w-64" role="columnheader">
+                <th className="p-2 text-left font-medium w-40">
+                  Action
+                </th>
+                <th className="p-2 text-left font-medium w-48">
                   Notes
                 </th>
               </tr>
@@ -625,32 +552,22 @@ const VOsTable: React.FC<VOsTableProps> = ({
                   </td>
                   <td className="p-2 font-medium">{vo.patientName}</td>
                   <td className="p-2">{getDoctorName(vo.doctorId)}</td>
-                  <td className="p-2">
-                    <select
-                      value={vo.status}
-                      onChange={(e) => handleStatusChange(vo.id, e.target.value as FVOCRMVOStatus)}
-                      className={`px-2 py-1 rounded border text-xs font-medium ${getStatusColor(vo.status)}`}
-                      disabled={!onStatusChange}
-                    >
-                      {allStatuses.map(status => (
-                        <option key={status} value={status}>
-                          {status}
-                        </option>
-                      ))}
-                    </select>
-                  </td>
                   <td className="p-2 text-muted-foreground">{vo.statusDate}</td>
                   <td className="p-2 font-mono text-xs">{vo.therapyType}</td>
                   <td className="p-2 text-center">{vo.anzahl}</td>
-                  {/* Geb. Datum */}
                   <td className="p-2 text-sm text-muted-foreground">{vo.gebDatum}</td>
-                  {/* Therapist */}
                   <td className="p-2 text-sm">
                     {therapists.find(t => t.id === vo.therapistId)?.name || '-'}
                   </td>
-                  {/* Facility */}
                   <td className="p-2 text-sm">{vo.facilityName}</td>
-                  {/* Notes */}
+                  <td className="p-2">
+                    <button
+                      onClick={() => handleMarkAsOrdered(vo.id)}
+                      className="px-3 py-1.5 bg-green-100 text-green-800 border border-green-200 rounded-md hover:bg-green-200 transition-colors text-xs font-medium"
+                    >
+                      Bestellt
+                    </button>
+                  </td>
                   <td className="p-2">
                     <button
                       onClick={() => handleOpenNotesModal(vo)}
@@ -687,8 +604,57 @@ const VOsTable: React.FC<VOsTableProps> = ({
           onDeleteNote={handleDeleteNoteFromModal}
         />
       )}
+
+      {/* Bulk Note Modal */}
+      {showBulkNoteModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-card rounded-lg shadow-xl w-full max-w-md p-6">
+            <h3 className="text-lg font-semibold mb-4">Bulk Note</h3>
+
+            <div className="space-y-4">
+              {/* Note Text */}
+              <div>
+                <label className="block text-sm font-medium mb-2">
+                  Note
+                  <span className="text-muted-foreground ml-2">
+                    ({bulkNoteText.length}/500 characters)
+                  </span>
+                </label>
+                <textarea
+                  value={bulkNoteText}
+                  onChange={(e) => setBulkNoteText(e.target.value)}
+                  className="w-full px-3 py-2 border border-border rounded-md resize-none"
+                  rows={4}
+                  maxLength={500}
+                  placeholder="Enter note (5-500 characters)..."
+                />
+              </div>
+
+              {/* Actions */}
+              <div className="flex justify-end gap-2 pt-2">
+                <button
+                  onClick={() => {
+                    setShowBulkNoteModal(false);
+                    setBulkNoteText('');
+                  }}
+                  className="px-4 py-2 border border-border rounded-md hover:bg-muted transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleBulkNoteSubmit}
+                  disabled={bulkNoteText.trim().length < 5}
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  Apply to {selectedVOIds.size} VOs
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default VOsTable;
+export default InitialOrdersTable;

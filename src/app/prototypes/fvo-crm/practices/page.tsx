@@ -104,7 +104,9 @@ export default function PracticesManagementPage() {
           isOpen={isDetailModalOpen}
           practice={{
             ...selectedPractice,
-            pendingVOCount: mockData.vos.filter(vo => vo.practiceId === selectedPractice.id && vo.status === 'Pending').length,
+            pendingVOCount: mockData.vos.filter(vo => vo.practiceId === selectedPractice.id && vo.status !== 'Received' && vo.status !== 'In Transit').length,
+            pendingBestellenCount: mockData.vos.filter(vo => vo.practiceId === selectedPractice.id && vo.status === 'Bestellen').length,
+            pendingFollowUpCount: mockData.vos.filter(vo => vo.practiceId === selectedPractice.id && vo.status !== 'Bestellen' && vo.status !== 'Received' && vo.status !== 'In Transit').length,
             activeIssueCount: (mockData.activities as PracticeActivity[]).filter(a => a.practiceId === selectedPractice.id && a.isIssue && a.issueStatus === 'active').length,
             latestIssue: (mockData.activities as PracticeActivity[])
               .filter(a => a.practiceId === selectedPractice.id && a.isIssue && a.issueStatus === 'active')

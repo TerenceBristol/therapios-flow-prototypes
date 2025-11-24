@@ -90,30 +90,6 @@ const BulkActionToolbar: React.FC<BulkActionToolbarProps> = ({
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Bulk Status Change */}
-            <div className="relative">
-              <button
-                onClick={() => setShowStatusDropdown(!showStatusDropdown)}
-                className="px-4 py-2 bg-white border border-blue-300 rounded-md hover:bg-blue-50 text-sm font-medium text-blue-900 transition-colors"
-              >
-                Change Status
-              </button>
-
-              {showStatusDropdown && (
-                <div className="absolute top-full mt-1 right-0 bg-white border border-border rounded-md shadow-lg py-1 min-w-[180px] z-30">
-                  {allStatuses.map(status => (
-                    <button
-                      key={status}
-                      onClick={() => handleBulkStatus(status)}
-                      className="w-full px-4 py-2 text-left text-sm hover:bg-muted transition-colors"
-                    >
-                      {status}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
             {/* Bulk Note */}
             <button
               onClick={() => setShowNoteModal(true)}
@@ -136,6 +112,30 @@ const BulkActionToolbar: React.FC<BulkActionToolbarProps> = ({
                 {getGeneratePDFButtonText()}
               </button>
             )}
+
+            {/* Bulk Status Change */}
+            <div className="relative">
+              <button
+                onClick={() => setShowStatusDropdown(!showStatusDropdown)}
+                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm font-medium transition-colors"
+              >
+                Change Status
+              </button>
+
+              {showStatusDropdown && (
+                <div className="absolute top-full mt-1 right-0 bg-white border border-border rounded-md shadow-lg py-1 min-w-[180px] z-30">
+                  {allStatuses.map(status => (
+                    <button
+                      key={status}
+                      onClick={() => handleBulkStatus(status)}
+                      className="w-full px-4 py-2 text-left text-sm hover:bg-muted transition-colors"
+                    >
+                      {status}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
 

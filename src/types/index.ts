@@ -201,7 +201,8 @@ export type IssueType =
   | 'Other';
 
 // VO Status for FVO CRM (different from main VO system)
-export type FVOCRMVOStatus = 'Bestellt' | 'Nachverfolgen' | 'Nachverfolgt' | 'Telefonieren' | 'Telefoniert' | 'Paused by Doctor' | 'In Transit' | 'Received' | 'Keine-Folge VO';
+// 'Bestellen' = Initial order (not yet ordered), 'Bestellt' = Ordered (follow-up workflow)
+export type FVOCRMVOStatus = 'Bestellen' | 'Bestellt' | 'Nachverfolgen' | 'Nachverfolgt' | 'Telefonieren' | 'Telefoniert' | 'Paused by Doctor' | 'In Transit' | 'Received' | 'Keine-Folge VO';
 
 // Order Form Type for PDF generation
 export type OrderFormType = 'initial' | 'followup';
@@ -388,6 +389,8 @@ export type PriorityLevel = 'overdue' | 'dueToday' | 'thisWeek' | 'other';
 // Computed fields for practice (derived at runtime)
 export interface PracticeComputedFields {
   pendingVOCount: number;
+  pendingBestellenCount: number; // VOs with status 'Bestellen' (initial orders)
+  pendingFollowUpCount: number; // VOs pending follow-up (non-Bestellen, non-Received, non-In Transit)
   lastActivity?: PracticeActivity;
   nextFollowUpDate?: string;
   nextFollowUpTime?: string;

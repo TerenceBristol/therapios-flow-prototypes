@@ -60,7 +60,11 @@ const FVOCRMDashboard: React.FC = () => {
   const practicesWithComputed: PracticeWithComputed[] = useMemo(() => {
     return practices.map(practice => {
       const practiceVOs = vos.filter(vo => vo.practiceId === practice.id);
-      const pendingVOs = practiceVOs.filter(vo => vo.status !== 'Received');
+      const pendingVOs = practiceVOs.filter(vo => vo.status !== 'Received' && vo.status !== 'In Transit');
+      const bestellenVOs = practiceVOs.filter(vo => vo.status === 'Bestellen');
+      const followUpVOs = practiceVOs.filter(vo =>
+        vo.status !== 'Bestellen' && vo.status !== 'Received' && vo.status !== 'In Transit'
+      );
       const practiceActivities = activities.filter(a => a.practiceId === practice.id);
       const sortedActivities = [...practiceActivities].sort((a, b) =>
         new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -80,6 +84,8 @@ const FVOCRMDashboard: React.FC = () => {
       return {
         ...practice,
         pendingVOCount: pendingVOs.length,
+        pendingBestellenCount: bestellenVOs.length,
+        pendingFollowUpCount: followUpVOs.length,
         lastActivity: sortedActivities[0],
         nextFollowUpDate,
         priorityLevel,

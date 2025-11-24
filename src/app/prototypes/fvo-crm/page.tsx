@@ -48,11 +48,21 @@ export default function FVOCRMPage() {
         a => a.practiceId === practice.id
       );
 
-      // Get all VOs for this practice (excluding "Received" and "In Transit" status)
-      const practiceVOs = vos.filter(vo => vo.practiceId === practice.id && vo.status !== 'Received' && vo.status !== 'In Transit');
+      // Get all VOs for this practice
+      const allPracticeVOs = vos.filter(vo => vo.practiceId === practice.id);
 
-      // Find pending VOs (all non-received, non-in-transit VOs are considered pending)
-      const pendingVOs = practiceVOs;
+      // VOs with 'Bestellen' status (initial orders)
+      const bestellenVOs = allPracticeVOs.filter(vo => vo.status === 'Bestellen');
+
+      // VOs pending follow-up (non-Bestellen, non-Received, non-In Transit)
+      const followUpVOs = allPracticeVOs.filter(vo =>
+        vo.status !== 'Bestellen' && vo.status !== 'Received' && vo.status !== 'In Transit'
+      );
+
+      // Total pending VOs (excluding only Received and In Transit)
+      const pendingVOs = allPracticeVOs.filter(vo =>
+        vo.status !== 'Received' && vo.status !== 'In Transit'
+      );
 
       // Get last activity
       const sortedActivities = [...practiceActivities].sort(
@@ -87,6 +97,8 @@ export default function FVOCRMPage() {
       return {
         ...practice,
         pendingVOCount: pendingVOs.length,
+        pendingBestellenCount: bestellenVOs.length,
+        pendingFollowUpCount: followUpVOs.length,
         lastActivity: lastActivity,
         nextFollowUpDate: nextFollowUp?.dueDate,
         nextFollowUpTime: nextFollowUp?.dueTime,
@@ -102,15 +114,6 @@ export default function FVOCRMPage() {
     if (practice) {
       setSelectedPractice(practice);
       setInitialTab('practiceInfo');
-      setIsCRMModalOpen(true);
-    }
-  };
-
-  const handleOpenActivities = (practiceId: string) => {
-    const practice = practicesWithComputed.find(p => p.id === practiceId);
-    if (practice) {
-      setSelectedPractice(practice);
-      setInitialTab('activities');
       setIsCRMModalOpen(true);
     }
   };
@@ -271,7 +274,6 @@ export default function FVOCRMPage() {
         onViewPractice={handleViewPractice}
         onEditPractice={handleViewPractice} // Same as view in CRM context
         onAddPractice={handleAddPractice}
-        onOpenActivities={handleOpenActivities}
       />
 
       {selectedPractice && (

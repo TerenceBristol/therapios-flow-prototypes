@@ -10,7 +10,6 @@ interface PracticesTableProps {
   onViewPractice: (practiceId: string) => void;
   onEditPractice: (practiceId: string) => void;
   onAddPractice: () => void;
-  onOpenActivities?: (practiceId: string) => void;
 }
 
 const PracticesTable: React.FC<PracticesTableProps> = ({
@@ -18,11 +17,10 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
   allDoctors,
   onViewPractice,
   onEditPractice,
-  onAddPractice,
-  onOpenActivities
+  onAddPractice
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortColumn, setSortColumn] = useState<string | null>('pending');
+  const [sortColumn, setSortColumn] = useState<string | null>('pendingFollowUp');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [followUpFilter, setFollowUpFilter] = useState<'all' | 'hasIssues' | 'todayOverdue' | 'none'>('all');
 
@@ -92,9 +90,13 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
             aVal = a.name;
             bVal = b.name;
             break;
-          case 'pending':
-            aVal = a.pendingVOCount;
-            bVal = b.pendingVOCount;
+          case 'pendingBestellen':
+            aVal = a.pendingBestellenCount;
+            bVal = b.pendingBestellenCount;
+            break;
+          case 'pendingFollowUp':
+            aVal = a.pendingFollowUpCount;
+            bVal = b.pendingFollowUpCount;
             break;
           case 'lastActivity':
             aVal = a.lastActivity?.date || '';
@@ -139,8 +141,9 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
   const renderTableRow = (practice: PracticeWithComputed) => (
     <tr
       key={practice.id}
-      onClick={() => onViewPractice(practice.id)}
-      className="border-b border-border hover:bg-muted/50 transition-colors cursor-pointer"
+      className={`border-b border-border hover:bg-muted/50 transition-colors ${
+        practice.activeIssueCount > 0 ? 'border-l-4 border-l-amber-500' : ''
+      }`}
     >
       <td className="px-4 py-3.5">
         <div className="font-semibold text-base text-foreground">{practice.name}</div>
@@ -155,23 +158,23 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
         <TodayHoursCell openingHours={practice.openingHours} />
       </td>
       <td className="px-4 py-3.5 text-center">
-        <span className="text-sm font-bold text-foreground">{practice.pendingVOCount}</span>
+        <span className="text-sm font-medium text-foreground">
+          {practice.pendingBestellenCount > 0 ? practice.pendingBestellenCount : '-'}
+        </span>
       </td>
-      <td className="px-4 py-3.5">
-        {practice.latestIssue ? (
-          <div
-            className="text-sm text-foreground cursor-help"
-            title={practice.latestIssue.notes}
+      <td className="px-4 py-3.5 text-center">
+        <span className="text-sm font-medium text-foreground">
+          {practice.pendingFollowUpCount > 0 ? practice.pendingFollowUpCount : '-'}
+        </span>
+      </td>
+      <td className="px-4 py-3.5 text-center">
+        {practice.activeIssueCount > 0 ? (
+          <span
+            className="inline-flex items-center justify-center min-w-[1.5rem] px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-700 rounded-full cursor-help"
+            title={practice.latestIssue ? `${practice.latestIssue.issueType || 'Issue'}: ${practice.latestIssue.notes}` : 'Has active issues'}
           >
-            <div className="line-clamp-2">
-              {practice.latestIssue.issueType || '(Unspecified Issue)'}
-            </div>
-            {practice.activeIssueCount > 1 && (
-              <span className="ml-1 text-xs text-muted-foreground">
-                +{practice.activeIssueCount - 1} more
-              </span>
-            )}
-          </div>
+            {practice.activeIssueCount}
+          </span>
         ) : (
           <span className="text-sm text-muted-foreground">-</span>
         )}
@@ -226,21 +229,12 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
       </td>
       <td className="px-4 py-3.5">
         <div className="flex justify-center">
-          {onOpenActivities && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onOpenActivities(practice.id);
-              }}
-              className="p-2 text-primary hover:bg-primary/10 rounded-md transition-colors"
-              title="View activities & next activities"
-              aria-label="View activities & next activities"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-              </svg>
-            </button>
-          )}
+          <button
+            onClick={() => onViewPractice(practice.id)}
+            className="px-3 py-1.5 text-sm font-medium text-primary border border-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            View
+          </button>
         </div>
       </td>
     </tr>
@@ -341,12 +335,20 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                   <th className="px-4 py-3.5" role="columnheader">Arzt</th>
                   <th className="px-4 py-3.5" role="columnheader">Today&apos;s Hours</th>
                   <th
-                    className="px-4 py-3.5 text-center cursor-pointer hover:text-foreground font-bold"
-                    onClick={() => handleSort('pending')}
-                    aria-sort={sortColumn === 'pending' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                    className="px-4 py-3.5 text-center cursor-pointer hover:text-foreground"
+                    onClick={() => handleSort('pendingBestellen')}
+                    aria-sort={sortColumn === 'pendingBestellen' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
                   >
-                    Pending VOs{getSortIndicator('pending')}
+                    Pending Bestellen{getSortIndicator('pendingBestellen')}
+                  </th>
+                  <th
+                    className="px-4 py-3.5 text-center cursor-pointer hover:text-foreground"
+                    onClick={() => handleSort('pendingFollowUp')}
+                    aria-sort={sortColumn === 'pendingFollowUp' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                    role="columnheader"
+                  >
+                    Pending Follow-up{getSortIndicator('pendingFollowUp')}
                   </th>
                   <th className="px-4 py-3.5" role="columnheader">Issues</th>
                   <th
@@ -363,9 +365,9 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                     aria-sort={sortColumn === 'nextFollowUp' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
                   >
-                    Next Activity Date{getSortIndicator('nextFollowUp')}
+                    Next Activity{getSortIndicator('nextFollowUp')}
                   </th>
-                  <th className="px-4 py-3.5 text-center" role="columnheader">Activities</th>
+                  <th className="px-4 py-3.5 text-center" role="columnheader">Details</th>
                 </tr>
               </thead>
               <tbody>
