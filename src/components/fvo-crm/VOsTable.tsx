@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { PracticeVO, PracticeDoctor, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
+import { PracticeVO, PracticeDoctor, FVOCRMVOStatus, VOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import BulkActionToolbar from './BulkActionToolbar';
 import VONotesModal from './modals/VONotesModal';
 
@@ -177,6 +177,10 @@ const VOsTable: React.FC<VOsTableProps> = ({
           aValue = a.patientName.toLowerCase();
           bValue = b.patientName.toLowerCase();
           break;
+        case 'voNumber':
+          aValue = (a.voNumber || '').toLowerCase();
+          bValue = (b.voNumber || '').toLowerCase();
+          break;
         case 'doctor':
           const aDoctor = doctors.find(d => d.id === a.doctorId)?.name || '';
           const bDoctor = doctors.find(d => d.id === b.doctorId)?.name || '';
@@ -198,6 +202,10 @@ const VOsTable: React.FC<VOsTableProps> = ({
         case 'anzahl':
           aValue = a.anzahl;
           bValue = b.anzahl;
+          break;
+        case 'voStatus':
+          aValue = a.voStatus || '';
+          bValue = b.voStatus || '';
           break;
         default:
           return 0;
@@ -329,6 +337,8 @@ const VOsTable: React.FC<VOsTableProps> = ({
   // Status color mapping with exhaustiveness check
   const getStatusColor = (status: FVOCRMVOStatus) => {
     switch (status) {
+      case 'Bestellen':
+        return 'bg-blue-100 text-blue-800 border-blue-200';
       case 'Bestellt':
         return 'bg-green-100 text-green-800 border-green-200';
       case 'Nachverfolgen':
@@ -342,15 +352,32 @@ const VOsTable: React.FC<VOsTableProps> = ({
       case 'Paused by Doctor':
         return 'bg-red-100 text-red-800 border-red-200';
       case 'In Transit':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
+        return 'bg-cyan-100 text-cyan-800 border-cyan-200';
       case 'Received':
         return 'bg-gray-100 text-gray-800 border-gray-200';
       case 'Keine-Folge VO':
         return 'bg-gray-100 text-gray-800 border-gray-200';
-      case 'Bestellen':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
       default:
         const _exhaustive: never = status;
+        return 'bg-gray-100 text-gray-800 border-gray-200';
+    }
+  };
+
+  // VO Status color mapping (treatment status, not FVO workflow status)
+  const getVOStatusColor = (status?: VOStatus) => {
+    if (!status) return 'bg-gray-100 text-gray-800 border-gray-200';
+    switch (status) {
+      case 'Aktiv':
+        return 'bg-green-100 text-green-800 border-green-200';
+      case 'Fertig Behandelt':
+        return 'bg-gray-700 text-white border-gray-700';
+      case 'Abgelaufen':
+        return 'bg-purple-100 text-purple-800 border-purple-200';
+      case 'Abgerechnet':
+        return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'Abgebrochen':
+        return 'bg-orange-100 text-orange-800 border-orange-200';
+      default:
         return 'bg-gray-100 text-gray-800 border-gray-200';
     }
   };
@@ -535,7 +562,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
             <p>No VOs found for this selection</p>
           </div>
         ) : (
-          <table className="w-full text-sm">
+          <table className="w-full text-sm table-auto">
             <thead className="bg-muted/50 sticky top-0 z-10">
               <tr className="border-b border-border">
                 <th className="p-2 text-left font-medium w-10">
@@ -556,15 +583,31 @@ const VOsTable: React.FC<VOsTableProps> = ({
                   Patient Name <SortIndicator column="patientName" />
                 </th>
                 <th
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
+                  onClick={() => handleSort('voNumber')}
+                  aria-sort={sortColumn === 'voNumber' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
+                >
+                  VO # <SortIndicator column="voNumber" />
+                </th>
+                <th
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
+                  onClick={() => handleSort('voStatus')}
+                  aria-sort={sortColumn === 'voStatus' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
+                >
+                  VO Status <SortIndicator column="voStatus" />
+                </th>
+                <th
                   className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
                   onClick={() => handleSort('doctor')}
                   aria-sort={sortColumn === 'doctor' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                   role="columnheader"
                 >
-                  Doctor <SortIndicator column="doctor" />
+                  Arzt <SortIndicator column="doctor" />
                 </th>
                 <th
-                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
                   onClick={() => handleSort('status')}
                   aria-sort={sortColumn === 'status' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                   role="columnheader"
@@ -572,7 +615,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
                   F.VO Status <SortIndicator column="status" />
                 </th>
                 <th
-                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
                   onClick={() => handleSort('statusDate')}
                   aria-sort={sortColumn === 'statusDate' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                   role="columnheader"
@@ -580,7 +623,7 @@ const VOsTable: React.FC<VOsTableProps> = ({
                   Status Date <SortIndicator column="statusDate" />
                 </th>
                 <th
-                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
                   onClick={() => handleSort('therapyType')}
                   aria-sort={sortColumn === 'therapyType' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                   role="columnheader"
@@ -588,23 +631,20 @@ const VOsTable: React.FC<VOsTableProps> = ({
                   Heilmittel <SortIndicator column="therapyType" />
                 </th>
                 <th
-                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
                   onClick={() => handleSort('anzahl')}
                   aria-sort={sortColumn === 'anzahl' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                   role="columnheader"
                 >
-                  Anzahl <SortIndicator column="anzahl" />
-                </th>
-                <th className="p-2 text-left font-medium" role="columnheader">
-                  Geb. Datum
+                  Beh Status <SortIndicator column="anzahl" />
                 </th>
                 <th className="p-2 text-left font-medium" role="columnheader">
                   Therapist
                 </th>
                 <th className="p-2 text-left font-medium" role="columnheader">
-                  Facility
+                  ER
                 </th>
-                <th className="p-2 text-left font-medium w-64" role="columnheader">
+                <th className="p-2 text-left font-medium" role="columnheader">
                   Notes
                 </th>
               </tr>
@@ -624,9 +664,16 @@ const VOsTable: React.FC<VOsTableProps> = ({
                     />
                   </td>
                   <td className="p-2 font-medium">{vo.patientName}</td>
+                  <td className="p-2 text-muted-foreground whitespace-nowrap">{vo.voNumber || '-'}</td>
+                  <td className="p-2 whitespace-nowrap">
+                    <span className={`px-2 py-1 rounded border text-xs font-medium ${getVOStatusColor(vo.voStatus)}`}>
+                      {vo.voStatus || '-'}
+                    </span>
+                  </td>
                   <td className="p-2">{getDoctorName(vo.doctorId)}</td>
-                  <td className="p-2">
+                  <td className="p-2 whitespace-nowrap">
                     <select
+                      key={`${vo.id}-${vo.status}`}
                       value={vo.status}
                       onChange={(e) => handleStatusChange(vo.id, e.target.value as FVOCRMVOStatus)}
                       className={`px-2 py-1 rounded border text-xs font-medium ${getStatusColor(vo.status)}`}
@@ -639,16 +686,14 @@ const VOsTable: React.FC<VOsTableProps> = ({
                       ))}
                     </select>
                   </td>
-                  <td className="p-2 text-muted-foreground">{vo.statusDate}</td>
-                  <td className="p-2 font-mono text-xs">{vo.therapyType}</td>
-                  <td className="p-2 text-center">{vo.anzahl}</td>
-                  {/* Geb. Datum */}
-                  <td className="p-2 text-sm text-muted-foreground">{vo.gebDatum}</td>
+                  <td className="p-2 text-muted-foreground whitespace-nowrap">{vo.statusDate}</td>
+                  <td className="p-2 font-mono text-xs whitespace-nowrap">{vo.therapyType}</td>
+                  <td className="p-2 text-center whitespace-nowrap">{vo.completedTreatments ?? 0}/{vo.anzahl}</td>
                   {/* Therapist */}
                   <td className="p-2 text-sm">
                     {therapists.find(t => t.id === vo.therapistId)?.name || '-'}
                   </td>
-                  {/* Facility */}
+                  {/* ER (Facility) */}
                   <td className="p-2 text-sm">{vo.facilityName}</td>
                   {/* Notes */}
                   <td className="p-2">

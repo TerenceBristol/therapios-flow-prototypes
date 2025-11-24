@@ -148,26 +148,26 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
       <td className="px-4 py-3.5">
         <div className="font-semibold text-base text-foreground">{practice.name}</div>
       </td>
-      <td className="px-4 py-3.5">
+      <td className="px-4 py-3.5 whitespace-nowrap">
         <PhoneCell phone={practice.phone || ''} />
       </td>
       <td className="px-4 py-3.5">
         <ArztCell doctors={practice.doctors} />
       </td>
-      <td className="px-4 py-3.5">
+      <td className="px-4 py-3.5 whitespace-nowrap">
         <TodayHoursCell openingHours={practice.openingHours} />
       </td>
-      <td className="px-4 py-3.5 text-center">
+      <td className="px-4 py-3.5 text-center whitespace-nowrap">
         <span className="text-sm font-medium text-foreground">
           {practice.pendingBestellenCount > 0 ? practice.pendingBestellenCount : '-'}
         </span>
       </td>
-      <td className="px-4 py-3.5 text-center">
+      <td className="px-4 py-3.5 text-center whitespace-nowrap">
         <span className="text-sm font-medium text-foreground">
           {practice.pendingFollowUpCount > 0 ? practice.pendingFollowUpCount : '-'}
         </span>
       </td>
-      <td className="px-4 py-3.5 text-center">
+      <td className="px-4 py-3.5 text-center whitespace-nowrap">
         {practice.activeIssueCount > 0 ? (
           <span
             className="inline-flex items-center justify-center min-w-[1.5rem] px-2 py-0.5 text-xs font-medium bg-amber-100 text-amber-700 rounded-full cursor-help"
@@ -179,7 +179,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
           <span className="text-sm text-muted-foreground">-</span>
         )}
       </td>
-      <td className="px-4 py-3.5 w-40">
+      <td className="px-4 py-3.5 whitespace-nowrap">
         <div className="text-sm text-foreground">
           {practice.lastActivity ? (
             <span
@@ -199,7 +199,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
           )}
         </div>
       </td>
-      <td className="px-4 py-3.5 w-52">
+      <td className="px-4 py-3.5 whitespace-nowrap">
         {practice.nextFollowUpDate ? (
           (() => {
             const urgency = getFollowUpUrgency(practice.nextFollowUpDate);
@@ -320,7 +320,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
       <div className="flex-1 overflow-auto">
         <div className="p-4">
           <div className="bg-background border border-border rounded-lg overflow-hidden">
-            <table className="w-full">
+            <table className="w-full table-auto">
               <thead className="bg-muted/50 sticky top-0 z-10">
                 <tr className="text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                   <th
@@ -331,11 +331,11 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                   >
                     Practice Name{getSortIndicator('name')}
                   </th>
-                  <th className="px-4 py-3.5" role="columnheader">Phone</th>
+                  <th className="px-4 py-3.5 whitespace-nowrap" role="columnheader">Phone</th>
                   <th className="px-4 py-3.5" role="columnheader">Arzt</th>
-                  <th className="px-4 py-3.5" role="columnheader">Today&apos;s Hours</th>
+                  <th className="px-4 py-3.5 whitespace-nowrap" role="columnheader">Today&apos;s Hours</th>
                   <th
-                    className="px-4 py-3.5 text-center cursor-pointer hover:text-foreground"
+                    className="px-4 py-3.5 text-center cursor-pointer hover:text-foreground whitespace-nowrap"
                     onClick={() => handleSort('pendingBestellen')}
                     aria-sort={sortColumn === 'pendingBestellen' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
@@ -343,16 +343,16 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                     Pending Bestellen{getSortIndicator('pendingBestellen')}
                   </th>
                   <th
-                    className="px-4 py-3.5 text-center cursor-pointer hover:text-foreground"
+                    className="px-4 py-3.5 text-center cursor-pointer hover:text-foreground whitespace-nowrap"
                     onClick={() => handleSort('pendingFollowUp')}
                     aria-sort={sortColumn === 'pendingFollowUp' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
                   >
                     Pending Follow-up{getSortIndicator('pendingFollowUp')}
                   </th>
-                  <th className="px-4 py-3.5" role="columnheader">Issues</th>
+                  <th className="px-4 py-3.5 whitespace-nowrap" role="columnheader">Issues</th>
                   <th
-                    className="px-4 py-3.5 w-40 cursor-pointer hover:text-foreground"
+                    className="px-4 py-3.5 cursor-pointer hover:text-foreground whitespace-nowrap"
                     onClick={() => handleSort('lastActivity')}
                     aria-sort={sortColumn === 'lastActivity' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
@@ -360,14 +360,14 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                     Last Activity{getSortIndicator('lastActivity')}
                   </th>
                   <th
-                    className="px-4 py-3.5 w-52 cursor-pointer hover:text-foreground"
+                    className="px-4 py-3.5 cursor-pointer hover:text-foreground whitespace-nowrap"
                     onClick={() => handleSort('nextFollowUp')}
                     aria-sort={sortColumn === 'nextFollowUp' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
                     role="columnheader"
                   >
                     Next Activity{getSortIndicator('nextFollowUp')}
                   </th>
-                  <th className="px-4 py-3.5 text-center" role="columnheader">Details</th>
+                  <th className="px-4 py-3.5 text-center whitespace-nowrap" role="columnheader">Details</th>
                 </tr>
               </thead>
               <tbody>

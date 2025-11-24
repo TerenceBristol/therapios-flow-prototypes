@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { PracticeVO, PracticeDoctor, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
+import { PracticeVO, PracticeDoctor, FVOCRMVOStatus, VOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import BulkActionToolbar from './BulkActionToolbar';
 import VONotesModal from './modals/VONotesModal';
 
@@ -37,8 +37,9 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
   const [sortColumn, setSortColumn] = useState<string>('statusDate');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [notesModalVO, setNotesModalVO] = useState<PracticeVO | null>(null);
-  const [showBulkNoteModal, setShowBulkNoteModal] = useState(false);
-  const [bulkNoteText, setBulkNoteText] = useState('');
+
+  // All available statuses for dropdown
+  const allStatuses: FVOCRMVOStatus[] = ['Bestellen', 'Bestellt', 'Nachverfolgen', 'Nachverfolgt', 'Telefonieren', 'Telefoniert', 'Paused by Doctor', 'In Transit', 'Keine-Folge VO'];
 
   // Filter to only show VOs with "Bestellen" status (initial orders)
   const initialOrderVOs = useMemo(() => {
@@ -152,11 +153,19 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
           aValue = a.patientName.toLowerCase();
           bValue = b.patientName.toLowerCase();
           break;
+        case 'voNumber':
+          aValue = (a.voNumber || '').toLowerCase();
+          bValue = (b.voNumber || '').toLowerCase();
+          break;
         case 'doctor':
           const aDoctor = doctors.find(d => d.id === a.doctorId)?.name || '';
           const bDoctor = doctors.find(d => d.id === b.doctorId)?.name || '';
           aValue = aDoctor.toLowerCase();
           bValue = bDoctor.toLowerCase();
+          break;
+        case 'status':
+          aValue = a.status;
+          bValue = b.status;
           break;
         case 'statusDate':
           aValue = new Date(a.statusTimestamp).getTime();
@@ -169,6 +178,10 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
         case 'anzahl':
           aValue = a.anzahl;
           bValue = b.anzahl;
+          break;
+        case 'voStatus':
+          aValue = a.voStatus || '';
+          bValue = b.voStatus || '';
           break;
         default:
           return 0;
@@ -212,10 +225,10 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
     }
   };
 
-  // Handle marking as "Bestellt" (ordered)
-  const handleMarkAsOrdered = (voId: string) => {
+  // Handle status change for individual VO
+  const handleStatusChange = (voId: string, newStatus: FVOCRMVOStatus) => {
     if (onStatusChange) {
-      onStatusChange(voId, 'Bestellt');
+      onStatusChange(voId, newStatus);
     }
   };
 
@@ -227,32 +240,19 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
     }
   };
 
-  // Handle bulk status change to "Bestellt"
-  const handleBulkMarkAsOrdered = () => {
+  // Handle bulk status change
+  const handleBulkStatusChange = (newStatus: FVOCRMVOStatus) => {
     if (onBulkStatusChange && selectedVOIds.size > 0) {
-      onBulkStatusChange(Array.from(selectedVOIds), 'Bestellt');
+      onBulkStatusChange(Array.from(selectedVOIds), newStatus);
       setSelectedVOIds(new Set());
     }
   };
 
   // Handle bulk note change
-  const handleBulkNoteSubmit = () => {
-    if (bulkNoteText.trim().length < 5) {
-      alert('Note must be at least 5 characters');
-      return;
-    }
-    if (bulkNoteText.length > 500) {
-      alert('Note must be less than 500 characters');
-      return;
-    }
-
-    if (window.confirm(`Add note to ${selectedVOIds.size} selected VOs?`)) {
-      if (onBulkNoteChange && selectedVOIds.size > 0) {
-        onBulkNoteChange(Array.from(selectedVOIds), bulkNoteText);
-        setSelectedVOIds(new Set());
-      }
-      setBulkNoteText('');
-      setShowBulkNoteModal(false);
+  const handleBulkNoteChange = (note: string) => {
+    if (onBulkNoteChange && selectedVOIds.size > 0) {
+      onBulkNoteChange(Array.from(selectedVOIds), note);
+      setSelectedVOIds(new Set());
     }
   };
 
@@ -305,6 +305,54 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
     return doctors.find(d => d.id === doctorId)?.name || 'Unknown Doctor';
   };
 
+  // Status color mapping with exhaustiveness check
+  const getStatusColor = (status: FVOCRMVOStatus) => {
+    switch (status) {
+      case 'Bestellen':
+        return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'Bestellt':
+        return 'bg-green-100 text-green-800 border-green-200';
+      case 'Nachverfolgen':
+        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+      case 'Nachverfolgt':
+        return 'bg-lime-100 text-lime-800 border-lime-200';
+      case 'Telefonieren':
+        return 'bg-orange-100 text-orange-800 border-orange-200';
+      case 'Telefoniert':
+        return 'bg-purple-100 text-purple-800 border-purple-200';
+      case 'Paused by Doctor':
+        return 'bg-red-100 text-red-800 border-red-200';
+      case 'In Transit':
+        return 'bg-cyan-100 text-cyan-800 border-cyan-200';
+      case 'Received':
+        return 'bg-gray-100 text-gray-800 border-gray-200';
+      case 'Keine-Folge VO':
+        return 'bg-gray-100 text-gray-800 border-gray-200';
+      default:
+        const _exhaustive: never = status;
+        return 'bg-gray-100 text-gray-800 border-gray-200';
+    }
+  };
+
+  // VO Status color mapping (treatment status, not FVO workflow status)
+  const getVOStatusColor = (status?: VOStatus) => {
+    if (!status) return 'bg-gray-100 text-gray-800 border-gray-200';
+    switch (status) {
+      case 'Aktiv':
+        return 'bg-green-100 text-green-800 border-green-200';
+      case 'Fertig Behandelt':
+        return 'bg-gray-700 text-white border-gray-700';
+      case 'Abgelaufen':
+        return 'bg-purple-100 text-purple-800 border-purple-200';
+      case 'Abgerechnet':
+        return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'Abgebrochen':
+        return 'bg-orange-100 text-orange-800 border-orange-200';
+      default:
+        return 'bg-gray-100 text-gray-800 border-gray-200';
+    }
+  };
+
   // Sort indicator
   const SortIndicator = ({ column }: { column: string }) => {
     if (sortColumn !== column) return null;
@@ -315,47 +363,14 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
     <div className="flex flex-col flex-1 min-h-0">
       {/* Bulk Action Toolbar (appears when items selected) */}
       {selectedVOIds.size > 0 && (
-        <div className="sticky top-0 z-20 bg-blue-50 border-b-2 border-blue-200 px-4 py-3 shadow-md">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="font-semibold text-blue-900">
-                {selectedVOIds.size} {selectedVOIds.size === 1 ? 'VO' : 'VOs'} selected
-              </span>
-              <button
-                onClick={() => setSelectedVOIds(new Set())}
-                className="text-sm text-blue-700 hover:text-blue-900 underline"
-              >
-                Clear selection
-              </button>
-            </div>
-
-            <div className="flex items-center gap-2">
-              {/* Add Note */}
-              <button
-                onClick={() => setShowBulkNoteModal(true)}
-                className="px-4 py-2 bg-white border border-blue-300 rounded-md hover:bg-blue-50 text-sm font-medium text-blue-900 transition-colors"
-              >
-                Add Note
-              </button>
-
-              {/* Generate PDF */}
-              <button
-                onClick={handleGeneratePDF}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm font-medium transition-colors"
-              >
-                Generate Initial Order Form
-              </button>
-
-              {/* Change to Bestellt */}
-              <button
-                onClick={handleBulkMarkAsOrdered}
-                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 text-sm font-medium transition-colors"
-              >
-                Change to Bestellt
-              </button>
-            </div>
-          </div>
-        </div>
+        <BulkActionToolbar
+          selectedCount={selectedVOIds.size}
+          orderTypeFilter={'initial'}
+          onBulkStatusChange={handleBulkStatusChange}
+          onBulkNote={handleBulkNoteChange}
+          onGeneratePDF={handleGeneratePDF}
+          onClearSelection={() => setSelectedVOIds(new Set())}
+        />
       )}
 
       {/* Filters Section */}
@@ -477,7 +492,7 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
             <p>No initial orders found</p>
           </div>
         ) : (
-          <table className="w-full text-sm">
+          <table className="w-full text-sm table-auto">
             <thead className="bg-muted/50 sticky top-0 z-10">
               <tr className="border-b border-border">
                 <th className="p-2 text-left font-medium w-10">
@@ -492,46 +507,74 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
                 <th
                   className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
                   onClick={() => handleSort('patientName')}
+                  aria-sort={sortColumn === 'patientName' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
                 >
                   Patient Name <SortIndicator column="patientName" />
                 </th>
                 <th
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
+                  onClick={() => handleSort('voNumber')}
+                  aria-sort={sortColumn === 'voNumber' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
+                >
+                  VO # <SortIndicator column="voNumber" />
+                </th>
+                <th
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
+                  onClick={() => handleSort('voStatus')}
+                  aria-sort={sortColumn === 'voStatus' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
+                >
+                  VO Status <SortIndicator column="voStatus" />
+                </th>
+                <th
                   className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
                   onClick={() => handleSort('doctor')}
+                  aria-sort={sortColumn === 'doctor' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
                 >
-                  Doctor <SortIndicator column="doctor" />
+                  Arzt <SortIndicator column="doctor" />
                 </th>
                 <th
-                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
+                  onClick={() => handleSort('status')}
+                  aria-sort={sortColumn === 'status' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
+                >
+                  F.VO Status <SortIndicator column="status" />
+                </th>
+                <th
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
                   onClick={() => handleSort('statusDate')}
+                  aria-sort={sortColumn === 'statusDate' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
                 >
-                  Created Date <SortIndicator column="statusDate" />
+                  Status Date <SortIndicator column="statusDate" />
                 </th>
                 <th
-                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
                   onClick={() => handleSort('therapyType')}
+                  aria-sort={sortColumn === 'therapyType' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
                 >
                   Heilmittel <SortIndicator column="therapyType" />
                 </th>
                 <th
-                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80"
+                  className="p-2 text-left font-medium cursor-pointer hover:bg-muted/80 whitespace-nowrap"
                   onClick={() => handleSort('anzahl')}
+                  aria-sort={sortColumn === 'anzahl' ? (sortDirection === 'asc' ? 'ascending' : 'descending') : 'none'}
+                  role="columnheader"
                 >
-                  Anzahl <SortIndicator column="anzahl" />
+                  Beh Status <SortIndicator column="anzahl" />
                 </th>
-                <th className="p-2 text-left font-medium">
-                  Geb. Datum
-                </th>
-                <th className="p-2 text-left font-medium">
+                <th className="p-2 text-left font-medium" role="columnheader">
                   Therapist
                 </th>
-                <th className="p-2 text-left font-medium">
-                  Facility
+                <th className="p-2 text-left font-medium" role="columnheader">
+                  ER
                 </th>
-                <th className="p-2 text-left font-medium w-40">
-                  Action
-                </th>
-                <th className="p-2 text-left font-medium w-48">
+                <th className="p-2 text-left font-medium" role="columnheader">
                   Notes
                 </th>
               </tr>
@@ -551,23 +594,35 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
                     />
                   </td>
                   <td className="p-2 font-medium">{vo.patientName}</td>
+                  <td className="p-2 text-muted-foreground whitespace-nowrap">{vo.voNumber || '-'}</td>
+                  <td className="p-2 whitespace-nowrap">
+                    <span className={`px-2 py-1 rounded border text-xs font-medium ${getVOStatusColor(vo.voStatus)}`}>
+                      {vo.voStatus || '-'}
+                    </span>
+                  </td>
                   <td className="p-2">{getDoctorName(vo.doctorId)}</td>
-                  <td className="p-2 text-muted-foreground">{vo.statusDate}</td>
-                  <td className="p-2 font-mono text-xs">{vo.therapyType}</td>
-                  <td className="p-2 text-center">{vo.anzahl}</td>
-                  <td className="p-2 text-sm text-muted-foreground">{vo.gebDatum}</td>
+                  <td className="p-2 whitespace-nowrap">
+                    <select
+                      key={`${vo.id}-${vo.status}`}
+                      value={vo.status}
+                      onChange={(e) => handleStatusChange(vo.id, e.target.value as FVOCRMVOStatus)}
+                      className={`px-2 py-1 rounded border text-xs font-medium ${getStatusColor(vo.status)}`}
+                      disabled={!onStatusChange}
+                    >
+                      {allStatuses.map(status => (
+                        <option key={status} value={status}>
+                          {status}
+                        </option>
+                      ))}
+                    </select>
+                  </td>
+                  <td className="p-2 text-muted-foreground whitespace-nowrap">{vo.statusDate}</td>
+                  <td className="p-2 font-mono text-xs whitespace-nowrap">{vo.therapyType}</td>
+                  <td className="p-2 text-center whitespace-nowrap">{vo.completedTreatments ?? 0}/{vo.anzahl}</td>
                   <td className="p-2 text-sm">
                     {therapists.find(t => t.id === vo.therapistId)?.name || '-'}
                   </td>
                   <td className="p-2 text-sm">{vo.facilityName}</td>
-                  <td className="p-2">
-                    <button
-                      onClick={() => handleMarkAsOrdered(vo.id)}
-                      className="px-3 py-1.5 bg-green-100 text-green-800 border border-green-200 rounded-md hover:bg-green-200 transition-colors text-xs font-medium"
-                    >
-                      Bestellt
-                    </button>
-                  </td>
                   <td className="p-2">
                     <button
                       onClick={() => handleOpenNotesModal(vo)}
@@ -603,55 +658,6 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
           onEditNote={handleEditNoteFromModal}
           onDeleteNote={handleDeleteNoteFromModal}
         />
-      )}
-
-      {/* Bulk Note Modal */}
-      {showBulkNoteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="bg-card rounded-lg shadow-xl w-full max-w-md p-6">
-            <h3 className="text-lg font-semibold mb-4">Bulk Note</h3>
-
-            <div className="space-y-4">
-              {/* Note Text */}
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Note
-                  <span className="text-muted-foreground ml-2">
-                    ({bulkNoteText.length}/500 characters)
-                  </span>
-                </label>
-                <textarea
-                  value={bulkNoteText}
-                  onChange={(e) => setBulkNoteText(e.target.value)}
-                  className="w-full px-3 py-2 border border-border rounded-md resize-none"
-                  rows={4}
-                  maxLength={500}
-                  placeholder="Enter note (5-500 characters)..."
-                />
-              </div>
-
-              {/* Actions */}
-              <div className="flex justify-end gap-2 pt-2">
-                <button
-                  onClick={() => {
-                    setShowBulkNoteModal(false);
-                    setBulkNoteText('');
-                  }}
-                  className="px-4 py-2 border border-border rounded-md hover:bg-muted transition-colors"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleBulkNoteSubmit}
-                  disabled={bulkNoteText.trim().length < 5}
-                  className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                >
-                  Apply to {selectedVOIds.size} VOs
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       )}
     </div>
   );

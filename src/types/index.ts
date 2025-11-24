@@ -338,7 +338,8 @@ export interface PracticeVO {
   voNumber?: string; // VO number (e.g., '3139-1', '2155-6') - can be multiple VOs per patient
   patientName: string;
   therapyType: string; // Heilmittel code (e.g., 'KG-H', 'BO-E-H', 'MLD45H')
-  anzahl: number; // Number of treatments (e.g., 6, 10, 12, 18)
+  anzahl: number; // Number of treatments prescribed (e.g., 6, 10, 12, 18)
+  completedTreatments?: number; // Number of treatments completed (for Beh Status display)
   voStatus?: VOStatus; // Actual VO status (Aktiv, Abgebrochen, Fertig Behandelt, etc.)
   status: FVOCRMVOStatus;
   statusTimestamp: string;

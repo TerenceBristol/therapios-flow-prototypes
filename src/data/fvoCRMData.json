@@ -2812,7 +2812,8 @@
       "createdAt": "2025-10-10T08:00:00Z",
       "therapistId": "ther-023",
       "voNumber": "4034-4",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-002",
@@ -2829,7 +2830,8 @@
       "createdAt": "2025-10-10T08:00:00Z",
       "therapistId": "ther-004",
       "voNumber": "2118-1",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 2
     },
     {
       "id": "vo-003",
@@ -2846,7 +2848,8 @@
       "createdAt": "2025-10-10T08:00:00Z",
       "therapistId": "ther-024",
       "voNumber": "7169-7",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 6
     },
     {
       "id": "vo-004",
@@ -2863,7 +2866,8 @@
       "createdAt": "2025-10-18T09:00:00Z",
       "therapistId": "ther-024",
       "voNumber": "8719-6",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 6
     },
     {
       "id": "vo-006",
@@ -2880,7 +2884,8 @@
       "createdAt": "2025-10-01T10:00:00Z",
       "therapistId": "ther-005",
       "voNumber": "1165-4",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-007",
@@ -2897,7 +2902,8 @@
       "createdAt": "2025-10-01T10:00:00Z",
       "therapistId": "ther-025",
       "voNumber": "6187-1",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-008",
@@ -2914,7 +2920,8 @@
       "createdAt": "2025-10-01T10:00:00Z",
       "therapistId": "ther-012",
       "voNumber": "3640-4",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 12
     },
     {
       "id": "vo-009",
@@ -2931,7 +2938,8 @@
       "createdAt": "2025-10-20T08:30:00Z",
       "therapistId": "ther-013",
       "voNumber": "3570-5",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 2
     },
     {
       "id": "vo-011",
@@ -2948,7 +2956,8 @@
       "createdAt": "2025-10-03T09:00:00Z",
       "therapistId": "ther-005",
       "voNumber": "8063-5",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 18
     },
     {
       "id": "vo-012",
@@ -2965,7 +2974,8 @@
       "createdAt": "2025-10-03T09:00:00Z",
       "therapistId": "ther-013",
       "voNumber": "8434-5",
-      "voStatus": "Abgebrochen"
+      "voStatus": "Abgebrochen",
+      "completedTreatments": 7
     },
     {
       "id": "vo-014",
@@ -2982,7 +2992,8 @@
       "createdAt": "2025-10-01T08:00:00Z",
       "therapistId": "ther-001",
       "voNumber": "9853-6",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 2
     },
     {
       "id": "vo-015",
@@ -2999,7 +3010,8 @@
       "createdAt": "2025-10-01T08:00:00Z",
       "therapistId": "ther-019",
       "voNumber": "3940-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 6
     },
     {
       "id": "vo-016",
@@ -3016,7 +3028,8 @@
       "createdAt": "2025-10-01T08:00:00Z",
       "therapistId": "ther-019",
       "voNumber": "8960-4",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 8
     },
     {
       "id": "vo-017",
@@ -3033,7 +3046,8 @@
       "createdAt": "2025-10-22T10:00:00Z",
       "therapistId": "ther-002",
       "voNumber": "9586-9",
-      "voStatus": "Abgebrochen"
+      "voStatus": "Abgebrochen",
+      "completedTreatments": 4
     },
     {
       "id": "vo-019",
@@ -3050,7 +3064,8 @@
       "createdAt": "2025-10-02T09:00:00Z",
       "therapistId": "ther-009",
       "voNumber": "9321-1",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 18
     },
     {
       "id": "vo-020",
@@ -3067,7 +3082,8 @@
       "createdAt": "2025-10-02T09:00:00Z",
       "therapistId": "ther-029",
       "voNumber": "6626-6",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 5
     },
     {
       "id": "vo-021",
@@ -3084,7 +3100,8 @@
       "createdAt": "2025-10-12T10:00:00Z",
       "therapistId": "ther-020",
       "voNumber": "1728-7",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 2
     },
     {
       "id": "vo-022",
@@ -3101,7 +3118,8 @@
       "createdAt": "2025-10-12T10:00:00Z",
       "therapistId": "ther-013",
       "voNumber": "4030-7",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 4
     },
     {
       "id": "vo-023",
@@ -3118,7 +3136,8 @@
       "createdAt": "2025-10-12T10:00:00Z",
       "therapistId": "ther-009",
       "voNumber": "1994-6",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 1
     },
     {
       "id": "vo-024",
@@ -3135,7 +3154,8 @@
       "createdAt": "2025-10-25T10:15:00Z",
       "therapistId": "ther-014",
       "voNumber": "7533-8",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 12
     },
     {
       "id": "vo-026",
@@ -3152,7 +3172,8 @@
       "createdAt": "2025-09-28T10:00:00Z",
       "therapistId": "ther-015",
       "voNumber": "5521-2",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-027",
@@ -3169,7 +3190,8 @@
       "createdAt": "2025-09-28T10:00:00Z",
       "therapistId": "ther-017",
       "voNumber": "8288-5",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 10
     },
     {
       "id": "vo-029",
@@ -3186,7 +3208,8 @@
       "createdAt": "2025-10-04T08:00:00Z",
       "therapistId": "ther-005",
       "voNumber": "2839-5",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 12
     },
     {
       "id": "vo-030",
@@ -3203,7 +3226,8 @@
       "createdAt": "2025-10-04T08:00:00Z",
       "therapistId": "ther-006",
       "voNumber": "4247-5",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 12
     },
     {
       "id": "vo-031",
@@ -3220,7 +3244,8 @@
       "createdAt": "2025-10-04T08:00:00Z",
       "therapistId": "ther-002",
       "voNumber": "9074-9",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 18
     },
     {
       "id": "vo-032",
@@ -3237,7 +3262,8 @@
       "createdAt": "2025-10-24T11:30:00Z",
       "therapistId": "ther-014",
       "voNumber": "5978-4",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-034",
@@ -3254,7 +3280,8 @@
       "createdAt": "2025-10-01T09:00:00Z",
       "therapistId": "ther-007",
       "voNumber": "7292-8",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-035",
@@ -3271,7 +3298,8 @@
       "createdAt": "2025-10-01T09:00:00Z",
       "therapistId": "ther-020",
       "voNumber": "2938-3",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 1
     },
     {
       "id": "vo-036",
@@ -3288,7 +3316,8 @@
       "createdAt": "2025-10-13T10:00:00Z",
       "therapistId": "ther-015",
       "voNumber": "5505-6",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 18
     },
     {
       "id": "vo-037",
@@ -3305,7 +3334,8 @@
       "createdAt": "2025-10-13T10:00:00Z",
       "therapistId": "ther-017",
       "voNumber": "4897-2",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 12
     },
     {
       "id": "vo-038",
@@ -3322,7 +3352,8 @@
       "createdAt": "2025-10-13T10:00:00Z",
       "therapistId": "ther-016",
       "voNumber": "8124-2",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 12
     },
     {
       "id": "vo-039",
@@ -3339,7 +3370,8 @@
       "createdAt": "2025-10-23T10:00:00Z",
       "therapistId": "ther-020",
       "voNumber": "1123-7",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 2
     },
     {
       "id": "vo-041",
@@ -3356,7 +3388,8 @@
       "createdAt": "2025-09-30T08:00:00Z",
       "therapistId": "ther-020",
       "voNumber": "3051-3",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 4
     },
     {
       "id": "vo-042",
@@ -3373,7 +3406,8 @@
       "createdAt": "2025-09-30T08:00:00Z",
       "therapistId": "ther-021",
       "voNumber": "7883-8",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 18
     },
     {
       "id": "vo-044",
@@ -3390,7 +3424,8 @@
       "createdAt": "2025-10-05T09:00:00Z",
       "therapistId": "ther-014",
       "voNumber": "5935-1",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 12
     },
     {
       "id": "vo-045",
@@ -3407,7 +3442,8 @@
       "createdAt": "2025-10-05T09:00:00Z",
       "therapistId": "ther-021",
       "voNumber": "9702-5",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-046",
@@ -3424,7 +3460,8 @@
       "createdAt": "2025-10-05T09:00:00Z",
       "therapistId": "ther-021",
       "voNumber": "2641-5",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 10
     },
     {
       "id": "vo-047",
@@ -3441,7 +3478,8 @@
       "createdAt": "2025-10-25T11:00:00Z",
       "therapistId": "ther-021",
       "voNumber": "8396-9",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-049",
@@ -3458,7 +3496,8 @@
       "createdAt": "2025-10-02T10:00:00Z",
       "therapistId": "ther-021",
       "voNumber": "5877-8",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 7
     },
     {
       "id": "vo-050",
@@ -3475,7 +3514,8 @@
       "createdAt": "2025-10-02T10:00:00Z",
       "therapistId": "ther-022",
       "voNumber": "6450-7",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-051",
@@ -3492,7 +3532,8 @@
       "createdAt": "2025-10-14T08:00:00Z",
       "therapistId": "ther-016",
       "voNumber": "6419-9",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 10
     },
     {
       "id": "vo-052",
@@ -3509,7 +3550,8 @@
       "createdAt": "2025-10-14T08:00:00Z",
       "therapistId": "ther-014",
       "voNumber": "3109-1",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 9
     },
     {
       "id": "vo-053",
@@ -3526,7 +3568,8 @@
       "createdAt": "2025-10-14T08:00:00Z",
       "therapistId": "ther-014",
       "voNumber": "5322-1",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-054",
@@ -3543,7 +3586,8 @@
       "createdAt": "2025-10-24T09:45:00Z",
       "therapistId": "ther-018",
       "voNumber": "3552-4",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 10
     },
     {
       "id": "vo-056",
@@ -3560,7 +3604,8 @@
       "createdAt": "2025-10-03T09:00:00Z",
       "therapistId": "ther-006",
       "voNumber": "4802-5",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-057",
@@ -3577,7 +3622,8 @@
       "createdAt": "2025-10-03T09:00:00Z",
       "therapistId": "ther-006",
       "voNumber": "4982-7",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-059",
@@ -3594,7 +3640,8 @@
       "createdAt": "2025-10-06T08:00:00Z",
       "therapistId": "ther-014",
       "voNumber": "3706-2",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-060",
@@ -3611,7 +3658,8 @@
       "createdAt": "2025-10-06T08:00:00Z",
       "therapistId": "ther-008",
       "voNumber": "5673-8",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 12
     },
     {
       "id": "vo-061",
@@ -3628,7 +3676,8 @@
       "createdAt": "2025-10-06T08:00:00Z",
       "therapistId": "ther-008",
       "voNumber": "8477-6",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 4
     },
     {
       "id": "vo-062",
@@ -3645,7 +3694,8 @@
       "createdAt": "2025-10-23T11:15:00Z",
       "therapistId": "ther-022",
       "voNumber": "8827-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 1
     },
     {
       "id": "vo-064",
@@ -3662,7 +3712,8 @@
       "createdAt": "2025-10-04T10:00:00Z",
       "therapistId": "ther-029",
       "voNumber": "9028-8",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-065",
@@ -3679,7 +3730,8 @@
       "createdAt": "2025-10-04T10:00:00Z",
       "therapistId": "ther-029",
       "voNumber": "9632-6",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 6
     },
     {
       "id": "vo-066",
@@ -3696,7 +3748,8 @@
       "createdAt": "2025-10-15T08:00:00Z",
       "therapistId": "ther-006",
       "voNumber": "6247-2",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 6
     },
     {
       "id": "vo-067",
@@ -3713,7 +3766,8 @@
       "createdAt": "2025-10-15T08:00:00Z",
       "therapistId": "ther-032",
       "voNumber": "3440-2",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 10
     },
     {
       "id": "vo-068",
@@ -3730,7 +3784,8 @@
       "createdAt": "2025-10-15T08:00:00Z",
       "therapistId": "ther-033",
       "voNumber": "6380-8",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 3
     },
     {
       "id": "vo-069",
@@ -3747,7 +3802,8 @@
       "createdAt": "2025-10-25T10:45:00Z",
       "therapistId": "ther-014",
       "voNumber": "8808-3",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 6
     },
     {
       "id": "vo-071",
@@ -3764,7 +3820,8 @@
       "createdAt": "2025-10-05T09:00:00Z",
       "therapistId": "ther-033",
       "voNumber": "3089-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 2
     },
     {
       "id": "vo-072",
@@ -3781,7 +3838,8 @@
       "createdAt": "2025-10-05T09:00:00Z",
       "therapistId": "ther-034",
       "voNumber": "3703-3",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 2
     },
     {
       "id": "vo-074",
@@ -3798,7 +3856,8 @@
       "createdAt": "2025-10-07T08:00:00Z",
       "therapistId": "ther-014",
       "voNumber": "5424-7",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 1
     },
     {
       "id": "vo-075",
@@ -3815,7 +3874,8 @@
       "createdAt": "2025-10-07T08:00:00Z",
       "therapistId": "ther-011",
       "voNumber": "8989-2",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-076",
@@ -3832,7 +3892,8 @@
       "createdAt": "2025-10-07T08:00:00Z",
       "therapistId": "ther-034",
       "voNumber": "2596-1",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-077",
@@ -3849,7 +3910,8 @@
       "createdAt": "2025-10-24T11:30:00Z",
       "therapistId": "ther-016",
       "voNumber": "4718-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 2
     },
     {
       "id": "vo-079",
@@ -3863,7 +3925,8 @@
       "practiceId": "prac-029",
       "createdAt": "2025-10-06T10:00:00Z",
       "voNumber": "4056-5",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 4
     },
     {
       "id": "vo-080",
@@ -3877,7 +3940,8 @@
       "practiceId": "prac-029",
       "createdAt": "2025-10-06T10:00:00Z",
       "voNumber": "8306-2",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 18
     },
     {
       "id": "vo-081",
@@ -3891,7 +3955,8 @@
       "practiceId": "prac-030",
       "createdAt": "2025-10-16T08:00:00Z",
       "voNumber": "8765-1",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 5
     },
     {
       "id": "vo-082",
@@ -3905,7 +3970,8 @@
       "practiceId": "prac-030",
       "createdAt": "2025-10-16T08:00:00Z",
       "voNumber": "3283-3",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 8
     },
     {
       "id": "vo-083",
@@ -3919,7 +3985,8 @@
       "practiceId": "prac-030",
       "createdAt": "2025-10-16T08:00:00Z",
       "voNumber": "1506-3",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 9
     },
     {
       "id": "vo-084",
@@ -3936,7 +4003,8 @@
       "createdAt": "2025-10-26T10:00:00Z",
       "therapistId": "ther-026",
       "voNumber": "4238-9",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 8
     },
     {
       "id": "vo-086",
@@ -3953,7 +4021,8 @@
       "createdAt": "2025-10-08T09:00:00Z",
       "therapistId": "ther-006",
       "voNumber": "1554-7",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-087",
@@ -3970,7 +4039,8 @@
       "createdAt": "2025-10-08T09:00:00Z",
       "therapistId": "ther-014",
       "voNumber": "1503-1",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-089",
@@ -3987,7 +4057,8 @@
       "createdAt": "2025-10-09T08:00:00Z",
       "therapistId": "ther-022",
       "voNumber": "4974-6",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 4
     },
     {
       "id": "vo-090",
@@ -4004,7 +4075,8 @@
       "createdAt": "2025-10-09T08:00:00Z",
       "therapistId": "ther-003",
       "voNumber": "2856-2",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-091",
@@ -4021,7 +4093,8 @@
       "createdAt": "2025-10-09T08:00:00Z",
       "therapistId": "ther-003",
       "voNumber": "3316-7",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 17
     },
     {
       "id": "vo-092",
@@ -4038,7 +4111,8 @@
       "createdAt": "2025-10-25T11:45:00Z",
       "therapistId": "ther-029",
       "voNumber": "2861-4",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-094",
@@ -4055,7 +4129,8 @@
       "createdAt": "2025-10-10T10:00:00Z",
       "therapistId": "ther-006",
       "voNumber": "3179-9",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 15
     },
     {
       "id": "vo-095",
@@ -4072,7 +4147,8 @@
       "createdAt": "2025-10-10T10:00:00Z",
       "therapistId": "ther-029",
       "voNumber": "7837-3",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 1
     },
     {
       "id": "vo-096",
@@ -4088,7 +4164,8 @@
       "facilityName": "ER Berlin",
       "createdAt": "2025-10-17T08:00:00Z",
       "voNumber": "2553-6",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 12
     },
     {
       "id": "vo-097",
@@ -4104,7 +4181,8 @@
       "facilityName": "ER Berlin",
       "createdAt": "2025-10-17T08:00:00Z",
       "voNumber": "9981-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 7
     },
     {
       "id": "vo-098",
@@ -4121,7 +4199,8 @@
       "createdAt": "2025-10-17T08:00:00Z",
       "therapistId": "ther-018",
       "voNumber": "7873-5",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 6
     },
     {
       "id": "vo-099",
@@ -4138,7 +4217,8 @@
       "createdAt": "2025-10-27T10:15:00Z",
       "therapistId": "ther-006",
       "voNumber": "8474-1",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 7
     },
     {
       "id": "vo-102",
@@ -4155,7 +4235,8 @@
       "createdAt": "2025-10-05T16:00:00.000Z",
       "therapistId": "ther-002",
       "voNumber": "6408-1",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 5
     },
     {
       "id": "vo-103",
@@ -4172,7 +4253,8 @@
       "createdAt": "2025-10-06T16:00:00.000Z",
       "therapistId": "ther-003",
       "voNumber": "9283-1",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-104",
@@ -4189,7 +4271,8 @@
       "createdAt": "2025-10-07T16:00:00.000Z",
       "therapistId": "ther-004",
       "voNumber": "5640-7",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-105",
@@ -4206,7 +4289,8 @@
       "createdAt": "2025-10-08T16:00:00.000Z",
       "therapistId": "ther-005",
       "voNumber": "1986-7",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 3
     },
     {
       "id": "vo-106",
@@ -4223,7 +4307,8 @@
       "createdAt": "2025-10-09T16:00:00.000Z",
       "therapistId": "ther-023",
       "voNumber": "4883-7",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 1
     },
     {
       "id": "vo-108",
@@ -4240,7 +4325,8 @@
       "createdAt": "2025-10-11T16:00:00.000Z",
       "therapistId": "ther-001",
       "voNumber": "6905-1",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-109",
@@ -4257,7 +4343,8 @@
       "createdAt": "2025-10-12T16:00:00.000Z",
       "therapistId": "ther-002",
       "voNumber": "7035-9",
-      "voStatus": "Abgebrochen"
+      "voStatus": "Abgebrochen",
+      "completedTreatments": 4
     },
     {
       "id": "vo-110",
@@ -4274,7 +4361,8 @@
       "createdAt": "2025-10-13T16:00:00.000Z",
       "therapistId": "ther-003",
       "voNumber": "3491-6",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 5
     },
     {
       "id": "vo-111",
@@ -4291,7 +4379,8 @@
       "createdAt": "2025-10-04T16:00:00.000Z",
       "therapistId": "ther-004",
       "voNumber": "9382-6",
-      "voStatus": "Abgebrochen"
+      "voStatus": "Abgebrochen",
+      "completedTreatments": 11
     },
     {
       "id": "vo-112",
@@ -4308,7 +4397,8 @@
       "createdAt": "2025-10-05T16:00:00.000Z",
       "therapistId": "ther-005",
       "voNumber": "8377-7",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-114",
@@ -4325,7 +4415,8 @@
       "createdAt": "2025-10-07T16:00:00.000Z",
       "therapistId": "ther-024",
       "voNumber": "8867-1",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 10
     },
     {
       "id": "vo-115",
@@ -4342,7 +4433,8 @@
       "createdAt": "2025-10-08T16:00:00.000Z",
       "therapistId": "ther-001",
       "voNumber": "4710-8",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 12
     },
     {
       "id": "vo-116",
@@ -4359,7 +4451,8 @@
       "createdAt": "2025-10-09T16:00:00.000Z",
       "therapistId": "ther-002",
       "voNumber": "1335-8",
-      "voStatus": "Abgebrochen"
+      "voStatus": "Abgebrochen",
+      "completedTreatments": 10
     },
     {
       "id": "vo-117",
@@ -4376,7 +4469,8 @@
       "createdAt": "2025-10-10T16:00:00.000Z",
       "therapistId": "ther-003",
       "voNumber": "7782-9",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 3
     },
     {
       "id": "vo-118",
@@ -4393,7 +4487,8 @@
       "createdAt": "2025-10-11T16:00:00.000Z",
       "therapistId": "ther-004",
       "voNumber": "8674-1",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 10
     },
     {
       "id": "vo-120",
@@ -4410,7 +4505,8 @@
       "createdAt": "2025-10-05T16:00:00.000Z",
       "therapistId": "ther-002",
       "voNumber": "6699-5",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 10
     },
     {
       "id": "vo-121",
@@ -4427,7 +4523,8 @@
       "createdAt": "2025-10-06T16:00:00.000Z",
       "therapistId": "ther-003",
       "voNumber": "3514-9",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 12
     },
     {
       "id": "vo-122",
@@ -4444,7 +4541,8 @@
       "createdAt": "2025-10-07T16:00:00.000Z",
       "therapistId": "ther-004",
       "voNumber": "1136-8",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 18
     },
     {
       "id": "vo-123",
@@ -4461,7 +4559,8 @@
       "createdAt": "2025-10-08T16:00:00.000Z",
       "therapistId": "ther-005",
       "voNumber": "5569-8",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 3
     },
     {
       "id": "vo-124",
@@ -4478,7 +4577,8 @@
       "createdAt": "2025-10-09T16:00:00.000Z",
       "therapistId": "ther-023",
       "voNumber": "2034-3",
-      "voStatus": "Fertig Behandelt"
+      "voStatus": "Fertig Behandelt",
+      "completedTreatments": 10
     },
     {
       "id": "vo-126",
@@ -4495,7 +4595,8 @@
       "createdAt": "2025-10-11T16:00:00.000Z",
       "therapistId": "ther-001",
       "voNumber": "4858-5",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-127",
@@ -4512,7 +4613,8 @@
       "createdAt": "2025-10-12T16:00:00.000Z",
       "therapistId": "ther-002",
       "voNumber": "2841-8",
-      "voStatus": "Abgebrochen"
+      "voStatus": "Abgebrochen",
+      "completedTreatments": 2
     },
     {
       "id": "vo-128",
@@ -4529,7 +4631,8 @@
       "createdAt": "2025-10-13T16:00:00.000Z",
       "therapistId": "ther-003",
       "voNumber": "3250-3",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 8
     },
     {
       "id": "vo-129",
@@ -4546,7 +4649,8 @@
       "createdAt": "2025-10-04T16:00:00.000Z",
       "therapistId": "ther-004",
       "voNumber": "8773-7",
-      "voStatus": "Abgebrochen"
+      "voStatus": "Abgebrochen",
+      "completedTreatments": 2
     },
     {
       "id": "vo-130",
@@ -4563,7 +4667,8 @@
       "createdAt": "2025-10-05T16:00:00.000Z",
       "therapistId": "ther-005",
       "voNumber": "6315-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 17
     },
     {
       "id": "vo-132",
@@ -4580,7 +4685,8 @@
       "createdAt": "2025-10-07T16:00:00.000Z",
       "therapistId": "ther-024",
       "voNumber": "2980-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-133",
@@ -4597,7 +4703,8 @@
       "createdAt": "2025-10-08T16:00:00.000Z",
       "therapistId": "ther-001",
       "voNumber": "7057-9",
-      "voStatus": "Abgerechnet"
+      "voStatus": "Abgerechnet",
+      "completedTreatments": 12
     },
     {
       "id": "vo-134",
@@ -4614,7 +4721,8 @@
       "createdAt": "2025-10-09T16:00:00.000Z",
       "therapistId": "ther-002",
       "voNumber": "6191-6",
-      "voStatus": "Abgelaufen"
+      "voStatus": "Abgelaufen",
+      "completedTreatments": 2
     },
     {
       "id": "vo-135",
@@ -4631,7 +4739,8 @@
       "createdAt": "2025-10-10T16:00:00.000Z",
       "therapistId": "ther-003",
       "voNumber": "2299-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 4
     },
     {
       "id": "vo-136",
@@ -4648,7 +4757,8 @@
       "createdAt": "2025-10-11T16:00:00.000Z",
       "therapistId": "ther-004",
       "voNumber": "3089-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 6
     },
     {
       "id": "vo-137",
@@ -4665,7 +4775,8 @@
       "createdAt": "2025-11-06T07:27:12.983Z",
       "therapistId": "ther-001",
       "voNumber": "1566-2",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 1
     },
     {
       "id": "vo-138",
@@ -4682,7 +4793,8 @@
       "createdAt": "2025-09-23T22:15:37.209Z",
       "therapistId": "ther-002",
       "voNumber": "4628-1",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 2
     },
     {
       "id": "vo-139",
@@ -4699,7 +4811,8 @@
       "createdAt": "2025-11-17T21:39:20.781Z",
       "therapistId": "ther-003",
       "voNumber": "2733-5",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 7
     },
     {
       "id": "vo-140",
@@ -4716,7 +4829,8 @@
       "createdAt": "2025-10-08T14:33:32.727Z",
       "therapistId": "ther-004",
       "voNumber": "3029-7",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 14
     },
     {
       "id": "vo-141",
@@ -4733,7 +4847,8 @@
       "createdAt": "2025-10-04T23:55:46.075Z",
       "therapistId": "ther-005",
       "voNumber": "6137-6",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-142",
@@ -4750,7 +4865,8 @@
       "createdAt": "2025-11-07T19:03:25.946Z",
       "therapistId": "ther-006",
       "voNumber": "1230-6",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 2
     },
     {
       "id": "vo-143",
@@ -4767,7 +4883,8 @@
       "createdAt": "2025-10-23T07:22:48.891Z",
       "therapistId": "ther-007",
       "voNumber": "1790-8",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 8
     },
     {
       "id": "vo-144",
@@ -4784,7 +4901,8 @@
       "createdAt": "2025-11-02T18:27:06.957Z",
       "therapistId": "ther-008",
       "voNumber": "9658-2",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 4
     },
     {
       "id": "vo-145",
@@ -4801,7 +4919,8 @@
       "createdAt": "2025-10-31T23:32:49.157Z",
       "therapistId": "ther-009",
       "voNumber": "5097-7",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 4
     },
     {
       "id": "vo-146",
@@ -4818,7 +4937,8 @@
       "createdAt": "2025-10-17T01:19:24.691Z",
       "therapistId": "ther-010",
       "voNumber": "6030-5",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 9
     },
     {
       "id": "vo-147",
@@ -4835,7 +4955,8 @@
       "createdAt": "2025-11-10T05:15:06.468Z",
       "therapistId": "ther-011",
       "voNumber": "6746-4",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 5
     },
     {
       "id": "vo-148",
@@ -4852,7 +4973,8 @@
       "createdAt": "2025-10-03T06:17:31.929Z",
       "therapistId": "ther-012",
       "voNumber": "7642-8",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 13
     },
     {
       "id": "vo-149",
@@ -4869,7 +4991,8 @@
       "createdAt": "2025-09-28T04:27:03.350Z",
       "therapistId": "ther-013",
       "voNumber": "5080-3",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 3
     },
     {
       "id": "vo-150",
@@ -4886,7 +5009,8 @@
       "createdAt": "2025-10-09T21:40:42.599Z",
       "therapistId": "ther-014",
       "voNumber": "4877-5",
-      "voStatus": "Aktiv"
+      "voStatus": "Aktiv",
+      "completedTreatments": 9
     },
     {
       "id": "vo-151",
@@ -4903,7 +5027,8 @@
       "createdAt": "2025-11-20T09:00:00Z",
       "therapistId": "ther-001",
       "voNumber": "5201-1",
-      "voStatus": "Neu"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-152",
@@ -4920,7 +5045,8 @@
       "createdAt": "2025-11-19T14:30:00Z",
       "therapistId": "ther-002",
       "voNumber": "5202-1",
-      "voStatus": "Neu"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-153",
@@ -4937,7 +5063,8 @@
       "createdAt": "2025-11-18T11:15:00Z",
       "therapistId": "ther-003",
       "voNumber": "5203-1",
-      "voStatus": "Neu"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-154",
@@ -4954,7 +5081,8 @@
       "createdAt": "2025-11-17T16:45:00Z",
       "therapistId": "ther-004",
       "voNumber": "5204-1",
-      "voStatus": "Neu"
+      "voStatus": "Aktiv",
+      "completedTreatments": 0
     },
     {
       "id": "vo-155",
@@ -4971,7 +5099,8 @@
       "createdAt": "2025-11-16T10:00:00Z",
       "therapistId": "ther-005",
       "voNumber": "5205-1",
-      "voStatus": "Neu"
+      "voStatus": "Neu",
+      "completedTreatments": 0
     },
     {
       "id": "vo-156",
@@ -4988,7 +5117,8 @@
       "createdAt": "2025-11-15T08:30:00Z",
       "therapistId": "ther-006",
       "voNumber": "5206-1",
-      "voStatus": "Neu"
+      "voStatus": "Neu",
+      "completedTreatments": 0
     }
   ],
   "activities": [
