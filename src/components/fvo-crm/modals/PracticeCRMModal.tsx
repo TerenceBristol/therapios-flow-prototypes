@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { PracticeWithComputed, PracticeActivity, PracticeVO, PracticeDoctor, PracticeFollowUp, FVOCRMVOStatus, Therapist, Facility, OrderFormType } from '@/types';
 import ActivitiesSection from '../ActivitiesSection';
 import VOsTable from '../VOsTable';
@@ -58,7 +59,14 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
   onBulkNoteChange,
   onGeneratePDF
 }) => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<'practiceInfo' | 'initialOrders' | 'vos' | 'activities'>(initialTab);
+
+  const handleEditPractice = () => {
+    if (practice) {
+      router.push(`/prototypes/fvo-crm/admin/practices/${practice.id}`);
+    }
+  };
 
   // Reset active tab when modal opens or practice changes
   useEffect(() => {
@@ -150,6 +158,7 @@ const PracticeCRMModal: React.FC<PracticeCRMModalProps> = ({
                   <PracticeInfoTab
                     practice={practice}
                     doctors={doctors}
+                    onEditPractice={handleEditPractice}
                   />
                 )}
 

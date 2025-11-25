@@ -249,18 +249,13 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
           {isEditing && (
             <div className="mb-6">
               <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
-                Ärzte at this Practice
+                Arzt at this Practice
               </h3>
               {practiceDoctors.length > 0 ? (
                 <div className="space-y-2">
                   {practiceDoctors.map(doctor => (
                     <div key={doctor.id} className="text-sm text-foreground">
                       • {doctor.name}
-                      {doctor.facilities.length > 0 && (
-                        <span className="text-muted-foreground ml-2">
-                          ({doctor.facilities.join(', ')})
-                        </span>
-                      )}
                     </div>
                   ))}
                 </div>
@@ -293,24 +288,22 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
               doctors={practiceDoctors}
             />
           </div>
-        </div>
-      </div>
 
-      {/* Footer */}
-      <div className="border-t border-border p-6 bg-card">
-        <div className="max-w-4xl mx-auto flex justify-end gap-3">
-          <button
-            onClick={onCancel}
-            className="px-6 py-2 border border-border rounded-md text-foreground hover:bg-muted transition-colors"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleSave}
-            className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
-          >
-            {isEditing ? 'Update Practice' : 'Create Practice'}
-          </button>
+          {/* Footer Buttons */}
+          <div className="flex justify-end gap-3 pt-6 mt-6 border-t border-border">
+            <button
+              onClick={onCancel}
+              className="px-6 py-2 border border-border rounded-md text-foreground hover:bg-muted transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleSave}
+              className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium"
+            >
+              {isEditing ? 'Update Practice' : 'Create Practice'}
+            </button>
+          </div>
         </div>
       </div>
     </div>

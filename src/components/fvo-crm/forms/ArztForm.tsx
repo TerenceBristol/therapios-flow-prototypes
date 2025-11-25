@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Arzt, Practice, PracticeVO } from '@/types';
 import Link from 'next/link';
+import SearchableSelect, { SearchableSelectOption } from './SearchableSelect';
 
 interface ArztFormProps {
   initialData?: Arzt | null;
@@ -29,16 +30,17 @@ const ArztForm: React.FC<ArztFormProps> = ({
   const [practiceId, setPracticeId] = useState<string | undefined>(undefined);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // Compute doctor's VOs and ERs
-  const doctorVOs = useMemo(() => {
-    if (!initialData?.id) return [];
-    return vos.filter(vo => vo.doctorId === initialData.id);
-  }, [vos, initialData]);
-
-  const computedERs = useMemo(() => {
-    const uniqueERs = [...new Set(doctorVOs.map(vo => vo.facilityName))];
-    return uniqueERs.sort();
-  }, [doctorVOs]);
+  // Create practice options for searchable select
+  const practiceOptions: SearchableSelectOption[] = useMemo(() => {
+    return [
+      { value: '', label: 'Unassigned', searchText: 'unassigned none' },
+      ...practices.map(practice => ({
+        value: practice.id,
+        label: `${practice.name} (ID: ${practice.practiceId || practice.id})`,
+        searchText: `${practice.name} ${practice.practiceId || practice.id}`
+      }))
+    ];
+  }, [practices]);
 
   // Initialize form with initial data
   useEffect(() => {
@@ -77,7 +79,7 @@ const ArztForm: React.FC<ArztFormProps> = ({
       arztId: arztId ? parseInt(arztId) : undefined,
       name: name.trim(),
       practiceId,
-      facilities: computedERs, // Use computed ERs from VOs
+      facilities: [], // No longer tracking ERs in Arzt form
       phone: phone || undefined,
       email: email || undefined
     });
@@ -185,44 +187,17 @@ const ArztForm: React.FC<ArztFormProps> = ({
           {/* Divider */}
           <div className="border-t border-border my-8" />
 
-          {/* Practices */}
+          {/* Practice */}
           <div className="mb-8">
             <label className="block text-sm font-medium text-foreground mb-1">
               Practice
             </label>
-            <select
+            <SearchableSelect
+              options={practiceOptions}
               value={practiceId || ''}
-              onChange={(e) => setPracticeId(e.target.value || undefined)}
-              className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-            >
-              <option value="">Unassigned</option>
-              {practices.map(practice => (
-                <option key={practice.id} value={practice.id}>
-                  {practice.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Divider */}
-          <div className="border-t border-border my-8" />
-
-          {/* ERs - Computed from VOs */}
-          <div className="mb-8">
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
-              ERs
-            </h3>
-            {computedERs.length > 0 ? (
-              <div className="space-y-2">
-                {computedERs.map((er, index) => (
-                  <div key={index} className="text-sm text-foreground">
-                    • {er}
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-sm text-muted-foreground italic">No ERs assigned</div>
-            )}
+              onChange={(value) => setPracticeId(value || undefined)}
+              placeholder="Search for a practice..."
+            />
           </div>
 
         </div>

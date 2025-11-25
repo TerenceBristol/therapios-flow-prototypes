@@ -6,9 +6,10 @@ import VacationBanner from './VacationBanner';
 interface PracticeInfoTabProps {
   practice: PracticeWithComputed;
   doctors: PracticeDoctor[];
+  onEditPractice?: () => void;
 }
 
-const PracticeInfoTab: React.FC<PracticeInfoTabProps> = ({ practice, doctors }) => {
+const PracticeInfoTab: React.FC<PracticeInfoTabProps> = ({ practice, doctors, onEditPractice }) => {
 
   return (
     <div className="h-full overflow-y-auto px-6 py-4">
@@ -128,17 +129,8 @@ const PracticeInfoTab: React.FC<PracticeInfoTabProps> = ({ practice, doctors }) 
                     key={doctor.id}
                     className="border border-border rounded-md px-3 py-2 bg-background hover:border-primary/50 hover:shadow-sm transition-all"
                   >
-                    {/* Simplified Format - Name and ERs only */}
-                    <div className="text-sm">
-                      <div className="font-medium text-foreground mb-1">
-                        {doctor.name}
-                      </div>
-                      {doctor.facilities && doctor.facilities.length > 0 && (
-                        <div className="text-xs text-muted-foreground flex items-center gap-1">
-                          <span>🏥</span>
-                          <span>{doctor.facilities.join(', ')}</span>
-                        </div>
-                      )}
+                    <div className="text-sm font-medium text-foreground">
+                      {doctor.name}
                     </div>
                   </div>
                 ))
@@ -158,6 +150,18 @@ const PracticeInfoTab: React.FC<PracticeInfoTabProps> = ({ practice, doctors }) 
               />
             </div>
           </div>
+
+          {/* Edit Practice Button */}
+          {onEditPractice && (
+            <div className="pt-6 border-t border-border">
+              <button
+                onClick={onEditPractice}
+                className="px-5 py-2.5 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors font-medium shadow-sm"
+              >
+                Edit Practice
+              </button>
+            </div>
+          )}
       </div>
     </div>
   );

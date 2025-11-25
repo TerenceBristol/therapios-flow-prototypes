@@ -25,14 +25,6 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
   const [sortColumn, setSortColumn] = useState<string | null>(null);
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
-  // Get all unique facilities
-  const allFacilities = useMemo(() => {
-    const facilitiesSet = new Set<string>();
-    arzte.forEach(arzt => {
-      arzt.facilities.forEach(facility => facilitiesSet.add(facility));
-    });
-    return Array.from(facilitiesSet).sort();
-  }, [arzte]);
 
   // Apply filters and search
   const filteredArzte = useMemo(() => {
@@ -49,26 +41,10 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
       result = result.filter(a => a.practiceId === filters.practiceFilter);
     }
 
-    // Facility filter
-    if (filters.facilityFilter) {
-      result = result.filter(a => a.facilities.includes(filters.facilityFilter!));
-    }
-
     // Apply sorting
     switch (filters.sortBy) {
       case 'name':
         result.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case 'practiceCount':
-        // Sort by whether they have a practice or not
-        result.sort((a, b) => {
-          const aHasPractice = a.practiceId ? 1 : 0;
-          const bHasPractice = b.practiceId ? 1 : 0;
-          return bHasPractice - aHasPractice;
-        });
-        break;
-      case 'facilityCount':
-        result.sort((a, b) => b.facilities.length - a.facilities.length);
         break;
     }
 
@@ -83,13 +59,9 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
             aVal = a.name;
             bVal = b.name;
             break;
-          case 'practices':
+          case 'practice':
             aVal = a.practiceId ? 1 : 0;
             bVal = b.practiceId ? 1 : 0;
-            break;
-          case 'facilities':
-            aVal = a.facilities.length;
-            bVal = b.facilities.length;
             break;
           default:
             return 0;
@@ -156,7 +128,6 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
           filters={filters}
           onFiltersChange={setFilters}
           practices={practices}
-          facilities={allFacilities}
         />
 
         <button
@@ -179,11 +150,8 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
                 <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('name')}>
                   Arzt Name{getSortIndicator('name')}
                 </th>
-                <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('practices')}>
-                  Practices{getSortIndicator('practices')}
-                </th>
-                <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('facilities')}>
-                  ERs{getSortIndicator('facilities')}
+                <th className="px-4 py-3 cursor-pointer hover:text-foreground" onClick={() => handleSort('practice')}>
+                  Practice{getSortIndicator('practice')}
                 </th>
                 <th className="px-4 py-3 w-24">Actions</th>
               </tr>
@@ -206,22 +174,6 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
                         practices.find(p => p.id === arzt.practiceId)?.name || 'Unknown'
                       ) : (
                         <span className="text-muted-foreground">Unassigned</span>
-                      )}
-                    </div>
-                  </td>
-                  <td className="px-4 py-3">
-                    <div className="text-sm text-foreground">
-                      {arzt.facilities.length > 0 ? (
-                        <>
-                          <span className="font-medium">{arzt.facilities.length}</span>
-                          {arzt.facilities.length <= 2 ? (
-                            <span className="text-muted-foreground"> - {arzt.facilities.join(', ')}</span>
-                          ) : (
-                            <span className="text-muted-foreground"> ERs</span>
-                          )}
-                        </>
-                      ) : (
-                        <span className="text-muted-foreground">None</span>
                       )}
                     </div>
                   </td>
