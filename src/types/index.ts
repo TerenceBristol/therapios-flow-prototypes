@@ -213,28 +213,17 @@ export type PreferredContactMethod = 'email' | 'fax' | 'phone';
 // Delivery method for batches
 export type DeliveryMethod = 'email' | 'fax';
 
-// Opening hours period (for breaks like 9-12, 3-5)
-export interface OpeningHoursPeriod {
-  open: string; // Time in HH:MM format (24-hour)
-  close: string; // Time in HH:MM format (24-hour)
-}
-
-// Opening hours for a single day (supports multiple periods for breaks)
-export interface OpeningHoursDay {
-  periods: OpeningHoursPeriod[]; // Multiple time ranges per day (e.g., 9-12, 3-5)
-  isClosed: boolean;
-  notes?: string; // Free text comments about hours
-}
-
-// Opening hours for all days of the week
+// Opening hours - simple text format per day
+// Format examples: "8:00 AM - 1:00 PM ; 3:00 PM - 6:00 PM", "Closed", "Open 24hrs"
+// Breaks are implied by gaps between time ranges (separated by ;)
 export interface OpeningHours {
-  monday: OpeningHoursDay;
-  tuesday: OpeningHoursDay;
-  wednesday: OpeningHoursDay;
-  thursday: OpeningHoursDay;
-  friday: OpeningHoursDay;
-  saturday: OpeningHoursDay;
-  sunday: OpeningHoursDay;
+  monday: string;
+  tuesday: string;
+  wednesday: string;
+  thursday: string;
+  friday: string;
+  saturday: string;
+  sunday: string;
 }
 
 // Practice address

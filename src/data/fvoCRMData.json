@@ -9,79 +9,13 @@
       "createdAt": "2024-01-15T10:00:00Z",
       "updatedAt": "2025-10-20T14:30:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 1,
       "address": "123 Main Street, Springfield, IL 62701",
@@ -104,79 +38,13 @@
       "createdAt": "2024-02-10T09:00:00Z",
       "updatedAt": "2025-10-22T11:15:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "16:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 2,
       "address": "456 River Road, Riverside, CA 92501",
@@ -198,79 +66,13 @@
       "createdAt": "2024-03-05T12:00:00Z",
       "updatedAt": "2025-10-18T16:45:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "17:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 3,
       "address": "789 Valley Drive, San Jose, CA 95110",
@@ -293,84 +95,13 @@
       "createdAt": "2024-01-20T08:30:00Z",
       "updatedAt": "2025-10-21T09:20:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "12:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+        "saturday": "9:00 AM - 12:00 PM",
+        "sunday": "Closed"
       },
       "practiceId": 4,
       "address": "321 Highland Ave, Denver, CO 80202",
@@ -393,79 +124,13 @@
       "createdAt": "2024-04-12T10:00:00Z",
       "updatedAt": "2025-10-19T13:30:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "15:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 5,
       "address": "555 Lake Shore Blvd, Chicago, IL 60611",
@@ -487,79 +152,13 @@
       "createdAt": "2024-05-01T11:00:00Z",
       "updatedAt": "2025-10-20T10:15:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 6,
       "address": "888 Sunset Boulevard, Los Angeles, CA 90028",
@@ -582,79 +181,13 @@
       "createdAt": "2024-02-28T09:30:00Z",
       "updatedAt": "2025-10-17T14:00:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "16:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 7,
       "address": "234 Forest Lane, Portland, OR 97201",
@@ -677,79 +210,13 @@
       "createdAt": "2024-03-15T10:30:00Z",
       "updatedAt": "2025-10-16T11:45:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "17:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 8,
       "address": "567 Harbor Drive, San Diego, CA 92101",
@@ -771,84 +238,13 @@
       "createdAt": "2024-01-10T08:00:00Z",
       "updatedAt": "2025-10-15T15:20:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "12:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+        "saturday": "9:00 AM - 12:00 PM",
+        "sunday": "Closed"
       },
       "practiceId": 9,
       "address": "890 Park Avenue, New York, NY 10028",
@@ -871,79 +267,13 @@
       "createdAt": "2024-04-20T09:00:00Z",
       "updatedAt": "2025-10-14T12:30:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "15:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 10,
       "address": "123 Meadow Lane, Austin, TX 78701",
@@ -966,79 +296,13 @@
       "createdAt": "2024-05-10T10:00:00Z",
       "updatedAt": "2025-10-25T14:15:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 11,
       "address": "456 Ocean Boulevard, Miami, FL 33139",
@@ -1060,79 +324,13 @@
       "createdAt": "2024-02-05T11:30:00Z",
       "updatedAt": "2025-10-24T09:45:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "16:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 12,
       "address": "789 Main Street Suite 200, Seattle, WA 98101",
@@ -1155,79 +353,13 @@
       "createdAt": "2024-03-22T08:45:00Z",
       "updatedAt": "2025-10-23T13:00:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "17:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 13,
       "address": "234 Hill Road, Boston, MA 02108",
@@ -1250,84 +382,13 @@
       "createdAt": "2024-04-05T07:30:00Z",
       "updatedAt": "2025-10-22T08:20:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "12:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+        "saturday": "9:00 AM - 12:00 PM",
+        "sunday": "Closed"
       },
       "practiceId": 14,
       "address": "567 West Avenue, Phoenix, AZ 85001",
@@ -1349,79 +410,13 @@
       "createdAt": "2024-05-15T09:15:00Z",
       "updatedAt": "2025-10-21T10:30:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "15:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 15,
       "address": "890 East Street, Philadelphia, PA 19102",
@@ -1444,79 +439,13 @@
       "createdAt": "2024-01-25T10:00:00Z",
       "updatedAt": "2025-10-20T11:00:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 16,
       "address": "123 Central Drive, Fresno, CA 93721",
@@ -1538,79 +467,13 @@
       "createdAt": "2024-02-14T11:00:00Z",
       "updatedAt": "2025-10-19T14:45:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "16:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 17,
       "address": "456 North Boulevard, Detroit, MI 48201",
@@ -1633,79 +496,13 @@
       "createdAt": "2024-03-10T08:30:00Z",
       "updatedAt": "2025-10-18T15:30:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "17:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 18,
       "address": "789 South Street, Atlanta, GA 30303",
@@ -1727,84 +524,13 @@
       "createdAt": "2024-04-18T09:45:00Z",
       "updatedAt": "2025-10-17T12:15:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "12:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+        "saturday": "9:00 AM - 12:00 PM",
+        "sunday": "Closed"
       },
       "practiceId": 19,
       "address": "234 Bay Street, San Francisco, CA 94102",
@@ -1827,79 +553,13 @@
       "createdAt": "2024-05-20T10:30:00Z",
       "updatedAt": "2025-10-16T13:45:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "15:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 20,
       "address": "567 Summit Avenue, Las Vegas, NV 89101",
@@ -1921,79 +581,13 @@
       "createdAt": "2024-01-30T11:00:00Z",
       "updatedAt": "2025-10-15T09:30:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 21,
       "address": "890 Gateway Plaza, St. Louis, MO 63101",
@@ -2016,79 +610,13 @@
       "createdAt": "2024-02-22T09:30:00Z",
       "updatedAt": "2025-10-14T11:45:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "16:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 22,
       "address": "123 Riverbend Road, Minneapolis, MN 55401",
@@ -2110,79 +638,13 @@
       "createdAt": "2024-03-28T10:15:00Z",
       "updatedAt": "2025-10-13T14:20:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "17:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 23,
       "address": "456 Brook Lane, Dallas, TX 75201",
@@ -2205,84 +667,13 @@
       "createdAt": "2024-04-25T08:45:00Z",
       "updatedAt": "2025-10-12T10:00:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "12:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+        "saturday": "9:00 AM - 12:00 PM",
+        "sunday": "Closed"
       },
       "practiceId": 24,
       "address": "789 Maple Drive, Charlotte, NC 28201",
@@ -2304,79 +695,13 @@
       "createdAt": "2024-05-30T09:00:00Z",
       "updatedAt": "2025-10-11T12:30:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "15:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 25,
       "address": "234 Oak Street, Columbus, OH 43201",
@@ -2399,79 +724,13 @@
       "createdAt": "2024-01-18T10:30:00Z",
       "updatedAt": "2025-10-10T15:00:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 26,
       "address": "567 Pine Street, Nashville, TN 37201",
@@ -2493,79 +752,13 @@
       "createdAt": "2024-02-08T11:15:00Z",
       "updatedAt": "2025-10-09T13:15:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "17:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:30",
-              "close": "16:30"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+        "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 27,
       "address": "890 Clear Lake Road, Houston, TX 77001",
@@ -2588,79 +781,13 @@
       "createdAt": "2024-03-16T08:00:00Z",
       "updatedAt": "2025-10-08T09:45:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "18:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:30",
-              "close": "17:00"
-            },
-            {
-              "open": "13:00",
-              "close": "14:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+        "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 28,
       "address": "123 Fairview Avenue, Indianapolis, IN 46201",
@@ -2682,84 +809,13 @@
       "createdAt": "2024-04-10T09:30:00Z",
       "updatedAt": "2025-10-07T11:00:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:30",
-              "close": "13:30"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [
-            {
-              "open": "09:00",
-              "close": "12:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+        "saturday": "9:00 AM - 12:00 PM",
+        "sunday": "Closed"
       },
       "practiceId": 29,
       "address": "456 Highland Road, Milwaukee, WI 53201",
@@ -2782,79 +838,13 @@
       "createdAt": "2024-05-05T10:00:00Z",
       "updatedAt": "2025-10-06T14:30:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "07:00",
-              "close": "15:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 30,
       "address": "789 Cedar Ridge Drive, Kansas City, MO 64101",
@@ -2877,79 +867,13 @@
       "createdAt": "2024-01-20T10:00:00Z",
       "updatedAt": "2025-10-25T16:00:00Z",
       "openingHours": {
-        "monday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "tuesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "wednesday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "thursday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "17:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "friday": {
-          "periods": [
-            {
-              "open": "08:00",
-              "close": "16:00"
-            },
-            {
-              "open": "12:00",
-              "close": "13:00"
-            }
-          ],
-          "isClosed": false
-        },
-        "saturday": {
-          "periods": [],
-          "isClosed": true
-        },
-        "sunday": {
-          "periods": [],
-          "isClosed": true
-        }
+        "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+        "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+        "saturday": "Closed",
+        "sunday": "Closed"
       },
       "practiceId": 31,
       "address": "1000 Test Avenue, Boston, MA 02101",

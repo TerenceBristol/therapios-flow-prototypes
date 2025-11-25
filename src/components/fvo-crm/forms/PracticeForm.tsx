@@ -273,40 +273,7 @@ const PracticeForm: React.FC<PracticeFormProps> = ({
           )}
 
           {/* Divider */}
-          {isEditing && <div className="border-t border-border my-6" />}
-
-          {/* Divider */}
           <div className="border-t border-border my-6" />
-
-          {/* Doctors at this Practice */}
-          {isEditing && (
-            <div className="mb-6">
-              <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
-                Ärzte at this Practice
-              </h3>
-              {practiceDoctors.length > 0 ? (
-                <div className="space-y-2">
-                  {practiceDoctors.map(doctor => (
-                    <div key={doctor.id} className="text-sm text-foreground">
-                      • {doctor.name}
-                      {doctor.facilities.length > 0 && (
-                        <span className="text-muted-foreground ml-2">
-                          ({doctor.facilities.join(', ')})
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="text-sm text-muted-foreground italic">
-                  No doctors assigned to this practice
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Divider */}
-          {isEditing && <div className="border-t border-border my-6" />}
 
           <div>
             <OpeningHoursEditor

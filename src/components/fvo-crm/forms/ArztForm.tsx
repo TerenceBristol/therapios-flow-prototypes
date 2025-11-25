@@ -209,107 +209,22 @@ const ArztForm: React.FC<ArztFormProps> = ({
 
           {/* ERs - Computed from VOs */}
           <div className="mb-8">
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-3">
+              ERs
+            </h3>
             {computedERs.length > 0 ? (
-              <div className="flex flex-wrap gap-2">
-                {computedERs.map(er => (
-                  <div
-                    key={er}
-                    className="px-3 py-1.5 bg-muted border border-border rounded-md text-sm text-foreground"
-                  >
-                    {er}
+              <div className="space-y-2">
+                {computedERs.map((er, index) => (
+                  <div key={index} className="text-sm text-foreground">
+                    • {er}
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="text-sm text-muted-foreground italic">
-                No VOs yet - ERs will appear once VOs are assigned to this doctor
-              </div>
+              <div className="text-sm text-muted-foreground italic">No ERs assigned</div>
             )}
           </div>
 
-          {/* Divider */}
-          <div className="border-t border-border my-8" />
-
-          {/* VOs Table */}
-          <div className="mb-8">
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">
-              Verordnungen ({doctorVOs.length})
-            </h3>
-            {doctorVOs.length > 0 ? (
-              <div className="border border-border rounded-lg overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-muted/50">
-                      <tr className="text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                        <th className="px-4 py-3">Patient Name</th>
-                        <th className="px-4 py-3">VO Number</th>
-                        <th className="px-4 py-3">Heilmittel</th>
-                        <th className="px-4 py-3">Anzahl</th>
-                        <th className="px-4 py-3">VO Status</th>
-                        <th className="px-4 py-3">F.VO Status</th>
-                        <th className="px-4 py-3">Status Date</th>
-                        <th className="px-4 py-3">Facility</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {doctorVOs.map(vo => {
-                        // Color-coded VO Status badges
-                        const getVOStatusColor = (status?: string) => {
-                          if (!status) return 'bg-gray-100 text-gray-700 border-gray-300';
-                          switch (status) {
-                            case 'Aktiv':
-                              return 'bg-green-100 text-green-800 border-green-300';
-                            case 'Fertig Behandelt':
-                              return 'bg-blue-100 text-blue-800 border-blue-300';
-                            case 'Abgebrochen':
-                              return 'bg-red-100 text-red-800 border-red-300';
-                            case 'Abgelaufen':
-                              return 'bg-orange-100 text-orange-800 border-orange-300';
-                            case 'Abgerechnet':
-                              return 'bg-gray-100 text-gray-700 border-gray-300';
-                            default:
-                              return 'bg-gray-100 text-gray-700 border-gray-300';
-                          }
-                        };
-
-                        return (
-                          <tr
-                            key={vo.id}
-                            className="border-b border-border hover:bg-muted/30 transition-colors"
-                          >
-                            <td className="px-4 py-3 text-sm text-foreground">{vo.patientName}</td>
-                            <td className="px-4 py-3 text-sm text-foreground font-mono">
-                              {vo.voNumber || '-'}
-                            </td>
-                            <td className="px-4 py-3 text-sm text-foreground font-mono">{vo.therapyType}</td>
-                            <td className="px-4 py-3 text-sm text-foreground">{vo.anzahl}</td>
-                            <td className="px-4 py-3 text-sm">
-                              <span className={`px-2 py-1 border rounded text-xs font-medium ${getVOStatusColor(vo.voStatus)}`}>
-                                {vo.voStatus || 'N/A'}
-                              </span>
-                            </td>
-                            <td className="px-4 py-3 text-sm">
-                              <span className="px-2 py-1 bg-muted border border-border rounded text-xs">
-                                {vo.status}
-                              </span>
-                            </td>
-                            <td className="px-4 py-3 text-sm text-muted-foreground">{vo.statusDate}</td>
-                            <td className="px-4 py-3 text-sm text-foreground">{vo.facilityName}</td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            ) : (
-              <div className="text-center py-12 text-muted-foreground border border-border rounded-lg bg-muted/20">
-                <div className="text-4xl mb-4">📋</div>
-                <p>No VOs assigned to this doctor yet</p>
-                <p className="text-sm mt-2">VOs will appear here once they are created</p>
-              </div>
-            )}
-          </div>
         </div>
       </div>
 
