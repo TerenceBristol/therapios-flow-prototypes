@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { PracticeWithComputed, Arzt } from '@/types';
+import { convertTo12Hour } from '@/utils/timeUtils';
 import PhoneCell from './PhoneCell';
 import TodayHoursCell from './TodayHoursCell';
 import ArztCell from './ArztCell';
@@ -230,7 +231,7 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
                   {new Date(practice.nextFollowUpDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </div>
                 {practice.nextFollowUpTime && (
-                  <div className="text-xs mt-0.5">{practice.nextFollowUpTime}</div>
+                  <div className="text-xs mt-0.5">{convertTo12Hour(practice.nextFollowUpTime)}</div>
                 )}
               </div>
             );
@@ -376,8 +377,8 @@ const PracticesTable: React.FC<PracticesTableProps> = ({
         <div className="p-4">
           <div className="bg-background border border-border rounded-lg overflow-hidden">
             <table className="w-full table-auto">
-              <thead className="bg-muted/50 sticky top-0 z-10">
-                <tr className="text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+              <thead className="bg-[#1e3a5f] sticky top-0 z-10">
+                <tr className="text-left text-xs font-semibold text-[#d4b896] uppercase tracking-wide">
                   <th
                     className="px-4 py-3.5 cursor-pointer hover:text-foreground"
                     onClick={() => handleSort('name')}

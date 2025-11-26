@@ -177,36 +177,36 @@ const PracticesManagementTable: React.FC<PracticesManagementTableProps> = ({
       {/* Table */}
       <div className="flex-1 overflow-auto">
         <table className="w-full">
-          <thead className="bg-muted sticky top-0">
-            <tr>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-foreground w-20">
+          <thead className="bg-[#1e3a5f] sticky top-0">
+            <tr className="text-[#d4b896]">
+              <th className="px-4 py-3 text-left text-sm font-semibold w-20">
                 ID
               </th>
               <th
                 onClick={() => handleSort('name')}
-                className="px-4 py-3 text-left text-sm font-semibold text-foreground cursor-pointer hover:bg-muted/80"
+                className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-muted/80"
               >
                 Practice Name{getSortIndicator('name')}
               </th>
               <th
                 onClick={() => handleSort('phone')}
-                className="px-4 py-3 text-left text-sm font-semibold text-foreground cursor-pointer hover:bg-muted/80"
+                className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-muted/80"
               >
                 Phone{getSortIndicator('phone')}
               </th>
               <th
                 onClick={() => handleSort('city')}
-                className="px-4 py-3 text-left text-sm font-semibold text-foreground cursor-pointer hover:bg-muted/80"
+                className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-muted/80"
               >
                 Address{getSortIndicator('city')}
               </th>
               <th
                 onClick={() => handleSort('doctors')}
-                className="px-4 py-3 text-left text-sm font-semibold text-foreground cursor-pointer hover:bg-muted/80"
+                className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-muted/80"
               >
                 Arzt{getSortIndicator('doctors')}
               </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
+              <th className="px-4 py-3 text-left text-sm font-semibold">
                 Actions
               </th>
             </tr>

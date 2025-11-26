@@ -142,8 +142,8 @@ const ArzteTable: React.FC<ArzteTableProps> = ({
       <div className="flex-1 overflow-auto p-4">
         <div className="bg-background border border-border rounded-lg overflow-hidden">
           <table className="w-full">
-            <thead className="bg-muted/50">
-              <tr className="text-left text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+            <thead className="bg-[#1e3a5f]">
+              <tr className="text-left text-xs font-semibold text-[#d4b896] uppercase tracking-wide">
                 <th className="px-4 py-3 w-20">
                   ID
                 </th>

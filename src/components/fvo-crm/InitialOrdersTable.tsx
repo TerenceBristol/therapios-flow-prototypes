@@ -488,8 +488,8 @@ const InitialOrdersTable: React.FC<InitialOrdersTableProps> = ({
           </div>
         ) : (
           <table className="w-full text-sm table-auto">
-            <thead className="bg-muted/50 sticky top-0 z-10">
-              <tr className="border-b border-border">
+            <thead className="bg-[#1e3a5f] sticky top-0 z-10">
+              <tr className="border-b border-border text-[#d4b896]">
                 <th className="p-2 text-left font-medium w-10">
                   <input
                     type="checkbox"

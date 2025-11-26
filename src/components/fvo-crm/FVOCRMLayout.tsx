@@ -86,15 +86,6 @@ const FVOCRMLayout: React.FC<FVOCRMLayoutProps> = ({ children }) => {
                       ER
                     </div>
 
-                    {/* Ärzte - Clickable */}
-                    <Link
-                      href="/prototypes/fvo-crm/admin/arzte"
-                      onClick={() => setAdminDropdownOpen(false)}
-                      className="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors cursor-pointer"
-                    >
-                      Ärzte
-                    </Link>
-
                     {/* Practices - Clickable */}
                     <Link
                       href="/prototypes/fvo-crm/admin/practices"
