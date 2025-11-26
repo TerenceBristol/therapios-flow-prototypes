@@ -1,11 +1,10 @@
-import React, { useState, useMemo } from 'react';
-import { PracticeVO, PracticeDoctor, OrderFormType } from '@/types';
+import React, { useState } from 'react';
+import { PracticeVO, OrderFormType } from '@/types';
 
 interface GeneratePDFModalProps {
   isOpen: boolean;
   onClose: () => void;
   selectedVOs: PracticeVO[];
-  doctors: PracticeDoctor[];
   orderType: OrderFormType;
   onGenerate: (orderType: OrderFormType, deliveryType: 'er' | 'teltow') => void;
 }
@@ -14,26 +13,13 @@ const GeneratePDFModal: React.FC<GeneratePDFModalProps> = ({
   isOpen,
   onClose,
   selectedVOs,
-  doctors,
   orderType,
   onGenerate
 }) => {
   const [deliveryType, setDeliveryType] = useState<'er' | 'teltow'>('er');
 
-  // Get unique doctors from selected VOs
-  const uniqueDoctorIds = useMemo(() => {
-    return Array.from(new Set(selectedVOs.map(vo => vo.doctorId)));
-  }, [selectedVOs]);
-
-  const uniqueDoctors = useMemo(() => {
-    if (!doctors) return [];
-    return doctors.filter(d => uniqueDoctorIds.includes(d.id));
-  }, [doctors, uniqueDoctorIds]);
-
-  const formCount = uniqueDoctors.length;
-
-  // Get ER name from first VO (all VOs should have same ER if from same practice)
-  const erName = selectedVOs[0]?.facilityName || 'ER';
+  // Get facility name from first VO for display
+  const facilityName = selectedVOs[0]?.facilityName || 'Einrichtung';
 
   if (!isOpen || selectedVOs.length === 0) return null;
 
@@ -89,9 +75,9 @@ const GeneratePDFModal: React.FC<GeneratePDFModalProps> = ({
                   className="mt-1"
                 />
                 <div className="flex-1">
-                  <div className="font-medium text-foreground">ER Office</div>
+                  <div className="font-medium text-foreground">Einrichtung</div>
                   <div className="text-sm text-muted-foreground mt-0.5">
-                    Please deliver to the {erName}
+                    Hinterlegung in der {facilityName}
                   </div>
                 </div>
               </label>
@@ -133,7 +119,7 @@ const GeneratePDFModal: React.FC<GeneratePDFModalProps> = ({
             onClick={handleGenerate}
             className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-medium text-sm"
           >
-            Generate {formCount > 1 ? `${formCount} Forms` : 'Form'}
+            Generate Form
           </button>
         </div>
       </div>

@@ -311,7 +311,6 @@ export default function FVOCRMPage() {
         isOpen={isPDFModalOpen}
         onClose={() => setIsPDFModalOpen(false)}
         selectedVOs={vos.filter(vo => selectedVOIds.includes(vo.id))}
-        doctors={doctors}
         orderType={orderType}
         onGenerate={handlePDFGenerate}
       />
@@ -321,7 +320,6 @@ export default function FVOCRMPage() {
         isOpen={isPDFPreviewOpen}
         onClose={() => setIsPDFPreviewOpen(false)}
         selectedVOs={vos.filter(vo => selectedVOIds.includes(vo.id))}
-        doctors={doctors}
         orderType={orderType}
         deliveryType={deliveryType}
       />

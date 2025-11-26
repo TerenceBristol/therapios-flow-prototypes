@@ -1,11 +1,10 @@
-import React, { useState, useMemo } from 'react';
-import { PracticeVO, PracticeDoctor, OrderFormType } from '@/types';
+import React from 'react';
+import { PracticeVO, OrderFormType } from '@/types';
 
 interface VOsPDFPreviewModalProps {
   isOpen: boolean;
   onClose: () => void;
   selectedVOs: PracticeVO[];
-  doctors: PracticeDoctor[];
   orderType: OrderFormType;
   deliveryType: 'er' | 'teltow';
 }
@@ -14,28 +13,10 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
   isOpen,
   onClose,
   selectedVOs,
-  doctors,
   orderType,
   deliveryType
 }) => {
-  // Group VOs by doctor
-  const vosByDoctor = useMemo(() => {
-    const grouped = new Map<string, { doctor: PracticeDoctor; vos: PracticeVO[] }>();
-
-    selectedVOs.forEach(vo => {
-      const doctor = doctors.find(d => d.id === vo.doctorId);
-      if (!doctor) return;
-
-      if (!grouped.has(vo.doctorId)) {
-        grouped.set(vo.doctorId, { doctor, vos: [] });
-      }
-      grouped.get(vo.doctorId)!.vos.push(vo);
-    });
-
-    return Array.from(grouped.values());
-  }, [selectedVOs, doctors]);
-
-  if (!isOpen || vosByDoctor.length === 0) return null;
+  if (!isOpen || selectedVOs.length === 0) return null;
 
   // Helper function to format current date as DD.MM.YYYY
   const getCurrentDate = (): string => {
@@ -47,30 +28,48 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
   };
 
   // Format treatment details: "anzahl therapyType im Hausbesuch"
-  const formatTreatmentDetails = (vo: PracticeVO): string => {
-    return `${vo.anzahl} ${vo.therapyType} im Hausbesuch`;
+  const formatHeilmittel = (vo: PracticeVO): string => {
+    return `${vo.anzahl}x ${vo.therapyType} im Hausbesuch`;
   };
-
-  // Get ER name from first VO
-  const erName = selectedVOs[0]?.facilityName || 'ER';
-
-  // Delivery address text
-  const deliveryAddress = deliveryType === 'er'
-    ? `Please deliver to the ${erName}`
-    : 'Therapios, Rheinstr. 7f, 14513 Teltow';
 
   // Get form title based on order type
   const formTitle = orderType === 'initial'
-    ? 'Bestellung von Erstverordnungen'
+    ? 'Bitte um Ausstellung von Folgeverordnungen'
     : 'Bitte um kurze Rückmeldung zu Folgeverordnungen';
 
-  // Get greeting text based on order type
-  const greetingText = orderType === 'initial'
-    ? 'wir möchten folgende Erstverordnungen für unsere Patienten bestellen.'
-    : 'wir warten noch auf die Folgeverordnungen für unsere unten genannten Patienten. Bitte geben Sie uns kurz Bescheid, ob die Rezepte fertig sind bzw. wann wir damit rechnen können.';
+  // Get template content based on orderType + deliveryType
+  const getTemplateContent = () => {
+    if (orderType === 'initial') {
+      // Initial Order templates
+      const opening = 'im Auftrag unserer Patient:innen bitten wir um Ausstellung von weiteren Heilmittelverordnungen wie aufgeführt:';
 
-  // Render PDF form
-  const renderForm = (doctor: PracticeDoctor, vos: PracticeVO[]) => {
+      const delivery = deliveryType === 'er'
+        ? 'Wir bitten wir um Hinterlegung der Verordnungen in der Einrichtung. Auf Wunsch senden wir Ihnen dafür gern kostenfrei Freiumschläge zu.'
+        : null; // Teltow has address block
+
+      const closing = 'Bitte lassen Sie uns eine kurze Rückmeldung zukommen, sobald die Verordnungen erfolgreich ausgestellt wurden. Wir bedanken uns für die angenehme Zusammenarbeit!';
+
+      return { opening, delivery, closing, middle: null };
+    } else {
+      // Follow-up Order templates
+      const opening = 'wir hoffen, es geht Ihnen gut und möchten uns für die gute Zusammenarbeit bedanken.\n\nUns ist aufgefallen, dass wir für die folgenden Patient:innen derzeit noch keine neuen Verordnungen vorliegen haben:';
+
+      const middle = 'Damit wir die Behandlung ohne Unterbrechung fortsetzen und mögliche Rückfragen von Patient:innen, Angehörigen oder Pflegekräften sicher beantworten können, wäre es hilfreich zu wissen, wann wir mit den angefragten Verordnungen rechnen dürfen.';
+
+      const delivery = deliveryType === 'er'
+        ? 'Weiterhin würden wir uns freuen, wenn Sie die Verordnungen in der Einrichtung hinterlegen können. Falls die Rezepte bereits unterwegs sind, freuen wir uns über eine kurze Rückmeldung.'
+        : null; // Teltow has address block
+
+      const closing = 'Vielen Dank für Ihre Unterstützung – wir schätzen die Zusammenarbeit mit Ihnen sehr.';
+
+      return { opening, delivery, closing, middle };
+    }
+  };
+
+  const templateContent = getTemplateContent();
+
+  // Render the consolidated PDF form
+  const renderForm = () => {
     return (
       <div style={{
         padding: '2rem',
@@ -83,29 +82,24 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
         fontSize: '0.875rem',
         fontFamily: 'Arial, sans-serif'
       }}>
-        {/* Header */}
-        <div style={{ marginBottom: '1.5rem', position: 'relative' }}>
-          <div style={{ fontWeight: 'bold', fontSize: '1rem', textAlign: 'center' }}>
-            {formTitle}
-          </div>
-          <div style={{ position: 'absolute', top: 0, right: 0, fontSize: '0.875rem' }}>
-            {getCurrentDate()}
-          </div>
+        {/* Date - top right */}
+        <div style={{ textAlign: 'right', marginBottom: '1.5rem', fontSize: '0.875rem' }}>
+          {getCurrentDate()}
+        </div>
+
+        {/* Title */}
+        <div style={{ fontWeight: 'bold', fontSize: '1rem', marginBottom: '1.5rem' }}>
+          {formTitle}
         </div>
 
         {/* Greeting */}
         <div style={{ marginBottom: '1rem' }}>
-          Sehr geehrtes Praxisteam {doctor.name},
+          Sehr geehrtes Praxisteam,
         </div>
 
-        {/* Body text */}
-        <div style={{ marginBottom: '1rem', lineHeight: '1.5' }}>
-          {greetingText}
-        </div>
-
-        {/* ER Name */}
-        <div style={{ marginBottom: '1rem', fontWeight: 'bold' }}>
-          <strong>ER:</strong> {erName}
+        {/* Opening text */}
+        <div style={{ marginBottom: '1.5rem', lineHeight: '1.6', whiteSpace: 'pre-line' }}>
+          {templateContent.opening}
         </div>
 
         {/* Patient Table */}
@@ -125,27 +119,7 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
                 fontWeight: 'bold',
                 textAlign: 'left'
               }}>
-                Patient Name
-              </th>
-              <th style={{
-                border: '1px solid #000',
-                padding: '0.5rem',
-                backgroundColor: '#f0f0f0',
-                fontWeight: 'bold',
-                textAlign: 'left',
-                width: '100px'
-              }}>
-                Geb. Datum
-              </th>
-              <th style={{
-                border: '1px solid #000',
-                padding: '0.5rem',
-                backgroundColor: '#f0f0f0',
-                fontWeight: 'bold',
-                textAlign: 'left',
-                width: '100px'
-              }}>
-                {orderType === 'initial' ? 'Date' : 'Bestelt Date'}
+                Einrichtung
               </th>
               <th style={{
                 border: '1px solid #000',
@@ -154,13 +128,35 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
                 fontWeight: 'bold',
                 textAlign: 'left'
               }}>
-                Details
+                Patientenname
+              </th>
+              <th style={{
+                border: '1px solid #000',
+                padding: '0.5rem',
+                backgroundColor: '#f0f0f0',
+                fontWeight: 'bold',
+                textAlign: 'left',
+                width: '100px'
+              }}>
+                Geb.datum
+              </th>
+              <th style={{
+                border: '1px solid #000',
+                padding: '0.5rem',
+                backgroundColor: '#f0f0f0',
+                fontWeight: 'bold',
+                textAlign: 'left'
+              }}>
+                Heilmittel
               </th>
             </tr>
           </thead>
           <tbody>
-            {vos.map((vo, index) => (
+            {selectedVOs.map((vo) => (
               <tr key={vo.id}>
+                <td style={{ border: '1px solid #000', padding: '0.5rem' }}>
+                  {vo.facilityName}
+                </td>
                 <td style={{ border: '1px solid #000', padding: '0.5rem' }}>
                   {vo.patientName}
                 </td>
@@ -168,51 +164,85 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
                   {vo.gebDatum}
                 </td>
                 <td style={{ border: '1px solid #000', padding: '0.5rem' }}>
-                  {vo.statusDate}
-                </td>
-                <td style={{ border: '1px solid #000', padding: '0.5rem' }}>
-                  {formatTreatmentDetails(vo)}
+                  {formatHeilmittel(vo)}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
 
-        {/* Delivery Address */}
-        <div style={{ marginBottom: '1rem', fontWeight: 'bold' }}>
-          <strong>Delivery:</strong> {deliveryAddress}
+        {/* Middle text (only for follow-up) */}
+        {templateContent.middle && (
+          <div style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+            {templateContent.middle}
+          </div>
+        )}
+
+        {/* Delivery section */}
+        {deliveryType === 'teltow' ? (
+          <div style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+            {orderType === 'initial' ? (
+              <>
+                <div>Senden Sie uns die Verordnungen nach Möglichkeit bitte an unsere <strong>Büroadresse</strong>:</div>
+                <div style={{ margin: '1rem 0' }}>
+                  <div>Therapios</div>
+                  <div>- Verordnungsmanagement -</div>
+                  <div>Rheinstr. 7F</div>
+                  <div>14513 Teltow</div>
+                </div>
+                <div>Sollte dies nicht möglich sein, so bitten wir um Hinterlegung in der Einrichtung. Auf Wunsch lassen wir Ihnen gern kostenfrei Freiumschläge zukommen.</div>
+              </>
+            ) : (
+              <>
+                <div>Weiterhin würden wir uns freuen, wenn Sie die Verordnungen an unsere Büroadresse senden können:</div>
+                <div style={{ margin: '1rem 0' }}>
+                  <div>Therapios</div>
+                  <div>- Verordnungsmanagement -</div>
+                  <div>Rheinstr. 7F</div>
+                  <div>14513 Teltow</div>
+                </div>
+                <div>Falls die Rezepte bereits unterwegs sind, freuen wir uns über eine kurze Rückmeldung.</div>
+              </>
+            )}
+          </div>
+        ) : (
+          templateContent.delivery && (
+            <div style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+              {templateContent.delivery}
+            </div>
+          )
+        )}
+
+        {/* Contact Info */}
+        <div style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+          <div>Für Rückfragen stehen wir Ihnen gerne persönlich zur Verfügung. Sie erreichen uns unter:</div>
+          <div style={{ marginTop: '0.5rem' }}>
+            <div>Tel: 03328 / 477 23 70</div>
+            <div>Fax: 03328 / 477 23 60</div>
+          </div>
         </div>
 
         {/* Closing */}
-        <div style={{ marginBottom: '1rem', lineHeight: '1.5' }}>
-          Vielen Dank für Ihre Unterstützung!
+        <div style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+          {templateContent.closing}
         </div>
 
-        {/* Contact Info */}
-        <div style={{ marginTop: '2rem', fontSize: '0.75rem', color: '#666' }}>
-          <div><strong>Therapios</strong></div>
-          <div>Rheinstr. 7f, 14513 Teltow</div>
-          <div>Tel: 03328 / 477 23 63</div>
-          <div>Fax: 03328 / 477 23 60</div>
+        {/* Signature */}
+        <div style={{ lineHeight: '1.6' }}>
+          <div>Mit freundlichen Grüßen</div>
+          <div>Ihr Team Therapios</div>
         </div>
       </div>
     );
   };
 
-  // Handle download for individual doctor
-  const handleDownload = (doctorName: string, vosCount: number) => {
-    console.log('Downloading PDF for doctor:', doctorName);
+  // Handle download
+  const handleDownload = () => {
+    console.log('Downloading PDF');
     console.log('Order type:', orderType);
     console.log('Delivery type:', deliveryType);
-    console.log('Selected VOs:', vosCount);
-    alert(`PDF download would start here (mock implementation)\n\nDoctor: ${doctorName}\nVOs: ${vosCount}`);
-  };
-
-  const handleDownloadAll = () => {
-    console.log('Downloading all PDFs');
-    console.log('Total forms:', vosByDoctor.length);
     console.log('Total VOs:', selectedVOs.length);
-    alert(`All PDFs download would start here (mock implementation)\n\nForms: ${vosByDoctor.length}\nTotal VOs: ${selectedVOs.length}`);
+    alert(`PDF download would start here (mock implementation)\n\nOrder Type: ${orderType === 'initial' ? 'Initial' : 'Follow-up'}\nDelivery: ${deliveryType === 'er' ? 'ER' : 'Teltow'}\nVOs: ${selectedVOs.length}`);
   };
 
   return (
@@ -225,7 +255,7 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
               PDF Preview - {orderType === 'initial' ? 'Initial' : 'Follow-up'} Order Form
             </h2>
             <p className="text-sm text-muted-foreground mt-1">
-              {vosByDoctor.length} form{vosByDoctor.length !== 1 ? 's' : ''} • {selectedVOs.length} VO{selectedVOs.length !== 1 ? 's' : ''}
+              1 form • {selectedVOs.length} VO{selectedVOs.length !== 1 ? 's' : ''} • Delivery: {deliveryType === 'er' ? 'Einrichtung' : 'Teltow Office'}
             </p>
           </div>
           <button
@@ -236,51 +266,9 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
           </button>
         </div>
 
-        {/* Preview Content - All Forms */}
+        {/* Preview Content - Single Form */}
         <div className="flex-1 overflow-y-auto p-6 bg-muted/20">
-          <div className="space-y-8">
-            {vosByDoctor.map((group, index) => (
-              <div key={group.doctor.id}>
-                {/* Doctor Section Header */}
-                <div className="mb-4 flex items-center justify-between bg-white p-4 rounded-lg border-2 border-primary shadow-sm">
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground">
-                      Form {index + 1}: Dr. {group.doctor.name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {group.vos.length} VO{group.vos.length !== 1 ? 's' : ''}
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => handleDownload(group.doctor.name, group.vos.length)}
-                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-medium text-sm flex items-center gap-2"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Download
-                  </button>
-                </div>
-
-                {/* Form Preview */}
-                {renderForm(group.doctor, group.vos)}
-
-                {/* Page Break Indicator (not for last form) */}
-                {index < vosByDoctor.length - 1 && (
-                  <div className="my-8 relative">
-                    <div className="absolute inset-0 flex items-center">
-                      <div className="w-full border-t-2 border-dashed border-gray-400"></div>
-                    </div>
-                    <div className="relative flex justify-center">
-                      <span className="bg-muted/20 px-4 py-1 text-sm font-medium text-gray-600 uppercase tracking-wide">
-                        Page Break
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          {renderForm()}
         </div>
 
         {/* Footer */}
@@ -292,13 +280,13 @@ const VOsPDFPreviewModal: React.FC<VOsPDFPreviewModalProps> = ({
             Close
           </button>
           <button
-            onClick={handleDownloadAll}
+            onClick={handleDownload}
             className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 font-medium text-sm flex items-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Download All {vosByDoctor.length > 1 ? `(${vosByDoctor.length} Forms)` : ''}
+            Download
           </button>
         </div>
       </div>
