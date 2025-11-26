@@ -28,10 +28,6 @@ const ActivityHistoryItem: React.FC<ActivityHistoryItemProps> = ({ activity, isF
             <span className="inline-flex items-center justify-center w-[110px] px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-700 border border-green-300">
               Resolved Issue
             </span>
-          ) : isFromFollowUp ? (
-            <span className="inline-flex items-center justify-center w-[110px] px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700 border border-blue-300">
-              Next Activity
-            </span>
           ) : (
             <span className="inline-flex items-center justify-center w-[110px] px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700 border border-gray-300">
               Activity
@@ -54,11 +50,16 @@ const ActivityHistoryItem: React.FC<ActivityHistoryItemProps> = ({ activity, isF
           {/* Metadata - Vertical Layout */}
           <div className="text-xs text-muted-foreground">
             <div className="font-medium">
-              {formatDate(activity.date)} at {formatTime(activity.date)}
+              {formatDate(activity.date)} at {formatTime(activity.date)} · by {activity.userId}
             </div>
             {isResolvedIssue && activity.resolvedAt && (
               <div className="text-[11px] mt-0.5">
-                Resolved {formatDate(activity.resolvedAt)}
+                Resolved {formatDate(activity.resolvedAt)}{activity.resolvedBy && ` · by ${activity.resolvedBy}`}
+              </div>
+            )}
+            {isFromFollowUp && activity.completedAt && (
+              <div className="text-[11px] mt-0.5">
+                Completed {formatDate(activity.completedAt)}{activity.completedBy && ` · by ${activity.completedBy}`}
               </div>
             )}
           </div>

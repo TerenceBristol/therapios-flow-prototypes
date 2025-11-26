@@ -54,6 +54,8 @@ const ActiveIssueCard: React.FC<ActiveIssueCardProps> = ({ activity, onResolve }
               <span>{formatDate(activity.date)}</span>
               <span>•</span>
               <span>{formatTime(activity.date)}</span>
+              <span>•</span>
+              <span>by {activity.userId}</span>
             </div>
           </div>
 

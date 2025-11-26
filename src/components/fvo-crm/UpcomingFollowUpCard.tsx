@@ -50,6 +50,8 @@ const UpcomingFollowUpCard: React.FC<UpcomingFollowUpCardProps> = ({ followUp, o
                   <span className="text-muted-foreground">{followUp.dueTime}</span>
                 </>
               )}
+              <span className="text-muted-foreground">•</span>
+              <span className="text-muted-foreground">by {followUp.userId}</span>
             </div>
           </div>
 

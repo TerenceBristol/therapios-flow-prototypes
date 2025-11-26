@@ -357,6 +357,9 @@ export interface PracticeActivity {
   issueStatus?: 'active' | 'resolved';
   resolvedAt?: string; // ISO timestamp when issue was resolved
   resolvedBy?: string; // User ID who resolved the issue
+  // Follow-up completion fields (when activity originates from completed follow-up)
+  completedAt?: string; // ISO timestamp when follow-up was completed
+  completedBy?: string; // User ID who completed the follow-up
 }
 
 // Follow-up entity for tracking future scheduled follow-ups
@@ -368,6 +371,7 @@ export interface PracticeFollowUp {
   notes: string;
   completed: boolean;
   completedAt?: string; // ISO timestamp when completed
+  completedBy?: string; // User who completed the follow-up
   completionNotes?: string; // Notes added when marking complete
   userId: string;
   createdAt: string;

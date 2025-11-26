@@ -218,10 +218,13 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
     const followUp = followUps.find(f => f.id === followUpId);
     if (!followUp) return;
 
+    const completedAt = new Date().toISOString();
+    const completedBy = 'user-002'; // Mock: current user completing the follow-up
+
     // Mark follow-up as completed
     setFollowUps(prev => prev.map(f =>
       f.id === followUpId
-        ? { ...f, completed: true, completedAt: new Date().toISOString() }
+        ? { ...f, completed: true, completedAt, completedBy }
         : f
     ));
 
@@ -236,9 +239,11 @@ export function FVOCRMProvider({ children }: FVOCRMProviderProps) {
       practiceId: followUp.practiceId,
       date: new Date().toISOString(),
       notes: activityNotes,
-      userId: followUp.userId,
+      userId: followUp.userId, // Original scheduler
       createdAt: new Date().toISOString(),
       isIssue: false,
+      completedAt, // When follow-up was completed
+      completedBy, // Who completed it (may differ from scheduler)
     };
 
     setActivities(prev => [...prev, newActivity]);

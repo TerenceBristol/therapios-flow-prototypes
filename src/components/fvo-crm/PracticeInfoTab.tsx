@@ -131,6 +131,9 @@ const PracticeInfoTab: React.FC<PracticeInfoTabProps> = ({ practice, doctors, on
                   >
                     <div className="text-sm font-medium text-foreground">
                       {doctor.name}
+                      {doctor.phone && (
+                        <span className="text-muted-foreground font-normal"> · {doctor.phone}</span>
+                      )}
                     </div>
                   </div>
                 ))
