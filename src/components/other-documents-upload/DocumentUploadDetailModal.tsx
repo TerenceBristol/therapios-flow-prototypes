@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 
-export type VOUploadStatus = 'in Prüfung' | 'Nicht lesbar' | 'Fehlende Upload-ID' | 'Angelegt' | 'Sonstiges';
+export type DocumentUploadStatus = 'in Prüfung' | 'Nicht lesbar' | 'Bestätigt';
+export type DocumentType = 'Zuzahlungsbefreiung' | 'Patienteninformationsbogen' | 'Honorarvereinbarung' | 'Andere';
 
 export interface Note {
   id: string;
@@ -13,32 +13,44 @@ export interface Note {
   text: string;
 }
 
-interface VOUpload {
+interface DocumentUpload {
   id: string;
   uploadId: string;
-  voNumber?: string;
+  documentType: DocumentType;
   uploadedBy: string;
   uploadedById: string;
   uploadDate: string;
   fileName: string;
   imageUrl: string;
-  status: VOUploadStatus;
-  toDate?: string;
+  status: DocumentUploadStatus;
   notes: Note[];
 }
 
-interface VOUploadDetailModalProps {
+interface DocumentUploadDetailModalProps {
   isOpen: boolean;
   onClose: () => void;
-  upload: VOUpload | null;
+  upload: DocumentUpload | null;
   isAdmin: boolean;
   currentUser: { name: string; role: 'Admin' | 'Therapist' };
-  onSave: (uploadId: string, voNumber: string, status: VOUploadStatus) => void;
+  onSave: (uploadId: string, status: DocumentUploadStatus) => void;
   onAddNote: (uploadId: string, note: Note) => void;
-  onReplaceImage: (uploadId: string, file: File, note: Note) => void;
+  onReplaceImage: (uploadId: string, file: File) => void;
 }
 
-export default function VOUploadDetailModal({
+// Format date in German 12-hour format
+const formatGermanDateTime = (isoDate: string) => {
+  const date = new Date(isoDate);
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const year = date.getFullYear();
+  let hours = date.getHours();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12 || 12;
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  return `${day}.${month}.${year}, ${hours}:${minutes} ${ampm}`;
+};
+
+export default function DocumentUploadDetailModal({
   isOpen,
   onClose,
   upload,
@@ -47,80 +59,35 @@ export default function VOUploadDetailModal({
   onSave,
   onAddNote,
   onReplaceImage,
-}: VOUploadDetailModalProps) {
-  const router = useRouter();
-  const [voNumber, setVoNumber] = useState('');
-  const [status, setStatus] = useState<VOUploadStatus>('in Prüfung');
+}: DocumentUploadDetailModalProps) {
+  const [status, setStatus] = useState<DocumentUploadStatus>('in Prüfung');
   const [newNoteText, setNewNoteText] = useState('');
   const [localNotes, setLocalNotes] = useState<Note[]>([]);
   const [showReplaceUI, setShowReplaceUI] = useState(false);
-  const [voNumberError, setVoNumberError] = useState('');
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (upload) {
-      setVoNumber(upload.voNumber || '');
       setStatus(upload.status);
-      setLocalNotes(upload.notes);
-      setVoNumberError('');
+      setLocalNotes(upload.notes ?? []);
     }
   }, [upload]);
 
   if (!isOpen || !upload) return null;
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}.${month}.${year}`;
-  };
-
   const handleSave = () => {
-    // Validate VO number is required for admins
-    if (!voNumber.trim()) {
-      setVoNumberError('Please enter a VO number before saving.');
-      return;
-    }
-    onSave(upload.id, voNumber, status);
+    onSave(upload.id, status);
     onClose();
-  };
-
-  const handleCreateVO = () => {
-    // Build query params for pre-population
-    const params = new URLSearchParams();
-    if (voNumber.trim()) {
-      params.set('voNumber', voNumber.trim());
-    }
-    if (upload.uploadedById) {
-      params.set('therapistId', upload.uploadedById);
-    }
-    if (upload.imageUrl) {
-      params.set('imageUrl', upload.imageUrl);
-    }
-
-    const queryString = params.toString();
-    const url = `/prototypes/vo-creation/create${queryString ? `?${queryString}` : ''}`;
-    router.push(url);
   };
 
   const handleClose = () => {
     // Reset to original values
     if (upload) {
-      setVoNumber(upload.voNumber || '');
       setStatus(upload.status);
       setNewNoteText('');
       setShowReplaceUI(false);
-      setVoNumberError('');
     }
     onClose();
-  };
-
-  const handleVoNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setVoNumber(e.target.value);
-    if (voNumberError) {
-      setVoNumberError('');
-    }
   };
 
   const handleAddNote = () => {
@@ -144,33 +111,14 @@ export default function VOUploadDetailModal({
   };
 
   const formatNoteTimestamp = (timestamp: string) => {
-    const date = new Date(timestamp);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = date.getFullYear();
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    return `${day}.${month}.${year} ${hours}:${minutes}`;
+    return formatGermanDateTime(timestamp);
   };
 
   const handleReplaceImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file && upload) {
-      // Create system note
-      const now = new Date();
-      const systemNote: Note = {
-        id: `note-${Date.now()}`,
-        author: currentUser.name,
-        role: currentUser.role,
-        timestamp: now.toISOString(),
-        text: `Image replaced by ${currentUser.name} on ${formatNoteTimestamp(now.toISOString())}`,
-      };
-
-      // Update local state immediately for instant UI feedback
-      setLocalNotes([...localNotes, systemNote]);
-
       // Persist to parent component
-      onReplaceImage(upload.id, file, systemNote);
+      onReplaceImage(upload.id, file);
 
       // Reset replace UI state
       setShowReplaceUI(false);
@@ -184,7 +132,7 @@ export default function VOUploadDetailModal({
       <div className="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-900">Prescription Image Details</h2>
+          <h2 className="text-xl font-semibold text-gray-900">Document Details</h2>
           <button
             onClick={handleClose}
             className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -200,7 +148,7 @@ export default function VOUploadDetailModal({
           {/* Image Preview */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Prescription Image
+              Document Image
             </label>
 
             {!showReplaceUI ? (
@@ -208,7 +156,7 @@ export default function VOUploadDetailModal({
                 <div className="bg-gray-100 rounded-lg overflow-hidden border border-gray-200" style={{ minHeight: '400px' }}>
                   <img
                     src={upload.imageUrl}
-                    alt="Prescription"
+                    alt="Document"
                     className="w-full h-full object-contain"
                     style={{ maxHeight: '500px' }}
                   />
@@ -311,42 +259,31 @@ export default function VOUploadDetailModal({
           {/* Upload Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg">
             <div>
-              <label className="block text-sm font-medium text-gray-700">Upload ID:</label>
+              <label className="block text-sm font-medium text-gray-700">Dokument-ID:</label>
               <p className="mt-1 text-base font-mono font-semibold text-blue-600">{upload.uploadId}</p>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Uploaded By:</label>
+              <label className="block text-sm font-medium text-gray-700">Dokumenttyp:</label>
+              <p className="mt-1 text-sm text-gray-900">{upload.documentType}</p>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Hochgeladen von:</label>
               <p className="mt-1 text-sm text-gray-900">{upload.uploadedBy}</p>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700">Upload Date:</label>
-              <p className="mt-1 text-sm text-gray-900">{formatDate(upload.uploadDate)}</p>
+              <label className="block text-sm font-medium text-gray-700">Datum:</label>
+              <p className="mt-1 text-sm text-gray-900">{formatGermanDateTime(upload.uploadDate)}</p>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700">File Name:</label>
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700">Dateiname:</label>
               <p className="mt-1 text-sm text-gray-900 truncate" title={upload.fileName}>
                 {upload.fileName}
               </p>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700">TO Date:</label>
-              <p className="mt-1 text-sm text-gray-900">
-                {upload.toDate ? formatDate(upload.toDate) : (
-                  <span className="text-gray-400 italic">-</span>
-                )}
-              </p>
-            </div>
-
-            {!isAdmin && upload.voNumber && (
-              <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700">VO Number:</label>
-                <p className="mt-1 text-sm text-gray-900">{upload.voNumber}</p>
-              </div>
-            )}
           </div>
 
           {/* Notes History */}
@@ -442,17 +379,10 @@ export default function VOUploadDetailModal({
           </div>
         </div>
 
-        {/* Required Information Section */}
+        {/* Admin Status Section */}
         {isAdmin && (
-          <div className="px-6 py-6 bg-amber-50 border-t border-amber-200">
-            <div className="flex items-center gap-2 mb-4">
-              <svg className="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-              </svg>
-              <h3 className="text-base font-semibold text-gray-900">Required Information</h3>
-            </div>
-
-            <div className="space-y-4 bg-white p-4 rounded-lg border border-amber-200">
+          <div className="px-6 py-6 bg-gray-50 border-t border-gray-200">
+            <div className="space-y-4">
               {/* Status Dropdown */}
               <div>
                 <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-2">
@@ -461,51 +391,13 @@ export default function VOUploadDetailModal({
                 <select
                   id="status"
                   value={status}
-                  onChange={(e) => setStatus(e.target.value as VOUploadStatus)}
+                  onChange={(e) => setStatus(e.target.value as DocumentUploadStatus)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
                 >
                   <option value="in Prüfung">in Prüfung</option>
                   <option value="Nicht lesbar">Nicht lesbar</option>
-                  <option value="Fehlende Upload-ID">Fehlende Upload-ID</option>
-                  <option value="Angelegt">Angelegt</option>
-                  <option value="Sonstiges">Sonstiges</option>
+                  <option value="Bestätigt">Bestätigt</option>
                 </select>
-              </div>
-
-              {/* VO Number Field - Prominent & Required */}
-              <div>
-                <label htmlFor="voNumberInput" className="flex items-center gap-2 mb-2">
-                  <span className="text-base font-bold text-gray-900">VO Number</span>
-                  <span className="text-red-600 text-lg">*</span>
-                  <span className="inline-flex items-center px-2 py-0.5 text-xs font-semibold text-red-800 bg-red-100 rounded-full">
-                    Required
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  id="voNumberInput"
-                  value={voNumber}
-                  onChange={handleVoNumberChange}
-                  placeholder="Enter VO number (e.g., 2155-10)"
-                  className={`w-full px-4 py-3 text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                    voNumberError
-                      ? 'border-red-500 bg-red-50'
-                      : 'border-gray-300 bg-white'
-                  }`}
-                />
-                {!voNumberError && (
-                  <p className="mt-1.5 text-sm text-gray-600">
-                    This field is required to save changes
-                  </p>
-                )}
-                {voNumberError && (
-                  <div className="mt-1.5 flex items-center gap-1.5 text-sm text-red-600">
-                    <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                    </svg>
-                    <span>{voNumberError}</span>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -521,23 +413,12 @@ export default function VOUploadDetailModal({
               Close
             </button>
             {isAdmin && (
-              <>
-                <button
-                  onClick={handleSave}
-                  className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-black rounded-lg hover:bg-gray-800 transition-colors"
-                >
-                  Save Changes
-                </button>
-                <button
-                  onClick={handleCreateVO}
-                  className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
-                  Create VO
-                </button>
-              </>
+              <button
+                onClick={handleSave}
+                className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-black rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                Save Changes
+              </button>
             )}
           </div>
         </div>
@@ -545,4 +426,3 @@ export default function VOUploadDetailModal({
     </div>
   );
 }
-

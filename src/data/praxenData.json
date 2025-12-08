@@ -1,0 +1,10 @@
+[
+  {"id": "prax-1", "name": "Hausarztpraxis Dr. Müller", "strasse": "Hauptstraße 15", "plz": "10115", "ort": "Berlin"},
+  {"id": "prax-2", "name": "Orthopädiepraxis am Park", "strasse": "Parkweg 23", "plz": "12489", "ort": "Berlin"},
+  {"id": "prax-3", "name": "Neurologisches Zentrum Mitte", "strasse": "Friedrichstraße 112", "plz": "10117", "ort": "Berlin"},
+  {"id": "prax-4", "name": "Gemeinschaftspraxis Schmidt & Partner", "strasse": "Schönhauser Allee 45", "plz": "10435", "ort": "Berlin"},
+  {"id": "prax-5", "name": "Allgemeinmedizin Prenzlauer Berg", "strasse": "Danziger Straße 88", "plz": "10405", "ort": "Berlin"},
+  {"id": "prax-6", "name": "Chirurgiepraxis Charlottenburg", "strasse": "Kantstraße 56", "plz": "10627", "ort": "Berlin"},
+  {"id": "prax-7", "name": "Internistische Praxis Steglitz", "strasse": "Schloßstraße 102", "plz": "12163", "ort": "Berlin"},
+  {"id": "prax-8", "name": "Kinderarztpraxis Spandau", "strasse": "Carl-Schurz-Straße 33", "plz": "13597", "ort": "Berlin"}
+]

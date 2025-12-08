@@ -1,0 +1,14 @@
+[
+  {"id": "e-1", "name": "Caritas Hospiz Katarinahaus Berlin Reinickendorf", "status": "Aktiv"},
+  {"id": "e-2", "name": "AWO Seniorenzentrum Am Wasserturm", "status": "Aktiv"},
+  {"id": "e-3", "name": "Vivantes Ida-Wolff-Krankenhaus", "status": "Aktiv"},
+  {"id": "e-4", "name": "DRK Pflegeheim Lichterfelde", "status": "Aktiv"},
+  {"id": "e-5", "name": "Johanniter-Stift Berlin-Treptow", "status": "Aktiv"},
+  {"id": "e-6", "name": "Vitanas Senioren Centrum Am Schlachtensee", "status": "Aktiv"},
+  {"id": "e-7", "name": "Kursana Domizil Berlin-Marzahn", "status": "Inaktiv"},
+  {"id": "e-8", "name": "Charité Pflegestation Mitte", "status": "Aktiv"},
+  {"id": "e-9", "name": "Diakonie Seniorenwohnen Zehlendorf", "status": "Aktiv"},
+  {"id": "e-10", "name": "Pro Seniore Residenz Am Tierpark", "status": "Aktiv"},
+  {"id": "e-11", "name": "Evangelisches Geriatriezentrum Berlin", "status": "Aktiv"},
+  {"id": "e-12", "name": "Domicil Seniorenpflegeheim Steglitz", "status": "Inaktiv"}
+]

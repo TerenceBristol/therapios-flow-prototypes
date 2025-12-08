@@ -1,0 +1,12 @@
+[
+  {"id": "t-1", "mitarbeiter_nr": "3", "vorname": "Therapist", "nachname": "Therapist", "email": "therapist@therapios.com", "handy_nummer": "+639000000002", "status": "Aktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": true},
+  {"id": "t-39", "mitarbeiter_nr": "39", "vorname": "Marion", "nachname": "Frieß-Weisbacher", "email": "marion.frieß-weisbacher.39@therapios.com", "handy_nummer": "+4915789530088", "status": "Inaktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": false},
+  {"id": "t-66", "mitarbeiter_nr": "66", "vorname": "Sandra", "nachname": "Zeibig", "email": "sandra.zeibig.66@therapios.com", "handy_nummer": "+4917661614974", "status": "Aktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": false},
+  {"id": "t-67", "mitarbeiter_nr": "67", "vorname": "Andreas", "nachname": "Rosky", "email": "andreas.rosky.67@therapios.com", "handy_nummer": "+491789795773", "status": "Aktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": true},
+  {"id": "t-95", "mitarbeiter_nr": "95", "vorname": "Pape-Kirchner", "nachname": "Sandra", "email": "sandra.pape-kirchner.95@therapios.com", "handy_nummer": null, "status": "Aktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": false},
+  {"id": "t-45", "mitarbeiter_nr": "45", "vorname": "Dominique", "nachname": "Strüver", "email": "dominique.strüver.45@therapios.com", "handy_nummer": "+4917632695331", "status": "Inaktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": false},
+  {"id": "t-79", "mitarbeiter_nr": "79", "vorname": "Jessika", "nachname": "Scheffler", "email": "jessika.scheffler.79@therapios.com", "handy_nummer": null, "status": "Aktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": false},
+  {"id": "t-112", "mitarbeiter_nr": "112", "vorname": "Petra", "nachname": "Müller", "email": "petra.mueller.112@therapios.com", "handy_nummer": "+4915123456789", "status": "Aktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": true},
+  {"id": "t-88", "mitarbeiter_nr": "88", "vorname": "Klaus", "nachname": "Becker", "email": "klaus.becker.88@therapios.com", "handy_nummer": "+4917612345678", "status": "Aktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": false},
+  {"id": "t-103", "mitarbeiter_nr": "103", "vorname": "Sabine", "nachname": "Weber", "email": "sabine.weber.103@therapios.com", "handy_nummer": "+4916087654321", "status": "Aktiv", "rolle": "ROLE_THERAPIST", "allow_fvo_ordering": true}
+]

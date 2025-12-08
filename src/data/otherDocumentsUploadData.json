@@ -1,0 +1,169 @@
+[
+  {
+    "id": "doc-001",
+    "uploadId": "03-1",
+    "documentType": "Zuzahlungsbefreiung",
+    "uploadedBy": "S. Zeibig",
+    "uploadedById": "therapist-001",
+    "uploadDate": "2025-10-23T13:45:00Z",
+    "fileName": "zuzahlungsbefreiung_001.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "in Prüfung",
+    "notes": []
+  },
+  {
+    "id": "doc-002",
+    "uploadId": "47-1",
+    "documentType": "Patienteninformationsbogen",
+    "uploadedBy": "A. Rosky",
+    "uploadedById": "therapist-002",
+    "uploadDate": "2025-10-23T11:20:00Z",
+    "fileName": "patienteninfo_scan.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "in Prüfung",
+    "notes": []
+  },
+  {
+    "id": "doc-003",
+    "uploadId": "03-2",
+    "documentType": "Honorarvereinbarung",
+    "uploadedBy": "S. Zeibig",
+    "uploadedById": "therapist-001",
+    "uploadDate": "2025-10-23T09:15:00Z",
+    "fileName": "honorarvereinbarung_03_2.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Nicht lesbar",
+    "notes": [
+      {
+        "id": "note-003-2",
+        "author": "S. Zeibig",
+        "role": "Therapist",
+        "timestamp": "2025-10-23T11:00:00Z",
+        "text": "I've uploaded a better quality image as a new upload"
+      },
+      {
+        "id": "note-003-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-23T10:30:00Z",
+        "text": "Image is blurry and difficult to read. Please reupload with better quality."
+      }
+    ]
+  },
+  {
+    "id": "doc-004",
+    "uploadId": "145-1",
+    "documentType": "Andere",
+    "uploadedBy": "J. Minge-Teteberg",
+    "uploadedById": "therapist-003",
+    "uploadDate": "2025-10-22T16:30:00Z",
+    "fileName": "sonstiges_dokument.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Bestätigt",
+    "notes": [
+      {
+        "id": "note-004-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-22T17:00:00Z",
+        "text": "Document confirmed and processed"
+      }
+    ]
+  },
+  {
+    "id": "doc-005",
+    "uploadId": "03-3",
+    "documentType": "Zuzahlungsbefreiung",
+    "uploadedBy": "S. Zeibig",
+    "uploadedById": "therapist-001",
+    "uploadDate": "2025-10-22T14:00:00Z",
+    "fileName": "zuzahlungsbefreiung_005.png",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Bestätigt",
+    "notes": [
+      {
+        "id": "note-005-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-22T15:30:00Z",
+        "text": "Verified and confirmed"
+      }
+    ]
+  },
+  {
+    "id": "doc-006",
+    "uploadId": "47-2",
+    "documentType": "Patienteninformationsbogen",
+    "uploadedBy": "A. Rosky",
+    "uploadedById": "therapist-002",
+    "uploadDate": "2025-10-21T10:45:00Z",
+    "fileName": "patienteninfo_scan.pdf",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "in Prüfung",
+    "notes": []
+  },
+  {
+    "id": "doc-007",
+    "uploadId": "145-2",
+    "documentType": "Honorarvereinbarung",
+    "uploadedBy": "J. Minge-Teteberg",
+    "uploadedById": "therapist-003",
+    "uploadDate": "2025-10-21T08:30:00Z",
+    "fileName": "honorarvereinbarung_007.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Bestätigt",
+    "notes": []
+  },
+  {
+    "id": "doc-008",
+    "uploadId": "89-1",
+    "documentType": "Andere",
+    "uploadedBy": "M. Schmidt",
+    "uploadedById": "therapist-004",
+    "uploadDate": "2025-10-20T15:20:00Z",
+    "fileName": "img_20251020_152003.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "in Prüfung",
+    "notes": []
+  },
+  {
+    "id": "doc-009",
+    "uploadId": "112-1",
+    "documentType": "Zuzahlungsbefreiung",
+    "uploadedBy": "L. Weber",
+    "uploadedById": "therapist-005",
+    "uploadDate": "2025-10-20T11:00:00Z",
+    "fileName": "zuzahlungsbefreiung_009.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Nicht lesbar",
+    "notes": [
+      {
+        "id": "note-009-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-20T14:30:00Z",
+        "text": "Text not legible in current image quality. Please retake photo with better lighting."
+      }
+    ]
+  },
+  {
+    "id": "doc-010",
+    "uploadId": "03-4",
+    "documentType": "Patienteninformationsbogen",
+    "uploadedBy": "S. Zeibig",
+    "uploadedById": "therapist-001",
+    "uploadDate": "2025-10-19T13:45:00Z",
+    "fileName": "patienteninfo_010.jpg",
+    "imageUrl": "/sample-vo-slip.jpg",
+    "status": "Bestätigt",
+    "notes": [
+      {
+        "id": "note-010-1",
+        "author": "Admin Admin",
+        "role": "Admin",
+        "timestamp": "2025-10-19T16:00:00Z",
+        "text": "Successfully processed"
+      }
+    ]
+  }
+]

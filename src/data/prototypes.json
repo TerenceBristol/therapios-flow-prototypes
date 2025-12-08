@@ -130,6 +130,26 @@
       "createdAt": "2025-11-06T10:00:00Z",
       "lastModified": "2025-11-06T10:00:00Z",
       "tags": ["Therapist", "Patient Management", "VO Management", "Notifications", "Healthcare", "Alternative"]
+    },
+    {
+      "id": "other-documents-upload",
+      "title": "Other Documents Upload",
+      "description": "Document upload and review system for various document types (Zuzahlungsbefreiung, Patienteninformationsbogen, Honorarvereinbarung, Andere). Therapists select document type before uploading. Features German 12-hour date format and document type filtering.",
+      "category": "draft",
+      "slug": "other-documents-upload",
+      "createdAt": "2025-11-27T10:00:00Z",
+      "lastModified": "2025-11-27T10:00:00Z",
+      "tags": ["Upload", "Documents", "Admin", "Therapist", "Review", "Healthcare"]
+    },
+    {
+      "id": "vo-creation",
+      "title": "VO Creation & Editing",
+      "description": "Complete prototype for creating and editing Verordnungen (prescriptions). Features a production-style dashboard with filtering, pagination, and tabbed views. Create VOs with linked therapists, patients, and doctors. Supports inline entity creation, Heilmittel catalog search, and Folge-VO linking.",
+      "category": "draft",
+      "slug": "vo-creation",
+      "createdAt": "2025-12-08T10:00:00Z",
+      "lastModified": "2025-12-08T10:00:00Z",
+      "tags": ["VO Management", "CRUD", "Dashboard", "Healthcare", "Admin"]
     }
   ]
 }
