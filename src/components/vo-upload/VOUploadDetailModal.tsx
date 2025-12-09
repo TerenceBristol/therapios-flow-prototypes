@@ -89,6 +89,7 @@ export default function VOUploadDetailModal({
   const handleCreateVO = () => {
     // Build query params for pre-population
     const params = new URLSearchParams();
+    params.set('fromUpload', 'true'); // Enable mock OCR pre-fill
     if (voNumber.trim()) {
       params.set('voNumber', voNumber.trim());
     }
