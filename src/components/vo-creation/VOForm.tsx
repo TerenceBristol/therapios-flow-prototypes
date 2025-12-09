@@ -17,6 +17,7 @@ export interface VO {
   rez_stationsnummer: string;
   rez_rezeptstatus: string;
   rez_therapiebericht: 'Ja' | 'Nein';
+  rez_doppel_beh?: 'Ja' | 'Nein';
   rez_diagnose?: string;
   rez_icd_10_code?: string;
   therapist_id: string;
@@ -53,9 +54,14 @@ interface VOFormProps {
   onSave: (vo: Omit<VO, 'id' | 'created_at' | 'created_by'>) => void;
   onCancel: () => void;
   existingVONumbers: string[];
-  // Pre-population props (from VO Upload integration)
+  // Pre-population props (from VO Upload / OCR integration)
   initialVoNumber?: string;
   initialTherapistId?: string;
+  initialPatientId?: string;
+  initialArztId?: string;
+  initialIcd10Code?: string;
+  initialEinrichtungId?: string;
+  initialTreatments?: Treatment[];
 }
 
 const STATUS_OPTIONS = ['Aktiv', 'Fertig behandelt', 'Abgerechnet', 'Abgebrochen', 'Archiviert'];
@@ -74,14 +80,19 @@ export function VOForm({
   existingVONumbers,
   initialVoNumber,
   initialTherapistId,
+  initialPatientId,
+  initialArztId,
+  initialIcd10Code,
+  initialEinrichtungId,
+  initialTreatments,
 }: VOFormProps) {
   const router = useRouter();
 
-  // Form state - use pre-population props if provided (from VO Upload), otherwise use initialVO
+  // Form state - use pre-population props if provided (from VO Upload / OCR), otherwise use initialVO
   const [therapistId, setTherapistId] = useState(initialVO?.therapist_id || initialTherapistId || '');
-  const [patientId, setPatientId] = useState(initialVO?.patient_id || '');
-  const [arztId, setArztId] = useState(initialVO?.arzt_id || '');
-  const [einrichtungId, setEinrichtungId] = useState(initialVO?.einrichtung_id || '');
+  const [patientId, setPatientId] = useState(initialVO?.patient_id || initialPatientId || '');
+  const [arztId, setArztId] = useState(initialVO?.arzt_id || initialArztId || '');
+  const [einrichtungId, setEinrichtungId] = useState(initialVO?.einrichtung_id || initialEinrichtungId || '');
   const [parentVOId, setParentVOId] = useState(initialVO?.parent_vo_id || '');
 
   const [rezeptNummer, setRezeptNummer] = useState(initialVO?.rez_rezept_nummer || initialVoNumber || '');
@@ -89,11 +100,12 @@ export function VOForm({
   const [betriebsstaettenNr, setBetriebsstaettenNr] = useState(initialVO?.rez_betriebsstaetten_nr || '');
   const [rezeptstatus, setRezeptstatus] = useState(initialVO?.rez_rezeptstatus || 'Aktiv');
   const [therapiebericht, setTherapiebericht] = useState<'Ja' | 'Nein'>(initialVO?.rez_therapiebericht || 'Nein');
+  const [doppelBeh, setDoppelBeh] = useState<'Ja' | 'Nein'>(initialVO?.rez_doppel_beh || 'Nein');
   const [diagnose, setDiagnose] = useState(initialVO?.rez_diagnose || '');
-  const [icd10Code, setIcd10Code] = useState(initialVO?.rez_icd_10_code || '');
+  const [icd10Code, setIcd10Code] = useState(initialVO?.rez_icd_10_code || initialIcd10Code || '');
 
   const [treatments, setTreatments] = useState<Treatment[]>(
-    initialVO?.treatments || [
+    initialVO?.treatments || initialTreatments || [
       { id: `tr-${Date.now()}-1`, heilmittel_code: '', anzahl: 0, frequenz: '' },
       { id: `tr-${Date.now()}-2`, heilmittel_code: '', anzahl: 0, frequenz: '' },
     ]
@@ -160,6 +172,7 @@ export function VOForm({
       rez_stationsnummer: '', // Not user-editable, derived from Einrichtung
       rez_rezeptstatus: rezeptstatus,
       rez_therapiebericht: therapiebericht,
+      rez_doppel_beh: doppelBeh,
       rez_diagnose: diagnose.trim() || undefined,
       rez_icd_10_code: icd10Code.trim(),
       therapist_id: therapistId,
@@ -379,6 +392,20 @@ export function VOForm({
               <select
                 value={therapiebericht}
                 onChange={(e) => setTherapiebericht(e.target.value as 'Ja' | 'Nein')}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="Nein">Nein</option>
+                <option value="Ja">Ja</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Doppel Beh. <span className="text-red-500">*</span>
+              </label>
+              <select
+                value={doppelBeh}
+                onChange={(e) => setDoppelBeh(e.target.value as 'Ja' | 'Nein')}
                 className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="Nein">Nein</option>

@@ -7,7 +7,7 @@ import { ImageSidebar } from '@/components/vo-creation/ImageSidebar';
 import { Therapist } from '@/components/vo-creation/TherapistModal';
 import { Patient } from '@/components/vo-creation/PatientModal';
 import { Arzt } from '@/components/vo-creation/ArztModal';
-import { Heilmittel } from '@/components/vo-creation/TreatmentRow';
+import { Treatment, Heilmittel } from '@/components/vo-creation/TreatmentRow';
 
 // Import mock data for initialization
 import voDataJson from '@/data/voCreationData.json';
@@ -35,11 +35,24 @@ function CreateVOContent() {
   const preVoNumber = searchParams.get('voNumber') || '';
   const preTherapistId = searchParams.get('therapistId') || '';
   const preImageUrl = searchParams.get('imageUrl') || '';
+  const fromUpload = searchParams.get('fromUpload') === 'true';
 
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<PrototypeData | null>(null);
   const [showImageSidebar, setShowImageSidebar] = useState(true);
   const [uploadedImage, setUploadedImage] = useState<string | null>(preImageUrl || null);
+  
+  // State for mocked OCR data
+  const [mockVoNumber, setMockVoNumber] = useState(preVoNumber);
+  const [mockTherapistId, setMockTherapistId] = useState(preTherapistId);
+  const [mockPatientId, setMockPatientId] = useState('');
+  const [mockArztId, setMockArztId] = useState('');
+  const [mockIcd10Code, setMockIcd10Code] = useState('');
+  const [mockEinrichtungId, setMockEinrichtungId] = useState('');
+  const [mockTreatments, setMockTreatments] = useState<Treatment[] | undefined>(undefined);
+
+  // Track if mock data is ready (for fromUpload flow)
+  const [mockDataReady, setMockDataReady] = useState(!fromUpload);
 
   // Handle image upload from sidebar
   const handleImageUpload = useCallback((file: File) => {
@@ -84,6 +97,98 @@ function CreateVOContent() {
     loadData();
   }, []);
 
+  // Handle fromUpload logic (use placeholder image and mock OCR)
+  useEffect(() => {
+    if (fromUpload && data) {
+      // 1. Check for upload flag and use placeholder image
+      const uploadFlag = sessionStorage.getItem('temp-vo-upload-flag');
+      if (uploadFlag) {
+        // Use a placeholder prescription image (SVG data URL)
+        const placeholderSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+          <rect fill="#f8f9fa" width="400" height="500"/>
+          <rect fill="#e9ecef" x="20" y="20" width="360" height="60" rx="4"/>
+          <text x="200" y="55" text-anchor="middle" fill="#6c757d" font-family="Arial" font-size="14">Kassenärztliche Vereinigung Berlin</text>
+          <rect fill="#fff" x="20" y="100" width="360" height="380" rx="4" stroke="#dee2e6"/>
+          <text x="40" y="130" fill="#212529" font-family="Arial" font-size="12" font-weight="bold">Verordnung (Muster 13)</text>
+          <line x1="40" y1="145" x2="360" y2="145" stroke="#dee2e6"/>
+          <text x="40" y="170" fill="#6c757d" font-family="Arial" font-size="10">Patient:</text>
+          <rect fill="#e9ecef" x="100" y="155" width="200" height="20" rx="2"/>
+          <text x="40" y="210" fill="#6c757d" font-family="Arial" font-size="10">ICD-10:</text>
+          <rect fill="#e9ecef" x="100" y="195" width="80" height="20" rx="2"/>
+          <text x="40" y="250" fill="#6c757d" font-family="Arial" font-size="10">Heilmittel:</text>
+          <rect fill="#e9ecef" x="100" y="235" width="150" height="20" rx="2"/>
+          <text x="40" y="290" fill="#6c757d" font-family="Arial" font-size="10">Anzahl:</text>
+          <rect fill="#e9ecef" x="100" y="275" width="50" height="20" rx="2"/>
+          <text x="200" y="420" text-anchor="middle" fill="#adb5bd" font-family="Arial" font-size="11">[Hochgeladenes Rezept]</text>
+        </svg>`;
+        const encodedSvg = btoa(unescape(encodeURIComponent(placeholderSvg)));
+        setUploadedImage(`data:image/svg+xml;base64,${encodedSvg}`);
+        // Clear the flag
+        sessionStorage.removeItem('temp-vo-upload-flag');
+      }
+
+      // 2. Mock "OCR" / Prefill all fields
+      // Generate random VO Number
+      if (!mockVoNumber) {
+        const randomNum = Math.floor(1000 + Math.random() * 9000);
+        setMockVoNumber(`${randomNum}-1`);
+      }
+
+      // Pick random therapist
+      if (!mockTherapistId && data.therapists.length > 0) {
+        const randomTherapist = data.therapists[Math.floor(Math.random() * data.therapists.length)];
+        setMockTherapistId(randomTherapist.id);
+      }
+
+      // Pick random patient
+      if (!mockPatientId && data.patients.length > 0) {
+        const randomPatient = data.patients[Math.floor(Math.random() * data.patients.length)];
+        setMockPatientId(randomPatient.id);
+      }
+
+      // Pick random doctor
+      if (!mockArztId && data.arzte.length > 0) {
+        const randomArzt = data.arzte[Math.floor(Math.random() * data.arzte.length)];
+        setMockArztId(randomArzt.id);
+      }
+
+      // Pick random ICD code from common ones
+      if (!mockIcd10Code) {
+        const mockIcdCodes = ['G20', 'G35', 'G82.12', 'R26.0', 'F03.G', 'M41.9', 'Z96.64', 'R47.0', 'G81.9'];
+        const randomIcd = mockIcdCodes[Math.floor(Math.random() * mockIcdCodes.length)];
+        setMockIcd10Code(randomIcd);
+      }
+
+      // Pick random facility
+      if (!mockEinrichtungId && data.einrichtungen.length > 0) {
+        const randomEinrichtung = data.einrichtungen[Math.floor(Math.random() * data.einrichtungen.length)];
+        setMockEinrichtungId(randomEinrichtung.id);
+      }
+
+      // Generate mock treatment
+      if (!mockTreatments) {
+        const treatmentCodes = ['KG-H', 'KG-ZNS-H', 'MLD60-H', 'STIMM-H', 'SPRECH-H'];
+        const frequencies = ['1x Woche', '2x Woche', '3x Woche'];
+        const randomCode = treatmentCodes[Math.floor(Math.random() * treatmentCodes.length)];
+        const randomFreq = frequencies[Math.floor(Math.random() * frequencies.length)];
+        const randomAnzahl = Math.floor(6 + Math.random() * 25); // 6-30 treatments
+
+        setMockTreatments([
+          {
+            id: `tr-mock-${Date.now()}`,
+            heilmittel_code: randomCode,
+            anzahl: randomAnzahl,
+            frequenz: randomFreq,
+          },
+          { id: `tr-${Date.now()}-2`, heilmittel_code: '', anzahl: 0, frequenz: '' },
+        ]);
+      }
+
+      // Mark mock data as ready so VOForm can render with pre-filled values
+      setMockDataReady(true);
+    }
+  }, [fromUpload, data]);
+
   const saveData = (newData: PrototypeData) => {
     setData(newData);
     try {
@@ -122,7 +227,7 @@ function CreateVOContent() {
     router.push('/prototypes/vo-creation');
   };
 
-  if (isLoading || !data) {
+  if (isLoading || !data || !mockDataReady) {
     return (
       <div className="flex items-center justify-center py-20">
         <div className="text-muted-foreground">Laden...</div>
@@ -177,8 +282,13 @@ function CreateVOContent() {
             onSave={handleSave}
             onCancel={handleCancel}
             existingVONumbers={data.vos.map(v => v.rez_rezept_nummer)}
-            initialVoNumber={preVoNumber}
-            initialTherapistId={preTherapistId}
+            initialVoNumber={mockVoNumber}
+            initialTherapistId={mockTherapistId}
+            initialPatientId={mockPatientId}
+            initialArztId={mockArztId}
+            initialIcd10Code={mockIcd10Code}
+            initialEinrichtungId={mockEinrichtungId}
+            initialTreatments={mockTreatments}
           />
         </div>
       </div>
