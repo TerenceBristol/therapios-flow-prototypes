@@ -167,8 +167,10 @@ function CreateVOContent() {
 
       // Generate mock treatment
       if (!mockTreatments) {
-        const treatmentCodes = ['KG-H', 'KG-ZNS-H', 'MLD60-H', 'STIMM-H', 'SPRECH-H'];
-        const frequencies = ['1x Woche', '2x Woche', '3x Woche'];
+        // Use valid codes from heilmittelCatalog.json
+        const treatmentCodes = ['KG-H', 'BO-E-H', 'MLD60H', 'KMT-H', 'L-E45H'];
+        // Use valid frequenz options from TreatmentRow.tsx
+        const frequencies = ['1-2', '1-3', '1-4', '1-5'];
         const randomCode = treatmentCodes[Math.floor(Math.random() * treatmentCodes.length)];
         const randomFreq = frequencies[Math.floor(Math.random() * frequencies.length)];
         const randomAnzahl = Math.floor(6 + Math.random() * 25); // 6-30 treatments
