@@ -240,8 +240,8 @@ function CreateVOContent() {
   return (
     <div className="flex">
       {/* Main Content */}
-      <div className={`flex-1 ${showImageSidebar ? 'pr-4' : ''}`}>
-        <div className="max-w-4xl mx-auto px-6 py-8">
+      <div className={`${showImageSidebar ? 'w-1/2' : 'flex-1'} overflow-y-auto`}>
+        <div className="max-w-3xl mx-auto px-6 py-8">
           {/* Header */}
           <div className="mb-8">
             <button

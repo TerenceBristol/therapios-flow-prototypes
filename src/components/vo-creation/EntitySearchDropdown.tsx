@@ -9,12 +9,15 @@ interface EntitySearchDropdownProps<T> {
   selectedId: string | null;
   onSelect: (id: string) => void;
   onCreateNew?: () => void;
+  onEdit?: () => void;
   displayField: (entity: T) => string;
+  statsField?: (entity: T) => React.ReactNode;
   searchFields: (keyof T)[];
   getId: (entity: T) => string;
   disabled?: boolean;
   required?: boolean;
   createNewLabel?: string;
+  editLabel?: string;
 }
 
 export function EntitySearchDropdown<T>({
@@ -24,12 +27,15 @@ export function EntitySearchDropdown<T>({
   selectedId,
   onSelect,
   onCreateNew,
+  onEdit,
   displayField,
+  statsField,
   searchFields,
   getId,
   disabled = false,
   required = false,
   createNewLabel = 'Create New',
+  editLabel = 'Edit',
 }: EntitySearchDropdownProps<T>) {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -148,7 +154,17 @@ export function EntitySearchDropdown<T>({
           )}
         </div>
 
-        {onCreateNew && (
+        {/* Show Edit button when selected and onEdit provided, otherwise show Create New */}
+        {selectedId && onEdit ? (
+          <button
+            type="button"
+            onClick={onEdit}
+            disabled={disabled}
+            className="px-3 py-2 bg-secondary text-secondary-foreground border border-border rounded-md hover:bg-secondary/80 transition-colors text-sm font-medium whitespace-nowrap disabled:opacity-50"
+          >
+            {editLabel}
+          </button>
+        ) : onCreateNew ? (
           <button
             type="button"
             onClick={handleCreateNew}
@@ -157,7 +173,7 @@ export function EntitySearchDropdown<T>({
           >
             {createNewLabel}
           </button>
-        )}
+        ) : null}
       </div>
 
       {/* Dropdown menu */}
@@ -169,11 +185,24 @@ export function EntitySearchDropdown<T>({
                 key={getId(entity)}
                 type="button"
                 onClick={() => handleSelect(entity)}
-                className={`w-full px-3 py-2 text-left text-sm hover:bg-muted transition-colors ${
-                  getId(entity) === selectedId ? 'bg-muted font-medium' : ''
+                className={`w-full px-3 py-2 text-left hover:bg-muted transition-colors ${
+                  getId(entity) === selectedId ? 'bg-muted' : ''
                 }`}
               >
-                {displayField(entity)}
+                {statsField ? (
+                  <div className="flex justify-between items-start gap-4">
+                    <div className={`text-sm ${getId(entity) === selectedId ? 'font-medium' : ''}`}>
+                      {displayField(entity)}
+                    </div>
+                    <div className="text-right text-xs text-muted-foreground flex-shrink-0">
+                      {statsField(entity)}
+                    </div>
+                  </div>
+                ) : (
+                  <span className={`text-sm ${getId(entity) === selectedId ? 'font-medium' : ''}`}>
+                    {displayField(entity)}
+                  </span>
+                )}
               </button>
             ))
           ) : (

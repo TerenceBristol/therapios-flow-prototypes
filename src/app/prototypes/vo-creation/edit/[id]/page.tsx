@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { VOForm, VO } from '@/components/vo-creation/VOForm';
 import { SuccessState } from '@/components/vo-creation/SuccessState';
+import { ImageSidebar } from '@/components/vo-creation/ImageSidebar';
 import { Therapist } from '@/components/vo-creation/TherapistModal';
 import { Patient } from '@/components/vo-creation/PatientModal';
 import { Arzt } from '@/components/vo-creation/ArztModal';
@@ -37,6 +38,18 @@ export default function EditVOPage() {
   const [currentVO, setCurrentVO] = useState<VO | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
   const [savedVONumber, setSavedVONumber] = useState('');
+  const [showImageSidebar, setShowImageSidebar] = useState(true);
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+
+  // Handle image upload from sidebar
+  const handleImageUpload = useCallback((file: File) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const result = e.target?.result as string;
+      setUploadedImage(result);
+    };
+    reader.readAsDataURL(file);
+  }, []);
 
   // Load data from sessionStorage or initialize
   useEffect(() => {
@@ -208,40 +221,66 @@ export default function EditVOPage() {
   const patientName = patient ? `${patient.pat_vorname} ${patient.pat_nachname}` : 'Unbekannt';
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-8">
-      {/* Header */}
-        <div className="mb-8">
-          <button
-            onClick={handleCancel}
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-4"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Zurück zum Dashboard
-          </button>
-          <h1 className="text-2xl font-bold text-foreground">
-            VO {currentVO.rez_rezept_nummer} bearbeiten
-          </h1>
-          <p className="text-muted-foreground mt-1">
-            Patient: {patientName}
-          </p>
-        </div>
+    <div className="flex">
+      {/* Main Content */}
+      <div className={`${showImageSidebar ? 'w-1/2' : 'flex-1'} overflow-y-auto`}>
+        <div className="max-w-3xl mx-auto px-6 py-8">
+          {/* Header */}
+          <div className="mb-8">
+            <button
+              onClick={handleCancel}
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-4"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Zurück zum Dashboard
+            </button>
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-2xl font-bold text-foreground">
+                  VO {currentVO.rez_rezept_nummer} bearbeiten
+                </h1>
+                <p className="text-muted-foreground mt-1">
+                  Patient: {patientName}
+                </p>
+              </div>
+              <button
+                onClick={() => setShowImageSidebar(!showImageSidebar)}
+                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                {showImageSidebar ? 'Bild ausblenden' : 'Bild anzeigen'}
+              </button>
+            </div>
+          </div>
 
-        {/* Form */}
-        <VOForm
-          mode="edit"
-          initialVO={currentVO}
-          therapists={data.therapists}
-          patients={data.patients}
-          arzte={data.arzte}
-          einrichtungen={data.einrichtungen}
-          vos={data.vos}
-          heilmittelCatalog={heilmittelDataJson as Heilmittel[]}
-          onSave={handleSave}
-          onCancel={handleCancel}
-          existingVONumbers={data.vos.filter(v => v.id !== currentVO.id).map(v => v.rez_rezept_nummer)}
-        />
+          {/* Form */}
+          <VOForm
+            mode="edit"
+            initialVO={currentVO}
+            therapists={data.therapists}
+            patients={data.patients}
+            arzte={data.arzte}
+            einrichtungen={data.einrichtungen}
+            vos={data.vos}
+            heilmittelCatalog={heilmittelDataJson as Heilmittel[]}
+            onSave={handleSave}
+            onCancel={handleCancel}
+            existingVONumbers={data.vos.filter(v => v.id !== currentVO.id).map(v => v.rez_rezept_nummer)}
+          />
+        </div>
+      </div>
+
+      {/* Image Sidebar */}
+      <ImageSidebar
+        imageUrl={uploadedImage}
+        onImageUpload={handleImageUpload}
+        onClose={() => setShowImageSidebar(false)}
+        isOpen={showImageSidebar}
+      />
     </div>
   );
 }

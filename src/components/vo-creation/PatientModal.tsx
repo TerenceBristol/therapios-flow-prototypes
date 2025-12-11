@@ -17,6 +17,7 @@ export interface Patient {
   pat_zuzahlung_befreit: 'Ja' | 'Nein';
   pat_zuzahlung_befreit_von?: string;
   pat_zuzahlung_befreit_bis?: string;
+  einrichtung_id?: string;
 }
 
 interface PatientModalProps {

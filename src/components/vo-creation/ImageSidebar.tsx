@@ -19,7 +19,7 @@ export function ImageSidebar({
   if (!isOpen) return null;
 
   return (
-    <div className="w-96 flex-shrink-0 border-l border-gray-200 bg-gray-50 sticky top-0 h-screen overflow-y-auto">
+    <div className="w-1/2 flex-shrink-0 border-l border-gray-200 bg-gray-50 sticky top-0 h-screen overflow-y-auto">
       <div className="p-4">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">

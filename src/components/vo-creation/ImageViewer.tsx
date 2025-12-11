@@ -21,6 +21,40 @@ export function ImageViewer({
   const [rotation, setRotation] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Pan/drag state
+  const [isPanning, setIsPanning] = useState(false);
+  const [panStart, setPanStart] = useState({ x: 0, y: 0 });
+  const [scrollStart, setScrollStart] = useState({ x: 0, y: 0 });
+
+  // Handle pan/drag for zoomed images
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoom <= 100 || !containerRef.current) return;
+    e.preventDefault();
+    setIsPanning(true);
+    setPanStart({ x: e.clientX, y: e.clientY });
+    setScrollStart({
+      x: containerRef.current.scrollLeft,
+      y: containerRef.current.scrollTop,
+    });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isPanning || !containerRef.current) return;
+    const dx = e.clientX - panStart.x;
+    const dy = e.clientY - panStart.y;
+    containerRef.current.scrollLeft = scrollStart.x - dx;
+    containerRef.current.scrollTop = scrollStart.y - dy;
+  };
+
+  const handleMouseUp = () => {
+    setIsPanning(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPanning(false);
+  };
 
   const handleZoomIn = () => {
     setZoom((prev) => Math.min(prev + 25, 200));
@@ -224,16 +258,23 @@ export function ImageViewer({
         )}
       </div>
 
-      {/* Image container with overflow handling */}
+      {/* Image container with overflow handling and pan/drag */}
       <div
-        className="overflow-auto bg-gray-100 rounded-lg border border-gray-200"
+        ref={containerRef}
+        className={`overflow-auto bg-gray-100 rounded-lg border border-gray-200 ${
+          zoom > 100 ? (isPanning ? 'cursor-grabbing' : 'cursor-grab') : ''
+        }`}
         style={{ maxHeight: '500px' }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="min-h-[300px] flex items-center justify-center p-4">
           <img
             src={src}
             alt={alt}
-            className="max-w-full transition-transform duration-200"
+            className="max-w-full transition-transform duration-200 select-none"
             style={{
               transform: `scale(${zoom / 100}) rotate(${rotation}deg)`,
               transformOrigin: 'center center',
