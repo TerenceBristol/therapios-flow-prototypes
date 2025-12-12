@@ -11,6 +11,7 @@ export interface Arzt {
   arzt_plz: string;
   arzt_ort: string;
   arzt_telefax: string;
+  praxis_id?: string;
 }
 
 interface ArztModalProps {
