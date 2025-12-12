@@ -21,6 +21,7 @@ const navItems: NavItem[] = [
       { label: 'Team', href: '/prototypes/vo-creation/team' },
       { label: 'Patients', href: '/prototypes/vo-creation/patients' },
       { label: 'Doctors', href: '/prototypes/vo-creation/doctors' },
+      { label: 'Practices', href: '/prototypes/vo-creation/admin/practices' },
       { label: 'Einrichtungen', href: '/prototypes/vo-creation/einrichtungen' },
     ],
   },

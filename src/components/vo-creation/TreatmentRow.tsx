@@ -7,6 +7,7 @@ export interface Treatment {
   heilmittel_code: string;
   anzahl: number;
   frequenz: string;
+  icd_code?: string;
 }
 
 export interface Heilmittel {
@@ -91,11 +92,8 @@ export function TreatmentRow({
     setIsFrequenzOpen(false);
   };
 
-  const formatHeilmittelDisplay = (h: Heilmittel) => {
-    if (h.duration) {
-      return `${h.code} - ${h.name} (${h.duration} min)`;
-    }
-    return `${h.code} - ${h.name}`;
+  const handleIcdChange = (value: string) => {
+    onChange(index, { ...treatment, icd_code: value });
   };
 
   return (
@@ -117,12 +115,6 @@ export function TreatmentRow({
             onFocus={() => setIsHeilmittelOpen(true)}
             className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
           />
-          {selectedHeilmittel && !isHeilmittelOpen && (
-            <div className="absolute top-full left-0 mt-0.5 text-xs text-muted-foreground truncate max-w-full">
-              {selectedHeilmittel.name}
-            </div>
-          )}
-
           {isHeilmittelOpen && (
             <div className="absolute z-50 w-full mt-1 bg-background border border-border rounded-md shadow-lg max-h-48 overflow-y-auto">
               {filteredHeilmittel.length > 0 ? (
@@ -154,6 +146,20 @@ export function TreatmentRow({
             </div>
           )}
         </div>
+      </div>
+
+      {/* ICD Input */}
+      <div className="w-24">
+        <label className="block text-xs font-medium text-muted-foreground mb-1">
+          ICD
+        </label>
+        <input
+          type="text"
+          value={treatment.icd_code || ''}
+          onChange={(e) => handleIcdChange(e.target.value)}
+          placeholder="z.B. G82.12"
+          className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+        />
       </div>
 
       {/* Anzahl Input */}

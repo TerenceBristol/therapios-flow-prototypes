@@ -1,0 +1,891 @@
+[
+  {
+    "id": "prac-001",
+    "name": "Springfield Medical Center",
+    "phone": "(555) 123-4567",
+    "fax": "(555) 123-4568",
+    "email": "office@springfieldmed.com",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2025-10-20T14:30:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1001,
+    "address": "123 Main Street, Springfield, IL 62701",
+    "contacts": [
+      {
+        "id": "cnt-prac-001-1",
+        "name": "Main",
+        "phone": "(555) 123-4567",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-002",
+    "name": "Riverside Family Practice",
+    "phone": "(555) 234-5678",
+    "fax": "(555) 234-5679",
+    "email": "info@riversidefp.com",
+    "createdAt": "2024-02-10T09:00:00Z",
+    "updatedAt": "2025-10-22T11:15:00Z",
+    "openingHours": {
+      "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1002,
+    "address": "456 River Road, Riverside, CA 92501",
+    "contacts": [
+      {
+        "id": "cnt-prac-002-1",
+        "name": "Main",
+        "phone": "(555) 234-5678",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-003",
+    "name": "Valley Orthopedics",
+    "phone": "(555) 345-6789",
+    "email": "contact@valleyortho.com",
+    "createdAt": "2024-03-05T12:00:00Z",
+    "updatedAt": "2025-10-18T16:45:00Z",
+    "openingHours": {
+      "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1003,
+    "address": "789 Valley Drive, San Jose, CA 95110",
+    "contacts": [
+      {
+        "id": "cnt-prac-003-1",
+        "name": "Main",
+        "phone": "(555) 345-6789",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-004",
+    "name": "Mountain View Pediatrics",
+    "phone": "(555) 456-7890",
+    "fax": "(555) 456-7891",
+    "email": "admin@mvpediatrics.com",
+    "createdAt": "2024-01-20T08:30:00Z",
+    "updatedAt": "2025-10-21T09:20:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+      "saturday": "9:00 AM - 12:00 PM",
+      "sunday": "Closed"
+    },
+    "practiceId": 1004,
+    "address": "321 Highland Ave, Denver, CO 80202",
+    "contacts": [
+      {
+        "id": "cnt-prac-004-1",
+        "name": "Main",
+        "phone": "(555) 456-7890",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-005",
+    "name": "Lakeside Internal Medicine",
+    "phone": "(555) 567-8901",
+    "fax": "(555) 567-8902",
+    "email": "office@lakesideim.com",
+    "createdAt": "2024-04-12T10:00:00Z",
+    "updatedAt": "2025-10-19T13:30:00Z",
+    "openingHours": {
+      "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1005,
+    "address": "555 Lake Shore Blvd, Chicago, IL 60611",
+    "contacts": [
+      {
+        "id": "cnt-prac-005-1",
+        "name": "Main",
+        "phone": "(555) 567-8901",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-006",
+    "name": "Sunset Family Health",
+    "phone": "(555) 678-9012",
+    "email": "info@sunsetfh.com",
+    "createdAt": "2024-05-01T11:00:00Z",
+    "updatedAt": "2025-10-20T10:15:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1006,
+    "address": "888 Sunset Boulevard, Los Angeles, CA 90028",
+    "contacts": [
+      {
+        "id": "cnt-prac-006-1",
+        "name": "Main",
+        "phone": "(555) 678-9012",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-007",
+    "name": "Greenwood Sports Medicine",
+    "phone": "(555) 789-0123",
+    "fax": "(555) 789-0124",
+    "email": "contact@greenwoodsports.com",
+    "createdAt": "2024-02-28T09:30:00Z",
+    "updatedAt": "2025-10-17T14:00:00Z",
+    "openingHours": {
+      "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1007,
+    "address": "234 Forest Lane, Portland, OR 97201",
+    "contacts": [
+      {
+        "id": "cnt-prac-007-1",
+        "name": "Main",
+        "phone": "(555) 789-0123",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-008",
+    "name": "Harbor Medical Group",
+    "phone": "(555) 890-1234",
+    "fax": "(555) 890-1235",
+    "email": "admin@harbormed.com",
+    "createdAt": "2024-03-15T10:30:00Z",
+    "updatedAt": "2025-10-16T11:45:00Z",
+    "openingHours": {
+      "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1008,
+    "address": "567 Harbor Drive, San Diego, CA 92101",
+    "contacts": [
+      {
+        "id": "cnt-prac-008-1",
+        "name": "Main",
+        "phone": "(555) 890-1234",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-009",
+    "name": "Parkside Family Physicians",
+    "phone": "(555) 901-2345",
+    "email": "office@parksidefp.com",
+    "createdAt": "2024-01-10T08:00:00Z",
+    "updatedAt": "2025-10-15T15:20:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+      "saturday": "9:00 AM - 12:00 PM",
+      "sunday": "Closed"
+    },
+    "practiceId": 1009,
+    "address": "890 Park Avenue, New York, NY 10028",
+    "contacts": [
+      {
+        "id": "cnt-prac-009-1",
+        "name": "Main",
+        "phone": "(555) 901-2345",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-010",
+    "name": "Meadowbrook Primary Care",
+    "phone": "(555) 012-3456",
+    "fax": "(555) 012-3457",
+    "email": "info@meadowbrookpc.com",
+    "createdAt": "2024-04-20T09:00:00Z",
+    "updatedAt": "2025-10-14T12:30:00Z",
+    "openingHours": {
+      "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1010,
+    "address": "123 Meadow Lane, Austin, TX 78701",
+    "contacts": [
+      {
+        "id": "cnt-prac-010-1",
+        "name": "Main",
+        "phone": "(555) 012-3456",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-011",
+    "name": "Coastal Neurology Associates",
+    "phone": "(555) 123-4568",
+    "fax": "(555) 123-4569",
+    "email": "office@coastalneuro.com",
+    "createdAt": "2024-05-10T10:00:00Z",
+    "updatedAt": "2025-10-25T14:15:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1011,
+    "address": "456 Ocean Boulevard, Miami, FL 33139",
+    "contacts": [
+      {
+        "id": "cnt-prac-011-1",
+        "name": "Main",
+        "phone": "(555) 123-4568",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-012",
+    "name": "Downtown Medical Clinic",
+    "phone": "(555) 234-5679",
+    "email": "contact@downtownmedical.com",
+    "createdAt": "2024-02-05T11:30:00Z",
+    "updatedAt": "2025-10-24T09:45:00Z",
+    "openingHours": {
+      "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1012,
+    "address": "789 Main Street Suite 200, Seattle, WA 98101",
+    "contacts": [
+      {
+        "id": "cnt-prac-012-1",
+        "name": "Main",
+        "phone": "(555) 234-5679",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-013",
+    "name": "Hillside Pediatric Center",
+    "phone": "(555) 345-6780",
+    "fax": "(555) 345-6781",
+    "email": "admin@hillsidepeds.com",
+    "createdAt": "2024-03-22T08:45:00Z",
+    "updatedAt": "2025-10-23T13:00:00Z",
+    "openingHours": {
+      "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1013,
+    "address": "234 Hill Road, Boston, MA 02108",
+    "contacts": [
+      {
+        "id": "cnt-prac-013-1",
+        "name": "Main",
+        "phone": "(555) 345-6780",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-014",
+    "name": "Westside Cardiology",
+    "phone": "(555) 456-7891",
+    "fax": "(555) 456-7892",
+    "email": "info@westsidecardio.com",
+    "createdAt": "2024-04-05T07:30:00Z",
+    "updatedAt": "2025-10-22T08:20:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+      "saturday": "9:00 AM - 12:00 PM",
+      "sunday": "Closed"
+    },
+    "practiceId": 1014,
+    "address": "567 West Avenue, Phoenix, AZ 85001",
+    "contacts": [
+      {
+        "id": "cnt-prac-014-1",
+        "name": "Main",
+        "phone": "(555) 456-7891",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-015",
+    "name": "Eastside Family Medicine",
+    "phone": "(555) 567-8902",
+    "email": "office@eastsidefm.com",
+    "createdAt": "2024-05-15T09:15:00Z",
+    "updatedAt": "2025-10-21T10:30:00Z",
+    "openingHours": {
+      "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1015,
+    "address": "890 East Street, Philadelphia, PA 19102",
+    "contacts": [
+      {
+        "id": "cnt-prac-015-1",
+        "name": "Main",
+        "phone": "(555) 567-8902",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-016",
+    "name": "Central Valley Urgent Care",
+    "phone": "(555) 678-9013",
+    "fax": "(555) 678-9014",
+    "email": "contact@centralvalleyuc.com",
+    "createdAt": "2024-01-25T10:00:00Z",
+    "updatedAt": "2025-10-20T11:00:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1016,
+    "address": "123 Central Drive, Fresno, CA 93721",
+    "contacts": [
+      {
+        "id": "cnt-prac-016-1",
+        "name": "Main",
+        "phone": "(555) 678-9013",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-017",
+    "name": "Northside ENT Specialists",
+    "phone": "(555) 789-0124",
+    "email": "admin@northsideent.com",
+    "createdAt": "2024-02-14T11:00:00Z",
+    "updatedAt": "2025-10-19T14:45:00Z",
+    "openingHours": {
+      "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1017,
+    "address": "456 North Boulevard, Detroit, MI 48201",
+    "contacts": [
+      {
+        "id": "cnt-prac-017-1",
+        "name": "Main",
+        "phone": "(555) 789-0124",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-018",
+    "name": "Southside Rehabilitation Center",
+    "phone": "(555) 890-1235",
+    "fax": "(555) 890-1236",
+    "email": "info@southsiderehab.com",
+    "createdAt": "2024-03-10T08:30:00Z",
+    "updatedAt": "2025-10-18T15:30:00Z",
+    "openingHours": {
+      "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1018,
+    "address": "789 South Street, Atlanta, GA 30303",
+    "contacts": [
+      {
+        "id": "cnt-prac-018-1",
+        "name": "Main",
+        "phone": "(555) 890-1235",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-019",
+    "name": "Bayside Women's Health",
+    "phone": "(555) 901-2346",
+    "email": "office@baysidewh.com",
+    "createdAt": "2024-04-18T09:45:00Z",
+    "updatedAt": "2025-10-17T12:15:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+      "saturday": "9:00 AM - 12:00 PM",
+      "sunday": "Closed"
+    },
+    "practiceId": 1019,
+    "address": "234 Bay Street, San Francisco, CA 94102",
+    "contacts": [
+      {
+        "id": "cnt-prac-019-1",
+        "name": "Main",
+        "phone": "(555) 901-2346",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-020",
+    "name": "Summit Dermatology",
+    "phone": "(555) 012-3457",
+    "fax": "(555) 012-3458",
+    "email": "contact@summitderm.com",
+    "createdAt": "2024-05-20T10:30:00Z",
+    "updatedAt": "2025-10-16T13:45:00Z",
+    "openingHours": {
+      "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1020,
+    "address": "567 Summit Avenue, Las Vegas, NV 89101",
+    "contacts": [
+      {
+        "id": "cnt-prac-020-1",
+        "name": "Main",
+        "phone": "(555) 012-3457",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-021",
+    "name": "Gateway Pain Management",
+    "phone": "(555) 123-4570",
+    "email": "admin@gatewaypain.com",
+    "createdAt": "2024-01-30T11:00:00Z",
+    "updatedAt": "2025-10-15T09:30:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1021,
+    "address": "890 Gateway Plaza, St. Louis, MO 63101",
+    "contacts": [
+      {
+        "id": "cnt-prac-021-1",
+        "name": "Main",
+        "phone": "(555) 123-4570",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-022",
+    "name": "Riverbend Rheumatology",
+    "phone": "(555) 234-5680",
+    "fax": "(555) 234-5681",
+    "email": "info@riverbendrheum.com",
+    "createdAt": "2024-02-22T09:30:00Z",
+    "updatedAt": "2025-10-14T11:45:00Z",
+    "openingHours": {
+      "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1022,
+    "address": "123 Riverbend Road, Minneapolis, MN 55401",
+    "contacts": [
+      {
+        "id": "cnt-prac-022-1",
+        "name": "Main",
+        "phone": "(555) 234-5680",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-023",
+    "name": "Brookside Gastroenterology",
+    "phone": "(555) 345-6782",
+    "email": "office@brooksidegi.com",
+    "createdAt": "2024-03-28T10:15:00Z",
+    "updatedAt": "2025-10-13T14:20:00Z",
+    "openingHours": {
+      "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1023,
+    "address": "456 Brook Lane, Dallas, TX 75201",
+    "contacts": [
+      {
+        "id": "cnt-prac-023-1",
+        "name": "Main",
+        "phone": "(555) 345-6782",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-024",
+    "name": "Maple Grove Allergy & Asthma",
+    "phone": "(555) 456-7893",
+    "fax": "(555) 456-7894",
+    "email": "contact@maplegrovea.com",
+    "createdAt": "2024-04-25T08:45:00Z",
+    "updatedAt": "2025-10-12T10:00:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+      "saturday": "9:00 AM - 12:00 PM",
+      "sunday": "Closed"
+    },
+    "practiceId": 1024,
+    "address": "789 Maple Drive, Charlotte, NC 28201",
+    "contacts": [
+      {
+        "id": "cnt-prac-024-1",
+        "name": "Main",
+        "phone": "(555) 456-7893",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-025",
+    "name": "Oakwood Endocrinology",
+    "phone": "(555) 567-8904",
+    "email": "admin@oakwoodendo.com",
+    "createdAt": "2024-05-30T09:00:00Z",
+    "updatedAt": "2025-10-11T12:30:00Z",
+    "openingHours": {
+      "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1025,
+    "address": "234 Oak Street, Columbus, OH 43201",
+    "contacts": [
+      {
+        "id": "cnt-prac-025-1",
+        "name": "Main",
+        "phone": "(555) 567-8904",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-026",
+    "name": "Pinecrest Urology",
+    "phone": "(555) 678-9015",
+    "fax": "(555) 678-9016",
+    "email": "office@pinecresturology.com",
+    "createdAt": "2024-01-18T10:30:00Z",
+    "updatedAt": "2025-10-10T15:00:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1026,
+    "address": "567 Pine Street, Nashville, TN 37201",
+    "contacts": [
+      {
+        "id": "cnt-prac-026-1",
+        "name": "Main",
+        "phone": "(555) 678-9015",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-027",
+    "name": "Clearwater Pulmonology",
+    "phone": "(555) 789-0126",
+    "email": "info@clearwaterpulm.com",
+    "createdAt": "2024-02-08T11:15:00Z",
+    "updatedAt": "2025-10-09T13:15:00Z",
+    "openingHours": {
+      "monday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "tuesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "wednesday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "thursday": "7:30 AM - 12:30 PM ; 1:30 PM - 5:30 PM",
+      "friday": "7:30 AM - 12:30 PM ; 1:30 PM - 4:30 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1027,
+    "address": "890 Clear Lake Road, Houston, TX 77001",
+    "contacts": [
+      {
+        "id": "cnt-prac-027-1",
+        "name": "Main",
+        "phone": "(555) 789-0126",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-028",
+    "name": "Fairview Nephrology",
+    "phone": "(555) 890-1237",
+    "fax": "(555) 890-1238",
+    "email": "contact@fairviewneph.com",
+    "createdAt": "2024-03-16T08:00:00Z",
+    "updatedAt": "2025-10-08T09:45:00Z",
+    "openingHours": {
+      "monday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "tuesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "wednesday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "thursday": "8:30 AM - 1:00 PM ; 2:00 PM - 6:00 PM",
+      "friday": "8:30 AM - 1:00 PM ; 2:00 PM - 5:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1028,
+    "address": "123 Fairview Avenue, Indianapolis, IN 46201",
+    "contacts": [
+      {
+        "id": "cnt-prac-028-1",
+        "name": "Main",
+        "phone": "(555) 890-1237",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-029",
+    "name": "Highland Hematology",
+    "phone": "(555) 901-2347",
+    "email": "admin@highlandhem.com",
+    "createdAt": "2024-04-10T09:30:00Z",
+    "updatedAt": "2025-10-07T11:00:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:30 PM ; 1:30 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:30 PM ; 1:30 PM - 4:00 PM",
+      "saturday": "9:00 AM - 12:00 PM",
+      "sunday": "Closed"
+    },
+    "practiceId": 1029,
+    "address": "456 Highland Road, Milwaukee, WI 53201",
+    "contacts": [
+      {
+        "id": "cnt-prac-029-1",
+        "name": "Main",
+        "phone": "(555) 901-2347",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-030",
+    "name": "Cedar Ridge Infectious Disease",
+    "phone": "(555) 012-3459",
+    "fax": "(555) 012-3460",
+    "email": "office@cedarridgeid.com",
+    "createdAt": "2024-05-05T10:00:00Z",
+    "updatedAt": "2025-10-06T14:30:00Z",
+    "openingHours": {
+      "monday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "tuesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "wednesday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "thursday": "7:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "friday": "7:00 AM - 12:00 PM ; 1:00 PM - 3:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1030,
+    "address": "789 Cedar Ridge Drive, Kansas City, MO 64101",
+    "contacts": [
+      {
+        "id": "cnt-prac-030-1",
+        "name": "Main",
+        "phone": "(555) 012-3459",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": []
+  },
+  {
+    "id": "prac-031",
+    "name": "Busy Medical Practice - Test Scrolling",
+    "phone": "(555) 999-8888",
+    "fax": "(555) 999-8889",
+    "email": "office@busymedical.com",
+    "createdAt": "2024-01-20T10:00:00Z",
+    "updatedAt": "2025-10-25T16:00:00Z",
+    "openingHours": {
+      "monday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "tuesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "wednesday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "thursday": "8:00 AM - 12:00 PM ; 1:00 PM - 5:00 PM",
+      "friday": "8:00 AM - 12:00 PM ; 1:00 PM - 4:00 PM",
+      "saturday": "Closed",
+      "sunday": "Closed"
+    },
+    "practiceId": 1031,
+    "address": "1000 Test Avenue, Boston, MA 02101",
+    "contacts": [
+      {
+        "id": "cnt-prac-031-1",
+        "name": "Reception Desk",
+        "phone": "(555) 999-8888",
+        "role": "Front Desk",
+        "isPrimary": true
+      }
+    ],
+    "vacationPeriods": [],
+    "notes": "This practice has many pending VOs to test table scrolling behavior. Extended hours Mon-Fri."
+  }
+]

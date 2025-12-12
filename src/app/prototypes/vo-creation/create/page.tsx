@@ -16,6 +16,8 @@ import patientsDataJson from '@/data/patientsData.json';
 import arzteDataJson from '@/data/arzteData.json';
 import einrichtungenDataJson from '@/data/einrichtungenData.json';
 import heilmittelDataJson from '@/data/heilmittelCatalog.json';
+import practicesDataJson from '@/data/practicesData.json';
+import { Practice } from '@/types';
 
 const STORAGE_KEY = 'vo-creation-prototype-data';
 
@@ -24,6 +26,7 @@ interface PrototypeData {
   therapists: Therapist[];
   patients: Patient[];
   arzte: Arzt[];
+  practices: Practice[];
   einrichtungen: { id: string; name: string; short_name?: string; type?: string }[];
 }
 
@@ -47,7 +50,7 @@ function CreateVOContent() {
   const [mockTherapistId, setMockTherapistId] = useState(preTherapistId);
   const [mockPatientId, setMockPatientId] = useState('');
   const [mockArztId, setMockArztId] = useState('');
-  const [mockIcd10Code, setMockIcd10Code] = useState('');
+  const [mockPracticeId, setMockPracticeId] = useState('');
   const [mockEinrichtungId, setMockEinrichtungId] = useState('');
   const [mockTreatments, setMockTreatments] = useState<Treatment[] | undefined>(undefined);
 
@@ -70,13 +73,19 @@ function CreateVOContent() {
       try {
         const stored = sessionStorage.getItem(STORAGE_KEY);
         if (stored) {
-          setData(JSON.parse(stored));
+          const parsedData = JSON.parse(stored);
+          // Ensure practices exists (migration for existing sessions)
+          if (!parsedData.practices) {
+            parsedData.practices = practicesDataJson as Practice[];
+          }
+          setData(parsedData);
         } else {
           const initialData: PrototypeData = {
             vos: voDataJson as VO[],
             therapists: therapistsDataJson as Therapist[],
             patients: patientsDataJson as Patient[],
             arzte: arzteDataJson as Arzt[],
+            practices: practicesDataJson as Practice[],
             einrichtungen: einrichtungenDataJson,
           };
           sessionStorage.setItem(STORAGE_KEY, JSON.stringify(initialData));
@@ -88,6 +97,7 @@ function CreateVOContent() {
           therapists: therapistsDataJson as Therapist[],
           patients: patientsDataJson as Patient[],
           arzte: arzteDataJson as Arzt[],
+          practices: practicesDataJson as Practice[],
           einrichtungen: einrichtungenDataJson,
         });
       }
@@ -152,11 +162,10 @@ function CreateVOContent() {
         setMockArztId(randomArzt.id);
       }
 
-      // Pick random ICD code from common ones
-      if (!mockIcd10Code) {
-        const mockIcdCodes = ['G20', 'G35', 'G82.12', 'R26.0', 'F03.G', 'M41.9', 'Z96.64', 'R47.0', 'G81.9'];
-        const randomIcd = mockIcdCodes[Math.floor(Math.random() * mockIcdCodes.length)];
-        setMockIcd10Code(randomIcd);
+      // Pick random practice
+      if (!mockPracticeId && data.practices.length > 0) {
+        const randomPractice = data.practices[Math.floor(Math.random() * data.practices.length)];
+        setMockPracticeId(randomPractice.id);
       }
 
       // Pick random facility
@@ -171,8 +180,11 @@ function CreateVOContent() {
         const treatmentCodes = ['KG-H', 'BO-E-H', 'MLD60H', 'KMT-H', 'L-E45H'];
         // Use valid frequenz options from TreatmentRow.tsx
         const frequencies = ['1-2', '1-3', '1-4', '1-5'];
+        // Common ICD codes for treatments
+        const icdCodes = ['G20', 'G35', 'G82.12', 'R26.0', 'F03.G', 'M41.9', 'Z96.64', 'R47.0', 'G81.9'];
         const randomCode = treatmentCodes[Math.floor(Math.random() * treatmentCodes.length)];
         const randomFreq = frequencies[Math.floor(Math.random() * frequencies.length)];
+        const randomIcd = icdCodes[Math.floor(Math.random() * icdCodes.length)];
         const randomAnzahl = Math.floor(6 + Math.random() * 25); // 6-30 treatments
 
         setMockTreatments([
@@ -181,6 +193,7 @@ function CreateVOContent() {
             heilmittel_code: randomCode,
             anzahl: randomAnzahl,
             frequenz: randomFreq,
+            icd_code: randomIcd,
           },
           { id: `tr-${Date.now()}-2`, heilmittel_code: '', anzahl: 0, frequenz: '' },
         ]);
@@ -253,22 +266,11 @@ function CreateVOContent() {
               </svg>
               Zurück zum Dashboard
             </button>
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-2xl font-bold text-foreground">Neue Verordnung erstellen</h1>
-                <p className="text-muted-foreground mt-1">
-                  Füllen Sie alle erforderlichen Felder aus, um eine neue VO zu erstellen.
-                </p>
-              </div>
-              <button
-                onClick={() => setShowImageSidebar(!showImageSidebar)}
-                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                {showImageSidebar ? 'Bild ausblenden' : 'Bild anzeigen'}
-              </button>
+            <div>
+              <h1 className="text-2xl font-bold text-foreground">Neue Verordnung erstellen</h1>
+              <p className="text-muted-foreground mt-1">
+                Füllen Sie alle erforderlichen Felder aus, um eine neue VO zu erstellen.
+              </p>
             </div>
           </div>
 
@@ -278,6 +280,7 @@ function CreateVOContent() {
             therapists={data.therapists}
             patients={data.patients}
             arzte={data.arzte}
+            practices={data.practices}
             einrichtungen={data.einrichtungen}
             vos={data.vos}
             heilmittelCatalog={heilmittelDataJson as Heilmittel[]}
@@ -288,7 +291,7 @@ function CreateVOContent() {
             initialTherapistId={mockTherapistId}
             initialPatientId={mockPatientId}
             initialArztId={mockArztId}
-            initialIcd10Code={mockIcd10Code}
+            initialPracticeId={mockPracticeId}
             initialEinrichtungId={mockEinrichtungId}
             initialTreatments={mockTreatments}
           />

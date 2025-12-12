@@ -8,18 +8,20 @@ import { Therapist } from './TherapistModal';
 import { Patient } from './PatientModal';
 import { Arzt } from './ArztModal';
 import { Treatment, Heilmittel } from './TreatmentRow';
+import { Practice } from '@/types';
 
 export interface VO {
   id: string;
   rez_rezept_nummer: string;
   rez_datum: string;
-  rez_betriebsstaetten_nr: string;
+  rez_betriebsstaetten_nr?: string; // Derived from Practice.practiceId
   rez_stationsnummer: string;
   rez_rezeptstatus: string;
   rez_therapiebericht: 'Ja' | 'Nein';
   rez_doppel_beh?: 'Ja' | 'Nein';
   rez_diagnose?: string;
   rez_icd_10_code?: string;
+  practice_id?: string; // Reference to Practice
   therapist_id: string;
   patient_id: string;
   arzt_id: string;
@@ -48,6 +50,7 @@ interface VOFormProps {
   therapists: Therapist[];
   patients: Patient[];
   arzte: Arzt[];
+  practices: Practice[];
   einrichtungen: Einrichtung[];
   vos: VO[];
   heilmittelCatalog: Heilmittel[];
@@ -59,7 +62,7 @@ interface VOFormProps {
   initialTherapistId?: string;
   initialPatientId?: string;
   initialArztId?: string;
-  initialIcd10Code?: string;
+  initialPracticeId?: string;
   initialEinrichtungId?: string;
   initialTreatments?: Treatment[];
 }
@@ -116,6 +119,7 @@ export function VOForm({
   therapists,
   patients,
   arzte,
+  practices,
   einrichtungen,
   vos,
   heilmittelCatalog,
@@ -126,7 +130,7 @@ export function VOForm({
   initialTherapistId,
   initialPatientId,
   initialArztId,
-  initialIcd10Code,
+  initialPracticeId,
   initialEinrichtungId,
   initialTreatments,
 }: VOFormProps) {
@@ -136,17 +140,16 @@ export function VOForm({
   const [therapistId, setTherapistId] = useState(initialVO?.therapist_id || initialTherapistId || '');
   const [patientId, setPatientId] = useState(initialVO?.patient_id || initialPatientId || '');
   const [arztId, setArztId] = useState(initialVO?.arzt_id || initialArztId || '');
+  const [practiceId, setPracticeId] = useState(initialVO?.practice_id || initialPracticeId || '');
   const [einrichtungId, setEinrichtungId] = useState(initialVO?.einrichtung_id || initialEinrichtungId || '');
   const [parentVOId, setParentVOId] = useState(initialVO?.parent_vo_id || '');
 
   const [rezeptNummer, setRezeptNummer] = useState(initialVO?.rez_rezept_nummer || initialVoNumber || '');
   const [rezDatum, setRezDatum] = useState(initialVO?.rez_datum || new Date().toISOString().split('T')[0]);
-  const [betriebsstaettenNr, setBetriebsstaettenNr] = useState(initialVO?.rez_betriebsstaetten_nr || '');
   const [rezeptstatus, setRezeptstatus] = useState(initialVO?.rez_rezeptstatus || 'Aktiv');
   const [therapiebericht, setTherapiebericht] = useState<'Ja' | 'Nein'>(initialVO?.rez_therapiebericht || 'Nein');
   const [doppelBeh, setDoppelBeh] = useState<'Ja' | 'Nein'>(initialVO?.rez_doppel_beh || 'Nein');
   const [diagnose, setDiagnose] = useState(initialVO?.rez_diagnose || '');
-  const [icd10Code, setIcd10Code] = useState(initialVO?.rez_icd_10_code || initialIcd10Code || '');
 
   const [treatments, setTreatments] = useState<Treatment[]>(
     initialVO?.treatments || initialTreatments || [
@@ -162,11 +165,10 @@ export function VOForm({
   const getPatientVoStats = (pId: string) => {
     const patientVos = vos.filter(v => v.patient_id === pId);
     if (patientVos.length === 0) {
-      return { count: 0, latestVo: null, latestStatus: null };
+      return { count: 0, latestVo: null, latestStatus: null, latestHeilmittel: null, latestIcd: null };
     }
     // Find the latest VO by sequence number
-    let latestVo = patientVos[0].rez_rezept_nummer;
-    let latestStatus = patientVos[0].rez_rezeptstatus;
+    let latestVo = patientVos[0];
     let maxSeq = 0;
     patientVos.forEach(v => {
       const match = v.rez_rezept_nummer.match(/-(\d+)$/);
@@ -174,12 +176,20 @@ export function VOForm({
         const seq = parseInt(match[1], 10);
         if (seq > maxSeq) {
           maxSeq = seq;
-          latestVo = v.rez_rezept_nummer;
-          latestStatus = v.rez_rezeptstatus;
+          latestVo = v;
         }
       }
     });
-    return { count: patientVos.length, latestVo, latestStatus };
+    // Get Heilmittel codes and ICD codes from treatments
+    const heilmittelCodes = latestVo.treatments?.map(t => t.heilmittel_code).filter(Boolean).join(', ') || null;
+    const icdCodes = latestVo.treatments?.map(t => t.icd_code).filter(Boolean).join(', ') || null;
+    return {
+      count: patientVos.length,
+      latestVo: latestVo.rez_rezept_nummer,
+      latestStatus: latestVo.rez_rezeptstatus,
+      latestHeilmittel: heilmittelCodes,
+      latestIcd: icdCodes
+    };
   };
 
   // Auto-generate VO number when patient changes (only in create mode)
@@ -244,6 +254,7 @@ export function VOForm({
   const selectedTherapist = therapists.find(t => t.id === therapistId);
   const selectedPatient = patients.find(p => p.id === patientId);
   const selectedArzt = arzte.find(a => a.id === arztId);
+  const selectedPractice = practices.find(p => p.id === practiceId);
   const selectedEinrichtung = einrichtungen.find(e => e.id === einrichtungId);
   const selectedParentVO = vos.find(v => v.id === parentVOId);
 
@@ -260,6 +271,7 @@ export function VOForm({
     if (!therapistId) newErrors.therapist = 'Therapeut ist erforderlich';
     if (!patientId) newErrors.patient = 'Patient ist erforderlich';
     if (!arztId) newErrors.arzt = 'Arzt ist erforderlich';
+    if (!practiceId) newErrors.practice = 'Praxis ist erforderlich';
 
     if (!rezeptNummer.trim()) {
       newErrors.rezeptNummer = 'VO Nummer ist erforderlich';
@@ -268,10 +280,8 @@ export function VOForm({
     }
 
     if (!rezDatum) newErrors.rezDatum = 'Rez Datum ist erforderlich';
-    if (!betriebsstaettenNr.trim()) newErrors.betriebsstaettenNr = 'Betriebsstätten-Nr. ist erforderlich';
-    if (!icd10Code.trim()) newErrors.icd10Code = 'ICD-10 Code ist erforderlich';
 
-    // Validate at least one treatment
+    // Validate at least one treatment with ICD code
     const validTreatments = treatments.filter(t => t.heilmittel_code && t.anzahl > 0 && t.frequenz);
     if (validTreatments.length === 0) {
       newErrors.treatments = 'Mindestens eine vollständige Behandlung ist erforderlich';
@@ -295,13 +305,13 @@ export function VOForm({
     onSave({
       rez_rezept_nummer: rezeptNummer.trim(),
       rez_datum: rezDatum,
-      rez_betriebsstaetten_nr: betriebsstaettenNr.trim(),
+      rez_betriebsstaetten_nr: selectedPractice?.practiceId?.toString(), // Derived from Practice
       rez_stationsnummer: '', // Not user-editable, derived from Einrichtung
       rez_rezeptstatus: rezeptstatus,
       rez_therapiebericht: therapiebericht,
       rez_doppel_beh: doppelBeh,
       rez_diagnose: diagnose.trim() || undefined,
-      rez_icd_10_code: icd10Code.trim(),
+      practice_id: practiceId,
       therapist_id: therapistId,
       patient_id: patientId,
       arzt_id: arztId,
@@ -351,10 +361,14 @@ export function VOForm({
           />
           {errors.patient && <p className="text-sm text-red-500 mt-1">{errors.patient}</p>}
 
-          {/* Patient Details - Simple Summary */}
+          {/* Patient Details - VO Stats Summary */}
           {selectedPatient && (
             <div className="mt-2 p-2 bg-muted/50 rounded-md text-xs text-muted-foreground">
-              {formatDate(selectedPatient.pat_geburtsdatum)} · {selectedPatient.pat_kostentraeger || '-'}
+              {(() => {
+                const stats = getPatientVoStats(selectedPatient.id);
+                if (stats.count === 0) return 'Keine VOs';
+                return `${stats.count} VOs · Letzte: ${stats.latestVo} (${stats.latestStatus}) · ${stats.latestHeilmittel || '-'} · ${stats.latestIcd || '-'}`;
+              })()}
             </div>
           )}
 
@@ -429,18 +443,14 @@ export function VOForm({
               entities={patientId ? vos.filter(v => v.id !== initialVO?.id && v.patient_id === patientId) : []}
               selectedId={parentVOId}
               onSelect={setParentVOId}
-              displayField={(v) => `${v.rez_rezept_nummer} (${formatDate(v.rez_datum)})`}
+              displayField={(v) => {
+                const heilmittel = v.treatments?.map(t => t.heilmittel_code).filter(Boolean).join(', ') || '-';
+                return `${v.rez_rezept_nummer} (${heilmittel})`;
+              }}
               searchFields={['rez_rezept_nummer']}
               getId={(v) => v.id}
               disabled={!patientId}
             />
-            {selectedParentVO && (
-              <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded-md text-xs">
-                <p className="text-blue-800">
-                  Folge-VO von <strong>{selectedParentVO.rez_rezept_nummer}</strong>
-                </p>
-              </div>
-            )}
           </div>
         </div>
 
@@ -460,19 +470,13 @@ export function VOForm({
               onSelect={setTherapistId}
               onCreateNew={() => router.push('/prototypes/vo-creation/team/create')}
               onEdit={therapistId ? () => router.push(`/prototypes/vo-creation/team/edit/${therapistId}`) : undefined}
-              displayField={(t) => `${t.vorname} ${t.nachname} (${t.mitarbeiter_nr})`}
+              displayField={(t) => `${t.vorname} ${t.nachname}`}
               searchFields={['vorname', 'nachname', 'mitarbeiter_nr', 'email']}
               getId={(t) => t.id}
               required
               createNewLabel="Neu"
             />
             {errors.therapist && <p className="text-sm text-red-500 mt-1">{errors.therapist}</p>}
-
-            {selectedTherapist && (
-              <div className="mt-2 p-2 bg-muted/50 rounded-md text-xs text-muted-foreground">
-                {selectedTherapist.mitarbeiter_nr} · {selectedTherapist.email} · <span className={selectedTherapist.status === 'Aktiv' ? 'text-green-600' : 'text-red-600'}>{selectedTherapist.status}</span>
-              </div>
-            )}
           </div>
 
           {/* Divider */}
@@ -495,10 +499,33 @@ export function VOForm({
               createNewLabel="Neu"
             />
             {errors.arzt && <p className="text-sm text-red-500 mt-1">{errors.arzt}</p>}
+          </div>
 
-            {selectedArzt && (
+          {/* Divider */}
+          <div className="border-t border-border my-4"></div>
+
+          {/* Praxis */}
+          <div>
+            <EntitySearchDropdown
+              label="Praxis auswählen"
+              placeholder="Praxis suchen..."
+              entities={practices}
+              selectedId={practiceId}
+              onSelect={setPracticeId}
+              onCreateNew={() => router.push('/prototypes/vo-creation/admin/practices/new')}
+              onEdit={practiceId ? () => router.push(`/prototypes/vo-creation/admin/practices/${practiceId}`) : undefined}
+              displayField={(p) => p.name}
+              statsField={(p) => p.practiceId ? `ID: ${p.practiceId}` : ''}
+              searchFields={['name', 'practiceId']}
+              getId={(p) => p.id}
+              required
+              createNewLabel="Neu"
+            />
+            {errors.practice && <p className="text-sm text-red-500 mt-1">{errors.practice}</p>}
+
+            {selectedPractice && (
               <div className="mt-2 p-2 bg-muted/50 rounded-md text-xs text-muted-foreground">
-                LANR: {selectedArzt.arzt_arztnummer || '-'} · Fax: {selectedArzt.arzt_telefax || '-'}
+                Betriebsstätten-Nr: {selectedPractice.practiceId || '-'}
               </div>
             )}
           </div>
@@ -527,22 +554,6 @@ export function VOForm({
 
             <div>
               <label className="block text-sm font-medium text-foreground mb-1">
-                Betriebsstätten-Nr. <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                value={betriebsstaettenNr}
-                onChange={(e) => setBetriebsstaettenNr(e.target.value)}
-                placeholder="z.B. 123456789"
-                className={`w-full px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.betriebsstaettenNr ? 'border-red-500' : 'border-border'
-                }`}
-              />
-              {errors.betriebsstaettenNr && <p className="text-sm text-red-500 mt-1">{errors.betriebsstaettenNr}</p>}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
                 Status <span className="text-red-500">*</span>
               </label>
               <select
@@ -554,22 +565,6 @@ export function VOForm({
                   <option key={status} value={status}>{status}</option>
                 ))}
               </select>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1">
-                ICD-10 Code <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                value={icd10Code}
-                onChange={(e) => setIcd10Code(e.target.value)}
-                placeholder="z.B. G82.12"
-                className={`w-full px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.icd10Code ? 'border-red-500' : 'border-border'
-                }`}
-              />
-              {errors.icd10Code && <p className="text-sm text-red-500 mt-1">{errors.icd10Code}</p>}
             </div>
 
             <div className="col-span-2">
