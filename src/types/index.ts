@@ -419,3 +419,50 @@ export interface FVOCRMData {
   therapists: Therapist[];
   facilities: Facility[];
 }
+
+// ============================================================================
+// Heilmittel Management Types
+// ============================================================================
+
+// Tariff history entry for tracking price changes
+export interface TariffHistoryEntry {
+  id: string;
+  value: number;
+  effectiveDate: string; // YYYY-MM-DD
+  changedAt: string; // ISO timestamp when recorded
+}
+
+// Heilmittel (treatment code) entity
+export type HeilmittelKind = 'treatment' | 'fee' | 'passiv';
+export type HeilmittelBereich = 'ERGO' | 'PT' | 'SSSST';
+
+export interface Heilmittel {
+  id: string;
+  kurzzeichen: string; // Unique code (e.g., "KG", "BGM")
+  bezeichnung: string; // Full description
+  duration: number | null; // Minutes (null for fees)
+  kind: HeilmittelKind;
+  bv: boolean; // Blanko Verordnung flag
+  bereich: HeilmittelBereich;
+  textBestellung: string; // Ordering text
+
+  // Current tariff values (for quick access)
+  tar1: number;
+  tar10: number;
+  tar11: number;
+  tar12: number;
+
+  // Price histories (persisted to session storage)
+  tar1History: TariffHistoryEntry[];
+  tar10History: TariffHistoryEntry[];
+  tar11History: TariffHistoryEntry[];
+  tar12History: TariffHistoryEntry[];
+
+  // Metadata
+  updatedAt?: string; // ISO timestamp of last edit
+}
+
+// Heilmittel management data structure (for session storage)
+export interface HeilmittelManagementData {
+  heilmittel: Heilmittel[];
+}

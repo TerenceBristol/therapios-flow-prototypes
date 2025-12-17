@@ -1,0 +1,4326 @@
+[
+  {
+    "id": "hm-ab-e",
+    "kurzzeichen": "AB-E",
+    "bezeichnung": "Verwaltungsaufwand Arztbericht",
+    "duration": null,
+    "kind": "fee",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 1.11,
+    "tar10": 1.4,
+    "tar11": 0,
+    "tar12": 1.11,
+    "tar1History": [
+      {
+        "id": "hist-AB-E-1765948334959-ex6eyn92x",
+        "value": 1.11,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-AB-E-1765948334959-plq782x3c",
+        "value": 1.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-AB-E-1765948334959-70899yk3l",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-AB-E-1765948334959-0wm2devg7",
+        "value": 1.11,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-ab-p",
+    "kurzzeichen": "AB-P",
+    "bezeichnung": "Verwaltungsaufwand Arztbericht",
+    "duration": null,
+    "kind": "fee",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 1.32,
+    "tar10": 1.4,
+    "tar11": 0,
+    "tar12": 1.32,
+    "tar1History": [
+      {
+        "id": "hist-AB-P-1765948334959-piha9qtwt",
+        "value": 1.32,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-AB-P-1765948334959-3y4zpdizv",
+        "value": 1.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-AB-P-1765948334959-miagmrajh",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-AB-P-1765948334959-eeohqnlwu",
+        "value": 1.32,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-aeb",
+    "kurzzeichen": "AEB",
+    "bezeichnung": "Analyse des ergotherapeutischen Bedarfs",
+    "duration": null,
+    "kind": "passiv",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 38.43,
+    "tar10": 44.2,
+    "tar11": 41.8,
+    "tar12": 38.43,
+    "tar1History": [
+      {
+        "id": "hist-AEB-1765948334959-z784sc3e1",
+        "value": 38.43,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-AEB-1765948334959-81zyfflf1",
+        "value": 44.2,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-AEB-1765948334959-qwloxik5c",
+        "value": 41.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-AEB-1765948334959-xk2tkbb2m",
+        "value": 38.43,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-bep-a",
+    "kurzzeichen": "BEP-A",
+    "bezeichnung": "Physioth. Bericht auf schriftl. Anf.",
+    "duration": null,
+    "kind": "fee",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 63.5,
+    "tar10": 63.5,
+    "tar11": 0,
+    "tar12": 63.5,
+    "tar1History": [
+      {
+        "id": "hist-BEP-A-1765948334959-zaj2wiux4",
+        "value": 63.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-BEP-A-1765948334959-2hma7be3t",
+        "value": 63.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-BEP-A-1765948334959-jnltlq3jy",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-BEP-A-1765948334959-g5iasej9x",
+        "value": 63.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-bep-a-bv",
+    "kurzzeichen": "BEP-A-BV",
+    "bezeichnung": "Physioth. Bericht auf schriftl. Anf. (BV",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 63.5,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 63.5,
+    "tar1History": [
+      {
+        "id": "hist-BEP-A-BV-1765948334959-hcawnvhhd",
+        "value": 63.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-BEP-A-BV-1765948334959-zwvvfugp7",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-BEP-A-BV-1765948334959-9qhvhc1gn",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-BEP-A-BV-1765948334959-y16rcjd9a",
+        "value": 63.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-bgm",
+    "kurzzeichen": "BGM",
+    "bezeichnung": "Bindegewebsmassage",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Bindegewebsmassage",
+    "tar1": 24.37,
+    "tar10": 24.4,
+    "tar11": 0,
+    "tar12": 24.37,
+    "tar1History": [
+      {
+        "id": "hist-BGM-1765948334959-6lwf9l4gr",
+        "value": 24.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-BGM-1765948334959-w0y1jjgqg",
+        "value": 24.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-BGM-1765948334959-69spmpypc",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-BGM-1765948334959-8dnwjifpo",
+        "value": 24.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-bgm-bv",
+    "kurzzeichen": "BGM-BV",
+    "bezeichnung": "Bindegewebsmassage (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 24.37,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 24.37,
+    "tar1History": [
+      {
+        "id": "hist-BGM-BV-1765948334959-cqpxzhd5z",
+        "value": 24.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-BGM-BV-1765948334959-hnmbxct4s",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-BGM-BV-1765948334959-oy0xscwxy",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-BGM-BV-1765948334959-vw69jyt4x",
+        "value": 24.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hb-e",
+    "kurzzeichen": "HB-E",
+    "bezeichnung": "Hausbesuch pauschal inkl. Fahrtkosten",
+    "duration": null,
+    "kind": "fee",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 25.54,
+    "tar10": 25.6,
+    "tar11": 24,
+    "tar12": 25.54,
+    "tar1History": [
+      {
+        "id": "hist-HB-E-1765948334959-e2esh8aeo",
+        "value": 25.54,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HB-E-1765948334959-zql8jf4xn",
+        "value": 25.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HB-E-1765948334959-fih3j2haj",
+        "value": 24,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HB-E-1765948334959-m18simsec",
+        "value": 25.54,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-bo-e-h",
+    "kurzzeichen": "BO-E-H",
+    "bezeichnung": "Krankengymnastik nach Bobath (Erw.) Heim",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "KG-ZNS",
+    "tar1": 44.15,
+    "tar10": 44.2,
+    "tar11": 50,
+    "tar12": 44.15,
+    "tar1History": [
+      {
+        "id": "hist-BO-E-H-1765948334959-ynhc2z8kb",
+        "value": 44.15,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-BO-E-H-1765948334959-ffd9eixul",
+        "value": 44.2,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-BO-E-H-1765948334959-l9119vewg",
+        "value": 50,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-BO-E-H-1765948334959-sv6qgb0qg",
+        "value": 44.15,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hbh-e",
+    "kurzzeichen": "HBH-E",
+    "bezeichnung": "Hausbesuch Heim, je Pat., pauschal",
+    "duration": null,
+    "kind": "fee",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 16.66,
+    "tar10": 16.7,
+    "tar11": 24,
+    "tar12": 16.66,
+    "tar1History": [
+      {
+        "id": "hist-HBH-E-1765948334959-m12hluv81",
+        "value": 16.66,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HBH-E-1765948334959-rhvamu9ew",
+        "value": 16.7,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HBH-E-1765948334959-b6ei0l7ob",
+        "value": 24,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HBH-E-1765948334959-9sasq2jt8",
+        "value": 16.66,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hb-l",
+    "kurzzeichen": "HB-L",
+    "bezeichnung": "Hausbesuch",
+    "duration": null,
+    "kind": "fee",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "",
+    "tar1": 22.38,
+    "tar10": 0,
+    "tar11": 24,
+    "tar12": 22.38,
+    "tar1History": [
+      {
+        "id": "hist-HB-L-1765948334959-ak8vo2v1k",
+        "value": 22.38,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HB-L-1765948334959-ufi4p2vqj",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HB-L-1765948334959-kt9mtxqqb",
+        "value": 24,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HB-L-1765948334959-x0s2lq114",
+        "value": 22.38,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hr",
+    "kurzzeichen": "HR",
+    "bezeichnung": "Heiße Rolle",
+    "duration": null,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Heiße Rolle",
+    "tar1": 12.63,
+    "tar10": 13.6,
+    "tar11": 0,
+    "tar12": 12.63,
+    "tar1History": [
+      {
+        "id": "hist-HR-1765948334959-relwat80k",
+        "value": 12.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HR-1765948334959-0p5sevl6d",
+        "value": 13.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HR-1765948334959-p4iu9b6j0",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HR-1765948334959-2tvr911qj",
+        "value": 12.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-k-l",
+    "kurzzeichen": "KÄL",
+    "bezeichnung": "Kälteth. bei einem/mehreren Körperteilen",
+    "duration": null,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 11.21,
+    "tar10": 12.9,
+    "tar11": 0,
+    "tar12": 11.21,
+    "tar1History": [
+      {
+        "id": "hist-KÄL-1765948334959-wrwd5js3z",
+        "value": 11.21,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KÄL-1765948334959-ks7qz2c79",
+        "value": 12.9,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KÄL-1765948334959-ppew9gws6",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KÄL-1765948334959-j30xrtaro",
+        "value": 11.21,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hb-pt",
+    "kurzzeichen": "HB-PT",
+    "bezeichnung": "Hausbesuch pauschal inkl. Fahrtkosten",
+    "duration": null,
+    "kind": "fee",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 21.37,
+    "tar10": 25.6,
+    "tar11": 30,
+    "tar12": 21.37,
+    "tar1History": [
+      {
+        "id": "hist-HB-PT-1765948334959-h6bkh5vcn",
+        "value": 21.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HB-PT-1765948334959-vxni3qv1m",
+        "value": 25.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HB-PT-1765948334959-segomkiws",
+        "value": 30,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HB-PT-1765948334959-m7nq86tjg",
+        "value": 21.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hbh-pt",
+    "kurzzeichen": "HBH-PT",
+    "bezeichnung": "Hausbesuch Heim, je Pat., pauschal",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 12.28,
+    "tar10": 16.7,
+    "tar11": 24,
+    "tar12": 12.28,
+    "tar1History": [
+      {
+        "id": "hist-HBH-PT-1765948334959-t1jmto1f1",
+        "value": 12.28,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HBH-PT-1765948334959-6ejehfyrz",
+        "value": 16.7,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HBH-PT-1765948334959-b6ftlb6k7",
+        "value": 24,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HBH-PT-1765948334959-wdwhxq46k",
+        "value": 12.28,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hr-h-bv",
+    "kurzzeichen": "HR-H-BV",
+    "bezeichnung": "Heiße Rolle (BV)",
+    "duration": 10,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 12.63,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 12.63,
+    "tar1History": [
+      {
+        "id": "hist-HR-H-BV-1765948334959-kwus48gis",
+        "value": 12.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HR-H-BV-1765948334959-d9837hdgp",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HR-H-BV-1765948334959-k79fba7cs",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HR-H-BV-1765948334959-ekd37wrx6",
+        "value": 12.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kg-h",
+    "kurzzeichen": "KG-H",
+    "bezeichnung": "KG, auch auf neurophysiolog. Gr. Heim",
+    "duration": 20,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Krankengymnastik",
+    "tar1": 27.8,
+    "tar10": 27.8,
+    "tar11": 39,
+    "tar12": 27.8,
+    "tar1History": [
+      {
+        "id": "hist-KG-H-1765948334959-5qm9misro",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KG-H-1765948334959-u7oxikkmt",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KG-H-1765948334959-xlgvq7tt3",
+        "value": 39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KG-H-1765948334959-k4dy78bb8",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kg-h-bv",
+    "kurzzeichen": "KG-H-BV",
+    "bezeichnung": "KG, auch auf neurophysiolog. Grundl.(BV)",
+    "duration": 20,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 27.8,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 27.8,
+    "tar1History": [
+      {
+        "id": "hist-KG-H-BV-1765948334959-w5n72d8l0",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KG-H-BV-1765948334959-f1kjmotzl",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KG-H-BV-1765948334959-tqt03lzxz",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KG-H-BV-1765948334959-6wwnqoncz",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kgm-h",
+    "kurzzeichen": "KGM-H",
+    "bezeichnung": "KG Atemtherapie bei Mucoviscidose 60 Min",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "KG bei Mucoviscidose",
+    "tar1": 83.43,
+    "tar10": 83.5,
+    "tar11": 118,
+    "tar12": 83.43,
+    "tar1History": [
+      {
+        "id": "hist-KGM-H-1765948334959-8201oap3a",
+        "value": 83.43,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KGM-H-1765948334959-f7d86ilcb",
+        "value": 83.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KGM-H-1765948334959-b29pzfx29",
+        "value": 118,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KGM-H-1765948334959-2ryu5wi7j",
+        "value": 83.43,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kmt-bv",
+    "kurzzeichen": "KMT-BV",
+    "bezeichnung": "Klassische Massagetherapie (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 20.29,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 20.29,
+    "tar1History": [
+      {
+        "id": "hist-KMT-BV-1765948334959-sgvleso9g",
+        "value": 20.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KMT-BV-1765948334959-pl63dtgp1",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KMT-BV-1765948334959-lfe7jtpc6",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KMT-BV-1765948334959-ynw8nmcet",
+        "value": 20.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kmt-h",
+    "kurzzeichen": "KMT-H",
+    "bezeichnung": "Klassische Massagetherapie",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Klassische Massagetherapie",
+    "tar1": 20.29,
+    "tar10": 20.3,
+    "tar11": 28.5,
+    "tar12": 20.29,
+    "tar1History": [
+      {
+        "id": "hist-KMT-H-1765948334959-wb1zkvlba",
+        "value": 20.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KMT-H-1765948334959-jfnhf6ugj",
+        "value": 20.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KMT-H-1765948334959-lodxwmdle",
+        "value": 28.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KMT-H-1765948334959-gbf4q6etb",
+        "value": 20.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-komp",
+    "kurzzeichen": "KOMP",
+    "bezeichnung": "Kompressionsbandagierung",
+    "duration": 10,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Kompressionsbandagierung",
+    "tar1": 21.5,
+    "tar10": 21.5,
+    "tar11": 30.3,
+    "tar12": 21.5,
+    "tar1History": [
+      {
+        "id": "hist-KOMP-1765948334959-34n4uhqe2",
+        "value": 21.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KOMP-1765948334959-5gzu09izi",
+        "value": 21.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KOMP-1765948334959-tbci08o45",
+        "value": 30.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KOMP-1765948334959-mzbldxxq5",
+        "value": 21.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kt-h-bv",
+    "kurzzeichen": "KT-H-BV",
+    "bezeichnung": "Kälteth. bei ein/mehr. Körperteilen (BV)",
+    "duration": 10,
+    "kind": "passiv",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 11.21,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 11.21,
+    "tar1History": [
+      {
+        "id": "hist-KT-H-BV-1765948334959-njodftnmw",
+        "value": 11.21,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KT-H-BV-1765948334959-dsj2vdr41",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KT-H-BV-1765948334959-2ojiaa35n",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KT-H-BV-1765948334959-4mfvyeyop",
+        "value": 11.21,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mfb-2-hb",
+    "kurzzeichen": "MFB-2-HB",
+    "bezeichnung": "bei motorischen Störungen (2 Teilnehmer)",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbeh. bei motorisch-funktioneller Störung",
+    "tar1": 42.22,
+    "tar10": 42.3,
+    "tar11": 0,
+    "tar12": 42.22,
+    "tar1History": [
+      {
+        "id": "hist-MFB-2-HB-1765948334959-939g9bqq7",
+        "value": 42.22,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MFB-2-HB-1765948334959-prrsx36r6",
+        "value": 42.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MFB-2-HB-1765948334959-gra7jcg94",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MFB-2-HB-1765948334959-vvkcutmyc",
+        "value": 42.22,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mfb-e-hb",
+    "kurzzeichen": "MFB-E-HB",
+    "bezeichnung": "Einzelbehandl. bei mot. St. (HB)",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbeh. bei motorisch-funktioneller Störung",
+    "tar1": 52.77,
+    "tar10": 52.8,
+    "tar11": 67.79,
+    "tar12": 52.77,
+    "tar1History": [
+      {
+        "id": "hist-MFB-E-HB-1765948334959-n76l1rt95",
+        "value": 52.77,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MFB-E-HB-1765948334959-zufpt8gu0",
+        "value": 52.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MFB-E-HB-1765948334959-9jbgghu03",
+        "value": 67.79,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MFB-E-HB-1765948334959-gywkxjdoc",
+        "value": 52.77,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mfb-g-hb",
+    "kurzzeichen": "MFB-G-HB",
+    "bezeichnung": "motorisch-funktionelle Stör. (Gruppe)",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbeh. bei motorisch-funktioneller Störung",
+    "tar1": 18.47,
+    "tar10": 42.3,
+    "tar11": 0,
+    "tar12": 18.47,
+    "tar1History": [
+      {
+        "id": "hist-MFB-G-HB-1765948334959-ze24h8n20",
+        "value": 18.47,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MFB-G-HB-1765948334959-ibucwuvh2",
+        "value": 42.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MFB-G-HB-1765948334959-7vodidgl0",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MFB-G-HB-1765948334959-3o847az36",
+        "value": 18.47,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-bd",
+    "kurzzeichen": "L-BD",
+    "bezeichnung": "SSSST-Bedarfsdiagnostik",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "",
+    "tar1": 58.64,
+    "tar10": 58.7,
+    "tar11": 83.37,
+    "tar12": 58.64,
+    "tar1History": [
+      {
+        "id": "hist-L-BD-1765948334959-uf1j90mxp",
+        "value": 58.64,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-BD-1765948334959-mwwyh7ckk",
+        "value": 58.7,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-BD-1765948334959-yoqu1apyg",
+        "value": 83.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-BD-1765948334959-9w98yqk3h",
+        "value": 58.64,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-e30h",
+    "kurzzeichen": "L-E30H",
+    "bezeichnung": "SSSST Einzelbeh. (30 Min.)",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "SSSST Einzelbeh. (30 Min.)",
+    "tar1": 52.12,
+    "tar10": 52.2,
+    "tar11": 74,
+    "tar12": 52.12,
+    "tar1History": [
+      {
+        "id": "hist-L-E30H-1765948334959-0rvo3e8dj",
+        "value": 52.12,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-E30H-1765948334959-xv9arilye",
+        "value": 52.2,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-E30H-1765948334959-e9q28ju1l",
+        "value": 74,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-E30H-1765948334959-xz0tlsrcz",
+        "value": 52.12,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-e45h",
+    "kurzzeichen": "L-E45H",
+    "bezeichnung": "SSSST-Einzelbeh. (45 Min.)",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "SSSST-Einzelbeh. (45 Min.)",
+    "tar1": 71.67,
+    "tar10": 71.7,
+    "tar11": 101.9,
+    "tar12": 71.67,
+    "tar1History": [
+      {
+        "id": "hist-L-E45H-1765948334959-v5pqhzwl7",
+        "value": 71.67,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-E45H-1765948334959-4q8tv2gd7",
+        "value": 71.7,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-E45H-1765948334959-6bjeyp20s",
+        "value": 101.9,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-E45H-1765948334959-t3ly9uybv",
+        "value": 71.67,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-e60h",
+    "kurzzeichen": "L-E60H",
+    "bezeichnung": "SSSST-Einzelbeh. (60 Min.)",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "SSSST-Einzelbeh. (60 Min.)",
+    "tar1": 91.21,
+    "tar10": 91.3,
+    "tar11": 129.68,
+    "tar12": 91.21,
+    "tar1History": [
+      {
+        "id": "hist-L-E60H-1765948334959-4hs72xnk7",
+        "value": 91.21,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-E60H-1765948334959-r2h2fhcll",
+        "value": 91.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-E60H-1765948334959-pq5rh62g3",
+        "value": 129.68,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-E60H-1765948334959-d8su6oaan",
+        "value": 91.21,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-nob-2-hb",
+    "kurzzeichen": "NOB-2-HB",
+    "bezeichnung": "Ergotherap. Hirnleistungstraining (2 TN)",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Ergoth. Hirnleistungstraining",
+    "tar1": 42.22,
+    "tar10": 42.3,
+    "tar11": 0,
+    "tar12": 42.22,
+    "tar1History": [
+      {
+        "id": "hist-NOB-2-HB-1765948334959-7yvpi619l",
+        "value": 42.22,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-NOB-2-HB-1765948334959-lto089qzt",
+        "value": 42.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-NOB-2-HB-1765948334959-6wgop81x6",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-NOB-2-HB-1765948334959-t3t134yg0",
+        "value": 42.22,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-nob-e-hb",
+    "kurzzeichen": "NOB-E-HB",
+    "bezeichnung": "Ergoth. Hirnleistungstraining (HB)",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Ergoth. Hirnleistungstraining",
+    "tar1": 52.77,
+    "tar10": 52.8,
+    "tar11": 75.14,
+    "tar12": 52.77,
+    "tar1History": [
+      {
+        "id": "hist-NOB-E-HB-1765948334959-zix0mr77w",
+        "value": 52.77,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-NOB-E-HB-1765948334959-chiey3cvk",
+        "value": 52.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-NOB-E-HB-1765948334959-z53zbk851",
+        "value": 75.14,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-NOB-E-HB-1765948334959-c9jb75d51",
+        "value": 52.77,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-nob-g-hb",
+    "kurzzeichen": "NOB-G-HB",
+    "bezeichnung": "Hirnleistungstraining im HB",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Ergoth. Hirnleistungstraining",
+    "tar1": 24.63,
+    "tar10": 24.7,
+    "tar11": 0,
+    "tar12": 24.63,
+    "tar1History": [
+      {
+        "id": "hist-NOB-G-HB-1765948334959-3hzaz06ta",
+        "value": 24.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-NOB-G-HB-1765948334959-0alkkbmeb",
+        "value": 24.7,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-NOB-G-HB-1765948334959-m0odl0g66",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-NOB-G-HB-1765948334959-czm8vrz3q",
+        "value": 24.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pfb-2-hb",
+    "kurzzeichen": "PFB-2-HB",
+    "bezeichnung": "bei psychischen Störungen (2 Teilnehmer)",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbehandl. bei psychisch-funktionellen Störungen",
+    "tar1": 70.36,
+    "tar10": 70.4,
+    "tar11": 0,
+    "tar12": 70.36,
+    "tar1History": [
+      {
+        "id": "hist-PFB-2-HB-1765948334959-cfx1gbnl7",
+        "value": 70.36,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PFB-2-HB-1765948334959-8lz3cdasx",
+        "value": 70.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PFB-2-HB-1765948334959-z1mnvr0f0",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PFB-2-HB-1765948334959-9hbtmv8q6",
+        "value": 70.36,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pfb-e-hb",
+    "kurzzeichen": "PFB-E-HB",
+    "bezeichnung": "Einzelbehandl. psychisch funktionell",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbehandl. bei psychisch-funktionellen Störungen",
+    "tar1": 87.95,
+    "tar10": 88,
+    "tar11": 104.34,
+    "tar12": 87.95,
+    "tar1History": [
+      {
+        "id": "hist-PFB-E-HB-1765948334959-3ug8wjl4b",
+        "value": 87.95,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PFB-E-HB-1765948334959-etrdg8tyt",
+        "value": 88,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PFB-E-HB-1765948334959-5h997agph",
+        "value": 104.34,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PFB-E-HB-1765948334959-b9x4rq0oc",
+        "value": 87.95,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pfb-g-hb",
+    "kurzzeichen": "PFB-G-HB",
+    "bezeichnung": "psychisch-funktionelle Störungen (Gr.)",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbehandl. bei psychisch-funktionellen Störungen",
+    "tar1": 43.1,
+    "tar10": 43.1,
+    "tar11": 0,
+    "tar12": 43.1,
+    "tar1History": [
+      {
+        "id": "hist-PFB-G-HB-1765948334959-5jw41uw8z",
+        "value": 43.1,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PFB-G-HB-1765948334959-nppiv5vek",
+        "value": 43.1,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PFB-G-HB-1765948334959-fj6my9rre",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PFB-G-HB-1765948334959-hbxt6eo4p",
+        "value": 43.1,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-ed",
+    "kurzzeichen": "L-ED",
+    "bezeichnung": "SSSST-Erstdiagnostik, 60 Min.",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "",
+    "tar1": 117.27,
+    "tar10": 117.3,
+    "tar11": 150,
+    "tar12": 117.27,
+    "tar1History": [
+      {
+        "id": "hist-L-ED-1765948334959-e6myavmww",
+        "value": 117.27,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-ED-1765948334959-kmn31t281",
+        "value": 117.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-ED-1765948334959-u0i716izv",
+        "value": 150,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-ED-1765948334959-f9n8v745f",
+        "value": 117.27,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-spb-2-hb",
+    "kurzzeichen": "SPB-2-HB",
+    "bezeichnung": "sensomotorische/perzeptive Stör. (2 TN)",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbeh. bei sensomotor./perz. Stör.",
+    "tar1": 56.29,
+    "tar10": 56.3,
+    "tar11": 0,
+    "tar12": 56.29,
+    "tar1History": [
+      {
+        "id": "hist-SPB-2-HB-1765948334959-mupst5ie0",
+        "value": 56.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-SPB-2-HB-1765948334959-jr68e6gbh",
+        "value": 56.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-SPB-2-HB-1765948334959-f88vftnwb",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-SPB-2-HB-1765948334959-8qbr17ahi",
+        "value": 56.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-spb-e-hb",
+    "kurzzeichen": "SPB-E-HB",
+    "bezeichnung": "Einzelbeh. sensomotor./perz. Stör. (HB)",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbeh. bei sensomotor./perz. Stör.",
+    "tar1": 70.36,
+    "tar10": 70.4,
+    "tar11": 91.26,
+    "tar12": 70.36,
+    "tar1History": [
+      {
+        "id": "hist-SPB-E-HB-1765948334959-20eziw963",
+        "value": 70.36,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-SPB-E-HB-1765948334959-ffulz3y5d",
+        "value": 70.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-SPB-E-HB-1765948334959-xfdcify8t",
+        "value": 91.26,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-SPB-E-HB-1765948334959-gn5r78w9n",
+        "value": 70.36,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-spb-g-hbh",
+    "kurzzeichen": "SPB-G-HBH",
+    "bezeichnung": "sensomotorisch-perzeptive Stör. (3-6)",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbeh. bei sensomotor./perz. Stör.",
+    "tar1": 24.63,
+    "tar10": 24.7,
+    "tar11": 0,
+    "tar12": 24.63,
+    "tar1History": [
+      {
+        "id": "hist-SPB-G-HBH-1765948334959-e8hqivct0",
+        "value": 24.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-SPB-G-HBH-1765948334959-b5o6en9h7",
+        "value": 24.7,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-SPB-G-HBH-1765948334959-vlj8xb2oa",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-SPB-G-HBH-1765948334959-l2lfpezsa",
+        "value": 24.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-g2-45",
+    "kurzzeichen": "L-G2-45",
+    "bezeichnung": "Gruppenbeh. 2 TN 45 Min.",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "SSSST-Einzelbeh. (45 Min.)",
+    "tar1": 64.5,
+    "tar10": 64.5,
+    "tar11": 0,
+    "tar12": 64.5,
+    "tar1History": [
+      {
+        "id": "hist-L-G2-45-1765948334959-21yhlpzbv",
+        "value": 64.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-G2-45-1765948334959-upz6aelgd",
+        "value": 64.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-G2-45-1765948334959-dqgxq1643",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-G2-45-1765948334959-4sw51j6wm",
+        "value": 64.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-g2-90",
+    "kurzzeichen": "L-G2-90",
+    "bezeichnung": "Gruppenbehandlung, 2 TN, 90 Min.",
+    "duration": 90,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "SSSST-Einzelbeh. (60 Min.)",
+    "tar1": 117.27,
+    "tar10": 117.3,
+    "tar11": 0,
+    "tar12": 117.27,
+    "tar1History": [
+      {
+        "id": "hist-L-G2-90-1765948334959-35v3i6nja",
+        "value": 117.27,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-G2-90-1765948334959-b066l9sp8",
+        "value": 117.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-G2-90-1765948334959-6apww6uts",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-G2-90-1765948334959-l86ieyzgw",
+        "value": 117.27,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-ab-e-bv",
+    "kurzzeichen": "AB-E-BV",
+    "bezeichnung": "Verwaltungsaufwand Arztbericht (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 1.11,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 1.11,
+    "tar1History": [
+      {
+        "id": "hist-AB-E-BV-1765948334959-tnbt84m0k",
+        "value": 1.11,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-AB-E-BV-1765948334959-iviu12u5v",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-AB-E-BV-1765948334959-gam4p9ueh",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-AB-E-BV-1765948334959-0l8gfffzr",
+        "value": 1.11,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-ab-p-bv",
+    "kurzzeichen": "AB-P-BV",
+    "bezeichnung": "Verwaltungsaufwand Arztbericht (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 1.32,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 1.32,
+    "tar1History": [
+      {
+        "id": "hist-AB-P-BV-1765948334959-7zprmgyff",
+        "value": 1.32,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-AB-P-BV-1765948334959-ee1a3j8ci",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-AB-P-BV-1765948334959-x4j0ozc3l",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-AB-P-BV-1765948334959-uu0rtfkf6",
+        "value": 1.32,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-aeb-bv",
+    "kurzzeichen": "AEB-BV",
+    "bezeichnung": "Analyse ergoth. Bedarf (BV)",
+    "duration": null,
+    "kind": "passiv",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 44.2,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 44.2,
+    "tar1History": [
+      {
+        "id": "hist-AEB-BV-1765948334959-lzje5dnfm",
+        "value": 44.2,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-AEB-BV-1765948334959-3w5zcv2eo",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-AEB-BV-1765948334959-mahpn884l",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-AEB-BV-1765948334959-n72ovn2si",
+        "value": 44.2,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-bd-bv",
+    "kurzzeichen": "BD-BV",
+    "bezeichnung": "Bedarfsdiagnostik (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 25.76,
+    "tar10": 25.8,
+    "tar11": 0,
+    "tar12": 25.76,
+    "tar1History": [
+      {
+        "id": "hist-BD-BV-1765948334959-g6s6xeogp",
+        "value": 25.76,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-BD-BV-1765948334959-1hosg8r7q",
+        "value": 25.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-BD-BV-1765948334959-kidjvy18e",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-BD-BV-1765948334959-mng3lvvwv",
+        "value": 25.76,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-g5-45",
+    "kurzzeichen": "L-G5-45",
+    "bezeichnung": "Gruppenbehandlung, 3-5 Pat., 45 Min.",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "SSSST-Einzelbeh. (45 Min.)",
+    "tar1": 32.58,
+    "tar10": 34.6,
+    "tar11": 0,
+    "tar12": 32.58,
+    "tar1History": [
+      {
+        "id": "hist-L-G5-45-1765948334959-aytdt87b5",
+        "value": 32.58,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-G5-45-1765948334959-w4hwowp1s",
+        "value": 34.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-G5-45-1765948334959-os8yn8ue5",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-G5-45-1765948334959-juu29izff",
+        "value": 32.58,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-l-g5-90",
+    "kurzzeichen": "L-G5-90",
+    "bezeichnung": "Gruppenbehandlung, 3-5 Pat., 90 Min.",
+    "duration": 90,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "SSSST",
+    "textBestellung": "SSSST-Einzelbeh. (60 Min.)",
+    "tar1": 58.64,
+    "tar10": 58.7,
+    "tar11": 0,
+    "tar12": 58.64,
+    "tar1History": [
+      {
+        "id": "hist-L-G5-90-1765948334959-pw78bts54",
+        "value": 58.64,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-L-G5-90-1765948334959-5msdn6ujs",
+        "value": 58.7,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-L-G5-90-1765948334959-u3hmmeohq",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-L-G5-90-1765948334959-yw5wkprrs",
+        "value": 58.64,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hb-e-bv",
+    "kurzzeichen": "HB-E-BV",
+    "bezeichnung": "Hausbesuch inkl. Wegegeld (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 25.54,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 25.54,
+    "tar1History": [
+      {
+        "id": "hist-HB-E-BV-1765948334959-ecylvqzjk",
+        "value": 25.54,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HB-E-BV-1765948334959-3do1ymzv5",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HB-E-BV-1765948334959-s6ccu4e2n",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HB-E-BV-1765948334959-kkc0f2in7",
+        "value": 25.54,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hb-pt-bv",
+    "kurzzeichen": "HB-PT-BV",
+    "bezeichnung": "Hausbesuch pauschal inkl. Fahrtk. (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 21.37,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 21.37,
+    "tar1History": [
+      {
+        "id": "hist-HB-PT-BV-1765948334959-iclte8g8t",
+        "value": 21.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HB-PT-BV-1765948334959-kor6by9da",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HB-PT-BV-1765948334959-zb0zvp0p2",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HB-PT-BV-1765948334959-jit3ai5r9",
+        "value": 21.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hbh-e-bv",
+    "kurzzeichen": "HBH-E-BV",
+    "bezeichnung": "Hausbesuch im Heim inkl. Wegegeld (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 16.66,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 16.66,
+    "tar1History": [
+      {
+        "id": "hist-HBH-E-BV-1765948334959-d7k4kma0v",
+        "value": 16.66,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HBH-E-BV-1765948334959-12hmmhdsr",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HBH-E-BV-1765948334959-einbf0b2a",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HBH-E-BV-1765948334959-8sc22ij89",
+        "value": 16.66,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hbh-pt-bv",
+    "kurzzeichen": "HBH-PT-BV",
+    "bezeichnung": "Hausbesuch Heim, je Pat., pauschal (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 12.28,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 12.28,
+    "tar1History": [
+      {
+        "id": "hist-HBH-PT-BV-1765948334959-x8uilvp7p",
+        "value": 12.28,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HBH-PT-BV-1765948334959-htzqycwt8",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HBH-PT-BV-1765948334959-jfbe12nlq",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HBH-PT-BV-1765948334959-42ltogz8a",
+        "value": 12.28,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hbk-pt-bv",
+    "kurzzeichen": "HBK-PT-BV",
+    "bezeichnung": "Hausbesuch in Kurzz. und Tagespflege(BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 21.37,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 21.37,
+    "tar1History": [
+      {
+        "id": "hist-HBK-PT-BV-1765948334959-oh8iz1e4c",
+        "value": 21.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HBK-PT-BV-1765948334959-8ukd5z2y4",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HBK-PT-BV-1765948334959-kwl4vq76v",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HBK-PT-BV-1765948334959-6yh9nka1t",
+        "value": 21.37,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hl-bv",
+    "kurzzeichen": "HL-BV",
+    "bezeichnung": "W. m. Glühlicht, Strahler, Heißluft (BV)",
+    "duration": null,
+    "kind": "passiv",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 6.97,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 6.97,
+    "tar1History": [
+      {
+        "id": "hist-HL-BV-1765948334959-ldzrdaqwf",
+        "value": 6.97,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HL-BV-1765948334959-gs6wc5lv3",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HL-BV-1765948334959-b5vq5zo8u",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HL-BV-1765948334959-16hwr9u8c",
+        "value": 6.97,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mld30h",
+    "kurzzeichen": "MLD30H",
+    "bezeichnung": "Manuelle Lymphdrainage Teilbeh. 30 Min.",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Manuelle Lymphdrainage Teilbeh. 30 Min.",
+    "tar1": 33.75,
+    "tar10": 33.8,
+    "tar11": 47,
+    "tar12": 33.75,
+    "tar1History": [
+      {
+        "id": "hist-MLD30H-1765948334959-t5y61ovvk",
+        "value": 33.75,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MLD30H-1765948334959-vhahl0aqu",
+        "value": 33.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MLD30H-1765948334959-zyea8rd48",
+        "value": 47,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MLD30H-1765948334959-3ihjqfw0m",
+        "value": 33.75,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mld45h",
+    "kurzzeichen": "MLD45H",
+    "bezeichnung": "Manuelle Lymphdrainage Großbeh. 45 Min.",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Manuelle Lymphdrainage Großbeh. 45 Min.",
+    "tar1": 50.6,
+    "tar10": 50.6,
+    "tar11": 71.31,
+    "tar12": 50.6,
+    "tar1History": [
+      {
+        "id": "hist-MLD45H-1765948334959-6e8fwc3po",
+        "value": 50.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MLD45H-1765948334959-luz9347fu",
+        "value": 50.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MLD45H-1765948334959-yefpiciiq",
+        "value": 71.31,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MLD45H-1765948334959-gavuhkgdo",
+        "value": 50.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mld60h",
+    "kurzzeichen": "MLD60H",
+    "bezeichnung": "Manuelle Lymphdrainage Ganzbeh. 60 Min.",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Manuelle Lymphdrainage Ganzbeh. 60 Min.",
+    "tar1": 67.48,
+    "tar10": 67.5,
+    "tar11": 95,
+    "tar12": 67.48,
+    "tar1History": [
+      {
+        "id": "hist-MLD60H-1765948334959-8ub610g8r",
+        "value": 67.48,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MLD60H-1765948334959-pov73m5k3",
+        "value": 67.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MLD60H-1765948334959-6h2f0e0i9",
+        "value": 95,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MLD60H-1765948334959-ywcqbmx87",
+        "value": 67.48,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mt-h",
+    "kurzzeichen": "MT-H",
+    "bezeichnung": "Manuelle Therapie (HB)",
+    "duration": 20,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Manuelle Therapie",
+    "tar1": 33.39,
+    "tar10": 33.4,
+    "tar11": 47,
+    "tar12": 33.39,
+    "tar1History": [
+      {
+        "id": "hist-MT-H-1765948334959-j4h714jeb",
+        "value": 33.39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MT-H-1765948334959-el3nz41hl",
+        "value": 33.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MT-H-1765948334959-kuh6hge0a",
+        "value": 47,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MT-H-1765948334959-q19ypaan9",
+        "value": 33.39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mt-h-bv",
+    "kurzzeichen": "MT-H-BV",
+    "bezeichnung": "Manuelle Therapie (BV)",
+    "duration": 20,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 33.39,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 33.39,
+    "tar1History": [
+      {
+        "id": "hist-MT-H-BV-1765948334959-i9yfosrzx",
+        "value": 33.39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MT-H-BV-1765948334959-y28oe1a7z",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MT-H-BV-1765948334959-5nx4chyss",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MT-H-BV-1765948334959-0ofl36exy",
+        "value": 33.39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pd-bv",
+    "kurzzeichen": "PD-BV",
+    "bezeichnung": "Physiotherapeutische Diagnostik (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 34.34,
+    "tar10": 34.4,
+    "tar11": 0,
+    "tar12": 34.34,
+    "tar1History": [
+      {
+        "id": "hist-PD-BV-1765948334959-yz830czht",
+        "value": 34.34,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PD-BV-1765948334959-pqu31h4ys",
+        "value": 34.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PD-BV-1765948334959-v5l0kc9f6",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PD-BV-1765948334959-ot76zio4i",
+        "value": 34.34,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mfb-2-h-bv",
+    "kurzzeichen": "MFB-2-H-BV",
+    "bezeichnung": "ZI Mot. fumkt. Beh. 2 Tn",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 14.07,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 14.07,
+    "tar1History": [
+      {
+        "id": "hist-MFB-2-H-BV-1765948334959-co97d5uqm",
+        "value": 14.07,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MFB-2-H-BV-1765948334959-vr75gdpei",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MFB-2-H-BV-1765948334959-h3gfdqtxl",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MFB-2-H-BV-1765948334959-yo767qfga",
+        "value": 14.07,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mfb-g-h-bv",
+    "kurzzeichen": "MFB-G-H-BV",
+    "bezeichnung": "Beh. bei motor. Störungen Gruppe (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 6.16,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 6.16,
+    "tar1History": [
+      {
+        "id": "hist-MFB-G-H-BV-1765948334959-0eyxskn19",
+        "value": 6.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MFB-G-H-BV-1765948334959-d09aspwkz",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MFB-G-H-BV-1765948334959-6csxc7bse",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MFB-G-H-BV-1765948334959-tewzrum2p",
+        "value": 6.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mfb-h-bv",
+    "kurzzeichen": "MFB-H-BV",
+    "bezeichnung": "ZI Einzelbehandl. bei motor. Störungen",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 17.59,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 17.59,
+    "tar1History": [
+      {
+        "id": "hist-MFB-H-BV-1765948334959-zz6esutqy",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MFB-H-BV-1765948334959-1s3yc60p4",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MFB-H-BV-1765948334959-gytf5ozt1",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MFB-H-BV-1765948334959-7hh8cst88",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pnf",
+    "kurzzeichen": "PNF",
+    "bezeichnung": "Krankengymnastik nach PNF",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "KG-ZNS",
+    "tar1": 44.15,
+    "tar10": 44.2,
+    "tar11": 0,
+    "tar12": 44.15,
+    "tar1History": [
+      {
+        "id": "hist-PNF-1765948334959-86wv6cfvi",
+        "value": 44.15,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PNF-1765948334959-0jws43cfb",
+        "value": 44.2,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PNF-1765948334959-9mmqs2nd1",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PNF-1765948334959-98jfhjynl",
+        "value": 44.15,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-spc-bv",
+    "kurzzeichen": "SPC-BV",
+    "bezeichnung": "Segment-, Periost-, Colonmassage (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 20.29,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 20.29,
+    "tar1History": [
+      {
+        "id": "hist-SPC-BV-1765948334959-7ny7pi5dh",
+        "value": 20.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-SPC-BV-1765948334959-w3g1ezol7",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-SPC-BV-1765948334959-777bglhar",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-SPC-BV-1765948334959-5e5gsaehj",
+        "value": 20.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-nob-2-h-bv",
+    "kurzzeichen": "NOB-2-H-BV",
+    "bezeichnung": "Hirnleistungstraining 2 TN (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 14.07,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 14.07,
+    "tar1History": [
+      {
+        "id": "hist-NOB-2-H-BV-1765948334959-c8cibk9fq",
+        "value": 14.07,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-NOB-2-H-BV-1765948334959-eigtiuldk",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-NOB-2-H-BV-1765948334959-hpk5srpzt",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-NOB-2-H-BV-1765948334959-g7zrx7xp5",
+        "value": 14.07,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-nob-g-h-bv",
+    "kurzzeichen": "NOB-G-H-BV",
+    "bezeichnung": "Hirnleistungstraining Gruppe (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 6.16,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 6.16,
+    "tar1History": [
+      {
+        "id": "hist-NOB-G-H-BV-1765948334959-b8nly4hcd",
+        "value": 6.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-NOB-G-H-BV-1765948334959-vm37ckn9c",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-NOB-G-H-BV-1765948334959-w53umva61",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-NOB-G-H-BV-1765948334959-ztvdmyjbb",
+        "value": 6.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-nob-h-bv",
+    "kurzzeichen": "NOB-H-BV",
+    "bezeichnung": "Ergoth. Hirnleistungstraining (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 17.59,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 17.59,
+    "tar1History": [
+      {
+        "id": "hist-NOB-H-BV-1765948334959-r16ahk67i",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-NOB-H-BV-1765948334959-fq3pcoa0v",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-NOB-H-BV-1765948334959-z3k8nhgrk",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-NOB-H-BV-1765948334959-n6afqt7ca",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pfb-2-h-bv",
+    "kurzzeichen": "PFB-2-H-BV",
+    "bezeichnung": "Beh. bei psych. Störungen 2 TN (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 14.07,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 14.07,
+    "tar1History": [
+      {
+        "id": "hist-PFB-2-H-BV-1765948334959-wypylutso",
+        "value": 14.07,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PFB-2-H-BV-1765948334959-s1mziwbxq",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PFB-2-H-BV-1765948334959-d57s01l70",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PFB-2-H-BV-1765948334959-0aumdnvm2",
+        "value": 14.07,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pfb-g-h-bv",
+    "kurzzeichen": "PFB-G-H-BV",
+    "bezeichnung": "Beh. bei psych. Störungen Gruppe (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 6.16,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 6.16,
+    "tar1History": [
+      {
+        "id": "hist-PFB-G-H-BV-1765948334959-cfwipvaz6",
+        "value": 6.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PFB-G-H-BV-1765948334959-uj8ti0fw1",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PFB-G-H-BV-1765948334959-o5fzboelo",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PFB-G-H-BV-1765948334959-i44betb28",
+        "value": 6.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pfb-h-bv",
+    "kurzzeichen": "PFB-H-BV",
+    "bezeichnung": "Einzelbeh. bei psych-fkt. Störungen (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 17.59,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 17.59,
+    "tar1History": [
+      {
+        "id": "hist-PFB-H-BV-1765948334959-lus9lqhnt",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PFB-H-BV-1765948334959-7ii7n4zjw",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PFB-H-BV-1765948334959-gialo2ey6",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PFB-H-BV-1765948334959-3g6mzr02b",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-vbp-bv-p",
+    "kurzzeichen": "VBP-BV-P",
+    "bezeichnung": "Versorgungsbezogene Pauschale (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 55,
+    "tar10": 91.38,
+    "tar11": 0,
+    "tar12": 55,
+    "tar1History": [
+      {
+        "id": "hist-VBP-BV-P-1765948334959-3lym24qi1",
+        "value": 55,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-VBP-BV-P-1765948334959-hyuqtnz7d",
+        "value": 91.38,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-VBP-BV-P-1765948334959-5zcz23s0u",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-VBP-BV-P-1765948334959-r19frf5qd",
+        "value": 55,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-vo-e",
+    "kurzzeichen": "VO-E",
+    "bezeichnung": "Krankengymnastik nach Vojta (Erw.)",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "KG-ZNS",
+    "tar1": 44.15,
+    "tar10": 44.2,
+    "tar11": 0,
+    "tar12": 44.15,
+    "tar1History": [
+      {
+        "id": "hist-VO-E-1765948334959-oabdgtet0",
+        "value": 44.15,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-VO-E-1765948334959-h4e80oe0s",
+        "value": 44.2,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-VO-E-1765948334959-olfzz4mzq",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-VO-E-1765948334959-alt5f9txd",
+        "value": 44.15,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-vbp-bv",
+    "kurzzeichen": "VBP-BV",
+    "bezeichnung": "Versorgungsbezogene Pauschale (BV)",
+    "duration": null,
+    "kind": "fee",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "",
+    "tar1": 91.38,
+    "tar10": 91.38,
+    "tar11": 0,
+    "tar12": 91.38,
+    "tar1History": [
+      {
+        "id": "hist-VBP-BV-1765948334959-922nk6uo3",
+        "value": 91.38,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-VBP-BV-1765948334959-h4y13gntd",
+        "value": 91.38,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-VBP-BV-1765948334959-hw75p5pj2",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-VBP-BV-1765948334959-protywfeo",
+        "value": 91.38,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-wpn-bv",
+    "kurzzeichen": "WPN-BV",
+    "bezeichnung": "Warmpackungen einschl. Nachruhe (BV)",
+    "duration": null,
+    "kind": "passiv",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 15.16,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 15.16,
+    "tar1History": [
+      {
+        "id": "hist-WPN-BV-1765948334959-qn1ud3x2w",
+        "value": 15.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-WPN-BV-1765948334959-ioy56gcl9",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-WPN-BV-1765948334959-izeaouwre",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-WPN-BV-1765948334959-ascix55is",
+        "value": 15.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-hr-bv",
+    "kurzzeichen": "HR-BV",
+    "bezeichnung": "Heiße Rolle (BV)",
+    "duration": 10,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 12.63,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 12.63,
+    "tar1History": [
+      {
+        "id": "hist-HR-BV-1765948334959-w1oo7gi8r",
+        "value": 12.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-HR-BV-1765948334959-8l17fqw1w",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-HR-BV-1765948334959-vz39fh5fy",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-HR-BV-1765948334959-fj0ggn3c2",
+        "value": 12.63,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kg",
+    "kurzzeichen": "KG",
+    "bezeichnung": "KG, auch auf neurophysiolog. Grundlage",
+    "duration": 20,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Krankengymnastik",
+    "tar1": 27.8,
+    "tar10": 27.8,
+    "tar11": 39,
+    "tar12": 27.8,
+    "tar1History": [
+      {
+        "id": "hist-KG-1765948334959-o8rwsbcuj",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KG-1765948334959-ibxloyyr5",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KG-1765948334959-te1c5ty5p",
+        "value": 39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KG-1765948334959-3wr5egmcj",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mt",
+    "kurzzeichen": "MT",
+    "bezeichnung": "Manuelle Therapie",
+    "duration": 20,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Manuelle Therapie",
+    "tar1": 33.39,
+    "tar10": 33.4,
+    "tar11": 47,
+    "tar12": 33.39,
+    "tar1History": [
+      {
+        "id": "hist-MT-1765948334959-qndhfrczv",
+        "value": 33.39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MT-1765948334959-e77fspe89",
+        "value": 33.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MT-1765948334959-ids1eusq3",
+        "value": 47,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MT-1765948334959-3kkej1mht",
+        "value": 33.39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mt-bv",
+    "kurzzeichen": "MT-BV",
+    "bezeichnung": "Manuelle Therapie (BV)",
+    "duration": 20,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 33.39,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 33.39,
+    "tar1History": [
+      {
+        "id": "hist-MT-BV-1765948334959-4l59qu5ou",
+        "value": 33.39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MT-BV-1765948334959-0rlqzw822",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MT-BV-1765948334959-01ger9n6e",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MT-BV-1765948334959-ig6h5lbfp",
+        "value": 33.39,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mld30",
+    "kurzzeichen": "MLD30",
+    "bezeichnung": "Manuelle Lymphdrainage Teilbeh. 30 Min.",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Manuelle Lymphdrainage Teilbeh. 30 Min.",
+    "tar1": 33.75,
+    "tar10": 33.8,
+    "tar11": 47,
+    "tar12": 33.75,
+    "tar1History": [
+      {
+        "id": "hist-MLD30-1765948334959-ct0s9a116",
+        "value": 33.75,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MLD30-1765948334959-xtb5t3djq",
+        "value": 33.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MLD30-1765948334959-kpflny2a4",
+        "value": 47,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MLD30-1765948334959-x1lpzg24o",
+        "value": 33.75,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mld45",
+    "kurzzeichen": "MLD45",
+    "bezeichnung": "Manuelle Lymphdrainage Großbeh. 45 Min.",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Manuelle Lymphdrainage Großbeh. 45 Min.",
+    "tar1": 50.6,
+    "tar10": 50.6,
+    "tar11": 71.31,
+    "tar12": 50.6,
+    "tar1History": [
+      {
+        "id": "hist-MLD45-1765948334959-5xsdpytoq",
+        "value": 50.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MLD45-1765948334959-gsbvf5dra",
+        "value": 50.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MLD45-1765948334959-wmge2w9mh",
+        "value": 71.31,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MLD45-1765948334959-i8hy8hw8j",
+        "value": 50.6,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mld60",
+    "kurzzeichen": "MLD60",
+    "bezeichnung": "Manuelle Lymphdrainage Ganzbeh. 60 Min.",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Manuelle Lymphdrainage Ganzbeh. 60 Min.",
+    "tar1": 67.48,
+    "tar10": 67.5,
+    "tar11": 95,
+    "tar12": 67.48,
+    "tar1History": [
+      {
+        "id": "hist-MLD60-1765948334959-xqqz52wha",
+        "value": 67.48,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MLD60-1765948334959-jreauhgj7",
+        "value": 67.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MLD60-1765948334959-mg08omdsh",
+        "value": 95,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MLD60-1765948334959-tl6y69kfh",
+        "value": 67.48,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kg-bv",
+    "kurzzeichen": "KG-BV",
+    "bezeichnung": "KG, auch auf neurophysiolog. Grundl.(BV)",
+    "duration": 20,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 27.8,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 27.8,
+    "tar1History": [
+      {
+        "id": "hist-KG-BV-1765948334959-p99a34c02",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KG-BV-1765948334959-vl7k6yeoz",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KG-BV-1765948334959-whrwfmm9v",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KG-BV-1765948334959-ajrul36ka",
+        "value": 27.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-wpn",
+    "kurzzeichen": "WPN",
+    "bezeichnung": "Warmpackungen einschl. Nachruhe",
+    "duration": null,
+    "kind": "passiv",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "",
+    "tar1": 15.16,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 15.16,
+    "tar1History": [
+      {
+        "id": "hist-WPN-1765948334959-b7no7rew3",
+        "value": 15.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-WPN-1765948334959-xvqkpt22s",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-WPN-1765948334959-tj66cq3se",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-WPN-1765948334959-grmw0o6jj",
+        "value": 15.16,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-bo-e",
+    "kurzzeichen": "BO-E",
+    "bezeichnung": "Krankengymnastik nach Bobath (Erw.)",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "KG-ZNS",
+    "tar1": 44.15,
+    "tar10": 44.2,
+    "tar11": 50,
+    "tar12": 44.15,
+    "tar1History": [
+      {
+        "id": "hist-BO-E-1765948334959-zbtnj8g90",
+        "value": 44.15,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-BO-E-1765948334959-xlumy8g02",
+        "value": 44.2,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-BO-E-1765948334959-hixqqoq9m",
+        "value": 50,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-BO-E-1765948334959-67yapfzg5",
+        "value": 44.15,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-kmt",
+    "kurzzeichen": "KMT",
+    "bezeichnung": "Klassische Massagetherapie",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "PT",
+    "textBestellung": "Klassische Massagetherapie",
+    "tar1": 20.29,
+    "tar10": 20.3,
+    "tar11": 28.5,
+    "tar12": 20.29,
+    "tar1History": [
+      {
+        "id": "hist-KMT-1765948334959-uu6qau5ud",
+        "value": 20.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KMT-1765948334959-ndcoai2b6",
+        "value": 20.3,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KMT-1765948334959-iuvt517oc",
+        "value": 28.5,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KMT-1765948334959-2pa38jilf",
+        "value": 20.29,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-k-l-bv",
+    "kurzzeichen": "KÄL-BV",
+    "bezeichnung": "Kälteth. bei einem/mehreren Körperteilen (BV)",
+    "duration": null,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "PT",
+    "textBestellung": "Physiotherapie Blanko",
+    "tar1": 11.21,
+    "tar10": 12.9,
+    "tar11": 0,
+    "tar12": 11.21,
+    "tar1History": [
+      {
+        "id": "hist-KÄL-BV-1765948334959-puaoo2g1j",
+        "value": 11.21,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-KÄL-BV-1765948334959-qbgl5l3n6",
+        "value": 12.9,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-KÄL-BV-1765948334959-xmabw00cc",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-KÄL-BV-1765948334959-sdd7vur4v",
+        "value": 11.21,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mfb-e",
+    "kurzzeichen": "MFB-E",
+    "bezeichnung": "Einzelbehandl. bei mot. St.",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbeh. bei motorisch-funktioneller Störung",
+    "tar1": 52.77,
+    "tar10": 52.8,
+    "tar11": 67.79,
+    "tar12": 52.77,
+    "tar1History": [
+      {
+        "id": "hist-MFB-E-1765948334959-ybnhjwkp2",
+        "value": 52.77,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MFB-E-1765948334959-v50zm2pez",
+        "value": 52.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MFB-E-1765948334959-pr21tus3c",
+        "value": 67.79,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MFB-E-1765948334959-h44f0pck1",
+        "value": 52.77,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-nob-e",
+    "kurzzeichen": "NOB-E",
+    "bezeichnung": "Ergoth. Hirnleistungstraining",
+    "duration": 30,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Ergoth. Hirnleistungstraining",
+    "tar1": 52.77,
+    "tar10": 52.8,
+    "tar11": 75.14,
+    "tar12": 52.77,
+    "tar1History": [
+      {
+        "id": "hist-NOB-E-1765948334959-hhttkso6p",
+        "value": 52.77,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-NOB-E-1765948334959-9odup0ezk",
+        "value": 52.8,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-NOB-E-1765948334959-trr26ysib",
+        "value": 75.14,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-NOB-E-1765948334959-oj0jkmcy5",
+        "value": 52.77,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pfb-e",
+    "kurzzeichen": "PFB-E",
+    "bezeichnung": "Einzelbehandl. psychisch funktionell",
+    "duration": 60,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbehandl. bei psychisch-funktionellen Störungen",
+    "tar1": 87.95,
+    "tar10": 88,
+    "tar11": 104.34,
+    "tar12": 87.95,
+    "tar1History": [
+      {
+        "id": "hist-PFB-E-1765948334959-bwp3vdlfw",
+        "value": 87.95,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PFB-E-1765948334959-9y663h3c8",
+        "value": 88,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PFB-E-1765948334959-hz5mnhris",
+        "value": 104.34,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PFB-E-1765948334959-jc5iiwii7",
+        "value": 87.95,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-spb-e",
+    "kurzzeichen": "SPB-E",
+    "bezeichnung": "Einzelbeh. sensomotor./perz. Stör.",
+    "duration": 45,
+    "kind": "treatment",
+    "bv": false,
+    "bereich": "ERGO",
+    "textBestellung": "Einzelbeh. bei sensomotor./perz. Stör.",
+    "tar1": 70.36,
+    "tar10": 70.4,
+    "tar11": 91.26,
+    "tar12": 70.36,
+    "tar1History": [
+      {
+        "id": "hist-SPB-E-1765948334959-lykgh95sv",
+        "value": 70.36,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-SPB-E-1765948334959-dbqyx6s1h",
+        "value": 70.4,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-SPB-E-1765948334959-46p0ndodm",
+        "value": 91.26,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-SPB-E-1765948334959-2433h5hya",
+        "value": 70.36,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-mfb-bv",
+    "kurzzeichen": "MFB-BV",
+    "bezeichnung": "ZI Einzelbehandl. bei motor. Störungen",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 17.59,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 17.59,
+    "tar1History": [
+      {
+        "id": "hist-MFB-BV-1765948334959-rax1x7oc8",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-MFB-BV-1765948334959-iot9xegq7",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-MFB-BV-1765948334959-i8kz3nc1z",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-MFB-BV-1765948334959-963cykfzn",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-nob-bv",
+    "kurzzeichen": "NOB-BV",
+    "bezeichnung": "Ergoth. Hirnleistungstraining (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 17.59,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 17.59,
+    "tar1History": [
+      {
+        "id": "hist-NOB-BV-1765948334959-q9d2yk6az",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-NOB-BV-1765948334959-36u2n5ulm",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-NOB-BV-1765948334959-8r85hmrwm",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-NOB-BV-1765948334959-pvjgrtgjx",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  },
+  {
+    "id": "hm-pfb-bv",
+    "kurzzeichen": "PFB-BV",
+    "bezeichnung": "Einzelbeh. bei psych-fkt. Störungen (BV)",
+    "duration": 15,
+    "kind": "treatment",
+    "bv": true,
+    "bereich": "ERGO",
+    "textBestellung": "Ergotherapie Blanko",
+    "tar1": 17.59,
+    "tar10": 0,
+    "tar11": 0,
+    "tar12": 17.59,
+    "tar1History": [
+      {
+        "id": "hist-PFB-BV-1765948334959-6oztsvq3x",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar10History": [
+      {
+        "id": "hist-PFB-BV-1765948334959-zbj2ikr6o",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar11History": [
+      {
+        "id": "hist-PFB-BV-1765948334959-bahxoz9vh",
+        "value": 0,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ],
+    "tar12History": [
+      {
+        "id": "hist-PFB-BV-1765948334959-w9oix8uxv",
+        "value": 17.59,
+        "effectiveDate": "2025-12-17",
+        "changedAt": "2025-12-17T05:12:14.959Z"
+      }
+    ]
+  }
+]

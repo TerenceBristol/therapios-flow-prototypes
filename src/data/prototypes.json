@@ -150,6 +150,16 @@
       "createdAt": "2025-12-08T10:00:00Z",
       "lastModified": "2025-12-08T10:00:00Z",
       "tags": ["VO Management", "CRUD", "Dashboard", "Healthcare", "Admin"]
+    },
+    {
+      "id": "heilmittel-management",
+      "title": "Heilmittel Management",
+      "description": "Admin prototype for managing Heilmittel (treatment) codes and tariffs. Features CRUD operations, historical price tracking for all 4 tariffs with effective dates, and filtering by Bereich, Kind, and BV status.",
+      "category": "draft",
+      "slug": "heilmittel-management",
+      "createdAt": "2025-12-17T10:00:00Z",
+      "lastModified": "2025-12-17T10:00:00Z",
+      "tags": ["Heilmittel", "Admin", "Tariff Management", "Healthcare", "CRUD"]
     }
   ]
 }
