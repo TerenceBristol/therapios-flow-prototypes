@@ -17,7 +17,7 @@ export default function NewHeilmittelPage() {
     try {
       // Get current data from session storage
       const stored = sessionStorage.getItem(STORAGE_KEY);
-      let currentData = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
+      const currentData = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
 
       // Add new heilmittel
       currentData.heilmittel = [...currentData.heilmittel, data];

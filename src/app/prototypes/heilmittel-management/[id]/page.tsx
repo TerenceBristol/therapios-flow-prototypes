@@ -59,7 +59,7 @@ export default function EditHeilmittelPage() {
     try {
       // Get current data from session storage
       const stored = sessionStorage.getItem(STORAGE_KEY);
-      let currentData = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
+      const currentData = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
 
       // Update the heilmittel with updatedAt timestamp
       const updatedData = {
