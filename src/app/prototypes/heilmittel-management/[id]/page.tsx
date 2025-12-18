@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import HeilmittelForm from '@/components/heilmittel/HeilmittelForm';
 import { Heilmittel } from '@/types';
+import { ToastProvider, useToast } from '@/contexts/ToastContext';
 
 // Import mock data for fallback
 import heilmittelDataJson from '@/data/heilmittelData.json';
@@ -21,9 +22,10 @@ const formatDateTime = (isoString: string) => {
   });
 };
 
-export default function EditHeilmittelPage() {
+function EditHeilmittelContent() {
   const router = useRouter();
   const params = useParams();
+  const { showToast } = useToast();
   const id = params.id as string;
 
   const [heilmittel, setHeilmittel] = useState<Heilmittel | null>(null);
@@ -73,11 +75,13 @@ export default function EditHeilmittelPage() {
 
       // Save to session storage
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(currentData));
+      showToast('Heilmittel saved', 'success');
 
       // Navigate back to list
       router.push('/prototypes/heilmittel-management');
     } catch (error) {
       console.error('Error saving heilmittel:', error);
+      showToast('Error saving Heilmittel', 'error');
     }
   };
 
@@ -166,5 +170,13 @@ export default function EditHeilmittelPage() {
         />
       </div>
     </div>
+  );
+}
+
+export default function EditHeilmittelPage() {
+  return (
+    <ToastProvider>
+      <EditHeilmittelContent />
+    </ToastProvider>
   );
 }

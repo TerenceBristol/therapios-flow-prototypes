@@ -17,7 +17,8 @@
         "id": "hist-AB-E-1765948334959-ex6eyn92x",
         "value": 1.11,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -25,7 +26,8 @@
         "id": "hist-AB-E-1765948334959-plq782x3c",
         "value": 1.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -33,7 +35,8 @@
         "id": "hist-AB-E-1765948334959-70899yk3l",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -41,9 +44,15 @@
         "id": "hist-AB-E-1765948334959-0wm2devg7",
         "value": 1.11,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-11-22T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-ab-p",
@@ -63,7 +72,8 @@
         "id": "hist-AB-P-1765948334959-piha9qtwt",
         "value": 1.32,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -71,7 +81,8 @@
         "id": "hist-AB-P-1765948334959-3y4zpdizv",
         "value": 1.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -79,7 +90,8 @@
         "id": "hist-AB-P-1765948334959-miagmrajh",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -87,9 +99,15 @@
         "id": "hist-AB-P-1765948334959-eeohqnlwu",
         "value": 1.32,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-17T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-aeb",
@@ -109,7 +127,8 @@
         "id": "hist-AEB-1765948334959-z784sc3e1",
         "value": 38.43,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -117,7 +136,8 @@
         "id": "hist-AEB-1765948334959-81zyfflf1",
         "value": 44.2,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -125,7 +145,8 @@
         "id": "hist-AEB-1765948334959-qwloxik5c",
         "value": 41.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -133,9 +154,15 @@
         "id": "hist-AEB-1765948334959-xk2tkbb2m",
         "value": 38.43,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-01T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-bep-a",
@@ -155,7 +182,8 @@
         "id": "hist-BEP-A-1765948334959-zaj2wiux4",
         "value": 63.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -163,7 +191,8 @@
         "id": "hist-BEP-A-1765948334959-2hma7be3t",
         "value": 63.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -171,7 +200,8 @@
         "id": "hist-BEP-A-1765948334959-jnltlq3jy",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -179,9 +209,15 @@
         "id": "hist-BEP-A-1765948334959-g5iasej9x",
         "value": 63.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-20T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-bep-a-bv",
@@ -201,7 +237,8 @@
         "id": "hist-BEP-A-BV-1765948334959-hcawnvhhd",
         "value": 63.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -209,7 +246,8 @@
         "id": "hist-BEP-A-BV-1765948334959-zwvvfugp7",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -217,7 +255,8 @@
         "id": "hist-BEP-A-BV-1765948334959-9qhvhc1gn",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -225,9 +264,15 @@
         "id": "hist-BEP-A-BV-1765948334959-y16rcjd9a",
         "value": 63.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-07T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-bgm",
@@ -247,7 +292,8 @@
         "id": "hist-BGM-1765948334959-6lwf9l4gr",
         "value": 24.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -255,7 +301,8 @@
         "id": "hist-BGM-1765948334959-w0y1jjgqg",
         "value": 24.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -263,7 +310,8 @@
         "id": "hist-BGM-1765948334959-69spmpypc",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -271,9 +319,15 @@
         "id": "hist-BGM-1765948334959-8dnwjifpo",
         "value": 24.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-22T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-bgm-bv",
@@ -293,7 +347,8 @@
         "id": "hist-BGM-BV-1765948334959-cqpxzhd5z",
         "value": 24.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -301,7 +356,8 @@
         "id": "hist-BGM-BV-1765948334959-hnmbxct4s",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -309,7 +365,8 @@
         "id": "hist-BGM-BV-1765948334959-oy0xscwxy",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -317,9 +374,15 @@
         "id": "hist-BGM-BV-1765948334959-vw69jyt4x",
         "value": 24.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-11-26T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-hb-e",
@@ -339,7 +402,8 @@
         "id": "hist-HB-E-1765948334959-e2esh8aeo",
         "value": 25.54,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -347,7 +411,8 @@
         "id": "hist-HB-E-1765948334959-zql8jf4xn",
         "value": 25.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -355,7 +420,8 @@
         "id": "hist-HB-E-1765948334959-fih3j2haj",
         "value": 24,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -363,9 +429,15 @@
         "id": "hist-HB-E-1765948334959-m18simsec",
         "value": 25.54,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-20T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-bo-e-h",
@@ -385,7 +457,8 @@
         "id": "hist-BO-E-H-1765948334959-ynhc2z8kb",
         "value": 44.15,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -393,7 +466,8 @@
         "id": "hist-BO-E-H-1765948334959-ffd9eixul",
         "value": 44.2,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -401,7 +475,8 @@
         "id": "hist-BO-E-H-1765948334959-l9119vewg",
         "value": 50,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -409,9 +484,15 @@
         "id": "hist-BO-E-H-1765948334959-sv6qgb0qg",
         "value": 44.15,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-11-19T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-hbh-e",
@@ -431,7 +512,8 @@
         "id": "hist-HBH-E-1765948334959-m12hluv81",
         "value": 16.66,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -439,7 +521,8 @@
         "id": "hist-HBH-E-1765948334959-rhvamu9ew",
         "value": 16.7,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -447,7 +530,8 @@
         "id": "hist-HBH-E-1765948334959-b6ei0l7ob",
         "value": 24,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -455,9 +539,15 @@
         "id": "hist-HBH-E-1765948334959-9sasq2jt8",
         "value": 16.66,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-03T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-hb-l",
@@ -477,7 +567,8 @@
         "id": "hist-HB-L-1765948334959-ak8vo2v1k",
         "value": 22.38,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -485,7 +576,8 @@
         "id": "hist-HB-L-1765948334959-ufi4p2vqj",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -493,7 +585,8 @@
         "id": "hist-HB-L-1765948334959-kt9mtxqqb",
         "value": 24,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -501,9 +594,15 @@
         "id": "hist-HB-L-1765948334959-x0s2lq114",
         "value": 22.38,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-19T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-hr",
@@ -523,7 +622,8 @@
         "id": "hist-HR-1765948334959-relwat80k",
         "value": 12.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -531,7 +631,8 @@
         "id": "hist-HR-1765948334959-0p5sevl6d",
         "value": 13.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -539,7 +640,8 @@
         "id": "hist-HR-1765948334959-p4iu9b6j0",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -547,9 +649,15 @@
         "id": "hist-HR-1765948334959-2tvr911qj",
         "value": 12.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-02T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-k-l",
@@ -569,7 +677,8 @@
         "id": "hist-KÄL-1765948334959-wrwd5js3z",
         "value": 11.21,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -577,7 +686,8 @@
         "id": "hist-KÄL-1765948334959-ks7qz2c79",
         "value": 12.9,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -585,7 +695,8 @@
         "id": "hist-KÄL-1765948334959-ppew9gws6",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -593,9 +704,15 @@
         "id": "hist-KÄL-1765948334959-j30xrtaro",
         "value": 11.21,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-11-25T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-hb-pt",
@@ -615,7 +732,8 @@
         "id": "hist-HB-PT-1765948334959-h6bkh5vcn",
         "value": 21.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -623,7 +741,8 @@
         "id": "hist-HB-PT-1765948334959-vxni3qv1m",
         "value": 25.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -631,7 +750,8 @@
         "id": "hist-HB-PT-1765948334959-segomkiws",
         "value": 30,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -639,9 +759,15 @@
         "id": "hist-HB-PT-1765948334959-m7nq86tjg",
         "value": 21.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-01T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-hbh-pt",
@@ -661,7 +787,8 @@
         "id": "hist-HBH-PT-1765948334959-t1jmto1f1",
         "value": 12.28,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -669,7 +796,8 @@
         "id": "hist-HBH-PT-1765948334959-6ejehfyrz",
         "value": 16.7,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -677,7 +805,8 @@
         "id": "hist-HBH-PT-1765948334959-b6ftlb6k7",
         "value": 24,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -685,9 +814,15 @@
         "id": "hist-HBH-PT-1765948334959-wdwhxq46k",
         "value": 12.28,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-12T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-hr-h-bv",
@@ -707,7 +842,8 @@
         "id": "hist-HR-H-BV-1765948334959-kwus48gis",
         "value": 12.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -715,7 +851,8 @@
         "id": "hist-HR-H-BV-1765948334959-d9837hdgp",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -723,7 +860,8 @@
         "id": "hist-HR-H-BV-1765948334959-k79fba7cs",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -731,9 +869,15 @@
         "id": "hist-HR-H-BV-1765948334959-ekd37wrx6",
         "value": 12.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-18T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-kg-h",
@@ -753,7 +897,8 @@
         "id": "hist-KG-H-1765948334959-5qm9misro",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -761,7 +906,8 @@
         "id": "hist-KG-H-1765948334959-u7oxikkmt",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -769,7 +915,8 @@
         "id": "hist-KG-H-1765948334959-xlgvq7tt3",
         "value": 39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -777,9 +924,15 @@
         "id": "hist-KG-H-1765948334959-k4dy78bb8",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-30T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-kg-h-bv",
@@ -799,7 +952,8 @@
         "id": "hist-KG-H-BV-1765948334959-w5n72d8l0",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -807,7 +961,8 @@
         "id": "hist-KG-H-BV-1765948334959-f1kjmotzl",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -815,7 +970,8 @@
         "id": "hist-KG-H-BV-1765948334959-tqt03lzxz",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -823,9 +979,15 @@
         "id": "hist-KG-H-BV-1765948334959-6wwnqoncz",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-05T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-kgm-h",
@@ -845,7 +1007,8 @@
         "id": "hist-KGM-H-1765948334959-8201oap3a",
         "value": 83.43,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -853,7 +1016,8 @@
         "id": "hist-KGM-H-1765948334959-f7d86ilcb",
         "value": 83.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -861,7 +1025,8 @@
         "id": "hist-KGM-H-1765948334959-b29pzfx29",
         "value": 118,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -869,9 +1034,15 @@
         "id": "hist-KGM-H-1765948334959-2ryu5wi7j",
         "value": 83.43,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-11-28T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-kmt-bv",
@@ -891,7 +1062,8 @@
         "id": "hist-KMT-BV-1765948334959-sgvleso9g",
         "value": 20.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -899,7 +1071,8 @@
         "id": "hist-KMT-BV-1765948334959-pl63dtgp1",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -907,7 +1080,8 @@
         "id": "hist-KMT-BV-1765948334959-lfe7jtpc6",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -915,9 +1089,15 @@
         "id": "hist-KMT-BV-1765948334959-ynw8nmcet",
         "value": 20.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-10T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-kmt-h",
@@ -937,7 +1117,8 @@
         "id": "hist-KMT-H-1765948334959-wb1zkvlba",
         "value": 20.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -945,7 +1126,8 @@
         "id": "hist-KMT-H-1765948334959-jfnhf6ugj",
         "value": 20.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -953,7 +1135,8 @@
         "id": "hist-KMT-H-1765948334959-lodxwmdle",
         "value": 28.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -961,9 +1144,15 @@
         "id": "hist-KMT-H-1765948334959-gbf4q6etb",
         "value": 20.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-16T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-komp",
@@ -983,7 +1172,8 @@
         "id": "hist-KOMP-1765948334959-34n4uhqe2",
         "value": 21.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -991,7 +1181,8 @@
         "id": "hist-KOMP-1765948334959-5gzu09izi",
         "value": 21.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -999,7 +1190,8 @@
         "id": "hist-KOMP-1765948334959-tbci08o45",
         "value": 30.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -1007,9 +1199,15 @@
         "id": "hist-KOMP-1765948334959-mzbldxxq5",
         "value": 21.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-17T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-kt-h-bv",
@@ -1029,7 +1227,8 @@
         "id": "hist-KT-H-BV-1765948334959-njodftnmw",
         "value": 11.21,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -1037,7 +1236,8 @@
         "id": "hist-KT-H-BV-1765948334959-dsj2vdr41",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -1045,7 +1245,8 @@
         "id": "hist-KT-H-BV-1765948334959-2ojiaa35n",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -1053,9 +1254,15 @@
         "id": "hist-KT-H-BV-1765948334959-4mfvyeyop",
         "value": 11.21,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-15T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-mfb-2-hb",
@@ -1075,7 +1282,8 @@
         "id": "hist-MFB-2-HB-1765948334959-939g9bqq7",
         "value": 42.22,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -1083,7 +1291,8 @@
         "id": "hist-MFB-2-HB-1765948334959-prrsx36r6",
         "value": 42.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -1091,7 +1300,8 @@
         "id": "hist-MFB-2-HB-1765948334959-gra7jcg94",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -1099,9 +1309,15 @@
         "id": "hist-MFB-2-HB-1765948334959-vvkcutmyc",
         "value": 42.22,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-06T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-mfb-e-hb",
@@ -1121,7 +1337,8 @@
         "id": "hist-MFB-E-HB-1765948334959-n76l1rt95",
         "value": 52.77,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -1129,7 +1346,8 @@
         "id": "hist-MFB-E-HB-1765948334959-zufpt8gu0",
         "value": 52.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -1137,7 +1355,8 @@
         "id": "hist-MFB-E-HB-1765948334959-9jbgghu03",
         "value": 67.79,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -1145,9 +1364,15 @@
         "id": "hist-MFB-E-HB-1765948334959-gywkxjdoc",
         "value": 52.77,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-11-29T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-mfb-g-hb",
@@ -1167,7 +1392,8 @@
         "id": "hist-MFB-G-HB-1765948334959-ze24h8n20",
         "value": 18.47,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -1175,7 +1401,8 @@
         "id": "hist-MFB-G-HB-1765948334959-ibucwuvh2",
         "value": 42.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -1183,7 +1410,8 @@
         "id": "hist-MFB-G-HB-1765948334959-7vodidgl0",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -1191,9 +1419,15 @@
         "id": "hist-MFB-G-HB-1765948334959-3o847az36",
         "value": 18.47,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-02T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-l-bd",
@@ -1213,7 +1447,8 @@
         "id": "hist-L-BD-1765948334959-uf1j90mxp",
         "value": 58.64,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -1221,7 +1456,8 @@
         "id": "hist-L-BD-1765948334959-mwwyh7ckk",
         "value": 58.7,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -1229,7 +1465,8 @@
         "id": "hist-L-BD-1765948334959-yoqu1apyg",
         "value": 83.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -1237,9 +1474,15 @@
         "id": "hist-L-BD-1765948334959-9w98yqk3h",
         "value": 58.64,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-13T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-l-e30h",
@@ -1259,7 +1502,8 @@
         "id": "hist-L-E30H-1765948334959-0rvo3e8dj",
         "value": 52.12,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -1267,7 +1511,8 @@
         "id": "hist-L-E30H-1765948334959-xv9arilye",
         "value": 52.2,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -1275,7 +1520,8 @@
         "id": "hist-L-E30H-1765948334959-e9q28ju1l",
         "value": 74,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -1283,9 +1529,15 @@
         "id": "hist-L-E30H-1765948334959-xz0tlsrcz",
         "value": 52.12,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-17T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-l-e45h",
@@ -1305,7 +1557,8 @@
         "id": "hist-L-E45H-1765948334959-v5pqhzwl7",
         "value": 71.67,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -1313,7 +1566,8 @@
         "id": "hist-L-E45H-1765948334959-4q8tv2gd7",
         "value": 71.7,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -1321,7 +1575,8 @@
         "id": "hist-L-E45H-1765948334959-6bjeyp20s",
         "value": 101.9,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -1329,9 +1584,15 @@
         "id": "hist-L-E45H-1765948334959-t3ly9uybv",
         "value": 71.67,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-08T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-l-e60h",
@@ -1351,7 +1612,8 @@
         "id": "hist-L-E60H-1765948334959-4hs72xnk7",
         "value": 91.21,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -1359,7 +1621,8 @@
         "id": "hist-L-E60H-1765948334959-r2h2fhcll",
         "value": 91.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -1367,7 +1630,8 @@
         "id": "hist-L-E60H-1765948334959-pq5rh62g3",
         "value": 129.68,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -1375,9 +1639,15 @@
         "id": "hist-L-E60H-1765948334959-d8su6oaan",
         "value": 91.21,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-18T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-nob-2-hb",
@@ -1397,7 +1667,8 @@
         "id": "hist-NOB-2-HB-1765948334959-7yvpi619l",
         "value": 42.22,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -1405,7 +1676,8 @@
         "id": "hist-NOB-2-HB-1765948334959-lto089qzt",
         "value": 42.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -1413,7 +1685,8 @@
         "id": "hist-NOB-2-HB-1765948334959-6wgop81x6",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -1421,9 +1694,15 @@
         "id": "hist-NOB-2-HB-1765948334959-t3t134yg0",
         "value": 42.22,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-11-23T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-nob-e-hb",
@@ -1443,7 +1722,8 @@
         "id": "hist-NOB-E-HB-1765948334959-zix0mr77w",
         "value": 52.77,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -1451,7 +1731,8 @@
         "id": "hist-NOB-E-HB-1765948334959-chiey3cvk",
         "value": 52.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -1459,7 +1740,8 @@
         "id": "hist-NOB-E-HB-1765948334959-z53zbk851",
         "value": 75.14,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -1467,9 +1749,15 @@
         "id": "hist-NOB-E-HB-1765948334959-c9jb75d51",
         "value": 52.77,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-11-19T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-nob-g-hb",
@@ -1489,7 +1777,8 @@
         "id": "hist-NOB-G-HB-1765948334959-3hzaz06ta",
         "value": 24.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -1497,7 +1786,8 @@
         "id": "hist-NOB-G-HB-1765948334959-0alkkbmeb",
         "value": 24.7,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -1505,7 +1795,8 @@
         "id": "hist-NOB-G-HB-1765948334959-m0odl0g66",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -1513,9 +1804,15 @@
         "id": "hist-NOB-G-HB-1765948334959-czm8vrz3q",
         "value": 24.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-11-29T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-pfb-2-hb",
@@ -1535,7 +1832,8 @@
         "id": "hist-PFB-2-HB-1765948334959-cfx1gbnl7",
         "value": 70.36,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -1543,7 +1841,8 @@
         "id": "hist-PFB-2-HB-1765948334959-8lz3cdasx",
         "value": 70.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -1551,7 +1850,8 @@
         "id": "hist-PFB-2-HB-1765948334959-z1mnvr0f0",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -1559,9 +1859,15 @@
         "id": "hist-PFB-2-HB-1765948334959-9hbtmv8q6",
         "value": 70.36,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-11-21T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-pfb-e-hb",
@@ -1581,7 +1887,8 @@
         "id": "hist-PFB-E-HB-1765948334959-3ug8wjl4b",
         "value": 87.95,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -1589,7 +1896,8 @@
         "id": "hist-PFB-E-HB-1765948334959-etrdg8tyt",
         "value": 88,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -1597,7 +1905,8 @@
         "id": "hist-PFB-E-HB-1765948334959-5h997agph",
         "value": 104.34,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -1605,9 +1914,15 @@
         "id": "hist-PFB-E-HB-1765948334959-b9x4rq0oc",
         "value": 87.95,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-12T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-pfb-g-hb",
@@ -1627,7 +1942,8 @@
         "id": "hist-PFB-G-HB-1765948334959-5jw41uw8z",
         "value": 43.1,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -1635,7 +1951,8 @@
         "id": "hist-PFB-G-HB-1765948334959-nppiv5vek",
         "value": 43.1,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -1643,7 +1960,8 @@
         "id": "hist-PFB-G-HB-1765948334959-fj6my9rre",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -1651,9 +1969,15 @@
         "id": "hist-PFB-G-HB-1765948334959-hbxt6eo4p",
         "value": 43.1,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-11-22T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-l-ed",
@@ -1673,7 +1997,8 @@
         "id": "hist-L-ED-1765948334959-e6myavmww",
         "value": 117.27,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -1681,7 +2006,8 @@
         "id": "hist-L-ED-1765948334959-kmn31t281",
         "value": 117.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -1689,7 +2015,8 @@
         "id": "hist-L-ED-1765948334959-u0i716izv",
         "value": 150,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -1697,9 +2024,15 @@
         "id": "hist-L-ED-1765948334959-f9n8v745f",
         "value": 117.27,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-11-21T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-spb-2-hb",
@@ -1719,7 +2052,8 @@
         "id": "hist-SPB-2-HB-1765948334959-mupst5ie0",
         "value": 56.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -1727,7 +2061,8 @@
         "id": "hist-SPB-2-HB-1765948334959-jr68e6gbh",
         "value": 56.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -1735,7 +2070,8 @@
         "id": "hist-SPB-2-HB-1765948334959-f88vftnwb",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -1743,9 +2079,15 @@
         "id": "hist-SPB-2-HB-1765948334959-8qbr17ahi",
         "value": 56.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-12T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-spb-e-hb",
@@ -1765,7 +2107,8 @@
         "id": "hist-SPB-E-HB-1765948334959-20eziw963",
         "value": 70.36,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -1773,7 +2116,8 @@
         "id": "hist-SPB-E-HB-1765948334959-ffulz3y5d",
         "value": 70.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -1781,7 +2125,8 @@
         "id": "hist-SPB-E-HB-1765948334959-xfdcify8t",
         "value": 91.26,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -1789,9 +2134,15 @@
         "id": "hist-SPB-E-HB-1765948334959-gn5r78w9n",
         "value": 70.36,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-17T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-spb-g-hbh",
@@ -1811,7 +2162,8 @@
         "id": "hist-SPB-G-HBH-1765948334959-e8hqivct0",
         "value": 24.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -1819,7 +2171,8 @@
         "id": "hist-SPB-G-HBH-1765948334959-b5o6en9h7",
         "value": 24.7,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -1827,7 +2180,8 @@
         "id": "hist-SPB-G-HBH-1765948334959-vlj8xb2oa",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -1835,9 +2189,15 @@
         "id": "hist-SPB-G-HBH-1765948334959-l2lfpezsa",
         "value": 24.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-10T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-l-g2-45",
@@ -1857,7 +2217,8 @@
         "id": "hist-L-G2-45-1765948334959-21yhlpzbv",
         "value": 64.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -1865,7 +2226,8 @@
         "id": "hist-L-G2-45-1765948334959-upz6aelgd",
         "value": 64.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -1873,7 +2235,8 @@
         "id": "hist-L-G2-45-1765948334959-dqgxq1643",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -1881,9 +2244,15 @@
         "id": "hist-L-G2-45-1765948334959-4sw51j6wm",
         "value": 64.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-15T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-l-g2-90",
@@ -1903,7 +2272,8 @@
         "id": "hist-L-G2-90-1765948334959-35v3i6nja",
         "value": 117.27,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -1911,7 +2281,8 @@
         "id": "hist-L-G2-90-1765948334959-b066l9sp8",
         "value": 117.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -1919,7 +2290,8 @@
         "id": "hist-L-G2-90-1765948334959-6apww6uts",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -1927,9 +2299,15 @@
         "id": "hist-L-G2-90-1765948334959-l86ieyzgw",
         "value": 117.27,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-11-26T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-ab-e-bv",
@@ -1949,7 +2327,8 @@
         "id": "hist-AB-E-BV-1765948334959-tnbt84m0k",
         "value": 1.11,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -1957,7 +2336,8 @@
         "id": "hist-AB-E-BV-1765948334959-iviu12u5v",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -1965,7 +2345,8 @@
         "id": "hist-AB-E-BV-1765948334959-gam4p9ueh",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -1973,9 +2354,17 @@
         "id": "hist-AB-E-BV-1765948334959-0l8gfffzr",
         "value": 1.11,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": true,
+    "archivedAt": "2025-12-10T14:30:00.000Z",
+    "archivedBy": "Sarah S.",
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-15T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-ab-p-bv",
@@ -1995,7 +2384,8 @@
         "id": "hist-AB-P-BV-1765948334959-7zprmgyff",
         "value": 1.32,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2003,7 +2393,8 @@
         "id": "hist-AB-P-BV-1765948334959-ee1a3j8ci",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -2011,7 +2402,8 @@
         "id": "hist-AB-P-BV-1765948334959-x4j0ozc3l",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2019,9 +2411,17 @@
         "id": "hist-AB-P-BV-1765948334959-uu0rtfkf6",
         "value": 1.32,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": true,
+    "archivedAt": "2025-12-10T14:30:00.000Z",
+    "archivedBy": "Sarah S.",
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-12T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-aeb-bv",
@@ -2041,7 +2441,8 @@
         "id": "hist-AEB-BV-1765948334959-lzje5dnfm",
         "value": 44.2,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2049,7 +2450,8 @@
         "id": "hist-AEB-BV-1765948334959-3w5zcv2eo",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -2057,7 +2459,8 @@
         "id": "hist-AEB-BV-1765948334959-mahpn884l",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -2065,9 +2468,15 @@
         "id": "hist-AEB-BV-1765948334959-n72ovn2si",
         "value": 44.2,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-27T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-bd-bv",
@@ -2087,7 +2496,8 @@
         "id": "hist-BD-BV-1765948334959-g6s6xeogp",
         "value": 25.76,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2095,7 +2505,8 @@
         "id": "hist-BD-BV-1765948334959-1hosg8r7q",
         "value": 25.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -2103,7 +2514,8 @@
         "id": "hist-BD-BV-1765948334959-kidjvy18e",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -2111,9 +2523,17 @@
         "id": "hist-BD-BV-1765948334959-mng3lvvwv",
         "value": 25.76,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": true,
+    "archivedAt": "2025-12-10T14:30:00.000Z",
+    "archivedBy": "Sarah S.",
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-11-22T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-l-g5-45",
@@ -2133,7 +2553,8 @@
         "id": "hist-L-G5-45-1765948334959-aytdt87b5",
         "value": 32.58,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -2141,7 +2562,8 @@
         "id": "hist-L-G5-45-1765948334959-w4hwowp1s",
         "value": 34.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -2149,7 +2571,8 @@
         "id": "hist-L-G5-45-1765948334959-os8yn8ue5",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -2157,9 +2580,15 @@
         "id": "hist-L-G5-45-1765948334959-juu29izff",
         "value": 32.58,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-02T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-l-g5-90",
@@ -2179,7 +2608,8 @@
         "id": "hist-L-G5-90-1765948334959-pw78bts54",
         "value": 58.64,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -2187,7 +2617,8 @@
         "id": "hist-L-G5-90-1765948334959-5msdn6ujs",
         "value": 58.7,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -2195,7 +2626,8 @@
         "id": "hist-L-G5-90-1765948334959-u3hmmeohq",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2203,9 +2635,15 @@
         "id": "hist-L-G5-90-1765948334959-yw5wkprrs",
         "value": 58.64,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-11T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-hb-e-bv",
@@ -2225,7 +2663,8 @@
         "id": "hist-HB-E-BV-1765948334959-ecylvqzjk",
         "value": 25.54,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2233,7 +2672,8 @@
         "id": "hist-HB-E-BV-1765948334959-3do1ymzv5",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -2241,7 +2681,8 @@
         "id": "hist-HB-E-BV-1765948334959-s6ccu4e2n",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2249,9 +2690,15 @@
         "id": "hist-HB-E-BV-1765948334959-kkc0f2in7",
         "value": 25.54,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-07T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-hb-pt-bv",
@@ -2271,7 +2718,8 @@
         "id": "hist-HB-PT-BV-1765948334959-iclte8g8t",
         "value": 21.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -2279,7 +2727,8 @@
         "id": "hist-HB-PT-BV-1765948334959-kor6by9da",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -2287,7 +2736,8 @@
         "id": "hist-HB-PT-BV-1765948334959-zb0zvp0p2",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2295,9 +2745,15 @@
         "id": "hist-HB-PT-BV-1765948334959-jit3ai5r9",
         "value": 21.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-12T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-hbh-e-bv",
@@ -2317,7 +2773,8 @@
         "id": "hist-HBH-E-BV-1765948334959-d7k4kma0v",
         "value": 16.66,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2325,7 +2782,8 @@
         "id": "hist-HBH-E-BV-1765948334959-12hmmhdsr",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -2333,7 +2791,8 @@
         "id": "hist-HBH-E-BV-1765948334959-einbf0b2a",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2341,9 +2800,15 @@
         "id": "hist-HBH-E-BV-1765948334959-8sc22ij89",
         "value": 16.66,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-08T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-hbh-pt-bv",
@@ -2363,7 +2828,8 @@
         "id": "hist-HBH-PT-BV-1765948334959-x8uilvp7p",
         "value": 12.28,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -2371,7 +2837,8 @@
         "id": "hist-HBH-PT-BV-1765948334959-htzqycwt8",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -2379,7 +2846,8 @@
         "id": "hist-HBH-PT-BV-1765948334959-jfbe12nlq",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -2387,9 +2855,15 @@
         "id": "hist-HBH-PT-BV-1765948334959-42ltogz8a",
         "value": 12.28,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-15T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-hbk-pt-bv",
@@ -2409,7 +2883,8 @@
         "id": "hist-HBK-PT-BV-1765948334959-oh8iz1e4c",
         "value": 21.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -2417,7 +2892,8 @@
         "id": "hist-HBK-PT-BV-1765948334959-8ukd5z2y4",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -2425,7 +2901,8 @@
         "id": "hist-HBK-PT-BV-1765948334959-kwl4vq76v",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -2433,9 +2910,15 @@
         "id": "hist-HBK-PT-BV-1765948334959-6yh9nka1t",
         "value": 21.37,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-04T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-hl-bv",
@@ -2455,7 +2938,8 @@
         "id": "hist-HL-BV-1765948334959-ldzrdaqwf",
         "value": 6.97,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -2463,7 +2947,8 @@
         "id": "hist-HL-BV-1765948334959-gs6wc5lv3",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -2471,7 +2956,8 @@
         "id": "hist-HL-BV-1765948334959-b5vq5zo8u",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2479,9 +2965,15 @@
         "id": "hist-HL-BV-1765948334959-16hwr9u8c",
         "value": 6.97,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-11-23T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-mld30h",
@@ -2501,7 +2993,8 @@
         "id": "hist-MLD30H-1765948334959-t5y61ovvk",
         "value": 33.75,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -2509,7 +3002,8 @@
         "id": "hist-MLD30H-1765948334959-vhahl0aqu",
         "value": 33.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -2517,7 +3011,8 @@
         "id": "hist-MLD30H-1765948334959-zyea8rd48",
         "value": 47,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -2525,9 +3020,15 @@
         "id": "hist-MLD30H-1765948334959-3ihjqfw0m",
         "value": 33.75,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-10T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-mld45h",
@@ -2547,7 +3048,8 @@
         "id": "hist-MLD45H-1765948334959-6e8fwc3po",
         "value": 50.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -2555,7 +3057,8 @@
         "id": "hist-MLD45H-1765948334959-luz9347fu",
         "value": 50.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -2563,7 +3066,8 @@
         "id": "hist-MLD45H-1765948334959-yefpiciiq",
         "value": 71.31,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2571,9 +3075,15 @@
         "id": "hist-MLD45H-1765948334959-gavuhkgdo",
         "value": 50.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-11-23T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-mld60h",
@@ -2593,7 +3103,8 @@
         "id": "hist-MLD60H-1765948334959-8ub610g8r",
         "value": 67.48,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -2601,7 +3112,8 @@
         "id": "hist-MLD60H-1765948334959-pov73m5k3",
         "value": 67.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -2609,7 +3121,8 @@
         "id": "hist-MLD60H-1765948334959-6h2f0e0i9",
         "value": 95,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -2617,9 +3130,15 @@
         "id": "hist-MLD60H-1765948334959-ywcqbmx87",
         "value": 67.48,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-11-25T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-mt-h",
@@ -2639,7 +3158,8 @@
         "id": "hist-MT-H-1765948334959-j4h714jeb",
         "value": 33.39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2647,7 +3167,8 @@
         "id": "hist-MT-H-1765948334959-el3nz41hl",
         "value": 33.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -2655,7 +3176,8 @@
         "id": "hist-MT-H-1765948334959-kuh6hge0a",
         "value": 47,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -2663,9 +3185,15 @@
         "id": "hist-MT-H-1765948334959-q19ypaan9",
         "value": 33.39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-11-21T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-mt-h-bv",
@@ -2685,7 +3213,8 @@
         "id": "hist-MT-H-BV-1765948334959-i9yfosrzx",
         "value": 33.39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2693,7 +3222,8 @@
         "id": "hist-MT-H-BV-1765948334959-y28oe1a7z",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -2701,7 +3231,8 @@
         "id": "hist-MT-H-BV-1765948334959-5nx4chyss",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2709,9 +3240,15 @@
         "id": "hist-MT-H-BV-1765948334959-0ofl36exy",
         "value": 33.39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-05T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-pd-bv",
@@ -2731,7 +3268,8 @@
         "id": "hist-PD-BV-1765948334959-yz830czht",
         "value": 34.34,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -2739,7 +3277,8 @@
         "id": "hist-PD-BV-1765948334959-pqu31h4ys",
         "value": 34.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -2747,7 +3286,8 @@
         "id": "hist-PD-BV-1765948334959-v5l0kc9f6",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2755,9 +3295,15 @@
         "id": "hist-PD-BV-1765948334959-ot76zio4i",
         "value": 34.34,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-10T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-mfb-2-h-bv",
@@ -2777,7 +3323,8 @@
         "id": "hist-MFB-2-H-BV-1765948334959-co97d5uqm",
         "value": 14.07,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2785,7 +3332,8 @@
         "id": "hist-MFB-2-H-BV-1765948334959-vr75gdpei",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -2793,7 +3341,8 @@
         "id": "hist-MFB-2-H-BV-1765948334959-h3gfdqtxl",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -2801,9 +3350,15 @@
         "id": "hist-MFB-2-H-BV-1765948334959-yo767qfga",
         "value": 14.07,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-22T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-mfb-g-h-bv",
@@ -2823,7 +3378,8 @@
         "id": "hist-MFB-G-H-BV-1765948334959-0eyxskn19",
         "value": 6.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -2831,7 +3387,8 @@
         "id": "hist-MFB-G-H-BV-1765948334959-d09aspwkz",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -2839,7 +3396,8 @@
         "id": "hist-MFB-G-H-BV-1765948334959-6csxc7bse",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -2847,9 +3405,15 @@
         "id": "hist-MFB-G-H-BV-1765948334959-tewzrum2p",
         "value": 6.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-17T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-mfb-h-bv",
@@ -2869,7 +3433,8 @@
         "id": "hist-MFB-H-BV-1765948334959-zz6esutqy",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -2877,7 +3442,8 @@
         "id": "hist-MFB-H-BV-1765948334959-1s3yc60p4",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -2885,7 +3451,8 @@
         "id": "hist-MFB-H-BV-1765948334959-gytf5ozt1",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2893,9 +3460,15 @@
         "id": "hist-MFB-H-BV-1765948334959-7hh8cst88",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-25T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-pnf",
@@ -2915,7 +3488,8 @@
         "id": "hist-PNF-1765948334959-86wv6cfvi",
         "value": 44.15,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -2923,7 +3497,8 @@
         "id": "hist-PNF-1765948334959-0jws43cfb",
         "value": 44.2,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -2931,7 +3506,8 @@
         "id": "hist-PNF-1765948334959-9mmqs2nd1",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -2939,9 +3515,15 @@
         "id": "hist-PNF-1765948334959-98jfhjynl",
         "value": 44.15,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-18T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-spc-bv",
@@ -2961,7 +3543,8 @@
         "id": "hist-SPC-BV-1765948334959-7ny7pi5dh",
         "value": 20.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -2969,7 +3552,8 @@
         "id": "hist-SPC-BV-1765948334959-w3g1ezol7",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -2977,7 +3561,8 @@
         "id": "hist-SPC-BV-1765948334959-777bglhar",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -2985,9 +3570,15 @@
         "id": "hist-SPC-BV-1765948334959-5e5gsaehj",
         "value": 20.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-05T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-nob-2-h-bv",
@@ -3007,7 +3598,8 @@
         "id": "hist-NOB-2-H-BV-1765948334959-c8cibk9fq",
         "value": 14.07,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -3015,7 +3607,8 @@
         "id": "hist-NOB-2-H-BV-1765948334959-eigtiuldk",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3023,7 +3616,8 @@
         "id": "hist-NOB-2-H-BV-1765948334959-hpk5srpzt",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -3031,9 +3625,15 @@
         "id": "hist-NOB-2-H-BV-1765948334959-g7zrx7xp5",
         "value": 14.07,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-12T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-nob-g-h-bv",
@@ -3053,7 +3653,8 @@
         "id": "hist-NOB-G-H-BV-1765948334959-b8nly4hcd",
         "value": 6.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -3061,7 +3662,8 @@
         "id": "hist-NOB-G-H-BV-1765948334959-vm37ckn9c",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3069,7 +3671,8 @@
         "id": "hist-NOB-G-H-BV-1765948334959-w53umva61",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -3077,9 +3680,15 @@
         "id": "hist-NOB-G-H-BV-1765948334959-ztvdmyjbb",
         "value": 6.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-11-27T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-nob-h-bv",
@@ -3099,7 +3708,8 @@
         "id": "hist-NOB-H-BV-1765948334959-r16ahk67i",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -3107,7 +3717,8 @@
         "id": "hist-NOB-H-BV-1765948334959-fq3pcoa0v",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3115,7 +3726,8 @@
         "id": "hist-NOB-H-BV-1765948334959-z3k8nhgrk",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -3123,9 +3735,15 @@
         "id": "hist-NOB-H-BV-1765948334959-n6afqt7ca",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-09T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-pfb-2-h-bv",
@@ -3145,7 +3763,8 @@
         "id": "hist-PFB-2-H-BV-1765948334959-wypylutso",
         "value": 14.07,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -3153,7 +3772,8 @@
         "id": "hist-PFB-2-H-BV-1765948334959-s1mziwbxq",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -3161,7 +3781,8 @@
         "id": "hist-PFB-2-H-BV-1765948334959-d57s01l70",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -3169,9 +3790,15 @@
         "id": "hist-PFB-2-H-BV-1765948334959-0aumdnvm2",
         "value": 14.07,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-11T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-pfb-g-h-bv",
@@ -3191,7 +3818,8 @@
         "id": "hist-PFB-G-H-BV-1765948334959-cfwipvaz6",
         "value": 6.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -3199,7 +3827,8 @@
         "id": "hist-PFB-G-H-BV-1765948334959-uj8ti0fw1",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3207,7 +3836,8 @@
         "id": "hist-PFB-G-H-BV-1765948334959-o5fzboelo",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -3215,9 +3845,15 @@
         "id": "hist-PFB-G-H-BV-1765948334959-i44betb28",
         "value": 6.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-09T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-pfb-h-bv",
@@ -3237,7 +3873,8 @@
         "id": "hist-PFB-H-BV-1765948334959-lus9lqhnt",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -3245,7 +3882,8 @@
         "id": "hist-PFB-H-BV-1765948334959-7ii7n4zjw",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -3253,7 +3891,8 @@
         "id": "hist-PFB-H-BV-1765948334959-gialo2ey6",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -3261,9 +3900,15 @@
         "id": "hist-PFB-H-BV-1765948334959-3g6mzr02b",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-09T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-vbp-bv-p",
@@ -3283,7 +3928,8 @@
         "id": "hist-VBP-BV-P-1765948334959-3lym24qi1",
         "value": 55,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -3291,7 +3937,8 @@
         "id": "hist-VBP-BV-P-1765948334959-hyuqtnz7d",
         "value": 91.38,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3299,7 +3946,8 @@
         "id": "hist-VBP-BV-P-1765948334959-5zcz23s0u",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -3307,9 +3955,15 @@
         "id": "hist-VBP-BV-P-1765948334959-r19frf5qd",
         "value": 55,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-11-25T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-vo-e",
@@ -3329,7 +3983,8 @@
         "id": "hist-VO-E-1765948334959-oabdgtet0",
         "value": 44.15,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -3337,7 +3992,8 @@
         "id": "hist-VO-E-1765948334959-h4e80oe0s",
         "value": 44.2,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -3345,7 +4001,8 @@
         "id": "hist-VO-E-1765948334959-olfzz4mzq",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -3353,9 +4010,15 @@
         "id": "hist-VO-E-1765948334959-alt5f9txd",
         "value": 44.15,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-01T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-vbp-bv",
@@ -3375,7 +4038,8 @@
         "id": "hist-VBP-BV-1765948334959-922nk6uo3",
         "value": 91.38,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -3383,7 +4047,8 @@
         "id": "hist-VBP-BV-1765948334959-h4y13gntd",
         "value": 91.38,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3391,7 +4056,8 @@
         "id": "hist-VBP-BV-1765948334959-hw75p5pj2",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -3399,9 +4065,15 @@
         "id": "hist-VBP-BV-1765948334959-protywfeo",
         "value": 91.38,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-18T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-wpn-bv",
@@ -3421,7 +4093,8 @@
         "id": "hist-WPN-BV-1765948334959-qn1ud3x2w",
         "value": 15.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -3429,7 +4102,8 @@
         "id": "hist-WPN-BV-1765948334959-ioy56gcl9",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3437,7 +4111,8 @@
         "id": "hist-WPN-BV-1765948334959-izeaouwre",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -3445,9 +4120,15 @@
         "id": "hist-WPN-BV-1765948334959-ascix55is",
         "value": 15.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-11-29T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-hr-bv",
@@ -3467,7 +4148,8 @@
         "id": "hist-HR-BV-1765948334959-w1oo7gi8r",
         "value": 12.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -3475,7 +4157,8 @@
         "id": "hist-HR-BV-1765948334959-8l17fqw1w",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -3483,7 +4166,8 @@
         "id": "hist-HR-BV-1765948334959-vz39fh5fy",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -3491,9 +4175,15 @@
         "id": "hist-HR-BV-1765948334959-fj0ggn3c2",
         "value": 12.63,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-05T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-kg",
@@ -3513,7 +4203,8 @@
         "id": "hist-KG-1765948334959-o8rwsbcuj",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -3521,7 +4212,8 @@
         "id": "hist-KG-1765948334959-ibxloyyr5",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3529,7 +4221,8 @@
         "id": "hist-KG-1765948334959-te1c5ty5p",
         "value": 39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -3537,9 +4230,15 @@
         "id": "hist-KG-1765948334959-3wr5egmcj",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-02T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-mt",
@@ -3559,7 +4258,8 @@
         "id": "hist-MT-1765948334959-qndhfrczv",
         "value": 33.39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -3567,7 +4267,8 @@
         "id": "hist-MT-1765948334959-e77fspe89",
         "value": 33.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -3575,7 +4276,8 @@
         "id": "hist-MT-1765948334959-ids1eusq3",
         "value": 47,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -3583,9 +4285,15 @@
         "id": "hist-MT-1765948334959-3kkej1mht",
         "value": 33.39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-15T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-mt-bv",
@@ -3605,7 +4313,8 @@
         "id": "hist-MT-BV-1765948334959-4l59qu5ou",
         "value": 33.39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -3613,7 +4322,8 @@
         "id": "hist-MT-BV-1765948334959-0rlqzw822",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -3621,7 +4331,8 @@
         "id": "hist-MT-BV-1765948334959-01ger9n6e",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -3629,9 +4340,15 @@
         "id": "hist-MT-BV-1765948334959-ig6h5lbfp",
         "value": 33.39,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-07T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-mld30",
@@ -3651,7 +4368,8 @@
         "id": "hist-MLD30-1765948334959-ct0s9a116",
         "value": 33.75,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -3659,7 +4377,8 @@
         "id": "hist-MLD30-1765948334959-xtb5t3djq",
         "value": 33.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -3667,7 +4386,8 @@
         "id": "hist-MLD30-1765948334959-kpflny2a4",
         "value": 47,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -3675,9 +4395,15 @@
         "id": "hist-MLD30-1765948334959-x1lpzg24o",
         "value": 33.75,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-04T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-mld45",
@@ -3697,7 +4423,8 @@
         "id": "hist-MLD45-1765948334959-5xsdpytoq",
         "value": 50.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -3705,7 +4432,8 @@
         "id": "hist-MLD45-1765948334959-gsbvf5dra",
         "value": 50.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -3713,7 +4441,8 @@
         "id": "hist-MLD45-1765948334959-wmge2w9mh",
         "value": 71.31,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -3721,9 +4450,15 @@
         "id": "hist-MLD45-1765948334959-i8hy8hw8j",
         "value": 50.6,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-13T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-mld60",
@@ -3743,7 +4478,8 @@
         "id": "hist-MLD60-1765948334959-xqqz52wha",
         "value": 67.48,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -3751,7 +4487,8 @@
         "id": "hist-MLD60-1765948334959-jreauhgj7",
         "value": 67.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3759,7 +4496,8 @@
         "id": "hist-MLD60-1765948334959-mg08omdsh",
         "value": 95,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -3767,9 +4505,15 @@
         "id": "hist-MLD60-1765948334959-tl6y69kfh",
         "value": 67.48,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Michael W.",
+    "lastEditedAt": "2025-12-18T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-kg-bv",
@@ -3789,7 +4533,8 @@
         "id": "hist-KG-BV-1765948334959-p99a34c02",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -3797,7 +4542,8 @@
         "id": "hist-KG-BV-1765948334959-vl7k6yeoz",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -3805,7 +4551,8 @@
         "id": "hist-KG-BV-1765948334959-whrwfmm9v",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -3813,9 +4560,15 @@
         "id": "hist-KG-BV-1765948334959-ajrul36ka",
         "value": 27.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-07T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-wpn",
@@ -3835,7 +4588,8 @@
         "id": "hist-WPN-1765948334959-b7no7rew3",
         "value": 15.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -3843,7 +4597,8 @@
         "id": "hist-WPN-1765948334959-xvqkpt22s",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -3851,7 +4606,8 @@
         "id": "hist-WPN-1765948334959-tj66cq3se",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar12History": [
@@ -3859,9 +4615,15 @@
         "id": "hist-WPN-1765948334959-grmw0o6jj",
         "value": 15.16,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-11-27T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-bo-e",
@@ -3881,7 +4643,8 @@
         "id": "hist-BO-E-1765948334959-zbtnj8g90",
         "value": 44.15,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar10History": [
@@ -3889,7 +4652,8 @@
         "id": "hist-BO-E-1765948334959-xlumy8g02",
         "value": 44.2,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -3897,7 +4661,8 @@
         "id": "hist-BO-E-1765948334959-hixqqoq9m",
         "value": 50,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -3905,9 +4670,15 @@
         "id": "hist-BO-E-1765948334959-67yapfzg5",
         "value": 44.15,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-14T08:03:06.392Z",
+    "lastEditedBy": "Sarah S."
   },
   {
     "id": "hm-kmt",
@@ -3927,7 +4698,8 @@
         "id": "hist-KMT-1765948334959-uu6qau5ud",
         "value": 20.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -3935,7 +4707,8 @@
         "id": "hist-KMT-1765948334959-ndcoai2b6",
         "value": 20.3,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -3943,7 +4716,8 @@
         "id": "hist-KMT-1765948334959-iuvt517oc",
         "value": 28.5,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -3951,9 +4725,15 @@
         "id": "hist-KMT-1765948334959-2pa38jilf",
         "value": 20.29,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-03T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-k-l-bv",
@@ -3973,7 +4753,8 @@
         "id": "hist-KÄL-BV-1765948334959-puaoo2g1j",
         "value": 11.21,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -3981,7 +4762,8 @@
         "id": "hist-KÄL-BV-1765948334959-qbgl5l3n6",
         "value": 12.9,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -3989,7 +4771,8 @@
         "id": "hist-KÄL-BV-1765948334959-xmabw00cc",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -3997,9 +4780,15 @@
         "id": "hist-KÄL-BV-1765948334959-sdd7vur4v",
         "value": 11.21,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-11T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-mfb-e",
@@ -4019,7 +4808,8 @@
         "id": "hist-MFB-E-1765948334959-ybnhjwkp2",
         "value": 52.77,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar10History": [
@@ -4027,7 +4817,8 @@
         "id": "hist-MFB-E-1765948334959-v50zm2pez",
         "value": 52.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -4035,7 +4826,8 @@
         "id": "hist-MFB-E-1765948334959-pr21tus3c",
         "value": 67.79,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -4043,9 +4835,15 @@
         "id": "hist-MFB-E-1765948334959-h44f0pck1",
         "value": 52.77,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-11-21T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-nob-e",
@@ -4065,7 +4863,8 @@
         "id": "hist-NOB-E-1765948334959-hhttkso6p",
         "value": 52.77,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -4073,7 +4872,8 @@
         "id": "hist-NOB-E-1765948334959-9odup0ezk",
         "value": 52.8,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar11History": [
@@ -4081,7 +4881,8 @@
         "id": "hist-NOB-E-1765948334959-trr26ysib",
         "value": 75.14,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar12History": [
@@ -4089,9 +4890,15 @@
         "id": "hist-NOB-E-1765948334959-oj0jkmcy5",
         "value": 52.77,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-12-18T08:03:06.392Z",
+    "lastEditedBy": "Anna B."
   },
   {
     "id": "hm-pfb-e",
@@ -4111,7 +4918,8 @@
         "id": "hist-PFB-E-1765948334959-bwp3vdlfw",
         "value": 87.95,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -4119,7 +4927,8 @@
         "id": "hist-PFB-E-1765948334959-9y663h3c8",
         "value": 88,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -4127,7 +4936,8 @@
         "id": "hist-PFB-E-1765948334959-hz5mnhris",
         "value": 104.34,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -4135,9 +4945,15 @@
         "id": "hist-PFB-E-1765948334959-jc5iiwii7",
         "value": 87.95,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Thomas K.",
+    "lastEditedAt": "2025-12-06T08:03:06.392Z",
+    "lastEditedBy": "Michael W."
   },
   {
     "id": "hm-spb-e",
@@ -4157,7 +4973,8 @@
         "id": "hist-SPB-E-1765948334959-lykgh95sv",
         "value": 70.36,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -4165,7 +4982,8 @@
         "id": "hist-SPB-E-1765948334959-dbqyx6s1h",
         "value": 70.4,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar11History": [
@@ -4173,7 +4991,8 @@
         "id": "hist-SPB-E-1765948334959-46p0ndodm",
         "value": 91.26,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -4181,9 +5000,15 @@
         "id": "hist-SPB-E-1765948334959-2433h5hya",
         "value": 70.36,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-12-15T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-mfb-bv",
@@ -4203,7 +5028,8 @@
         "id": "hist-MFB-BV-1765948334959-rax1x7oc8",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar10History": [
@@ -4211,7 +5037,8 @@
         "id": "hist-MFB-BV-1765948334959-iot9xegq7",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar11History": [
@@ -4219,7 +5046,8 @@
         "id": "hist-MFB-BV-1765948334959-i8kz3nc1z",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar12History": [
@@ -4227,9 +5055,15 @@
         "id": "hist-MFB-BV-1765948334959-963cykfzn",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Anna B.",
+    "lastEditedAt": "2025-11-28T08:03:06.392Z",
+    "lastEditedBy": "Max M."
   },
   {
     "id": "hm-nob-bv",
@@ -4249,7 +5083,8 @@
         "id": "hist-NOB-BV-1765948334959-q9d2yk6az",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Thomas K."
       }
     ],
     "tar10History": [
@@ -4257,7 +5092,8 @@
         "id": "hist-NOB-BV-1765948334959-36u2n5ulm",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar11History": [
@@ -4265,7 +5101,8 @@
         "id": "hist-NOB-BV-1765948334959-8r85hmrwm",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
     ],
     "tar12History": [
@@ -4273,9 +5110,15 @@
         "id": "hist-NOB-BV-1765948334959-pvjgrtgjx",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Anna B."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Sarah S.",
+    "lastEditedAt": "2025-11-24T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   },
   {
     "id": "hm-pfb-bv",
@@ -4295,7 +5138,8 @@
         "id": "hist-PFB-BV-1765948334959-6oztsvq3x",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Michael W."
       }
     ],
     "tar10History": [
@@ -4303,7 +5147,8 @@
         "id": "hist-PFB-BV-1765948334959-zbj2ikr6o",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
     ],
     "tar11History": [
@@ -4311,7 +5156,8 @@
         "id": "hist-PFB-BV-1765948334959-bahxoz9vh",
         "value": 0,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Sarah S."
       }
     ],
     "tar12History": [
@@ -4319,8 +5165,14 @@
         "id": "hist-PFB-BV-1765948334959-w9oix8uxv",
         "value": 17.59,
         "effectiveDate": "2025-12-17",
-        "changedAt": "2025-12-17T05:12:14.959Z"
+        "changedAt": "2025-12-17T05:12:14.959Z",
+        "changedBy": "Max M."
       }
-    ]
+    ],
+    "isArchived": false,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "createdBy": "Max M.",
+    "lastEditedAt": "2025-12-02T08:03:06.392Z",
+    "lastEditedBy": "Thomas K."
   }
 ]

@@ -4,14 +4,16 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import HeilmittelManagementTable from '@/components/heilmittel/HeilmittelManagementTable';
 import { Heilmittel, TariffHistoryEntry } from '@/types';
+import { ToastProvider, useToast } from '@/contexts/ToastContext';
 
 // Import mock data
 import heilmittelDataJson from '@/data/heilmittelData.json';
 
 const STORAGE_KEY = 'heilmittel-management-data';
 
-export default function HeilmittelManagementPage() {
+function HeilmittelManagementContent() {
   const router = useRouter();
+  const { showToast } = useToast();
   const [heilmittel, setHeilmittel] = useState<Heilmittel[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -46,6 +48,9 @@ export default function HeilmittelManagementPage() {
     router.push('/prototypes/heilmittel-management/new');
   };
 
+  // Mock current user for audit trail
+  const currentUser = 'Max M.';
+
   const handleSaveAll = (updates: { id: string; changes: Partial<Heilmittel>; effectiveDate: string }[]) => {
     const now = new Date().toISOString();
 
@@ -53,7 +58,13 @@ export default function HeilmittelManagementPage() {
       const update = updates.find(u => u.id === h.id);
       if (!update) return h;
 
-      const updated = { ...h, ...update.changes, updatedAt: now };
+      const updated = {
+        ...h,
+        ...update.changes,
+        updatedAt: now,
+        lastEditedAt: now,
+        lastEditedBy: currentUser
+      };
 
       // Create history entries for tariff changes
       const tariffKeys = ['tar1', 'tar10', 'tar11', 'tar12'] as const;
@@ -64,7 +75,8 @@ export default function HeilmittelManagementPage() {
             id: `hist-${h.kurzzeichen}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
             value: update.changes[key] as number,
             effectiveDate: update.effectiveDate,
-            changedAt: now
+            changedAt: now,
+            changedBy: currentUser
           };
           (updated as Record<string, unknown>)[historyKey] = [...(h[historyKey] as TariffHistoryEntry[]), newEntry];
         }
@@ -79,8 +91,10 @@ export default function HeilmittelManagementPage() {
     // Save to sessionStorage
     try {
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ heilmittel: updatedHeilmittel }));
+      showToast('Changes saved', 'success');
     } catch (error) {
       console.error('Error saving to sessionStorage:', error);
+      showToast('Error saving changes', 'error');
     }
   };
 
@@ -121,5 +135,13 @@ export default function HeilmittelManagementPage() {
         onSaveAll={handleSaveAll}
       />
     </div>
+  );
+}
+
+export default function HeilmittelManagementPage() {
+  return (
+    <ToastProvider>
+      <HeilmittelManagementContent />
+    </ToastProvider>
   );
 }

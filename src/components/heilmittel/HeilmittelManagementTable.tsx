@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { Heilmittel, HeilmittelKind, HeilmittelBereich, TariffHistoryEntry } from '@/types';
+import { Heilmittel, HeilmittelKind, HeilmittelBereich } from '@/types';
+import ConfirmationDialog from './ConfirmationDialog';
 
 interface EditedRow {
   tar1?: number;
@@ -13,6 +14,11 @@ interface EditedRow {
   bereich?: HeilmittelBereich;
   bv?: boolean;
   effectiveDate: string;
+}
+
+interface ValidationError {
+  field: string;
+  message: string;
 }
 
 interface HeilmittelManagementTableProps {
@@ -34,6 +40,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
   const [bereichFilter, setBereichFilter] = useState<HeilmittelBereich | ''>('');
   const [kindFilter, setKindFilter] = useState<HeilmittelKind | ''>('');
   const [bvFilter, setBvFilter] = useState<'all' | 'true' | 'false'>('all');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'archived'>('all');
   const [sortColumn, setSortColumn] = useState<SortColumn>('kurzzeichen');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
@@ -41,6 +48,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
   const [isEditMode, setIsEditMode] = useState(false);
   const [editedRows, setEditedRows] = useState<Map<string, EditedRow>>(new Map());
   const [showDiscardConfirm, setShowDiscardConfirm] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<Map<string, ValidationError[]>>(new Map());
 
   // Get today's date as default
   const getToday = () => new Date().toISOString().split('T')[0];
@@ -73,8 +81,15 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
       result = result.filter(h => h.bv === (bvFilter === 'true'));
     }
 
+    // Status filter (archived/active)
+    if (statusFilter === 'active') {
+      result = result.filter(h => !h.isArchived);
+    } else if (statusFilter === 'archived') {
+      result = result.filter(h => h.isArchived);
+    }
+
     return result;
-  }, [heilmittel, searchQuery, bereichFilter, kindFilter, bvFilter]);
+  }, [heilmittel, searchQuery, bereichFilter, kindFilter, bvFilter, statusFilter]);
 
   // Sort heilmittel
   const sortedHeilmittel = useMemo(() => {
@@ -136,14 +151,74 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
     });
   };
 
-  const hasActiveFilters = searchQuery || bereichFilter || kindFilter || bvFilter !== 'all';
+  const hasActiveFilters = searchQuery || bereichFilter || kindFilter || bvFilter !== 'all' || statusFilter !== 'all';
 
   const clearFilters = () => {
     setSearchQuery('');
     setBereichFilter('');
     setKindFilter('');
     setBvFilter('all');
+    setStatusFilter('all');
   };
+
+  // Format last edited display
+  const formatLastEdited = (item: Heilmittel) => {
+    if (item.lastEditedBy && item.lastEditedAt) {
+      const date = new Date(item.lastEditedAt);
+      const formattedDate = date.toLocaleDateString('de-DE', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
+      return `${item.lastEditedBy}, ${formattedDate}`;
+    }
+    return '—';
+  };
+
+  // Validation for bulk edit
+  const validateTariff = (value: number): ValidationError | null => {
+    if (value < 0) {
+      return { field: 'tariff', message: 'Value must be ≥ 0' };
+    }
+    return null;
+  };
+
+  const handleCellEditWithValidation = (itemId: string, field: keyof Omit<EditedRow, 'effectiveDate'>, value: number | string | boolean | null) => {
+    // Clear previous validation errors for this field
+    setValidationErrors(prev => {
+      const newMap = new Map(prev);
+      const existing = newMap.get(itemId) || [];
+      const filtered = existing.filter(e => e.field !== field);
+      if (filtered.length > 0) {
+        newMap.set(itemId, filtered);
+      } else {
+        newMap.delete(itemId);
+      }
+      return newMap;
+    });
+
+    // Validate tariff fields
+    if (['tar1', 'tar10', 'tar11', 'tar12'].includes(field) && typeof value === 'number') {
+      const error = validateTariff(value);
+      if (error) {
+        setValidationErrors(prev => {
+          const newMap = new Map(prev);
+          const existing = newMap.get(itemId) || [];
+          newMap.set(itemId, [...existing, { ...error, field }]);
+          return newMap;
+        });
+      }
+    }
+
+    handleCellEdit(itemId, field, value);
+  };
+
+  const hasValidationErrors = validationErrors.size > 0;
+  const totalValidationErrors = useMemo(() => {
+    let count = 0;
+    validationErrors.forEach(errors => count += errors.length);
+    return count;
+  }, [validationErrors]);
 
   // Edit mode helpers
   const getEditedValue = <K extends keyof EditedRow>(itemId: string, field: K, originalValue: EditedRow[K]) => {
@@ -319,12 +394,28 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
             <option value="false">BV: No</option>
           </select>
 
+          {/* Status Filter */}
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value as 'all' | 'active' | 'archived')}
+            className="px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            <option value="all">All Status</option>
+            <option value="active">Active</option>
+            <option value="archived">Archived</option>
+          </select>
+
           {/* Edit Mode / Add Buttons */}
           {isEditMode ? (
             <div className="flex items-center gap-2">
               {modifiedCount > 0 && (
                 <span className="px-2 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full text-xs font-medium">
                   {modifiedCount} modified
+                </span>
+              )}
+              {hasValidationErrors && (
+                <span className="px-2 py-1 bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 rounded-full text-xs font-medium">
+                  {totalValidationErrors} error{totalValidationErrors !== 1 ? 's' : ''}
                 </span>
               )}
               <button
@@ -335,12 +426,13 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
               </button>
               <button
                 onClick={handleSaveAll}
-                disabled={modifiedCount === 0}
+                disabled={modifiedCount === 0 || hasValidationErrors}
                 className={`px-4 py-2 rounded-lg transition-colors font-medium whitespace-nowrap ${
-                  modifiedCount > 0
+                  modifiedCount > 0 && !hasValidationErrors
                     ? 'bg-primary text-primary-foreground hover:bg-primary/90'
                     : 'bg-muted text-muted-foreground cursor-not-allowed'
                 }`}
+                title={hasValidationErrors ? 'Fix validation errors before saving' : undefined}
               >
                 Save All Changes
               </button>
@@ -418,6 +510,9 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
               <th className="px-4 py-3 text-left text-sm font-semibold">
                 Last Edited
               </th>
+              <th className="px-4 py-3 text-left text-sm font-semibold">
+                Status
+              </th>
               {isEditMode && (
                 <th className="px-4 py-3 text-left text-sm font-semibold">
                   Effective Date
@@ -431,7 +526,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
           <tbody>
             {sortedHeilmittel.length === 0 ? (
               <tr>
-                <td colSpan={isEditMode ? 9 : 8} className="px-4 py-12 text-center text-muted-foreground">
+                <td colSpan={isEditMode ? 10 : 9} className="px-4 py-12 text-center text-muted-foreground">
                   <div className="text-4xl mb-2">🔍</div>
                   <div>No Heilmittel found</div>
                   {hasActiveFilters && (
@@ -449,19 +544,25 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                 const rowModified = isRowModified(item.id);
                 const editedData = editedRows.get(item.id);
                 const effectiveDate = editedData?.effectiveDate || getToday();
+                const rowErrors = validationErrors.get(item.id) || [];
+                const hasTar1Error = rowErrors.some(e => e.field === 'tar1');
+
+                // Determine row styling based on state
+                let rowClassName = 'border-b border-border transition-colors ';
+                if (rowModified) {
+                  rowClassName += 'bg-amber-50 dark:bg-amber-950/30 hover:bg-amber-100 dark:hover:bg-amber-950/50 ';
+                } else {
+                  rowClassName += 'hover:bg-muted/50 ';
+                }
 
                 return (
                   <tr
                     key={item.id}
-                    className={`border-b border-border transition-colors ${
-                      rowModified
-                        ? 'bg-blue-50 dark:bg-blue-950/30 hover:bg-blue-100 dark:hover:bg-blue-950/50'
-                        : 'hover:bg-muted/50'
-                    }`}
+                    className={rowClassName}
                   >
                     {/* Kurzzeichen */}
                     <td className="px-4 py-3">
-                      <div className="font-medium text-foreground">{item.kurzzeichen}</div>
+                      <span className="font-medium text-foreground">{item.kurzzeichen}</span>
                     </td>
 
                     {/* Bezeichnung */}
@@ -472,12 +573,23 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                     {/* Tar. 1 */}
                     <td className="px-4 py-3">
                       {isEditMode ? (
-                        <input
-                          type="text"
-                          defaultValue={item.tar1.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                          onBlur={(e) => handleCellEdit(item.id, 'tar1', parseCurrencyInput(e.target.value))}
-                          className="w-24 px-2 py-1 text-sm font-mono border border-border rounded bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                        />
+                        <div className="relative">
+                          <input
+                            type="text"
+                            defaultValue={item.tar1.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            onBlur={(e) => handleCellEditWithValidation(item.id, 'tar1', parseCurrencyInput(e.target.value))}
+                            className={`w-24 px-2 py-1 text-sm font-mono border rounded bg-background text-foreground focus:outline-none focus:ring-2 ${
+                              hasTar1Error
+                                ? 'border-red-500 focus:ring-red-500'
+                                : 'border-border focus:ring-primary'
+                            }`}
+                          />
+                          {hasTar1Error && (
+                            <div className="absolute left-0 top-full mt-1 text-xs text-red-500 whitespace-nowrap">
+                              Value must be ≥ 0
+                            </div>
+                          )}
+                        </div>
                       ) : (
                         <div className="text-sm text-foreground font-mono">{formatCurrency(item.tar1)}</div>
                       )}
@@ -536,8 +648,21 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                     {/* Last Edited */}
                     <td className="px-4 py-3">
                       <span className="text-sm text-muted-foreground">
-                        {item.updatedAt ? formatDateTime(item.updatedAt) : '—'}
+                        {formatLastEdited(item)}
                       </span>
+                    </td>
+
+                    {/* Status */}
+                    <td className="px-4 py-3">
+                      {item.isArchived ? (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                          Archived
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                          Active
+                        </span>
+                      )}
                     </td>
 
                     {/* Effective Date (edit mode only) */}
@@ -556,15 +681,17 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                     <td className="px-4 py-3">
                       {isEditMode ? (
                         rowModified && (
-                          <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">Modified</span>
+                          <span className="text-xs text-amber-600 dark:text-amber-400 font-medium">Modified</span>
                         )
                       ) : (
                         <button
                           onClick={() => onEdit(item.id)}
-                          className="p-2 hover:bg-muted rounded-md transition-colors text-primary hover:text-primary/80"
+                          className="p-2 hover:bg-muted rounded-md transition-colors text-muted-foreground"
                           title="Edit"
                         >
-                          ✏️
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                          </svg>
                         </button>
                       )}
                     </td>
@@ -576,31 +703,17 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
         </table>
       </div>
 
-      {/* Discard Confirmation Modal */}
-      {showDiscardConfirm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-background rounded-lg shadow-xl w-full max-w-md p-6">
-            <h3 className="text-lg font-bold text-foreground mb-2">Discard Changes?</h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              You have {modifiedCount} unsaved {modifiedCount === 1 ? 'change' : 'changes'}. Are you sure you want to discard them?
-            </p>
-            <div className="flex items-center justify-end gap-3">
-              <button
-                onClick={() => setShowDiscardConfirm(false)}
-                className="px-4 py-2 border border-border rounded-md hover:bg-muted transition-colors text-foreground"
-              >
-                Keep Editing
-              </button>
-              <button
-                onClick={confirmDiscard}
-                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
-              >
-                Discard Changes
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Discard Confirmation Dialog */}
+      <ConfirmationDialog
+        isOpen={showDiscardConfirm}
+        onClose={() => setShowDiscardConfirm(false)}
+        onConfirm={confirmDiscard}
+        title="Discard Changes?"
+        message={`You have unsaved changes to ${modifiedCount} item${modifiedCount !== 1 ? 's' : ''}.`}
+        confirmText="Discard"
+        cancelText="Keep Editing"
+        variant="danger"
+      />
     </div>
   );
 };

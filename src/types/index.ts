@@ -430,6 +430,7 @@ export interface TariffHistoryEntry {
   value: number;
   effectiveDate: string; // YYYY-MM-DD
   changedAt: string; // ISO timestamp when recorded
+  changedBy: string; // User name who made the change (e.g., "Max M.")
 }
 
 // Heilmittel (treatment code) entity
@@ -458,7 +459,18 @@ export interface Heilmittel {
   tar11History: TariffHistoryEntry[];
   tar12History: TariffHistoryEntry[];
 
-  // Metadata
+  // Archive status
+  isArchived: boolean;
+  archivedAt?: string; // ISO timestamp when archived
+  archivedBy?: string; // User name who archived (e.g., "Sarah S.")
+
+  // Audit trail
+  lastEditedAt?: string; // ISO timestamp of last edit
+  lastEditedBy?: string; // User name who last edited (e.g., "Max M.")
+  createdAt?: string; // ISO timestamp when created
+  createdBy?: string; // User name who created (e.g., "Thomas K.")
+
+  // Metadata (legacy - use lastEditedAt instead)
   updatedAt?: string; // ISO timestamp of last edit
 }
 

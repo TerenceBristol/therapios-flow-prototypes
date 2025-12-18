@@ -32,6 +32,7 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
   const [bereich, setBereich] = useState<HeilmittelBereich>(heilmittel?.bereich || 'PT');
   const [kind, setKind] = useState<HeilmittelKind>(heilmittel?.kind || 'treatment');
   const [bv, setBv] = useState(heilmittel?.bv || false);
+  const [isArchived, setIsArchived] = useState(heilmittel?.isArchived || false);
   const [textBestellung, setTextBestellung] = useState(heilmittel?.textBestellung || '');
 
   // Tariff values and histories
@@ -70,11 +71,25 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
     return Object.keys(newErrors).length === 0;
   };
 
+  // Mock current user for audit trail
+  const currentUser = 'Max M.';
+
+  // Format date for display
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return '';
+    return new Date(dateString).toLocaleDateString('de-DE', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!validate()) return;
 
+    const now = new Date().toISOString();
     const data: Heilmittel = {
       id: heilmittel?.id || `hm-${kurzzeichen.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${Date.now()}`,
       kurzzeichen: kurzzeichen.trim(),
@@ -91,7 +106,16 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
       tar1History,
       tar10History,
       tar11History,
-      tar12History
+      tar12History,
+      // Archive status - update archivedAt/By when status changes
+      isArchived,
+      archivedAt: isArchived && !heilmittel?.isArchived ? now : (isArchived ? heilmittel?.archivedAt : undefined),
+      archivedBy: isArchived && !heilmittel?.isArchived ? currentUser : (isArchived ? heilmittel?.archivedBy : undefined),
+      // Audit trail
+      lastEditedAt: now,
+      lastEditedBy: currentUser,
+      createdAt: heilmittel?.createdAt || now,
+      createdBy: heilmittel?.createdBy || currentUser
     };
 
     onSave(data);
@@ -108,7 +132,8 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
       id: `hist-${kurzzeichen}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       value: newValue,
       effectiveDate,
-      changedAt: now
+      changedAt: now,
+      changedBy: currentUser
     };
 
     // Update history and current value if effective date is today or earlier
@@ -154,6 +179,16 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
               <p className="text-sm text-muted-foreground mt-1">
                 {isEdit ? `Edit details for ${kurzzeichen}` : 'Create a new Heilmittel'}
               </p>
+              {/* Audit trail display */}
+              {isEdit && heilmittel && (
+                <p className="text-xs text-muted-foreground mt-2">
+                  {heilmittel.lastEditedAt ? (
+                    <>Last edited by {heilmittel.lastEditedBy} on {formatDate(heilmittel.lastEditedAt)}</>
+                  ) : heilmittel.createdAt ? (
+                    <>Created by {heilmittel.createdBy} on {formatDate(heilmittel.createdAt)}</>
+                  ) : null}
+                </p>
+              )}
             </div>
             <button
               type="button"
@@ -269,6 +304,24 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
                   <span className="text-sm font-medium text-foreground">Blanko Verordnung (BV)</span>
                 </label>
               </div>
+
+              {/* Archived */}
+              {isEdit && (
+                <div className="flex flex-col">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={isArchived}
+                      onChange={(e) => setIsArchived(e.target.checked)}
+                      className="w-4 h-4 rounded border-border text-primary focus:ring-primary"
+                    />
+                    <span className="text-sm font-medium text-foreground">Archived</span>
+                  </label>
+                  <p className="text-xs text-muted-foreground mt-1 ml-6">
+                    Archived items are hidden from active lists
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Text_Bestellung */}
