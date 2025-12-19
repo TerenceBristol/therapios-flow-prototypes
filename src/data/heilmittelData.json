@@ -1,6 +1,6 @@
 [
   {
-    "id": "hm-ab-e",
+    "id": 1,
     "kurzzeichen": "AB-E",
     "bezeichnung": "Verwaltungsaufwand Arztbericht",
     "duration": null,
@@ -55,7 +55,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-ab-p",
+    "id": 2,
     "kurzzeichen": "AB-P",
     "bezeichnung": "Verwaltungsaufwand Arztbericht",
     "duration": null,
@@ -110,7 +110,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-aeb",
+    "id": 3,
     "kurzzeichen": "AEB",
     "bezeichnung": "Analyse des ergotherapeutischen Bedarfs",
     "duration": null,
@@ -165,7 +165,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-bep-a",
+    "id": 4,
     "kurzzeichen": "BEP-A",
     "bezeichnung": "Physioth. Bericht auf schriftl. Anf.",
     "duration": null,
@@ -220,7 +220,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-bep-a-bv",
+    "id": 5,
     "kurzzeichen": "BEP-A-BV",
     "bezeichnung": "Physioth. Bericht auf schriftl. Anf. (BV",
     "duration": null,
@@ -275,7 +275,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-bgm",
+    "id": 6,
     "kurzzeichen": "BGM",
     "bezeichnung": "Bindegewebsmassage",
     "duration": 15,
@@ -330,7 +330,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-bgm-bv",
+    "id": 7,
     "kurzzeichen": "BGM-BV",
     "bezeichnung": "Bindegewebsmassage (BV)",
     "duration": 15,
@@ -385,7 +385,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-hb-e",
+    "id": 8,
     "kurzzeichen": "HB-E",
     "bezeichnung": "Hausbesuch pauschal inkl. Fahrtkosten",
     "duration": null,
@@ -440,7 +440,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-bo-e-h",
+    "id": 9,
     "kurzzeichen": "BO-E-H",
     "bezeichnung": "Krankengymnastik nach Bobath (Erw.) Heim",
     "duration": 30,
@@ -495,7 +495,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-hbh-e",
+    "id": 10,
     "kurzzeichen": "HBH-E",
     "bezeichnung": "Hausbesuch Heim, je Pat., pauschal",
     "duration": null,
@@ -550,7 +550,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-hb-l",
+    "id": 11,
     "kurzzeichen": "HB-L",
     "bezeichnung": "Hausbesuch",
     "duration": null,
@@ -605,7 +605,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-hr",
+    "id": 12,
     "kurzzeichen": "HR",
     "bezeichnung": "Heiße Rolle",
     "duration": null,
@@ -660,7 +660,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-k-l",
+    "id": 13,
     "kurzzeichen": "KÄL",
     "bezeichnung": "Kälteth. bei einem/mehreren Körperteilen",
     "duration": null,
@@ -715,7 +715,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-hb-pt",
+    "id": 14,
     "kurzzeichen": "HB-PT",
     "bezeichnung": "Hausbesuch pauschal inkl. Fahrtkosten",
     "duration": null,
@@ -770,7 +770,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-hbh-pt",
+    "id": 15,
     "kurzzeichen": "HBH-PT",
     "bezeichnung": "Hausbesuch Heim, je Pat., pauschal",
     "duration": null,
@@ -825,7 +825,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-hr-h-bv",
+    "id": 16,
     "kurzzeichen": "HR-H-BV",
     "bezeichnung": "Heiße Rolle (BV)",
     "duration": 10,
@@ -880,7 +880,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-kg-h",
+    "id": 17,
     "kurzzeichen": "KG-H",
     "bezeichnung": "KG, auch auf neurophysiolog. Gr. Heim",
     "duration": 20,
@@ -935,7 +935,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-kg-h-bv",
+    "id": 18,
     "kurzzeichen": "KG-H-BV",
     "bezeichnung": "KG, auch auf neurophysiolog. Grundl.(BV)",
     "duration": 20,
@@ -990,7 +990,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-kgm-h",
+    "id": 19,
     "kurzzeichen": "KGM-H",
     "bezeichnung": "KG Atemtherapie bei Mucoviscidose 60 Min",
     "duration": 60,
@@ -1045,7 +1045,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-kmt-bv",
+    "id": 20,
     "kurzzeichen": "KMT-BV",
     "bezeichnung": "Klassische Massagetherapie (BV)",
     "duration": 15,
@@ -1100,7 +1100,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-kmt-h",
+    "id": 21,
     "kurzzeichen": "KMT-H",
     "bezeichnung": "Klassische Massagetherapie",
     "duration": 15,
@@ -1155,7 +1155,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-komp",
+    "id": 22,
     "kurzzeichen": "KOMP",
     "bezeichnung": "Kompressionsbandagierung",
     "duration": 10,
@@ -1210,7 +1210,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-kt-h-bv",
+    "id": 23,
     "kurzzeichen": "KT-H-BV",
     "bezeichnung": "Kälteth. bei ein/mehr. Körperteilen (BV)",
     "duration": 10,
@@ -1265,7 +1265,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-mfb-2-hb",
+    "id": 24,
     "kurzzeichen": "MFB-2-HB",
     "bezeichnung": "bei motorischen Störungen (2 Teilnehmer)",
     "duration": 30,
@@ -1320,7 +1320,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-mfb-e-hb",
+    "id": 25,
     "kurzzeichen": "MFB-E-HB",
     "bezeichnung": "Einzelbehandl. bei mot. St. (HB)",
     "duration": 30,
@@ -1375,7 +1375,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-mfb-g-hb",
+    "id": 26,
     "kurzzeichen": "MFB-G-HB",
     "bezeichnung": "motorisch-funktionelle Stör. (Gruppe)",
     "duration": 30,
@@ -1430,7 +1430,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-l-bd",
+    "id": 27,
     "kurzzeichen": "L-BD",
     "bezeichnung": "SSSST-Bedarfsdiagnostik",
     "duration": 30,
@@ -1485,7 +1485,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-l-e30h",
+    "id": 28,
     "kurzzeichen": "L-E30H",
     "bezeichnung": "SSSST Einzelbeh. (30 Min.)",
     "duration": 30,
@@ -1540,7 +1540,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-l-e45h",
+    "id": 29,
     "kurzzeichen": "L-E45H",
     "bezeichnung": "SSSST-Einzelbeh. (45 Min.)",
     "duration": 45,
@@ -1595,7 +1595,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-l-e60h",
+    "id": 30,
     "kurzzeichen": "L-E60H",
     "bezeichnung": "SSSST-Einzelbeh. (60 Min.)",
     "duration": 60,
@@ -1650,7 +1650,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-nob-2-hb",
+    "id": 31,
     "kurzzeichen": "NOB-2-HB",
     "bezeichnung": "Ergotherap. Hirnleistungstraining (2 TN)",
     "duration": 30,
@@ -1705,7 +1705,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-nob-e-hb",
+    "id": 32,
     "kurzzeichen": "NOB-E-HB",
     "bezeichnung": "Ergoth. Hirnleistungstraining (HB)",
     "duration": 30,
@@ -1760,7 +1760,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-nob-g-hb",
+    "id": 33,
     "kurzzeichen": "NOB-G-HB",
     "bezeichnung": "Hirnleistungstraining im HB",
     "duration": 30,
@@ -1815,7 +1815,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-pfb-2-hb",
+    "id": 34,
     "kurzzeichen": "PFB-2-HB",
     "bezeichnung": "bei psychischen Störungen (2 Teilnehmer)",
     "duration": 60,
@@ -1870,7 +1870,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-pfb-e-hb",
+    "id": 35,
     "kurzzeichen": "PFB-E-HB",
     "bezeichnung": "Einzelbehandl. psychisch funktionell",
     "duration": 60,
@@ -1925,7 +1925,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-pfb-g-hb",
+    "id": 36,
     "kurzzeichen": "PFB-G-HB",
     "bezeichnung": "psychisch-funktionelle Störungen (Gr.)",
     "duration": 60,
@@ -1980,7 +1980,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-l-ed",
+    "id": 37,
     "kurzzeichen": "L-ED",
     "bezeichnung": "SSSST-Erstdiagnostik, 60 Min.",
     "duration": 60,
@@ -2035,7 +2035,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-spb-2-hb",
+    "id": 38,
     "kurzzeichen": "SPB-2-HB",
     "bezeichnung": "sensomotorische/perzeptive Stör. (2 TN)",
     "duration": 45,
@@ -2090,7 +2090,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-spb-e-hb",
+    "id": 39,
     "kurzzeichen": "SPB-E-HB",
     "bezeichnung": "Einzelbeh. sensomotor./perz. Stör. (HB)",
     "duration": 45,
@@ -2145,7 +2145,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-spb-g-hbh",
+    "id": 40,
     "kurzzeichen": "SPB-G-HBH",
     "bezeichnung": "sensomotorisch-perzeptive Stör. (3-6)",
     "duration": 45,
@@ -2200,7 +2200,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-l-g2-45",
+    "id": 41,
     "kurzzeichen": "L-G2-45",
     "bezeichnung": "Gruppenbeh. 2 TN 45 Min.",
     "duration": 45,
@@ -2255,7 +2255,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-l-g2-90",
+    "id": 42,
     "kurzzeichen": "L-G2-90",
     "bezeichnung": "Gruppenbehandlung, 2 TN, 90 Min.",
     "duration": 90,
@@ -2310,7 +2310,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-ab-e-bv",
+    "id": 43,
     "kurzzeichen": "AB-E-BV",
     "bezeichnung": "Verwaltungsaufwand Arztbericht (BV)",
     "duration": null,
@@ -2367,7 +2367,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-ab-p-bv",
+    "id": 44,
     "kurzzeichen": "AB-P-BV",
     "bezeichnung": "Verwaltungsaufwand Arztbericht (BV)",
     "duration": null,
@@ -2424,7 +2424,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-aeb-bv",
+    "id": 45,
     "kurzzeichen": "AEB-BV",
     "bezeichnung": "Analyse ergoth. Bedarf (BV)",
     "duration": null,
@@ -2479,7 +2479,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-bd-bv",
+    "id": 46,
     "kurzzeichen": "BD-BV",
     "bezeichnung": "Bedarfsdiagnostik (BV)",
     "duration": null,
@@ -2536,7 +2536,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-l-g5-45",
+    "id": 47,
     "kurzzeichen": "L-G5-45",
     "bezeichnung": "Gruppenbehandlung, 3-5 Pat., 45 Min.",
     "duration": 45,
@@ -2591,7 +2591,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-l-g5-90",
+    "id": 48,
     "kurzzeichen": "L-G5-90",
     "bezeichnung": "Gruppenbehandlung, 3-5 Pat., 90 Min.",
     "duration": 90,
@@ -2646,7 +2646,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-hb-e-bv",
+    "id": 49,
     "kurzzeichen": "HB-E-BV",
     "bezeichnung": "Hausbesuch inkl. Wegegeld (BV)",
     "duration": null,
@@ -2701,7 +2701,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-hb-pt-bv",
+    "id": 50,
     "kurzzeichen": "HB-PT-BV",
     "bezeichnung": "Hausbesuch pauschal inkl. Fahrtk. (BV)",
     "duration": null,
@@ -2756,7 +2756,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-hbh-e-bv",
+    "id": 51,
     "kurzzeichen": "HBH-E-BV",
     "bezeichnung": "Hausbesuch im Heim inkl. Wegegeld (BV)",
     "duration": null,
@@ -2811,7 +2811,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-hbh-pt-bv",
+    "id": 52,
     "kurzzeichen": "HBH-PT-BV",
     "bezeichnung": "Hausbesuch Heim, je Pat., pauschal (BV)",
     "duration": null,
@@ -2866,7 +2866,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-hbk-pt-bv",
+    "id": 53,
     "kurzzeichen": "HBK-PT-BV",
     "bezeichnung": "Hausbesuch in Kurzz. und Tagespflege(BV)",
     "duration": null,
@@ -2921,7 +2921,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-hl-bv",
+    "id": 54,
     "kurzzeichen": "HL-BV",
     "bezeichnung": "W. m. Glühlicht, Strahler, Heißluft (BV)",
     "duration": null,
@@ -2976,7 +2976,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-mld30h",
+    "id": 55,
     "kurzzeichen": "MLD30H",
     "bezeichnung": "Manuelle Lymphdrainage Teilbeh. 30 Min.",
     "duration": 30,
@@ -3031,7 +3031,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-mld45h",
+    "id": 56,
     "kurzzeichen": "MLD45H",
     "bezeichnung": "Manuelle Lymphdrainage Großbeh. 45 Min.",
     "duration": 45,
@@ -3086,7 +3086,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-mld60h",
+    "id": 57,
     "kurzzeichen": "MLD60H",
     "bezeichnung": "Manuelle Lymphdrainage Ganzbeh. 60 Min.",
     "duration": 60,
@@ -3141,7 +3141,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-mt-h",
+    "id": 58,
     "kurzzeichen": "MT-H",
     "bezeichnung": "Manuelle Therapie (HB)",
     "duration": 20,
@@ -3196,7 +3196,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-mt-h-bv",
+    "id": 59,
     "kurzzeichen": "MT-H-BV",
     "bezeichnung": "Manuelle Therapie (BV)",
     "duration": 20,
@@ -3251,7 +3251,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-pd-bv",
+    "id": 60,
     "kurzzeichen": "PD-BV",
     "bezeichnung": "Physiotherapeutische Diagnostik (BV)",
     "duration": 15,
@@ -3306,7 +3306,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-mfb-2-h-bv",
+    "id": 61,
     "kurzzeichen": "MFB-2-H-BV",
     "bezeichnung": "ZI Mot. fumkt. Beh. 2 Tn",
     "duration": 15,
@@ -3361,7 +3361,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-mfb-g-h-bv",
+    "id": 62,
     "kurzzeichen": "MFB-G-H-BV",
     "bezeichnung": "Beh. bei motor. Störungen Gruppe (BV)",
     "duration": 15,
@@ -3416,7 +3416,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-mfb-h-bv",
+    "id": 63,
     "kurzzeichen": "MFB-H-BV",
     "bezeichnung": "ZI Einzelbehandl. bei motor. Störungen",
     "duration": 15,
@@ -3471,7 +3471,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-pnf",
+    "id": 64,
     "kurzzeichen": "PNF",
     "bezeichnung": "Krankengymnastik nach PNF",
     "duration": 30,
@@ -3526,7 +3526,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-spc-bv",
+    "id": 65,
     "kurzzeichen": "SPC-BV",
     "bezeichnung": "Segment-, Periost-, Colonmassage (BV)",
     "duration": 15,
@@ -3581,7 +3581,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-nob-2-h-bv",
+    "id": 66,
     "kurzzeichen": "NOB-2-H-BV",
     "bezeichnung": "Hirnleistungstraining 2 TN (BV)",
     "duration": 15,
@@ -3636,7 +3636,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-nob-g-h-bv",
+    "id": 67,
     "kurzzeichen": "NOB-G-H-BV",
     "bezeichnung": "Hirnleistungstraining Gruppe (BV)",
     "duration": 15,
@@ -3691,7 +3691,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-nob-h-bv",
+    "id": 68,
     "kurzzeichen": "NOB-H-BV",
     "bezeichnung": "Ergoth. Hirnleistungstraining (BV)",
     "duration": 15,
@@ -3746,7 +3746,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-pfb-2-h-bv",
+    "id": 69,
     "kurzzeichen": "PFB-2-H-BV",
     "bezeichnung": "Beh. bei psych. Störungen 2 TN (BV)",
     "duration": 15,
@@ -3801,7 +3801,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-pfb-g-h-bv",
+    "id": 70,
     "kurzzeichen": "PFB-G-H-BV",
     "bezeichnung": "Beh. bei psych. Störungen Gruppe (BV)",
     "duration": 15,
@@ -3856,7 +3856,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-pfb-h-bv",
+    "id": 71,
     "kurzzeichen": "PFB-H-BV",
     "bezeichnung": "Einzelbeh. bei psych-fkt. Störungen (BV)",
     "duration": 15,
@@ -3911,7 +3911,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-vbp-bv-p",
+    "id": 72,
     "kurzzeichen": "VBP-BV-P",
     "bezeichnung": "Versorgungsbezogene Pauschale (BV)",
     "duration": null,
@@ -3966,7 +3966,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-vo-e",
+    "id": 73,
     "kurzzeichen": "VO-E",
     "bezeichnung": "Krankengymnastik nach Vojta (Erw.)",
     "duration": 30,
@@ -4021,7 +4021,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-vbp-bv",
+    "id": 74,
     "kurzzeichen": "VBP-BV",
     "bezeichnung": "Versorgungsbezogene Pauschale (BV)",
     "duration": null,
@@ -4076,7 +4076,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-wpn-bv",
+    "id": 75,
     "kurzzeichen": "WPN-BV",
     "bezeichnung": "Warmpackungen einschl. Nachruhe (BV)",
     "duration": null,
@@ -4131,7 +4131,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-hr-bv",
+    "id": 76,
     "kurzzeichen": "HR-BV",
     "bezeichnung": "Heiße Rolle (BV)",
     "duration": 10,
@@ -4186,7 +4186,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-kg",
+    "id": 77,
     "kurzzeichen": "KG",
     "bezeichnung": "KG, auch auf neurophysiolog. Grundlage",
     "duration": 20,
@@ -4241,7 +4241,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-mt",
+    "id": 78,
     "kurzzeichen": "MT",
     "bezeichnung": "Manuelle Therapie",
     "duration": 20,
@@ -4296,7 +4296,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-mt-bv",
+    "id": 79,
     "kurzzeichen": "MT-BV",
     "bezeichnung": "Manuelle Therapie (BV)",
     "duration": 20,
@@ -4351,7 +4351,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-mld30",
+    "id": 80,
     "kurzzeichen": "MLD30",
     "bezeichnung": "Manuelle Lymphdrainage Teilbeh. 30 Min.",
     "duration": 30,
@@ -4406,7 +4406,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-mld45",
+    "id": 81,
     "kurzzeichen": "MLD45",
     "bezeichnung": "Manuelle Lymphdrainage Großbeh. 45 Min.",
     "duration": 45,
@@ -4461,7 +4461,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-mld60",
+    "id": 82,
     "kurzzeichen": "MLD60",
     "bezeichnung": "Manuelle Lymphdrainage Ganzbeh. 60 Min.",
     "duration": 60,
@@ -4516,7 +4516,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-kg-bv",
+    "id": 83,
     "kurzzeichen": "KG-BV",
     "bezeichnung": "KG, auch auf neurophysiolog. Grundl.(BV)",
     "duration": 20,
@@ -4571,7 +4571,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-wpn",
+    "id": 84,
     "kurzzeichen": "WPN",
     "bezeichnung": "Warmpackungen einschl. Nachruhe",
     "duration": null,
@@ -4626,7 +4626,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-bo-e",
+    "id": 85,
     "kurzzeichen": "BO-E",
     "bezeichnung": "Krankengymnastik nach Bobath (Erw.)",
     "duration": 30,
@@ -4681,7 +4681,7 @@
     "lastEditedBy": "Sarah S."
   },
   {
-    "id": "hm-kmt",
+    "id": 86,
     "kurzzeichen": "KMT",
     "bezeichnung": "Klassische Massagetherapie",
     "duration": 15,
@@ -4736,7 +4736,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-k-l-bv",
+    "id": 87,
     "kurzzeichen": "KÄL-BV",
     "bezeichnung": "Kälteth. bei einem/mehreren Körperteilen (BV)",
     "duration": null,
@@ -4791,7 +4791,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-mfb-e",
+    "id": 88,
     "kurzzeichen": "MFB-E",
     "bezeichnung": "Einzelbehandl. bei mot. St.",
     "duration": 30,
@@ -4846,7 +4846,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-nob-e",
+    "id": 89,
     "kurzzeichen": "NOB-E",
     "bezeichnung": "Ergoth. Hirnleistungstraining",
     "duration": 30,
@@ -4901,7 +4901,7 @@
     "lastEditedBy": "Anna B."
   },
   {
-    "id": "hm-pfb-e",
+    "id": 90,
     "kurzzeichen": "PFB-E",
     "bezeichnung": "Einzelbehandl. psychisch funktionell",
     "duration": 60,
@@ -4956,7 +4956,7 @@
     "lastEditedBy": "Michael W."
   },
   {
-    "id": "hm-spb-e",
+    "id": 91,
     "kurzzeichen": "SPB-E",
     "bezeichnung": "Einzelbeh. sensomotor./perz. Stör.",
     "duration": 45,
@@ -5011,7 +5011,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-mfb-bv",
+    "id": 92,
     "kurzzeichen": "MFB-BV",
     "bezeichnung": "ZI Einzelbehandl. bei motor. Störungen",
     "duration": 15,
@@ -5066,7 +5066,7 @@
     "lastEditedBy": "Max M."
   },
   {
-    "id": "hm-nob-bv",
+    "id": 93,
     "kurzzeichen": "NOB-BV",
     "bezeichnung": "Ergoth. Hirnleistungstraining (BV)",
     "duration": 15,
@@ -5121,7 +5121,7 @@
     "lastEditedBy": "Thomas K."
   },
   {
-    "id": "hm-pfb-bv",
+    "id": 94,
     "kurzzeichen": "PFB-BV",
     "bezeichnung": "Einzelbeh. bei psych-fkt. Störungen (BV)",
     "duration": 15,

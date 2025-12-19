@@ -8,6 +8,7 @@ import TariffHistoryModal from './TariffHistoryModal';
 interface HeilmittelFormProps {
   heilmittel?: Heilmittel;
   isEdit: boolean;
+  allHeilmittel: Heilmittel[]; // For kurzzeichen uniqueness validation
   onSave: (data: Heilmittel) => void;
   onCancel: () => void;
 }
@@ -22,6 +23,7 @@ interface TariffModalState {
 const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
   heilmittel,
   isEdit,
+  allHeilmittel,
   onSave,
   onCancel
 }) => {
@@ -61,6 +63,15 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
 
     if (!kurzzeichen.trim()) {
       newErrors.kurzzeichen = 'Kurzzeichen is required';
+    } else {
+      // Check for duplicate kurzzeichen (case-insensitive, exclude current record)
+      const duplicate = allHeilmittel.find(h =>
+        h.kurzzeichen.toLowerCase() === kurzzeichen.trim().toLowerCase() &&
+        h.id !== heilmittel?.id
+      );
+      if (duplicate) {
+        newErrors.kurzzeichen = `Kurzzeichen '${kurzzeichen.trim()}' already exists`;
+      }
     }
 
     if (!bezeichnung.trim()) {
@@ -91,7 +102,7 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
 
     const now = new Date().toISOString();
     const data: Heilmittel = {
-      id: heilmittel?.id || `hm-${kurzzeichen.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${Date.now()}`,
+      id: heilmittel?.id ?? 0, // Parent will assign actual ID for new records
       kurzzeichen: kurzzeichen.trim(),
       bezeichnung: bezeichnung.trim(),
       duration: duration ? parseInt(duration) : null,
@@ -206,6 +217,16 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
           <div className="mb-8">
             <h3 className="text-lg font-semibold text-foreground mb-4">Basic Information</h3>
             <div className="grid grid-cols-2 gap-4">
+              {/* ID (read-only) */}
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1">
+                  ID
+                </label>
+                <div className="w-full px-3 py-2 border border-border rounded-md bg-muted text-muted-foreground font-mono">
+                  {isEdit && heilmittel ? heilmittel.id : '(auto-generated)'}
+                </div>
+              </div>
+
               {/* Kurzzeichen */}
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
@@ -215,11 +236,10 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
                   type="text"
                   value={kurzzeichen}
                   onChange={(e) => setKurzzeichen(e.target.value.toUpperCase())}
-                  disabled={isEdit}
                   placeholder="e.g. KG, BGM"
                   className={`w-full px-3 py-2 border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${
-                    isEdit ? 'bg-muted cursor-not-allowed' : ''
-                  } ${errors.kurzzeichen ? 'border-red-500' : 'border-border'}`}
+                    errors.kurzzeichen ? 'border-red-500' : 'border-border'
+                  }`}
                 />
                 {errors.kurzzeichen && (
                   <p className="mt-1 text-sm text-red-500">{errors.kurzzeichen}</p>

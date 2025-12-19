@@ -438,7 +438,7 @@ export type HeilmittelKind = 'treatment' | 'fee' | 'passiv';
 export type HeilmittelBereich = 'ERGO' | 'PT' | 'SSSST';
 
 export interface Heilmittel {
-  id: string;
+  id: number;
   kurzzeichen: string; // Unique code (e.g., "KG", "BGM")
   bezeichnung: string; // Full description
   duration: number | null; // Minutes (null for fees)

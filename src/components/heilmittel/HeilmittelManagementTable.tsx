@@ -23,12 +23,12 @@ interface ValidationError {
 
 interface HeilmittelManagementTableProps {
   heilmittel: Heilmittel[];
-  onEdit: (id: string) => void;
+  onEdit: (id: number) => void;
   onAdd: () => void;
-  onSaveAll?: (updates: { id: string; changes: Partial<Heilmittel>; effectiveDate: string }[]) => void;
+  onSaveAll?: (updates: { id: number; changes: Partial<Heilmittel>; effectiveDate: string }[]) => void;
 }
 
-type SortColumn = 'kurzzeichen' | 'bezeichnung' | 'tar1' | 'bereich' | 'kind';
+type SortColumn = 'id' | 'kurzzeichen' | 'bezeichnung' | 'tar1' | 'bereich' | 'kind';
 
 const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
   heilmittel,
@@ -46,9 +46,9 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
 
   // Inline edit mode state
   const [isEditMode, setIsEditMode] = useState(false);
-  const [editedRows, setEditedRows] = useState<Map<string, EditedRow>>(new Map());
+  const [editedRows, setEditedRows] = useState<Map<number, EditedRow>>(new Map());
   const [showDiscardConfirm, setShowDiscardConfirm] = useState(false);
-  const [validationErrors, setValidationErrors] = useState<Map<string, ValidationError[]>>(new Map());
+  const [validationErrors, setValidationErrors] = useState<Map<number, ValidationError[]>>(new Map());
 
   // Get today's date as default
   const getToday = () => new Date().toISOString().split('T')[0];
@@ -99,6 +99,9 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
       let compareValue = 0;
 
       switch (sortColumn) {
+        case 'id':
+          compareValue = a.id - b.id;
+          break;
         case 'kurzzeichen':
           compareValue = a.kurzzeichen.localeCompare(b.kurzzeichen);
           break;
@@ -183,7 +186,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
     return null;
   };
 
-  const handleCellEditWithValidation = (itemId: string, field: keyof Omit<EditedRow, 'effectiveDate'>, value: number | string | boolean | null) => {
+  const handleCellEditWithValidation = (itemId: number, field: keyof Omit<EditedRow, 'effectiveDate'>, value: number | string | boolean | null) => {
     // Clear previous validation errors for this field
     setValidationErrors(prev => {
       const newMap = new Map(prev);
@@ -221,7 +224,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
   }, [validationErrors]);
 
   // Edit mode helpers
-  const getEditedValue = <K extends keyof EditedRow>(itemId: string, field: K, originalValue: EditedRow[K]) => {
+  const getEditedValue = <K extends keyof EditedRow>(itemId: number, field: K, originalValue: EditedRow[K]) => {
     const edited = editedRows.get(itemId);
     if (edited && field in edited && edited[field] !== undefined) {
       return edited[field] as EditedRow[K];
@@ -229,7 +232,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
     return originalValue;
   };
 
-  const handleCellEdit = (itemId: string, field: keyof Omit<EditedRow, 'effectiveDate'>, value: number | string | boolean | null) => {
+  const handleCellEdit = (itemId: number, field: keyof Omit<EditedRow, 'effectiveDate'>, value: number | string | boolean | null) => {
     setEditedRows(prev => {
       const newMap = new Map(prev);
       const existing = newMap.get(itemId) || { effectiveDate: getToday() };
@@ -238,7 +241,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
     });
   };
 
-  const handleEffectiveDateChange = (itemId: string, date: string) => {
+  const handleEffectiveDateChange = (itemId: number, date: string) => {
     setEditedRows(prev => {
       const newMap = new Map(prev);
       const existing = newMap.get(itemId) || { effectiveDate: getToday() };
@@ -247,7 +250,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
     });
   };
 
-  const isRowModified = (itemId: string) => {
+  const isRowModified = (itemId: number) => {
     const edited = editedRows.get(itemId);
     if (!edited) return false;
     const original = heilmittel.find(h => h.id === itemId);
@@ -296,7 +299,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
   const handleSaveAll = () => {
     if (!onSaveAll) return;
 
-    const updates: { id: string; changes: Partial<Heilmittel>; effectiveDate: string }[] = [];
+    const updates: { id: number; changes: Partial<Heilmittel>; effectiveDate: string }[] = [];
 
     editedRows.forEach((edited, itemId) => {
       if (isRowModified(itemId)) {
@@ -475,6 +478,12 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
           <thead className="bg-[#1e3a5f] sticky top-0">
             <tr className="text-[#d4b896]">
               <th
+                onClick={() => handleSort('id')}
+                className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-[#2a4a6f] w-16"
+              >
+                ID{getSortIndicator('id')}
+              </th>
+              <th
                 onClick={() => handleSort('kurzzeichen')}
                 className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-[#2a4a6f]"
               >
@@ -526,7 +535,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
           <tbody>
             {sortedHeilmittel.length === 0 ? (
               <tr>
-                <td colSpan={isEditMode ? 10 : 9} className="px-4 py-12 text-center text-muted-foreground">
+                <td colSpan={isEditMode ? 11 : 10} className="px-4 py-12 text-center text-muted-foreground">
                   <div className="text-4xl mb-2">🔍</div>
                   <div>No Heilmittel found</div>
                   {hasActiveFilters && (
@@ -560,6 +569,11 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                     key={item.id}
                     className={rowClassName}
                   >
+                    {/* ID */}
+                    <td className="px-4 py-3 w-16">
+                      <span className="text-sm text-muted-foreground font-mono">{item.id}</span>
+                    </td>
+
                     {/* Kurzzeichen */}
                     <td className="px-4 py-3">
                       <span className="font-medium text-foreground">{item.kurzzeichen}</span>

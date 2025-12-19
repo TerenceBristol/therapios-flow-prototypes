@@ -11,6 +11,13 @@ import heilmittelDataJson from '@/data/heilmittelData.json';
 
 const STORAGE_KEY = 'heilmittel-management-data';
 
+// Normalize IDs to numbers (fixes stale sessionStorage with old string IDs)
+const normalizeHeilmittelIds = (data: Heilmittel[]): Heilmittel[] =>
+  data.map((h, index) => ({
+    ...h,
+    id: typeof h.id === 'number' ? h.id : index + 1
+  }));
+
 function HeilmittelManagementContent() {
   const router = useRouter();
   const { showToast } = useToast();
@@ -22,17 +29,17 @@ function HeilmittelManagementContent() {
     const loadData = () => {
       try {
         const stored = sessionStorage.getItem(STORAGE_KEY);
-        if (stored) {
-          const data = JSON.parse(stored);
-          setHeilmittel(data.heilmittel || heilmittelDataJson);
-        } else {
-          // Initialize session storage with JSON data
-          const initialData = { heilmittel: heilmittelDataJson };
-          sessionStorage.setItem(STORAGE_KEY, JSON.stringify(initialData));
-          setHeilmittel(heilmittelDataJson as Heilmittel[]);
-        }
+        const rawData = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
+
+        // Normalize IDs to numbers (fixes stale sessionStorage with old string IDs)
+        const normalizedData = normalizeHeilmittelIds(rawData.heilmittel || heilmittelDataJson);
+        setHeilmittel(normalizedData);
+
+        // Update sessionStorage with normalized data
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ heilmittel: normalizedData }));
       } catch {
-        setHeilmittel(heilmittelDataJson as Heilmittel[]);
+        const normalizedData = normalizeHeilmittelIds(heilmittelDataJson as Heilmittel[]);
+        setHeilmittel(normalizedData);
       }
       setIsLoading(false);
     };
@@ -40,7 +47,7 @@ function HeilmittelManagementContent() {
     loadData();
   }, []);
 
-  const handleEdit = (id: string) => {
+  const handleEdit = (id: number) => {
     router.push(`/prototypes/heilmittel-management/${id}`);
   };
 
@@ -51,7 +58,7 @@ function HeilmittelManagementContent() {
   // Mock current user for audit trail
   const currentUser = 'Max M.';
 
-  const handleSaveAll = (updates: { id: string; changes: Partial<Heilmittel>; effectiveDate: string }[]) => {
+  const handleSaveAll = (updates: { id: number; changes: Partial<Heilmittel>; effectiveDate: string }[]) => {
     const now = new Date().toISOString();
 
     const updatedHeilmittel = heilmittel.map(h => {

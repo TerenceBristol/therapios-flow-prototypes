@@ -11,6 +11,13 @@ import heilmittelDataJson from '@/data/heilmittelData.json';
 
 const STORAGE_KEY = 'heilmittel-management-data';
 
+// Normalize IDs to numbers (fixes stale sessionStorage with old string IDs)
+const normalizeHeilmittelIds = (data: Heilmittel[]): Heilmittel[] =>
+  data.map((h, index) => ({
+    ...h,
+    id: typeof h.id === 'number' ? h.id : index + 1
+  }));
+
 const formatDateTime = (isoString: string) => {
   const date = new Date(isoString);
   return date.toLocaleDateString('de-DE', {
@@ -26,9 +33,10 @@ function EditHeilmittelContent() {
   const router = useRouter();
   const params = useParams();
   const { showToast } = useToast();
-  const id = params.id as string;
+  const id = parseInt(params.id as string, 10);
 
   const [heilmittel, setHeilmittel] = useState<Heilmittel | null>(null);
+  const [allHeilmittel, setAllHeilmittel] = useState<Heilmittel[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
@@ -37,10 +45,16 @@ function EditHeilmittelContent() {
       try {
         // Get data from session storage or use JSON data
         const stored = sessionStorage.getItem(STORAGE_KEY);
-        const data = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
+        const rawData = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
 
-        // Find the heilmittel by ID
-        const found = data.heilmittel.find((h: Heilmittel) => h.id === id);
+        // Normalize IDs to numbers (fixes stale sessionStorage with old string IDs)
+        const normalizedData = normalizeHeilmittelIds(rawData.heilmittel || []);
+
+        // Store all heilmittel for validation
+        setAllHeilmittel(normalizedData);
+
+        // Find the heilmittel by numeric ID
+        const found = normalizedData.find((h: Heilmittel) => h.id === id);
 
         if (found) {
           setHeilmittel(found);
@@ -66,6 +80,7 @@ function EditHeilmittelContent() {
       // Update the heilmittel with updatedAt timestamp
       const updatedData = {
         ...data,
+        id, // Ensure we keep the numeric ID
         updatedAt: new Date().toISOString()
       };
 
@@ -165,6 +180,7 @@ function EditHeilmittelContent() {
         <HeilmittelForm
           heilmittel={heilmittel!}
           isEdit={true}
+          allHeilmittel={allHeilmittel}
           onSave={handleSave}
           onCancel={handleCancel}
         />

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import HeilmittelForm from '@/components/heilmittel/HeilmittelForm';
 import { Heilmittel } from '@/types';
@@ -10,8 +10,33 @@ import heilmittelDataJson from '@/data/heilmittelData.json';
 
 const STORAGE_KEY = 'heilmittel-management-data';
 
+// Normalize IDs to numbers (fixes stale sessionStorage with old string IDs)
+const normalizeHeilmittelIds = (data: Heilmittel[]): Heilmittel[] =>
+  data.map((h, index) => ({
+    ...h,
+    id: typeof h.id === 'number' ? h.id : index + 1
+  }));
+
 export default function NewHeilmittelPage() {
   const router = useRouter();
+  const [allHeilmittel, setAllHeilmittel] = useState<Heilmittel[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Load all heilmittel for validation
+  useEffect(() => {
+    try {
+      const stored = sessionStorage.getItem(STORAGE_KEY);
+      const rawData = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
+
+      // Normalize IDs to numbers (fixes stale sessionStorage with old string IDs)
+      const normalizedData = normalizeHeilmittelIds(rawData.heilmittel || []);
+      setAllHeilmittel(normalizedData);
+    } catch {
+      const normalizedData = normalizeHeilmittelIds(heilmittelDataJson as Heilmittel[]);
+      setAllHeilmittel(normalizedData);
+    }
+    setIsLoading(false);
+  }, []);
 
   const handleSave = (data: Heilmittel) => {
     try {
@@ -19,8 +44,16 @@ export default function NewHeilmittelPage() {
       const stored = sessionStorage.getItem(STORAGE_KEY);
       const currentData = stored ? JSON.parse(stored) : { heilmittel: heilmittelDataJson };
 
-      // Add new heilmittel
-      currentData.heilmittel = [...currentData.heilmittel, data];
+      // Generate new numeric ID (max existing ID + 1)
+      const maxId = currentData.heilmittel.reduce((max: number, h: Heilmittel) => Math.max(max, h.id), 0);
+      const newId = maxId + 1;
+
+      // Add new heilmittel with generated ID
+      const newHeilmittel = {
+        ...data,
+        id: newId
+      };
+      currentData.heilmittel = [...currentData.heilmittel, newHeilmittel];
 
       // Save to session storage
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(currentData));
@@ -35,6 +68,14 @@ export default function NewHeilmittelPage() {
   const handleCancel = () => {
     router.push('/prototypes/heilmittel-management');
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="text-muted-foreground">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="h-full flex flex-col">
@@ -55,6 +96,7 @@ export default function NewHeilmittelPage() {
       <div className="flex-1 overflow-hidden">
         <HeilmittelForm
           isEdit={false}
+          allHeilmittel={allHeilmittel}
           onSave={handleSave}
           onCancel={handleCancel}
         />
