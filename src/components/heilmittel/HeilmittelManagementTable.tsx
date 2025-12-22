@@ -15,10 +15,6 @@ interface EditedRow {
   tar11?: EditedTariff;
   tar12?: EditedTariff;
   tarBg?: EditedTariff;
-  duration?: number | null;
-  kind?: HeilmittelKind;
-  bereich?: HeilmittelBereich;
-  bv?: boolean;
   effectiveDate: string;
 }
 
@@ -229,34 +225,12 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
     });
   };
 
-  const handleCellEditWithValidation = (itemId: number, field: keyof Omit<EditedRow, 'effectiveDate' | 'tar1' | 'tar10' | 'tar11' | 'tar12' | 'tarBg'>, value: number | string | boolean | null) => {
-    handleCellEdit(itemId, field, value);
-  };
-
   const hasValidationErrors = validationErrors.size > 0;
   const totalValidationErrors = useMemo(() => {
     let count = 0;
     validationErrors.forEach(errors => count += errors.length);
     return count;
   }, [validationErrors]);
-
-  // Edit mode helpers
-  const getEditedValue = <K extends keyof EditedRow>(itemId: number, field: K, originalValue: EditedRow[K]) => {
-    const edited = editedRows.get(itemId);
-    if (edited && field in edited && edited[field] !== undefined) {
-      return edited[field] as EditedRow[K];
-    }
-    return originalValue;
-  };
-
-  const handleCellEdit = (itemId: number, field: keyof Omit<EditedRow, 'effectiveDate'>, value: number | string | boolean | null) => {
-    setEditedRows(prev => {
-      const newMap = new Map(prev);
-      const existing = newMap.get(itemId) || { effectiveDate: getToday() };
-      newMap.set(itemId, { ...existing, [field]: value });
-      return newMap;
-    });
-  };
 
   const handleEffectiveDateChange = (itemId: number, date: string) => {
     setEditedRows(prev => {
@@ -278,11 +252,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
       (edited.tar10 !== undefined && edited.tar10.value !== original.tar10) ||
       (edited.tar11 !== undefined && edited.tar11.value !== original.tar11) ||
       (edited.tar12 !== undefined && edited.tar12.value !== original.tar12) ||
-      (edited.tarBg !== undefined && edited.tarBg.value !== original.tarBg) ||
-      (edited.duration !== undefined && edited.duration !== original.duration) ||
-      (edited.kind !== undefined && edited.kind !== original.kind) ||
-      (edited.bereich !== undefined && edited.bereich !== original.bereich) ||
-      (edited.bv !== undefined && edited.bv !== original.bv)
+      (edited.tarBg !== undefined && edited.tarBg.value !== original.tarBg)
     );
   };
 
@@ -344,14 +314,8 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
         }
         if (tariffUpdates.length > 0) {
           changes.tariffUpdates = tariffUpdates;
+          updates.push({ id: itemId, changes, effectiveDate: edited.effectiveDate });
         }
-
-        if (edited.duration !== undefined && edited.duration !== original.duration) changes.duration = edited.duration;
-        if (edited.kind !== undefined && edited.kind !== original.kind) changes.kind = edited.kind;
-        if (edited.bereich !== undefined && edited.bereich !== original.bereich) changes.bereich = edited.bereich;
-        if (edited.bv !== undefined && edited.bv !== original.bv) changes.bv = edited.bv;
-
-        updates.push({ id: itemId, changes, effectiveDate: edited.effectiveDate });
       }
     });
 
@@ -542,6 +506,11 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
               <th className="px-4 py-3 text-left text-sm font-semibold">
                 BG
               </th>
+              {isEditMode && (
+                <th className="px-4 py-3 text-left text-sm font-semibold">
+                  Effective Date
+                </th>
+              )}
               <th
                 onClick={() => handleSort('bereich')}
                 className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-[#2a4a6f]"
@@ -560,11 +529,6 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
               <th className="px-4 py-3 text-left text-sm font-semibold">
                 Status
               </th>
-              {isEditMode && (
-                <th className="px-4 py-3 text-left text-sm font-semibold">
-                  Effective Date
-                </th>
-              )}
               <th className="px-4 py-3 text-left text-sm font-semibold">
                 Actions
               </th>
@@ -681,54 +645,31 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                     {/* BG (tarBg) */}
                     {renderTariffCell('tarBg', item.tarBg || 0, hasTarBgError, tarBgRule)}
 
+                    {/* Effective Date (edit mode only) */}
+                    {isEditMode && (
+                      <td className="px-4 py-3">
+                        <input
+                          type="date"
+                          value={effectiveDate}
+                          onChange={(e) => handleEffectiveDateChange(item.id, e.target.value)}
+                          className="px-2 py-1 text-sm border border-border rounded bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        />
+                      </td>
+                    )}
+
                     {/* Bereich */}
                     <td className="px-4 py-3">
-                      {isEditMode ? (
-                        <select
-                          defaultValue={item.bereich}
-                          onChange={(e) => handleCellEdit(item.id, 'bereich', e.target.value as HeilmittelBereich)}
-                          className="px-2 py-1 text-sm border border-border rounded bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                        >
-                          <option value="PT">PT</option>
-                          <option value="ERGO">ERGO</option>
-                          <option value="SSSST">SSSST</option>
-                        </select>
-                      ) : (
-                        <span className="text-sm text-foreground">{item.bereich}</span>
-                      )}
+                      <span className="text-sm text-foreground">{item.bereich}</span>
                     </td>
 
                     {/* Kind */}
                     <td className="px-4 py-3">
-                      {isEditMode ? (
-                        <select
-                          defaultValue={item.kind}
-                          onChange={(e) => handleCellEdit(item.id, 'kind', e.target.value as HeilmittelKind)}
-                          className="px-2 py-1 text-sm border border-border rounded bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                        >
-                          <option value="treatment">treatment</option>
-                          <option value="fee">fee</option>
-                          <option value="passiv">passiv</option>
-                        </select>
-                      ) : (
-                        <span className="text-sm text-foreground">{item.kind}</span>
-                      )}
+                      <span className="text-sm text-foreground">{item.kind}</span>
                     </td>
 
                     {/* BV */}
                     <td className="px-4 py-3">
-                      {isEditMode ? (
-                        <select
-                          defaultValue={item.bv ? 'true' : 'false'}
-                          onChange={(e) => handleCellEdit(item.id, 'bv', e.target.value === 'true')}
-                          className="px-2 py-1 text-sm border border-border rounded bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                        >
-                          <option value="true">true</option>
-                          <option value="false">false</option>
-                        </select>
-                      ) : (
-                        <span className="text-sm text-foreground">{item.bv ? 'true' : 'false'}</span>
-                      )}
+                      <span className="text-sm text-foreground">{item.bv ? 'true' : 'false'}</span>
                     </td>
 
                     {/* Status */}
@@ -743,18 +684,6 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                         </span>
                       )}
                     </td>
-
-                    {/* Effective Date (edit mode only) */}
-                    {isEditMode && (
-                      <td className="px-4 py-3">
-                        <input
-                          type="date"
-                          value={effectiveDate}
-                          onChange={(e) => handleEffectiveDateChange(item.id, e.target.value)}
-                          className="px-2 py-1 text-sm border border-border rounded bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                        />
-                      </td>
-                    )}
 
                     {/* Actions */}
                     <td className="px-4 py-3">
