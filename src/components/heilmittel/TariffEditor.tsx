@@ -7,7 +7,7 @@ interface TariffEditorProps {
   tariffName: string;
   currentValue: number;
   history: TariffHistoryEntry[];
-  onUpdate: (newValue: number, effectiveDate: string) => void;
+  onUpdate: (newValue: number, effectiveDate: string, rule: number) => void;
   onViewHistory: () => void;
 }
 
@@ -24,7 +24,11 @@ const TariffEditor: React.FC<TariffEditorProps> = ({
     // Default to today's date
     return new Date().toISOString().split('T')[0];
   });
+  const [rule, setRule] = useState(1);
   const [error, setError] = useState('');
+
+  // Available pricing rules
+  const PRICING_RULES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   const formatCurrency = (value: number) => {
     return value.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
@@ -34,6 +38,7 @@ const TariffEditor: React.FC<TariffEditorProps> = ({
     setIsExpanded(true);
     setNewValue(currentValue.toString().replace('.', ','));
     setEffectiveDate(new Date().toISOString().split('T')[0]);
+    setRule(1);
     setError('');
   };
 
@@ -57,9 +62,10 @@ const TariffEditor: React.FC<TariffEditorProps> = ({
       return;
     }
 
-    onUpdate(parsedValue, effectiveDate);
+    onUpdate(parsedValue, effectiveDate, rule);
     setIsExpanded(false);
     setNewValue('');
+    setRule(1);
     setError('');
   };
 
@@ -92,7 +98,7 @@ const TariffEditor: React.FC<TariffEditorProps> = ({
 
       {isExpanded && (
         <div className="mt-4 p-4 border border-border rounded-lg bg-muted/50">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {/* New Value */}
             <div>
               <label className="block text-sm font-medium text-foreground mb-1">
@@ -121,6 +127,24 @@ const TariffEditor: React.FC<TariffEditorProps> = ({
                 onChange={(e) => setEffectiveDate(e.target.value)}
                 className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
               />
+            </div>
+
+            {/* Pricing Rule */}
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Pricing Rule
+              </label>
+              <select
+                value={rule}
+                onChange={(e) => setRule(parseInt(e.target.value))}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                {PRICING_RULES.map((r) => (
+                  <option key={r} value={r}>
+                    Rule {r}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 

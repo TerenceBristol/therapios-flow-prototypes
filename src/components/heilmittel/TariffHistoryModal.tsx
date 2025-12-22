@@ -174,6 +174,9 @@ const TariffHistoryModal: React.FC<TariffHistoryModalProps> = ({
                       Value
                     </th>
                     <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
+                      Rule
+                    </th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
                       Changed By
                     </th>
                     <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
@@ -219,6 +222,11 @@ const TariffHistoryModal: React.FC<TariffHistoryModalProps> = ({
                             {editState.error && (
                               <p className="text-xs text-red-500 mt-1">{editState.error}</p>
                             )}
+                          </td>
+                          <td className="px-4 py-3">
+                            <span className="text-sm text-muted-foreground">
+                              Rule {entry.rule || 1}
+                            </span>
                           </td>
                           <td className="px-4 py-3">
                             <span className="text-sm text-muted-foreground">
@@ -272,6 +280,11 @@ const TariffHistoryModal: React.FC<TariffHistoryModalProps> = ({
                         <td className="px-4 py-3">
                           <span className="text-sm font-mono font-medium text-foreground">
                             {formatCurrency(entry.value)}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3">
+                          <span className="text-sm text-muted-foreground">
+                            Rule {entry.rule || 1}
                           </span>
                         </td>
                         <td className="px-4 py-3">

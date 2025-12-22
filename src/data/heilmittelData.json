@@ -18,7 +18,8 @@
         "value": 1.11,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -27,7 +28,8 @@
         "value": 1.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -36,7 +38,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -45,14 +48,37 @@
         "value": 1.11,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-11-22T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-AB-E-1766374091394-09a1ng5dy",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-1-1766374091394-j7t33gbgj",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 2,
@@ -73,7 +99,8 @@
         "value": 1.32,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -82,7 +109,8 @@
         "value": 1.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -91,7 +119,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -100,14 +129,37 @@
         "value": 1.32,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-17T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-AB-P-1766374091394-rd57x3py5",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-2-1766374091394-9t4d4kxmc",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 3,
@@ -128,7 +180,8 @@
         "value": 38.43,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -137,7 +190,8 @@
         "value": 44.2,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -146,7 +200,8 @@
         "value": 41.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -155,14 +210,37 @@
         "value": 38.43,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-01T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-AEB-1766374091394-qb7rvsv0s",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-3-1766374091394-ydop1tq71",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 4,
@@ -183,7 +261,8 @@
         "value": 63.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -192,7 +271,8 @@
         "value": 63.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -201,7 +281,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -210,14 +291,37 @@
         "value": 63.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-20T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-BEP-A-1766374091394-yk01znmax",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-4-1766374091394-p70umalvd",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 5,
@@ -238,7 +342,8 @@
         "value": 63.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -247,7 +352,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -256,7 +362,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -265,14 +372,37 @@
         "value": 63.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-07T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-BEP-A-BV-1766374091394-shlxjydz9",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-5-1766374091394-sit686rhd",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 6,
@@ -293,7 +423,8 @@
         "value": 24.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -302,7 +433,8 @@
         "value": 24.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -311,7 +443,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -320,14 +453,37 @@
         "value": 24.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-22T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-BGM-1766374091394-tqty9u1mm",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-6-1766374091394-2d7mdamo5",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 7,
@@ -348,7 +504,8 @@
         "value": 24.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -357,7 +514,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -366,7 +524,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -375,14 +534,37 @@
         "value": 24.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-11-26T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-BGM-BV-1766374091394-n82p4bihh",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-7-1766374091394-fzh3j05v6",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 8,
@@ -403,7 +585,8 @@
         "value": 25.54,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -412,7 +595,8 @@
         "value": 25.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -421,7 +605,8 @@
         "value": 24,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -430,14 +615,37 @@
         "value": 25.54,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-20T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HB-E-1766374091394-hefr1cubz",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-8-1766374091394-3kye23ts1",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 9,
@@ -458,7 +666,8 @@
         "value": 44.15,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -467,7 +676,8 @@
         "value": 44.2,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -476,7 +686,8 @@
         "value": 50,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -485,14 +696,37 @@
         "value": 44.15,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-11-19T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-BO-E-H-1766374091394-8ygt4gdsb",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-9-1766374091394-l7r9lh6ch",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 10,
@@ -513,7 +747,8 @@
         "value": 16.66,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -522,7 +757,8 @@
         "value": 16.7,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -531,7 +767,8 @@
         "value": 24,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -540,14 +777,37 @@
         "value": 16.66,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-03T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HBH-E-1766374091394-6c1jxvgqi",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-10-1766374091394-35ikvn4eq",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 11,
@@ -568,7 +828,8 @@
         "value": 22.38,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -577,7 +838,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -586,7 +848,8 @@
         "value": 24,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -595,14 +858,37 @@
         "value": 22.38,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-19T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HB-L-1766374091394-cn4sf66lu",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-11-1766374091394-rzmvvxhf3",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 12,
@@ -623,7 +909,8 @@
         "value": 12.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -632,7 +919,8 @@
         "value": 13.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -641,7 +929,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -650,14 +939,37 @@
         "value": 12.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-02T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HR-1766374091394-ddkw5ynxb",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-12-1766374091394-5mc43svxj",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 13,
@@ -678,7 +990,8 @@
         "value": 11.21,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -687,7 +1000,8 @@
         "value": 12.9,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -696,7 +1010,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -705,14 +1020,37 @@
         "value": 11.21,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-11-25T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KÄL-1766374091394-26o1jlks0",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-13-1766374091394-kyb7kzfuz",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 14,
@@ -733,7 +1071,8 @@
         "value": 21.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -742,7 +1081,8 @@
         "value": 25.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -751,7 +1091,8 @@
         "value": 30,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -760,14 +1101,37 @@
         "value": 21.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-01T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HB-PT-1766374091394-6a9hhtln3",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-14-1766374091394-wqtu7ujnb",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 15,
@@ -788,7 +1152,8 @@
         "value": 12.28,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -797,7 +1162,8 @@
         "value": 16.7,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -806,7 +1172,8 @@
         "value": 24,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -815,14 +1182,37 @@
         "value": 12.28,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-12T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HBH-PT-1766374091394-f482zqfmz",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-15-1766374091394-69jv2s9dp",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 16,
@@ -843,7 +1233,8 @@
         "value": 12.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -852,7 +1243,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -861,7 +1253,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -870,14 +1263,37 @@
         "value": 12.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-18T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HR-H-BV-1766374091394-wavqi828a",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-16-1766374091394-zfw35hweg",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 17,
@@ -898,7 +1314,8 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -907,7 +1324,8 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -916,7 +1334,8 @@
         "value": 39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -925,14 +1344,37 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-30T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KG-H-1766374091394-osulu2799",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-17-1766374091394-y53le6rkb",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 18,
@@ -953,7 +1395,8 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -962,7 +1405,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -971,7 +1415,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -980,14 +1425,37 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-05T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KG-H-BV-1766374091394-f5sqt356v",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-18-1766374091394-57xzsyi73",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 19,
@@ -1008,7 +1476,8 @@
         "value": 83.43,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1017,7 +1486,8 @@
         "value": 83.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1026,7 +1496,8 @@
         "value": 118,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1035,14 +1506,37 @@
         "value": 83.43,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-11-28T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KGM-H-1766374091394-blz0oxkfj",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-19-1766374091394-mdbxqmy7e",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 20,
@@ -1063,7 +1557,8 @@
         "value": 20.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1072,7 +1567,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1081,7 +1577,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1090,14 +1587,37 @@
         "value": 20.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-10T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KMT-BV-1766374091394-s7ue5db4o",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-20-1766374091394-ud79dugd6",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 21,
@@ -1118,7 +1638,8 @@
         "value": 20.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1127,7 +1648,8 @@
         "value": 20.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1136,7 +1658,8 @@
         "value": 28.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1145,14 +1668,37 @@
         "value": 20.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-16T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KMT-H-1766374091394-827ggc75o",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-21-1766374091394-szukl5l4n",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 22,
@@ -1173,7 +1719,8 @@
         "value": 21.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1182,7 +1729,8 @@
         "value": 21.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1191,7 +1739,8 @@
         "value": 30.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1200,14 +1749,37 @@
         "value": 21.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-17T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KOMP-1766374091394-2wfqq9aod",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-22-1766374091394-gupsr74iv",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 23,
@@ -1228,7 +1800,8 @@
         "value": 11.21,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1237,7 +1810,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1246,7 +1820,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1255,14 +1830,37 @@
         "value": 11.21,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-15T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KT-H-BV-1766374091394-vqsioyqnu",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-23-1766374091394-r1jtslffo",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 24,
@@ -1283,7 +1881,8 @@
         "value": 42.22,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1292,7 +1891,8 @@
         "value": 42.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1301,7 +1901,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1310,14 +1911,37 @@
         "value": 42.22,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-06T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MFB-2-HB-1766374091394-g7v49l6io",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-24-1766374091394-i7mk9ukuu",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 25,
@@ -1338,7 +1962,8 @@
         "value": 52.77,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1347,7 +1972,8 @@
         "value": 52.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1356,7 +1982,8 @@
         "value": 67.79,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1365,14 +1992,37 @@
         "value": 52.77,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-11-29T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MFB-E-HB-1766374091394-yhggkjkwj",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-25-1766374091394-z9l2lfh5c",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 26,
@@ -1393,7 +2043,8 @@
         "value": 18.47,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1402,7 +2053,8 @@
         "value": 42.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1411,7 +2063,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1420,14 +2073,37 @@
         "value": 18.47,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-02T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MFB-G-HB-1766374091394-k2cy5m6hl",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-26-1766374091394-7cl5eglqu",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 27,
@@ -1448,7 +2124,8 @@
         "value": 58.64,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1457,7 +2134,8 @@
         "value": 58.7,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1466,7 +2144,8 @@
         "value": 83.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1475,14 +2154,37 @@
         "value": 58.64,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-13T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-BD-1766374091394-ez51bvbxs",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-27-1766374091394-mjlzrx4nu",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 28,
@@ -1503,7 +2205,8 @@
         "value": 52.12,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1512,7 +2215,8 @@
         "value": 52.2,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1521,7 +2225,8 @@
         "value": 74,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1530,14 +2235,37 @@
         "value": 52.12,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-17T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-E30H-1766374091394-odj86s72m",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-28-1766374091394-ltfl5ib7o",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 29,
@@ -1558,7 +2286,8 @@
         "value": 71.67,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1567,7 +2296,8 @@
         "value": 71.7,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1576,7 +2306,8 @@
         "value": 101.9,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1585,14 +2316,37 @@
         "value": 71.67,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-08T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-E45H-1766374091394-nro7xiipf",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-29-1766374091394-v38neqc9i",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 30,
@@ -1613,7 +2367,8 @@
         "value": 91.21,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1622,7 +2377,8 @@
         "value": 91.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1631,7 +2387,8 @@
         "value": 129.68,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1640,14 +2397,37 @@
         "value": 91.21,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-18T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-E60H-1766374091394-smtdbqmqv",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-30-1766374091394-ngpchqfz5",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 31,
@@ -1668,7 +2448,8 @@
         "value": 42.22,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1677,7 +2458,8 @@
         "value": 42.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1686,7 +2468,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1695,14 +2478,37 @@
         "value": 42.22,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-11-23T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-NOB-2-HB-1766374091394-20m18p5rd",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-31-1766374091394-9zez7auaa",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 32,
@@ -1723,7 +2529,8 @@
         "value": 52.77,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1732,7 +2539,8 @@
         "value": 52.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1741,7 +2549,8 @@
         "value": 75.14,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1750,14 +2559,37 @@
         "value": 52.77,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-11-19T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-NOB-E-HB-1766374091394-p3evgfbvs",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-32-1766374091394-765g8qq1v",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 33,
@@ -1778,7 +2610,8 @@
         "value": 24.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1787,7 +2620,8 @@
         "value": 24.7,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1796,7 +2630,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1805,14 +2640,37 @@
         "value": 24.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-11-29T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-NOB-G-HB-1766374091394-zmlrqf107",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-33-1766374091394-q5jyyzug4",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 34,
@@ -1833,7 +2691,8 @@
         "value": 70.36,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1842,7 +2701,8 @@
         "value": 70.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1851,7 +2711,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1860,14 +2721,37 @@
         "value": 70.36,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-11-21T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PFB-2-HB-1766374091394-n4eq8tpc1",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-34-1766374091394-62rwh612e",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 35,
@@ -1888,7 +2772,8 @@
         "value": 87.95,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1897,7 +2782,8 @@
         "value": 88,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1906,7 +2792,8 @@
         "value": 104.34,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1915,14 +2802,37 @@
         "value": 87.95,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-12T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PFB-E-HB-1766374091394-545etyasz",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-35-1766374091394-rrssoz8p4",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 36,
@@ -1943,7 +2853,8 @@
         "value": 43.1,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -1952,7 +2863,8 @@
         "value": 43.1,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -1961,7 +2873,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -1970,14 +2883,37 @@
         "value": 43.1,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-11-22T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PFB-G-HB-1766374091394-xncpk841t",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-36-1766374091394-qokxdq8fs",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 37,
@@ -1998,7 +2934,8 @@
         "value": 117.27,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2007,7 +2944,8 @@
         "value": 117.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2016,7 +2954,8 @@
         "value": 150,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2025,14 +2964,37 @@
         "value": 117.27,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-11-21T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-ED-1766374091394-gbj5wmbl9",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-37-1766374091394-xb3fwf7y8",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 38,
@@ -2053,7 +3015,8 @@
         "value": 56.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2062,7 +3025,8 @@
         "value": 56.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2071,7 +3035,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2080,14 +3045,37 @@
         "value": 56.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-12T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-SPB-2-HB-1766374091394-5ms8d317p",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-38-1766374091394-vp6s034rj",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 39,
@@ -2108,7 +3096,8 @@
         "value": 70.36,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2117,7 +3106,8 @@
         "value": 70.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2126,7 +3116,8 @@
         "value": 91.26,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2135,14 +3126,37 @@
         "value": 70.36,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-17T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-SPB-E-HB-1766374091394-g6c8ck9x7",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-39-1766374091394-z9gj8tkpg",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 40,
@@ -2163,7 +3177,8 @@
         "value": 24.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2172,7 +3187,8 @@
         "value": 24.7,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2181,7 +3197,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2190,14 +3207,37 @@
         "value": 24.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-10T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-SPB-G-HBH-1766374091394-6i9ooyxt7",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-40-1766374091394-3roo9028r",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 41,
@@ -2218,7 +3258,8 @@
         "value": 64.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2227,7 +3268,8 @@
         "value": 64.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2236,7 +3278,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2245,14 +3288,37 @@
         "value": 64.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-15T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-G2-45-1766374091394-x49k98hke",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-41-1766374091394-piixc48vr",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 42,
@@ -2273,7 +3339,8 @@
         "value": 117.27,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2282,7 +3349,8 @@
         "value": 117.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2291,7 +3359,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2300,14 +3369,37 @@
         "value": 117.27,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-11-26T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-G2-90-1766374091394-irknk7140",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-42-1766374091394-5v2vu28cj",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 43,
@@ -2328,7 +3420,8 @@
         "value": 1.11,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2337,7 +3430,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2346,7 +3440,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2355,7 +3450,8 @@
         "value": 1.11,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": true,
@@ -2364,7 +3460,29 @@
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-15T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-AB-E-BV-1766374091394-rikogi3gn",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-43-1766374091394-t4j5jp1nq",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 44,
@@ -2385,7 +3503,8 @@
         "value": 1.32,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2394,7 +3513,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2403,7 +3523,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2412,7 +3533,8 @@
         "value": 1.32,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": true,
@@ -2421,7 +3543,29 @@
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-12T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-AB-P-BV-1766374091394-9q5gy0lmo",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-44-1766374091394-2ao5v5jsw",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 45,
@@ -2442,7 +3586,8 @@
         "value": 44.2,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2451,7 +3596,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2460,7 +3606,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2469,14 +3616,37 @@
         "value": 44.2,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-27T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-AEB-BV-1766374091394-5a8zfg9g0",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-45-1766374091394-t21qk62ba",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 46,
@@ -2497,7 +3667,8 @@
         "value": 25.76,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2506,7 +3677,8 @@
         "value": 25.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2515,7 +3687,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2524,7 +3697,8 @@
         "value": 25.76,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": true,
@@ -2533,7 +3707,29 @@
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-11-22T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-BD-BV-1766374091394-j8vo6j0u0",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-46-1766374091394-a8jy1y0vk",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 47,
@@ -2554,7 +3750,8 @@
         "value": 32.58,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2563,7 +3760,8 @@
         "value": 34.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2572,7 +3770,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2581,14 +3780,37 @@
         "value": 32.58,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-02T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-G5-45-1766374091394-454gb867v",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-47-1766374091394-8whovcoz2",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 48,
@@ -2609,7 +3831,8 @@
         "value": 58.64,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2618,7 +3841,8 @@
         "value": 58.7,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2627,7 +3851,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2636,14 +3861,37 @@
         "value": 58.64,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-11T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-L-G5-90-1766374091394-vvgmwxnut",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-48-1766374091394-tdiw7c6fe",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 49,
@@ -2664,7 +3912,8 @@
         "value": 25.54,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2673,7 +3922,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2682,7 +3932,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2691,14 +3942,37 @@
         "value": 25.54,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-07T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HB-E-BV-1766374091394-4h6yu754g",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-49-1766374091394-x68i0oi27",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 50,
@@ -2719,7 +3993,8 @@
         "value": 21.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2728,7 +4003,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2737,7 +4013,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2746,14 +4023,37 @@
         "value": 21.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-12T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HB-PT-BV-1766374091394-4jp56vccx",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-50-1766374091394-pl9phwotf",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 51,
@@ -2774,7 +4074,8 @@
         "value": 16.66,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2783,7 +4084,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2792,7 +4094,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2801,14 +4104,37 @@
         "value": 16.66,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-08T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HBH-E-BV-1766374091394-zltxagzqh",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-51-1766374091394-vdq5et5jr",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 52,
@@ -2829,7 +4155,8 @@
         "value": 12.28,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2838,7 +4165,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2847,7 +4175,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2856,14 +4185,37 @@
         "value": 12.28,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-15T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HBH-PT-BV-1766374091394-mvtp4l1mv",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-52-1766374091394-s3npqzry1",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 53,
@@ -2884,7 +4236,8 @@
         "value": 21.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2893,7 +4246,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2902,7 +4256,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2911,14 +4266,37 @@
         "value": 21.37,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-04T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HBK-PT-BV-1766374091394-z5zmpkjo2",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-53-1766374091394-q61v75awu",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 54,
@@ -2939,7 +4317,8 @@
         "value": 6.97,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -2948,7 +4327,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -2957,7 +4337,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -2966,14 +4347,37 @@
         "value": 6.97,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-11-23T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HL-BV-1766374091394-xgib0k500",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-54-1766374091394-u5bw6br25",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 55,
@@ -2994,7 +4398,8 @@
         "value": 33.75,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3003,7 +4408,8 @@
         "value": 33.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3012,7 +4418,8 @@
         "value": 47,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3021,14 +4428,37 @@
         "value": 33.75,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-10T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MLD30H-1766374091394-hy6jk60q1",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-55-1766374091394-iqqyuka39",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 56,
@@ -3049,7 +4479,8 @@
         "value": 50.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3058,7 +4489,8 @@
         "value": 50.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3067,7 +4499,8 @@
         "value": 71.31,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3076,14 +4509,37 @@
         "value": 50.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-11-23T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MLD45H-1766374091394-8m7zie0lh",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-56-1766374091394-0ahkxbo73",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 57,
@@ -3104,7 +4560,8 @@
         "value": 67.48,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3113,7 +4570,8 @@
         "value": 67.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3122,7 +4580,8 @@
         "value": 95,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3131,14 +4590,37 @@
         "value": 67.48,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-11-25T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MLD60H-1766374091394-vytiuxeu4",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-57-1766374091394-ifquk9w4r",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 58,
@@ -3159,7 +4641,8 @@
         "value": 33.39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3168,7 +4651,8 @@
         "value": 33.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3177,7 +4661,8 @@
         "value": 47,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3186,14 +4671,37 @@
         "value": 33.39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-11-21T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MT-H-1766374091394-qft9z3dbm",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-58-1766374091394-7mkpme81x",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 59,
@@ -3214,7 +4722,8 @@
         "value": 33.39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3223,7 +4732,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3232,7 +4742,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3241,14 +4752,37 @@
         "value": 33.39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-05T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MT-H-BV-1766374091394-obhzlp1pv",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-59-1766374091394-czia4xi0l",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 60,
@@ -3269,7 +4803,8 @@
         "value": 34.34,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3278,7 +4813,8 @@
         "value": 34.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3287,7 +4823,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3296,14 +4833,37 @@
         "value": 34.34,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-10T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PD-BV-1766374091394-u4fey0d1z",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-60-1766374091394-hi37q9eaj",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 61,
@@ -3324,7 +4884,8 @@
         "value": 14.07,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3333,7 +4894,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3342,7 +4904,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3351,14 +4914,37 @@
         "value": 14.07,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-22T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MFB-2-H-BV-1766374091394-4n0hnlc5w",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-61-1766374091394-bvw8gruh1",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 62,
@@ -3379,7 +4965,8 @@
         "value": 6.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3388,7 +4975,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3397,7 +4985,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3406,14 +4995,37 @@
         "value": 6.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-17T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MFB-G-H-BV-1766374091394-1knj68act",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-62-1766374091394-wckxte5fp",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 63,
@@ -3434,7 +5046,8 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3443,7 +5056,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3452,7 +5066,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3461,14 +5076,37 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-25T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MFB-H-BV-1766374091394-rpfge4lmk",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-63-1766374091394-u374dvh9x",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 64,
@@ -3489,7 +5127,8 @@
         "value": 44.15,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3498,7 +5137,8 @@
         "value": 44.2,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3507,7 +5147,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3516,14 +5157,37 @@
         "value": 44.15,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-18T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PNF-1766374091394-z5do8pc89",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-64-1766374091394-8jk3sur15",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 65,
@@ -3544,7 +5208,8 @@
         "value": 20.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3553,7 +5218,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3562,7 +5228,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3571,14 +5238,37 @@
         "value": 20.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-05T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-SPC-BV-1766374091394-lrwfljk25",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-65-1766374091394-8z71xkpnz",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 66,
@@ -3599,7 +5289,8 @@
         "value": 14.07,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3608,7 +5299,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3617,7 +5309,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3626,14 +5319,37 @@
         "value": 14.07,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-12T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-NOB-2-H-BV-1766374091394-o9zdl2d13",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-66-1766374091394-ha9h5kkku",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 67,
@@ -3654,7 +5370,8 @@
         "value": 6.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3663,7 +5380,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3672,7 +5390,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3681,14 +5400,37 @@
         "value": 6.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-11-27T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-NOB-G-H-BV-1766374091394-tabjflofi",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-67-1766374091394-zvhn1fozr",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 68,
@@ -3709,7 +5451,8 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3718,7 +5461,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3727,7 +5471,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3736,14 +5481,37 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-09T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-NOB-H-BV-1766374091394-ji8ev4rin",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-68-1766374091394-nwcdakuat",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 69,
@@ -3764,7 +5532,8 @@
         "value": 14.07,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3773,7 +5542,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3782,7 +5552,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3791,14 +5562,37 @@
         "value": 14.07,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-11T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PFB-2-H-BV-1766374091394-w2nu35tuw",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-69-1766374091394-0k6842c1n",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 70,
@@ -3819,7 +5613,8 @@
         "value": 6.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3828,7 +5623,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3837,7 +5633,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3846,14 +5643,37 @@
         "value": 6.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-09T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PFB-G-H-BV-1766374091394-rl0puwuux",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-70-1766374091394-ji7bwzp9c",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 71,
@@ -3874,7 +5694,8 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3883,7 +5704,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3892,7 +5714,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3901,14 +5724,37 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-09T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PFB-H-BV-1766374091394-4tpgiof83",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-71-1766374091394-vqb4vs6lf",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 72,
@@ -3929,7 +5775,8 @@
         "value": 55,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3938,7 +5785,8 @@
         "value": 91.38,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -3947,7 +5795,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -3956,14 +5805,37 @@
         "value": 55,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-11-25T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-VBP-BV-P-1766374091394-rcjrnu224",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-72-1766374091394-guh9g628a",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 73,
@@ -3984,7 +5856,8 @@
         "value": 44.15,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -3993,7 +5866,8 @@
         "value": 44.2,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4002,7 +5876,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4011,14 +5886,37 @@
         "value": 44.15,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-01T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-VO-E-1766374091394-ypgspi5iu",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-73-1766374091394-lck3nf0fi",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 74,
@@ -4039,7 +5937,8 @@
         "value": 91.38,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4048,7 +5947,8 @@
         "value": 91.38,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4057,7 +5957,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4066,14 +5967,37 @@
         "value": 91.38,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-18T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-VBP-BV-1766374091394-tsa7z3gb9",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-74-1766374091394-sgj6blwi0",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 75,
@@ -4094,7 +6018,8 @@
         "value": 15.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4103,7 +6028,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4112,7 +6038,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4121,14 +6048,37 @@
         "value": 15.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-11-29T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-WPN-BV-1766374091394-6s8fvgjnp",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-75-1766374091394-qbjx6xoul",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 76,
@@ -4149,7 +6099,8 @@
         "value": 12.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4158,7 +6109,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4167,7 +6119,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4176,14 +6129,37 @@
         "value": 12.63,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-05T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-HR-BV-1766374091394-lf0luxaf6",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-76-1766374091394-m30rx80jf",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 77,
@@ -4204,7 +6180,8 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4213,7 +6190,8 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4222,7 +6200,8 @@
         "value": 39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4231,14 +6210,37 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-02T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KG-1766374091394-eohitwdx5",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-77-1766374091394-biwm598mm",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 78,
@@ -4259,7 +6261,8 @@
         "value": 33.39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4268,7 +6271,8 @@
         "value": 33.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4277,7 +6281,8 @@
         "value": 47,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4286,14 +6291,37 @@
         "value": 33.39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-15T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MT-1766374091394-j9ntvt90q",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-78-1766374091394-bb3h5b194",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 79,
@@ -4314,7 +6342,8 @@
         "value": 33.39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4323,7 +6352,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4332,7 +6362,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4341,14 +6372,37 @@
         "value": 33.39,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-07T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MT-BV-1766374091394-j05qp2rv6",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-79-1766374091394-8a6jmzma8",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 80,
@@ -4369,7 +6423,8 @@
         "value": 33.75,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4378,7 +6433,8 @@
         "value": 33.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4387,7 +6443,8 @@
         "value": 47,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4396,14 +6453,37 @@
         "value": 33.75,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-04T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MLD30-1766374091394-mzagp8417",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-80-1766374091394-0s8tfhu9z",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 81,
@@ -4424,7 +6504,8 @@
         "value": 50.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4433,7 +6514,8 @@
         "value": 50.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4442,7 +6524,8 @@
         "value": 71.31,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4451,14 +6534,37 @@
         "value": 50.6,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-13T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MLD45-1766374091394-439u3fnlt",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-81-1766374091394-mu291ac0u",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 82,
@@ -4479,7 +6585,8 @@
         "value": 67.48,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4488,7 +6595,8 @@
         "value": 67.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4497,7 +6605,8 @@
         "value": 95,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4506,14 +6615,37 @@
         "value": 67.48,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Michael W.",
     "lastEditedAt": "2025-12-18T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MLD60-1766374091394-tav086w7r",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-82-1766374091394-9s26ev523",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Michael W.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 83,
@@ -4534,7 +6666,8 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4543,7 +6676,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4552,7 +6686,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4561,14 +6696,37 @@
         "value": 27.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-07T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KG-BV-1766374091394-7tmaza1y6",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-83-1766374091394-9gwoa5e8a",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 84,
@@ -4589,7 +6747,8 @@
         "value": 15.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4598,7 +6757,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4607,7 +6767,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4616,14 +6777,37 @@
         "value": 15.16,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-11-27T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-WPN-1766374091394-9horqudgr",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-84-1766374091394-0zluc6227",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 85,
@@ -4644,7 +6828,8 @@
         "value": 44.15,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4653,7 +6838,8 @@
         "value": 44.2,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4662,7 +6848,8 @@
         "value": 50,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4671,14 +6858,37 @@
         "value": 44.15,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-14T08:03:06.392Z",
-    "lastEditedBy": "Sarah S."
+    "lastEditedBy": "Sarah S.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-BO-E-1766374091394-9010dr271",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-85-1766374091394-pqtrrc9cv",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 86,
@@ -4699,7 +6909,8 @@
         "value": 20.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4708,7 +6919,8 @@
         "value": 20.3,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4717,7 +6929,8 @@
         "value": 28.5,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4726,14 +6939,37 @@
         "value": 20.29,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-03T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KMT-1766374091394-49jck39th",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-86-1766374091394-znm4pcx3u",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 87,
@@ -4754,7 +6990,8 @@
         "value": 11.21,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4763,7 +7000,8 @@
         "value": 12.9,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4772,7 +7010,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4781,14 +7020,37 @@
         "value": 11.21,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-11T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-KÄL-BV-1766374091394-4d1jg0mg6",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-87-1766374091394-gkivo9fbs",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 88,
@@ -4809,7 +7071,8 @@
         "value": 52.77,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4818,7 +7081,8 @@
         "value": 52.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4827,7 +7091,8 @@
         "value": 67.79,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4836,14 +7101,37 @@
         "value": 52.77,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-11-21T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MFB-E-1766374091394-h5s1af52f",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-88-1766374091394-7uj3gecye",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 89,
@@ -4864,7 +7152,8 @@
         "value": 52.77,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4873,7 +7162,8 @@
         "value": 52.8,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4882,7 +7172,8 @@
         "value": 75.14,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4891,14 +7182,37 @@
         "value": 52.77,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-12-18T08:03:06.392Z",
-    "lastEditedBy": "Anna B."
+    "lastEditedBy": "Anna B.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-NOB-E-1766374091394-p48wg8zfp",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-89-1766374091394-njdvtx0r4",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 90,
@@ -4919,7 +7233,8 @@
         "value": 87.95,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4928,7 +7243,8 @@
         "value": 88,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4937,7 +7253,8 @@
         "value": 104.34,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -4946,14 +7263,37 @@
         "value": 87.95,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Thomas K.",
     "lastEditedAt": "2025-12-06T08:03:06.392Z",
-    "lastEditedBy": "Michael W."
+    "lastEditedBy": "Michael W.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PFB-E-1766374091394-5qyr0te24",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-90-1766374091394-vijpzqs8j",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Thomas K.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 91,
@@ -4974,7 +7314,8 @@
         "value": 70.36,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -4983,7 +7324,8 @@
         "value": 70.4,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -4992,7 +7334,8 @@
         "value": 91.26,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -5001,14 +7344,37 @@
         "value": 70.36,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-12-15T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-SPB-E-1766374091394-cbbjq4nhq",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-91-1766374091394-xwgwfufhm",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 92,
@@ -5029,7 +7395,8 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -5038,7 +7405,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -5047,7 +7415,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -5056,14 +7425,37 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Anna B.",
     "lastEditedAt": "2025-11-28T08:03:06.392Z",
-    "lastEditedBy": "Max M."
+    "lastEditedBy": "Max M.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-MFB-BV-1766374091394-16qqhxd7d",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-92-1766374091394-9xza1lv2i",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Anna B.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 93,
@@ -5084,7 +7476,8 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Thomas K."
+        "changedBy": "Thomas K.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -5093,7 +7486,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -5102,7 +7496,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -5111,14 +7506,37 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Anna B."
+        "changedBy": "Anna B.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Sarah S.",
     "lastEditedAt": "2025-11-24T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-NOB-BV-1766374091394-8hh0qc0v8",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-93-1766374091394-56e34wpj9",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Sarah S.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   },
   {
     "id": 94,
@@ -5139,7 +7557,8 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Michael W."
+        "changedBy": "Michael W.",
+        "rule": 1
       }
     ],
     "tar10History": [
@@ -5148,7 +7567,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "tar11History": [
@@ -5157,7 +7577,8 @@
         "value": 0,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Sarah S."
+        "changedBy": "Sarah S.",
+        "rule": 1
       }
     ],
     "tar12History": [
@@ -5166,13 +7587,36 @@
         "value": 17.59,
         "effectiveDate": "2025-12-17",
         "changedAt": "2025-12-17T05:12:14.959Z",
-        "changedBy": "Max M."
+        "changedBy": "Max M.",
+        "rule": 1
       }
     ],
     "isArchived": false,
     "createdAt": "2024-01-15T10:00:00.000Z",
     "createdBy": "Max M.",
     "lastEditedAt": "2025-12-02T08:03:06.392Z",
-    "lastEditedBy": "Thomas K."
+    "lastEditedBy": "Thomas K.",
+    "tarBg": 0,
+    "tarBgHistory": [
+      {
+        "id": "hist-PFB-BV-1766374091394-7ww40wcgt",
+        "value": 0,
+        "effectiveDate": "2025-12-22",
+        "changedAt": "2025-12-22T03:28:11.394Z",
+        "changedBy": "System",
+        "rule": 1
+      }
+    ],
+    "textBestellung2": "",
+    "auditLog": [
+      {
+        "id": "log-94-1766374091394-ytcg8kh2u",
+        "field": "Record",
+        "before": null,
+        "after": "Created",
+        "changedBy": "Max M.",
+        "changedAt": "2024-01-15T10:00:00.000Z"
+      }
+    ]
   }
 ]

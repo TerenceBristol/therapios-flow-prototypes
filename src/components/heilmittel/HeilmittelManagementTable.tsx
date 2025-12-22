@@ -4,11 +4,17 @@ import React, { useState, useMemo } from 'react';
 import { Heilmittel, HeilmittelKind, HeilmittelBereich } from '@/types';
 import ConfirmationDialog from './ConfirmationDialog';
 
+interface EditedTariff {
+  value: number;
+  rule: number;
+}
+
 interface EditedRow {
-  tar1?: number;
-  tar10?: number;
-  tar11?: number;
-  tar12?: number;
+  tar1?: EditedTariff;
+  tar10?: EditedTariff;
+  tar11?: EditedTariff;
+  tar12?: EditedTariff;
+  tarBg?: EditedTariff;
   duration?: number | null;
   kind?: HeilmittelKind;
   bereich?: HeilmittelBereich;
@@ -49,6 +55,9 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
   const [editedRows, setEditedRows] = useState<Map<number, EditedRow>>(new Map());
   const [showDiscardConfirm, setShowDiscardConfirm] = useState(false);
   const [validationErrors, setValidationErrors] = useState<Map<number, ValidationError[]>>(new Map());
+
+  // Pricing rules
+  const PRICING_RULES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   // Get today's date as default
   const getToday = () => new Date().toISOString().split('T')[0];
@@ -186,12 +195,12 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
     return null;
   };
 
-  const handleCellEditWithValidation = (itemId: number, field: keyof Omit<EditedRow, 'effectiveDate'>, value: number | string | boolean | null) => {
+  const handleTariffEdit = (itemId: number, tariffKey: 'tar1' | 'tar10' | 'tar11' | 'tar12' | 'tarBg', value: number, rule: number) => {
     // Clear previous validation errors for this field
     setValidationErrors(prev => {
       const newMap = new Map(prev);
       const existing = newMap.get(itemId) || [];
-      const filtered = existing.filter(e => e.field !== field);
+      const filtered = existing.filter(e => e.field !== tariffKey);
       if (filtered.length > 0) {
         newMap.set(itemId, filtered);
       } else {
@@ -200,19 +209,27 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
       return newMap;
     });
 
-    // Validate tariff fields
-    if (['tar1', 'tar10', 'tar11', 'tar12'].includes(field) && typeof value === 'number') {
-      const error = validateTariff(value);
-      if (error) {
-        setValidationErrors(prev => {
-          const newMap = new Map(prev);
-          const existing = newMap.get(itemId) || [];
-          newMap.set(itemId, [...existing, { ...error, field }]);
-          return newMap;
-        });
-      }
+    // Validate tariff value
+    const error = validateTariff(value);
+    if (error) {
+      setValidationErrors(prev => {
+        const newMap = new Map(prev);
+        const existing = newMap.get(itemId) || [];
+        newMap.set(itemId, [...existing, { ...error, field: tariffKey }]);
+        return newMap;
+      });
     }
 
+    // Update the edited row with tariff value and rule
+    setEditedRows(prev => {
+      const newMap = new Map(prev);
+      const existing = newMap.get(itemId) || { effectiveDate: getToday() };
+      newMap.set(itemId, { ...existing, [tariffKey]: { value, rule } });
+      return newMap;
+    });
+  };
+
+  const handleCellEditWithValidation = (itemId: number, field: keyof Omit<EditedRow, 'effectiveDate' | 'tar1' | 'tar10' | 'tar11' | 'tar12' | 'tarBg'>, value: number | string | boolean | null) => {
     handleCellEdit(itemId, field, value);
   };
 
@@ -257,10 +274,11 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
     if (!original) return false;
 
     return (
-      (edited.tar1 !== undefined && edited.tar1 !== original.tar1) ||
-      (edited.tar10 !== undefined && edited.tar10 !== original.tar10) ||
-      (edited.tar11 !== undefined && edited.tar11 !== original.tar11) ||
-      (edited.tar12 !== undefined && edited.tar12 !== original.tar12) ||
+      (edited.tar1 !== undefined && edited.tar1.value !== original.tar1) ||
+      (edited.tar10 !== undefined && edited.tar10.value !== original.tar10) ||
+      (edited.tar11 !== undefined && edited.tar11.value !== original.tar11) ||
+      (edited.tar12 !== undefined && edited.tar12.value !== original.tar12) ||
+      (edited.tarBg !== undefined && edited.tarBg.value !== original.tarBg) ||
       (edited.duration !== undefined && edited.duration !== original.duration) ||
       (edited.kind !== undefined && edited.kind !== original.kind) ||
       (edited.bereich !== undefined && edited.bereich !== original.bereich) ||
@@ -299,18 +317,35 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
   const handleSaveAll = () => {
     if (!onSaveAll) return;
 
-    const updates: { id: number; changes: Partial<Heilmittel>; effectiveDate: string }[] = [];
+    const updates: { id: number; changes: Partial<Heilmittel> & { tariffUpdates?: { key: string; value: number; rule: number }[] }; effectiveDate: string }[] = [];
 
     editedRows.forEach((edited, itemId) => {
       if (isRowModified(itemId)) {
-        const changes: Partial<Heilmittel> = {};
+        const changes: Partial<Heilmittel> & { tariffUpdates?: { key: string; value: number; rule: number }[] } = {};
         const original = heilmittel.find(h => h.id === itemId);
         if (!original) return;
 
-        if (edited.tar1 !== undefined && edited.tar1 !== original.tar1) changes.tar1 = edited.tar1;
-        if (edited.tar10 !== undefined && edited.tar10 !== original.tar10) changes.tar10 = edited.tar10;
-        if (edited.tar11 !== undefined && edited.tar11 !== original.tar11) changes.tar11 = edited.tar11;
-        if (edited.tar12 !== undefined && edited.tar12 !== original.tar12) changes.tar12 = edited.tar12;
+        // Collect tariff updates with their rules
+        const tariffUpdates: { key: string; value: number; rule: number }[] = [];
+        if (edited.tar1 !== undefined && edited.tar1.value !== original.tar1) {
+          tariffUpdates.push({ key: 'tar1', value: edited.tar1.value, rule: edited.tar1.rule });
+        }
+        if (edited.tar10 !== undefined && edited.tar10.value !== original.tar10) {
+          tariffUpdates.push({ key: 'tar10', value: edited.tar10.value, rule: edited.tar10.rule });
+        }
+        if (edited.tar11 !== undefined && edited.tar11.value !== original.tar11) {
+          tariffUpdates.push({ key: 'tar11', value: edited.tar11.value, rule: edited.tar11.rule });
+        }
+        if (edited.tar12 !== undefined && edited.tar12.value !== original.tar12) {
+          tariffUpdates.push({ key: 'tar12', value: edited.tar12.value, rule: edited.tar12.rule });
+        }
+        if (edited.tarBg !== undefined && edited.tarBg.value !== original.tarBg) {
+          tariffUpdates.push({ key: 'tarBg', value: edited.tarBg.value, rule: edited.tarBg.rule });
+        }
+        if (tariffUpdates.length > 0) {
+          changes.tariffUpdates = tariffUpdates;
+        }
+
         if (edited.duration !== undefined && edited.duration !== original.duration) changes.duration = edited.duration;
         if (edited.kind !== undefined && edited.kind !== original.kind) changes.kind = edited.kind;
         if (edited.bereich !== undefined && edited.bereich !== original.bereich) changes.bereich = edited.bereich;
@@ -490,16 +525,22 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                 Kurzzeichen{getSortIndicator('kurzzeichen')}
               </th>
               <th
-                onClick={() => handleSort('bezeichnung')}
-                className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-[#2a4a6f]"
-              >
-                Bezeichnung{getSortIndicator('bezeichnung')}
-              </th>
-              <th
                 onClick={() => handleSort('tar1')}
                 className="px-4 py-3 text-left text-sm font-semibold cursor-pointer hover:bg-[#2a4a6f]"
               >
-                Tar. 1{getSortIndicator('tar1')}
+                GKV{getSortIndicator('tar1')}
+              </th>
+              <th className="px-4 py-3 text-left text-sm font-semibold">
+                Beihilfe
+              </th>
+              <th className="px-4 py-3 text-left text-sm font-semibold">
+                Privat
+              </th>
+              <th className="px-4 py-3 text-left text-sm font-semibold">
+                Privat Basis
+              </th>
+              <th className="px-4 py-3 text-left text-sm font-semibold">
+                BG
               </th>
               <th
                 onClick={() => handleSort('bereich')}
@@ -517,9 +558,6 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                 BV
               </th>
               <th className="px-4 py-3 text-left text-sm font-semibold">
-                Last Edited
-              </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold">
                 Status
               </th>
               {isEditMode && (
@@ -535,7 +573,7 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
           <tbody>
             {sortedHeilmittel.length === 0 ? (
               <tr>
-                <td colSpan={isEditMode ? 11 : 10} className="px-4 py-12 text-center text-muted-foreground">
+                <td colSpan={isEditMode ? 13 : 12} className="px-4 py-12 text-center text-muted-foreground">
                   <div className="text-4xl mb-2">🔍</div>
                   <div>No Heilmittel found</div>
                   {hasActiveFilters && (
@@ -555,6 +593,17 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                 const effectiveDate = editedData?.effectiveDate || getToday();
                 const rowErrors = validationErrors.get(item.id) || [];
                 const hasTar1Error = rowErrors.some(e => e.field === 'tar1');
+                const hasTar10Error = rowErrors.some(e => e.field === 'tar10');
+                const hasTar11Error = rowErrors.some(e => e.field === 'tar11');
+                const hasTar12Error = rowErrors.some(e => e.field === 'tar12');
+                const hasTarBgError = rowErrors.some(e => e.field === 'tarBg');
+
+                // Get current rule values for each tariff in edit mode
+                const tar1Rule = editedData?.tar1?.rule || 1;
+                const tar10Rule = editedData?.tar10?.rule || 1;
+                const tar11Rule = editedData?.tar11?.rule || 1;
+                const tar12Rule = editedData?.tar12?.rule || 1;
+                const tarBgRule = editedData?.tarBg?.rule || 1;
 
                 // Determine row styling based on state
                 let rowClassName = 'border-b border-border transition-colors ';
@@ -563,6 +612,44 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                 } else {
                   rowClassName += 'hover:bg-muted/50 ';
                 }
+
+                // Render a tariff cell with input and rule dropdown
+                const renderTariffCell = (
+                  tariffKey: 'tar1' | 'tar10' | 'tar11' | 'tar12' | 'tarBg',
+                  value: number,
+                  hasError: boolean,
+                  currentRule: number
+                ) => (
+                  <td className="px-4 py-2">
+                    {isEditMode ? (
+                      <div className="space-y-1">
+                        <input
+                          type="text"
+                          defaultValue={value.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                          onBlur={(e) => handleTariffEdit(item.id, tariffKey, parseCurrencyInput(e.target.value), currentRule)}
+                          className={`w-20 px-2 py-1 text-xs font-mono border rounded bg-background text-foreground focus:outline-none focus:ring-1 ${
+                            hasError ? 'border-red-500 focus:ring-red-500' : 'border-border focus:ring-primary'
+                          }`}
+                        />
+                        <select
+                          value={currentRule}
+                          onChange={(e) => {
+                            const newRule = parseInt(e.target.value);
+                            const currentValue = editedData?.[tariffKey]?.value ?? value;
+                            handleTariffEdit(item.id, tariffKey, currentValue, newRule);
+                          }}
+                          className="w-20 px-1 py-0.5 text-xs border border-border rounded bg-background text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+                        >
+                          {PRICING_RULES.map((r) => (
+                            <option key={r} value={r}>R{r}</option>
+                          ))}
+                        </select>
+                      </div>
+                    ) : (
+                      <div className="text-sm text-foreground font-mono">{formatCurrency(value)}</div>
+                    )}
+                  </td>
+                );
 
                 return (
                   <tr
@@ -579,35 +666,20 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                       <span className="font-medium text-foreground">{item.kurzzeichen}</span>
                     </td>
 
-                    {/* Bezeichnung */}
-                    <td className="px-4 py-3">
-                      <div className="text-sm text-foreground">{item.bezeichnung}</div>
-                    </td>
+                    {/* GKV (tar1) */}
+                    {renderTariffCell('tar1', item.tar1, hasTar1Error, tar1Rule)}
 
-                    {/* Tar. 1 */}
-                    <td className="px-4 py-3">
-                      {isEditMode ? (
-                        <div className="relative">
-                          <input
-                            type="text"
-                            defaultValue={item.tar1.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                            onBlur={(e) => handleCellEditWithValidation(item.id, 'tar1', parseCurrencyInput(e.target.value))}
-                            className={`w-24 px-2 py-1 text-sm font-mono border rounded bg-background text-foreground focus:outline-none focus:ring-2 ${
-                              hasTar1Error
-                                ? 'border-red-500 focus:ring-red-500'
-                                : 'border-border focus:ring-primary'
-                            }`}
-                          />
-                          {hasTar1Error && (
-                            <div className="absolute left-0 top-full mt-1 text-xs text-red-500 whitespace-nowrap">
-                              Value must be ≥ 0
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <div className="text-sm text-foreground font-mono">{formatCurrency(item.tar1)}</div>
-                      )}
-                    </td>
+                    {/* Beihilfe (tar10) */}
+                    {renderTariffCell('tar10', item.tar10, hasTar10Error, tar10Rule)}
+
+                    {/* Privat (tar11) */}
+                    {renderTariffCell('tar11', item.tar11, hasTar11Error, tar11Rule)}
+
+                    {/* Privat Basis (tar12) */}
+                    {renderTariffCell('tar12', item.tar12, hasTar12Error, tar12Rule)}
+
+                    {/* BG (tarBg) */}
+                    {renderTariffCell('tarBg', item.tarBg || 0, hasTarBgError, tarBgRule)}
 
                     {/* Bereich */}
                     <td className="px-4 py-3">
@@ -657,13 +729,6 @@ const HeilmittelManagementTable: React.FC<HeilmittelManagementTableProps> = ({
                       ) : (
                         <span className="text-sm text-foreground">{item.bv ? 'true' : 'false'}</span>
                       )}
-                    </td>
-
-                    {/* Last Edited */}
-                    <td className="px-4 py-3">
-                      <span className="text-sm text-muted-foreground">
-                        {formatLastEdited(item)}
-                      </span>
                     </td>
 
                     {/* Status */}

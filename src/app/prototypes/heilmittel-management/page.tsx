@@ -58,34 +58,53 @@ function HeilmittelManagementContent() {
   // Mock current user for audit trail
   const currentUser = 'Max M.';
 
-  const handleSaveAll = (updates: { id: number; changes: Partial<Heilmittel>; effectiveDate: string }[]) => {
+  const handleSaveAll = (updates: { id: number; changes: Partial<Heilmittel> & { tariffUpdates?: { key: string; value: number; rule: number }[] }; effectiveDate: string }[]) => {
     const now = new Date().toISOString();
 
     const updatedHeilmittel = heilmittel.map(h => {
       const update = updates.find(u => u.id === h.id);
       if (!update) return h;
 
-      const updated = {
+      const updated: Heilmittel = {
         ...h,
-        ...update.changes,
         updatedAt: now,
         lastEditedAt: now,
         lastEditedBy: currentUser
       };
 
-      // Create history entries for tariff changes
-      const tariffKeys = ['tar1', 'tar10', 'tar11', 'tar12'] as const;
-      tariffKeys.forEach(key => {
-        if (update.changes[key] !== undefined && update.changes[key] !== h[key]) {
+      // Handle tariff updates with rules
+      if (update.changes.tariffUpdates) {
+        update.changes.tariffUpdates.forEach(tariffUpdate => {
+          const key = tariffUpdate.key as 'tar1' | 'tar10' | 'tar11' | 'tar12' | 'tarBg';
           const historyKey = `${key}History` as keyof Heilmittel;
-          const newEntry: TariffHistoryEntry = {
-            id: `hist-${h.kurzzeichen}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-            value: update.changes[key] as number,
-            effectiveDate: update.effectiveDate,
-            changedAt: now,
-            changedBy: currentUser
-          };
-          (updated as Record<string, unknown>)[historyKey] = [...(h[historyKey] as TariffHistoryEntry[]), newEntry];
+          const oldValue = h[key] as number;
+          const newValue = tariffUpdate.value;
+
+          if (newValue !== oldValue) {
+            // Update current value
+            (updated as unknown as Record<string, unknown>)[key] = newValue;
+
+            // Create history entry with rule
+            const newEntry: TariffHistoryEntry = {
+              id: `hist-${h.kurzzeichen}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+              value: newValue,
+              effectiveDate: update.effectiveDate,
+              changedAt: now,
+              changedBy: currentUser,
+              rule: tariffUpdate.rule
+            };
+            (updated as unknown as Record<string, unknown>)[historyKey] = [...(h[historyKey] as TariffHistoryEntry[]), newEntry];
+          }
+        });
+      }
+
+      // Handle non-tariff changes
+      const nonTariffChanges = { ...update.changes };
+      delete nonTariffChanges.tariffUpdates;
+
+      (['duration', 'kind', 'bereich', 'bv'] as const).forEach(field => {
+        if (nonTariffChanges[field] !== undefined && nonTariffChanges[field] !== h[field]) {
+          (updated as unknown as Record<string, unknown>)[field] = nonTariffChanges[field];
         }
       });
 

@@ -36,16 +36,19 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
   const [bv, setBv] = useState(heilmittel?.bv || false);
   const [isArchived, setIsArchived] = useState(heilmittel?.isArchived || false);
   const [textBestellung, setTextBestellung] = useState(heilmittel?.textBestellung || '');
+  const [textBestellung2, setTextBestellung2] = useState(heilmittel?.textBestellung2 || '');
 
   // Tariff values and histories
   const [tar1, setTar1] = useState(heilmittel?.tar1 || 0);
   const [tar10, setTar10] = useState(heilmittel?.tar10 || 0);
   const [tar11, setTar11] = useState(heilmittel?.tar11 || 0);
   const [tar12, setTar12] = useState(heilmittel?.tar12 || 0);
+  const [tarBg, setTarBg] = useState(heilmittel?.tarBg || 0);
   const [tar1History, setTar1History] = useState<TariffHistoryEntry[]>(heilmittel?.tar1History || []);
   const [tar10History, setTar10History] = useState<TariffHistoryEntry[]>(heilmittel?.tar10History || []);
   const [tar11History, setTar11History] = useState<TariffHistoryEntry[]>(heilmittel?.tar11History || []);
   const [tar12History, setTar12History] = useState<TariffHistoryEntry[]>(heilmittel?.tar12History || []);
+  const [tarBgHistory, setTarBgHistory] = useState<TariffHistoryEntry[]>(heilmittel?.tarBgHistory || []);
 
   // Modal state
   const [historyModal, setHistoryModal] = useState<TariffModalState>({
@@ -110,14 +113,17 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
       kind,
       bv,
       textBestellung: textBestellung.trim(),
+      textBestellung2: textBestellung2.trim(),
       tar1,
       tar10,
       tar11,
       tar12,
+      tarBg,
       tar1History,
       tar10History,
       tar11History,
       tar12History,
+      tarBgHistory,
       // Archive status - update archivedAt/By when status changes
       isArchived,
       archivedAt: isArchived && !heilmittel?.isArchived ? now : (isArchived ? heilmittel?.archivedAt : undefined),
@@ -133,9 +139,10 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
   };
 
   const handleTariffUpdate = (
-    tariffKey: 'tar1' | 'tar10' | 'tar11' | 'tar12',
+    tariffKey: 'tar1' | 'tar10' | 'tar11' | 'tar12' | 'tarBg',
     newValue: number,
-    effectiveDate: string
+    effectiveDate: string,
+    rule: number
   ) => {
     const now = new Date().toISOString();
     const today = new Date().toISOString().split('T')[0];
@@ -144,7 +151,8 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
       value: newValue,
       effectiveDate,
       changedAt: now,
-      changedBy: currentUser
+      changedBy: currentUser,
+      rule
     };
 
     // Update history and current value if effective date is today or earlier
@@ -164,6 +172,10 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
       case 'tar12':
         setTar12History(prev => [...prev, newEntry]);
         if (effectiveDate <= today) setTar12(newValue);
+        break;
+      case 'tarBg':
+        setTarBgHistory(prev => [...prev, newEntry]);
+        if (effectiveDate <= today) setTarBg(newValue);
         break;
     }
   };
@@ -357,39 +369,60 @@ const HeilmittelForm: React.FC<HeilmittelFormProps> = ({
                 className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
               />
             </div>
+
+            {/* Text_Bestellung_2 */}
+            <div className="mt-4">
+              <label className="block text-sm font-medium text-foreground mb-1">
+                Text_Bestellung_2
+              </label>
+              <textarea
+                value={textBestellung2}
+                onChange={(e) => setTextBestellung2(e.target.value)}
+                placeholder="Additional order text"
+                rows={2}
+                className="w-full px-3 py-2 border border-border rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+              />
+            </div>
           </div>
 
           {/* Tariffs Section */}
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4">Tariffs</h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-3 gap-4">
               <TariffEditor
-                tariffName="Tar. 1"
+                tariffName="GKV"
                 currentValue={tar1}
                 history={tar1History}
-                onUpdate={(value, date) => handleTariffUpdate('tar1', value, date)}
-                onViewHistory={() => openHistoryModal('Tar. 1', tar1History, tar1)}
+                onUpdate={(value, date, rule) => handleTariffUpdate('tar1', value, date, rule)}
+                onViewHistory={() => openHistoryModal('GKV', tar1History, tar1)}
               />
               <TariffEditor
-                tariffName="Tar. 10"
+                tariffName="Beihilfe"
                 currentValue={tar10}
                 history={tar10History}
-                onUpdate={(value, date) => handleTariffUpdate('tar10', value, date)}
-                onViewHistory={() => openHistoryModal('Tar. 10', tar10History, tar10)}
+                onUpdate={(value, date, rule) => handleTariffUpdate('tar10', value, date, rule)}
+                onViewHistory={() => openHistoryModal('Beihilfe', tar10History, tar10)}
               />
               <TariffEditor
-                tariffName="Tar. 11"
+                tariffName="Privat"
                 currentValue={tar11}
                 history={tar11History}
-                onUpdate={(value, date) => handleTariffUpdate('tar11', value, date)}
-                onViewHistory={() => openHistoryModal('Tar. 11', tar11History, tar11)}
+                onUpdate={(value, date, rule) => handleTariffUpdate('tar11', value, date, rule)}
+                onViewHistory={() => openHistoryModal('Privat', tar11History, tar11)}
               />
               <TariffEditor
-                tariffName="Tar. 12"
+                tariffName="Privat Basis"
                 currentValue={tar12}
                 history={tar12History}
-                onUpdate={(value, date) => handleTariffUpdate('tar12', value, date)}
-                onViewHistory={() => openHistoryModal('Tar. 12', tar12History, tar12)}
+                onUpdate={(value, date, rule) => handleTariffUpdate('tar12', value, date, rule)}
+                onViewHistory={() => openHistoryModal('Privat Basis', tar12History, tar12)}
+              />
+              <TariffEditor
+                tariffName="BG"
+                currentValue={tarBg}
+                history={tarBgHistory}
+                onUpdate={(value, date, rule) => handleTariffUpdate('tarBg', value, date, rule)}
+                onViewHistory={() => openHistoryModal('BG', tarBgHistory, tarBg)}
               />
             </div>
           </div>

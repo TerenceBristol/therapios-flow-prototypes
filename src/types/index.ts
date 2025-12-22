@@ -431,6 +431,7 @@ export interface TariffHistoryEntry {
   effectiveDate: string; // YYYY-MM-DD
   changedAt: string; // ISO timestamp when recorded
   changedBy: string; // User name who made the change (e.g., "Max M.")
+  rule: number; // Pricing rule (1-10)
 }
 
 // Heilmittel (treatment code) entity
@@ -446,18 +447,22 @@ export interface Heilmittel {
   bv: boolean; // Blanko Verordnung flag
   bereich: HeilmittelBereich;
   textBestellung: string; // Ordering text
+  textBestellung2: string; // Additional ordering text
 
   // Current tariff values (for quick access)
+  // Labels: tar1=GKV, tar10=Beihilfe, tar11=Privat, tar12=Privat Basis, tarBg=BG
   tar1: number;
   tar10: number;
   tar11: number;
   tar12: number;
+  tarBg: number; // BG tariff
 
   // Price histories (persisted to session storage)
   tar1History: TariffHistoryEntry[];
   tar10History: TariffHistoryEntry[];
   tar11History: TariffHistoryEntry[];
   tar12History: TariffHistoryEntry[];
+  tarBgHistory: TariffHistoryEntry[]; // BG tariff history
 
   // Archive status
   isArchived: boolean;
